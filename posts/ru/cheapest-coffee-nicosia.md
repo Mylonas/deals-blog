@@ -9,26 +9,26 @@ pinned: true
 Мы отслеживаем цены на Фреддо Эспрессо во всех крупных кофейных сетях и независимых заведениях Кипра. Кафе с единственной локацией имеют ссылку на Google Maps.
 
 <!-- COFFEE_PRICES_START -->
-*Цены последний раз проверены: 28 июн 2026, 18:30 (EET). Обновляется каждый час.*
+*Цены последний раз проверены: 28 июн. 2026 г., 20:17 (EET). Обновляется каждый час.*
 
 ## Фреддо Эспрессо — По всему Кипру
 
 | Кафе | Цена | Через Доставку | Примечания |
 |------|-------|-------|-------|
-| **Coffeeway** | €2.20 | — | Лучшая цена по всему острову. Есть drive-through. |
-| **Coffee Brands** | €2.20 | — | Греческая сеть с заведениями по всему Кипру. |
-| **Gregory's** | €2.30 | €2.80 | Также на Wolt (+~€0.50). Хорошая пена. |
-| **Coffeeberry** | €2.40 | €2.90 | Также на Wolt & Bolt Food. |
-| **Coffee Island** | €2.50 | €3.00 | Также на Wolt & Bolt Food. |
-| **Mikel Coffee** | €2.50 | €3.00 | Греческая specialty сеть. Также на Wolt. |
-| **Caffè Nero** | €2.50 | €3.00 | Также на Wolt & Bolt Food. |
-| **Gloria Jean's** | €2.70 | €3.20 | Также на Foody. |
-| **Second Cup** | €2.80 | — | Канадская сеть. |
-| **[Black Cup](https://www.google.com/maps/search/Black+Cup+Coffee+Nicosia+Cyprus)** | €2.80 | — | Specialty обжарка. Одна локация, Никосия. |
-| **Costa Coffee** | €2.90 | €3.40 | Также на Wolt & Bolt Food. |
-| **Starbucks** | €3.50 | €4.00 | Также на Wolt & Bolt Food. Премиальные цены. |
+| **Coffeeway** | €2.20 | — | Best value freddo island-wide. Drive-throughs available across Cyprus. |
+| **Coffee Brands** | €2.20 | — | Greek chain with locations across Cyprus. |
+| **Gregory's** | €2.30 | €2.80 | Also on Wolt (+~€0.50). Good froth on freddo. |
+| **Coffeeberry** | €2.40 | €2.90 | Also on Wolt & Bolt Food. |
+| **Coffee Island** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
+| **Mikel Coffee** | €2.50 | €3.00 | Greek specialty chain. Also on Wolt. |
+| **Caffè Nero** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
+| **Gloria Jean's** | €2.70 | €3.20 | Also on Foody. |
+| **Second Cup** | €2.80 | — | Canadian chain. |
+| **[Black Cup](https://www.google.com/maps/search/Black+Cup+Coffee+Nicosia+Cyprus)** | €2.80 | — | Specialty roast. Single location, Nicosia. |
+| **Costa Coffee** | €2.90 | €3.40 | Also on Wolt & Bolt Food. |
+| **Starbucks** | €3.50 | €4.00 | Also on Wolt & Bolt Food. Premium pricing. |
 
-**Победитель**: **Coffeeway** — €2.20
+**Winner**: **Coffeeway** — €2.20
 
 > Цены на доставку приблизительные и включают типичную комиссию платформы (Wolt / Bolt Food / Foody).
 <!-- COFFEE_PRICES_END -->
