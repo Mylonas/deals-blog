@@ -1,62 +1,39 @@
 ---
-title: "Cheapest Petrol Stations in Cyprus — Weekly Tracker (June 2026)"
+title: "Cheapest Petrol Stations in Cyprus — Live Tracker"
 date: "2026-06-28"
 category: "Fuel"
-summary: "Weekly updated comparison of unleaded 95, diesel, and premium fuel prices across Cyprus petrol stations. Find the cheapest fuel near you."
+summary: "Live unleaded 95 prices across petrol stations in Cyprus. Updated 4× daily from the official Cyprus government fuel observatory."
+pinned: true
 ---
 
-Fuel prices in Cyprus change weekly. We track the cheapest stations across all major cities so you always know where to fill up.
+> **Live data — Last updated: 28 June 2026** | Source: [Cyprus Government Fuel Observatory](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices)
 
-> **Last updated: 28 June 2026**
+<!-- FUEL_PRICES_START -->
 
-## Current Average Prices (per litre)
+## Live Prices — Unleaded 95
 
-| Fuel Type | Average Price | Cheapest Found |
-|-----------|--------------|----------------|
-| Unleaded 95 | €1.48 | €1.38 |
-| Unleaded 98 | €1.61 | €1.51 |
-| Diesel | €1.42 | €1.34 |
-| LPG | €0.71 | €0.65 |
+> Data from Cyprus Government Petroleum Prices Portal — updated 28 June 2026
 
-## Cheapest Stations by City
+| Metric | Price |
+|--------|-------|
+| Average (island-wide) | €1.521/L |
+| Cheapest | €1.428/L |
+| Most Expensive | €1.639/L |
 
-### Nicosia
+**Price spread:** €0.211/litre — filling a 50L tank at the cheapest saves **€10.55** vs the most expensive.
 
-| Station | Brand | Unleaded 95 | Diesel | Area |
-|---------|-------|-------------|--------|------|
-| **EKO Latsia** | EKO | €1.38 | €1.34 | Latsia Industrial Zone |
-| **Petrolina Strovolos** | Petrolina | €1.40 | €1.36 | Makarios Ave, Strovolos |
-| **Lukoil Aglandjia** | Lukoil | €1.41 | €1.37 | Aglandjia |
-| **BP Engomi** | BP | €1.43 | €1.39 | Engomi |
-| **Shell Nicosia Centre** | Shell | €1.46 | €1.42 | City centre |
+## 7 Cheapest Stations Right Now (Unleaded 95)
 
-### Limassol
+| Brand | Address | Area | Price |
+|-------|---------|------|-------|
+| PETROLINA | [Γιάννου Κρανιδιώτη 247](https://www.google.com/maps?q=35.1614,33.3596) | Nicosia | €1.428 |
+| SHELL | [Τσερίου 36, Νήσου](https://www.google.com/maps?q=35.1661,33.3285) | Nicosia | €1.428 |
+| SHELL | [Λεωφ. Αμμοχώστου 57](https://www.google.com/maps?q=35.1657,33.3751) | Nicosia | €1.428 |
+| ENI | [Λεωφ. Λάρνακος 125](https://www.google.com/maps?q=35.1497,33.3963) | Nicosia | €1.428 |
+| FILL N GO | [Λεωφ. Λάρνακος 184](https://www.google.com/maps?q=35.1463,33.4012) | Nicosia | €1.428 |
+| FILL N GO | [Σταδίου 9](https://www.google.com/maps?q=35.1551,33.3623) | Nicosia | €1.428 |
+| PETROLINA | [Λεωφ. Λάρνακος 5](https://www.google.com/maps?q=35.1574,33.3843) | Nicosia | €1.428 |
 
-| Station | Brand | Unleaded 95 | Diesel |
-|---------|-------|-------------|--------|
-| **EKO Limassol** | EKO | €1.39 | €1.35 |
-| **Petrolina Mesa Geitonia** | Petrolina | €1.41 | €1.36 |
-| **Lukoil Polemidia** | Lukoil | €1.42 | €1.37 |
+> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — official government data
 
-### Larnaca
-
-| Station | Brand | Unleaded 95 | Diesel |
-|---------|-------|-------------|--------|
-| **EKO Larnaca** | EKO | €1.38 | €1.34 |
-| **Petrolina Larnaca** | Petrolina | €1.40 | €1.36 |
-
-### Paphos
-
-| Station | Brand | Unleaded 95 | Diesel |
-|---------|-------|-------------|--------|
-| **EKO Paphos** | EKO | €1.40 | €1.36 |
-| **Petrolina Paphos** | Petrolina | €1.42 | €1.38 |
-
-## Tips to Save on Fuel in Cyprus
-
-- **Fill up Monday–Tuesday** — prices often rise mid-week after the weekly government price update
-- **EKO and Petrolina loyalty cards** give 2–4 cents/litre back on purchases
-- **Avoid motorway stations** — they typically charge 5–8 cents more per litre
-- **LPG** is available at select stations and is by far the cheapest option if your car supports it
-
-> Prices are approximate and change weekly. Sources: Cyprus Energy Regulatory Authority (CERA) weekly bulletin and spot checks. Updated every Monday.
+<!-- FUEL_PRICES_END -->
