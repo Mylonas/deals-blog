@@ -106,6 +106,8 @@ export default function FuelTable({ data }: { data: FuelData }) {
     setGeoState("idle");
   }, []);
 
+  const SHOW = 10;
+
   const stations = useMemo(() => {
     const all = data.fuels[fuel].stations;
 
@@ -119,12 +121,12 @@ export default function FuelTable({ data }: { data: FuelData }) {
         }))
         .sort((a, b) => a.distance - b.distance);
       const withoutCoords = all.filter((s) => s.lat === null || s.lng === null);
-      return [...withDist, ...withoutCoords];
+      return [...withDist, ...withoutCoords].slice(0, SHOW);
     }
 
-    // Otherwise filter by district
-    if (district === "All") return all;
-    return all.filter((s) => getDistrict(s.district) === district);
+    // Otherwise filter by district, show top SHOW cheapest
+    const filtered = district === "All" ? all : all.filter((s) => getDistrict(s.district) === district);
+    return filtered.slice(0, SHOW);
   }, [fuel, district, data, userCoords]);
 
   const isNearMe = geoState === "active" && userCoords !== null;
@@ -214,8 +216,8 @@ export default function FuelTable({ data }: { data: FuelData }) {
         <>
           <p className="text-xs text-gray-400 mb-3">
             {isNearMe
-              ? `Showing ${stations.length} stations — nearest first`
-              : `Showing ${stations.length} station${stations.length !== 1 ? "s" : ""} — cheapest first`}
+              ? `Showing ${stations.length} nearest stations`
+              : `Showing ${stations.length} cheapest stations${district !== "All" ? ` in ${district}` : ""}`}
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
