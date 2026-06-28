@@ -72,7 +72,6 @@ export default function HomeEl() {
             ))}
           </div>
         </div>
-      </div>
 
       {posts.length === 0 && (
         <p className="text-gray-400 text-center py-20">Δεν υπάρχουν αναρτήσεις ακόμα.</p>
