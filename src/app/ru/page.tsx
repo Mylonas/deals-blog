@@ -31,14 +31,27 @@ export default function HomeRu() {
         <p className="text-gray-500">Отобранные сравнения, чтобы вы не переплачивали.</p>
       </div>
 
-      {pinned.length > 0 && (
-        <div className="mb-8">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-lg">📌</span>
-            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Закреплено</h2>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2">
-            {pinned.map((post) => (
+      <div className="mb-8">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-lg">📌</span>
+          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Закреплено</h2>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2">
+          <Link
+            href="/ru/posts/supermarket-price-watch"
+            className="bg-amber-50 rounded-2xl border border-amber-200 p-5 hover:shadow-md hover:border-blue-300 transition-all group"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">Еда и напитки</span>
+              <span className="text-xs text-amber-600 font-semibold">В РЕАЛЬНОМ ВРЕМЕНИ ●</span>
+            </div>
+            <h2 className="text-lg font-bold mb-2 group-hover:text-blue-600 transition-colors leading-snug">
+              Мониторинг цен в супермаркетах — 10 основных продуктов
+            </h2>
+            <p className="text-sm text-gray-500 line-clamp-3">Актуальные цены на 10 базовых товаров во всех крупных супермаркетах Кипра с платформы e-Kalathi. Обновляется каждый час.</p>
+            <div className="mt-4 text-xs font-medium text-blue-500 group-hover:underline">Читать далее →</div>
+          </Link>
+          {pinned.map((post) => (
               <Link
                 key={post.slug}
                 href={`/ru/posts/${post.slug}`}
@@ -59,7 +72,7 @@ export default function HomeRu() {
             ))}
           </div>
         </div>
-      )}
+      </div>
 
       {posts.length === 0 && (
         <p className="text-gray-400 text-center py-20">Публикаций пока нет.</p>
