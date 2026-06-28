@@ -1,62 +1,59 @@
 ---
-title: "Cheapest Petrol Stations in Cyprus — Weekly Tracker (June 2026)"
+title: "Cheapest Petrol Stations in Cyprus — Live Weekly Tracker"
 date: "2026-06-28"
 category: "Fuel"
-summary: "Weekly updated comparison of unleaded 95, diesel, and premium fuel prices across Cyprus petrol stations. Find the cheapest fuel near you."
+summary: "Live comparison of unleaded 95, diesel, and LPG prices across 313 petrol stations in Cyprus. Updated weekly from the official Cyprus government fuel observatory."
+pinned: true
 ---
 
-Fuel prices in Cyprus change weekly. We track the cheapest stations across all major cities so you always know where to fill up.
+> **Live data — Last updated: 28 June 2026** | Source: [CyFuel](https://www.cyfuel.online) & [Cyprus Government Fuel Observatory](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices)
 
-> **Last updated: 28 June 2026**
+## Current Prices at a Glance
 
-## Current Average Prices (per litre)
+| Fuel Type | Average Price | Cheapest Found | Most Expensive |
+|-----------|--------------|----------------|----------------|
+| Unleaded 95 | €1.521/litre | €1.428/litre | €1.639/litre |
+| Diesel | €1.688/litre | €1.590/litre | €1.799/litre |
+| LPG | €0.710/litre | €0.650/litre | €0.780/litre |
 
-| Fuel Type | Average Price | Cheapest Found |
-|-----------|--------------|----------------|
-| Unleaded 95 | €1.48 | €1.38 |
-| Unleaded 98 | €1.61 | €1.51 |
-| Diesel | €1.42 | €1.34 |
-| LPG | €0.71 | €0.65 |
+**Price spread:** €0.211/litre between cheapest and most expensive unleaded 95 — filling a 50L tank at the cheapest saves **€10.55** vs the most expensive.
 
-## Cheapest Stations by City
+<!-- FUEL_PRICES_START -->
 
-### Nicosia
+## Cheapest Stations Right Now (Unleaded 95)
 
-| Station | Brand | Unleaded 95 | Diesel | Area |
-|---------|-------|-------------|--------|------|
-| **EKO Latsia** | EKO | €1.38 | €1.34 | Latsia Industrial Zone |
-| **Petrolina Strovolos** | Petrolina | €1.40 | €1.36 | Makarios Ave, Strovolos |
-| **Lukoil Aglandjia** | Lukoil | €1.41 | €1.37 | Aglandjia |
-| **BP Engomi** | BP | €1.43 | €1.39 | Engomi |
-| **Shell Nicosia Centre** | Shell | €1.46 | €1.42 | City centre |
+| Station | Brand | Price | Address | Region |
+|---------|-------|-------|---------|--------|
+| C.A.R.S Petrol Station | PETROLINA | €1.428 | Γιάννου Κρανιδιώτη 247 | Nicosia |
+| Coral Energy Products | SHELL | €1.428 | Τσερίου 36, Νήσου | Nicosia |
+| Coral Energy Products | SHELL | €1.428 | Λεωφ. Αμμοχώστου 57 | Nicosia |
+| Costas Savvides | ENI | €1.428 | Λεωφ. Λάρνακος 125 | Nicosia |
+| KNM CityOil Limited | FILL N GO | €1.428 | Λεωφ. Λάρνακος 184 | Nicosia |
+| M.G. Petrol Services | FILL N GO | €1.428 | Σταδίου 9 | Nicosia |
+| Δ. Κτωρίδης & Υιός | PETROLINA | €1.428 | Λεωφ. Λάρνακος 5 | Nicosia |
 
-### Limassol
+## Cheapest Price by Region (Unleaded 95)
 
-| Station | Brand | Unleaded 95 | Diesel |
-|---------|-------|-------------|--------|
-| **EKO Limassol** | EKO | €1.39 | €1.35 |
-| **Petrolina Mesa Geitonia** | Petrolina | €1.41 | €1.36 |
-| **Lukoil Polemidia** | Lukoil | €1.42 | €1.37 |
+| Region | Cheapest | Most Expensive | Spread |
+|--------|----------|---------------|--------|
+| Nicosia | €1.428 | €1.639 | €0.211 |
+| Larnaca | €1.429 | €1.509 | €0.080 |
+| Limassol | €1.490 | €1.639 | €0.149 |
+| Ammochostos | €1.497 | €1.527 | €0.030 |
+| Paphos | €1.497 | €1.527 | €0.030 |
 
-### Larnaca
-
-| Station | Brand | Unleaded 95 | Diesel |
-|---------|-------|-------------|--------|
-| **EKO Larnaca** | EKO | €1.38 | €1.34 |
-| **Petrolina Larnaca** | Petrolina | €1.40 | €1.36 |
-
-### Paphos
-
-| Station | Brand | Unleaded 95 | Diesel |
-|---------|-------|-------------|--------|
-| **EKO Paphos** | EKO | €1.40 | €1.36 |
-| **Petrolina Paphos** | Petrolina | €1.42 | €1.38 |
+<!-- FUEL_PRICES_END -->
 
 ## Tips to Save on Fuel in Cyprus
 
-- **Fill up Monday–Tuesday** — prices often rise mid-week after the weekly government price update
-- **EKO and Petrolina loyalty cards** give 2–4 cents/litre back on purchases
-- **Avoid motorway stations** — they typically charge 5–8 cents more per litre
-- **LPG** is available at select stations and is by far the cheapest option if your car supports it
+- **Fill up Monday–Tuesday** — prices often rise mid-week after the weekly government update
+- **Nicosia has the cheapest stations** — and the widest price spread, so it's worth shopping around
+- **EKO and Petrolina loyalty cards** give 2–4 cents/litre back
+- **Avoid motorway stations** — typically 5–8 cents more per litre
+- **LPG is ~53% cheaper than petrol** — worth considering if your car supports it
 
-> Prices are approximate and change weekly. Sources: Cyprus Energy Regulatory Authority (CERA) weekly bulletin and spot checks. Updated every Monday.
+## How We Track Prices
+
+Prices are sourced from the **Cyprus Consumer Protection Service Fuel Price Observatory** (official government data) and cross-referenced with [CyFuel.online](https://www.cyfuel.online) which tracks 313+ stations in real time. This post is updated automatically every Monday.
+
+> Data covers 313 stations across Cyprus. Last automated update: 28 June 2026.

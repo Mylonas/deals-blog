@@ -17,6 +17,7 @@ export type PostMeta = {
   category: string;
   summary: string;
   image?: string;
+  pinned?: boolean;
 };
 
 export type Post = PostMeta & { content: string };
@@ -32,7 +33,11 @@ export function getAllPosts(lang: Lang = "en"): PostMeta[] {
       const { data } = matter(raw);
       return { slug, ...(data as Omit<PostMeta, "slug">) };
     })
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a, b) => {
+      if (a.pinned && !b.pinned) return -1;
+      if (!a.pinned && b.pinned) return 1;
+      return a.date < b.date ? 1 : -1;
+    });
 }
 
 export async function getPost(slug: string, lang: Lang = "en"): Promise<Post> {

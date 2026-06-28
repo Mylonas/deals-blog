@@ -7,6 +7,7 @@ const categoryColors: Record<string, string> = {
   "Топливо": "bg-yellow-100 text-yellow-700",
   "Досуг и спорт": "bg-green-100 text-green-700",
   "Услуги": "bg-blue-100 text-blue-700",
+  "Студенческие скидки": "bg-indigo-100 text-indigo-700",
 };
 
 function CategoryBadge({ category }: { category: string }) {
@@ -20,6 +21,8 @@ function CategoryBadge({ category }: { category: string }) {
 
 export default function HomeRu() {
   const posts = getAllPosts("ru");
+  const pinned = posts.filter((p) => p.pinned);
+  const regular = posts.filter((p) => !p.pinned);
 
   return (
     <div>
@@ -28,12 +31,42 @@ export default function HomeRu() {
         <p className="text-gray-500">Отобранные сравнения, чтобы вы не переплачивали.</p>
       </div>
 
+      {pinned.length > 0 && (
+        <div className="mb-8">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-lg">📌</span>
+            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Закреплено</h2>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {pinned.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/ru/posts/${post.slug}`}
+                className="bg-amber-50 rounded-2xl border border-amber-200 p-5 hover:shadow-md hover:border-blue-300 transition-all group"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <CategoryBadge category={post.category} />
+                  <span className="text-xs text-amber-600 font-semibold">В РЕАЛЬНОМ ВРЕМЕНИ ●</span>
+                </div>
+                <h2 className="text-lg font-bold mb-2 group-hover:text-blue-600 transition-colors leading-snug">
+                  {post.title}
+                </h2>
+                <p className="text-sm text-gray-500 line-clamp-3">{post.summary}</p>
+                <div className="mt-4 text-xs font-medium text-blue-500 group-hover:underline">
+                  Читать далее →
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
       {posts.length === 0 && (
         <p className="text-gray-400 text-center py-20">Публикаций пока нет.</p>
       )}
 
       <div className="grid gap-5 sm:grid-cols-2">
-        {posts.map((post) => (
+        {regular.map((post) => (
           <Link
             key={post.slug}
             href={`/ru/posts/${post.slug}`}
