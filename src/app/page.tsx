@@ -74,7 +74,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </div>
 
       {posts.length === 0 && (
         <p className="text-gray-400 text-center py-20">No posts yet.</p>
