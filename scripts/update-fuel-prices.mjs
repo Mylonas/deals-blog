@@ -10,6 +10,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const GOV_URL = "https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices";
+const JSON_OUT = path.join(ROOT, "src", "data", "fuel-prices.json");
 
 const FUEL_TYPES = [
   { id: "1", label95En: "Unleaded 95", label95El: "Αμόλυβδη 95", label95Ru: "АИ-95" },
@@ -58,7 +59,7 @@ async function fetchPricesForType(typeId, token, cookies) {
   return res.text();
 }
 
-function extractStations(html) {
+function extractStations(html, limit = 7) {
   const rows = [];
   const trRegex = /<tr>([\s\S]*?)<\/tr>/gi;
   let m;
@@ -79,7 +80,7 @@ function extractStations(html) {
       }
     }
   }
-  return rows.sort((a, b) => a.price - b.price).slice(0, 7);
+  return rows.sort((a, b) => a.price - b.price).slice(0, limit);
 }
 
 // ── block builders per language ───────────────────────────────────────────────
@@ -197,13 +198,25 @@ async function main() {
     const { cookies, token } = await fetchGovPage();
     console.log(`Fetching prices for ${fuel.label95En}...`);
     const html = await fetchPricesForType(fuel.id, token, cookies);
-    const stations = extractStations(html);
+    const stations = extractStations(html, 7);
+    const allStations = extractStations(html, 50);
 
-    // Extract min price from stations or fallback
     const min = stations.length > 0 ? stations[0].price : 0;
-    console.log(`  ${fuel.label95En}: ${stations.length} stations, cheapest €${min.toFixed(3)}`);
-    results.push({ stations, min });
+    console.log(`  ${fuel.label95En}: ${allStations.length} stations total, cheapest €${min.toFixed(3)}`);
+    results.push({ stations, allStations, min, fuelId: fuel.id, labelEn: fuel.label95En });
   }
+
+  // Write JSON for the interactive page
+  const jsonData = {
+    updatedAt: new Date().toISOString(),
+    fuels: {
+      "95":     { label: "Unleaded 95",  stations: results[0].allStations },
+      "98":     { label: "Unleaded 98",  stations: results[1].allStations },
+      "diesel": { label: "Diesel",       stations: results[2].allStations },
+    },
+  };
+  fs.writeFileSync(JSON_OUT, JSON.stringify(jsonData, null, 2) + "\n");
+  console.log(`Wrote fuel JSON: ${JSON_OUT}`);
 
   const today = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
   const todayEl = new Date().toLocaleDateString("el-GR", { day: "numeric", month: "long", year: "numeric" });
