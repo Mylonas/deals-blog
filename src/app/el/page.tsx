@@ -2,13 +2,11 @@ import { getAllPosts } from "@/lib/posts";
 import Link from "next/link";
 
 const categoryColors: Record<string, string> = {
-  Food: "bg-orange-100 text-orange-700",
-  "Food & Drink": "bg-orange-100 text-orange-700",
-  Fuel: "bg-yellow-100 text-yellow-700",
-  "Entertainment & Leisure": "bg-green-100 text-green-700",
-  "Utilities & Services": "bg-blue-100 text-blue-700",
-  Tech: "bg-blue-100 text-blue-700",
-  Shopping: "bg-purple-100 text-purple-700",
+  "Φαγητό": "bg-orange-100 text-orange-700",
+  "Φαγητό & Ποτό": "bg-orange-100 text-orange-700",
+  "Καύσιμα": "bg-yellow-100 text-yellow-700",
+  "Ψυχαγωγία & Αθλητισμός": "bg-green-100 text-green-700",
+  "Υπηρεσίες": "bg-blue-100 text-blue-700",
 };
 
 function CategoryBadge({ category }: { category: string }) {
@@ -20,31 +18,31 @@ function CategoryBadge({ category }: { category: string }) {
   );
 }
 
-export default function Home() {
-  const posts = getAllPosts("en");
+export default function HomeEl() {
+  const posts = getAllPosts("el");
 
   return (
     <div>
       <div className="mb-10">
-        <h1 className="text-3xl font-bold mb-2">Latest Deals</h1>
-        <p className="text-gray-500">Hand-picked comparisons so you don&apos;t overpay.</p>
+        <h1 className="text-3xl font-bold mb-2">Τελευταίες Προσφορές</h1>
+        <p className="text-gray-500">Επιλεγμένες συγκρίσεις για να μην πληρώνετε παραπάνω.</p>
       </div>
 
       {posts.length === 0 && (
-        <p className="text-gray-400 text-center py-20">No posts yet.</p>
+        <p className="text-gray-400 text-center py-20">Δεν υπάρχουν αναρτήσεις ακόμα.</p>
       )}
 
       <div className="grid gap-5 sm:grid-cols-2">
         {posts.map((post) => (
           <Link
             key={post.slug}
-            href={`/posts/${post.slug}`}
+            href={`/el/posts/${post.slug}`}
             className="bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-md hover:border-blue-300 transition-all group"
           >
             <div className="flex items-center justify-between mb-3">
               <CategoryBadge category={post.category} />
               <time className="text-xs text-gray-400">
-                {new Date(post.date).toLocaleDateString("en-GB", {
+                {new Date(post.date).toLocaleDateString("el-GR", {
                   day: "numeric",
                   month: "short",
                   year: "numeric",
@@ -56,7 +54,7 @@ export default function Home() {
             </h2>
             <p className="text-sm text-gray-500 line-clamp-3">{post.summary}</p>
             <div className="mt-4 text-xs font-medium text-blue-500 group-hover:underline">
-              Read more →
+              Διαβάστε περισσότερα →
             </div>
           </Link>
         ))}

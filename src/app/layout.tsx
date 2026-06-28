@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import LangSwitcher from "@/components/LangSwitcher";
 
 const siteName = process.env.NEXT_PUBLIC_SITE_NAME ?? "DealsHub";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -21,9 +22,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span className="text-2xl">🏷️</span>
               <span className="text-xl font-bold tracking-tight">DealsHub</span>
             </a>
-            <span className="text-sm text-gray-500 hidden sm:block">
-              Best deals, compared &amp; ranked
-            </span>
+            <div className="flex items-center gap-4">
+              <span className="text-sm text-gray-500 hidden sm:block">
+                Best deals, compared &amp; ranked
+              </span>
+              <LangSwitcher />
+            </div>
           </div>
         </header>
         <main className="max-w-4xl mx-auto px-4 py-10">{children}</main>

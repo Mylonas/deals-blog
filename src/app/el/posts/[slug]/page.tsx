@@ -3,20 +3,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 const categoryColors: Record<string, string> = {
-  Food: "bg-orange-100 text-orange-700",
-  "Food & Drink": "bg-orange-100 text-orange-700",
-  Fuel: "bg-yellow-100 text-yellow-700",
-  "Entertainment & Leisure": "bg-green-100 text-green-700",
-  "Utilities & Services": "bg-blue-100 text-blue-700",
-  Tech: "bg-blue-100 text-blue-700",
-  Shopping: "bg-purple-100 text-purple-700",
+  "Φαγητό": "bg-orange-100 text-orange-700",
+  "Φαγητό & Ποτό": "bg-orange-100 text-orange-700",
+  "Καύσιμα": "bg-yellow-100 text-yellow-700",
+  "Ψυχαγωγία & Αθλητισμός": "bg-green-100 text-green-700",
+  "Υπηρεσίες": "bg-blue-100 text-blue-700",
 };
 
 export async function generateStaticParams() {
-  return getAllPosts("en").map((p) => ({ slug: p.slug }));
+  return getAllPosts("el").map((p) => ({ slug: p.slug }));
 }
 
-export default async function PostPage({
+export default async function PostPageEl({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -25,7 +23,7 @@ export default async function PostPage({
 
   let post;
   try {
-    post = await getPost(slug, "en");
+    post = await getPost(slug, "el");
   } catch {
     notFound();
   }
@@ -34,8 +32,8 @@ export default async function PostPage({
 
   return (
     <article>
-      <Link href="/" className="text-sm text-blue-500 hover:underline mb-6 inline-block">
-        ← Back to all deals
+      <Link href="/el/" className="text-sm text-blue-500 hover:underline mb-6 inline-block">
+        ← Πίσω σε όλες τις προσφορές
       </Link>
 
       <header className="mb-8">
@@ -44,7 +42,7 @@ export default async function PostPage({
             {post.category}
           </span>
           <time className="text-sm text-gray-400">
-            {new Date(post.date).toLocaleDateString("en-GB", {
+            {new Date(post.date).toLocaleDateString("el-GR", {
               day: "numeric",
               month: "long",
               year: "numeric",
