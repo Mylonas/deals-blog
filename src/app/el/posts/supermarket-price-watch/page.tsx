@@ -11,10 +11,11 @@ export const metadata = {
 export default function SupermarketPriceWatchEL() {
   return (
     <article className="max-w-2xl">
-      <div className="mb-6">
+      <div className="mb-6 flex items-center gap-3">
         <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
           Φαγητό &amp; Ποτό
         </span>
+        <span className="text-xs font-semibold text-amber-600">ΖΩΝΤΑΝΑ ●</span>
       </div>
       <h1 className="text-3xl font-bold mb-3 leading-tight">
         Παρακολούθηση Τιμών Σούπερ Μάρκετ — 10 Βασικά Προϊόντα

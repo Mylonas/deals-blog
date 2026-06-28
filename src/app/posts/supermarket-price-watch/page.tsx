@@ -11,10 +11,11 @@ export const metadata = {
 export default function SupermarketPriceWatchEN() {
   return (
     <article className="max-w-2xl">
-      <div className="mb-6">
+      <div className="mb-6 flex items-center gap-3">
         <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
           Food &amp; Drink
         </span>
+        <span className="text-xs font-semibold text-amber-600">LIVE ●</span>
       </div>
       <h1 className="text-3xl font-bold mb-3 leading-tight">
         Cyprus Supermarket Price Watch — 10 Household Staples
