@@ -70,29 +70,33 @@ function extractSummary(html) {
 }
 
 function extractStations(html) {
-  // Parse table rows from the stations table
   const rows = [];
   const trRegex = /<tr>([\s\S]*?)<\/tr>/gi;
   let m;
   while ((m = trRegex.exec(html)) !== null) {
     const row = m[1];
+    // Extract coordinates from the map link before stripping tags
+    const coordMatch = row.match(/coordinates=([0-9.]+)%2C([0-9.]+)/);
     const cells = [...row.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((c) =>
       c[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
     );
     if (cells.length >= 5) {
       const price = parseFloat(cells[4]);
       if (!isNaN(price) && price > 1 && price < 3) {
+        const address = cells[2].split("τηλ:")[0].trim();
+        const mapsUrl = coordMatch
+          ? `https://www.google.com/maps?q=${coordMatch[1]},${coordMatch[2]}`
+          : `https://www.google.com/maps/search/${encodeURIComponent(address)}`;
         rows.push({
           brand: cells[0],
-          name: cells[1],
-          address: cells[2].split("τηλ:")[0].trim(),
+          address,
           district: cells[3],
           price,
+          mapsUrl,
         });
       }
     }
   }
-  // Sort by price ascending, return cheapest 7
   return rows.sort((a, b) => a.price - b.price).slice(0, 7);
 }
 
@@ -105,9 +109,9 @@ function buildPricesBlock(prices, stations) {
 
   let stationRows = stations.length > 0
     ? stations.map((s) =>
-        `| ${s.brand} | ${s.address.substring(0, 50)} | ${s.district} | €${s.price.toFixed(3)} |`
+        `| ${s.brand} | [${s.address.substring(0, 50)}](${s.mapsUrl}) | ${s.district} | €${s.price.toFixed(3)} |`
       ).join("\n")
-    : `| — | See government portal for live station list | All | €${prices.min.toFixed(3)} |`;
+    : `| — | [View on government portal](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) | All | €${prices.min.toFixed(3)} |`;
 
   return `
 ## Live Prices — Unleaded 95
