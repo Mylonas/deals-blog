@@ -33,14 +33,27 @@ export default function Home() {
         <p className="text-gray-500">Hand-picked comparisons so you don&apos;t overpay.</p>
       </div>
 
-      {pinned.length > 0 && (
-        <div className="mb-8">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-lg">📌</span>
-            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Pinned</h2>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2">
-            {pinned.map((post) => (
+      <div className="mb-8">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-lg">📌</span>
+          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Pinned</h2>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2">
+          <Link
+            href="/posts/supermarket-price-watch"
+            className="bg-amber-50 rounded-2xl border border-amber-200 p-5 hover:shadow-md hover:border-blue-300 transition-all group"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">Food &amp; Drink</span>
+              <span className="text-xs text-amber-600 font-semibold">LIVE ●</span>
+            </div>
+            <h2 className="text-lg font-bold mb-2 group-hover:text-blue-600 transition-colors leading-snug">
+              Cyprus Supermarket Price Watch — 10 Household Staples
+            </h2>
+            <p className="text-sm text-gray-500 line-clamp-3">Live prices for the 10 most-bought household products in Cyprus, sourced from the government&apos;s e-Kalathi platform. Updated hourly.</p>
+            <div className="mt-4 text-xs font-medium text-blue-500 group-hover:underline">Read more →</div>
+          </Link>
+          {pinned.map((post) => (
               <Link
                 key={post.slug}
                 href={`/posts/${post.slug}`}
@@ -61,7 +74,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      )}
+      </div>
 
       {posts.length === 0 && (
         <p className="text-gray-400 text-center py-20">No posts yet.</p>
