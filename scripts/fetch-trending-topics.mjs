@@ -1,12 +1,15 @@
 /**
- * Fetches trending topics relevant to Cyprus from multiple RSS sources,
+ * Fetches trending topics relevant to Cyprus from multiple sources,
  * categorises them by deal type, and optionally generates post ideas via Claude API.
  *
- * Sources:
- *  - Google News RSS (Cyprus)
- *  - Cyprus Mail
- *  - Philenews
- *  - Sigmalive
+ * Always-on sources:
+ *  - Google News RSS (Cyprus, Economy, Food)
+ *  - Cyprus Mail, Philenews, Sigmalive
+ *  - Wikipedia trending pages (no key needed)
+ *
+ * Optional sources (enabled via GitHub secrets):
+ *  - YouTube trending Cyprus (YOUTUBE_API_KEY)
+ *  - Reddit r/cyprus (REDDIT_CLIENT_ID + REDDIT_CLIENT_SECRET)
  *
  * Writes to src/data/trending-topics.json
  */
@@ -261,6 +264,109 @@ function guessDevice(text) {
   return "Smartphone";
 }
 
+// ── Wikipedia trending ────────────────────────────────────────────────────────
+
+async function fetchWikipediaTrending() {
+  try {
+    const yesterday = new Date(Date.now() - 864e5);
+    const yyyy = yesterday.getFullYear();
+    const mm = String(yesterday.getMonth() + 1).padStart(2, "0");
+    const dd = String(yesterday.getDate()).padStart(2, "0");
+    const url = `https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/${yyyy}/${mm}/${dd}`;
+    const res = await fetch(url, {
+      headers: { "User-Agent": "deals-blog-trends/1.0 (https://deals-blog.pages.dev)" },
+      signal: AbortSignal.timeout(12000),
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    const articles = data?.items?.[0]?.articles || [];
+
+    // Filter out meta pages (Main_Page, Special:*, Wikipedia:*, etc.)
+    const SKIP = /^(Main_Page|Special:|Wikipedia:|Help:|Template:|Portal:|File:|Category:|-)/i;
+    return articles
+      .filter((a) => !SKIP.test(a.article))
+      .slice(0, 30)
+      .map((a) => ({
+        title: a.article.replace(/_/g, " "),
+        link: `https://en.wikipedia.org/wiki/${a.article}`,
+        pubDate: new Date().toUTCString(),
+        source: "Wikipedia Trending",
+        views: a.views,
+      }));
+  } catch (e) {
+    console.warn(`Wikipedia trending failed: ${e.message}`);
+    return [];
+  }
+}
+
+// ── YouTube trending Cyprus ───────────────────────────────────────────────────
+
+async function fetchYouTubeTrending(apiKey) {
+  if (!apiKey) return [];
+  try {
+    const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=CY&maxResults=20&key=${apiKey}`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
+    if (!res.ok) { console.warn(`YouTube API error: ${res.status}`); return []; }
+    const data = await res.json();
+    return (data.items || []).map((v) => ({
+      title: v.snippet.title,
+      link: `https://www.youtube.com/watch?v=${v.id}`,
+      pubDate: v.snippet.publishedAt,
+      source: "YouTube Trending CY",
+      description: v.snippet.description?.slice(0, 200) || "",
+    }));
+  } catch (e) {
+    console.warn(`YouTube trending failed: ${e.message}`);
+    return [];
+  }
+}
+
+// ── Reddit r/cyprus ───────────────────────────────────────────────────────────
+
+async function fetchRedditToken(clientId, clientSecret) {
+  const credentials = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
+  const res = await fetch("https://www.reddit.com/api/v1/access_token", {
+    method: "POST",
+    headers: {
+      Authorization: `Basic ${credentials}`,
+      "User-Agent": "deals-blog-trends/1.0 by deals-blog",
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: "grant_type=client_credentials",
+    signal: AbortSignal.timeout(12000),
+  });
+  if (!res.ok) throw new Error(`Reddit auth failed: ${res.status}`);
+  const data = await res.json();
+  return data.access_token;
+}
+
+async function fetchRedditCyprus(clientId, clientSecret) {
+  if (!clientId || !clientSecret) return [];
+  try {
+    const token = await fetchRedditToken(clientId, clientSecret);
+    const res = await fetch("https://oauth.reddit.com/r/cyprus/hot?limit=25", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "User-Agent": "deals-blog-trends/1.0 by deals-blog",
+      },
+      signal: AbortSignal.timeout(12000),
+    });
+    if (!res.ok) { console.warn(`Reddit fetch error: ${res.status}`); return []; }
+    const data = await res.json();
+    return (data?.data?.children || []).map((p) => ({
+      title: p.data.title,
+      link: `https://www.reddit.com${p.data.permalink}`,
+      pubDate: new Date(p.data.created_utc * 1000).toUTCString(),
+      source: "Reddit r/cyprus",
+      description: p.data.selftext?.slice(0, 200) || "",
+      score: p.data.score,
+    }));
+  } catch (e) {
+    console.warn(`Reddit r/cyprus failed: ${e.message}`);
+    return [];
+  }
+}
+
 // ── optional Claude API suggestions ──────────────────────────────────────────
 
 async function generateAiSuggestions(headlines, apiKey) {
@@ -305,11 +411,40 @@ Only output the JSON array, nothing else.`;
 async function main() {
   console.log("Fetching trending topics...");
 
+  const youtubeKey   = process.env.YOUTUBE_API_KEY;
+  const redditId     = process.env.REDDIT_CLIENT_ID;
+  const redditSecret = process.env.REDDIT_CLIENT_SECRET;
+
   const allItems = [];
+
+  // RSS sources
   for (const source of SOURCES) {
     const items = await fetchRSS(source);
     console.log(`  ${source.name}: ${items.length} items`);
     allItems.push(...items);
+  }
+
+  // Wikipedia (always on)
+  const wikiItems = await fetchWikipediaTrending();
+  console.log(`  Wikipedia Trending: ${wikiItems.length} items`);
+  allItems.push(...wikiItems);
+
+  // YouTube (optional)
+  if (youtubeKey) {
+    const ytItems = await fetchYouTubeTrending(youtubeKey);
+    console.log(`  YouTube Trending CY: ${ytItems.length} items`);
+    allItems.push(...ytItems);
+  } else {
+    console.log("  YouTube Trending CY: skipped (no YOUTUBE_API_KEY)");
+  }
+
+  // Reddit (optional)
+  if (redditId && redditSecret) {
+    const redditItems = await fetchRedditCyprus(redditId, redditSecret);
+    console.log(`  Reddit r/cyprus: ${redditItems.length} items`);
+    allItems.push(...redditItems);
+  } else {
+    console.log("  Reddit r/cyprus: skipped (no REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET)");
   }
 
   // Deduplicate by title similarity
@@ -369,13 +504,20 @@ async function main() {
   const aiSuggestions = await generateAiSuggestions(allHeadlines, apiKey);
   if (aiSuggestions) console.log(`  Claude generated ${aiSuggestions.length} AI suggestions`);
 
+  const activeSources = [
+    ...SOURCES.map((s) => s.name),
+    "Wikipedia Trending",
+    ...(youtubeKey ? ["YouTube Trending CY"] : []),
+    ...(redditId && redditSecret ? ["Reddit r/cyprus"] : []),
+  ];
+
   const output = {
     updatedAt: new Date().toISOString(),
     totalHeadlines: unique.length,
     categorisedHeadlines: categorised.length,
     trends,
     aiSuggestions: aiSuggestions || [],
-    sources: SOURCES.map((s) => s.name),
+    sources: activeSources,
   };
 
   fs.writeFileSync(OUT, JSON.stringify(output, null, 2) + "\n");
