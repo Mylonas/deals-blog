@@ -2,8 +2,8 @@ name: Update Fuel Prices
 
 on:
   schedule:
-    # Every Monday at 07:00 UTC (09:00 Cyprus time)
-    - cron: "0 7 * * 1"
+    # 4 times per day: 06:00, 12:00, 18:00, 00:00 UTC
+    - cron: "0 6,12,18,0 * * *"
   workflow_dispatch: # Allow manual trigger
 
 jobs:
@@ -36,5 +36,5 @@ jobs:
           git add posts/en/cheapest-petrol-stations-cyprus.md
           git add posts/el/cheapest-petrol-stations-cyprus.md
           git add posts/ru/cheapest-petrol-stations-cyprus.md
-          git commit -m "chore: auto-update fuel prices $(date +'%Y-%m-%d')"
+          git commit -m "chore: auto-update fuel prices $(date +'%Y-%m-%d %H:%M UTC')"
           git push origin master
