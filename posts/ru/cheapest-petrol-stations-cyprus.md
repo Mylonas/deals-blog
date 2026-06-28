@@ -14,26 +14,38 @@ pinned: true
 
 | Бренд | Адрес | Район | Цена |
 |-------|-------|-------|------|
-| PETROLINA | [📍 Open in Maps](https://www.google.com/maps?q=35.1614,33.3596) | Никосия | €1.428 |
-| SHELL | [📍 Open in Maps](https://www.google.com/maps?q=35.1661,33.3285) | Никосия | €1.428 |
-| SHELL | [📍 Open in Maps](https://www.google.com/maps?q=35.1657,33.3751) | Никосия | €1.428 |
-| ENI | [📍 Open in Maps](https://www.google.com/maps?q=35.1497,33.3963) | Никосия | €1.428 |
-| FILL N GO | [📍 Open in Maps](https://www.google.com/maps?q=35.1463,33.4012) | Никосия | €1.428 |
-| FILL N GO | [📍 Open in Maps](https://www.google.com/maps?q=35.1551,33.3623) | Никосия | €1.428 |
-| PETROLINA | [📍 Open in Maps](https://www.google.com/maps?q=35.1574,33.3843) | Никосия | €1.428 |
+| PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.428 |
+| SHELL | [Tσερίου 36 Νήσου (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps/search/T%CF%83%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2036%20%CE%9D%CE%AE%CF%83%CE%BF%CF%85%20(%CE%A7%CE%B1%CE%BB%CE%B5%CF%80%CE%B9%CE%B1%CE%BD%CE%AD%CF%82)%20%CE%A4.%CE%9A%202571) | Πέρα Χωριό Νήσου | €1.428 |
+| SHELL | [Λεωφ. Αμμοχώστου 57 Τ.Κ 1016](https://www.google.com/maps?q=35.170154,33.397329) | Παλλουριώτισσα | €1.428 |
+| ENI | [Λεωφ. Λάρνακος 125 Τ.Κ 1048](https://www.google.com/maps?q=35.1658,33.3822) | Παλλουριώτισσα | €1.428 |
+| FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9B%CE%AC%CF%81%CE%BD%CE%B1%CE%BA%CE%BF%CF%82%20184%20%CE%A4.%CE%9A%202103) | Αγλαντζιά | €1.428 |
+| FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.428 |
+| PETROLINA | [Λεωφ. Λάρνακος 5 Τ.Κ 1035](https://www.google.com/maps?q=35.1727,33.3726) | Λευκωσία | €1.428 |
 
 ## 7 самых дешёвых АЗС прямо сейчас — АИ-98
 
 | Бренд | Адрес | Район | Цена |
 |-------|-------|-------|------|
-| — | [Смотреть на портале](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) | Весь остров | €0.000 |
+| FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9B%CE%AC%CF%81%CE%BD%CE%B1%CE%BA%CE%BF%CF%82%20184%20%CE%A4.%CE%9A%202103) | Αγλαντζιά | €1.468 |
+| FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.468 |
+| EKO | [Ελευθερίας 27 Τ.Κ 7102](https://www.google.com/maps?q=34.935446,33.59272) | Αραδίππου | €1.498 |
+| EKO | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.927671,33.536158) | Καλό Χωριό Λάρνακας | €1.508 |
+| EKO | [Κωνσταντινουπόλεως 85 Τ.Κ 7041](https://www.google.com/maps?q=34.742285,33.326538) | Δρόμος Καλαβασού - Ζυγίου | €1.539 |
+| EKO | [Λεωφ. Λεμεσού 21, Πέρα Χωριό Τ.Κ 2572](https://www.google.com/maps?q=35.008912,33.39358) | Πέρα Χωριό Νήσου | €1.540 |
+| EKO | [Αρχ. Μακαρίου Γ΄ 42, Πέρα Χωριό Τ.Κ 2572](https://www.google.com/maps?q=35.015708,33.401891) | Πέρα Χωριό Νήσου | €1.540 |
 
 ## 7 самых дешёвых АЗС прямо сейчас — Дизель
 
 | Бренд | Адрес | Район | Цена |
 |-------|-------|-------|------|
-| — | [Смотреть на портале](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) | Весь остров | €0.000 |
+| PETROLINA | [Λεωφ. Ελλάδος 65 Τ.Κ 7101](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%BF%CF%82%2065%20%CE%A4.%CE%9A%207101) | Αραδίππου | €1.519 |
+| SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.519 |
+| SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.519 |
+| PETROLINA | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.92598333,33.54103333) | Καλό Χωριό Λάρνακας | €1.519 |
+| PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.538 |
+| SHELL | [Tσερίου 36 Νήσου (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps/search/T%CF%83%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2036%20%CE%9D%CE%AE%CF%83%CE%BF%CF%85%20(%CE%A7%CE%B1%CE%BB%CE%B5%CF%80%CE%B9%CE%B1%CE%BD%CE%AD%CF%82)%20%CE%A4.%CE%9A%202571) | Πέρα Χωριό Νήσου | €1.538 |
+| SHELL | [Λεωφ. Αμμοχώστου 57 Τ.Κ 1016](https://www.google.com/maps?q=35.170154,33.397329) | Παλλουριώτισσα | €1.538 |
 
-> Источник: [Правительственный портал цен на топливо Кипра](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — обновлено 28 июня 2026
+> Источник: [Правительственный портал цен на топливо Кипра](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — обновлено 28 июня 2026 г.
 
 <!-- FUEL_PRICES_END -->
