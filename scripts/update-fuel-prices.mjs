@@ -1,7 +1,7 @@
 /**
  * Fetches live fuel prices from the Cyprus government Petroleum Prices portal
  * https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices
- * Run via GitHub Actions 4 times per day.
+ * Fetches Unleaded 95, Unleaded 98, and Diesel. Run hourly via GitHub Actions.
  */
 import fs from "fs";
 import path from "path";
@@ -10,6 +10,12 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const GOV_URL = "https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices";
+
+const FUEL_TYPES = [
+  { id: "1", label95En: "Unleaded 95", label95El: "Αμόλυβδη 95", label95Ru: "АИ-95" },
+  { id: "2", label95En: "Unleaded 98", label95El: "Αμόλυβδη 98", label95Ru: "АИ-98" },
+  { id: "3", label95En: "Diesel",      label95El: "Πετρέλαιο Κίνησης", label95Ru: "Дизель" },
+];
 
 async function fetchGovPage() {
   const res = await fetch(GOV_URL, {
@@ -20,13 +26,13 @@ async function fetchGovPage() {
   const cookies = res.headers.get("set-cookie") || "";
   const tokenMatch = html.match(/name="__RequestVerificationToken"[^>]*value="([^"]+)"/);
   if (!tokenMatch) throw new Error("CSRF token not found");
-  return { html, cookies, token: tokenMatch[1] };
+  return { cookies, token: tokenMatch[1] };
 }
 
-async function fetchPrices(token, cookies) {
+async function fetchPricesForType(typeId, token, cookies) {
   const body = new URLSearchParams({
     "__RequestVerificationToken": token,
-    "Entity.PetroleumType": "1",   // Unleaded 95
+    "Entity.PetroleumType": typeId,
     "Entity.StationCityEnum": "All",
     "Entity.StationDistrict": "",
   });
@@ -43,158 +49,169 @@ async function fetchPrices(token, cookies) {
   return res.text();
 }
 
-function parseLabel(html, labelClass) {
-  // Matches: <label class="... displayLabelValue">1.520</label>
-  const re = new RegExp(
-    `<label[^>]+displayLabelValue[^>]*>\\s*([0-9]+\\.[0-9]+)\\s*<\\/label>`,
-    "g"
-  );
-  const matches = [...html.matchAll(re)].map((m) => parseFloat(m[1]));
-  return matches;
-}
-
-function extractSummary(html) {
-  const avg = parseFloat(
-    (html.match(/Μέση Τιμή[\s\S]*?displayLabelValue[^>]*>([0-9]+\.[0-9]+)/) || [])[1]
-  );
-  const min = parseFloat(
-    (html.match(/Φθηνότερη Τιμή[\s\S]*?displayLabelValue[^>]*>([0-9]+\.[0-9]+)/) || [])[1]
-  );
-  const max = parseFloat(
-    (html.match(/Ακριβότερη Τιμή[\s\S]*?displayLabelValue[^>]*>([0-9]+\.[0-9]+)/) || [])[1]
-  );
-  if (isNaN(avg) || isNaN(min) || isNaN(max)) {
-    throw new Error("Could not parse avg/min/max prices from government response");
-  }
-  return { avg, min, max };
-}
-
 function extractStations(html) {
   const rows = [];
   const trRegex = /<tr>([\s\S]*?)<\/tr>/gi;
   let m;
   while ((m = trRegex.exec(html)) !== null) {
     const row = m[1];
-    // Extract coordinates from the map link before stripping tags
     const coordMatch = row.match(/coordinates=([0-9.]+)%2C([0-9.]+)/);
     const cells = [...row.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((c) =>
       c[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
     );
     if (cells.length >= 5) {
       const price = parseFloat(cells[4]);
-      if (!isNaN(price) && price > 1 && price < 3) {
+      if (!isNaN(price) && price > 0.5 && price < 4) {
         const address = cells[2].split("τηλ:")[0].trim();
         const mapsUrl = coordMatch
           ? `https://www.google.com/maps?q=${coordMatch[1]},${coordMatch[2]}`
           : `https://www.google.com/maps/search/${encodeURIComponent(address)}`;
-        rows.push({
-          brand: cells[0],
-          address,
-          district: cells[3],
-          price,
-          mapsUrl,
-        });
+        rows.push({ brand: cells[0], address, district: cells[3], price, mapsUrl });
       }
     }
   }
   return rows.sort((a, b) => a.price - b.price).slice(0, 7);
 }
 
-function buildPricesBlock(prices, stations) {
-  const today = new Date().toLocaleDateString("en-GB", {
-    day: "numeric", month: "long", year: "numeric",
-  });
-  const spread = (prices.max - prices.min).toFixed(3);
-  const saving = ((prices.max - prices.min) * 50).toFixed(2);
+// ── block builders per language ───────────────────────────────────────────────
 
-  let stationRows = stations.length > 0
-    ? stations.map((s) =>
-        `| ${s.brand} | [${s.address.substring(0, 50)}](${s.mapsUrl}) | ${s.district} | €${s.price.toFixed(3)} |`
-      ).join("\n")
-    : `| — | [View on government portal](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) | All | €${prices.min.toFixed(3)} |`;
+function stationRows(stations, fallbackMin) {
+  if (stations.length > 0) {
+    return stations.map((s) =>
+      `| ${s.brand} | [${s.address.substring(0, 50)}](${s.mapsUrl}) | ${s.district} | €${s.price.toFixed(3)} |`
+    ).join("\n");
+  }
+  return `| — | [View on government portal](${GOV_URL}) | All | €${fallbackMin.toFixed(3)} |`;
+}
+
+function buildBlock(results, today) {
+  const s95 = results[0];
+  const s98 = results[1];
+  const sd  = results[2];
 
   return `
-## Live Prices — Unleaded 95
-
-> Data from Cyprus Government Petroleum Prices Portal — updated ${today}
-
-| Metric | Price |
-|--------|-------|
-| Average (island-wide) | €${prices.avg.toFixed(3)}/L |
-| Cheapest | €${prices.min.toFixed(3)}/L |
-| Most Expensive | €${prices.max.toFixed(3)}/L |
-
-**Price spread:** €${spread}/litre — filling a 50L tank at the cheapest saves **€${saving}** vs the most expensive.
-
-## 7 Cheapest Stations Right Now (Unleaded 95)
+## 7 Cheapest Stations Right Now — Unleaded 95
 
 | Brand | Address | Area | Price |
 |-------|---------|------|-------|
-${stationRows}
+${stationRows(s95.stations, s95.min)}
 
-> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — official government data
+## 7 Cheapest Stations Right Now — Unleaded 98
+
+| Brand | Address | Area | Price |
+|-------|---------|------|-------|
+${stationRows(s98.stations, s98.min)}
+
+## 7 Cheapest Stations Right Now — Diesel
+
+| Brand | Address | Area | Price |
+|-------|---------|------|-------|
+${stationRows(sd.stations, sd.min)}
+
+> Source: [Cyprus Gov Petroleum Prices](${GOV_URL}) — updated ${today}
 `;
 }
 
-function updatePost(filePath, newPricesBlock) {
+function buildBlockEl(results, today) {
+  const s95 = results[0];
+  const s98 = results[1];
+  const sd  = results[2];
+
+  return `
+## 7 Φθηνότερα Πρατήρια Αυτή τη Στιγμή — Αμόλυβδη 95
+
+| Εταιρεία | Διεύθυνση | Περιοχή | Τιμή |
+|----------|-----------|---------|------|
+${stationRows(s95.stations, s95.min)}
+
+## 7 Φθηνότερα Πρατήρια Αυτή τη Στιγμή — Αμόλυβδη 98
+
+| Εταιρεία | Διεύθυνση | Περιοχή | Τιμή |
+|----------|-----------|---------|------|
+${stationRows(s98.stations, s98.min)}
+
+## 7 Φθηνότερα Πρατήρια Αυτή τη Στιγμή — Πετρέλαιο Κίνησης
+
+| Εταιρεία | Διεύθυνση | Περιοχή | Τιμή |
+|----------|-----------|---------|------|
+${stationRows(sd.stations, sd.min)}
+
+> Πηγή: [Παρατηρητήριο Τιμών Καυσίμων Κύπρου](${GOV_URL}) — ενημέρωση ${today}
+`;
+}
+
+function buildBlockRu(results, today) {
+  const s95 = results[0];
+  const s98 = results[1];
+  const sd  = results[2];
+
+  return `
+## 7 самых дешёвых АЗС прямо сейчас — АИ-95
+
+| Бренд | Адрес | Район | Цена |
+|-------|-------|-------|------|
+${stationRows(s95.stations, s95.min)}
+
+## 7 самых дешёвых АЗС прямо сейчас — АИ-98
+
+| Бренд | Адрес | Район | Цена |
+|-------|-------|-------|------|
+${stationRows(s98.stations, s98.min)}
+
+## 7 самых дешёвых АЗС прямо сейчас — Дизель
+
+| Бренд | Адрес | Район | Цена |
+|-------|-------|-------|------|
+${stationRows(sd.stations, sd.min)}
+
+> Источник: [Правительственный портал цен на топливо Кипра](${GOV_URL}) — обновлено ${today}
+`;
+}
+
+function updatePost(filePath, newBlock) {
   const content = fs.readFileSync(filePath, "utf8");
   const START = "<!-- FUEL_PRICES_START -->";
   const END = "<!-- FUEL_PRICES_END -->";
-  const start = content.indexOf(START);
-  const end = content.indexOf(END);
-  if (start === -1 || end === -1) {
-    console.warn(`Markers not found in ${filePath}`);
-    return false;
-  }
-  const before = content.substring(0, start + START.length);
-  const after = content.substring(end);
-  const today = new Date().toLocaleDateString("en-GB", {
-    day: "numeric", month: "long", year: "numeric",
-  });
-  const updated = `${before}\n${newPricesBlock}\n${after}`.replace(
-    /Last updated: [^\*\|\n]+/,
-    `Last updated: ${today}`
-  );
-  fs.writeFileSync(filePath, updated, "utf8");
+  const si = content.indexOf(START);
+  const ei = content.indexOf(END);
+  if (si === -1 || ei === -1) { console.warn(`Markers not found in ${filePath}`); return false; }
+  fs.writeFileSync(filePath, content.slice(0, si + START.length) + "\n" + newBlock + "\n" + content.slice(ei), "utf8");
   return true;
 }
 
+// ── main ──────────────────────────────────────────────────────────────────────
+
 async function main() {
-  try {
-    console.log("Fetching session from Cyprus Government Petroleum Prices portal...");
-    const { cookies, token } = await fetchGovPage();
+  console.log("Fetching session from Cyprus Government Petroleum Prices portal...");
+  const { cookies, token } = await fetchGovPage();
 
-    console.log("Submitting search for Unleaded 95 (all districts)...");
-    const html = await fetchPrices(token, cookies);
-
-    const prices = extractSummary(html);
+  const results = [];
+  for (const fuel of FUEL_TYPES) {
+    console.log(`Fetching ${fuel.label95En}...`);
+    const html = await fetchPricesForType(fuel.id, token, cookies);
     const stations = extractStations(html);
 
-    console.log(`Prices — avg: €${prices.avg}, min: €${prices.min}, max: €${prices.max}`);
-    console.log(`Cheapest stations found: ${stations.length}`);
-
-    const block = buildPricesBlock(prices, stations);
-
-    const files = [
-      path.join(ROOT, "posts/en/cheapest-petrol-stations-cyprus.md"),
-      path.join(ROOT, "posts/el/cheapest-petrol-stations-cyprus.md"),
-      path.join(ROOT, "posts/ru/cheapest-petrol-stations-cyprus.md"),
-    ];
-
-    let updated = 0;
-    for (const f of files) {
-      if (updatePost(f, block)) {
-        console.log(`Updated: ${f}`);
-        updated++;
-      }
-    }
-
-    console.log(`Done — updated ${updated}/${files.length} files.`);
-    process.exit(0);
-  } catch (err) {
-    console.error("Failed to update fuel prices:", err.message);
-    process.exit(1);
+    // Extract min price from stations or fallback
+    const min = stations.length > 0 ? stations[0].price : 0;
+    console.log(`  ${fuel.label95En}: ${stations.length} stations, cheapest €${min.toFixed(3)}`);
+    results.push({ stations, min });
   }
+
+  const today = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  const todayEl = new Date().toLocaleDateString("el-GR", { day: "numeric", month: "long", year: "numeric" });
+  const todayRu = new Date().toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" });
+
+  const files = [
+    { path: path.join(ROOT, "posts/en/cheapest-petrol-stations-cyprus.md"), block: buildBlock(results, today) },
+    { path: path.join(ROOT, "posts/el/cheapest-petrol-stations-cyprus.md"), block: buildBlockEl(results, todayEl) },
+    { path: path.join(ROOT, "posts/ru/cheapest-petrol-stations-cyprus.md"), block: buildBlockRu(results, todayRu) },
+  ];
+
+  let updated = 0;
+  for (const f of files) {
+    if (updatePost(f.path, f.block)) { console.log(`Updated: ${f.path}`); updated++; }
+  }
+  console.log(`Done — updated ${updated}/${files.length} files.`);
 }
 
-main();
+main().catch((e) => { console.error("Failed:", e.message); process.exit(1); });
