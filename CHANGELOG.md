@@ -14,7 +14,7 @@ All notable changes to DealsHub will be documented here.
 
 ---
 
-## [Unreleased — dev]
+## [1.1.0] — 2026-06-28
 
 ### Added
 - Cheapest Coffee in Nicosia Cafés
