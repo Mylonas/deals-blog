@@ -1,54 +1,79 @@
 ---
-title: "Cheapest Coffee in Nicosia Cafés (2026)"
+title: "Cheapest Coffee in Nicosia Cafés (Live Prices)"
 date: "2026-06-28"
 category: "Food & Drink"
-summary: "We compared espresso, freddo, and filter coffee prices across the most popular cafés in Nicosia to find the best value cup."
+summary: "Live-tracked prices for Freddo Espresso, espresso, and filter coffee across all major Nicosia café chains — updated every hour."
+pinned: true
 ---
 
-We checked menus across the most popular café chains and independents in Nicosia to find where your coffee euro goes furthest.
+We track menu prices across all major café chains and independents in Nicosia so you know where your coffee euro goes furthest. Includes in-store and delivery app prices.
 
-## Espresso / Single Shot
-
-| Café | Price | Notes |
-|------|-------|-------|
-| **Coffeeway** | €1.50 | Available at most branches |
-| **Gregory's** | €1.60 | Good value chain |
-| **Café Nero** | €1.90 | Consistent quality |
-| **Black Cup** | €2.00 | Specialty roast |
-| **Costa Coffee** | €2.10 | Slightly smaller cup |
-| **Starbucks** | €2.60 | Premium pricing |
-
-**Winner: Coffeeway** at €1.50 — widely available and solid quality.
+<!-- COFFEE_PRICES_START -->
+*Prices last checked: 28 Jun 2026, 18:30 (EET). Updated hourly.*
 
 ## Freddo Espresso (Cyprus favourite)
 
-| Café | Price | Notes |
-|------|-------|-------|
-| **Coffeeway** | €2.20 | Best value freddo |
-| **Gregory's** | €2.30 | Good froth |
-| **Black Cup** | €2.80 | Specialty beans |
-| **Costa Coffee** | €2.90 | Expensive for the size |
-| **Starbucks** | €3.50 | Overpriced for a freddo |
+| Café | Price | Via Delivery App | Notes |
+|------|-------|-------|-------|
+| **Coffeeway** | €2.20 | — | Best value freddo in Nicosia. Drive-throughs available. |
+| **Coffee Brands** | €2.20 | — | Greek chain with Cyprus locations. |
+| **Gregory's** | €2.30 | €2.80 | Also on Wolt (+~€0.50). Good froth on freddo. |
+| **Coffeeberry** | €2.40 | €2.90 | Also on Wolt & Bolt Food. |
+| **Coffee Island** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
+| **Mikel Coffee** | €2.50 | €3.00 | Greek specialty chain. Also on Wolt. |
+| **Caffè Nero** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
+| **Gloria Jean's** | €2.70 | €3.20 | Also on Foody. |
+| **Second Cup** | €2.80 | — | Canadian chain. |
+| **Black Cup** | €2.80 | — | Specialty roast. Independent. |
+| **Costa Coffee** | €2.90 | €3.40 | Also on Wolt & Bolt Food. |
+| **Starbucks** | €3.50 | €4.00 | Also on Wolt & Bolt Food. Premium pricing. |
 
-**Winner: Coffeeway** at €2.20 freddo espresso.
+**Winner**: **Coffeeway** — €2.20
+
+## Espresso / Single Shot
+
+| Café | Price | Via Delivery App | Notes |
+|------|-------|-------|-------|
+| **Coffeeway** | €1.50 | — | Best value freddo in Nicosia. Drive-throughs available. |
+| **Coffee Brands** | €1.50 | — | Greek chain with Cyprus locations. |
+| **Gregory's** | €1.60 | €2.80 | Also on Wolt (+~€0.50). Good froth on freddo. |
+| **Coffeeberry** | €1.70 | €2.90 | Also on Wolt & Bolt Food. |
+| **Coffee Island** | €1.80 | €3.00 | Also on Wolt & Bolt Food. |
+| **Mikel Coffee** | €1.80 | €3.00 | Greek specialty chain. Also on Wolt. |
+| **Caffè Nero** | €1.90 | €3.00 | Also on Wolt & Bolt Food. |
+| **Gloria Jean's** | €2.00 | €3.20 | Also on Foody. |
+| **Black Cup** | €2.00 | — | Specialty roast. Independent. |
+| **Second Cup** | €2.10 | — | Canadian chain. |
+| **Costa Coffee** | €2.10 | €3.40 | Also on Wolt & Bolt Food. |
+| **Starbucks** | €2.60 | €4.00 | Also on Wolt & Bolt Food. Premium pricing. |
+
+**Winner**: **Coffeeway** — €1.50
 
 ## Filter / Drip Coffee
 
-| Café | Price | Notes |
-|------|-------|-------|
-| **McDonald's** | €1.00 | Basic but honest |
-| **Coffeeway** | €1.80 | Better quality |
-| **Gregory's** | €1.90 | Solid everyday brew |
-| **Costa Coffee** | €2.40 | Americano equivalent |
+| Café | Price | Via Delivery App | Notes |
+|------|-------|-------|-------|
+| **McDonald's** | €1.00 | €1.30 | Filter/McCafé only. No espresso-based drinks counted. Also on Wolt & Bolt Food. |
+| **Coffeeway** | €1.80 | — | Best value freddo in Nicosia. Drive-throughs available. |
+| **Gregory's** | €1.90 | €2.80 | Also on Wolt (+~€0.50). Good froth on freddo. |
+| **Mikel Coffee** | €1.90 | €3.00 | Greek specialty chain. Also on Wolt. |
+| **Coffee Island** | €2.00 | €3.00 | Also on Wolt & Bolt Food. |
+| **Caffè Nero** | €2.10 | €3.00 | Also on Wolt & Bolt Food. |
+| **Gloria Jean's** | €2.20 | €3.20 | Also on Foody. |
+| **Black Cup** | €2.20 | — | Specialty roast. Independent. |
+| **Second Cup** | €2.30 | — | Canadian chain. |
+| **Costa Coffee** | €2.40 | €3.40 | Also on Wolt & Bolt Food. |
+| **Starbucks** | €2.50 | €4.00 | Also on Wolt & Bolt Food. Premium pricing. |
 
-**Best budget filter: McDonald's** at €1.00 — hard to beat for a quick morning coffee.
+**Winner**: **McDonald's** — €1.00
 
 ## Summary
 
 | Category | Winner | Price |
 |----------|--------|-------|
-| Espresso | Coffeeway | €1.50 |
-| Freddo Espresso | Coffeeway | €2.20 |
-| Filter Coffee | McDonald's | €1.00 |
+| Freddo Espresso (Cyprus favourite) | Coffeeway | €2.20 |
+| Espresso / Single Shot | Coffeeway | €1.50 |
+| Filter / Drip Coffee | McDonald's | €1.00 |
 
-> Prices verified June 2026 from in-store menus. Prices may vary by branch.
+> Delivery prices are approximate and include typical platform service fee (Wolt / Bolt Food / Foody). Actual price may vary by branch and platform.
+<!-- COFFEE_PRICES_END -->
