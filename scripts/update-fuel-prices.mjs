@@ -78,7 +78,7 @@ function extractStations(html) {
 function stationRows(stations, fallbackMin) {
   if (stations.length > 0) {
     return stations.map((s) =>
-      `| ${s.brand} | [${s.address.substring(0, 50)}](${s.mapsUrl}) | ${s.district} | €${s.price.toFixed(3)} |`
+      `| ${s.brand} | [📍 Open in Maps](${s.mapsUrl}) | ${s.district} | €${s.price.toFixed(3)} |`
     ).join("\n");
   }
   return `| — | [View on government portal](${GOV_URL}) | All | €${fallbackMin.toFixed(3)} |`;

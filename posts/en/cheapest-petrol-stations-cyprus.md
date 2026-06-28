@@ -14,13 +14,13 @@ pinned: true
 
 | Brand | Address | Area | Price |
 |-------|---------|------|-------|
-| PETROLINA | [Γιάννου Κρανιδιώτη 247](https://www.google.com/maps?q=35.1614,33.3596) | Nicosia | €1.428 |
-| SHELL | [Τσερίου 36, Νήσου](https://www.google.com/maps?q=35.1661,33.3285) | Nicosia | €1.428 |
-| SHELL | [Λεωφ. Αμμοχώστου 57](https://www.google.com/maps?q=35.1657,33.3751) | Nicosia | €1.428 |
-| ENI | [Λεωφ. Λάρνακος 125](https://www.google.com/maps?q=35.1497,33.3963) | Nicosia | €1.428 |
-| FILL N GO | [Λεωφ. Λάρνακος 184](https://www.google.com/maps?q=35.1463,33.4012) | Nicosia | €1.428 |
-| FILL N GO | [Σταδίου 9](https://www.google.com/maps?q=35.1551,33.3623) | Nicosia | €1.428 |
-| PETROLINA | [Λεωφ. Λάρνακος 5](https://www.google.com/maps?q=35.1574,33.3843) | Nicosia | €1.428 |
+| PETROLINA | [📍 Open in Maps](https://www.google.com/maps?q=35.1614,33.3596) | Nicosia | €1.428 |
+| SHELL | [📍 Open in Maps](https://www.google.com/maps?q=35.1661,33.3285) | Nicosia | €1.428 |
+| SHELL | [📍 Open in Maps](https://www.google.com/maps?q=35.1657,33.3751) | Nicosia | €1.428 |
+| ENI | [📍 Open in Maps](https://www.google.com/maps?q=35.1497,33.3963) | Nicosia | €1.428 |
+| FILL N GO | [📍 Open in Maps](https://www.google.com/maps?q=35.1463,33.4012) | Nicosia | €1.428 |
+| FILL N GO | [📍 Open in Maps](https://www.google.com/maps?q=35.1551,33.3623) | Nicosia | €1.428 |
+| PETROLINA | [📍 Open in Maps](https://www.google.com/maps?q=35.1574,33.3843) | Nicosia | €1.428 |
 
 ## 7 Cheapest Stations Right Now — Unleaded 98
 
