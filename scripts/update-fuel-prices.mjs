@@ -76,7 +76,9 @@ function extractStations(html, limit = 7) {
         const mapsUrl = coordMatch
           ? `https://www.google.com/maps?q=${coordMatch[1]},${coordMatch[2]}`
           : `https://www.google.com/maps/search/${encodeURIComponent(address)}`;
-        rows.push({ brand: cells[0], address, district: cells[3], price, mapsUrl });
+        const lat = coordMatch ? parseFloat(coordMatch[1]) : null;
+        const lng = coordMatch ? parseFloat(coordMatch[2]) : null;
+        rows.push({ brand: cells[0], address, district: cells[3], price, mapsUrl, lat, lng });
       }
     }
   }
@@ -199,7 +201,7 @@ async function main() {
     console.log(`Fetching prices for ${fuel.label95En}...`);
     const html = await fetchPricesForType(fuel.id, token, cookies);
     const stations = extractStations(html, 7);
-    const allStations = extractStations(html, 50);
+    const allStations = extractStations(html, 100);
 
     const min = stations.length > 0 ? stations[0].price : 0;
     console.log(`  ${fuel.label95En}: ${allStations.length} stations total, cheapest €${min.toFixed(3)}`);
