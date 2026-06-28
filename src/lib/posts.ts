@@ -5,7 +5,7 @@ import { remark } from "remark";
 import html from "remark-html";
 import remarkGfm from "remark-gfm";
 
-export type Lang = "en" | "el";
+export type Lang = "en" | "el" | "ru";
 
 const postsDir = (lang: Lang) =>
   path.join(process.cwd(), "posts", lang);
