@@ -23,7 +23,16 @@ async function fetchGovPage() {
   });
   if (!res.ok) throw new Error(`GET failed: HTTP ${res.status}`);
   const html = await res.text();
-  const cookies = res.headers.get("set-cookie") || "";
+
+  // Parse set-cookie headers into name=value pairs only (strip directives)
+  const rawCookies = res.headers.getSetCookie
+    ? res.headers.getSetCookie()
+    : (res.headers.get("set-cookie") || "").split(/,(?=[^ ])/).map(s => s.trim());
+  const cookies = rawCookies
+    .map(c => c.split(";")[0].trim())
+    .filter(Boolean)
+    .join("; ");
+
   const tokenMatch = html.match(/name="__RequestVerificationToken"[^>]*value="([^"]+)"/);
   if (!tokenMatch) throw new Error("CSRF token not found");
   return { cookies, token: tokenMatch[1] };
@@ -78,7 +87,7 @@ function extractStations(html) {
 function stationRows(stations, fallbackMin) {
   if (stations.length > 0) {
     return stations.map((s) =>
-      `| ${s.brand} | [📍 Open in Maps](${s.mapsUrl}) | ${s.district} | €${s.price.toFixed(3)} |`
+      `| ${s.brand} | [${s.address}](${s.mapsUrl}) | ${s.district} | €${s.price.toFixed(3)} |`
     ).join("\n");
   }
   return `| — | [View on government portal](${GOV_URL}) | All | €${fallbackMin.toFixed(3)} |`;
@@ -182,12 +191,11 @@ function updatePost(filePath, newBlock) {
 // ── main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log("Fetching session from Cyprus Government Petroleum Prices portal...");
-  const { cookies, token } = await fetchGovPage();
-
   const results = [];
   for (const fuel of FUEL_TYPES) {
-    console.log(`Fetching ${fuel.label95En}...`);
+    console.log(`Fetching session for ${fuel.label95En}...`);
+    const { cookies, token } = await fetchGovPage();
+    console.log(`Fetching prices for ${fuel.label95En}...`);
     const html = await fetchPricesForType(fuel.id, token, cookies);
     const stations = extractStations(html);
 
