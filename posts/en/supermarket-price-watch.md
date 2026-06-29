@@ -10,20 +10,20 @@ Live prices for the 10 most-bought household staples in Cyprus, sourced from the
 
 <!-- PRICES_START -->
 
-> Updated 28 June 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Updated 29 June 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
-| Staple | Cheapest Price | vs Last | Stores |
-|---------|---------|--------|--------|
-| Fresh Milk 1L | **€1.44** | ▲ | 192 |
-| Eggs | **€3.99** | ▼ | 68 |
-| Halloumi 200g | **€1.85** | ▼ | 177 |
-| Spaghetti 500g | **€0.95** | ▼ | 183 |
-| Olive Oil 1L | **€3.99** | ▲ | 116 |
-| Water 1.5L ×6 | **€2.05** | ▲ | 152 |
-| Yogurt | **€1.79** | ▼ | 176 |
-| Rice 1kg | **€1.95** | ▼ | 121 |
-| Orange Juice 1L | **€2.25** | ▼ | 163 |
-| Coca-Cola 1L ×2 | **€2.38** | ▲ | 134 |
+| Staple | Cheapest Price | Store |
+|---------|---------|--------|
+| Fresh Milk 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | Alpha Sigma |
+| Eggs | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | Alpha Sigma |
+| Halloumi 200g | **[€1.85](https://www.e-kalathi.gov.cy/product-information/254)** | Alpha Sigma |
+| Spaghetti 500g | **[€0.95](https://www.e-kalathi.gov.cy/product-information/1069)** | Alpha Sigma |
+| Olive Oil 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Alpha Sigma |
+| Water 1.5L ×6 | **[€2.05](https://www.e-kalathi.gov.cy/product-information/2077)** | Alpha Sigma |
+| Yogurt | **[€1.79](https://www.e-kalathi.gov.cy/product-information/280)** | Alpha Sigma |
+| Rice 1kg | **[€1.95](https://www.e-kalathi.gov.cy/product-information/1120)** | Alpha Sigma |
+| Orange Juice 1L | **[€2.25](https://www.e-kalathi.gov.cy/product-information/2120)** | Alpha Sigma |
+| Coca-Cola 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Alpha Sigma |
 
 <!-- PRICES_END -->
 

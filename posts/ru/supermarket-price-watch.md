@@ -10,20 +10,20 @@ pinned: false
 
 <!-- PRICES_START -->
 
-> Обновлено 28 июня 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Обновлено 29 June 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
-| Продукт | Мин. цена | Изменение | Магазины |
-|---------|---------|--------|--------|
-| Свежее молоко 1L | **€1.44** | ▲ | 192 |
-| Яйца | **€3.99** | ▼ | 68 |
-| Халлуми 200г | **€1.85** | ▼ | 177 |
-| Спагетти 500г | **€0.95** | ▼ | 183 |
-| Оливковое масло 1L | **€3.99** | ▲ | 116 |
-| Вода 1.5L ×6 | **€2.05** | ▲ | 152 |
-| Йогурт | **€1.79** | ▼ | 176 |
-| Рис 1кг | **€1.95** | ▼ | 121 |
-| Апельсиновый сок 1L | **€2.25** | ▼ | 163 |
-| Кока-Кола 1L ×2 | **€2.38** | ▲ | 134 |
+| Продукт | Мин. цена | Магазин |
+|---------|---------|--------|
+| Свежее молоко 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | Alpha Sigma |
+| Яйца | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | Alpha Sigma |
+| Халлуми 200г | **[€1.85](https://www.e-kalathi.gov.cy/product-information/254)** | Alpha Sigma |
+| Спагетти 500г | **[€0.95](https://www.e-kalathi.gov.cy/product-information/1069)** | Alpha Sigma |
+| Оливковое масло 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Alpha Sigma |
+| Вода 1.5L ×6 | **[€2.05](https://www.e-kalathi.gov.cy/product-information/2077)** | Alpha Sigma |
+| Йогурт | **[€1.79](https://www.e-kalathi.gov.cy/product-information/280)** | Alpha Sigma |
+| Рис 1кг | **[€1.95](https://www.e-kalathi.gov.cy/product-information/1120)** | Alpha Sigma |
+| Апельсиновый сок 1L | **[€2.25](https://www.e-kalathi.gov.cy/product-information/2120)** | Alpha Sigma |
+| Кока-Кола 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Alpha Sigma |
 
 <!-- PRICES_END -->
 
