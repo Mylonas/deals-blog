@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      actions: write   # needed to re-trigger other workflows
+      actions: write   # re-trigger workflows
+      issues: write    # open issues when persistently failing
 
     steps:
       - uses: actions/checkout@v4
@@ -19,11 +20,12 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Check data freshness and re-trigger stale workflows
+      - name: Check data freshness, re-trigger stale workflows, open issue if persistent
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
-          # Run watchdog — stderr = human log, stdout = stale workflow filenames (one per line)
+          # Run watchdog — stderr = human log, stdout = stale workflow filenames
           node scripts/watchdog.mjs 2>&1 1>/tmp/stale-workflows.txt
 
           if [ ! -s /tmp/stale-workflows.txt ]; then
@@ -31,11 +33,63 @@ jobs:
             exit 0
           fi
 
-          echo "Stale workflows to re-trigger:"
+          echo "Stale workflows detected:"
           cat /tmp/stale-workflows.txt
 
           while IFS= read -r workflow; do
-            echo "→ Triggering $workflow"
-            gh workflow run "$workflow"
+            echo "--- Checking recent runs for: $workflow ---"
+
+            # Get last 3 completed run conclusions for this workflow
+            recent=$(gh run list \
+              --workflow="$workflow" \
+              --limit=3 \
+              --json conclusion \
+              --jq '[.[] | .conclusion] | map(select(. != null))')
+
+            echo "Recent conclusions: $recent"
+
+            # Check if all 3 recent runs failed
+            all_failed=$(node -e "
+              const runs = JSON.parse('$recent');
+              const failed = runs.length >= 3 && runs.every(c => c === 'failure');
+              process.stdout.write(failed ? 'yes' : 'no');
+            " 2>/dev/null || echo "no")
+
+            if [ "\$all_failed" = "yes" ]; then
+              echo "⚠️  $workflow has failed 3 times in a row — opening GitHub Issue"
+
+              # Avoid duplicate issues — check if one is already open
+              existing=$(gh issue list \
+                --label="watchdog" \
+                --state=open \
+                --search="$workflow" \
+                --json number \
+                --jq '.[0].number // empty')
+
+              if [ -z "\$existing" ]; then
+                gh issue create \
+                  --title "🚨 Persistent failure: $workflow" \
+                  --label "watchdog,bug" \
+                  --body "## Watchdog Alert
+
+The workflow \`$workflow\` has failed **3 consecutive times**.
+
+Auto-retry has been attempted but the issue persists — manual investigation required.
+
+**Detected at:** $(date -u '+%Y-%m-%d %H:%M UTC')
+
+### Next steps
+1. Check the [workflow run logs](https://github.com/$REPO/actions/workflows/$workflow)
+2. Fix the underlying issue (API change, script bug, secret expired)
+3. Close this issue once resolved — the watchdog will reopen it if failures recur"
+                echo "Issue created."
+              else
+                echo "Issue #\$existing already open — skipping duplicate."
+              fi
+            else
+              echo "→ Re-triggering $workflow"
+              gh workflow run "$workflow"
+            fi
+
             sleep 5
           done < /tmp/stale-workflows.txt
