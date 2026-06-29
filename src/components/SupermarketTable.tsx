@@ -46,38 +46,38 @@ export default function SupermarketTable({ items, lang, updatedAt }: { items: It
   return (
     <div>
       <div className="flex items-center gap-3 mb-4 flex-wrap">
-        <span className="text-sm text-gray-500">
+        <span className="text-sm text-gray-500 dark:text-gray-400">
           {lang === "en" ? "Sort by:" : lang === "el" ? "Ταξινόμηση:" : "Сортировка:"}
         </span>
         <button
           onClick={() => setSort("label")}
-          className={`px-3 py-1 text-sm rounded-full border transition-colors ${sort === "label" ? "bg-blue-600 text-white border-blue-600" : "border-gray-300 text-gray-600 hover:bg-gray-50"}`}
+          className={`px-3 py-1 text-sm rounded-full border transition-colors ${sort === "label" ? "bg-blue-600 text-white border-blue-600" : "border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"}`}
         >
           {t.sortAZ}
         </button>
         <button
           onClick={() => setSort("price")}
-          className={`px-3 py-1 text-sm rounded-full border transition-colors ${sort === "price" ? "bg-blue-600 text-white border-blue-600" : "border-gray-300 text-gray-600 hover:bg-gray-50"}`}
+          className={`px-3 py-1 text-sm rounded-full border transition-colors ${sort === "price" ? "bg-blue-600 text-white border-blue-600" : "border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"}`}
         >
           {t.sortPrice}
         </button>
-        <span className="ml-auto text-xs text-gray-400">
+        <span className="ml-auto text-xs text-gray-400 dark:text-gray-500">
           {lang === "en" ? "Updated" : lang === "el" ? "Ενημέρωση" : "Обновлено"}: {updated}
         </span>
       </div>
 
-      <div className="overflow-x-auto rounded-xl border border-gray-200">
+      <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
         <table className="w-full text-sm">
-          <thead className="bg-gray-50 text-gray-500 uppercase text-xs">
+          <thead className="bg-gray-50 dark:bg-gray-800 text-gray-500 dark:text-gray-400 uppercase text-xs">
             <tr>
               <th
-                className="px-4 py-3 text-left cursor-pointer hover:text-gray-800 select-none"
+                className="px-4 py-3 text-left cursor-pointer hover:text-gray-800 dark:hover:text-gray-200 select-none"
                 onClick={() => setSort("label")}
               >
                 {t.staple} {sort === "label" && "↑"}
               </th>
               <th
-                className="px-4 py-3 text-left cursor-pointer hover:text-gray-800 select-none"
+                className="px-4 py-3 text-left cursor-pointer hover:text-gray-800 dark:hover:text-gray-200 select-none"
                 onClick={() => setSort("price")}
               >
                 {t.price} {sort === "price" && "↑"}
@@ -85,38 +85,38 @@ export default function SupermarketTable({ items, lang, updatedAt }: { items: It
               <th className="px-4 py-3 text-left">{t.store}</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-100">
+          <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
             {sorted.map((item) => {
               const label = lang === "en" ? item.label : lang === "el" ? item.labelEl : item.labelRu;
               const href = item.productId
                 ? `https://www.e-kalathi.gov.cy/product-information/${item.productId}`
                 : "https://www.e-kalathi.gov.cy";
               return (
-                <tr key={item.key} className="hover:bg-gray-50 transition-colors">
-                  <td className="px-4 py-3 font-medium text-gray-800">{label}</td>
+                <tr key={item.key} className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                  <td className="px-4 py-3 font-medium text-gray-800 dark:text-gray-200">{label}</td>
                   <td className="px-4 py-3">
                     {item.price !== null ? (
                       <a
                         href={href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-bold text-blue-600 hover:underline"
+                        className="font-bold text-blue-600 dark:text-blue-400 hover:underline"
                       >
                         €{item.price.toFixed(2)}
                       </a>
                     ) : (
-                      <span className="text-gray-400">{t.na}</span>
+                      <span className="text-gray-400 dark:text-gray-500">{t.na}</span>
                     )}
                   </td>
-                  <td className="px-4 py-3 text-gray-600">
+                  <td className="px-4 py-3 text-gray-600 dark:text-gray-400">
                     {item.store ? (
                       item.store
                     ) : item.productId ? (
-                      <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline text-xs">
+                      <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline text-xs">
                         {t.noStore} →
                       </a>
                     ) : (
-                      <span className="text-gray-400">{t.na}</span>
+                      <span className="text-gray-400 dark:text-gray-500">{t.na}</span>
                     )}
                   </td>
                 </tr>

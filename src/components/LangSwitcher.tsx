@@ -15,13 +15,13 @@ export default function LangSwitcher() {
   const isEnglish = !isGreek && !isRussian;
 
   const btn = (active: boolean) =>
-    `px-3 py-1.5 transition-colors ${active ? "bg-blue-600 text-white" : "text-gray-600 hover:bg-gray-100"}`;
+    `px-3 py-1.5 transition-colors ${active ? "bg-blue-600 text-white" : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"}`;
 
   const elPath = `/el${canonical === "/" ? "/" : canonical}`;
   const ruPath = `/ru${canonical === "/" ? "/" : canonical}`;
 
   return (
-    <div className="flex items-center gap-1 text-sm font-medium border border-gray-200 rounded-lg overflow-hidden">
+    <div className="flex items-center gap-1 text-sm font-medium border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
       <a href={canonical} className={btn(isEnglish)}>EN</a>
       <a href={elPath} className={btn(isGreek)}>ΕΛ</a>
       <a href={ruPath} className={btn(isRussian)}>РУ</a>
