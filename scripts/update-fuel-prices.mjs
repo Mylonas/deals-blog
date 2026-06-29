@@ -11,6 +11,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const GOV_URL = "https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices";
 const JSON_OUT = path.join(ROOT, "src", "data", "fuel-prices.json");
+const HISTORY_OUT = path.join(ROOT, "src", "data", "fuel-price-history.json");
+const MAX_HISTORY_DAYS = 365;
 
 const FUEL_TYPES = [
   { id: "1", label95En: "Unleaded 95", label95El: "Αμόλυβδη 95", label95Ru: "АИ-95" },
@@ -219,6 +221,32 @@ async function main() {
   };
   fs.writeFileSync(JSON_OUT, JSON.stringify(jsonData, null, 2) + "\n");
   console.log(`Wrote fuel JSON: ${JSON_OUT}`);
+
+  // Append to price history — only if prices changed since last entry
+  const min95     = results[0].min;
+  const min98     = results[1].min;
+  const minDiesel = results[2].min;
+
+  const historyFile = fs.existsSync(HISTORY_OUT)
+    ? JSON.parse(fs.readFileSync(HISTORY_OUT, "utf8"))
+    : { history: [] };
+
+  const last = historyFile.history[historyFile.history.length - 1];
+  const pricesChanged = !last
+    || last["95"] !== min95
+    || last["98"] !== min98
+    || last.diesel !== minDiesel;
+
+  if (pricesChanged) {
+    historyFile.history.push({ ts: new Date().toISOString(), "95": min95, "98": min98, diesel: minDiesel });
+    // Trim to rolling MAX_HISTORY_DAYS window
+    const cutoff = Date.now() - MAX_HISTORY_DAYS * 24 * 60 * 60 * 1000;
+    historyFile.history = historyFile.history.filter(e => new Date(e.ts).getTime() >= cutoff);
+    fs.writeFileSync(HISTORY_OUT, JSON.stringify(historyFile, null, 2) + "\n");
+    console.log(`History: appended new entry (95=€${min95.toFixed(3)}, 98=€${min98.toFixed(3)}, diesel=€${minDiesel.toFixed(3)})`);
+  } else {
+    console.log("History: prices unchanged — skipped append.");
+  }
 
   const today = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
   const todayEl = new Date().toLocaleDateString("el-GR", { day: "numeric", month: "long", year: "numeric" });
