@@ -51,19 +51,17 @@ async function scrapeWolt(page, url, label) {
   // Intercept Wolt's internal menu API (called automatically when the page loads)
   page.on("response", async (res) => {
     const u = res.url();
-    if (
-      (u.includes("/menu") || u.includes("/items") || u.includes("/sections")) &&
-      res.status() === 200
-    ) {
+    if (res.status() === 200) {
       try {
         const j = await res.json();
-        // Wolt API response has `sections` (array of categories with `items`)
         if (j?.sections?.length || j?.items?.length) menuJson = j;
       } catch {}
     }
   });
 
-  await page.goto(url, { waitUntil: "networkidle", timeout: 40000 });
+  await page.goto(url, { waitUntil: "domcontentloaded", timeout: 40000 });
+  // Give SPA time to hydrate and load menu items
+  await page.waitForTimeout(6000);
 
   if (DEBUG) {
     await page.screenshot({ path: `${DEBUG_DIR}/${label}-wolt.png`, fullPage: true });
@@ -344,6 +342,8 @@ for (const item of data.items) {
 
     try {
       console.log(`  Trying ${key}: ${url}`);
+      const pageTitle = await page.title().catch(() => "?");
+      console.log(`    page title: "${pageTitle}"`);
       const result = await fn(page, url, label);
       const totalItems = (result.popular?.length || 0) + (result.all?.length || 0);
       if (totalItems > 0) {
