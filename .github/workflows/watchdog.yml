@@ -1,4 +1,4 @@
-name: Watchdog — Auto-heal stale data
+name: Watchdog - Auto-heal stale data
 
 on:
   schedule:
@@ -25,8 +25,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
-          # Run watchdog — stderr = human log, stdout = stale workflow filenames
-          node scripts/watchdog.mjs 2>&1 1>/tmp/stale-workflows.txt
+          # Run watchdog - stderr = human log, stdout = stale workflow filenames
+          node scripts/watchdog.mjs 1>/tmp/stale-workflows.txt
 
           if [ ! -s /tmp/stale-workflows.txt ]; then
             echo "All data sources are healthy."
@@ -55,10 +55,10 @@ jobs:
               process.stdout.write(failed ? 'yes' : 'no');
             " 2>/dev/null || echo "no")
 
-            if [ "\$all_failed" = "yes" ]; then
-              echo "⚠️  $workflow has failed 3 times in a row — opening GitHub Issue"
+            if [ "$all_failed" = "yes" ]; then
+              echo "WARNING: $workflow has failed 3 times in a row - opening GitHub Issue"
 
-              # Avoid duplicate issues — check if one is already open
+              # Avoid duplicate issues - check if one is already open
               existing=$(gh issue list \
                 --label="watchdog" \
                 --state=open \
@@ -66,28 +66,28 @@ jobs:
                 --json number \
                 --jq '.[0].number // empty')
 
-              if [ -z "\$existing" ]; then
+              if [ -z "$existing" ]; then
                 gh issue create \
-                  --title "🚨 Persistent failure: $workflow" \
+                  --title "Persistent failure: $workflow" \
                   --label "watchdog,bug" \
                   --body "## Watchdog Alert
 
 The workflow \`$workflow\` has failed **3 consecutive times**.
 
-Auto-retry has been attempted but the issue persists — manual investigation required.
+Auto-retry has been attempted but the issue persists - manual investigation required.
 
 **Detected at:** $(date -u '+%Y-%m-%d %H:%M UTC')
 
 ### Next steps
 1. Check the [workflow run logs](https://github.com/$REPO/actions/workflows/$workflow)
 2. Fix the underlying issue (API change, script bug, secret expired)
-3. Close this issue once resolved — the watchdog will reopen it if failures recur"
+3. Close this issue once resolved - the watchdog will reopen it if failures recur"
                 echo "Issue created."
               else
-                echo "Issue #\$existing already open — skipping duplicate."
+                echo "Issue #$existing already open - skipping duplicate."
               fi
             else
-              echo "→ Re-triggering $workflow"
+              echo "-> Re-triggering $workflow"
               gh workflow run "$workflow"
             fi
 
