@@ -12,16 +12,16 @@ export default function FuelPricesPageRU() {
   return (
     <article className="max-w-2xl">
       <div className="mb-6 flex items-center gap-3">
-        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-800">
+        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300">
           Топливо
         </span>
-        <span className="text-xs font-semibold text-amber-600">LIVE ●</span>
+        <span className="text-xs font-semibold text-amber-600 dark:text-amber-400">LIVE ●</span>
       </div>
 
       <h1 className="text-3xl font-bold mb-3 leading-tight">
         Дешевейшие АЗС на Кипре — Актуальные цены
       </h1>
-      <p className="text-gray-500 mb-8">
+      <p className="text-gray-500 dark:text-gray-400 mb-8">
         Выберите тип топлива и округ, чтобы найти ближайшую дешёвую АЗС.
         Данные из{" "}
         <a
