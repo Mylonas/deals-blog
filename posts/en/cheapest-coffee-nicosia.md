@@ -9,7 +9,7 @@ pinned: true
 We track Freddo Espresso prices across all major café chains and independents in Cyprus. Includes in-store prices and delivery app surcharges. Single-location cafés link directly to Google Maps.
 
 <!-- COFFEE_PRICES_START -->
-*Prices last checked: 29 Jun 2026, 21:42 (EET). Top drinks updated monthly via Wolt / Foody / Bolt Food.*
+*Prices last checked: 29 Jun 2026, 21:47 (EET). Top drinks updated monthly via Wolt / Foody / Bolt Food.*
 
 ## Freddo Espresso — All Cyprus
 
@@ -34,5 +34,11 @@ We track Freddo Espresso prices across all major café chains and independents i
 
 ## Most Popular Drinks by Café
 
-*Top drinks data is being collected — check back next month.*
+*Top drinks last scraped: 29 Jun 2026, 21:47.*
+
+### Coffee Brands
+
+| Drink | Price | Source |
+|------|-------|--------|
+| Freddo Espresso | €2.20 | Wolt |
 <!-- COFFEE_PRICES_END -->
