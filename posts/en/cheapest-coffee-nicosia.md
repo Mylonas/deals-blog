@@ -9,7 +9,7 @@ pinned: true
 We track Freddo Espresso prices across all major café chains and independents in Cyprus. Includes in-store prices and delivery app surcharges. Single-location cafés link directly to Google Maps.
 
 <!-- COFFEE_PRICES_START -->
-*Prices last checked: 29 Jun 2026, 20:41 (EET). Updated hourly.*
+*Prices last checked: 29 Jun 2026, 21:42 (EET). Top drinks updated monthly via Wolt / Foody / Bolt Food.*
 
 ## Freddo Espresso — All Cyprus
 
@@ -21,8 +21,8 @@ We track Freddo Espresso prices across all major café chains and independents i
 | **Coffeeberry** | €2.40 | €2.90 | Also on Wolt & Bolt Food. |
 | **Coffee Island** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
 | **Mikel Coffee** | €2.50 | €3.00 | Greek specialty chain. Also on Wolt. |
-| **Caffè Nero** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
-| **Gloria Jean's** | €2.70 | €3.20 | Also on Foody. |
+| **Caffe Nero** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
+| **Gloria Jean's** | €2.70 | €3.20 | Also on Foody & Bolt Food. |
 | **Second Cup** | €2.80 | — | Canadian chain. |
 | **[Black Cup](https://www.google.com/maps/search/Black+Cup+Coffee+Nicosia+Cyprus)** | €2.80 | — | Specialty roast. Single location, Nicosia. |
 | **Costa Coffee** | €2.90 | €3.40 | Also on Wolt & Bolt Food. |
@@ -31,4 +31,8 @@ We track Freddo Espresso prices across all major café chains and independents i
 **Winner**: **Coffeeway** — €2.20
 
 > Delivery prices are approximate and include typical platform fee (Wolt / Bolt Food / Foody). Actual price may vary by branch.
+
+## Most Popular Drinks by Café
+
+*Top drinks data is being collected — check back next month.*
 <!-- COFFEE_PRICES_END -->

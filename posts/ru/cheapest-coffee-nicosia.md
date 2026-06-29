@@ -9,7 +9,7 @@ pinned: true
 Мы отслеживаем цены на Фреддо Эспрессо во всех крупных кофейных сетях и независимых заведениях Кипра. Кафе с единственной локацией имеют ссылку на Google Maps.
 
 <!-- COFFEE_PRICES_START -->
-*Цены последний раз проверены: 29 июн. 2026 г., 20:41 (EET). Обновляется каждый час.*
+*Цены последний раз проверены: 29 июн. 2026 г., 21:42 (EET). Популярные напитки обновляются ежемесячно через Wolt / Foody / Bolt Food.*
 
 ## Фреддо Эспрессо — По всему Кипру
 
@@ -21,8 +21,8 @@ pinned: true
 | **Coffeeberry** | €2.40 | €2.90 | Also on Wolt & Bolt Food. |
 | **Coffee Island** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
 | **Mikel Coffee** | €2.50 | €3.00 | Greek specialty chain. Also on Wolt. |
-| **Caffè Nero** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
-| **Gloria Jean's** | €2.70 | €3.20 | Also on Foody. |
+| **Caffe Nero** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
+| **Gloria Jean's** | €2.70 | €3.20 | Also on Foody & Bolt Food. |
 | **Second Cup** | €2.80 | — | Canadian chain. |
 | **[Black Cup](https://www.google.com/maps/search/Black+Cup+Coffee+Nicosia+Cyprus)** | €2.80 | — | Specialty roast. Single location, Nicosia. |
 | **Costa Coffee** | €2.90 | €3.40 | Also on Wolt & Bolt Food. |
@@ -31,4 +31,8 @@ pinned: true
 **Winner**: **Coffeeway** — €2.20
 
 > Цены на доставку приблизительные и включают типичную комиссию платформы (Wolt / Bolt Food / Foody).
+
+## Самые Популярные Напитки по Кафе
+
+*Данные о популярных напитках собираются — загляните в следующем месяце.*
 <!-- COFFEE_PRICES_END -->
