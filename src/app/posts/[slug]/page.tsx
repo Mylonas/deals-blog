@@ -3,13 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 const categoryColors: Record<string, string> = {
-  Food: "bg-orange-100 text-orange-700",
-  "Food & Drink": "bg-orange-100 text-orange-700",
-  Fuel: "bg-yellow-100 text-yellow-700",
-  "Entertainment & Leisure": "bg-green-100 text-green-700",
-  "Utilities & Services": "bg-blue-100 text-blue-700",
-  Tech: "bg-blue-100 text-blue-700",
-  Shopping: "bg-purple-100 text-purple-700",
+  Food: "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",
+  "Food & Drink": "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",
+  Fuel: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
+  "Entertainment & Leisure": "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+  "Utilities & Services": "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
+  Tech: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
+  Shopping: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300",
 };
 
 export async function generateStaticParams() {
@@ -43,7 +43,7 @@ export default async function PostPage({
           <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${badgeColor}`}>
             {post.category}
           </span>
-          <time className="text-sm text-gray-400">
+          <time className="text-sm text-gray-400 dark:text-gray-500">
             {new Date(post.date).toLocaleDateString("en-GB", {
               day: "numeric",
               month: "long",
@@ -52,15 +52,17 @@ export default async function PostPage({
           </time>
         </div>
         <h1 className="text-3xl font-bold leading-tight mb-3">{post.title}</h1>
-        <p className="text-lg text-gray-500">{post.summary}</p>
+        <p className="text-lg text-gray-500 dark:text-gray-400">{post.summary}</p>
       </header>
 
       <div
         className="prose prose-slate max-w-none
-          prose-headings:font-bold prose-headings:text-gray-800
-          prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-gray-800
-          prose-code:bg-gray-100 prose-code:px-1 prose-code:rounded prose-code:text-sm"
+          prose-headings:font-bold prose-headings:text-gray-800 dark:prose-headings:text-gray-100
+          prose-p:text-gray-700 dark:prose-p:text-gray-300
+          prose-li:text-gray-700 dark:prose-li:text-gray-300
+          prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-gray-800 dark:prose-strong:text-gray-100
+          prose-code:bg-gray-100 dark:prose-code:bg-gray-800 dark:prose-code:text-gray-200 prose-code:px-1 prose-code:rounded prose-code:text-sm"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
     </article>
