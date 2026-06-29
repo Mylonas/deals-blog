@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-29T18:42:36.051Z",
-  "scrapedAt": "2026-06-29T18:42:35.986Z",
+  "updatedAt": "2026-06-29T18:47:38.410Z",
+  "scrapedAt": "2026-06-29T18:47:37.231Z",
   "note": "Top drinks and Freddo prices scraped monthly via Playwright from Wolt/Foody/Bolt Food Cyprus. topDrinks is empty until the first monthly run.",
   "items": [
     {
@@ -26,7 +26,14 @@
         "foody": null,
         "bolt": null
       },
-      "topDrinks": [],
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 2.2,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
       "freddo": 2.2,
       "delivery": null,
       "notes": "Greek chain with locations across Cyprus."
