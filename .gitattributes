@@ -1,2 +1,15 @@
 * text=auto eol=lf
 *.bat text eol=crlf
+
+# Cron-managed data files: when merging a feature/release branch into master,
+# always keep master's version (the fresher cron-updated data) instead of the
+# branch's older version. This prevents release merges from overwriting live data.
+src/data/fuel-prices.json merge=ours
+src/data/fuel-price-history.json merge=ours
+src/data/supermarket-prices.json merge=ours
+posts/en/cheapest-petrol-stations-cyprus.md merge=ours
+posts/el/cheapest-petrol-stations-cyprus.md merge=ours
+posts/ru/cheapest-petrol-stations-cyprus.md merge=ours
+posts/en/supermarket-price-watch.md merge=ours
+posts/el/supermarket-price-watch.md merge=ours
+posts/ru/supermarket-price-watch.md merge=ours
