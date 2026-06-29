@@ -79,9 +79,56 @@ function haversine(lat1: number, lng1: number, lat2: number, lng2: number): numb
 
 type GeoState = "idle" | "loading" | "active" | "denied" | "unsupported";
 
-export default function FuelTable({ data }: { data: FuelData }) {
+const UI = {
+  en: {
+    nearMe: "Near Me", locating: "Locating…", denied: "Location denied", unsupported: "Location unavailable",
+    nearMeActive: "Near Me ✕", nearMeSubtitle: "Sorted by distance from your location",
+    all: "All", brand: "Brand", address: "Address", area: "Area", dist: "Dist.", price: "Price",
+    showingNearest: (n: number) => `Showing ${n} nearest stations`,
+    showingCheapest: (n: number, d: string) => `Showing ${n} cheapest stations${d !== "All" ? ` in ${d}` : ""}`,
+    noResults: (fuel: string, district: string) => `No stations found for ${fuel} in ${district}. Try a different district.`,
+    source: "Source: Cyprus Gov Petroleum Prices",
+  },
+  el: {
+    nearMe: "Κοντά μου", locating: "Εντοπισμός…", denied: "Άρνηση τοποθεσίας", unsupported: "Μη διαθέσιμο",
+    nearMeActive: "Κοντά μου ✕", nearMeSubtitle: "Ταξινόμηση κατά απόσταση",
+    all: "Όλες", brand: "Εταιρεία", address: "Διεύθυνση", area: "Περιοχή", dist: "Απόσταση", price: "Τιμή",
+    showingNearest: (n: number) => `Εμφάνιση ${n} κοντινότερων πρατηρίων`,
+    showingCheapest: (n: number, d: string) => `Εμφάνιση ${n} φθηνότερων πρατηρίων${d !== "Όλες" ? ` σε ${d}` : ""}`,
+    noResults: (fuel: string, district: string) => `Δεν βρέθηκαν πρατήρια για ${fuel} σε ${district}.`,
+    source: "Πηγή: Παρατηρητήριο Τιμών Καυσίμων Κύπρου",
+  },
+  ru: {
+    nearMe: "Рядом", locating: "Поиск…", denied: "Геолокация отклонена", unsupported: "Недоступно",
+    nearMeActive: "Рядом ✕", nearMeSubtitle: "Сортировка по расстоянию",
+    all: "Все", brand: "Бренд", address: "Адрес", area: "Район", dist: "Расст.", price: "Цена",
+    showingNearest: (n: number) => `Показано ${n} ближайших АЗС`,
+    showingCheapest: (n: number, d: string) => `Показано ${n} дешевейших АЗС${d !== "Все" ? ` в ${d}` : ""}`,
+    noResults: (fuel: string, district: string) => `АЗС для ${fuel} в ${district} не найдены.`,
+    source: "Источник: Портал цен на топливо Кипра",
+  },
+};
+
+const DISTRICTS_I18N: Record<string, Record<string, string>> = {
+  en: { All: "All", Nicosia: "Nicosia", Limassol: "Limassol", Larnaca: "Larnaca", Paphos: "Paphos", Famagusta: "Famagusta" },
+  el: { All: "Όλες", Nicosia: "Λευκωσία", Limassol: "Λεμεσός", Larnaca: "Λάρνακα", Paphos: "Πάφος", Famagusta: "Αμμόχωστος" },
+  ru: { All: "Все", Nicosia: "Никосия", Limassol: "Лимасол", Larnaca: "Ларнака", Paphos: "Пафос", Famagusta: "Фамагуста" },
+};
+
+const FUEL_LABELS_I18N: Record<string, Record<FuelKey, string>> = {
+  en: { "95": "Unleaded 95", "98": "Unleaded 98", "diesel": "Diesel" },
+  el: { "95": "Αμόλυβδη 95", "98": "Αμόλυβδη 98", "diesel": "Πετρέλαιο Κίνησης" },
+  ru: { "95": "АИ-95", "98": "АИ-98", "diesel": "Дизель" },
+};
+
+export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?: "en" | "el" | "ru" }) {
+  const t = UI[lang];
+  const districtLabels = DISTRICTS_I18N[lang];
+  const fuelLabels = FUEL_LABELS_I18N[lang];
+  const districtKeys = Object.keys(districtLabels);
+
   const [fuel, setFuel] = useState<FuelKey>("95");
-  const [district, setDistrict] = useState("All");
+  const [district, setDistrict] = useState(districtKeys[0]); // "All" / "Όλες" / "Все"
   const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [geoState, setGeoState] = useState<GeoState>("idle");
 
@@ -111,7 +158,6 @@ export default function FuelTable({ data }: { data: FuelData }) {
   const stations = useMemo(() => {
     const all = data.fuels[fuel].stations;
 
-    // If near-me is active: sort by distance (only stations with GPS coords first)
     if (userCoords) {
       const withDist = all
         .filter((s) => s.lat !== null && s.lng !== null)
@@ -124,10 +170,11 @@ export default function FuelTable({ data }: { data: FuelData }) {
       return [...withDist, ...withoutCoords].slice(0, SHOW);
     }
 
-    // Otherwise filter by district, show top SHOW cheapest
-    const filtered = district === "All" ? all : all.filter((s) => getDistrict(s.district) === district);
+    // district state holds the i18n label (e.g. "Όλες") — map back to EN key for filtering
+    const enKey = Object.keys(districtLabels).find((k) => districtLabels[k] === district) ?? "All";
+    const filtered = enKey === "All" ? all : all.filter((s) => getDistrict(s.district) === enKey);
     return filtered.slice(0, SHOW);
-  }, [fuel, district, data, userCoords]);
+  }, [fuel, district, data, userCoords, districtLabels]);
 
   const isNearMe = geoState === "active" && userCoords !== null;
 
@@ -145,7 +192,7 @@ export default function FuelTable({ data }: { data: FuelData }) {
                 : "bg-gray-100 text-gray-600 hover:bg-gray-200"
             }`}
           >
-            {FUEL_LABELS[k]}
+            {fuelLabels[k]}
           </button>
         ))}
       </div>
@@ -166,20 +213,14 @@ export default function FuelTable({ data }: { data: FuelData }) {
             }`}
           >
             <span>{geoState === "loading" ? "⏳" : "📍"}</span>
-            {geoState === "loading"
-              ? "Locating…"
-              : geoState === "denied"
-              ? "Location denied"
-              : geoState === "unsupported"
-              ? "Location unavailable"
-              : "Near Me"}
+            {geoState === "loading" ? t.locating : geoState === "denied" ? t.denied : geoState === "unsupported" ? t.unsupported : t.nearMe}
           </button>
         ) : (
           <button
             onClick={clearLocation}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors"
           >
-            📍 Near Me ✕
+            📍 {t.nearMeActive}
           </button>
         )}
 
@@ -188,49 +229,50 @@ export default function FuelTable({ data }: { data: FuelData }) {
 
         {/* District buttons — hidden when Near Me is active */}
         {!isNearMe &&
-          DISTRICTS.map((d) => (
-            <button
-              key={d}
-              onClick={() => setDistrict(d)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                district === d
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
-            >
-              {d}
-            </button>
-          ))}
+          districtKeys.map((dk) => {
+            const label = districtLabels[dk];
+            return (
+              <button
+                key={dk}
+                onClick={() => setDistrict(label)}
+                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                  district === label
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
 
         {isNearMe && (
-          <span className="text-xs text-blue-600">Sorted by distance from your location</span>
+          <span className="text-xs text-blue-600">{t.nearMeSubtitle}</span>
         )}
       </div>
 
       {/* Results */}
       {stations.length === 0 ? (
         <p className="text-gray-500 text-sm py-4">
-          No stations found for {FUEL_LABELS[fuel]} in {district}. Try a different district.
+          {t.noResults(fuelLabels[fuel], district)}
         </p>
       ) : (
         <>
           <p className="text-xs text-gray-400 mb-3">
-            {isNearMe
-              ? `Showing ${stations.length} nearest stations`
-              : `Showing ${stations.length} cheapest stations${district !== "All" ? ` in ${district}` : ""}`}
+            {isNearMe ? t.showingNearest(stations.length) : t.showingCheapest(stations.length, district)}
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-200 text-left">
                   <th className="pb-2 pr-3 font-semibold text-gray-700">#</th>
-                  <th className="pb-2 pr-3 font-semibold text-gray-700">Brand</th>
-                  <th className="pb-2 pr-3 font-semibold text-gray-700">Address</th>
-                  <th className="pb-2 pr-3 font-semibold text-gray-700">Area</th>
+                  <th className="pb-2 pr-3 font-semibold text-gray-700">{t.brand}</th>
+                  <th className="pb-2 pr-3 font-semibold text-gray-700">{t.address}</th>
+                  <th className="pb-2 pr-3 font-semibold text-gray-700">{t.area}</th>
                   {isNearMe && (
-                    <th className="pb-2 pr-3 font-semibold text-gray-700">Dist.</th>
+                    <th className="pb-2 pr-3 font-semibold text-gray-700">{t.dist}</th>
                   )}
-                  <th className="pb-2 font-semibold text-gray-700 text-right">Price</th>
+                  <th className="pb-2 font-semibold text-gray-700 text-right">{t.price}</th>
                 </tr>
               </thead>
               <tbody>
@@ -271,14 +313,14 @@ export default function FuelTable({ data }: { data: FuelData }) {
       )}
 
       <p className="mt-4 text-xs text-gray-400">
-        Updated {formatDate(data.updatedAt)} ·{" "}
+        {formatDate(data.updatedAt)} ·{" "}
         <a
           href="https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:underline"
         >
-          Source: Cyprus Gov Petroleum Prices
+          {t.source}
         </a>
       </p>
     </div>
