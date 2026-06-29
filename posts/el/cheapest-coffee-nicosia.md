@@ -9,16 +9,16 @@ pinned: true
 Παρακολουθούμε τις τιμές Freddo Espresso σε όλες τις μεγάλες αλυσίδες και ανεξάρτητες καφετέριες στην Κύπρο. Τα καταστήματα με μία τοποθεσία συνδέονται απευθείας με Google Maps.
 
 <!-- COFFEE_PRICES_START -->
-*Τελευταία ενημέρωση: 29 Ιουν 2026, 09:47 μ.μ. (ΕΕΤ). Δημοφιλή ποτά ανανεώνονται μηνιαία μέσω Wolt / Foody / Bolt Food.*
+*Τελευταία ενημέρωση: 29 Ιουν 2026, 10:08 μ.μ. (ΕΕΤ). Δημοφιλή ποτά ανανεώνονται μηνιαία μέσω Wolt / Foody / Bolt Food.*
 
 ## Freddo Espresso — Πανκύπρια
 
 | Καφετέρια | Τιμή | Μέσω Delivery | Σημειώσεις |
 |------|-------|-------|-------|
-| **Coffeeway** | €2.20 | — | Best value freddo island-wide. Drive-throughs available across Cyprus. |
 | **Coffee Brands** | €2.20 | — | Greek chain with locations across Cyprus. |
 | **Gregory's** | €2.30 | €2.80 | Also on Wolt (+~€0.50). Good froth on freddo. |
 | **Coffeeberry** | €2.40 | €2.90 | Also on Wolt & Bolt Food. |
+| **Coffeeway** | €2.50 | — | Best value freddo island-wide. Drive-throughs available across Cyprus. |
 | **Coffee Island** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
 | **Mikel Coffee** | €2.50 | €3.00 | Greek specialty chain. Also on Wolt. |
 | **Caffe Nero** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
@@ -28,13 +28,23 @@ pinned: true
 | **Costa Coffee** | €2.90 | €3.40 | Also on Wolt & Bolt Food. |
 | **Starbucks** | €3.50 | €4.00 | Also on Wolt & Bolt Food. Premium pricing. |
 
-**Winner**: **Coffeeway** — €2.20
+**Winner**: **Coffee Brands** — €2.20
 
 > Οι τιμές delivery είναι κατά προσέγγιση και περιλαμβάνουν τυπική χρέωση πλατφόρμας (Wolt / Bolt Food / Foody).
 
 ## Πιο Δημοφιλή Ποτά ανά Καφετέρια
 
-*Δημοφιλή ποτά — τελευταία συλλογή: 29 Ιουν 2026, 09:47 μ.μ..*
+*Δημοφιλή ποτά — τελευταία συλλογή: 29 Ιουν 2026, 10:08 μ.μ..*
+
+### Coffeeway
+
+| Ποτό | Τιμή | Πηγή |
+|------|-------|--------|
+| Espresso | €1.60 | Wolt |
+| Espresso Αρωματικός | €2.20 | Wolt |
+| Freddo Espresso | €2.50 | Wolt |
+| Cappuccino Latte | €2.50 | Wolt |
+| Cappuccino Latte Αρωματικός | €2.80 | Wolt |
 
 ### Coffee Brands
 

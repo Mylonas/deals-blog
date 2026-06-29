@@ -9,16 +9,16 @@ pinned: true
 We track Freddo Espresso prices across all major café chains and independents in Cyprus. Includes in-store prices and delivery app surcharges. Single-location cafés link directly to Google Maps.
 
 <!-- COFFEE_PRICES_START -->
-*Prices last checked: 29 Jun 2026, 21:47 (EET). Top drinks updated monthly via Wolt / Foody / Bolt Food.*
+*Prices last checked: 29 Jun 2026, 22:08 (EET). Top drinks updated monthly via Wolt / Foody / Bolt Food.*
 
 ## Freddo Espresso — All Cyprus
 
 | Café | Price | Via Delivery App | Notes |
 |------|-------|-------|-------|
-| **Coffeeway** | €2.20 | — | Best value freddo island-wide. Drive-throughs available across Cyprus. |
 | **Coffee Brands** | €2.20 | — | Greek chain with locations across Cyprus. |
 | **Gregory's** | €2.30 | €2.80 | Also on Wolt (+~€0.50). Good froth on freddo. |
 | **Coffeeberry** | €2.40 | €2.90 | Also on Wolt & Bolt Food. |
+| **Coffeeway** | €2.50 | — | Best value freddo island-wide. Drive-throughs available across Cyprus. |
 | **Coffee Island** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
 | **Mikel Coffee** | €2.50 | €3.00 | Greek specialty chain. Also on Wolt. |
 | **Caffe Nero** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
@@ -28,13 +28,23 @@ We track Freddo Espresso prices across all major café chains and independents i
 | **Costa Coffee** | €2.90 | €3.40 | Also on Wolt & Bolt Food. |
 | **Starbucks** | €3.50 | €4.00 | Also on Wolt & Bolt Food. Premium pricing. |
 
-**Winner**: **Coffeeway** — €2.20
+**Winner**: **Coffee Brands** — €2.20
 
 > Delivery prices are approximate and include typical platform fee (Wolt / Bolt Food / Foody). Actual price may vary by branch.
 
 ## Most Popular Drinks by Café
 
-*Top drinks last scraped: 29 Jun 2026, 21:47.*
+*Top drinks last scraped: 29 Jun 2026, 22:08.*
+
+### Coffeeway
+
+| Drink | Price | Source |
+|------|-------|--------|
+| Espresso | €1.60 | Wolt |
+| Espresso Αρωματικός | €2.20 | Wolt |
+| Freddo Espresso | €2.50 | Wolt |
+| Cappuccino Latte | €2.50 | Wolt |
+| Cappuccino Latte Αρωματικός | €2.80 | Wolt |
 
 ### Coffee Brands
 

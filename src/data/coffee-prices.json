@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-29T18:47:38.410Z",
-  "scrapedAt": "2026-06-29T18:47:37.231Z",
+  "updatedAt": "2026-06-29T19:08:22.550Z",
+  "scrapedAt": "2026-06-29T19:08:21.342Z",
   "note": "Top drinks and Freddo prices scraped monthly via Playwright from Wolt/Foody/Bolt Food Cyprus. topDrinks is empty until the first monthly run.",
   "items": [
     {
@@ -8,7 +8,7 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffeeway",
+        "wolt": null,
         "foody": null,
         "bolt": null
       },
@@ -22,18 +22,11 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-brands",
+        "wolt": null,
         "foody": null,
         "bolt": null
       },
-      "topDrinks": [
-        {
-          "name": "Freddo Espresso",
-          "price": 2.2,
-          "platform": "wolt",
-          "popular": false
-        }
-      ],
+      "topDrinks": [],
       "freddo": 2.2,
       "delivery": null,
       "notes": "Greek chain with locations across Cyprus."
