@@ -1,11 +1,18 @@
 {
-  "updatedAt": "2026-06-29T14:08:10.293Z",
-  "note": "Prices manually curated from in-store menus across Cyprus. Delivery prices include typical platform surcharge. Updated hourly.",
+  "updatedAt": "2026-06-29T17:41:15.352Z",
+  "scrapedAt": null,
+  "note": "Top drinks and Freddo prices scraped monthly via Playwright from Wolt/Foody/Bolt Food Cyprus. topDrinks is empty until the first monthly run.",
   "items": [
     {
       "cafe": "Coffeeway",
       "type": "chain",
       "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffeeway",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [],
       "freddo": 2.2,
       "delivery": null,
       "notes": "Best value freddo island-wide. Drive-throughs available across Cyprus."
@@ -14,6 +21,12 @@
       "cafe": "Coffee Brands",
       "type": "chain",
       "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-brands",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [],
       "freddo": 2.2,
       "delivery": null,
       "notes": "Greek chain with locations across Cyprus."
@@ -22,6 +35,12 @@
       "cafe": "Gregory's",
       "type": "chain",
       "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/gregorys-nicosia",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [],
       "freddo": 2.3,
       "delivery": 2.8,
       "notes": "Also on Wolt (+~€0.50). Good froth on freddo."
@@ -30,6 +49,12 @@
       "cafe": "Coffeeberry",
       "type": "chain",
       "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffeeberry-nicosia",
+        "foody": null,
+        "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/coffeeberry"
+      },
+      "topDrinks": [],
       "freddo": 2.4,
       "delivery": 2.9,
       "notes": "Also on Wolt & Bolt Food."
@@ -38,38 +63,68 @@
       "cafe": "Coffee Island",
       "type": "chain",
       "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-island-nicosia",
+        "foody": null,
+        "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/coffee-island-nicosia"
+      },
+      "topDrinks": [],
       "freddo": 2.5,
-      "delivery": 3,
+      "delivery": 3.0,
       "notes": "Also on Wolt & Bolt Food."
     },
     {
       "cafe": "Mikel Coffee",
       "type": "chain",
       "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/mikel-coffee-nicosia",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [],
       "freddo": 2.5,
-      "delivery": 3,
+      "delivery": 3.0,
       "notes": "Greek specialty chain. Also on Wolt."
     },
     {
-      "cafe": "Caffè Nero",
+      "cafe": "Caffe Nero",
       "type": "chain",
       "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/caffe-nero-nicosia",
+        "foody": null,
+        "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/caffe-nero-nicosia"
+      },
+      "topDrinks": [],
       "freddo": 2.5,
-      "delivery": 3,
+      "delivery": 3.0,
       "notes": "Also on Wolt & Bolt Food."
     },
     {
       "cafe": "Gloria Jean's",
       "type": "chain",
       "singleLocation": false,
+      "sources": {
+        "wolt": null,
+        "foody": "https://www.foody.com.cy/delivery/menu/gloria-jeans-nicosia",
+        "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/44759-gloria-jeans-coffee-mall-of-cyprus"
+      },
+      "topDrinks": [],
       "freddo": 2.7,
       "delivery": 3.2,
-      "notes": "Also on Foody."
+      "notes": "Also on Foody & Bolt Food."
     },
     {
       "cafe": "Second Cup",
       "type": "chain",
       "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/second-cup-nicosia",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [],
       "freddo": 2.8,
       "delivery": null,
       "notes": "Canadian chain."
@@ -79,6 +134,12 @@
       "type": "independent",
       "singleLocation": true,
       "mapsUrl": "https://www.google.com/maps/search/Black+Cup+Coffee+Nicosia+Cyprus",
+      "sources": {
+        "wolt": null,
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [],
       "freddo": 2.8,
       "delivery": null,
       "notes": "Specialty roast. Single location, Nicosia."
@@ -87,6 +148,12 @@
       "cafe": "Costa Coffee",
       "type": "chain",
       "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/costa-coffee-nicosia",
+        "foody": null,
+        "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/30353-costa-coffee-mall-of-cyprus"
+      },
+      "topDrinks": [],
       "freddo": 2.9,
       "delivery": 3.4,
       "notes": "Also on Wolt & Bolt Food."
@@ -95,8 +162,14 @@
       "cafe": "Starbucks",
       "type": "chain",
       "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/starbucks-nicosia",
+        "foody": null,
+        "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/starbucks-nicosia"
+      },
+      "topDrinks": [],
       "freddo": 3.5,
-      "delivery": 4,
+      "delivery": 4.0,
       "notes": "Also on Wolt & Bolt Food. Premium pricing."
     }
   ]
