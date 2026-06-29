@@ -85,23 +85,42 @@ async function scrapeWolt(page, cafeName, existingUrl, label) {
     await page.waitForTimeout(500);
   }
 
-  // Click the search input and type the café name
+  // Snapshot all Cyprus restaurant hrefs already on the page BEFORE typing
+  // (featured/recommended restaurants) so we can exclude them from search results
+  const preSearchHrefs = new Set(
+    await page.evaluate(() =>
+      Array.from(document.querySelectorAll('a[href*="/cyp/"][href*="/restaurant/"]'))
+        .map((a) => a.getAttribute("href"))
+    )
+  );
+
+  // Type the café name into the search box
   const searchInput = page.locator('[data-test-id="SearchInput"], input[placeholder*="Search"]').first();
   await searchInput.click({ timeout: 5000 });
   await page.keyboard.type(cafeName, { delay: 80 });
 
-  // Wait for search results to appear — Wolt shows a results panel with venue cards
-  // We specifically need Cyprus (/cyp/) links, not global redirects to other countries
+  // Wait for search results to render (new Cyprus venue links that weren't on the page before)
   let resolvedFromSearch = null;
   try {
-    await page.waitForSelector('a[href*="/cyp/"][href*="/restaurant/"]', { timeout: 8000 });
-    const cyprusLinks = await page.locator('a[href*="/cyp/"][href*="/restaurant/"]').all();
-    if (cyprusLinks.length > 0) {
-      const href = await cyprusLinks[0].getAttribute("href");
-      resolvedFromSearch = href?.startsWith("http") ? href : `https://wolt.com${href}`;
+    await page.waitForFunction(
+      (existingHrefs) => {
+        const links = Array.from(document.querySelectorAll('a[href*="/cyp/"][href*="/restaurant/"]'));
+        return links.some((a) => !existingHrefs.includes(a.getAttribute("href")));
+      },
+      [...preSearchHrefs],
+      { timeout: 10000 }
+    );
+    // Collect only the NEW links (actual search results)
+    const allHrefs = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('a[href*="/cyp/"][href*="/restaurant/"]'))
+        .map((a) => a.getAttribute("href"))
+    );
+    const newHref = allHrefs.find((h) => !preSearchHrefs.has(h));
+    if (newHref) {
+      resolvedFromSearch = newHref.startsWith("http") ? newHref : `https://wolt.com${newHref}`;
     }
   } catch {
-    console.log(`    no Cyprus venue links found in Wolt search results`);
+    console.log(`    no new Cyprus venue links after search — not on Wolt Cyprus`);
   }
 
   if (DEBUG) await page.screenshot({ path: `${DEBUG_DIR}/${label}-wolt-search.png` });
