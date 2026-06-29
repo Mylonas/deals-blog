@@ -1,0 +1,41 @@
+name: Watchdog — Auto-heal stale data
+
+on:
+  schedule:
+    - cron: "30 */2 * * *"   # every 2 hours, offset from data crons (which run on :00)
+  workflow_dispatch:
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write   # needed to re-trigger other workflows
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check data freshness and re-trigger stale workflows
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Run watchdog — stderr = human log, stdout = stale workflow filenames (one per line)
+          node scripts/watchdog.mjs 2>&1 1>/tmp/stale-workflows.txt
+
+          if [ ! -s /tmp/stale-workflows.txt ]; then
+            echo "All data sources are healthy."
+            exit 0
+          fi
+
+          echo "Stale workflows to re-trigger:"
+          cat /tmp/stale-workflows.txt
+
+          while IFS= read -r workflow; do
+            echo "→ Triggering $workflow"
+            gh workflow run "$workflow"
+            sleep 5
+          done < /tmp/stale-workflows.txt
