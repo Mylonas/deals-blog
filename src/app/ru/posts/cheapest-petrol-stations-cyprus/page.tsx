@@ -1,5 +1,7 @@
 import FuelTable from "@/components/FuelTable";
+import FuelChart from "@/components/FuelChart";
 import data from "@/data/fuel-prices.json";
+import history from "@/data/fuel-price-history.json";
 import Link from "next/link";
 
 export const metadata = {
@@ -36,6 +38,7 @@ export default function FuelPricesPageRU() {
       </p>
 
       <FuelTable data={data as any} lang="ru" />
+      <FuelChart history={(history as any).history} lang="ru" />
 
       <div className="mt-8">
         <Link href="/ru/" className="text-sm text-blue-500 hover:underline">

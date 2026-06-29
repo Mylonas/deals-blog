@@ -1,5 +1,7 @@
 import FuelTable from "@/components/FuelTable";
+import FuelChart from "@/components/FuelChart";
 import data from "@/data/fuel-prices.json";
+import history from "@/data/fuel-price-history.json";
 import Link from "next/link";
 
 export const metadata = {
@@ -12,16 +14,16 @@ export default function FuelPricesPage() {
   return (
     <article className="max-w-2xl">
       <div className="mb-6 flex items-center gap-3">
-        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-800">
+        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300">
           Fuel
         </span>
-        <span className="text-xs font-semibold text-amber-600">LIVE ●</span>
+        <span className="text-xs font-semibold text-amber-600 dark:text-amber-400">LIVE ●</span>
       </div>
 
       <h1 className="text-3xl font-bold mb-3 leading-tight">
         Cheapest Petrol Stations in Cyprus — Live Prices
       </h1>
-      <p className="text-gray-500 mb-8">
+      <p className="text-gray-500 dark:text-gray-400 mb-8">
         Filter by fuel type and district to find the cheapest station near you.
         Prices sourced hourly from the{" "}
         <a
@@ -36,6 +38,7 @@ export default function FuelPricesPage() {
       </p>
 
       <FuelTable data={data as any} />
+      <FuelChart history={(history as any).history} />
 
       <div className="mt-8">
         <Link href="/" className="text-sm text-blue-500 hover:underline">
