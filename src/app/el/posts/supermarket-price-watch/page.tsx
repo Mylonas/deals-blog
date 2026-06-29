@@ -12,15 +12,15 @@ export default function SupermarketPriceWatchEL() {
   return (
     <article className="max-w-2xl">
       <div className="mb-6 flex items-center gap-3">
-        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
+        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">
           Φαγητό &amp; Ποτό
         </span>
-        <span className="text-xs font-semibold text-amber-600">ΖΩΝΤΑΝΑ ●</span>
+        <span className="text-xs font-semibold text-amber-600 dark:text-amber-400">ΖΩΝΤΑΝΑ ●</span>
       </div>
       <h1 className="text-3xl font-bold mb-3 leading-tight">
         Παρακολούθηση Τιμών Σούπερ Μάρκετ — 10 Βασικά Προϊόντα
       </h1>
-      <p className="text-gray-500 mb-8">
+      <p className="text-gray-500 dark:text-gray-400 mb-8">
         Ζωντανές τιμές για τα 10 πιο αγοραζόμενα οικιακά προϊόντα στην Κύπρο, από την κυβερνητική
         πλατφόρμα{" "}
         <a href="https://www.e-kalathi.gov.cy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">

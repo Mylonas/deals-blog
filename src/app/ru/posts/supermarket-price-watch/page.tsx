@@ -12,15 +12,15 @@ export default function SupermarketPriceWatchRU() {
   return (
     <article className="max-w-2xl">
       <div className="mb-6 flex items-center gap-3">
-        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
+        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">
           Еда и напитки
         </span>
-        <span className="text-xs font-semibold text-amber-600">В РЕАЛЬНОМ ВРЕМЕНИ ●</span>
+        <span className="text-xs font-semibold text-amber-600 dark:text-amber-400">В РЕАЛЬНОМ ВРЕМЕНИ ●</span>
       </div>
       <h1 className="text-3xl font-bold mb-3 leading-tight">
         Мониторинг цен в супермаркетах — 10 основных продуктов
       </h1>
-      <p className="text-gray-500 mb-8">
+      <p className="text-gray-500 dark:text-gray-400 mb-8">
         Актуальные цены на 10 самых покупаемых товаров на Кипре с официальной правительственной
         платформы{" "}
         <a href="https://www.e-kalathi.gov.cy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
@@ -31,7 +31,7 @@ export default function SupermarketPriceWatchRU() {
 
       <SupermarketTable items={data.items} lang="ru" updatedAt={data.updatedAt} />
 
-      <p className="mt-6 text-xs text-gray-400">
+      <p className="mt-6 text-xs text-gray-400 dark:text-gray-500">
         Источник данных:{" "}
         <a href="https://www.e-kalathi.gov.cy" target="_blank" rel="noopener noreferrer" className="hover:underline">
           e-kalathi.gov.cy
