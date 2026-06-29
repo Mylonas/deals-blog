@@ -56,19 +56,17 @@ async function scrapeWolt(page, cafeName, existingUrl, label) {
     } catch {}
   });
 
-  // Step 1: try the saved URL directly (only if it looks like a real venue URL, not a city page)
-  const isVenueUrl = existingUrl && existingUrl.includes("/restaurant/");
-  if (isVenueUrl) {
+  // Step 1: try the saved URL if it's a Cyprus venue URL
+  const isCyprusVenueUrl = existingUrl && existingUrl.includes("/cyp/") && existingUrl.includes("/restaurant/");
+  if (isCyprusVenueUrl) {
     await page.goto(existingUrl, { waitUntil: "domcontentloaded", timeout: 40000 });
     await page.waitForTimeout(5000);
-    // Check if we're still on a venue page (not redirected to an error page)
-    const currentUrl = page.url();
     const hasNotFoundText = await page.evaluate(() =>
       document.body?.textContent?.includes("is no longer on Wolt")
     );
     if (!hasNotFoundText) {
-      resolvedUrl = currentUrl;
-      console.log(`    direct URL OK → ${currentUrl.split("/restaurant/")[1]?.split("/")[0]}`);
+      resolvedUrl = page.url();
+      console.log(`    direct URL OK → ${resolvedUrl.split("/restaurant/")[1]?.split("/")[0]}`);
       return { scraped: await extractWoltItems(page, menuJson), resolvedUrl };
     }
     console.log(`    saved URL is stale, falling back to search`);
@@ -91,23 +89,31 @@ async function scrapeWolt(page, cafeName, existingUrl, label) {
   const searchInput = page.locator('[data-test-id="SearchInput"], input[placeholder*="Search"]').first();
   await searchInput.click({ timeout: 5000 });
   await page.keyboard.type(cafeName, { delay: 80 });
-  await page.waitForTimeout(3000);
+
+  // Wait for search results to appear — Wolt shows a results panel with venue cards
+  // We specifically need Cyprus (/cyp/) links, not global redirects to other countries
+  let resolvedFromSearch = null;
+  try {
+    await page.waitForSelector('a[href*="/cyp/"][href*="/restaurant/"]', { timeout: 8000 });
+    const cyprusLinks = await page.locator('a[href*="/cyp/"][href*="/restaurant/"]').all();
+    if (cyprusLinks.length > 0) {
+      const href = await cyprusLinks[0].getAttribute("href");
+      resolvedFromSearch = href?.startsWith("http") ? href : `https://wolt.com${href}`;
+    }
+  } catch {
+    console.log(`    no Cyprus venue links found in Wolt search results`);
+  }
 
   if (DEBUG) await page.screenshot({ path: `${DEBUG_DIR}/${label}-wolt-search.png` });
 
-  // Look for venue result links in the dropdown / search results
-  const venueLinks = page.locator('a[href*="/restaurant/"]');
-  const count = await venueLinks.count();
-  if (count === 0) {
-    console.log(`    no venue links found in search results`);
+  if (!resolvedFromSearch) {
     return { scraped: { popular: [], all: [] }, resolvedUrl };
   }
 
-  const firstHref = await venueLinks.first().getAttribute("href");
-  resolvedUrl = firstHref?.startsWith("http") ? firstHref : `https://wolt.com${firstHref}`;
+  resolvedUrl = resolvedFromSearch;
   console.log(`    found venue: ${resolvedUrl}`);
 
-  await venueLinks.first().click();
+  await page.goto(resolvedUrl, { waitUntil: "domcontentloaded", timeout: 40000 });
   await page.waitForTimeout(5000);
 
   if (DEBUG) await page.screenshot({ path: `${DEBUG_DIR}/${label}-wolt-menu.png`, fullPage: true });
