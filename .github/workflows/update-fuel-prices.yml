@@ -40,4 +40,5 @@ jobs:
           git add posts/ru/cheapest-petrol-stations-cyprus.md
           git add src/data/fuel-prices.json
           git commit -m "chore: auto-update fuel prices $(date +'%Y-%m-%d %H:%M UTC') [skip ci]"
+          git pull --rebase origin master
           git push origin master
