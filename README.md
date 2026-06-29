@@ -10,7 +10,7 @@ Consumer deals blog for Cyprus — live-tracked prices for fuel, coffee, superma
 
 | Feature | Details |
 |---------|---------|
-| **Live fuel tracker** | Unleaded 95, Unleaded 98 & Diesel — top 100 stations cached, top 10 shown; district + Near Me filters; GPS map links. Source: Cyprus Gov Petroleum Prices Portal |
+| **Live fuel tracker** | Unleaded 95, Unleaded 98 & Diesel — top 100 stations cached, top 10 shown; district + Near Me filters; GPS map links; price history chart (up to 1 year). Source: Cyprus Gov Petroleum Prices Portal |
 | **Supermarket price watch** | 10 household staples tracked across all major chains. Source: e-kalathi.gov.cy |
 | **Coffee price tracker** | Freddo Espresso prices across 13 café chains, island-wide + delivery app surcharges |
 | **Trends dashboard** | Internal page at `/trends` — Cyprus news, Wikipedia, YouTube & Reddit trending topics; post ideas via Claude API |
@@ -58,9 +58,12 @@ deals-blog/
 │   │   ├── LangSwitcher.tsx            # EN / EL / RU switcher (stays on same page)
 │   │   ├── ThemeToggle.tsx             # Dark/light mode toggle (localStorage + prefers-color-scheme)
 │   │   ├── FuelTable.tsx               # Interactive fuel table (district/Near Me filters, i18n)
+│   │   ├── FuelChart.tsx               # Price history line chart (Recharts, 7d/30d/90d/1y, i18n)
 │   │   └── SupermarketTable.tsx        # Sortable price table (client component)
 │   ├── data/
 │   │   ├── supermarket-prices.json     # Live supermarket data (updated hourly)
+│   │   ├── fuel-prices.json            # Live fuel station data — top 100 per fuel type (updated hourly)
+│   │   ├── fuel-price-history.json     # Rolling 1-year price history — cheapest price per fuel type per change
 │   │   ├── coffee-prices.json          # Manually curated coffee prices
 │   │   └── trending-topics.json        # Latest Cyprus trend data (updated every 3h)
 │   └── lib/
@@ -182,7 +185,7 @@ feature/my-feature  →  dev  →  master
 
 See [CHANGELOG.md](./CHANGELOG.md) for full history.
 
-Latest: **[v1.5.0](https://github.com/Mylonas/deals-blog/releases/tag/v1.5.0)** — Dark mode, watchdog auto-heal, EL/RU fuel interactive pages, YouTube/Reddit trending, Node.js 24.
+Latest: **[v1.6.0](https://github.com/Mylonas/deals-blog/releases/tag/v1.6.0)** — Fuel price history chart (1 year, deduped), supermarket JSON cron fix, dark mode polish on dedicated pages.
 
 Release procedure follows the project's [release guide](https://github.com/Mylonas/deals-blog/releases): semver tagging, CHANGELOG update, annotated git tag, structured release notes with rollback procedure.
 
