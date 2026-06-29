@@ -9,7 +9,7 @@ pinned: true
 We track Freddo Espresso prices across all major café chains and independents in Cyprus. Includes in-store prices and delivery app surcharges. Single-location cafés link directly to Google Maps.
 
 <!-- COFFEE_PRICES_START -->
-*Prices last checked: 29 Jun 2026, 22:18 (EET). Top drinks updated monthly via Wolt / Foody / Bolt Food.*
+*Prices last checked: 29 Jun 2026, 22:54 (EET). Top drinks updated monthly via Wolt / Foody / Bolt Food.*
 
 ## Freddo Espresso — All Cyprus
 
@@ -34,89 +34,5 @@ We track Freddo Espresso prices across all major café chains and independents i
 
 ## Most Popular Drinks by Café
 
-*Top drinks last scraped: 29 Jun 2026, 22:18.*
-
-### Coffeeway
-
-| Drink | Price | Source |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Coffee Brands
-
-| Drink | Price | Source |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Gregory's
-
-| Drink | Price | Source |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Coffeeberry
-
-| Drink | Price | Source |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Coffee Island
-
-| Drink | Price | Source |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Mikel Coffee
-
-| Drink | Price | Source |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Caffe Nero
-
-| Drink | Price | Source |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Gloria Jean's
-
-| Drink | Price | Source |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Second Cup
-
-| Drink | Price | Source |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### [Black Cup](https://www.google.com/maps/search/Black+Cup+Coffee+Nicosia+Cyprus)
-
-| Drink | Price | Source |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Costa Coffee
-
-| Drink | Price | Source |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Starbucks
-
-| Drink | Price | Source |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
+*Top drinks data is being collected — check back next month.*
 <!-- COFFEE_PRICES_END -->

@@ -9,7 +9,7 @@ pinned: true
 Παρακολουθούμε τις τιμές Freddo Espresso σε όλες τις μεγάλες αλυσίδες και ανεξάρτητες καφετέριες στην Κύπρο. Τα καταστήματα με μία τοποθεσία συνδέονται απευθείας με Google Maps.
 
 <!-- COFFEE_PRICES_START -->
-*Τελευταία ενημέρωση: 29 Ιουν 2026, 10:18 μ.μ. (ΕΕΤ). Δημοφιλή ποτά ανανεώνονται μηνιαία μέσω Wolt / Foody / Bolt Food.*
+*Τελευταία ενημέρωση: 29 Ιουν 2026, 10:54 μ.μ. (ΕΕΤ). Δημοφιλή ποτά ανανεώνονται μηνιαία μέσω Wolt / Foody / Bolt Food.*
 
 ## Freddo Espresso — Πανκύπρια
 
@@ -34,89 +34,5 @@ pinned: true
 
 ## Πιο Δημοφιλή Ποτά ανά Καφετέρια
 
-*Δημοφιλή ποτά — τελευταία συλλογή: 29 Ιουν 2026, 10:18 μ.μ..*
-
-### Coffeeway
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Coffee Brands
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Gregory's
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Coffeeberry
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Coffee Island
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Mikel Coffee
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Caffe Nero
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Gloria Jean's
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Second Cup
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### [Black Cup](https://www.google.com/maps/search/Black+Cup+Coffee+Nicosia+Cyprus)
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Costa Coffee
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
-
-### Starbucks
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Golden Fire | €16.00 | Wolt |
-| Black Pearl | €16.00 | Wolt |
+*Τα δεδομένα για τα δημοφιλή ποτά συλλέγονται — επιστρέψτε τον επόμενο μήνα.*
 <!-- COFFEE_PRICES_END -->
