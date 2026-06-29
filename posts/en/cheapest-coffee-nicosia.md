@@ -9,7 +9,7 @@ pinned: true
 We track Freddo Espresso prices across all major café chains and independents in Cyprus. Includes in-store prices and delivery app surcharges. Single-location cafés link directly to Google Maps.
 
 <!-- COFFEE_PRICES_START -->
-*Prices last checked: 29 Jun 2026, 02:07 (EET). Updated hourly.*
+*Prices last checked: 29 Jun 2026, 07:18 (EET). Updated hourly.*
 
 ## Freddo Espresso — All Cyprus
 
