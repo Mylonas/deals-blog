@@ -9,6 +9,8 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,5 +38,5 @@ jobs:
           git add posts/en/supermarket-price-watch.md
           git add posts/el/supermarket-price-watch.md
           git add posts/ru/supermarket-price-watch.md
-          git commit -m "chore: auto-update supermarket prices $(date +'%Y-%m-%d %H:%M UTC')"
+          git commit -m "chore: auto-update supermarket prices $(date +'%Y-%m-%d %H:%M UTC') [skip ci]"
           git push origin master
