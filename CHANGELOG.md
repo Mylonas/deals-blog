@@ -10,6 +10,25 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.6.0] — 2026-06-29
+
+### Added
+- **Fuel price history chart** — line chart (Recharts) on all three fuel pages (EN/EL/RU) showing cheapest price per fuel type over time
+- `src/data/fuel-price-history.json` — rolling 1-year history file, updated hourly by the fuel cron
+- `src/components/FuelChart.tsx` — client component with 7d / 30d / 90d / 1y range switcher; fully translated (EN/EL/RU); dark mode aware
+- History deduplication: new entry is only appended when at least one price has changed since the last record
+- History retention: entries older than 365 days are automatically trimmed on each write
+
+### Fixed
+- `update-supermarket-prices.yml` was not committing `src/data/supermarket-prices.json` — dedicated supermarket pages (EN/EL/RU) were showing data from the initial seed (June 28) instead of the latest hourly fetch
+- `update-fuel-prices.yml` now also commits `src/data/fuel-price-history.json`
+- Missing dark mode variants on dedicated page badges and description text for EN/EL/RU supermarket and EL/RU fuel pages
+
+### Rollback
+Redeploy `v1.5.0` tag via Cloudflare Pages dashboard, or revert the relevant merge commits and push to master.
+
+---
+
 ## [1.5.0] — 2026-06-29
 
 ### Added
