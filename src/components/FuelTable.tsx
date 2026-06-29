@@ -189,7 +189,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
             className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
               fuel === k
                 ? "bg-yellow-400 text-yellow-900"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
             }`}
           >
             {fuelLabels[k]}
@@ -206,10 +206,10 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
             disabled={geoState === "loading" || geoState === "denied" || geoState === "unsupported"}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${
               geoState === "denied" || geoState === "unsupported"
-                ? "border-red-200 text-red-400 cursor-not-allowed bg-red-50"
+                ? "border-red-200 text-red-400 cursor-not-allowed bg-red-50 dark:bg-red-950/20 dark:border-red-900/50 dark:text-red-400"
                 : geoState === "loading"
-                ? "border-blue-200 text-blue-400 bg-blue-50 cursor-wait"
-                : "border-blue-300 text-blue-600 hover:bg-blue-50"
+                ? "border-blue-200 text-blue-400 bg-blue-50 dark:bg-blue-950/20 dark:border-blue-900/50 cursor-wait"
+                : "border-blue-300 dark:border-blue-700 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/20"
             }`}
           >
             <span>{geoState === "loading" ? "⏳" : "📍"}</span>
@@ -225,7 +225,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
         )}
 
         {/* Divider */}
-        {!isNearMe && <span className="text-gray-300 text-xs">|</span>}
+        {!isNearMe && <span className="text-gray-300 dark:text-gray-600 text-xs">|</span>}
 
         {/* District buttons — hidden when Near Me is active */}
         {!isNearMe &&
@@ -247,32 +247,32 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
           })}
 
         {isNearMe && (
-          <span className="text-xs text-blue-600">{t.nearMeSubtitle}</span>
+          <span className="text-xs text-blue-600 dark:text-blue-400">{t.nearMeSubtitle}</span>
         )}
       </div>
 
       {/* Results */}
       {stations.length === 0 ? (
-        <p className="text-gray-500 text-sm py-4">
+        <p className="text-gray-500 dark:text-gray-400 text-sm py-4">
           {t.noResults(fuelLabels[fuel], district)}
         </p>
       ) : (
         <>
-          <p className="text-xs text-gray-400 mb-3">
+          <p className="text-xs text-gray-400 dark:text-gray-500 mb-3">
             {isNearMe ? t.showingNearest(stations.length) : t.showingCheapest(stations.length, district)}
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left">
-                  <th className="pb-2 pr-3 font-semibold text-gray-700">#</th>
-                  <th className="pb-2 pr-3 font-semibold text-gray-700">{t.brand}</th>
-                  <th className="pb-2 pr-3 font-semibold text-gray-700">{t.address}</th>
-                  <th className="pb-2 pr-3 font-semibold text-gray-700">{t.area}</th>
+                <tr className="border-b border-gray-200 dark:border-gray-700 text-left">
+                  <th className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">#</th>
+                  <th className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">{t.brand}</th>
+                  <th className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">{t.address}</th>
+                  <th className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">{t.area}</th>
                   {isNearMe && (
-                    <th className="pb-2 pr-3 font-semibold text-gray-700">{t.dist}</th>
+                    <th className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">{t.dist}</th>
                   )}
-                  <th className="pb-2 font-semibold text-gray-700 text-right">{t.price}</th>
+                  <th className="pb-2 font-semibold text-gray-700 dark:text-gray-300 text-right">{t.price}</th>
                 </tr>
               </thead>
               <tbody>
@@ -281,26 +281,26 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
                     ? ((s as any).distance as number)
                     : null;
                   return (
-                    <tr key={i} className="border-b border-gray-100 hover:bg-gray-50">
-                      <td className="py-3 pr-3 text-gray-400 text-xs">{i + 1}</td>
-                      <td className="py-3 pr-3 font-medium text-gray-800 whitespace-nowrap">{s.brand}</td>
+                    <tr key={i} className="border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                      <td className="py-3 pr-3 text-gray-400 dark:text-gray-500 text-xs">{i + 1}</td>
+                      <td className="py-3 pr-3 font-medium text-gray-800 dark:text-gray-200 whitespace-nowrap">{s.brand}</td>
                       <td className="py-3 pr-3">
                         <a
                           href={s.mapsUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-600 hover:underline"
+                          className="text-blue-600 dark:text-blue-400 hover:underline"
                         >
                           {s.address}
                         </a>
                       </td>
-                      <td className="py-3 pr-3 text-gray-500 text-xs whitespace-nowrap">{s.district}</td>
+                      <td className="py-3 pr-3 text-gray-500 dark:text-gray-400 text-xs whitespace-nowrap">{s.district}</td>
                       {isNearMe && (
-                        <td className="py-3 pr-3 text-gray-500 text-xs whitespace-nowrap">
+                        <td className="py-3 pr-3 text-gray-500 dark:text-gray-400 text-xs whitespace-nowrap">
                           {dist != null ? `${dist.toFixed(1)} km` : "—"}
                         </td>
                       )}
-                      <td className="py-3 text-right font-bold text-green-700 whitespace-nowrap">
+                      <td className="py-3 text-right font-bold text-green-700 dark:text-green-400 whitespace-nowrap">
                         €{s.price.toFixed(3)}
                       </td>
                     </tr>
@@ -312,7 +312,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
         </>
       )}
 
-      <p className="mt-4 text-xs text-gray-400">
+      <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
         {formatDate(data.updatedAt)} ·{" "}
         <a
           href="https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices"
