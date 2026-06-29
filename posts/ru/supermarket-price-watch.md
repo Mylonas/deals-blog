@@ -14,16 +14,16 @@ pinned: false
 
 | Продукт | Мин. цена | Магазин |
 |---------|---------|--------|
-| Свежее молоко 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | Alpha Sigma |
-| Яйца | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | Alpha Sigma |
-| Халлуми 200г | **[€1.85](https://www.e-kalathi.gov.cy/product-information/254)** | Alpha Sigma |
-| Спагетти 500г | **[€0.95](https://www.e-kalathi.gov.cy/product-information/1069)** | Alpha Sigma |
-| Оливковое масло 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Alpha Sigma |
-| Вода 1.5L ×6 | **[€2.05](https://www.e-kalathi.gov.cy/product-information/2077)** | Alpha Sigma |
-| Йогурт | **[€1.79](https://www.e-kalathi.gov.cy/product-information/280)** | Alpha Sigma |
-| Рис 1кг | **[€1.95](https://www.e-kalathi.gov.cy/product-information/1120)** | Alpha Sigma |
-| Апельсиновый сок 1L | **[€2.25](https://www.e-kalathi.gov.cy/product-information/2120)** | Alpha Sigma |
-| Кока-Кола 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Alpha Sigma |
+| Свежее молоко 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | LIDL |
+| Яйца | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | LIDL |
+| Халлуми 200г | **[€1.85](https://www.e-kalathi.gov.cy/product-information/254)** | LIDL |
+| Спагетти 500г | **[€0.95](https://www.e-kalathi.gov.cy/product-information/1069)** | LIDL |
+| Оливковое масло 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | LIDL |
+| Вода 1.5L ×6 | **[€2.05](https://www.e-kalathi.gov.cy/product-information/2077)** | LIDL |
+| Йогурт | **[€1.79](https://www.e-kalathi.gov.cy/product-information/280)** | LIDL |
+| Рис 1кг | **[€1.95](https://www.e-kalathi.gov.cy/product-information/1120)** | LIDL |
+| Апельсиновый сок 1L | **[€2.25](https://www.e-kalathi.gov.cy/product-information/2120)** | LIDL |
+| Кока-Кола 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | LIDL |
 
 <!-- PRICES_END -->
 
