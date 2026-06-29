@@ -12,15 +12,15 @@ export default function SupermarketPriceWatchEN() {
   return (
     <article className="max-w-2xl">
       <div className="mb-6 flex items-center gap-3">
-        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
+        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">
           Food &amp; Drink
         </span>
-        <span className="text-xs font-semibold text-amber-600">LIVE ●</span>
+        <span className="text-xs font-semibold text-amber-600 dark:text-amber-400">LIVE ●</span>
       </div>
       <h1 className="text-3xl font-bold mb-3 leading-tight">
         Cyprus Supermarket Price Watch — 10 Household Staples
       </h1>
-      <p className="text-gray-500 mb-8">
+      <p className="text-gray-500 dark:text-gray-400 mb-8">
         Live prices for the 10 most-bought household products in Cyprus, sourced from the
         government&apos;s{" "}
         <a href="https://www.e-kalathi.gov.cy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
