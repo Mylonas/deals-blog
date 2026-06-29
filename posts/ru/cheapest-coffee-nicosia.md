@@ -9,16 +9,16 @@ pinned: true
 Мы отслеживаем цены на Фреддо Эспрессо во всех крупных кофейных сетях и независимых заведениях Кипра. Кафе с единственной локацией имеют ссылку на Google Maps.
 
 <!-- COFFEE_PRICES_START -->
-*Цены последний раз проверены: 29 июн. 2026 г., 22:08 (EET). Популярные напитки обновляются ежемесячно через Wolt / Foody / Bolt Food.*
+*Цены последний раз проверены: 29 июн. 2026 г., 22:18 (EET). Популярные напитки обновляются ежемесячно через Wolt / Foody / Bolt Food.*
 
 ## Фреддо Эспрессо — По всему Кипру
 
 | Кафе | Цена | Через Доставку | Примечания |
 |------|-------|-------|-------|
+| **Coffeeway** | €2.20 | — | Best value freddo island-wide. Drive-throughs available across Cyprus. |
 | **Coffee Brands** | €2.20 | — | Greek chain with locations across Cyprus. |
 | **Gregory's** | €2.30 | €2.80 | Also on Wolt (+~€0.50). Good froth on freddo. |
 | **Coffeeberry** | €2.40 | €2.90 | Also on Wolt & Bolt Food. |
-| **Coffeeway** | €2.50 | — | Best value freddo island-wide. Drive-throughs available across Cyprus. |
 | **Coffee Island** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
 | **Mikel Coffee** | €2.50 | €3.00 | Greek specialty chain. Also on Wolt. |
 | **Caffe Nero** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
@@ -28,27 +28,95 @@ pinned: true
 | **Costa Coffee** | €2.90 | €3.40 | Also on Wolt & Bolt Food. |
 | **Starbucks** | €3.50 | €4.00 | Also on Wolt & Bolt Food. Premium pricing. |
 
-**Winner**: **Coffee Brands** — €2.20
+**Winner**: **Coffeeway** — €2.20
 
 > Цены на доставку приблизительные и включают типичную комиссию платформы (Wolt / Bolt Food / Foody).
 
 ## Самые Популярные Напитки по Кафе
 
-*Популярные напитки — последнее обновление: 29 июн. 2026 г., 22:08.*
+*Популярные напитки — последнее обновление: 29 июн. 2026 г., 22:18.*
 
 ### Coffeeway
 
 | Напиток | Цена | Источник |
 |------|-------|--------|
-| Espresso | €1.60 | Wolt |
-| Espresso Αρωματικός | €2.20 | Wolt |
-| Freddo Espresso | €2.50 | Wolt |
-| Cappuccino Latte | €2.50 | Wolt |
-| Cappuccino Latte Αρωματικός | €2.80 | Wolt |
+| Golden Fire | €16.00 | Wolt |
+| Black Pearl | €16.00 | Wolt |
 
 ### Coffee Brands
 
 | Напиток | Цена | Источник |
 |------|-------|--------|
-| Freddo Espresso | €2.20 | Wolt |
+| Golden Fire | €16.00 | Wolt |
+| Black Pearl | €16.00 | Wolt |
+
+### Gregory's
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Golden Fire | €16.00 | Wolt |
+| Black Pearl | €16.00 | Wolt |
+
+### Coffeeberry
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Golden Fire | €16.00 | Wolt |
+| Black Pearl | €16.00 | Wolt |
+
+### Coffee Island
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Golden Fire | €16.00 | Wolt |
+| Black Pearl | €16.00 | Wolt |
+
+### Mikel Coffee
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Golden Fire | €16.00 | Wolt |
+| Black Pearl | €16.00 | Wolt |
+
+### Caffe Nero
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Golden Fire | €16.00 | Wolt |
+| Black Pearl | €16.00 | Wolt |
+
+### Gloria Jean's
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Golden Fire | €16.00 | Wolt |
+| Black Pearl | €16.00 | Wolt |
+
+### Second Cup
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Golden Fire | €16.00 | Wolt |
+| Black Pearl | €16.00 | Wolt |
+
+### [Black Cup](https://www.google.com/maps/search/Black+Cup+Coffee+Nicosia+Cyprus)
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Golden Fire | €16.00 | Wolt |
+| Black Pearl | €16.00 | Wolt |
+
+### Costa Coffee
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Golden Fire | €16.00 | Wolt |
+| Black Pearl | €16.00 | Wolt |
+
+### Starbucks
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Golden Fire | €16.00 | Wolt |
+| Black Pearl | €16.00 | Wolt |
 <!-- COFFEE_PRICES_END -->
