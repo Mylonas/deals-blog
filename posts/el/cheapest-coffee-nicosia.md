@@ -9,7 +9,7 @@ pinned: true
 Παρακολουθούμε τις τιμές Freddo Espresso σε όλες τις μεγάλες αλυσίδες και ανεξάρτητες καφετέριες στην Κύπρο. Τα καταστήματα με μία τοποθεσία συνδέονται απευθείας με Google Maps.
 
 <!-- COFFEE_PRICES_START -->
-*Τελευταία ενημέρωση: 29 Ιουν 2026, 10:54 μ.μ. (ΕΕΤ). Δημοφιλή ποτά ανανεώνονται μηνιαία μέσω Wolt / Foody / Bolt Food.*
+*Τελευταία ενημέρωση: 29 Ιουν 2026, 10:59 μ.μ. (ΕΕΤ). Δημοφιλή ποτά ανανεώνονται μηνιαία μέσω Wolt / Foody / Bolt Food.*
 
 ## Freddo Espresso — Πανκύπρια
 
@@ -19,10 +19,10 @@ pinned: true
 | **Coffee Brands** | €2.20 | — | Greek chain with locations across Cyprus. |
 | **Gregory's** | €2.30 | €2.80 | Also on Wolt (+~€0.50). Good froth on freddo. |
 | **Coffeeberry** | €2.40 | €2.90 | Also on Wolt & Bolt Food. |
-| **Coffee Island** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
 | **Mikel Coffee** | €2.50 | €3.00 | Greek specialty chain. Also on Wolt. |
 | **Caffe Nero** | €2.50 | €3.00 | Also on Wolt & Bolt Food. |
 | **Gloria Jean's** | €2.70 | €3.20 | Also on Foody & Bolt Food. |
+| **Coffee Island** | €2.80 | €3.00 | Also on Wolt & Bolt Food. |
 | **Second Cup** | €2.80 | — | Canadian chain. |
 | **[Black Cup](https://www.google.com/maps/search/Black+Cup+Coffee+Nicosia+Cyprus)** | €2.80 | — | Specialty roast. Single location, Nicosia. |
 | **Costa Coffee** | €2.90 | €3.40 | Also on Wolt & Bolt Food. |
