@@ -10,6 +10,37 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.5.0] — 2026-06-29
+
+### Added
+- **Dark mode** — sun/moon toggle in the header; preference persisted in `localStorage`; respects `prefers-color-scheme` on first visit; no flash on load (inline `<script>` applies class before paint)
+- `ThemeToggle.tsx` client component
+- Dark variants across all pages, cards, badges, prose content, and table components (EN/EL/RU)
+- **Watchdog workflow** (`.github/workflows/watchdog.yml`) — runs every 2h, checks `updatedAt` in all 4 data JSON files, re-triggers stale workflows; opens a GitHub Issue after 3 consecutive failures; deduplicates issues
+- `scripts/watchdog.mjs` — freshness checks with configurable `maxAgeHours` per source
+- **Dedicated EL and RU fuel pages** at `/el/posts/cheapest-petrol-stations-cyprus` and `/ru/posts/cheapest-petrol-stations-cyprus` — interactive with live data; previously fell through to stale markdown
+- i18n support in `FuelTable.tsx` via `lang` prop (EN/EL/RU) — district labels, fuel labels, UI strings, Near Me button all translated
+- **YouTube and Reddit trending sources** added to trends dashboard (conditional on `YOUTUBE_API_KEY` and `REDDIT_CLIENT_ID` / `REDDIT_CLIENT_SECRET` secrets)
+- Wikipedia Trending (always-on, no key needed) added as trending source
+- **Near Me** geolocation button on fuel tracker — sorts stations by distance using Haversine formula; top 100 stations cached in JSON, top 10 shown
+
+### Changed
+- All GitHub Actions workflows upgraded from Node.js 20 to Node.js 24
+- Fuel tracker now shows top 100 stations in `fuel-prices.json` (was 7); UI still shows top 10
+- Fuel address column: shows address text as a clickable Google Maps link (was icon-only)
+- `git pull --rebase origin master` added before push in all cron workflows to prevent race conditions when multiple crons run simultaneously
+
+### Fixed
+- Unleaded 98 and Diesel showing "—" / €0.000 — root cause: CSRF token consumed by first POST; fixed by fetching a fresh session per fuel type
+- Cookie parsing bug: raw `set-cookie` directives (`;path=/;HttpOnly`) were passed as-is to the Cookie header; server rejected them; fixed with `res.headers.getSetCookie()` + stripping directives
+- CI/CD 403 errors on fuel and supermarket cron push — missing `permissions: contents: write` added to both workflow jobs
+- EL and RU fuel pages showing stale data — dedicated pages now created for both locales
+
+### Rollback
+`git revert` the relevant merge commits, or redeploy v1.4.0 tag via Cloudflare Pages dashboard.
+
+---
+
 ## [1.4.0] — 2026-06-28
 
 ### Changed
