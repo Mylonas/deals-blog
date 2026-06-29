@@ -10,12 +10,13 @@ Consumer deals blog for Cyprus — live-tracked prices for fuel, coffee, superma
 
 | Feature | Details |
 |---------|---------|
-| **Live fuel tracker** | Unleaded 95, Unleaded 98 & Diesel — 7 cheapest stations per type, GPS map links. Source: Cyprus Gov Petroleum Prices Portal |
+| **Live fuel tracker** | Unleaded 95, Unleaded 98 & Diesel — top 100 stations cached, top 10 shown; district + Near Me filters; GPS map links. Source: Cyprus Gov Petroleum Prices Portal |
 | **Supermarket price watch** | 10 household staples tracked across all major chains. Source: e-kalathi.gov.cy |
 | **Coffee price tracker** | Freddo Espresso prices across 13 café chains, island-wide + delivery app surcharges |
-| **Trends dashboard** | Internal page at `/trends` — Cyprus news headlines categorised into deal buckets, post ideas generated hourly |
-| **Trilingual** | Every post exists in English (`/`), Greek (`/el/`), and Russian (`/ru/`) |
-| **Hourly cron** | GitHub Actions updates all live data every hour and commits the result |
+| **Trends dashboard** | Internal page at `/trends` — Cyprus news, Wikipedia, YouTube & Reddit trending topics; post ideas via Claude API |
+| **Dark mode** | Sun/moon toggle in header; `localStorage` persistence; respects `prefers-color-scheme`; no flash on load |
+| **Trilingual** | Every post exists in English (`/`), Greek (`/el/`), and Russian (`/ru/`) with full i18n in interactive components |
+| **Hourly cron + watchdog** | GitHub Actions updates all live data every hour; watchdog re-triggers stale workflows and opens Issues on persistent failures |
 
 ---
 
@@ -55,6 +56,8 @@ deals-blog/
 │   │   └── trends/page.tsx             # Internal trends dashboard (noindex)
 │   ├── components/
 │   │   ├── LangSwitcher.tsx            # EN / EL / RU switcher (stays on same page)
+│   │   ├── ThemeToggle.tsx             # Dark/light mode toggle (localStorage + prefers-color-scheme)
+│   │   ├── FuelTable.tsx               # Interactive fuel table (district/Near Me filters, i18n)
 │   │   └── SupermarketTable.tsx        # Sortable price table (client component)
 │   ├── data/
 │   │   ├── supermarket-prices.json     # Live supermarket data (updated hourly)
@@ -67,7 +70,8 @@ deals-blog/
     ├── update-fuel-prices.yml          # Cron: every hour
     ├── update-supermarket-prices.yml   # Cron: every hour
     ├── update-coffee-prices.yml        # Cron: every hour
-    └── fetch-trending-topics.yml       # Cron: every 3 hours
+    ├── fetch-trending-topics.yml       # Cron: every 3 hours
+    └── watchdog.yml                    # Cron: every 2h — re-triggers stale workflows, opens Issues
 ```
 
 ---
@@ -126,10 +130,11 @@ All workflows use `[skip ci]` on their commits to avoid deploy loops.
 | Workflow | Trigger | What it does |
 |----------|---------|--------------|
 | `deploy.yml` | Push to `master` | `npm run build` → Cloudflare Pages |
-| `update-fuel-prices.yml` | Every hour | Scrapes gov portal for 95/98/diesel, commits updated posts |
+| `update-fuel-prices.yml` | Every hour | Scrapes gov portal for 95/98/diesel, commits updated posts + JSON |
 | `update-supermarket-prices.yml` | Every hour | Fetches e-kalathi API, commits updated JSON + posts |
 | `update-coffee-prices.yml` | Every hour | Refreshes `updatedAt` timestamp, commits updated posts |
-| `fetch-trending-topics.yml` | Every 3 hours | Scrapes Cyprus RSS feeds, commits `trending-topics.json` |
+| `fetch-trending-topics.yml` | Every 3 hours | Scrapes Cyprus RSS + YouTube + Reddit + Wikipedia, commits JSON |
+| `watchdog.yml` | Every 2 hours | Checks data freshness; re-triggers stale workflows; opens GitHub Issue after 3 failures |
 
 ### Required Secrets
 
@@ -138,6 +143,9 @@ All workflows use `[skip ci]` on their commits to avoid deploy loops.
 | `CLOUDFLARE_API_TOKEN` | ✅ | `deploy.yml` |
 | `CLOUDFLARE_ACCOUNT_ID` | ✅ | `deploy.yml` |
 | `ANTHROPIC_API_KEY` | Optional | `fetch-trending-topics.yml` — enables AI post suggestions |
+| `YOUTUBE_API_KEY` | Optional | `fetch-trending-topics.yml` — YouTube trending videos for Cyprus |
+| `REDDIT_CLIENT_ID` | Optional | `fetch-trending-topics.yml` — Reddit r/cyprus trending posts |
+| `REDDIT_CLIENT_SECRET` | Optional | `fetch-trending-topics.yml` — Reddit r/cyprus trending posts |
 
 ---
 
@@ -174,7 +182,7 @@ feature/my-feature  →  dev  →  master
 
 See [CHANGELOG.md](./CHANGELOG.md) for full history.
 
-Latest: **[v1.4.0](https://github.com/Mylonas/deals-blog/releases/tag/v1.4.0)** — Fuel 95/98/Diesel sections, Coffee all-Cyprus Freddo-only, GPS map pin links.
+Latest: **[v1.5.0](https://github.com/Mylonas/deals-blog/releases/tag/v1.5.0)** — Dark mode, watchdog auto-heal, EL/RU fuel interactive pages, YouTube/Reddit trending, Node.js 24.
 
 Release procedure follows the project's [release guide](https://github.com/Mylonas/deals-blog/releases): semver tagging, CHANGELOG update, annotated git tag, structured release notes with rollback procedure.
 
