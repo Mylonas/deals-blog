@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-29T18:47:38.410Z",
-  "scrapedAt": "2026-06-29T18:47:37.231Z",
+  "updatedAt": "2026-06-29T19:08:22.550Z",
+  "scrapedAt": "2026-06-29T19:08:21.342Z",
   "note": "Top drinks and Freddo prices scraped monthly via Playwright from Wolt/Foody/Bolt Food Cyprus. topDrinks is empty until the first monthly run.",
   "items": [
     {
@@ -8,12 +8,43 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffeeway",
+        "wolt": "https://wolt.com/en/grc/athens/restaurant/coffeeway",
         "foody": null,
         "bolt": null
       },
-      "topDrinks": [],
-      "freddo": 2.2,
+      "topDrinks": [
+        {
+          "name": "Espresso",
+          "price": 1.6,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Espresso Αρωματικός",
+          "price": 2.2,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Espresso",
+          "price": 2.5,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Cappuccino Latte",
+          "price": 2.5,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Cappuccino Latte Αρωματικός",
+          "price": 2.8,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 2.5,
       "delivery": null,
       "notes": "Best value freddo island-wide. Drive-throughs available across Cyprus."
     },
