@@ -10,7 +10,7 @@ Live prices for the 10 most-bought household staples in Cyprus, sourced from the
 
 <!-- PRICES_START -->
 
-> Updated 29 June 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Updated 30 June 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
 | Staple | Cheapest Price | Store |
 |---------|---------|--------|

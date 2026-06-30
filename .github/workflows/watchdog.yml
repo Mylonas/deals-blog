@@ -67,21 +67,31 @@ jobs:
                 --jq '.[0].number // empty')
 
               if [ -z "$existing" ]; then
+                node -e "
+                  const fs = require('fs');
+                  const wf = process.env.WF;
+                  const repo = process.env.REPO;
+                  const ts = new Date().toUTCString();
+                  const body = [
+                    '## Watchdog Alert',
+                    '',
+                    'The workflow \`' + wf + '\` has failed **3 consecutive times**.',
+                    '',
+                    'Auto-retry has been attempted but the issue persists - manual investigation required.',
+                    '',
+                    '**Detected at:** ' + ts,
+                    '',
+                    '### Next steps',
+                    '1. Check the [workflow run logs](https://github.com/' + repo + '/actions/workflows/' + wf + ')',
+                    '2. Fix the underlying issue (API change, script bug, secret expired)',
+                    '3. Close this issue once resolved - the watchdog will reopen it if failures recur',
+                  ].join('\n');
+                  fs.writeFileSync('/tmp/issue-body.md', body);
+                " WF="$workflow"
                 gh issue create \
                   --title "Persistent failure: $workflow" \
                   --label "watchdog,bug" \
-                  --body "## Watchdog Alert
-
-The workflow \`$workflow\` has failed **3 consecutive times**.
-
-Auto-retry has been attempted but the issue persists - manual investigation required.
-
-**Detected at:** $(date -u '+%Y-%m-%d %H:%M UTC')
-
-### Next steps
-1. Check the [workflow run logs](https://github.com/$REPO/actions/workflows/$workflow)
-2. Fix the underlying issue (API change, script bug, secret expired)
-3. Close this issue once resolved - the watchdog will reopen it if failures recur"
+                  --body-file /tmp/issue-body.md
                 echo "Issue created."
               else
                 echo "Issue #$existing already open - skipping duplicate."
