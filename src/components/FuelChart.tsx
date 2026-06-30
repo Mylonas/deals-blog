@@ -6,14 +6,34 @@ import {
   Legend, ResponsiveContainer,
 } from "recharts";
 
-type HistoryEntry = { ts: string; "95": number; "98": number; diesel: number };
+type FuelStats = { min: number; avg: number; max: number };
+type HistoryEntry = { ts: string; "95": FuelStats; "98": FuelStats; diesel: FuelStats };
 
 type Lang = "en" | "el" | "ru";
+type View = "min" | "avg" | "max";
 
 const LABELS = {
-  en: { title: "Price History", d7: "7 days", d30: "30 days", d90: "90 days", d365: "1 year", noData: "Not enough history yet — check back soon.", diesel: "Diesel" },
-  el: { title: "Ιστορικό Τιμών", d7: "7 ημέρες", d30: "30 ημέρες", d90: "90 ημέρες", d365: "1 χρόνος", noData: "Δεν υπάρχει αρκετό ιστορικό ακόμα — ελέγξτε ξανά σύντομα.", diesel: "Πετρέλαιο" },
-  ru: { title: "История цен", d7: "7 дней", d30: "30 дней", d90: "90 дней", d365: "1 год", noData: "Истории пока недостаточно — загляните позже.", diesel: "Дизель" },
+  en: {
+    title: "Price History",
+    d7: "7 days", d30: "30 days", d90: "90 days", d365: "1 year",
+    noData: "Not enough history yet — check back soon.",
+    diesel: "Diesel",
+    viewMin: "Lowest", viewAvg: "Average", viewMax: "Highest",
+  },
+  el: {
+    title: "Ιστορικό Τιμών",
+    d7: "7 ημέρες", d30: "30 ημέρες", d90: "90 ημέρες", d365: "1 χρόνος",
+    noData: "Δεν υπάρχει αρκετό ιστορικό ακόμα — ελέγξτε ξανά σύντομα.",
+    diesel: "Πετρέλαιο",
+    viewMin: "Χαμηλότερη", viewAvg: "Μέση", viewMax: "Υψηλότερη",
+  },
+  ru: {
+    title: "История цен",
+    d7: "7 дней", d30: "30 дней", d90: "90 дней", d365: "1 год",
+    noData: "Истории пока недостаточно — загляните позже.",
+    diesel: "Дизель",
+    viewMin: "Мин.", viewAvg: "Средняя", viewMax: "Макс.",
+  },
 };
 
 const RANGES: { key: string; days: number }[] = [
@@ -23,6 +43,8 @@ const RANGES: { key: string; days: number }[] = [
   { key: "d365", days: 365 },
 ];
 
+const VIEWS: View[] = ["min", "avg", "max"];
+
 function formatDate(ts: string) {
   return new Date(ts).toLocaleDateString("en-GB", { day: "numeric", month: "short" });
 }
@@ -30,15 +52,21 @@ function formatDate(ts: string) {
 export default function FuelChart({ history, lang = "en" }: { history: HistoryEntry[]; lang?: Lang }) {
   const t = LABELS[lang];
   const [range, setRange] = useState<string>("d30");
+  const [view, setView] = useState<View>("min");
 
   const days = RANGES.find(r => r.key === range)?.days ?? 30;
 
   const filtered = useMemo(() => {
     const cutoff = Date.now() - days * 24 * 60 * 60 * 1000;
     return history
-      .filter(e => new Date(e.ts).getTime() >= cutoff)
-      .map(e => ({ ...e, date: formatDate(e.ts) }));
-  }, [history, days]);
+      .filter(e => new Date(e.ts).getTime() >= cutoff && e["95"] && typeof e["95"] === "object")
+      .map(e => ({
+        date: formatDate(e.ts),
+        "95":   e["95"][view],
+        "98":   e["98"][view],
+        diesel: e.diesel[view],
+      }));
+  }, [history, days, view]);
 
   if (filtered.length < 2) {
     return <p className="text-sm text-gray-400 dark:text-gray-500 py-4">{t.noData}</p>;
@@ -48,9 +76,11 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
   const minP = Math.floor((Math.min(...prices) - 0.05) * 100) / 100;
   const maxP = Math.ceil((Math.max(...prices) + 0.05) * 100) / 100;
 
+  const viewLabel: Record<View, string> = { min: t.viewMin, avg: t.viewAvg, max: t.viewMax };
+
   return (
     <div className="mt-8">
-      <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+      <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
         <h2 className="text-base font-semibold text-gray-800 dark:text-gray-200">{t.title}</h2>
         <div className="flex gap-1">
           {RANGES.map(r => (
@@ -67,6 +97,22 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
             </button>
           ))}
         </div>
+      </div>
+
+      <div className="flex gap-1 mb-4">
+        {VIEWS.map(v => (
+          <button
+            key={v}
+            onClick={() => setView(v)}
+            className={`px-3 py-1 text-xs rounded-full font-medium transition-colors ${
+              view === v
+                ? "bg-amber-500 text-white"
+                : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+            }`}
+          >
+            {viewLabel[v]}
+          </button>
+        ))}
       </div>
 
       <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">

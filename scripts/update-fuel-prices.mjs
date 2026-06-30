@@ -222,28 +222,47 @@ async function main() {
   fs.writeFileSync(JSON_OUT, JSON.stringify(jsonData, null, 2) + "\n");
   console.log(`Wrote fuel JSON: ${JSON_OUT}`);
 
-  // Append to price history — only if prices changed since last entry
-  const min95     = results[0].min;
-  const min98     = results[1].min;
-  const minDiesel = results[2].min;
+  // Compute min / avg / max per fuel type for history
+  function stats(stations) {
+    const prices = stations.map(s => s.price).filter(p => p > 0);
+    if (!prices.length) return { min: 0, avg: 0, max: 0 };
+    const min = prices[0]; // already sorted ascending
+    const max = prices[prices.length - 1];
+    const avg = Math.round((prices.reduce((a, b) => a + b, 0) / prices.length) * 1000) / 1000;
+    return { min, avg, max };
+  }
+
+  const stats95     = stats(results[0].allStations);
+  const stats98     = stats(results[1].allStations);
+  const statsDiesel = stats(results[2].allStations);
 
   const historyFile = fs.existsSync(HISTORY_OUT)
     ? JSON.parse(fs.readFileSync(HISTORY_OUT, "utf8"))
     : { history: [] };
 
+  // Drop legacy entries that have the old flat number format (no avg/max)
+  historyFile.history = historyFile.history.filter(
+    e => e["95"] && typeof e["95"] === "object"
+  );
+
   const last = historyFile.history[historyFile.history.length - 1];
   const pricesChanged = !last
-    || last["95"] !== min95
-    || last["98"] !== min98
-    || last.diesel !== minDiesel;
+    || last["95"].min !== stats95.min
+    || last["98"].min !== stats98.min
+    || last.diesel.min !== statsDiesel.min;
 
   if (pricesChanged) {
-    historyFile.history.push({ ts: new Date().toISOString(), "95": min95, "98": min98, diesel: minDiesel });
+    historyFile.history.push({
+      ts: new Date().toISOString(),
+      "95":     stats95,
+      "98":     stats98,
+      diesel:   statsDiesel,
+    });
     // Trim to rolling MAX_HISTORY_DAYS window
     const cutoff = Date.now() - MAX_HISTORY_DAYS * 24 * 60 * 60 * 1000;
     historyFile.history = historyFile.history.filter(e => new Date(e.ts).getTime() >= cutoff);
     fs.writeFileSync(HISTORY_OUT, JSON.stringify(historyFile, null, 2) + "\n");
-    console.log(`History: appended new entry (95=€${min95.toFixed(3)}, 98=€${min98.toFixed(3)}, diesel=€${minDiesel.toFixed(3)})`);
+    console.log(`History: appended (95 min=€${stats95.min.toFixed(3)} avg=€${stats95.avg.toFixed(3)} max=€${stats95.max.toFixed(3)})`);
   } else {
     console.log("History: prices unchanged — skipped append.");
   }
