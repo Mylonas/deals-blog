@@ -12,8 +12,13 @@ const categoryColors: Record<string, string> = {
   Shopping: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300",
 };
 
+// Slugs that have dedicated pages — exclude to prevent static export collision
+const DEDICATED_SLUGS = ["cheapest-petrol-stations-cyprus", "supermarket-price-watch"];
+
 export async function generateStaticParams() {
-  return getAllPosts("en").map((p) => ({ slug: p.slug }));
+  return getAllPosts("en")
+    .filter((p) => !DEDICATED_SLUGS.includes(p.slug))
+    .map((p) => ({ slug: p.slug }));
 }
 
 export default async function PostPage({
