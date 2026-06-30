@@ -3,6 +3,7 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches: [master]
+  workflow_dispatch:   # allow cron workflows to trigger a rebuild after data updates
 
 jobs:
   deploy:
