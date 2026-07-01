@@ -46,6 +46,6 @@ pinned: true
 | SHELL | [Tσερίου 36 Νήσου (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps/search/T%CF%83%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2036%20%CE%9D%CE%AE%CF%83%CE%BF%CF%85%20(%CE%A7%CE%B1%CE%BB%CE%B5%CF%80%CE%B9%CE%B1%CE%BD%CE%AD%CF%82)%20%CE%A4.%CE%9A%202571) | Πέρα Χωριό Νήσου | €1.538 |
 | SHELL | [Λεωφ. Αμμοχώστου 57 Τ.Κ 1016](https://www.google.com/maps?q=35.170154,33.397329) | Παλλουριώτισσα | €1.538 |
 
-> Источник: [Правительственный портал цен на топливо Кипра](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — обновлено 30 июня 2026 г.
+> Источник: [Правительственный портал цен на топливо Кипра](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — обновлено 1 июля 2026 г.
 
 <!-- FUEL_PRICES_END -->
