@@ -17,7 +17,7 @@ pinned: false
 | Φρέσκο Γάλα 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | LIDL |
 | Αβγά | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | LIDL |
 | Χαλλούμι 200g | **[€1.85](https://www.e-kalathi.gov.cy/product-information/254)** | LIDL |
-| Σπαγγέτι 500g | **[€0.95](https://www.e-kalathi.gov.cy/product-information/1069)** | LIDL |
+| Σπαγγέτι 500g | **[€0.93](https://www.e-kalathi.gov.cy/product-information/1069)** | LIDL |
 | Ελαιόλαδο 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | LIDL |
 | Νερό 1.5L ×6 | **[€2.05](https://www.e-kalathi.gov.cy/product-information/2077)** | LIDL |
 | Γιαούρτι | **[€1.79](https://www.e-kalathi.gov.cy/product-information/280)** | LIDL |

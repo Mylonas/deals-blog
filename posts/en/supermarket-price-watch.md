@@ -17,7 +17,7 @@ Live prices for the 10 most-bought household staples in Cyprus, sourced from the
 | Fresh Milk 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | LIDL |
 | Eggs | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | LIDL |
 | Halloumi 200g | **[€1.85](https://www.e-kalathi.gov.cy/product-information/254)** | LIDL |
-| Spaghetti 500g | **[€0.95](https://www.e-kalathi.gov.cy/product-information/1069)** | LIDL |
+| Spaghetti 500g | **[€0.93](https://www.e-kalathi.gov.cy/product-information/1069)** | LIDL |
 | Olive Oil 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | LIDL |
 | Water 1.5L ×6 | **[€2.05](https://www.e-kalathi.gov.cy/product-information/2077)** | LIDL |
 | Yogurt | **[€1.79](https://www.e-kalathi.gov.cy/product-information/280)** | LIDL |
