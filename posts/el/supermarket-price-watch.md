@@ -21,7 +21,7 @@ pinned: false
 | Ελαιόλαδο 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | LIDL |
 | Νερό 1.5L ×6 | **[€2.05](https://www.e-kalathi.gov.cy/product-information/2077)** | LIDL |
 | Γιαούρτι | **[€1.79](https://www.e-kalathi.gov.cy/product-information/280)** | LIDL |
-| Ρύζι 1kg | **[€1.95](https://www.e-kalathi.gov.cy/product-information/1120)** | LIDL |
+| Ρύζι 1kg | **[€1.90](https://www.e-kalathi.gov.cy/product-information/1120)** | LIDL |
 | Χυμός Πορτοκάλι 1L | **[€2.25](https://www.e-kalathi.gov.cy/product-information/2120)** | LIDL |
 | Coca-Cola 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | LIDL |
 

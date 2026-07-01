@@ -21,7 +21,7 @@ pinned: false
 | Оливковое масло 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | LIDL |
 | Вода 1.5L ×6 | **[€2.05](https://www.e-kalathi.gov.cy/product-information/2077)** | LIDL |
 | Йогурт | **[€1.79](https://www.e-kalathi.gov.cy/product-information/280)** | LIDL |
-| Рис 1кг | **[€1.95](https://www.e-kalathi.gov.cy/product-information/1120)** | LIDL |
+| Рис 1кг | **[€1.90](https://www.e-kalathi.gov.cy/product-information/1120)** | LIDL |
 | Апельсиновый сок 1L | **[€2.25](https://www.e-kalathi.gov.cy/product-information/2120)** | LIDL |
 | Кока-Кола 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | LIDL |
 
