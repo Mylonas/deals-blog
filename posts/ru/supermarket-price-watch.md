@@ -10,7 +10,7 @@ pinned: false
 
 <!-- PRICES_START -->
 
-> Обновлено 30 June 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Обновлено 1 July 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
 | Продукт | Мин. цена | Магазин |
 |---------|---------|--------|
