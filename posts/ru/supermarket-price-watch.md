@@ -16,7 +16,7 @@ pinned: false
 |---------|---------|--------|
 | Свежее молоко 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | LIDL |
 | Яйца | **[€2.15](https://www.e-kalathi.gov.cy/product-information/414)** | LIDL |
-| Халлуми 200г | **[€1.85](https://www.e-kalathi.gov.cy/product-information/254)** | LIDL |
+| Халлуми 200г | **[€1.89](https://www.e-kalathi.gov.cy/product-information/254)** | LIDL |
 | Спагетти 500г | **[€0.93](https://www.e-kalathi.gov.cy/product-information/1069)** | LIDL |
 | Оливковое масло 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | LIDL |
 | Вода 1.5L ×6 | **[€2.05](https://www.e-kalathi.gov.cy/product-information/2077)** | LIDL |
