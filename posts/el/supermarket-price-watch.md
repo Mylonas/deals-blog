@@ -10,7 +10,7 @@ pinned: false
 
 <!-- PRICES_START -->
 
-> Ενημέρωση 1 July 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Ενημέρωση 2 July 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
 | Προϊόν | Φθηνότερη Τιμή | Κατάστημα |
 |---------|---------|--------|
