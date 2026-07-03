@@ -46,6 +46,6 @@ pinned: true
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9B%CE%AC%CF%81%CE%BD%CE%B1%CE%BA%CE%BF%CF%82%20184%20%CE%A4.%CE%9A%202103) | Αγλαντζιά | €1.499 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.499 |
 
-> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 2 July 2026
+> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 3 July 2026
 
 <!-- FUEL_PRICES_END -->
