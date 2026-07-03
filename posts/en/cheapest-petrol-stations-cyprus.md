@@ -31,8 +31,8 @@ pinned: true
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.439 |
 | PETROLINA | [Λεωφ. Λάρνακος 5 Τ.Κ 1035](https://www.google.com/maps?q=35.1727,33.3726) | Λευκωσία | €1.439 |
 | PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.468 |
-| EKO | [Ελευθερίας 27 Τ.Κ 7102](https://www.google.com/maps?q=34.935446,33.59272) | Αραδίππου | €1.494 |
 | EKO | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.927671,33.536158) | Καλό Χωριό Λάρνακας | €1.494 |
+| EKO | [Ελευθερίας 27 Τ.Κ 7102](https://www.google.com/maps?q=34.935446,33.59272) | Αραδίππου | €1.494 |
 
 ## 7 Cheapest Stations Right Now — Diesel
 
