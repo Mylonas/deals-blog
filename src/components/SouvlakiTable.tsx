@@ -66,14 +66,24 @@ function haversine(lat1: number, lng1: number, lat2: number, lng2: number) {
 
 const SHOW = 15;
 
+const ALL_LABEL = { en: "All Cyprus", el: "Όλη η Κύπρος", ru: "Весь Кипр" };
+
 export default function SouvlakiTable({ data, lang }: { data: SouvlakiData; lang: Lang }) {
   const t = T[lang];
-  const [cityKey, setCityKey] = useState(data.cities[0]?.key ?? "nicosia");
+  const [cityKey, setCityKey] = useState("all");
   const [cut, setCut] = useState<CutKey>("souvlaki");
   const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [geoState, setGeoState] = useState<GeoState>("idle");
 
-  const city = data.cities.find((c) => c.key === cityKey) ?? data.cities[0];
+  const cities = useMemo<City[]>(
+    () => [
+      { key: "all", label: ALL_LABEL, venues: data.cities.flatMap((c) => c.venues) },
+      ...data.cities,
+    ],
+    [data]
+  );
+
+  const city = cities.find((c) => c.key === cityKey) ?? cities[0];
 
   const requestLocation = useCallback(() => {
     if (!navigator.geolocation) {
@@ -125,7 +135,7 @@ export default function SouvlakiTable({ data, lang }: { data: SouvlakiData; lang
     <div>
       {/* City tabs */}
       <div className="flex gap-2 mb-4 flex-wrap">
-        {data.cities.map((c) => (
+        {cities.map((c) => (
           <button
             key={c.key}
             onClick={() => setCityKey(c.key)}
