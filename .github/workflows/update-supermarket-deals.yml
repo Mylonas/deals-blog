@@ -1,0 +1,48 @@
+name: Update Supermarket Deals
+
+on:
+  schedule:
+    # Daily at 06:00 UTC — prices don't change more than once a day
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Fetch cheapest supermarket products
+        run: node scripts/update-supermarket-deals.mjs
+
+      - name: Check for changes
+        id: changes
+        run: git diff --quiet || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "DealsHub Bot"
+          git config user.email "bot@dealshub.cy"
+          git add src/data/supermarket-deals.json
+          git commit -m "chore: update supermarket deals $(date +'%Y-%m-%d')"
+          git pull --rebase origin master
+          git push origin master
+
+      - name: Trigger Cloudflare redeploy
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref master
