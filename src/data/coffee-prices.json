@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-04T15:08:38.196Z",
-  "scrapedAt": "2026-07-01T09:33:49.147Z",
+  "updatedAt": "2026-07-04T16:25:49.072Z",
+  "scrapedAt": "2026-07-04T16:25:48.922Z",
   "note": "Top drinks and Freddo prices scraped monthly via Playwright from Wolt/Foody/Bolt Food Cyprus. topDrinks is empty until the first monthly run.",
   "items": [
     {
@@ -32,14 +32,20 @@
           "popular": false
         },
         {
-          "name": "Frappe",
-          "price": 2.5,
+          "name": "Iced Latte",
+          "price": 3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Caramel Temptation",
+          "price": 3.8,
           "platform": "wolt",
           "popular": false
         }
       ],
       "freddo": 2.5,
-      "delivery": null,
+      "delivery": 2.5,
       "notes": "Best value freddo island-wide. Drive-throughs available across Cyprus."
     },
     {
@@ -47,45 +53,14 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-lab-k-cineplex",
+        "wolt": null,
         "foody": null,
         "bolt": null
       },
-      "topDrinks": [
-        {
-          "name": "Americano",
-          "price": 2.7,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Cappuccino",
-          "price": 2.5,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Latte",
-          "price": 3.2,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Caramel Latte",
-          "price": 3.5,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Espresso",
-          "price": 1.8,
-          "platform": "wolt",
-          "popular": false
-        }
-      ],
-      "freddo": 2.2,
+      "topDrinks": [],
+      "freddo": null,
       "delivery": null,
-      "notes": "Greek chain with locations across Cyprus."
+      "notes": "Not on Wolt — price unavailable."
     },
     {
       "cafe": "Gregory's",
@@ -98,37 +73,19 @@
       },
       "topDrinks": [
         {
-          "name": "Pinsa Romana με Αυγό και Μπέικον",
-          "price": 5.8,
+          "name": "Espresso Brazil Κάψουλες",
+          "price": 4.5,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Pinsa Romana με Κοτόπουλο και Μπέικον",
-          "price": 5.8,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Pinsa Romana με Κοτομπουκιές και Μπέικον",
-          "price": 5.8,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Focaccia Rossa",
-          "price": 7,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Focaccia Bianca",
-          "price": 7.3,
+          "name": "Freddo Espresso",
+          "price": 2.8,
           "platform": "wolt",
           "popular": false
         }
       ],
-      "freddo": 2.3,
+      "freddo": 2.8,
       "delivery": 2.8,
       "notes": "Also on Wolt (+~€0.50). Good froth on freddo."
     },
@@ -137,89 +94,58 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-lab-k-cineplex",
+        "wolt": null,
         "foody": null,
         "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/coffeeberry"
       },
-      "topDrinks": [
-        {
-          "name": "Americano",
-          "price": 2.7,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Cappuccino",
-          "price": 2.5,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Latte",
-          "price": 3.2,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Caramel Latte",
-          "price": 3.5,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Espresso",
-          "price": 1.8,
-          "platform": "wolt",
-          "popular": false
-        }
-      ],
-      "freddo": 2.4,
+      "topDrinks": [],
+      "freddo": null,
       "delivery": 2.9,
-      "notes": "Also on Wolt & Bolt Food."
+      "notes": "Not on Wolt — price unavailable."
     },
     {
       "cafe": "Coffee Island",
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/matcha-island-ledras",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-island-pallouriotissa",
         "foody": null,
         "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/coffee-island-nicosia"
       },
       "topDrinks": [
         {
-          "name": "Matcha Latte",
-          "price": 6.9,
+          "name": "Freddo Espresso",
+          "price": 2.8,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Cloud Matcha",
-          "price": 7.9,
+          "name": "Freddo Espresso Double",
+          "price": 3.6,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Raspberry Matcha",
-          "price": 7.9,
+          "name": "Iced Americano",
+          "price": 2.6,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Ube Matcha",
-          "price": 7.9,
+          "name": "Freddo Cappuccino",
+          "price": 3.1,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Coconut Cloud Matcha",
-          "price": 7.9,
+          "name": "Iced Latte",
+          "price": 3,
           "platform": "wolt",
           "popular": false
         }
       ],
       "freddo": 2.8,
-      "delivery": 3,
+      "delivery": 2.8,
       "notes": "Also on Wolt & Bolt Food."
     },
     {
@@ -227,44 +153,50 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/mikel-coffee-stavrou",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/mikel-coffee-ledras",
         "foody": null,
         "bolt": null
       },
       "topDrinks": [
         {
+          "name": "Coffee Beans 1kg",
+          "price": 32,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Water 0.50 l",
+          "price": 0.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Stela Beer",
+          "price": 3.5,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Corona Beer",
+          "price": 3.5,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Carlsberg Beer",
+          "price": 2.5,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
           "name": "Freddo Espresso Classic Regular",
           "price": 2.9,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Freddo Espresso Classic Grande",
-          "price": 3.3,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Freddo Espresso Classic Extra Grande",
-          "price": 3.7,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Freddo Espresso Macchiato",
-          "price": 2.9,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Freddo Espresso Mikelo",
-          "price": 3,
           "platform": "wolt",
           "popular": false
         }
       ],
       "freddo": 2.9,
-      "delivery": 3,
+      "delivery": 2.9,
       "notes": "Greek specialty chain. Also on Wolt."
     },
     {
@@ -272,32 +204,44 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/cafe-nero-engomi",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/caffe-nero-aglantzia",
         "foody": null,
         "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/caffe-nero-nicosia"
       },
       "topDrinks": [
         {
-          "name": "Any 2 Pinsa",
-          "price": 19.5,
+          "name": "Freddo Espresso",
+          "price": 4,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Any 3 Pinsa",
-          "price": 29,
+          "name": "Freddo Cappuccino",
+          "price": 4.1,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Any 2 Salad, Club Sandwich or Foccacia",
-          "price": 14.4,
+          "name": "Iced Latte",
+          "price": 4.3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 3.85,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Flat White",
+          "price": 4.05,
           "platform": "wolt",
           "popular": false
         }
       ],
-      "freddo": 2.5,
-      "delivery": 3,
+      "freddo": 4,
+      "delivery": 4,
       "notes": "Also on Wolt & Bolt Food."
     },
     {
@@ -305,17 +249,11 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/gloriastrovolos",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/gloriaengomi",
         "foody": "https://www.foody.com.cy/delivery/menu/gloria-jeans-nicosia",
         "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/44759-gloria-jeans-coffee-mall-of-cyprus"
       },
       "topDrinks": [
-        {
-          "name": "Iced Strawberry Matcha",
-          "price": 5.1,
-          "platform": "wolt",
-          "popular": false
-        },
         {
           "name": "Iced Mango Matcha",
           "price": 5.1,
@@ -339,10 +277,22 @@
           "price": 4.9,
           "platform": "wolt",
           "popular": false
+        },
+        {
+          "name": "Strawberry Sensation",
+          "price": 4.9,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Espresso",
+          "price": 3.8,
+          "platform": "wolt",
+          "popular": false
         }
       ],
-      "freddo": 2.7,
-      "delivery": 3.2,
+      "freddo": 3.8,
+      "delivery": 3.8,
       "notes": "Also on Foody & Bolt Food."
     },
     {
@@ -350,44 +300,44 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/second-cup-lakatamia",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/second-cup-plati",
         "foody": null,
         "bolt": null
       },
       "topDrinks": [
         {
-          "name": "Cappuccino",
+          "name": "Freddo Espresso",
+          "price": 2.95,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 3.15,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
           "price": 3.35,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Latte",
+          "name": "Iced Signature Latte",
           "price": 3.35,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Signature Latte",
-          "price": 3.6,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Americano",
-          "price": 2.25,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Flat White",
-          "price": 3.25,
+          "name": "Iced Americano",
+          "price": 2.5,
           "platform": "wolt",
           "popular": false
         }
       ],
-      "freddo": 2.8,
-      "delivery": null,
+      "freddo": 2.95,
+      "delivery": 2.95,
       "notes": "Canadian chain."
     },
     {
@@ -396,89 +346,58 @@
       "singleLocation": true,
       "mapsUrl": "https://www.google.com/maps/search/Black+Cup+Coffee+Nicosia+Cyprus",
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/second-cup-lakatamia",
+        "wolt": null,
         "foody": null,
         "bolt": null
       },
-      "topDrinks": [
-        {
-          "name": "Cappuccino",
-          "price": 3.35,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Latte",
-          "price": 3.35,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Signature Latte",
-          "price": 3.6,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Americano",
-          "price": 2.25,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Flat White",
-          "price": 3.25,
-          "platform": "wolt",
-          "popular": false
-        }
-      ],
-      "freddo": 2.8,
+      "topDrinks": [],
+      "freddo": null,
       "delivery": null,
-      "notes": "Specialty roast. Single location, Nicosia."
+      "notes": "Not on Wolt — price unavailable."
     },
     {
       "cafe": "Costa Coffee",
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-lab-k-cineplex",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/costametropolitan",
         "foody": null,
         "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/30353-costa-coffee-mall-of-cyprus"
       },
       "topDrinks": [
         {
-          "name": "Americano",
-          "price": 2.7,
+          "name": "Freddo Espresso",
+          "price": 3.7,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Cappuccino",
-          "price": 2.5,
+          "name": "Freddo Cappuccino",
+          "price": 3.95,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Latte",
-          "price": 3.2,
+          "name": "Iced Latte",
+          "price": 4.2,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Caramel Latte",
+          "name": "Iced Americano",
           "price": 3.5,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Espresso",
-          "price": 1.8,
+          "name": "Iced Flat White",
+          "price": 4.2,
           "platform": "wolt",
           "popular": false
         }
       ],
-      "freddo": 2.9,
-      "delivery": 3.4,
+      "freddo": 3.7,
+      "delivery": 3.7,
       "notes": "Also on Wolt & Bolt Food."
     },
     {
@@ -486,13 +405,44 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/starbucks-engomi",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/starbucks-ledras",
         "foody": null,
         "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/starbucks-nicosia"
       },
-      "topDrinks": [],
-      "freddo": 3.5,
-      "delivery": 4,
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 3.95,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 4.25,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 3.85,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 4.3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Caramel Macchiato",
+          "price": 5.95,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 3.95,
+      "delivery": 3.95,
       "notes": "Also on Wolt & Bolt Food. Premium pricing."
     }
   ]
