@@ -42,7 +42,7 @@ const T = {
 export default function SupermarketDealsTable({
   deals, lang, updatedAt,
 }: { deals: Deal[]; lang: Lang; updatedAt: string }) {
-  const [sort, setSort] = useState<SortKey>("price");
+  const [sort, setSort] = useState<SortKey>("discount");
   const t = T[lang];
 
   const sorted = useMemo(() => {

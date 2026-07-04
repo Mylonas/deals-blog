@@ -62,9 +62,9 @@ export default function Home() {
               <span className="text-xs text-amber-600 dark:text-amber-400 font-semibold">LIVE ●</span>
             </div>
             <h2 className="text-lg font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
-              30 Cheapest Products at Cyprus Supermarkets
+              Top 20 Biggest Savings at Cyprus Supermarkets
             </h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">The lowest-priced products available right now across all major Cyprus supermarkets, from the government&apos;s e-Kalathi price observatory. Updated daily.</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">The 20 products with the biggest price cuts right now across all major Cyprus supermarkets, from the government&apos;s e-Kalathi price observatory. Updated daily.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Read more →</div>
           </Link>
           {pinned.map((post) => (

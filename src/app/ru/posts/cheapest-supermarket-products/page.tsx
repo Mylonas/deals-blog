@@ -3,9 +3,9 @@ import data from "@/data/supermarket-deals.json";
 import Link from "next/link";
 
 export const metadata = {
-  title: "30 самых дешёвых продуктов в супермаркетах Кипра — Актуальные цены",
+  title: "Топ-20 лучших скидок в супермаркетах Кипра — Актуальные акции",
   description:
-    "30 продуктов с минимальными ценами во всех крупных супермаркетах Кипра, по данным государственного ценового мониторинга e-Kalathi. Обновляется ежедневно.",
+    "20 товаров с наибольшим снижением цены во всех крупных супермаркетах Кипра, по данным государственного ценового мониторинга e-Kalathi. Обновляется ежедневно.",
 };
 
 export default function CheapestSupermarketProductsRU() {
@@ -19,10 +19,10 @@ export default function CheapestSupermarketProductsRU() {
       </div>
 
       <h1 className="text-3xl font-bold mb-3 leading-tight">
-        30 самых дешёвых продуктов в супермаркетах Кипра
+        Топ-20 лучших скидок в супермаркетах Кипра
       </h1>
       <p className="text-gray-500 dark:text-gray-400 mb-8">
-        Продукты с минимальными ценами во всех крупных супермаркетах Кипра,
+        20 товаров с наибольшим снижением цены во всех крупных супермаркетах Кипра,
         по данным государственного ценового портала{" "}
         <a
           href="https://www.e-kalathi.gov.cy"
