@@ -15,9 +15,10 @@ interface Station {
 interface FuelData {
   updatedAt: string;
   fuels: {
-    "95": { label: string; stations: Station[] };
-    "98": { label: string; stations: Station[] };
-    diesel: { label: string; stations: Station[] };
+    "95":      { label: string; stations: Station[] };
+    "98":      { label: string; stations: Station[] };
+    diesel:    { label: string; stations: Station[] };
+    heating?:  { label: string; stations: Station[] };
   };
 }
 
@@ -44,13 +45,14 @@ const DISTRICT_MAP: Record<string, string> = {
 };
 
 const DISTRICTS = ["All", "Nicosia", "Limassol", "Larnaca", "Paphos", "Famagusta"];
-const FUEL_KEYS = ["95", "98", "diesel"] as const;
+const FUEL_KEYS = ["95", "98", "diesel", "heating"] as const;
 type FuelKey = typeof FUEL_KEYS[number];
 
 const FUEL_LABELS: Record<FuelKey, string> = {
-  "95": "Unleaded 95",
-  "98": "Unleaded 98",
-  "diesel": "Diesel",
+  "95":      "Unleaded 95",
+  "98":      "Unleaded 98",
+  "diesel":  "Diesel",
+  "heating": "Heating Oil",
 };
 
 function getDistrict(raw: string): string {
@@ -116,9 +118,9 @@ const DISTRICTS_I18N: Record<string, Record<string, string>> = {
 };
 
 const FUEL_LABELS_I18N: Record<string, Record<FuelKey, string>> = {
-  en: { "95": "Unleaded 95", "98": "Unleaded 98", "diesel": "Diesel" },
-  el: { "95": "Αμόλυβδη 95", "98": "Αμόλυβδη 98", "diesel": "Πετρέλαιο Κίνησης" },
-  ru: { "95": "АИ-95", "98": "АИ-98", "diesel": "Дизель" },
+  en: { "95": "Unleaded 95", "98": "Unleaded 98", "diesel": "Diesel",               "heating": "Heating Oil" },
+  el: { "95": "Αμόλυβδη 95", "98": "Αμόλυβδη 98", "diesel": "Πετρέλαιο Κίνησης", "heating": "Πετρέλαιο Θέρμανσης" },
+  ru: { "95": "АИ-95",       "98": "АИ-98",        "diesel": "Дизель",              "heating": "Печное топливо" },
 };
 
 export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?: "en" | "el" | "ru" }) {
@@ -127,6 +129,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
   const fuelLabels = FUEL_LABELS_I18N[lang];
   const districtKeys = Object.keys(districtLabels);
 
+  const availableKeys = FUEL_KEYS.filter((k) => !!data.fuels[k]);
   const [fuel, setFuel] = useState<FuelKey>("95");
   const [district, setDistrict] = useState(districtKeys[0]); // "All" / "Όλες" / "Все"
   const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
@@ -156,7 +159,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
   const SHOW = 10;
 
   const stations = useMemo(() => {
-    const all = data.fuels[fuel].stations;
+    const all = data.fuels[fuel]?.stations ?? [];
 
     if (userCoords) {
       const withDist = all
@@ -182,7 +185,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
     <div>
       {/* Fuel type selector */}
       <div className="flex gap-2 mb-5 flex-wrap">
-        {FUEL_KEYS.map((k) => (
+        {availableKeys.map((k) => (
           <button
             key={k}
             onClick={() => setFuel(k)}
