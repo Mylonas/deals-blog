@@ -88,6 +88,35 @@ function extractStations(html, limit = 7) {
   return rows.sort((a, b) => a.price - b.price).slice(0, limit);
 }
 
+const LITRES_PER_BARREL = 158.987;
+
+/**
+ * Brent crude in EUR per litre, so it plots on the same axis as pump prices.
+ * Yahoo Finance for the USD/barrel close, frankfurter.app (ECB) for USD→EUR.
+ * Returns null on any failure — crude is an optional extra, never blocks the run.
+ */
+async function fetchBrentEurPerLitre() {
+  try {
+    const yRes = await fetch("https://query1.finance.yahoo.com/v8/finance/chart/BZ=F?range=5d&interval=1d", {
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" },
+    });
+    if (!yRes.ok) throw new Error(`yahoo HTTP ${yRes.status}`);
+    const yData = await yRes.json();
+    const closes = (yData.chart.result[0].indicators.quote[0].close || []).filter((c) => c != null);
+    if (!closes.length) throw new Error("no Brent closes");
+    const usdPerBarrel = closes[closes.length - 1];
+
+    const fxRes = await fetch("https://api.frankfurter.app/latest?from=USD&to=EUR");
+    if (!fxRes.ok) throw new Error(`fx HTTP ${fxRes.status}`);
+    const fx = (await fxRes.json()).rates.EUR;
+
+    return Math.round((usdPerBarrel * fx / LITRES_PER_BARREL) * 1000) / 1000;
+  } catch (e) {
+    console.warn(`Brent fetch failed (non-fatal): ${e.message}`);
+    return null;
+  }
+}
+
 // ── block builders per language ───────────────────────────────────────────────
 
 function stationRows(stations, fallbackMin) {
@@ -283,13 +312,16 @@ async function main() {
     || (last.heating?.min ?? -1) !== statsHeating.min;
 
   if (validData && pricesChanged) {
-    historyFile.history.push({
+    const brent = await fetchBrentEurPerLitre();
+    const entry = {
       ts: new Date().toISOString(),
       "95":     stats95,
       "98":     stats98,
       diesel:   statsDiesel,
       heating:  statsHeating,
-    });
+    };
+    if (brent !== null) entry.brent = brent;
+    historyFile.history.push(entry);
     // Trim to rolling MAX_HISTORY_DAYS window
     const cutoff = Date.now() - MAX_HISTORY_DAYS * 24 * 60 * 60 * 1000;
     historyFile.history = historyFile.history.filter(e => new Date(e.ts).getTime() >= cutoff);
