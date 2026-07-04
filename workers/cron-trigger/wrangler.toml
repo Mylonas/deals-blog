@@ -1,0 +1,7 @@
+name            = "deals-blog-cron"
+main            = "index.js"
+compatibility_date = "2024-09-23"
+
+# Fire every hour on the hour
+[triggers]
+crons = ["0 * * * *"]
