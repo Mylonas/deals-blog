@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-04T16:51:44.377Z",
-  "scrapedAt": "2026-07-04T16:51:44.217Z",
+  "updatedAt": "2026-07-04T17:07:31.495Z",
+  "scrapedAt": "2026-07-04T17:07:14.614Z",
   "note": "Top drinks and Freddo prices scraped monthly via Playwright from Wolt/Foody/Bolt Food Cyprus. topDrinks is empty until the first monthly run.",
   "items": [
     {
@@ -331,7 +331,7 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/second-cup-plati",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/second-cup-engomi",
         "foody": null,
         "bolt": null
       },
@@ -356,7 +356,7 @@
         },
         {
           "name": "Iced Signature Latte",
-          "price": 3.35,
+          "price": 3.6,
           "platform": "wolt",
           "popular": false
         },
@@ -1105,6 +1105,358 @@
       "freddo": 4.2,
       "delivery": 4.2,
       "notes": "All-day café chain."
+    }
+  ],
+  "cities": [
+    {
+      "key": "nicosia",
+      "label": {
+        "en": "Nicosia",
+        "el": "Λευκωσία",
+        "ru": "Никосия"
+      },
+      "cafes": [
+        {
+          "cafe": "Deli. Lidas",
+          "freddo": 1.95,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/deli-lidas"
+        },
+        {
+          "cafe": "Bake On Wood",
+          "freddo": 2,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/bake-on-wood"
+        },
+        {
+          "cafe": "Energy Coffee by Route 66",
+          "freddo": 2.2,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/energy-coffee-by-route-66"
+        },
+        {
+          "cafe": "Caffè River",
+          "freddo": 2.2,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/caffe-river"
+        },
+        {
+          "cafe": "You Coffee Latsia",
+          "freddo": 2.2,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/you-coffee-latsia"
+        },
+        {
+          "cafe": "Hogar All Day",
+          "freddo": 2.2,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/hogar-coffee"
+        },
+        {
+          "cafe": "Bakalicom",
+          "freddo": 2.3,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/bakalicom"
+        },
+        {
+          "cafe": "Vienna Bakeries Latsia",
+          "freddo": 2.3,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/vienna-bakeries-latsia"
+        },
+        {
+          "cafe": "Bubble Tale Ledras",
+          "freddo": 2.3,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/bubble-tale-ledras"
+        },
+        {
+          "cafe": "Caffe Milano Agios Dometios",
+          "freddo": 2.3,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/caffe-milano-agios-dometios"
+        },
+        {
+          "cafe": "Le Gout Geri",
+          "freddo": 2.4,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/le-gout-geri"
+        },
+        {
+          "cafe": "The Other Way Espresso Bar",
+          "freddo": 2.4,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-way1"
+        }
+      ]
+    },
+    {
+      "key": "limassol",
+      "label": {
+        "en": "Limassol",
+        "el": "Λεμεσός",
+        "ru": "Лимасол"
+      },
+      "cafes": [
+        {
+          "cafe": "The Coffice Hour",
+          "freddo": 2,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/the-coffice-hour"
+        },
+        {
+          "cafe": "Love Coffee",
+          "freddo": 2.2,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/love-coffee"
+        },
+        {
+          "cafe": "Coffee Time Cafe",
+          "freddo": 2.2,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/coffee-time-cafe"
+        },
+        {
+          "cafe": "Vendi Papafilippou Ice Cream",
+          "freddo": 2.3,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/vendi-papafilippou-ice-cream"
+        },
+        {
+          "cafe": "Goppion Cafe Omonoias",
+          "freddo": 2.3,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/goppion-caffe-omonoias"
+        },
+        {
+          "cafe": "1862 Coffeehouse",
+          "freddo": 2.3,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/1862-coffeehouse-showroom"
+        },
+        {
+          "cafe": "Bubble Tale Makariou",
+          "freddo": 2.3,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/bubble-tale-makariou"
+        },
+        {
+          "cafe": "Snack Attack",
+          "freddo": 2.4,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/snack-attack"
+        },
+        {
+          "cafe": "Cafeneio",
+          "freddo": 2.4,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/cafe-neio"
+        },
+        {
+          "cafe": "The Doctor Espresso",
+          "freddo": 2.4,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/the-doctor-espresso"
+        },
+        {
+          "cafe": "Coffee Moment Break",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/coffee-moment-break"
+        },
+        {
+          "cafe": "Papantoniou Bakeries Omonoias",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/papantoniou-bakeries-omonoias"
+        }
+      ]
+    },
+    {
+      "key": "larnaca",
+      "label": {
+        "en": "Larnaca",
+        "el": "Λάρνακα",
+        "ru": "Ларнака"
+      },
+      "cafes": [
+        {
+          "cafe": "Coffee AAP",
+          "freddo": 2,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/coffee-aap"
+        },
+        {
+          "cafe": "Coffeetainer",
+          "freddo": 2.2,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/coffeetainer"
+        },
+        {
+          "cafe": "40 Feet Coffee",
+          "freddo": 2.3,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/40-feet-coffee"
+        },
+        {
+          "cafe": "Coffee Berry Spyrou Kyprianou",
+          "freddo": 2.4,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/coffee-berry-spyrou-kyprianou"
+        },
+        {
+          "cafe": "Santai Lounge Larnaca",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/santai-lounge-larnaca"
+        },
+        {
+          "cafe": "Spotaki Coffee to Go",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/spotaki-coffee-to-go"
+        },
+        {
+          "cafe": "Cafe Vergnano 1882",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/cafe-vergnano-1882"
+        },
+        {
+          "cafe": "Cup. Cafe",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/cup-cafe-new"
+        },
+        {
+          "cafe": "Fournoi Pirillos Kiti",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/fournoi-pirillos-kiti"
+        },
+        {
+          "cafe": "Hot Shot Coffee Shop",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/hot-shot-coffee-shop"
+        },
+        {
+          "cafe": "Kafeneion 26 Coffee House",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/kafeneion-26-coffee-house"
+        },
+        {
+          "cafe": "Bakehouse By Florentia",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/florentia-bakehouse"
+        }
+      ]
+    },
+    {
+      "key": "paphos",
+      "label": {
+        "en": "Paphos",
+        "el": "Πάφος",
+        "ru": "Пафос"
+      },
+      "cafes": [
+        {
+          "cafe": "Bubble Tale Paphos",
+          "freddo": 2.3,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/bubble-tale-paphos"
+        },
+        {
+          "cafe": "Despina's Coffee",
+          "freddo": 2.4,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/daily-dose-esrpesso-cafe"
+        },
+        {
+          "cafe": "Ciel Cafe",
+          "freddo": 2.4,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/ciel-cafe"
+        },
+        {
+          "cafe": "Churrito ",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/churrito"
+        },
+        {
+          "cafe": "Rikano Coffee Shop Alexandrou Papagou",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/rikano-coffeshop-mesogis"
+        },
+        {
+          "cafe": "The Bean's Garage",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/the-beans-garage"
+        },
+        {
+          "cafe": "Atlas Coffee Shop",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/atlas-coffee-shop"
+        },
+        {
+          "cafe": "Papantoniou Bakeries Archiepiskopou Makariou",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/papantoniou-bakeries-archiepiskopou-makariou"
+        },
+        {
+          "cafe": "VK Cafe Paphos",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/vk-cafe-paphos"
+        },
+        {
+          "cafe": "Rocket Snacks",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/rocket-snacks"
+        },
+        {
+          "cafe": "The 23 Cafe",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/the-23-cafe"
+        },
+        {
+          "cafe": "Frunch Piroski & Cafe",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/frunch-piroski-cafe"
+        }
+      ]
+    },
+    {
+      "key": "famagusta",
+      "label": {
+        "en": "Ayia Napa & Paralimni",
+        "el": "Αγία Νάπα & Παραλίμνι",
+        "ru": "Айя-Напа и Паралимни"
+      },
+      "cafes": [
+        {
+          "cafe": "Casa Nostra Cafe",
+          "freddo": 2.2,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/casa-nostra-cafe"
+        },
+        {
+          "cafe": "La Casa De Cafe",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/la-casa-de-cafe"
+        },
+        {
+          "cafe": "Coffee Roasters by Robustos",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/coffee-roasters-by-robustos"
+        },
+        {
+          "cafe": "Delta Cafe",
+          "freddo": 2.5,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/delta-cafe"
+        },
+        {
+          "cafe": "Liberty 10 Coffee House",
+          "freddo": 2.6,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/liberty-10-coffee-house"
+        },
+        {
+          "cafe": "Safira Coffee",
+          "freddo": 2.6,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/safira-coffee"
+        },
+        {
+          "cafe": "Amarilino Coffee n' More ",
+          "freddo": 2.6,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/amarilino-coffee-n-more"
+        },
+        {
+          "cafe": "Coffee Lab Paralimni",
+          "freddo": 2.7,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/coffee-lab-paralimni"
+        },
+        {
+          "cafe": "O Kafenes Tou Prigki",
+          "freddo": 2.7,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/o-kafenes-tou-prigki"
+        },
+        {
+          "cafe": "Coffeebrands Sotira",
+          "freddo": 2.7,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/coffeebrands-sotira"
+        },
+        {
+          "cafe": "Mple Avocado",
+          "freddo": 2.75,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/mple-avocado"
+        },
+        {
+          "cafe": "Clock Café Paralimni",
+          "freddo": 2.8,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/clock-caf-paralimni"
+        }
+      ]
     }
   ]
 }

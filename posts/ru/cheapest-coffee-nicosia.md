@@ -2,51 +2,117 @@
 title: "Самый дешёвый Freddo Espresso на Кипре — Живые цены"
 date: "2026-06-28"
 category: "Еда и напитки"
-summary: "Живые цены на Фреддо Эспрессо во всех крупных кофейных сетях Кипра — обновляется каждый час. Включает цены в заведении и через приложения доставки."
+summary: "Цены на Фреддо Эспрессо в Никосии, Лимасоле, Ларнаке, Пафосе и Айя-Напе — самые дешёвые кафе в каждом городе, еженедельное обновление через Wolt."
 pinned: true
 ---
 
-Мы отслеживаем цены на Фреддо Эспрессо во всех крупных кофейных сетях и независимых заведениях Кипра. Кафе с единственной локацией имеют ссылку на Google Maps.
+Мы отслеживаем цены на Фреддо Эспрессо в кафе по всему Кипру — Никосия, Лимасол, Ларнака, Пафос и район Айя-Напы — и показываем самые дешёвые места в каждом городе. Цены берутся из Wolt и обновляются еженедельно.
 
 <!-- COFFEE_PRICES_START -->
-*Цены последний раз проверены: 4 июл. 2026 г., 19:51 (EET). Популярные напитки обновляются ежемесячно через Wolt / Foody / Bolt Food.*
+*Цены последний раз проверены: 4 июл. 2026 г., 20:07 (EET). Обновляется еженедельно через Wolt.*
 
-## Фреддо Эспрессо — По всему Кипру
+## Фреддо Эспрессо — Самые дешёвые по городам
 
-| Кафе | Цена | Через Доставку | Примечания |
-|------|-------|-------|-------|
-| **[Deli. Lidas](https://www.google.com/maps/search/Deli.%20Lidas%20Nicosia%20Cyprus)** | €1.95 | €1.95 | Cheapest freddo on Wolt Nicosia. |
-| **[Bake On Wood](https://www.google.com/maps/search/Bake%20On%20Wood%20Nicosia%20Cyprus)** | €2.00 | €2.00 | Bakery-café, Nicosia. |
-| **[Bubble Tale](https://www.google.com/maps/search/Bubble%20Tale%20Nicosia%20Cyprus)** | €2.30 | €2.30 | Bubble tea shop on Ledras that also does freddo. |
-| **Vienna Bakeries** | €2.30 | €2.30 | Bakery chain. |
-| **[Bakalicom](https://www.google.com/maps/search/Bakalicom%20Nicosia%20Cyprus)** | €2.30 | €2.30 | Deli-café, Nicosia. |
-| **Le Gout** | €2.40 | €2.40 | Bakery chain with several Nicosia branches. |
-| **Coffeeway** | €2.50 | €2.50 | Best value freddo island-wide. Drive-throughs available across Cyprus. |
-| **[Coffee Cow](https://www.google.com/maps/search/Coffee%20Cow%20Nicosia%20Cyprus)** | €2.50 | €2.50 | Strovolos. |
-| **[Brew Lab](https://www.google.com/maps/search/Brew%20Lab%20Nicosia%20Cyprus)** | €2.50 | €2.50 | Specialty coffee, Nicosia. |
-| **Coffee Brands** | €2.70 | €2.70 | Also on Wolt. |
-| **Coffee Lab** | €2.70 | €2.70 | Also at K-Cineplex and Central Park. |
-| **Bruno Coffee Stores** | €2.70 | €2.70 | Greek chain. |
-| **Gregory's** | €2.80 | €2.80 | Also on Wolt (+~€0.50). Good froth on freddo. |
-| **Coffee Island** | €2.80 | €2.80 | Also on Wolt & Bolt Food. |
-| **Kawacom's Ipanema Espresso** | €2.80 | €2.80 | Five branches across Nicosia. |
-| **Mikel Coffee** | €2.90 | €2.90 | Greek specialty chain. Also on Wolt. |
-| **Second Cup** | €2.95 | €2.95 | Canadian chain. |
-| **PAUL** | €3.40 | €3.40 | French bakery chain. |
-| **Arabica Coffee House** | €3.50 | €3.50 | Engomi & Strovolos. |
-| **Costa Coffee** | €3.70 | €3.70 | Also on Wolt & Bolt Food. |
-| **Gloria Jean's** | €3.80 | €3.80 | Also on Foody & Bolt Food. |
-| **Starbucks** | €3.95 | €3.95 | Also on Wolt & Bolt Food. Premium pricing. |
-| **Caffe Nero** | €4.00 | €4.00 | Also on Wolt & Bolt Food. |
-| **Cafe La Mode** | €4.20 | €4.20 | All-day café chain. |
+### Никосия
 
-**Winner**: **[Deli. Lidas](https://www.google.com/maps/search/Deli.%20Lidas%20Nicosia%20Cyprus)** — €1.95
+| Кафе | Цена |
+|------|-------|
+| **[Deli. Lidas](https://wolt.com/en/cyp/nicosia/restaurant/deli-lidas)** | €1.95 |
+| **[Bake On Wood](https://wolt.com/en/cyp/nicosia/restaurant/bake-on-wood)** | €2.00 |
+| **[Energy Coffee by Route 66](https://wolt.com/en/cyp/nicosia/restaurant/energy-coffee-by-route-66)** | €2.20 |
+| **[Caffè River](https://wolt.com/en/cyp/nicosia/restaurant/caffe-river)** | €2.20 |
+| **[You Coffee Latsia](https://wolt.com/en/cyp/nicosia/restaurant/you-coffee-latsia)** | €2.20 |
+| **[Hogar All Day](https://wolt.com/en/cyp/nicosia/restaurant/hogar-coffee)** | €2.20 |
+| **[Bakalicom](https://wolt.com/en/cyp/nicosia/restaurant/bakalicom)** | €2.30 |
+| **[Vienna Bakeries Latsia](https://wolt.com/en/cyp/nicosia/restaurant/vienna-bakeries-latsia)** | €2.30 |
+| **[Bubble Tale Ledras](https://wolt.com/en/cyp/nicosia/restaurant/bubble-tale-ledras)** | €2.30 |
+| **[Caffe Milano Agios Dometios](https://wolt.com/en/cyp/nicosia/restaurant/caffe-milano-agios-dometios)** | €2.30 |
+| **[Le Gout Geri](https://wolt.com/en/cyp/nicosia/restaurant/le-gout-geri)** | €2.40 |
+| **[The Other Way Espresso Bar](https://wolt.com/en/cyp/nicosia/restaurant/coffee-way1)** | €2.40 |
 
-> Цены на доставку приблизительные и включают типичную комиссию платформы (Wolt / Bolt Food / Foody).
+**Самое дешёвое**: **[Deli. Lidas](https://wolt.com/en/cyp/nicosia/restaurant/deli-lidas)** — €1.95
 
-## Самые Популярные Напитки по Кафе
+### Лимасол
 
-*Популярные напитки — последнее обновление: 4 июл. 2026 г., 19:51.*
+| Кафе | Цена |
+|------|-------|
+| **[The Coffice Hour](https://wolt.com/en/cyp/limassol/restaurant/the-coffice-hour)** | €2.00 |
+| **[Love Coffee](https://wolt.com/en/cyp/limassol/restaurant/love-coffee)** | €2.20 |
+| **[Coffee Time Cafe](https://wolt.com/en/cyp/limassol/restaurant/coffee-time-cafe)** | €2.20 |
+| **[Vendi Papafilippou Ice Cream](https://wolt.com/en/cyp/limassol/restaurant/vendi-papafilippou-ice-cream)** | €2.30 |
+| **[Goppion Cafe Omonoias](https://wolt.com/en/cyp/limassol/restaurant/goppion-caffe-omonoias)** | €2.30 |
+| **[1862 Coffeehouse](https://wolt.com/en/cyp/limassol/restaurant/1862-coffeehouse-showroom)** | €2.30 |
+| **[Bubble Tale Makariou](https://wolt.com/en/cyp/limassol/restaurant/bubble-tale-makariou)** | €2.30 |
+| **[Snack Attack](https://wolt.com/en/cyp/limassol/restaurant/snack-attack)** | €2.40 |
+| **[Cafeneio](https://wolt.com/en/cyp/limassol/restaurant/cafe-neio)** | €2.40 |
+| **[The Doctor Espresso](https://wolt.com/en/cyp/limassol/restaurant/the-doctor-espresso)** | €2.40 |
+| **[Coffee Moment Break](https://wolt.com/en/cyp/limassol/restaurant/coffee-moment-break)** | €2.50 |
+| **[Papantoniou Bakeries Omonoias](https://wolt.com/en/cyp/limassol/restaurant/papantoniou-bakeries-omonoias)** | €2.50 |
+
+**Самое дешёвое**: **[The Coffice Hour](https://wolt.com/en/cyp/limassol/restaurant/the-coffice-hour)** — €2.00
+
+### Ларнака
+
+| Кафе | Цена |
+|------|-------|
+| **[Coffee AAP](https://wolt.com/en/cyp/larnaca/restaurant/coffee-aap)** | €2.00 |
+| **[Coffeetainer](https://wolt.com/en/cyp/larnaca/restaurant/coffeetainer)** | €2.20 |
+| **[40 Feet Coffee](https://wolt.com/en/cyp/larnaca/restaurant/40-feet-coffee)** | €2.30 |
+| **[Coffee Berry Spyrou Kyprianou](https://wolt.com/en/cyp/larnaca/restaurant/coffee-berry-spyrou-kyprianou)** | €2.40 |
+| **[Santai Lounge Larnaca](https://wolt.com/en/cyp/larnaca/restaurant/santai-lounge-larnaca)** | €2.50 |
+| **[Spotaki Coffee to Go](https://wolt.com/en/cyp/larnaca/restaurant/spotaki-coffee-to-go)** | €2.50 |
+| **[Cafe Vergnano 1882](https://wolt.com/en/cyp/larnaca/restaurant/cafe-vergnano-1882)** | €2.50 |
+| **[Cup. Cafe](https://wolt.com/en/cyp/larnaca/restaurant/cup-cafe-new)** | €2.50 |
+| **[Fournoi Pirillos Kiti](https://wolt.com/en/cyp/larnaca/restaurant/fournoi-pirillos-kiti)** | €2.50 |
+| **[Hot Shot Coffee Shop](https://wolt.com/en/cyp/larnaca/restaurant/hot-shot-coffee-shop)** | €2.50 |
+| **[Kafeneion 26 Coffee House](https://wolt.com/en/cyp/larnaca/restaurant/kafeneion-26-coffee-house)** | €2.50 |
+| **[Bakehouse By Florentia](https://wolt.com/en/cyp/larnaca/restaurant/florentia-bakehouse)** | €2.50 |
+
+**Самое дешёвое**: **[Coffee AAP](https://wolt.com/en/cyp/larnaca/restaurant/coffee-aap)** — €2.00
+
+### Пафос
+
+| Кафе | Цена |
+|------|-------|
+| **[Bubble Tale Paphos](https://wolt.com/en/cyp/paphos/restaurant/bubble-tale-paphos)** | €2.30 |
+| **[Despina's Coffee](https://wolt.com/en/cyp/paphos/restaurant/daily-dose-esrpesso-cafe)** | €2.40 |
+| **[Ciel Cafe](https://wolt.com/en/cyp/paphos/restaurant/ciel-cafe)** | €2.40 |
+| **[Churrito ](https://wolt.com/en/cyp/paphos/restaurant/churrito)** | €2.50 |
+| **[Rikano Coffee Shop Alexandrou Papagou](https://wolt.com/en/cyp/paphos/restaurant/rikano-coffeshop-mesogis)** | €2.50 |
+| **[The Bean's Garage](https://wolt.com/en/cyp/paphos/restaurant/the-beans-garage)** | €2.50 |
+| **[Atlas Coffee Shop](https://wolt.com/en/cyp/paphos/restaurant/atlas-coffee-shop)** | €2.50 |
+| **[Papantoniou Bakeries Archiepiskopou Makariou](https://wolt.com/en/cyp/paphos/restaurant/papantoniou-bakeries-archiepiskopou-makariou)** | €2.50 |
+| **[VK Cafe Paphos](https://wolt.com/en/cyp/paphos/restaurant/vk-cafe-paphos)** | €2.50 |
+| **[Rocket Snacks](https://wolt.com/en/cyp/paphos/restaurant/rocket-snacks)** | €2.50 |
+| **[The 23 Cafe](https://wolt.com/en/cyp/paphos/restaurant/the-23-cafe)** | €2.50 |
+| **[Frunch Piroski & Cafe](https://wolt.com/en/cyp/paphos/restaurant/frunch-piroski-cafe)** | €2.50 |
+
+**Самое дешёвое**: **[Bubble Tale Paphos](https://wolt.com/en/cyp/paphos/restaurant/bubble-tale-paphos)** — €2.30
+
+### Айя-Напа и Паралимни
+
+| Кафе | Цена |
+|------|-------|
+| **[Casa Nostra Cafe](https://wolt.com/en/cyp/ayia-napa/restaurant/casa-nostra-cafe)** | €2.20 |
+| **[La Casa De Cafe](https://wolt.com/en/cyp/ayia-napa/restaurant/la-casa-de-cafe)** | €2.50 |
+| **[Coffee Roasters by Robustos](https://wolt.com/en/cyp/ayia-napa/restaurant/coffee-roasters-by-robustos)** | €2.50 |
+| **[Delta Cafe](https://wolt.com/en/cyp/ayia-napa/restaurant/delta-cafe)** | €2.50 |
+| **[Liberty 10 Coffee House](https://wolt.com/en/cyp/ayia-napa/restaurant/liberty-10-coffee-house)** | €2.60 |
+| **[Safira Coffee](https://wolt.com/en/cyp/ayia-napa/restaurant/safira-coffee)** | €2.60 |
+| **[Amarilino Coffee n' More ](https://wolt.com/en/cyp/ayia-napa/restaurant/amarilino-coffee-n-more)** | €2.60 |
+| **[Coffee Lab Paralimni](https://wolt.com/en/cyp/ayia-napa/restaurant/coffee-lab-paralimni)** | €2.70 |
+| **[O Kafenes Tou Prigki](https://wolt.com/en/cyp/ayia-napa/restaurant/o-kafenes-tou-prigki)** | €2.70 |
+| **[Coffeebrands Sotira](https://wolt.com/en/cyp/ayia-napa/restaurant/coffeebrands-sotira)** | €2.70 |
+| **[Mple Avocado](https://wolt.com/en/cyp/ayia-napa/restaurant/mple-avocado)** | €2.75 |
+| **[Clock Café Paralimni](https://wolt.com/en/cyp/ayia-napa/restaurant/clock-caf-paralimni)** | €2.80 |
+
+**Самое дешёвое**: **[Casa Nostra Cafe](https://wolt.com/en/cyp/ayia-napa/restaurant/casa-nostra-cafe)** — €2.20
+
+> Цены указаны по данным Wolt и могут включать наценку платформы. Для каждой сети показан самый дешёвый филиал.
+
+## Самые Популярные Напитки по Кафе (Никосия)
+
+*Популярные напитки — последнее обновление: 4 июл. 2026 г., 20:07.*
 
 ### Coffeeway
 
@@ -124,7 +190,7 @@ pinned: true
 | Freddo Espresso | €2.95 | Wolt |
 | Freddo Cappuccino | €3.15 | Wolt |
 | Iced Latte | €3.35 | Wolt |
-| Iced Signature Latte | €3.35 | Wolt |
+| Iced Signature Latte | €3.60 | Wolt |
 | Iced Americano | €2.50 | Wolt |
 
 ### Costa Coffee
