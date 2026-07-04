@@ -40,12 +40,24 @@ function normalize(s) {
 }
 
 // All cuts are matched in pita format only, so venues are compared like-for-like.
+// Souvlaki in Cyprus means Cypriot pitta — items explicitly marked as Greek
+// pitta (ελληνική) are a different (smaller) format and are always excluded.
+// "Ενισχυμένη" (also sold as "large pitta") is its own format with its own cuts.
 const PITA_RE = /pita|πιτα/;
+const GREEK_RE = /ελληνικ|greek|ellinik/;
+const CYPRIOT_RE = /κυπριακ|kypriak|kipriak|cypriot|cyprus/;
+const LARGE_RE = /ενισχυμεν|enisximen|enishimen|large|μεγαλ/;
+
+const PORK_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /pork|χοιριν/.test(n) && !/chicken|κοτοπουλ/.test(n);
+const CHICKEN_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /chicken|κοτοπουλ/.test(n);
+
 const CUTS = [
-  { key: "souvlaki", test: (n) => /souvlaki|σουβλακ/.test(n) && /pork|χοιριν/.test(n) && !/chicken|κοτοπουλ/.test(n) },
-  { key: "chicken",  test: (n) => /souvlaki|σουβλακ/.test(n) && /chicken|κοτοπουλ/.test(n) },
-  { key: "porkchop", test: (n) => /pork ?chop|μπριζολ|brizol/.test(n) },
-  { key: "mix",      test: (n) => /\bmix|μιχτ|mikti/.test(n) },
+  { key: "souvlaki",      test: PORK_SOUVLAKI,    size: "regular" },
+  { key: "chicken",       test: CHICKEN_SOUVLAKI, size: "regular" },
+  { key: "souvlakiLarge", test: PORK_SOUVLAKI,    size: "large" },
+  { key: "chickenLarge",  test: CHICKEN_SOUVLAKI, size: "large" },
+  { key: "porkchop",      test: (n) => /pork ?chop|μπριζολ|brizol/.test(n) && !/μοσχαρ|beef|veal|αρν|lamb/.test(n), size: "regular" },
+  { key: "mix",           test: (n) => /\bmix|μιχτ|mikti/.test(n), size: "regular" },
 ];
 
 async function listSouvlakiVenues(lat, lon) {
@@ -75,17 +87,32 @@ async function listSouvlakiVenues(lat, lon) {
 }
 
 function extractCuts(items) {
-  const prices = {};
+  // candidates[cutKey] = { preferred: cheapest cypriot-marked, fallback: cheapest unmarked }
+  const candidates = {};
   for (const item of items) {
     // items priced 0 are "configure options" placeholders — not a real price
     if (item.price == null || item.price < 100) continue;
     const n = normalize(item.name);
     if (!PITA_RE.test(n)) continue;
+    if (GREEK_RE.test(n)) continue; // Greek pitta is a different format — never counted
+    const isLarge = LARGE_RE.test(n);
+    const isCypriot = CYPRIOT_RE.test(n);
+    const eur = item.price / 100;
+
     for (const cut of CUTS) {
+      if ((cut.size === "large") !== isLarge) continue;
       if (!cut.test(n)) continue;
-      const eur = item.price / 100;
-      if (prices[cut.key] == null || eur < prices[cut.key]) prices[cut.key] = eur;
+      const slot = (candidates[cut.key] ??= { preferred: null, fallback: null });
+      const tier = isCypriot ? "preferred" : "fallback";
+      if (slot[tier] == null || eur < slot[tier]) slot[tier] = eur;
     }
+  }
+
+  // explicitly Cypriot-marked wins; plain "pita" (which in Cyprus means Cypriot) is the fallback
+  const prices = {};
+  for (const [key, slot] of Object.entries(candidates)) {
+    const price = slot.preferred ?? slot.fallback;
+    if (price != null) prices[key] = price;
   }
   return prices;
 }
