@@ -25,9 +25,21 @@ const ROOT = path.resolve(__dirname, "..");
 const DATA_FILE = path.join(ROOT, "src/data/coffee-prices.json");
 
 const SEARCH_API = "https://restaurant-api.wolt.com/v1/pages/search";
+const VENUES_API = "https://restaurant-api.wolt.com/v1/pages/restaurants";
 const ASSORTMENT_API = "https://consumer-api.wolt.com/consumer-api/consumer-assortment/v1/venues/slug";
 const NICOSIA = { lat: 35.1856, lon: 33.3823 };
 const HEADERS = { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" };
+
+// All Wolt Cyprus cities — each gets its own section on the page
+const CITIES = [
+  { key: "nicosia",   lat: 35.1856, lon: 33.3823, label: { en: "Nicosia",               el: "Λευκωσία",              ru: "Никосия" } },
+  { key: "limassol",  lat: 34.7071, lon: 33.0226, label: { en: "Limassol",              el: "Λεμεσός",               ru: "Лимасол" } },
+  { key: "larnaca",   lat: 34.9167, lon: 33.6233, label: { en: "Larnaca",               el: "Λάρνακα",               ru: "Ларнака" } },
+  { key: "paphos",    lat: 34.7754, lon: 32.4245, label: { en: "Paphos",                el: "Πάφος",                 ru: "Пафос" } },
+  { key: "famagusta", lat: 35.0380, lon: 33.9830, label: { en: "Ayia Napa & Paralimni", el: "Αγία Νάπα & Παραλίμνι", ru: "Айя-Напа и Паралимни" } },
+];
+const TOP_PER_CITY = 12;
+const CONCURRENCY = 10;
 
 /** Lowercase, fold accents, strip punctuation — "Caffè Nero" ≈ "caffe nero". */
 function normalize(s) {
@@ -132,6 +144,84 @@ function buildTopDrinks(assortment) {
   return top;
 }
 
+// ── per-city scan ─────────────────────────────────────────────────────────────
+
+/** All café-tagged venues near the given coordinates. */
+async function listCafes(lat, lon) {
+  const res = await fetch(`${VENUES_API}?lat=${lat}&lon=${lon}`, { headers: HEADERS });
+  if (!res.ok) throw new Error(`venue list HTTP ${res.status}`);
+  const json = await res.json();
+  const seen = new Set();
+  const venues = [];
+  for (const section of json.sections || []) {
+    for (const it of section.items || []) {
+      const v = it.venue;
+      if (!v?.slug || seen.has(v.slug)) continue;
+      if (!(v.tags || []).some((t) => /coffee|cafe|caf/i.test(t))) continue;
+      seen.add(v.slug);
+      venues.push({ name: v.name, slug: v.slug });
+    }
+  }
+  return venues;
+}
+
+/**
+ * Venues of one brand share their first two name tokens ("Mikel Coffee X",
+ * "Caffè Nero Y") — group on that and keep each brand's cheapest branch.
+ */
+function brandKey(name) {
+  return normalize(name).split(" ").slice(0, 2).join(" ");
+}
+
+/** Scan one city: every café menu, cheapest branch per brand, top N by price. */
+async function scanCity(city) {
+  const venues = await listCafes(city.lat, city.lon);
+  console.log(`  ${venues.length} café venues found`);
+
+  const found = [];
+  let failed = 0;
+  const queue = [...venues];
+  async function worker() {
+    while (queue.length) {
+      const v = queue.shift();
+      let ok = false;
+      for (let attempt = 0; attempt < 3 && !ok; attempt++) {
+        if (attempt > 0) await new Promise((r) => setTimeout(r, 3000 * attempt)); // back off on rate limit
+        try {
+          const res = await fetch(`${ASSORTMENT_API}/${v.slug}/assortment`, {
+            headers: HEADERS,
+            signal: AbortSignal.timeout(20000),
+          });
+          if (res.status === 404 || res.status === 410) { ok = true; break; } // venue gone — don't retry
+          if (!res.ok) continue;
+          const assortment = await res.json();
+          const freddo = findFreddo(assortment.items || []);
+          if (freddo) found.push({ name: v.name, slug: v.slug, freddo: freddo.price / 100 });
+          ok = true;
+        } catch {}
+      }
+      if (!ok) failed++;
+    }
+  }
+  await Promise.all(Array.from({ length: CONCURRENCY }, worker));
+  if (failed) console.log(`  ⚠ ${failed}/${venues.length} menu fetches failed after retries`);
+
+  found.sort((a, b) => a.freddo - b.freddo);
+  const byBrand = new Map();
+  for (const f of found) {
+    const key = brandKey(f.name);
+    if (!byBrand.has(key)) byBrand.set(key, f); // sorted, so first hit is the cheapest branch
+  }
+
+  const top = [...byBrand.values()].slice(0, TOP_PER_CITY).map((f) => ({
+    cafe: f.name,
+    freddo: f.freddo,
+    url: `https://wolt.com/en/cyp/${city.key === "famagusta" ? "ayia-napa" : city.key}/restaurant/${f.slug}`,
+  }));
+  console.log(`  ${found.length} sell freddo → keeping top ${top.length} (cheapest €${top[0]?.freddo.toFixed(2) ?? "—"})`);
+  return top;
+}
+
 // ── main ──────────────────────────────────────────────────────────────────────
 
 const data = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
@@ -177,10 +267,23 @@ for (const item of data.items) {
   }
 }
 
+// City-by-city freddo tables for the whole island
+data.cities = [];
+for (const city of CITIES) {
+  console.log(`\n══ ${city.label.en} ══`);
+  try {
+    const cafes = await scanCity(city);
+    data.cities.push({ key: city.key, label: city.label, cafes });
+  } catch (err) {
+    console.log(`  ✗ ${err.message} — city skipped`);
+  }
+  await new Promise((r) => setTimeout(r, 5000)); // breathe between cities — avoid rate limiting
+}
+
 data.scrapedAt = new Date().toISOString();
 data.updatedAt = data.scrapedAt;
 fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2) + "\n");
 
 const withPrice = data.items.filter((i) => i.freddo != null).length;
-console.log(`\nDone. ${withPrice}/${data.items.length} cafés have a verified Freddo price.`);
+console.log(`\nDone. ${withPrice}/${data.items.length} curated cafés + ${data.cities.length} city scans.`);
 console.log("Run node scripts/update-coffee-prices.mjs to regenerate the posts.");
