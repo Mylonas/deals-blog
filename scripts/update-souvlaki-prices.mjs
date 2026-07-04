@@ -40,12 +40,12 @@ function normalize(s) {
 }
 
 // All cuts are matched in pita format only, so venues are compared like-for-like.
-// Souvlaki in Cyprus means Cypriot pitta — items explicitly marked as Greek
-// pitta (ελληνική) are a different (smaller) format and are always excluded.
+// Plain "pita" in Cyprus means Cypriot pitta and counts as-is; only items
+// explicitly marked as Greek pitta (ελληνική) are excluded — that's a much
+// smaller portion and not comparable.
 // "Ενισχυμένη" (also sold as "large pitta") is its own format with its own cuts.
 const PITA_RE = /pita|πιτα/;
 const GREEK_RE = /ελληνικ|greek|ellinik/;
-const CYPRIOT_RE = /κυπριακ|kypriak|kipriak|cypriot|cyprus/;
 const LARGE_RE = /ενισχυμεν|enisximen|enishimen|large|μεγαλ/;
 
 const PORK_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /pork|χοιριν/.test(n) && !/chicken|κοτοπουλ/.test(n);
@@ -87,42 +87,31 @@ async function listSouvlakiVenues(lat, lon) {
 }
 
 function extractCuts(items) {
-  // candidates[cutKey] = { preferred: cheapest cypriot-marked, fallback: cheapest unmarked }
-  const candidates = {};
+  const prices = {};
   for (const item of items) {
     // items priced 0 are "configure options" placeholders — not a real price
     if (item.price == null || item.price < 100) continue;
     const n = normalize(item.name);
     if (!PITA_RE.test(n)) continue;
-    if (GREEK_RE.test(n)) continue; // Greek pitta is a different format — never counted
+    if (GREEK_RE.test(n)) continue; // Greek pitta is a smaller portion — never counted
     const isLarge = LARGE_RE.test(n);
-    const isCypriot = CYPRIOT_RE.test(n);
     const eur = item.price / 100;
 
     for (const cut of CUTS) {
       if ((cut.size === "large") !== isLarge) continue;
       if (!cut.test(n)) continue;
-      const slot = (candidates[cut.key] ??= { preferred: null, fallback: null });
-      const tier = isCypriot ? "preferred" : "fallback";
-      if (slot[tier] == null || eur < slot[tier]) slot[tier] = eur;
+      if (prices[cut.key] == null || eur < prices[cut.key]) prices[cut.key] = eur;
     }
-  }
-
-  // explicitly Cypriot-marked wins; plain "pita" (which in Cyprus means Cypriot) is the fallback
-  const prices = {};
-  for (const [key, slot] of Object.entries(candidates)) {
-    const price = slot.preferred ?? slot.fallback;
-    if (price != null) prices[key] = price;
   }
   return prices;
 }
 
-async function scanCity(city) {
+async function scanCity(city, prevVenues) {
   const venues = await listSouvlakiVenues(city.lat, city.lon);
   console.log(`  ${venues.length} souvlaki-tagged venues found`);
 
   const results = [];
-  let failed = 0;
+  const failedSlugs = new Set();
   const queue = [...venues];
   async function worker() {
     while (queue.length) {
@@ -142,6 +131,7 @@ async function scanCity(city) {
           if (Object.keys(prices).length > 0) {
             results.push({
               name: v.name,
+              slug: v.slug,
               address: v.address,
               lat: v.lat,
               lng: v.lng,
@@ -152,11 +142,24 @@ async function scanCity(city) {
           ok = true;
         } catch {}
       }
-      if (!ok) failed++;
+      if (!ok) failedSlugs.add(v.slug);
     }
   }
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
-  if (failed) console.log(`  ⚠ ${failed}/${venues.length} menu fetches failed after retries`);
+  if (failedSlugs.size) console.log(`  ⚠ ${failedSlugs.size}/${venues.length} menu fetches failed after retries`);
+
+  // Rate limiting must not shrink coverage: venues whose fetch failed keep
+  // their previous scan's data instead of dropping off the page.
+  const have = new Set(results.map((r) => r.slug));
+  let carried = 0;
+  for (const prev of prevVenues || []) {
+    const slug = prev.slug || prev.url?.split("/restaurant/")[1];
+    if (slug && failedSlugs.has(slug) && !have.has(slug)) {
+      results.push({ ...prev, slug });
+      carried++;
+    }
+  }
+  if (carried) console.log(`  ↻ carried over ${carried} venues from previous scan`);
 
   results.sort((a, b) => (a.prices.souvlaki ?? 99) - (b.prices.souvlaki ?? 99));
   console.log(`  ${results.length} venues sell souvlaki in pita`);
@@ -165,14 +168,20 @@ async function scanCity(city) {
 
 // ── main ──────────────────────────────────────────────────────────────────────
 
+const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) : { cities: [] };
+const prevByCity = new Map((prev.cities || []).map((c) => [c.key, c.venues]));
+
 const data = { updatedAt: null, cities: [] };
 for (const city of CITIES) {
   console.log(`\n══ ${city.label.en} ══`);
   try {
-    const venues = await scanCity(city);
+    const venues = await scanCity(city, prevByCity.get(city.key));
     data.cities.push({ key: city.key, label: city.label, venues });
   } catch (err) {
-    console.log(`  ✗ ${err.message} — city skipped`);
+    // whole city failed — keep the previous scan's data rather than dropping it
+    const kept = prevByCity.get(city.key) || [];
+    data.cities.push({ key: city.key, label: city.label, venues: kept });
+    console.log(`  ✗ ${err.message} — kept ${kept.length} venues from previous scan`);
   }
   await new Promise((r) => setTimeout(r, 5000));
 }
