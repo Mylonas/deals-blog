@@ -26,31 +26,31 @@ const CUT_KEYS: CutKey[] = ["souvlaki", "chicken", "mix", "souvlakiLarge", "chic
 
 const T = {
   en: {
-    cuts: { souvlaki: "Pork Souvlaki", chicken: "Chicken Souvlaki", mix: "Mix", souvlakiLarge: "Pork — Large Pitta", chickenLarge: "Chicken — Large Pitta", mixLarge: "Mix — Large Pitta", porkchop: "Pork Chop" } as Record<CutKey, string>,
+    cuts: { souvlaki: "Pork Souvlaki", chicken: "Chicken Souvlaki", mix: "Mix", souvlakiLarge: "Pork — Large Pitta", chickenLarge: "Chicken — Large Pitta", mixLarge: "Mix — Large Pitta", porkchop: "Pork Chop (portion)" } as Record<CutKey, string>,
     venue: "Place", price: "Price", updated: "Updated", order: "Order →",
     nearMe: "📍 Near me", nearActive: "📍 Nearby first", clear: "✕",
     denied: "Location access denied — showing cheapest first.",
     unsupported: "Geolocation is not supported by this browser.",
     empty: "No venues offer this cut in pita right now.",
-    note: "All prices are for Cypriot pitta (never Greek pitta) from Wolt listings, so they may include a platform markup over the counter price. Large pitta = ενισχυμένη. Foody and Bolt Food don't offer public price data. Updated weekly.",
+    note: "Pitta prices exclude Greek pitta (smaller portion); large pitta = ενισχυμένη, priced from the venue's size upgrade when sold as an option. Pork chop is a portion dish. Prices are Wolt listings and may include a platform markup. Updated weekly.",
   },
   el: {
-    cuts: { souvlaki: "Σουβλάκι Χοιρινό", chicken: "Σουβλάκι Κοτόπουλο", mix: "Μιχτή", souvlakiLarge: "Χοιρινό — Ενισχυμένη", chickenLarge: "Κοτόπουλο — Ενισχυμένη", mixLarge: "Μιχτή — Ενισχυμένη", porkchop: "Μπριζόλα" } as Record<CutKey, string>,
+    cuts: { souvlaki: "Σουβλάκι Χοιρινό", chicken: "Σουβλάκι Κοτόπουλο", mix: "Μιχτή", souvlakiLarge: "Χοιρινό — Ενισχυμένη", chickenLarge: "Κοτόπουλο — Ενισχυμένη", mixLarge: "Μιχτή — Ενισχυμένη", porkchop: "Μπριζόλα (μερίδα)" } as Record<CutKey, string>,
     venue: "Μαγαζί", price: "Τιμή", updated: "Ενημέρωση", order: "Παραγγελία →",
     nearMe: "📍 Κοντά μου", nearActive: "📍 Κοντινά πρώτα", clear: "✕",
     denied: "Δεν δόθηκε πρόσβαση τοποθεσίας — εμφανίζονται τα φθηνότερα πρώτα.",
     unsupported: "Ο περιηγητής δεν υποστηρίζει γεωεντοπισμό.",
     empty: "Κανένα μαγαζί δεν προσφέρει αυτό το είδος σε πίτα αυτή τη στιγμή.",
-    note: "Όλες οι τιμές αφορούν κυπριακή πίτα (ποτέ ελληνική) από το Wolt και ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Τα Foody και Bolt Food δεν παρέχουν δημόσια δεδομένα τιμών. Εβδομαδιαία ενημέρωση.",
+    note: "Οι τιμές πίτας δεν περιλαμβάνουν ελληνική πίτα (μικρότερη μερίδα)· η ενισχυμένη υπολογίζεται και από την επιλογή μεγέθους όπου προσφέρεται. Η μπριζόλα είναι μερίδα. Τιμές από το Wolt, ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Εβδομαδιαία ενημέρωση.",
   },
   ru: {
-    cuts: { souvlaki: "Сувлаки (свинина)", chicken: "Сувлаки (курица)", mix: "Микс", souvlakiLarge: "Свинина — большая пита", chickenLarge: "Курица — большая пита", mixLarge: "Микс — большая пита", porkchop: "Свиная отбивная" } as Record<CutKey, string>,
+    cuts: { souvlaki: "Сувлаки (свинина)", chicken: "Сувлаки (курица)", mix: "Микс", souvlakiLarge: "Свинина — большая пита", chickenLarge: "Курица — большая пита", mixLarge: "Микс — большая пита", porkchop: "Свиная отбивная (порция)" } as Record<CutKey, string>,
     venue: "Заведение", price: "Цена", updated: "Обновлено", order: "Заказать →",
     nearMe: "📍 Рядом со мной", nearActive: "📍 Сначала ближайшие", clear: "✕",
     denied: "Доступ к геолокации не разрешён — показаны самые дешёвые.",
     unsupported: "Браузер не поддерживает геолокацию.",
     empty: "Сейчас ни одно заведение не предлагает этот вариант в пите.",
-    note: "Все цены указаны за кипрскую питу (не греческую) по данным Wolt и могут включать наценку платформы. Большая пита = ενισχυμένη. Foody и Bolt Food не предоставляют открытых данных о ценах. Обновляется еженедельно.",
+    note: "Цены на питу не включают греческую питу (меньшая порция); большая пита (ενισχυμένη) считается и по опции размера, где она предлагается. Свиная отбивная — порционное блюдо. Цены по данным Wolt, возможна наценка платформы. Обновляется еженедельно.",
   },
 };
 

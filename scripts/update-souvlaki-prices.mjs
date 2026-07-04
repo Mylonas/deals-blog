@@ -2,11 +2,8 @@
  * Scans Wolt Cyprus for souvlaki prices in every city and writes
  * src/data/souvlaki-prices.json for the interactive souvlaki page.
  *
- * Tracks four cuts, all in pita format so prices are comparable:
- *   souvlaki  — pork souvlaki pita
- *   chicken   — chicken souvlaki pita
- *   porkchop  — pork chop (brizola) pita
- *   mix       — mixed pita
+ * Tracks pita cuts (pork, chicken, mix — regular and large/enisximeni) plus
+ * pork chop, which is a portion dish (Μπριζόλα Μερίδα) and never in pita.
  *
  * Note: Foody and Bolt Food APIs require authentication, so Wolt is the only
  * feasible unauthenticated source. Prices are Wolt listings and may include
@@ -62,10 +59,19 @@ const CUTS = [
   { key: "chicken",       test: CHICKEN_SOUVLAKI, size: "regular", largeKey: "chickenLarge" },
   { key: "souvlakiLarge", test: PORK_SOUVLAKI,    size: "large" },
   { key: "chickenLarge",  test: CHICKEN_SOUVLAKI, size: "large" },
-  { key: "porkchop",      test: (n) => /pork ?chop|μπριζολ|brizol/.test(n) && !/μοσχαρ|beef|veal|αρν|lamb/.test(n), size: "regular" },
   { key: "mix",           test: MIX,              size: "regular", largeKey: "mixLarge" },
   { key: "mixLarge",      test: MIX,              size: "large" },
 ];
+
+// Pork chop is a portion dish (Μπριζόλα Μερίδα / Pork Chop Portion) — never
+// sold in pitta, so it's matched separately without the pitta requirement.
+// Excluded lookalikes: beef/veal/lamb brizola, παϊδάκια (ribs), πανσέτα
+// (belly), bacon. Items under €5 are per-piece add-ons, not a portion.
+const PORKCHOP = (n) =>
+  /pork ?chop|μπριζολ|brizol/.test(n) &&
+  !/μοσχαρ|beef|veal|αρν|lamb|κοτοπουλ|chicken|παιδακ|πανσετ|panset|bacon|μπεικον/.test(n) &&
+  !PITA_RE.test(n);
+const PORKCHOP_MIN_CENTS = 500;
 
 async function listSouvlakiVenues(lat, lon) {
   const res = await fetch(`${VENUES_API}?lat=${lat}&lon=${lon}`, { headers: HEADERS });
@@ -129,10 +135,14 @@ function extractCuts(assortment) {
     // items priced 0 are "configure options" placeholders — not a real price
     if (item.price == null || item.price < 100) continue;
     const n = normalize(item.name);
+    const eur = item.price / 100;
+
+    // pork chop: portion dish, no pitta in the name
+    if (PORKCHOP(n) && item.price >= PORKCHOP_MIN_CENTS) take("porkchop", eur);
+
     if (!PITA_RE.test(n)) continue;
     if (GREEK_RE.test(n)) continue; // Greek pitta is a smaller portion — never counted
     const isLarge = LARGE_RE.test(n);
-    const eur = item.price / 100;
 
     for (const cut of CUTS) {
       if ((cut.size === "large") !== isLarge) continue;
