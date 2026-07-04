@@ -13,6 +13,7 @@ type HistoryEntry = {
   "98": FuelStats;
   diesel: FuelStats;
   heating?: FuelStats;
+  brent?: number; // Brent crude converted to EUR per litre
 };
 
 type Lang = "en" | "el" | "ru";
@@ -25,6 +26,7 @@ const LABELS = {
     noData: "Not enough history yet — check back soon.",
     diesel: "Diesel",
     heating: "Heating Oil",
+    brent: "Brent Crude (per litre)",
     viewMin: "Lowest", viewAvg: "Average", viewMax: "Highest",
   },
   el: {
@@ -33,6 +35,7 @@ const LABELS = {
     noData: "Δεν υπάρχει αρκετό ιστορικό ακόμα — ελέγξτε ξανά σύντομα.",
     diesel: "Πετρέλαιο",
     heating: "Πετρέλαιο Θέρμανσης",
+    brent: "Αργό Brent (ανά λίτρο)",
     viewMin: "Χαμηλότερη", viewAvg: "Μέση", viewMax: "Υψηλότερη",
   },
   ru: {
@@ -41,6 +44,7 @@ const LABELS = {
     noData: "Истории пока недостаточно — загляните позже.",
     diesel: "Дизель",
     heating: "Печное топливо",
+    brent: "Нефть Brent (за литр)",
     viewMin: "Мин.", viewAvg: "Средняя", viewMax: "Макс.",
   },
 };
@@ -75,6 +79,8 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
         "98":     e["98"][view],
         diesel:   e.diesel[view],
         heating:  e.heating?.[view] ?? null,
+        // crude has no min/avg/max — same value in every view
+        brent:    e.brent ?? null,
       }));
   }, [history, days, view]);
 
@@ -85,6 +91,7 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
   const prices = filtered.flatMap(e => {
     const vals: number[] = [e["95"], e["98"], e.diesel];
     if (e.heating !== null) vals.push(e.heating);
+    if (e.brent !== null) vals.push(e.brent);
     return vals;
   });
   const minP = Math.floor((Math.min(...prices) - 0.05) * 100) / 100;
@@ -160,6 +167,7 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
             <Line type="monotone" dataKey="98"      name="Unleaded 98" stroke="#3b82f6" strokeWidth={2} dot={false} />
             <Line type="monotone" dataKey="diesel"  name={t.diesel}    stroke="#10b981" strokeWidth={2} dot={false} />
             <Line type="monotone" dataKey="heating" name={t.heating}   stroke="#ef4444" strokeWidth={2} dot={false} connectNulls={false} />
+            <Line type="monotone" dataKey="brent"   name={t.brent}     stroke="#8b5cf6" strokeWidth={2} strokeDasharray="6 3" dot={false} connectNulls={false} />
           </LineChart>
         </ResponsiveContainer>
       </div>
