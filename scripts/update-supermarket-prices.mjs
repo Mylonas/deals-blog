@@ -180,6 +180,13 @@ ${rows}
 `;
 }
 
+/** Set (or insert) an `updated:` frontmatter field so readers see freshness. */
+function touchUpdated(content) {
+  const today = new Date().toISOString().slice(0, 10);
+  if (/^updated:.*$/m.test(content)) return content.replace(/^updated:.*$/m, `updated: "${today}"`);
+  return content.replace(/^(date:.*)$/m, `$1\nupdated: "${today}"`);
+}
+
 function updatePost(filePath, block) {
   const content = fs.readFileSync(filePath, "utf8");
   const START = "<!-- PRICES_START -->";
@@ -187,7 +194,8 @@ function updatePost(filePath, block) {
   const s = content.indexOf(START);
   const e = content.indexOf(END);
   if (s === -1 || e === -1) return;
-  fs.writeFileSync(filePath, content.substring(0, s + START.length) + "\n" + block + "\n" + content.substring(e), "utf8");
+  const next = content.substring(0, s + START.length) + "\n" + block + "\n" + content.substring(e);
+  fs.writeFileSync(filePath, touchUpdated(next), "utf8");
 }
 
 main();

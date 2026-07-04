@@ -14,6 +14,7 @@ export type PostMeta = {
   slug: string;
   title: string;
   date: string;
+  updated?: string; // bumped by the data-update scripts when they rewrite a post
   category: string;
   summary: string;
   image?: string;
