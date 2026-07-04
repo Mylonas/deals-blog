@@ -159,7 +159,14 @@ async function listCafes(lat, lon) {
       if (!v?.slug || seen.has(v.slug)) continue;
       if (!(v.tags || []).some((t) => /coffee|cafe|caf/i.test(t))) continue;
       seen.add(v.slug);
-      venues.push({ name: v.name, slug: v.slug });
+      venues.push({
+        name: v.name,
+        slug: v.slug,
+        address: v.address || null,
+        // Wolt location is [lon, lat]
+        lng: v.location?.[0] ?? null,
+        lat: v.location?.[1] ?? null,
+      });
     }
   }
   return venues;
@@ -196,7 +203,7 @@ async function scanCity(city) {
           if (!res.ok) continue;
           const assortment = await res.json();
           const freddo = findFreddo(assortment.items || []);
-          if (freddo) found.push({ name: v.name, slug: v.slug, freddo: freddo.price / 100 });
+          if (freddo) found.push({ ...v, freddo: freddo.price / 100 });
           ok = true;
         } catch {}
       }
@@ -216,6 +223,9 @@ async function scanCity(city) {
   const top = [...byBrand.values()].slice(0, TOP_PER_CITY).map((f) => ({
     cafe: f.name,
     freddo: f.freddo,
+    address: f.address,
+    lat: f.lat,
+    lng: f.lng,
     url: `https://wolt.com/en/cyp/${city.key === "famagusta" ? "ayia-napa" : city.key}/restaurant/${f.slug}`,
   }));
   console.log(`  ${found.length} sell freddo → keeping top ${top.length} (cheapest €${top[0]?.freddo.toFixed(2) ?? "—"})`);
