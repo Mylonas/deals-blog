@@ -19,14 +19,14 @@ type City = {
 type SouvlakiData = { updatedAt: string; cities: City[] };
 
 type Lang = "en" | "el" | "ru";
-type CutKey = "souvlaki" | "chicken" | "souvlakiLarge" | "chickenLarge" | "porkchop" | "mix";
+type CutKey = "souvlaki" | "chicken" | "mix" | "souvlakiLarge" | "chickenLarge" | "mixLarge" | "porkchop";
 type GeoState = "idle" | "loading" | "active" | "denied" | "unsupported";
 
-const CUT_KEYS: CutKey[] = ["souvlaki", "chicken", "souvlakiLarge", "chickenLarge", "porkchop", "mix"];
+const CUT_KEYS: CutKey[] = ["souvlaki", "chicken", "mix", "souvlakiLarge", "chickenLarge", "mixLarge", "porkchop"];
 
 const T = {
   en: {
-    cuts: { souvlaki: "Pork Souvlaki", chicken: "Chicken Souvlaki", souvlakiLarge: "Pork — Large Pitta", chickenLarge: "Chicken — Large Pitta", porkchop: "Pork Chop", mix: "Mix" } as Record<CutKey, string>,
+    cuts: { souvlaki: "Pork Souvlaki", chicken: "Chicken Souvlaki", mix: "Mix", souvlakiLarge: "Pork — Large Pitta", chickenLarge: "Chicken — Large Pitta", mixLarge: "Mix — Large Pitta", porkchop: "Pork Chop" } as Record<CutKey, string>,
     venue: "Place", price: "Price", updated: "Updated", order: "Order →",
     nearMe: "📍 Near me", nearActive: "📍 Nearby first", clear: "✕",
     denied: "Location access denied — showing cheapest first.",
@@ -35,7 +35,7 @@ const T = {
     note: "All prices are for Cypriot pitta (never Greek pitta) from Wolt listings, so they may include a platform markup over the counter price. Large pitta = ενισχυμένη. Foody and Bolt Food don't offer public price data. Updated weekly.",
   },
   el: {
-    cuts: { souvlaki: "Σουβλάκι Χοιρινό", chicken: "Σουβλάκι Κοτόπουλο", souvlakiLarge: "Χοιρινό — Ενισχυμένη", chickenLarge: "Κοτόπουλο — Ενισχυμένη", porkchop: "Μπριζόλα", mix: "Μιχτή" } as Record<CutKey, string>,
+    cuts: { souvlaki: "Σουβλάκι Χοιρινό", chicken: "Σουβλάκι Κοτόπουλο", mix: "Μιχτή", souvlakiLarge: "Χοιρινό — Ενισχυμένη", chickenLarge: "Κοτόπουλο — Ενισχυμένη", mixLarge: "Μιχτή — Ενισχυμένη", porkchop: "Μπριζόλα" } as Record<CutKey, string>,
     venue: "Μαγαζί", price: "Τιμή", updated: "Ενημέρωση", order: "Παραγγελία →",
     nearMe: "📍 Κοντά μου", nearActive: "📍 Κοντινά πρώτα", clear: "✕",
     denied: "Δεν δόθηκε πρόσβαση τοποθεσίας — εμφανίζονται τα φθηνότερα πρώτα.",
@@ -44,7 +44,7 @@ const T = {
     note: "Όλες οι τιμές αφορούν κυπριακή πίτα (ποτέ ελληνική) από το Wolt και ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Τα Foody και Bolt Food δεν παρέχουν δημόσια δεδομένα τιμών. Εβδομαδιαία ενημέρωση.",
   },
   ru: {
-    cuts: { souvlaki: "Сувлаки (свинина)", chicken: "Сувлаки (курица)", souvlakiLarge: "Свинина — большая пита", chickenLarge: "Курица — большая пита", porkchop: "Свиная отбивная", mix: "Микс" } as Record<CutKey, string>,
+    cuts: { souvlaki: "Сувлаки (свинина)", chicken: "Сувлаки (курица)", mix: "Микс", souvlakiLarge: "Свинина — большая пита", chickenLarge: "Курица — большая пита", mixLarge: "Микс — большая пита", porkchop: "Свиная отбивная" } as Record<CutKey, string>,
     venue: "Заведение", price: "Цена", updated: "Обновлено", order: "Заказать →",
     nearMe: "📍 Рядом со мной", nearActive: "📍 Сначала ближайшие", clear: "✕",
     denied: "Доступ к геолокации не разрешён — показаны самые дешёвые.",
