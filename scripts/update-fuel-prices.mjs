@@ -1,7 +1,7 @@
 /**
  * Fetches live fuel prices from the Cyprus government Petroleum Prices portal
  * https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices
- * Fetches Unleaded 95, Unleaded 98, and Diesel. Run hourly via GitHub Actions.
+ * Fetches Unleaded 95, Unleaded 98, Diesel, and Heating Oil. Run hourly via GitHub Actions.
  */
 import fs from "fs";
 import path from "path";
@@ -15,9 +15,10 @@ const HISTORY_OUT = path.join(ROOT, "src", "data", "fuel-price-history.json");
 const MAX_HISTORY_DAYS = 365;
 
 const FUEL_TYPES = [
-  { id: "1", label95En: "Unleaded 95", label95El: "Αμόλυβδη 95", label95Ru: "АИ-95" },
-  { id: "2", label95En: "Unleaded 98", label95El: "Αμόλυβδη 98", label95Ru: "АИ-98" },
-  { id: "3", label95En: "Diesel",      label95El: "Πετρέλαιο Κίνησης", label95Ru: "Дизель" },
+  { id: "1", label95En: "Unleaded 95",  label95El: "Αμόλυβδη 95",          label95Ru: "АИ-95" },
+  { id: "2", label95En: "Unleaded 98",  label95El: "Αμόλυβδη 98",          label95Ru: "АИ-98" },
+  { id: "3", label95En: "Diesel",       label95El: "Πετρέλαιο Κίνησης",    label95Ru: "Дизель" },
+  { id: "4", label95En: "Heating Oil",  label95El: "Πετρέλαιο Θέρμανσης", label95Ru: "Печное топливо" },
 ];
 
 async function fetchGovPage() {
@@ -102,6 +103,7 @@ function buildBlock(results, today) {
   const s95 = results[0];
   const s98 = results[1];
   const sd  = results[2];
+  const sh  = results[3];
 
   return `
 ## 7 Cheapest Stations Right Now — Unleaded 95
@@ -122,6 +124,12 @@ ${stationRows(s98.stations, s98.min)}
 |-------|---------|------|-------|
 ${stationRows(sd.stations, sd.min)}
 
+## 7 Cheapest Stations Right Now — Heating Oil
+
+| Brand | Address | Area | Price |
+|-------|---------|------|-------|
+${stationRows(sh.stations, sh.min)}
+
 > Source: [Cyprus Gov Petroleum Prices](${GOV_URL}) — updated ${today}
 `;
 }
@@ -130,6 +138,7 @@ function buildBlockEl(results, today) {
   const s95 = results[0];
   const s98 = results[1];
   const sd  = results[2];
+  const sh  = results[3];
 
   return `
 ## 7 Φθηνότερα Πρατήρια Αυτή τη Στιγμή — Αμόλυβδη 95
@@ -150,6 +159,12 @@ ${stationRows(s98.stations, s98.min)}
 |----------|-----------|---------|------|
 ${stationRows(sd.stations, sd.min)}
 
+## 7 Φθηνότερα Πρατήρια Αυτή τη Στιγμή — Πετρέλαιο Θέρμανσης
+
+| Εταιρεία | Διεύθυνση | Περιοχή | Τιμή |
+|----------|-----------|---------|------|
+${stationRows(sh.stations, sh.min)}
+
 > Πηγή: [Παρατηρητήριο Τιμών Καυσίμων Κύπρου](${GOV_URL}) — ενημέρωση ${today}
 `;
 }
@@ -158,6 +173,7 @@ function buildBlockRu(results, today) {
   const s95 = results[0];
   const s98 = results[1];
   const sd  = results[2];
+  const sh  = results[3];
 
   return `
 ## 7 самых дешёвых АЗС прямо сейчас — АИ-95
@@ -177,6 +193,12 @@ ${stationRows(s98.stations, s98.min)}
 | Бренд | Адрес | Район | Цена |
 |-------|-------|-------|------|
 ${stationRows(sd.stations, sd.min)}
+
+## 7 самых дешёвых АЗС прямо сейчас — Печное топливо
+
+| Бренд | Адрес | Район | Цена |
+|-------|-------|-------|------|
+${stationRows(sh.stations, sh.min)}
 
 > Источник: [Правительственный портал цен на топливо Кипра](${GOV_URL}) — обновлено ${today}
 `;
@@ -214,9 +236,10 @@ async function main() {
   const jsonData = {
     updatedAt: new Date().toISOString(),
     fuels: {
-      "95":     { label: "Unleaded 95",  stations: results[0].allStations },
-      "98":     { label: "Unleaded 98",  stations: results[1].allStations },
-      "diesel": { label: "Diesel",       stations: results[2].allStations },
+      "95":      { label: "Unleaded 95",  stations: results[0].allStations },
+      "98":      { label: "Unleaded 98",  stations: results[1].allStations },
+      "diesel":  { label: "Diesel",       stations: results[2].allStations },
+      "heating": { label: "Heating Oil",  stations: results[3].allStations },
     },
   };
   fs.writeFileSync(JSON_OUT, JSON.stringify(jsonData, null, 2) + "\n");
@@ -232,9 +255,10 @@ async function main() {
     return { min, avg, max };
   }
 
-  const stats95     = stats(results[0].allStations);
-  const stats98     = stats(results[1].allStations);
-  const statsDiesel = stats(results[2].allStations);
+  const stats95      = stats(results[0].allStations);
+  const stats98      = stats(results[1].allStations);
+  const statsDiesel  = stats(results[2].allStations);
+  const statsHeating = stats(results[3].allStations);
 
   const historyFile = fs.existsSync(HISTORY_OUT)
     ? JSON.parse(fs.readFileSync(HISTORY_OUT, "utf8"))
@@ -245,7 +269,7 @@ async function main() {
     e => e["95"] && typeof e["95"] === "object"
   );
 
-  // Skip saving if the portal returned no data for any fuel type
+  // Skip saving if the portal returned no data for core fuel types
   const validData = stats95.min > 0 && stats98.min > 0 && statsDiesel.min > 0;
   if (!validData) {
     console.log("History: skipping — portal returned zero prices (likely temporary outage).");
@@ -255,7 +279,8 @@ async function main() {
   const pricesChanged = !last
     || last["95"].min !== stats95.min
     || last["98"].min !== stats98.min
-    || last.diesel.min !== statsDiesel.min;
+    || last.diesel.min !== statsDiesel.min
+    || (last.heating?.min ?? -1) !== statsHeating.min;
 
   if (validData && pricesChanged) {
     historyFile.history.push({
@@ -263,12 +288,13 @@ async function main() {
       "95":     stats95,
       "98":     stats98,
       diesel:   statsDiesel,
+      heating:  statsHeating,
     });
     // Trim to rolling MAX_HISTORY_DAYS window
     const cutoff = Date.now() - MAX_HISTORY_DAYS * 24 * 60 * 60 * 1000;
     historyFile.history = historyFile.history.filter(e => new Date(e.ts).getTime() >= cutoff);
     fs.writeFileSync(HISTORY_OUT, JSON.stringify(historyFile, null, 2) + "\n");
-    console.log(`History: appended (95 min=€${stats95.min.toFixed(3)} avg=€${stats95.avg.toFixed(3)} max=€${stats95.max.toFixed(3)})`);
+    console.log(`History: appended (95 min=€${stats95.min.toFixed(3)} avg=€${stats95.avg.toFixed(3)} max=€${stats95.max.toFixed(3)}, heating min=€${statsHeating.min.toFixed(3)})`);
   } else {
     console.log("History: prices unchanged — skipped append.");
   }
