@@ -1,6 +1,7 @@
 ---
 title: "Cyprus Supermarket Price Watch — 10 Household Staples"
 date: "2026-06-28"
+updated: "2026-07-04"
 category: "Food & Drink"
 summary: "Live prices for 10 essential household products tracked across all major Cyprus supermarkets. Updated 4× daily from the official e-kalathi.gov.cy price observatory."
 pinned: false
