@@ -15,12 +15,12 @@ pinned: true
 | Brand | Address | Area | Price |
 |-------|---------|------|-------|
 | FILL N GO | [Λεωφ. Λάρνακος 1 Τ.Κ 7648](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9B%CE%AC%CF%81%CE%BD%CE%B1%CE%BA%CE%BF%CF%82%201%20%CE%A4.%CE%9A%207648) | Πυργά | €1.389 |
+| SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.393 |
 | PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.399 |
 | SHELL | [Tσερίου 36 Νήσου (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps/search/T%CF%83%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2036%20%CE%9D%CE%AE%CF%83%CE%BF%CF%85%20(%CE%A7%CE%B1%CE%BB%CE%B5%CF%80%CE%B9%CE%B1%CE%BD%CE%AD%CF%82)%20%CE%A4.%CE%9A%202571) | Πέρα Χωριό Νήσου | €1.399 |
 | SHELL | [Λεωφ. Αμμοχώστου 57 Τ.Κ 1016](https://www.google.com/maps?q=35.170154,33.397329) | Παλλουριώτισσα | €1.399 |
 | ENI | [Λεωφ. Λάρνακος 125 Τ.Κ 1048](https://www.google.com/maps?q=35.1658,33.3822) | Παλλουριώτισσα | €1.399 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9B%CE%AC%CF%81%CE%BD%CE%B1%CE%BA%CE%BF%CF%82%20184%20%CE%A4.%CE%9A%202103) | Αγλαντζιά | €1.399 |
-| FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.399 |
 
 ## 7 Cheapest Stations Right Now — Unleaded 98
 
@@ -38,13 +38,13 @@ pinned: true
 
 | Brand | Address | Area | Price |
 |-------|---------|------|-------|
+| SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.484 |
 | FILL N GO | [Λεωφ. Λάρνακος 1 Τ.Κ 7648](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9B%CE%AC%CF%81%CE%BD%CE%B1%CE%BA%CE%BF%CF%82%201%20%CE%A4.%CE%9A%207648) | Πυργά | €1.489 |
+| PETROLINA | [Λεωφ. Ελλάδος 65 Τ.Κ 7101](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%BF%CF%82%2065%20%CE%A4.%CE%9A%207101) | Αραδίππου | €1.489 |
+| SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.489 |
 | PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.499 |
 | SHELL | [Tσερίου 36 Νήσου (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps/search/T%CF%83%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2036%20%CE%9D%CE%AE%CF%83%CE%BF%CF%85%20(%CE%A7%CE%B1%CE%BB%CE%B5%CF%80%CE%B9%CE%B1%CE%BD%CE%AD%CF%82)%20%CE%A4.%CE%9A%202571) | Πέρα Χωριό Νήσου | €1.499 |
 | SHELL | [Λεωφ. Αμμοχώστου 57 Τ.Κ 1016](https://www.google.com/maps?q=35.170154,33.397329) | Παλλουριώτισσα | €1.499 |
-| ENI | [Λεωφ. Λάρνακος 125 Τ.Κ 1048](https://www.google.com/maps?q=35.1658,33.3822) | Παλλουριώτισσα | €1.499 |
-| FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9B%CE%AC%CF%81%CE%BD%CE%B1%CE%BA%CE%BF%CF%82%20184%20%CE%A4.%CE%9A%202103) | Αγλαντζιά | €1.499 |
-| FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.499 |
 
 > Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 4 July 2026
 
