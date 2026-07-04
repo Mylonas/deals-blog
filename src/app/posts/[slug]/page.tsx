@@ -13,7 +13,7 @@ const categoryColors: Record<string, string> = {
 };
 
 // Slugs that have dedicated pages — exclude to prevent static export collision
-const DEDICATED_SLUGS = ["cheapest-petrol-stations-cyprus", "supermarket-price-watch", "cheapest-supermarket-products"];
+const DEDICATED_SLUGS = ["cheapest-petrol-stations-cyprus", "supermarket-price-watch", "cheapest-supermarket-products", "cheapest-coffee-nicosia"];
 
 export async function generateStaticParams() {
   return getAllPosts("en")

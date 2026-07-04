@@ -1,56 +1,50 @@
 "use client";
 import { useState, useMemo, useCallback } from "react";
 
-type Venue = {
-  name: string;
-  address: string | null;
-  lat: number | null;
-  lng: number | null;
+type Cafe = {
+  cafe: string;
+  freddo: number;
+  address?: string | null;
+  lat?: number | null;
+  lng?: number | null;
   url: string;
-  prices: Partial<Record<CutKey, number>>;
 };
 
 type City = {
   key: string;
   label: { en: string; el: string; ru: string };
-  venues: Venue[];
+  cafes: Cafe[];
 };
 
-type SouvlakiData = { updatedAt: string; cities: City[] };
+type CoffeeData = { updatedAt: string; cities: City[] };
 
 type Lang = "en" | "el" | "ru";
-type CutKey = "souvlaki" | "chicken" | "souvlakiLarge" | "chickenLarge" | "porkchop" | "mix";
 type GeoState = "idle" | "loading" | "active" | "denied" | "unsupported";
-
-const CUT_KEYS: CutKey[] = ["souvlaki", "chicken", "souvlakiLarge", "chickenLarge", "porkchop", "mix"];
 
 const T = {
   en: {
-    cuts: { souvlaki: "Pork Souvlaki", chicken: "Chicken Souvlaki", souvlakiLarge: "Pork — Large Pitta", chickenLarge: "Chicken — Large Pitta", porkchop: "Pork Chop", mix: "Mix" } as Record<CutKey, string>,
-    venue: "Place", price: "Price", updated: "Updated", order: "Order →",
+    venue: "Café", price: "Freddo Espresso", updated: "Updated", order: "Order →",
     nearMe: "📍 Near me", nearActive: "📍 Nearby first", clear: "✕",
     denied: "Location access denied — showing cheapest first.",
     unsupported: "Geolocation is not supported by this browser.",
-    empty: "No venues offer this cut in pita right now.",
-    note: "All prices are for Cypriot pitta (never Greek pitta) from Wolt listings, so they may include a platform markup over the counter price. Large pitta = ενισχυμένη. Foody and Bolt Food don't offer public price data. Updated weekly.",
+    empty: "No café data for this city yet — check back soon.",
+    note: "Prices are Wolt listings and may include a platform markup over the counter price. Cheapest branch shown per café brand. Updated weekly.",
   },
   el: {
-    cuts: { souvlaki: "Σουβλάκι Χοιρινό", chicken: "Σουβλάκι Κοτόπουλο", souvlakiLarge: "Χοιρινό — Ενισχυμένη", chickenLarge: "Κοτόπουλο — Ενισχυμένη", porkchop: "Μπριζόλα", mix: "Μιχτή" } as Record<CutKey, string>,
-    venue: "Μαγαζί", price: "Τιμή", updated: "Ενημέρωση", order: "Παραγγελία →",
+    venue: "Καφετέρια", price: "Freddo Espresso", updated: "Ενημέρωση", order: "Παραγγελία →",
     nearMe: "📍 Κοντά μου", nearActive: "📍 Κοντινά πρώτα", clear: "✕",
     denied: "Δεν δόθηκε πρόσβαση τοποθεσίας — εμφανίζονται τα φθηνότερα πρώτα.",
     unsupported: "Ο περιηγητής δεν υποστηρίζει γεωεντοπισμό.",
-    empty: "Κανένα μαγαζί δεν προσφέρει αυτό το είδος σε πίτα αυτή τη στιγμή.",
-    note: "Όλες οι τιμές αφορούν κυπριακή πίτα (ποτέ ελληνική) από το Wolt και ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Τα Foody και Bolt Food δεν παρέχουν δημόσια δεδομένα τιμών. Εβδομαδιαία ενημέρωση.",
+    empty: "Δεν υπάρχουν ακόμα δεδομένα για αυτή την πόλη — ελέγξτε ξανά σύντομα.",
+    note: "Οι τιμές είναι από το Wolt και ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Εμφανίζεται το φθηνότερο υποκατάστημα ανά αλυσίδα. Εβδομαδιαία ενημέρωση.",
   },
   ru: {
-    cuts: { souvlaki: "Сувлаки (свинина)", chicken: "Сувлаки (курица)", souvlakiLarge: "Свинина — большая пита", chickenLarge: "Курица — большая пита", porkchop: "Свиная отбивная", mix: "Микс" } as Record<CutKey, string>,
-    venue: "Заведение", price: "Цена", updated: "Обновлено", order: "Заказать →",
+    venue: "Кафе", price: "Фреддо Эспрессо", updated: "Обновлено", order: "Заказать →",
     nearMe: "📍 Рядом со мной", nearActive: "📍 Сначала ближайшие", clear: "✕",
     denied: "Доступ к геолокации не разрешён — показаны самые дешёвые.",
     unsupported: "Браузер не поддерживает геолокацию.",
-    empty: "Сейчас ни одно заведение не предлагает этот вариант в пите.",
-    note: "Все цены указаны за кипрскую питу (не греческую) по данным Wolt и могут включать наценку платформы. Большая пита = ενισχυμένη. Foody и Bolt Food не предоставляют открытых данных о ценах. Обновляется еженедельно.",
+    empty: "Для этого города пока нет данных — загляните позже.",
+    note: "Цены указаны по данным Wolt и могут включать наценку платформы. Для каждой сети показан самый дешёвый филиал. Обновляется еженедельно.",
   },
 };
 
@@ -64,12 +58,9 @@ function haversine(lat1: number, lng1: number, lat2: number, lng2: number) {
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-const SHOW = 15;
-
-export default function SouvlakiTable({ data, lang }: { data: SouvlakiData; lang: Lang }) {
+export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: Lang }) {
   const t = T[lang];
   const [cityKey, setCityKey] = useState(data.cities[0]?.key ?? "nicosia");
-  const [cut, setCut] = useState<CutKey>("souvlaki");
   const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [geoState, setGeoState] = useState<GeoState>("idle");
 
@@ -96,25 +87,22 @@ export default function SouvlakiTable({ data, lang }: { data: SouvlakiData; lang
   }, []);
 
   const rows = useMemo(() => {
-    const withCut = (city?.venues ?? [])
-      .filter((v) => v.prices[cut] != null)
-      .map((v) => ({
-        ...v,
-        price: v.prices[cut]!,
-        distance:
-          userCoords && v.lat != null && v.lng != null
-            ? haversine(userCoords.lat, userCoords.lng, v.lat, v.lng)
-            : null,
-      }));
+    const list = (city?.cafes ?? []).map((c) => ({
+      ...c,
+      distance:
+        userCoords && c.lat != null && c.lng != null
+          ? haversine(userCoords.lat, userCoords.lng, c.lat, c.lng)
+          : null,
+    }));
     // always cheapest first; with location active, nearby first then price
-    withCut.sort((a, b) => {
+    list.sort((a, b) => {
       if (userCoords && a.distance != null && b.distance != null) {
-        return a.distance - b.distance || a.price - b.price;
+        return a.distance - b.distance || a.freddo - b.freddo;
       }
-      return a.price - b.price;
+      return a.freddo - b.freddo;
     });
-    return withCut.slice(0, SHOW);
-  }, [city, cut, userCoords]);
+    return list;
+  }, [city, userCoords]);
 
   const updated = new Date(data.updatedAt).toLocaleString(
     lang === "en" ? "en-GB" : lang === "el" ? "el-GR" : "ru-RU",
@@ -136,23 +124,6 @@ export default function SouvlakiTable({ data, lang }: { data: SouvlakiData; lang
             }`}
           >
             {c.label[lang] ?? c.label.en}
-          </button>
-        ))}
-      </div>
-
-      {/* Cut selector + near me */}
-      <div className="flex gap-2 mb-5 flex-wrap items-center">
-        {CUT_KEYS.map((k) => (
-          <button
-            key={k}
-            onClick={() => setCut(k)}
-            className={`px-3 py-1 text-sm rounded-full border transition-colors ${
-              cut === k
-                ? "bg-blue-600 text-white border-blue-600"
-                : "border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
-            }`}
-          >
-            {t.cuts[k]}
           </button>
         ))}
         <button
@@ -190,25 +161,25 @@ export default function SouvlakiTable({ data, lang }: { data: SouvlakiData; lang
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
-              {rows.map((v) => (
-                <tr key={v.url} className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+              {rows.map((c) => (
+                <tr key={c.url} className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
                   <td className="px-4 py-3">
-                    <span className="font-medium text-gray-800 dark:text-gray-200">{v.name}</span>
-                    {v.address && (
-                      <span className="block text-xs text-gray-400 dark:text-gray-500">{v.address}</span>
+                    <span className="font-medium text-gray-800 dark:text-gray-200">{c.cafe}</span>
+                    {c.address && (
+                      <span className="block text-xs text-gray-400 dark:text-gray-500">{c.address}</span>
                     )}
                   </td>
                   <td className="px-4 py-3 font-bold text-amber-600 dark:text-amber-400 whitespace-nowrap">
-                    €{v.price.toFixed(2)}
+                    €{c.freddo.toFixed(2)}
                   </td>
                   {userCoords && (
                     <td className="px-4 py-3 text-gray-500 dark:text-gray-400 whitespace-nowrap">
-                      {v.distance != null ? v.distance.toFixed(1) : "—"}
+                      {c.distance != null ? c.distance.toFixed(1) : "—"}
                     </td>
                   )}
                   <td className="px-4 py-3 text-right">
                     <a
-                      href={v.url}
+                      href={c.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs text-blue-500 dark:text-blue-400 hover:underline whitespace-nowrap"
