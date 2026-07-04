@@ -19,38 +19,38 @@ type City = {
 type SouvlakiData = { updatedAt: string; cities: City[] };
 
 type Lang = "en" | "el" | "ru";
-type CutKey = "souvlaki" | "chicken" | "porkchop" | "mix";
+type CutKey = "souvlaki" | "chicken" | "souvlakiLarge" | "chickenLarge" | "porkchop" | "mix";
 type GeoState = "idle" | "loading" | "active" | "denied" | "unsupported";
 
-const CUT_KEYS: CutKey[] = ["souvlaki", "chicken", "porkchop", "mix"];
+const CUT_KEYS: CutKey[] = ["souvlaki", "chicken", "souvlakiLarge", "chickenLarge", "porkchop", "mix"];
 
 const T = {
   en: {
-    cuts: { souvlaki: "Pork Souvlaki", chicken: "Chicken Souvlaki", porkchop: "Pork Chop", mix: "Mix" } as Record<CutKey, string>,
+    cuts: { souvlaki: "Pork Souvlaki", chicken: "Chicken Souvlaki", souvlakiLarge: "Pork — Large Pitta", chickenLarge: "Chicken — Large Pitta", porkchop: "Pork Chop", mix: "Mix" } as Record<CutKey, string>,
     venue: "Place", price: "Price", updated: "Updated", order: "Order →",
     nearMe: "📍 Near me", nearActive: "📍 Nearby first", clear: "✕",
     denied: "Location access denied — showing cheapest first.",
     unsupported: "Geolocation is not supported by this browser.",
     empty: "No venues offer this cut in pita right now.",
-    note: "All prices are for pita format from Wolt listings, so they may include a platform markup over the counter price. Foody and Bolt Food don't offer public price data. Updated weekly.",
+    note: "All prices are for Cypriot pitta (never Greek pitta) from Wolt listings, so they may include a platform markup over the counter price. Large pitta = ενισχυμένη. Foody and Bolt Food don't offer public price data. Updated weekly.",
   },
   el: {
-    cuts: { souvlaki: "Σουβλάκι Χοιρινό", chicken: "Σουβλάκι Κοτόπουλο", porkchop: "Μπριζόλα", mix: "Μιχτή" } as Record<CutKey, string>,
+    cuts: { souvlaki: "Σουβλάκι Χοιρινό", chicken: "Σουβλάκι Κοτόπουλο", souvlakiLarge: "Χοιρινό — Ενισχυμένη", chickenLarge: "Κοτόπουλο — Ενισχυμένη", porkchop: "Μπριζόλα", mix: "Μιχτή" } as Record<CutKey, string>,
     venue: "Μαγαζί", price: "Τιμή", updated: "Ενημέρωση", order: "Παραγγελία →",
     nearMe: "📍 Κοντά μου", nearActive: "📍 Κοντινά πρώτα", clear: "✕",
     denied: "Δεν δόθηκε πρόσβαση τοποθεσίας — εμφανίζονται τα φθηνότερα πρώτα.",
     unsupported: "Ο περιηγητής δεν υποστηρίζει γεωεντοπισμό.",
     empty: "Κανένα μαγαζί δεν προσφέρει αυτό το είδος σε πίτα αυτή τη στιγμή.",
-    note: "Όλες οι τιμές αφορούν πίτα από το Wolt και ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Τα Foody και Bolt Food δεν παρέχουν δημόσια δεδομένα τιμών. Εβδομαδιαία ενημέρωση.",
+    note: "Όλες οι τιμές αφορούν κυπριακή πίτα (ποτέ ελληνική) από το Wolt και ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Τα Foody και Bolt Food δεν παρέχουν δημόσια δεδομένα τιμών. Εβδομαδιαία ενημέρωση.",
   },
   ru: {
-    cuts: { souvlaki: "Сувлаки (свинина)", chicken: "Сувлаки (курица)", porkchop: "Свиная отбивная", mix: "Микс" } as Record<CutKey, string>,
+    cuts: { souvlaki: "Сувлаки (свинина)", chicken: "Сувлаки (курица)", souvlakiLarge: "Свинина — большая пита", chickenLarge: "Курица — большая пита", porkchop: "Свиная отбивная", mix: "Микс" } as Record<CutKey, string>,
     venue: "Заведение", price: "Цена", updated: "Обновлено", order: "Заказать →",
     nearMe: "📍 Рядом со мной", nearActive: "📍 Сначала ближайшие", clear: "✕",
     denied: "Доступ к геолокации не разрешён — показаны самые дешёвые.",
     unsupported: "Браузер не поддерживает геолокацию.",
     empty: "Сейчас ни одно заведение не предлагает этот вариант в пите.",
-    note: "Все цены указаны за питу по данным Wolt и могут включать наценку платформы. Foody и Bolt Food не предоставляют открытых данных о ценах. Обновляется еженедельно.",
+    note: "Все цены указаны за кипрскую питу (не греческую) по данным Wolt и могут включать наценку платформы. Большая пита = ενισχυμένη. Foody и Bolt Food не предоставляют открытых данных о ценах. Обновляется еженедельно.",
   },
 };
 
