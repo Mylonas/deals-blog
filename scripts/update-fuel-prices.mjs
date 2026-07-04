@@ -245,13 +245,19 @@ async function main() {
     e => e["95"] && typeof e["95"] === "object"
   );
 
+  // Skip saving if the portal returned no data for any fuel type
+  const validData = stats95.min > 0 && stats98.min > 0 && statsDiesel.min > 0;
+  if (!validData) {
+    console.log("History: skipping — portal returned zero prices (likely temporary outage).");
+  }
+
   const last = historyFile.history[historyFile.history.length - 1];
   const pricesChanged = !last
     || last["95"].min !== stats95.min
     || last["98"].min !== stats98.min
     || last.diesel.min !== statsDiesel.min;
 
-  if (pricesChanged) {
+  if (validData && pricesChanged) {
     historyFile.history.push({
       ts: new Date().toISOString(),
       "95":     stats95,
