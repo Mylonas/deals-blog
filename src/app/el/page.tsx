@@ -52,6 +52,20 @@ export default function HomeEl() {
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Διαβάστε περισσότερα →</div>
           </Link>
           <Link
+            href="/el/posts/cheapest-souvlaki-cyprus"
+            className="bg-amber-50 dark:bg-amber-950/20 rounded-2xl border border-amber-200 dark:border-amber-900/40 p-5 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all group"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">Φαγητό &amp; Ποτό</span>
+              <span className="text-xs text-amber-600 dark:text-amber-400 font-semibold">ΖΩΝΤΑΝΑ ●</span>
+            </div>
+            <h2 className="text-lg font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
+              Φθηνότερο Σουβλάκι στην Κύπρο — ανά Πόλη
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Τιμές για χοιρινό, κοτόπουλο, μπριζόλα και μιχτή πίτα σε κάθε πόλη της Κύπρου, πάντα με το φθηνότερο πρώτο — με κουμπί «Κοντά μου». Εβδομαδιαία ενημέρωση.</p>
+            <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Διαβάστε περισσότερα →</div>
+          </Link>
+          <Link
             href="/el/posts/cheapest-supermarket-products"
             className="bg-amber-50 dark:bg-amber-950/20 rounded-2xl border border-amber-200 dark:border-amber-900/40 p-5 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all group"
           >
