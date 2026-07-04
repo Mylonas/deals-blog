@@ -53,6 +53,20 @@ export default function Home() {
             <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Live prices for the 10 most-bought household products in Cyprus, sourced from the government&apos;s e-Kalathi platform. Updated hourly.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Read more →</div>
           </Link>
+          <Link
+            href="/posts/cheapest-supermarket-products"
+            className="bg-amber-50 dark:bg-amber-950/20 rounded-2xl border border-amber-200 dark:border-amber-900/40 p-5 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all group"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">Food &amp; Drink</span>
+              <span className="text-xs text-amber-600 dark:text-amber-400 font-semibold">LIVE ●</span>
+            </div>
+            <h2 className="text-lg font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
+              30 Cheapest Products at Cyprus Supermarkets
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">The lowest-priced products available right now across all major Cyprus supermarkets, from the government&apos;s e-Kalathi price observatory. Updated daily.</p>
+            <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Read more →</div>
+          </Link>
           {pinned.map((post) => (
               <Link
                 key={post.slug}

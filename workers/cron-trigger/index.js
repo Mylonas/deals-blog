@@ -10,9 +10,14 @@
  */
 
 const REPO = "Mylonas/deals-blog";
-const WORKFLOWS = [
+const HOURLY_WORKFLOWS = [
   "update-fuel-prices.yml",
   "update-supermarket-prices.yml",
+];
+
+// Runs once daily (GitHub's daily schedule is reliable enough; only add here if it stalls)
+const DAILY_WORKFLOWS = [
+  "update-supermarket-deals.yml",
 ];
 const GH_API = "https://api.github.com";
 
@@ -43,7 +48,13 @@ export default {
       console.error("GITHUB_TOKEN secret is not set");
       return;
     }
-    for (const wf of WORKFLOWS) {
+    const now = new Date(_event.scheduledTime);
+    const isTopOfHour6 = now.getUTCHours() === 6 && now.getUTCMinutes() < 5;
+    const workflows = isTopOfHour6
+      ? [...HOURLY_WORKFLOWS, ...DAILY_WORKFLOWS]
+      : HOURLY_WORKFLOWS;
+
+    for (const wf of workflows) {
       try {
         await dispatchWorkflow(wf, token);
       } catch (err) {
@@ -56,7 +67,7 @@ export default {
   async fetch(_req, env, _ctx) {
     const hasToken = Boolean(env.GITHUB_TOKEN);
     return new Response(
-      JSON.stringify({ status: "ok", tokenConfigured: hasToken, repo: REPO, workflows: WORKFLOWS }),
+      JSON.stringify({ status: "ok", tokenConfigured: hasToken, repo: REPO, hourly: HOURLY_WORKFLOWS, daily: DAILY_WORKFLOWS }),
       { headers: { "Content-Type": "application/json" } }
     );
   },
