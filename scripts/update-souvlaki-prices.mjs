@@ -46,18 +46,25 @@ function normalize(s) {
 // "Ενισχυμένη" (also sold as "large pitta") is its own format with its own cuts.
 const PITA_RE = /pita|πιτα/;
 const GREEK_RE = /ελληνικ|greek|ellinik/;
-const LARGE_RE = /ενισχυμεν|enisximen|enishimen|large|μεγαλ/;
+const LARGE_RE = /ενισχυμεν|enisximen|enishimen|large|μεγαλ|διπλ|double|\bxl\b/;
+// Most venues sell large as a size option on the base item, not a separate
+// item — resolve option groups that are clearly about size and price the
+// upgrade as base + delta.
+const SIZE_GROUP_RE = /μεγεθ|size|μεριδα|portion|πιτα|pita/;
+const NOT_SIZE_VALUE_RE = /σαλατ|salad|πατατ|fries|chips|ποτο|drink|αναψυκτικ|dip|σως|sauce/;
 
 const PORK_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /pork|χοιριν/.test(n) && !/chicken|κοτοπουλ/.test(n);
 const CHICKEN_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /chicken|κοτοπουλ/.test(n);
+const MIX = (n) => /\bmix|μιχτ|μιξ|μιγμα|mikti/.test(n);
 
 const CUTS = [
-  { key: "souvlaki",      test: PORK_SOUVLAKI,    size: "regular" },
-  { key: "chicken",       test: CHICKEN_SOUVLAKI, size: "regular" },
+  { key: "souvlaki",      test: PORK_SOUVLAKI,    size: "regular", largeKey: "souvlakiLarge" },
+  { key: "chicken",       test: CHICKEN_SOUVLAKI, size: "regular", largeKey: "chickenLarge" },
   { key: "souvlakiLarge", test: PORK_SOUVLAKI,    size: "large" },
   { key: "chickenLarge",  test: CHICKEN_SOUVLAKI, size: "large" },
   { key: "porkchop",      test: (n) => /pork ?chop|μπριζολ|brizol/.test(n) && !/μοσχαρ|beef|veal|αρν|lamb/.test(n), size: "regular" },
-  { key: "mix",           test: (n) => /\bmix|μιχτ|mikti/.test(n), size: "regular" },
+  { key: "mix",           test: MIX,              size: "regular", largeKey: "mixLarge" },
+  { key: "mixLarge",      test: MIX,              size: "large" },
 ];
 
 async function listSouvlakiVenues(lat, lon) {
@@ -86,8 +93,38 @@ async function listSouvlakiVenues(lat, lon) {
   return venues;
 }
 
-function extractCuts(items) {
+/**
+ * Cheapest large-size upgrade attached to an item, in euros added to the
+ * base price. Only size-type option groups count, and salad/fries/drink
+ * upgrade values never do.
+ */
+function largeUpgradeDelta(item, optionsById) {
+  let best = null;
+  for (const ref of item.options || []) {
+    const group = optionsById.get(ref.option_id) ?? optionsById.get(ref.id);
+    const groupName = normalize(group?.name ?? ref.name ?? "");
+    if (!SIZE_GROUP_RE.test(groupName)) continue;
+    for (const value of group?.values || []) {
+      const vn = normalize(value.name || "");
+      if (!LARGE_RE.test(vn) || NOT_SIZE_VALUE_RE.test(vn)) continue;
+      if (typeof value.price !== "number" || value.price < 0) continue;
+      const delta = value.price / 100;
+      if (best == null || delta < best) best = delta;
+    }
+  }
+  return best;
+}
+
+function extractCuts(assortment) {
+  const items = assortment.items || [];
+  const optionsById = new Map();
+  for (const o of assortment.options || []) optionsById.set(o.id, o);
+
   const prices = {};
+  const take = (key, eur) => {
+    if (prices[key] == null || eur < prices[key]) prices[key] = eur;
+  };
+
   for (const item of items) {
     // items priced 0 are "configure options" placeholders — not a real price
     if (item.price == null || item.price < 100) continue;
@@ -100,7 +137,12 @@ function extractCuts(items) {
     for (const cut of CUTS) {
       if ((cut.size === "large") !== isLarge) continue;
       if (!cut.test(n)) continue;
-      if (prices[cut.key] == null || eur < prices[cut.key]) prices[cut.key] = eur;
+      take(cut.key, eur);
+      // large sold as a size option on the regular item: base + upgrade delta
+      if (cut.largeKey) {
+        const delta = largeUpgradeDelta(item, optionsById);
+        if (delta != null) take(cut.largeKey, eur + delta);
+      }
     }
   }
   return prices;
@@ -127,7 +169,7 @@ async function scanCity(city, prevVenues) {
           if (res.status === 404 || res.status === 410) { ok = true; break; }
           if (!res.ok) continue;
           const assortment = await res.json();
-          const prices = extractCuts(assortment.items || []);
+          const prices = extractCuts(assortment);
           if (Object.keys(prices).length > 0) {
             results.push({
               name: v.name,

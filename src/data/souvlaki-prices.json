@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T20:07:21.553Z",
+  "updatedAt": "2026-07-04T20:31:54.165Z",
   "cities": [
     {
       "key": "nicosia",
@@ -18,7 +18,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-kazamias",
           "prices": {
             "souvlaki": 4.5,
-            "chicken": 4.5
+            "souvlakiLarge": 9,
+            "mix": 4.5,
+            "mixLarge": 9.5,
+            "chicken": 4.5,
+            "chickenLarge": 10
           }
         },
         {
@@ -31,6 +35,7 @@
           "prices": {
             "chicken": 8,
             "mix": 6,
+            "mixLarge": 8.5,
             "souvlaki": 6,
             "souvlakiLarge": 8.5,
             "chickenLarge": 11
@@ -44,7 +49,8 @@
           "lng": 33.3322407,
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/delish-grill",
           "prices": {
-            "souvlaki": 6
+            "souvlaki": 6,
+            "souvlakiLarge": 8
           }
         },
         {
@@ -56,7 +62,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-christofi",
           "prices": {
             "chicken": 6.5,
-            "souvlaki": 6.5
+            "chickenLarge": 10.7,
+            "mix": 6.5,
+            "mixLarge": 10.7,
+            "souvlaki": 6.5,
+            "souvlakiLarge": 10.7
           }
         },
         {
@@ -68,8 +78,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/etsi-apla-opos-palia-tseriou",
           "prices": {
             "souvlaki": 6.5,
+            "souvlakiLarge": 7.5,
             "chicken": 7.5,
-            "mix": 6.7
+            "chickenLarge": 8.5,
+            "mix": 6.7,
+            "mixLarge": 7.7
           }
         },
         {
@@ -81,7 +94,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-tou-antrou",
           "prices": {
             "souvlaki": 6.75,
-            "chicken": 7
+            "souvlakiLarge": 8,
+            "chicken": 7,
+            "chickenLarge": 8.25,
+            "mix": 6.75,
+            "mixLarge": 8
           }
         },
         {
@@ -93,19 +110,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlaki-lovers",
           "prices": {
             "souvlaki": 6.9,
-            "chicken": 7.8
-          }
-        },
-        {
-          "name": "Gyros o Thessalonikios Wrap & Grill",
-          "slug": "gyros-o-thessalonikios-wrap-grill",
-          "address": "Agiou Andreou 75C",
-          "lat": 35.17957608251095,
-          "lng": 33.38316814948939,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/gyros-o-thessalonikios-wrap-grill",
-          "prices": {
-            "souvlaki": 7,
-            "chicken": 7
+            "souvlakiLarge": 7.9,
+            "mix": 6.9,
+            "mixLarge": 7.9,
+            "chicken": 7.8,
+            "chickenLarge": 9.3
           }
         },
         {
@@ -117,7 +126,24 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-orfeas",
           "prices": {
             "souvlaki": 7,
-            "chicken": 8
+            "souvlakiLarge": 9,
+            "mix": 7,
+            "mixLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9
+          }
+        },
+        {
+          "name": "Gyros o Thessalonikios Wrap & Grill",
+          "slug": "gyros-o-thessalonikios-wrap-grill",
+          "address": "Agiou Andreou 75C",
+          "lat": 35.17957608251095,
+          "lng": 33.38316814948939,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/gyros-o-thessalonikios-wrap-grill",
+          "prices": {
+            "souvlaki": 7,
+            "mix": 7,
+            "chicken": 7
           }
         },
         {
@@ -129,7 +155,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-o-tsolias",
           "prices": {
             "chicken": 7,
-            "souvlaki": 7
+            "chickenLarge": 8,
+            "mix": 7,
+            "mixLarge": 8,
+            "souvlaki": 7,
+            "souvlakiLarge": 8
           }
         },
         {
@@ -141,7 +171,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/karvounostimies",
           "prices": {
             "souvlaki": 7,
-            "chicken": 7.5
+            "souvlakiLarge": 8.5,
+            "mix": 7,
+            "mixLarge": 8.5,
+            "chicken": 7.5,
+            "chickenLarge": 9.5
           }
         },
         {
@@ -153,6 +187,7 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/armenaki",
           "prices": {
             "souvlaki": 7,
+            "souvlakiLarge": 7.5,
             "chicken": 7.5
           }
         },
@@ -165,8 +200,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/i-drosia-grill-house",
           "prices": {
             "mix": 7,
+            "mixLarge": 8.5,
             "chicken": 7.5,
-            "souvlaki": 7
+            "chickenLarge": 9,
+            "souvlaki": 7,
+            "souvlakiLarge": 8.5
           }
         },
         {
@@ -178,7 +216,8 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlaki-delta",
           "prices": {
             "souvlaki": 7,
-            "chicken": 7
+            "chicken": 7,
+            "mix": 7
           }
         },
         {
@@ -201,8 +240,12 @@
           "lng": 33.36103489,
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/chytron-gefseis",
           "prices": {
+            "mix": 7.5,
+            "mixLarge": 9,
             "chicken": 8,
-            "souvlaki": 7
+            "chickenLarge": 9.5,
+            "souvlaki": 7,
+            "souvlakiLarge": 8.5
           }
         },
         {
@@ -226,7 +269,9 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-souvlaki-tou-dimitri",
           "prices": {
             "souvlaki": 7.5,
-            "chicken": 7.5
+            "souvlakiLarge": 8.5,
+            "chicken": 7.5,
+            "chickenLarge": 8.5
           }
         },
         {
@@ -238,20 +283,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-steki-tis-scharas",
           "prices": {
             "souvlaki": 7.5,
-            "chicken": 9
-          }
-        },
-        {
-          "name": "Souvlakia PinElia",
-          "slug": "souvlakia-pinelia",
-          "address": "28th October 61a",
-          "lat": 35.15691112926439,
-          "lng": 33.31468504368897,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-pinelia",
-          "prices": {
-            "chicken": 8,
-            "souvlaki": 7.5,
-            "mix": 8
+            "souvlakiLarge": 9.5,
+            "chicken": 9,
+            "chickenLarge": 10.5,
+            "mix": 9,
+            "mixLarge": 10
           }
         },
         {
@@ -263,7 +299,27 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/i-apantisi-nic",
           "prices": {
             "chicken": 8.5,
-            "souvlaki": 7.5
+            "mix": 7.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 8.5,
+            "chickenLarge": 9.5,
+            "mixLarge": 8.5
+          }
+        },
+        {
+          "name": "Souvlakia PinElia",
+          "slug": "souvlakia-pinelia",
+          "address": "28th October 61a",
+          "lat": 35.15691112926439,
+          "lng": 33.31468504368897,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-pinelia",
+          "prices": {
+            "chicken": 8,
+            "chickenLarge": 9.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "mix": 8,
+            "mixLarge": 9.5
           }
         },
         {
@@ -275,7 +331,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/dasoupolitiko-souvlaki",
           "prices": {
             "souvlaki": 7.5,
-            "chicken": 7.5
+            "souvlakiLarge": 9,
+            "chicken": 7.5,
+            "chickenLarge": 9,
+            "mix": 7.5,
+            "mixLarge": 9
           }
         },
         {
@@ -286,10 +346,42 @@
           "lng": 33.35908333,
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/karvounolixoudies-tis-gianoullas-kai-tou-ovelix",
           "prices": {
+            "mix": 7.5,
             "chicken": 8,
+            "mixLarge": 9,
             "chickenLarge": 9.5,
             "souvlaki": 7.5,
             "souvlakiLarge": 9
+          }
+        },
+        {
+          "name": "Taverna 4307",
+          "slug": "taverna-4307",
+          "address": "Neas Egkomis 6, Viomixaniki Perioxi Egkomi ",
+          "lat": 35.16743177,
+          "lng": 33.32781463,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-4307",
+          "prices": {
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "chicken": 7.5,
+            "chickenLarge": 9
+          }
+        },
+        {
+          "name": "Taverna Marigo Digenis Akritas Morfou",
+          "slug": "taverna-marigo-digenis-akritas-morfou",
+          "address": "Kyrinias 190",
+          "lat": 35.14852991,
+          "lng": 33.37684804,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-marigo-digenis-akritas-morfou",
+          "prices": {
+            "chicken": 8.5,
+            "chickenLarge": 9.5,
+            "mix": 8,
+            "mixLarge": 9,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 8.5
           }
         },
         {
@@ -305,18 +397,6 @@
           }
         },
         {
-          "name": "Taverna 4307",
-          "slug": "taverna-4307",
-          "address": "Neas Egkomis 6, Viomixaniki Perioxi Egkomi ",
-          "lat": 35.16743177,
-          "lng": 33.32781463,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-4307",
-          "prices": {
-            "souvlaki": 7.5,
-            "chicken": 7.5
-          }
-        },
-        {
           "name": "Plaka Tavern",
           "slug": "plaka-tavern",
           "address": "Archiepiskopou Makariou III 6-8, Engomi",
@@ -325,19 +405,9 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/plaka-tavern",
           "prices": {
             "chicken": 8,
-            "souvlaki": 7.5
-          }
-        },
-        {
-          "name": "Taverna Marigo Digenis Akritas Morfou",
-          "slug": "taverna-marigo-digenis-akritas-morfou",
-          "address": "Kyrinias 190",
-          "lat": 35.14852991,
-          "lng": 33.37684804,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-marigo-digenis-akritas-morfou",
-          "prices": {
-            "chicken": 8.5,
-            "souvlaki": 7.5
+            "souvlaki": 7.5,
+            "souvlakiLarge": 8.5,
+            "chickenLarge": 9
           }
         },
         {
@@ -348,8 +418,12 @@
           "lng": 33.31507433,
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlaki-tis-stellas",
           "prices": {
+            "mix": 7,
+            "mixLarge": 8.5,
             "chicken": 8,
-            "souvlaki": 7.5
+            "chickenLarge": 9,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9
           }
         },
         {
@@ -361,8 +435,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/finitzia-taverna",
           "prices": {
             "souvlaki": 7.5,
+            "souvlakiLarge": 9,
             "mix": 7.5,
-            "chicken": 8
+            "mixLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9
           }
         },
         {
@@ -374,8 +451,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-orfeas",
           "prices": {
             "chicken": 8,
+            "chickenLarge": 9,
             "mix": 7.5,
-            "souvlaki": 7.5
+            "mixLarge": 9,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9
           }
         },
         {
@@ -386,7 +466,9 @@
           "lng": 33.37940030000001,
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/tavernaki-kreatomperdemata",
           "prices": {
+            "mix": 7.5,
             "souvlaki": 7.5,
+            "mixLarge": 9,
             "souvlakiLarge": 8,
             "chickenLarge": 9,
             "chicken": 8
@@ -414,8 +496,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/pita-pita-psitogefseis",
           "prices": {
             "souvlaki": 7.5,
+            "souvlakiLarge": 9,
             "mix": 8,
-            "chicken": 8
+            "mixLarge": 9.5,
+            "chicken": 8,
+            "chickenLarge": 9.5
           }
         },
         {
@@ -427,7 +512,9 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-meraklitikon",
           "prices": {
             "souvlaki": 7.7,
-            "chicken": 7.9
+            "souvlakiLarge": 9.3,
+            "chicken": 7.9,
+            "chickenLarge": 9.4
           }
         },
         {
@@ -438,6 +525,8 @@
           "lng": 33.31759988,
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/gyromania",
           "prices": {
+            "mix": 7.7,
+            "mixLarge": 8.9,
             "chicken": 8.5,
             "souvlaki": 7.7
           }
@@ -451,6 +540,9 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/mezedopoleio-adoylouti-keryneia",
           "prices": {
             "souvlaki": 8,
+            "souvlakiLarge": 9,
+            "mix": 8,
+            "mixLarge": 9,
             "chicken": 9
           }
         },
@@ -464,18 +556,10 @@
           "prices": {
             "souvlakiLarge": 9,
             "souvlaki": 8,
-            "chicken": 8.4
-          }
-        },
-        {
-          "name": "George's Chris Restaurant",
-          "slug": "george-chris-restaurant",
-          "address": " Grigori Karekla 13",
-          "lat": 35.14615591,
-          "lng": 33.35690937,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/george-chris-restaurant",
-          "prices": {
-            "souvlaki": 8
+            "mix": 8,
+            "mixLarge": 9,
+            "chicken": 8.4,
+            "chickenLarge": 9.4
           }
         },
         {
@@ -487,7 +571,22 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-eirini",
           "prices": {
             "souvlaki": 8,
+            "mix": 8,
             "chicken": 9
+          }
+        },
+        {
+          "name": "George's Chris Restaurant",
+          "slug": "george-chris-restaurant",
+          "address": " Grigori Karekla 13",
+          "lat": 35.14615591,
+          "lng": 33.35690937,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/george-chris-restaurant",
+          "prices": {
+            "mix": 8,
+            "mixLarge": 10,
+            "souvlaki": 8,
+            "souvlakiLarge": 10
           }
         },
         {
@@ -499,8 +598,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/the-bbq-house",
           "prices": {
             "souvlaki": 8,
+            "souvlakiLarge": 9.5,
             "chicken": 8.5,
-            "mix": 8
+            "chickenLarge": 10,
+            "mix": 8,
+            "mixLarge": 9.5
           }
         },
         {
@@ -511,6 +613,8 @@
           "lng": 33.38499291,
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/takis-pambos-tavern",
           "prices": {
+            "mix": 8,
+            "mixLarge": 9,
             "souvlaki": 8,
             "souvlakiLarge": 9.5,
             "chicken": 8,
@@ -526,7 +630,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-tavernaki-tou-achillea-kaimakliou",
           "prices": {
             "souvlaki": 8,
-            "chicken": 8.5
+            "souvlakiLarge": 9.5,
+            "mix": 8,
+            "mixLarge": 9.5,
+            "chicken": 8.5,
+            "chickenLarge": 10
           }
         },
         {
@@ -538,6 +646,7 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-magazaki-tou-giannou",
           "prices": {
             "souvlaki": 8,
+            "mix": 8,
             "chicken": 8
           }
         },
@@ -550,7 +659,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/papa-bun",
           "prices": {
             "souvlaki": 8,
-            "chicken": 8
+            "souvlakiLarge": 9,
+            "mix": 8,
+            "mixLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9
           }
         },
         {
@@ -574,7 +687,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/psitopoleio-egnatia",
           "prices": {
             "souvlaki": 8.2,
-            "chicken": 8.2
+            "souvlakiLarge": 9.5,
+            "mix": 7.3,
+            "mixLarge": 8.9,
+            "chicken": 8.2,
+            "chickenLarge": 9.5
           }
         },
         {
@@ -587,7 +704,10 @@
           "prices": {
             "souvlaki": 8.2,
             "mix": 7.9,
-            "chicken": 8.8
+            "chicken": 8.8,
+            "mixLarge": 10.4,
+            "souvlakiLarge": 11.1,
+            "chickenLarge": 11.7
           }
         },
         {
@@ -598,20 +718,12 @@
           "lng": 33.3054146,
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-parko-archangelos",
           "prices": {
+            "mix": 8.25,
+            "mixLarge": 9.25,
             "souvlaki": 8.25,
-            "chicken": 9.25
-          }
-        },
-        {
-          "name": "Gyros Stavros o Salonikios Strovolos",
-          "slug": "gyros-stavros-o-salonikios-strovolos",
-          "address": "Stavrou 76D",
-          "lat": 35.134639898231285,
-          "lng": 33.35652452482748,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/gyros-stavros-o-salonikios-strovolos",
-          "prices": {
-            "mix": 8.6,
-            "souvlaki": 8.3
+            "souvlakiLarge": 9.25,
+            "chicken": 9.25,
+            "chickenLarge": 10.25
           }
         },
         {
@@ -623,8 +735,22 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/gyros-stavros-salonikios-aglantzia",
           "prices": {
             "mix": 8.6,
+            "mixLarge": 10.8,
             "souvlaki": 8.3,
             "chicken": 9
+          }
+        },
+        {
+          "name": "Gyros Stavros o Salonikios Strovolos",
+          "slug": "gyros-stavros-o-salonikios-strovolos",
+          "address": "Stavrou 76D",
+          "lat": 35.134639898231285,
+          "lng": 33.35652452482748,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/gyros-stavros-o-salonikios-strovolos",
+          "prices": {
+            "mix": 8.6,
+            "souvlaki": 8.3,
+            "souvlakiLarge": 10.100000000000001
           }
         },
         {
@@ -636,7 +762,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/koullis-kebab-grill",
           "prices": {
             "chicken": 9.41,
-            "souvlaki": 8.33
+            "chickenLarge": 10.91,
+            "mix": 9.18,
+            "mixLarge": 10.68,
+            "souvlaki": 8.33,
+            "souvlakiLarge": 9.83
           }
         },
         {
@@ -648,7 +778,11 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/avgerinos-nicosia",
           "prices": {
             "chicken": 9,
-            "souvlaki": 8.5
+            "chickenLarge": 10,
+            "mix": 8.5,
+            "mixLarge": 9.5,
+            "souvlaki": 8.5,
+            "souvlakiLarge": 9.5
           }
         },
         {
@@ -673,7 +807,9 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/foul-tou-meze",
           "prices": {
             "chicken": 9.5,
-            "souvlaki": 9
+            "chickenLarge": 10.5,
+            "souvlaki": 9,
+            "souvlakiLarge": 10.5
           }
         },
         {
@@ -686,8 +822,10 @@
           "prices": {
             "chicken": 9.5,
             "souvlaki": 9,
+            "mix": 9.5,
             "chickenLarge": 10.5,
-            "souvlakiLarge": 10
+            "souvlakiLarge": 10,
+            "mixLarge": 11
           }
         },
         {
@@ -699,6 +837,7 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/piatsa-gourounaki-faneromeni",
           "prices": {
             "souvlaki": 9.1,
+            "mix": 9.1,
             "chicken": 5.6
           }
         },
@@ -711,7 +850,8 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/piatsa-gourounaki-express",
           "prices": {
             "chicken": 5.6,
-            "souvlaki": 9.1
+            "souvlaki": 9.1,
+            "mix": 9.1
           }
         },
         {
@@ -735,6 +875,17 @@
           "prices": {
             "mix": 8.5
           }
+        },
+        {
+          "name": "To Pikantiko",
+          "slug": "to-pikantiko",
+          "address": "Archiepiskopu Makariou 13, Lakatamia ",
+          "lat": 35.12164818,
+          "lng": 33.31935737,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-pikantiko",
+          "prices": {
+            "mix": 10
+          }
         }
       ]
     },
@@ -755,7 +906,9 @@
           "url": "https://wolt.com/en/cyp/limassol/restaurant/mr-boo",
           "prices": {
             "chicken": 5,
-            "souvlaki": 5
+            "chickenLarge": 10,
+            "souvlaki": 5,
+            "souvlakiLarge": 10
           }
         },
         {
@@ -769,7 +922,25 @@
             "souvlaki": 5.5,
             "souvlakiLarge": 10,
             "chicken": 5.5,
-            "chickenLarge": 10
+            "chickenLarge": 10,
+            "mix": 6.5,
+            "mixLarge": 10
+          }
+        },
+        {
+          "name": "I Sterna",
+          "slug": "sterna",
+          "address": "Markou Drakou 31Α",
+          "lat": 34.70179772,
+          "lng": 33.04415694,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/sterna",
+          "prices": {
+            "souvlaki": 5.5,
+            "souvlakiLarge": 8,
+            "chicken": 5.5,
+            "chickenLarge": 8,
+            "mix": 5.5,
+            "mixLarge": 8
           }
         },
         {
@@ -785,19 +956,6 @@
           }
         },
         {
-          "name": "I Sterna",
-          "address": "Markou Drakou 31Α",
-          "lat": 34.70179772,
-          "lng": 33.04415694,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/sterna",
-          "prices": {
-            "souvlaki": 5.5,
-            "chicken": 5.5,
-            "mix": 5.5
-          },
-          "slug": "sterna"
-        },
-        {
           "name": "Romios Kebab",
           "slug": "romios-kebab-cy",
           "address": "Agias Fylaxeos 294A",
@@ -808,6 +966,19 @@
             "mix": 8,
             "chicken": 6,
             "souvlaki": 5.7
+          }
+        },
+        {
+          "name": "Thymari Germasogeia",
+          "slug": "thymari-germasogeia",
+          "address": "Βασιλέως Γεωργίου Ά 58, Yermasoyia",
+          "lat": 34.69737837,
+          "lng": 33.09324823,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/thymari-germasogeia",
+          "prices": {
+            "porkchop": 6.5,
+            "souvlaki": 6.5,
+            "chicken": 6.5
           }
         },
         {
@@ -831,24 +1002,23 @@
           "lng": 33.01547961,
           "url": "https://wolt.com/en/cyp/limassol/restaurant/lefteris-meet-and-eat",
           "prices": {
+            "mix": 6.5,
             "souvlakiLarge": 10,
+            "mixLarge": 10,
             "chickenLarge": 10,
             "souvlaki": 6.5,
-            "chicken": 6.5,
-            "mix": 6.5
+            "chicken": 6.5
           }
         },
         {
-          "name": "Thymari Germasogeia",
-          "slug": "thymari-germasogeia",
-          "address": "Βασιλέως Γεωργίου Ά 58, Yermasoyia",
-          "lat": 34.69737837,
-          "lng": 33.09324823,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/thymari-germasogeia",
+          "name": "Rosemary ",
+          "slug": "rosemary",
+          "address": "Old Port Limassol",
+          "lat": 34.67090696,
+          "lng": 33.0424756,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/rosemary",
           "prices": {
-            "porkchop": 6.5,
-            "souvlaki": 6.5,
-            "chicken": 6.5
+            "souvlaki": 6.5
           }
         },
         {
@@ -864,14 +1034,19 @@
           }
         },
         {
-          "name": "Rosemary ",
-          "slug": "rosemary",
-          "address": "Old Port Limassol",
-          "lat": 34.67090696,
-          "lng": 33.0424756,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/rosemary",
+          "name": "Souvlakia Orphanides",
+          "slug": "orphanides-souvlakia",
+          "address": "Glastonos 98",
+          "lat": 34.681540523772384,
+          "lng": 33.04587602928626,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/orphanides-souvlakia",
           "prices": {
-            "souvlaki": 6.5
+            "chicken": 7.5,
+            "chickenLarge": 9.5,
+            "mix": 7,
+            "mixLarge": 8,
+            "souvlaki": 7,
+            "souvlakiLarge": 8
           }
         },
         {
@@ -907,7 +1082,11 @@
           "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-to-automato",
           "prices": {
             "souvlaki": 7.5,
-            "chicken": 8
+            "souvlakiLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9.5,
+            "mix": 7.5,
+            "mixLarge": 9
           }
         },
         {
@@ -919,6 +1098,23 @@
           "url": "https://wolt.com/en/cyp/limassol/restaurant/christakis-kebab",
           "prices": {
             "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "chicken": 7.5,
+            "chickenLarge": 9,
+            "mix": 7.5,
+            "mixLarge": 9
+          }
+        },
+        {
+          "name": "Stathis Grill House",
+          "slug": "stathis-grill-house",
+          "address": "92, Mishaouli & Kavazoglou ",
+          "lat": 34.67381747,
+          "lng": 33.02264903,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/stathis-grill-house",
+          "prices": {
+            "souvlaki": 7.5,
+            "mix": 7.5,
             "chicken": 7.5
           }
         },
@@ -930,8 +1126,12 @@
           "lng": 33.02147368,
           "url": "https://wolt.com/en/cyp/limassol/restaurant/artimata",
           "prices": {
+            "mix": 7.5,
+            "mixLarge": 9,
             "chicken": 7.5,
-            "souvlaki": 7.5
+            "chickenLarge": 9,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9
           }
         },
         {
@@ -942,22 +1142,13 @@
           "lng": 33.0053061,
           "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-doxa-polemidion",
           "prices": {
-            "chicken": 7.7,
-            "souvlaki": 7.5
-          }
-        },
-        {
-          "name": "Stathis Grill House",
-          "address": "92, Mishaouli & Kavazoglou ",
-          "lat": 34.67381747,
-          "lng": 33.02264903,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/stathis-grill-house",
-          "prices": {
-            "souvlaki": 7.5,
             "mix": 7.5,
-            "chicken": 7.5
-          },
-          "slug": "stathis-grill-house"
+            "mixLarge": 9.5,
+            "chicken": 7.7,
+            "chickenLarge": 9.7,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9.5
+          }
         },
         {
           "name": "Souvlakia Othellos",
@@ -979,7 +1170,54 @@
           "lng": 33.0331618,
           "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-despo-lim",
           "prices": {
-            "souvlaki": 7.9
+            "souvlaki": 7.9,
+            "mix": 7.9
+          }
+        },
+        {
+          "name": "Aez Zakakiou",
+          "slug": "aez-zakakiou",
+          "address": "Franklin Roosvelt 252",
+          "lat": 34.65954128,
+          "lng": 33.0042636,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/aez-zakakiou",
+          "prices": {
+            "souvlaki": 8,
+            "souvlakiLarge": 10,
+            "chicken": 9,
+            "chickenLarge": 11
+          }
+        },
+        {
+          "name": "Oraios Trellos Taverna",
+          "slug": "oraios-trellos-taverna",
+          "address": "Kallikrati 43 & Frinis 1, Apostolon Petrou & Pavlou",
+          "lat": 34.69081256,
+          "lng": 33.0305893,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/oraios-trellos-taverna",
+          "prices": {
+            "souvlaki": 8,
+            "souvlakiLarge": 10,
+            "chicken": 8.5,
+            "chickenLarge": 10.5,
+            "mix": 8,
+            "mixLarge": 8.3
+          }
+        },
+        {
+          "name": "Souvlakia Xristakis",
+          "slug": "souvlakia-xristakis",
+          "address": "Boriou Ipirou 25, Mesa Geitonia 4005, Cyprus",
+          "lat": 34.69759143,
+          "lng": 33.05304164,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-xristakis",
+          "prices": {
+            "mix": 8,
+            "mixLarge": 9,
+            "souvlaki": 8,
+            "souvlakiLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9
           }
         },
         {
@@ -1008,52 +1246,20 @@
           }
         },
         {
-          "name": "Aez Zakakiou",
-          "slug": "aez-zakakiou",
-          "address": "Franklin Roosvelt 252",
-          "lat": 34.65954128,
-          "lng": 33.0042636,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/aez-zakakiou",
-          "prices": {
-            "souvlaki": 8,
-            "chicken": 9
-          }
-        },
-        {
-          "name": "Oraios Trellos Taverna",
-          "slug": "oraios-trellos-taverna",
-          "address": "Kallikrati 43 & Frinis 1, Apostolon Petrou & Pavlou",
-          "lat": 34.69081256,
-          "lng": 33.0305893,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/oraios-trellos-taverna",
-          "prices": {
-            "souvlaki": 8,
-            "chicken": 8.5
-          }
-        },
-        {
-          "name": "Souvlakia Xristakis",
-          "slug": "souvlakia-xristakis",
-          "address": "Boriou Ipirou 25, Mesa Geitonia 4005, Cyprus",
-          "lat": 34.69759143,
-          "lng": 33.05304164,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-xristakis",
-          "prices": {
-            "souvlaki": 8,
-            "chicken": 8
-          }
-        },
-        {
           "name": "Jimmy's Kebab",
+          "slug": "jimmys-kebab",
           "address": "Christaki Kranou 65, Germasogeia",
           "lat": 34.70500296,
           "lng": 33.08641977,
           "url": "https://wolt.com/en/cyp/limassol/restaurant/jimmys-kebab",
           "prices": {
             "chicken": 8.2,
-            "souvlaki": 8.2
-          },
-          "slug": "jimmys-kebab"
+            "chickenLarge": 10,
+            "souvlaki": 8.2,
+            "souvlakiLarge": 10,
+            "mix": 8.2,
+            "mixLarge": 10
+          }
         },
         {
           "name": "Vasos Souvlakia",
@@ -1064,7 +1270,11 @@
           "url": "https://wolt.com/en/cyp/limassol/restaurant/vasos-souvlakia",
           "prices": {
             "souvlaki": 8.5,
-            "chicken": 8.5
+            "souvlakiLarge": 10,
+            "mix": 8.5,
+            "mixLarge": 10,
+            "chicken": 8.5,
+            "chickenLarge": 10
           }
         },
         {
@@ -1081,6 +1291,22 @@
           "slug": "to-pafitiko-souvlaki-grill-house"
         },
         {
+          "name": "Super Mario Grill",
+          "slug": "super-mario-souvlakia",
+          "address": "Fidippidou ",
+          "lat": 34.68144732455566,
+          "lng": 32.98904160677591,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/super-mario-souvlakia",
+          "prices": {
+            "mix": 8.68,
+            "mixLarge": 9.93,
+            "chicken": 8.68,
+            "chickenLarge": 9.93,
+            "souvlaki": 8.68,
+            "souvlakiLarge": 9.93
+          }
+        },
+        {
           "name": "Karvounoepiloges",
           "slug": "karvounoepiloges",
           "address": "Petrou Tsirou 47",
@@ -1089,7 +1315,11 @@
           "url": "https://wolt.com/en/cyp/limassol/restaurant/karvounoepiloges",
           "prices": {
             "souvlaki": 9,
-            "chicken": 9
+            "souvlakiLarge": 11.5,
+            "chicken": 9,
+            "chickenLarge": 11.5,
+            "mix": 9,
+            "mixLarge": 11.5
           }
         },
         {
@@ -1101,8 +1331,11 @@
           "url": "https://wolt.com/en/cyp/limassol/restaurant/to-xeiropoiito",
           "prices": {
             "souvlaki": 9.3,
+            "souvlakiLarge": 12.100000000000001,
             "chicken": 9.3,
-            "mix": 9.3
+            "chickenLarge": 12.100000000000001,
+            "mix": 9.3,
+            "mixLarge": 12.100000000000001
           }
         },
         {
@@ -1126,8 +1359,12 @@
           "lng": 33.01433613,
           "url": "https://wolt.com/en/cyp/limassol/restaurant/food-place",
           "prices": {
+            "mix": 9.5,
+            "mixLarge": 11.5,
             "chicken": 9.5,
-            "souvlaki": 9.5
+            "chickenLarge": 11.5,
+            "souvlaki": 9.5,
+            "souvlakiLarge": 11.5
           }
         },
         {
@@ -1138,8 +1375,12 @@
           "lng": 33.020665816872366,
           "url": "https://wolt.com/en/cyp/limassol/restaurant/sxaratos",
           "prices": {
+            "mix": 9.9,
+            "mixLarge": 11.9,
             "souvlaki": 9.9,
-            "chicken": 9.9
+            "souvlakiLarge": 11.9,
+            "chicken": 9.9,
+            "chickenLarge": 11.9
           }
         },
         {
@@ -1151,6 +1392,7 @@
           "url": "https://wolt.com/en/cyp/limassol/restaurant/to-outzaki-grill-house",
           "prices": {
             "souvlaki": 17.5,
+            "mix": 17.5,
             "chicken": 17.5,
             "porkchop": 21
           }
@@ -1197,7 +1439,9 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/mat-food-kebab-catering",
           "prices": {
             "chicken": 5.5,
-            "souvlaki": 5.5
+            "chickenLarge": 10,
+            "souvlaki": 5.5,
+            "souvlakiLarge": 10
           }
         },
         {
@@ -1209,7 +1453,9 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/navy-marine",
           "prices": {
             "chicken": 7.5,
-            "souvlaki": 7
+            "chickenLarge": 8.5,
+            "souvlaki": 7,
+            "souvlakiLarge": 8
           }
         },
         {
@@ -1221,7 +1467,9 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/to-parko-souvlaki-grill",
           "prices": {
             "souvlaki": 7,
-            "chicken": 7.5
+            "souvlakiLarge": 8,
+            "chicken": 7.5,
+            "chickenLarge": 8.5
           }
         },
         {
@@ -1233,7 +1481,11 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/takis-kebab-house",
           "prices": {
             "souvlaki": 7.4,
-            "chicken": 7.5
+            "souvlakiLarge": 8.6,
+            "chicken": 7.5,
+            "chickenLarge": 8.7,
+            "mix": 7.6,
+            "mixLarge": 9.299999999999999
           }
         },
         {
@@ -1257,7 +1509,11 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/souvlakia-yiannis",
           "prices": {
             "souvlaki": 7.5,
-            "chicken": 8
+            "souvlakiLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9,
+            "mix": 7.5,
+            "mixLarge": 9
           }
         },
         {
@@ -1280,7 +1536,9 @@
           "lng": 33.6347776,
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/to-edesma-tou-paradeisou",
           "prices": {
+            "mixLarge": 11,
             "souvlaki": 8,
+            "mix": 8,
             "souvlakiLarge": 10,
             "chickenLarge": 10,
             "chicken": 8
@@ -1295,7 +1553,11 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/souvlakia-katsios",
           "prices": {
             "chicken": 8,
-            "souvlaki": 8
+            "chickenLarge": 9,
+            "mix": 7,
+            "mixLarge": 8,
+            "souvlaki": 8,
+            "souvlakiLarge": 9
           }
         },
         {
@@ -1307,7 +1569,11 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/ad-souvlaki",
           "prices": {
             "souvlaki": 8,
-            "chicken": 9
+            "souvlakiLarge": 11,
+            "chicken": 9,
+            "chickenLarge": 12,
+            "mix": 8,
+            "mixLarge": 11
           }
         },
         {
@@ -1318,6 +1584,7 @@
           "lng": 33.6262145,
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/tavernaki-kettirosnic",
           "prices": {
+            "mix": 8,
             "chicken": 8.5,
             "souvlaki": 8
           }
@@ -1344,8 +1611,11 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/souvlakia-leoforos",
           "prices": {
             "mix": 8,
+            "mixLarge": 9.5,
             "souvlaki": 8,
-            "chicken": 8
+            "souvlakiLarge": 9.5,
+            "chicken": 8,
+            "chickenLarge": 9.5
           }
         },
         {
@@ -1357,7 +1627,11 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/gyrogefstiko",
           "prices": {
             "souvlaki": 8.5,
-            "chicken": 8.5
+            "souvlakiLarge": 10,
+            "chicken": 8.5,
+            "chickenLarge": 10,
+            "mix": 9,
+            "mixLarge": 10.5
           }
         },
         {
@@ -1382,6 +1656,8 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/the-souvlaki-code",
           "prices": {
             "chicken": 9,
+            "mix": 8.5,
+            "mixLarge": 11,
             "chickenLarge": 12,
             "souvlaki": 8.5,
             "souvlakiLarge": 11
@@ -1395,6 +1671,7 @@
           "lng": 33.61433676,
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/pesto-kai-efages",
           "prices": {
+            "mix": 8.5,
             "chicken": 9,
             "souvlaki": 8.5,
             "chickenLarge": 9.5
@@ -1411,7 +1688,9 @@
             "souvlaki": 8.5,
             "souvlakiLarge": 10,
             "chicken": 8.5,
-            "chickenLarge": 10
+            "chickenLarge": 10,
+            "mix": 8.5,
+            "mixLarge": 10
           }
         },
         {
@@ -1423,8 +1702,11 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/famelia",
           "prices": {
             "souvlaki": 8.8,
+            "souvlakiLarge": 10.3,
             "chicken": 9.5,
-            "mix": 9.5
+            "chickenLarge": 11,
+            "mix": 9.5,
+            "mixLarge": 11
           }
         },
         {
@@ -1435,6 +1717,7 @@
           "lng": 33.57329464,
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/karvounoistories-tou-kosta",
           "prices": {
+            "mix": 8.9,
             "souvlaki": 8.9,
             "chicken": 9.9,
             "souvlakiLarge": 9.9
@@ -1463,7 +1746,9 @@
           "prices": {
             "mix": 9.5,
             "souvlaki": 9.25,
-            "chicken": 9.75
+            "mixLarge": 10.5,
+            "chicken": 9.75,
+            "chickenLarge": 10.75
           }
         },
         {
@@ -1475,8 +1760,11 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/voroklini-tavernio",
           "prices": {
             "souvlaki": 9.4,
+            "souvlakiLarge": 10.6,
             "chicken": 9,
-            "mix": 10.9
+            "chickenLarge": 10.2,
+            "mix": 10.9,
+            "mixLarge": 11.9
           }
         },
         {
@@ -1488,8 +1776,11 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/to-aliotiko",
           "prices": {
             "mix": 11,
+            "mixLarge": 12.5,
             "souvlaki": 10,
-            "chicken": 11
+            "souvlakiLarge": 11.5,
+            "chicken": 11,
+            "chickenLarge": 12.5
           }
         },
         {
@@ -1500,7 +1791,8 @@
           "lng": 33.58968926,
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/amfitheatro-grill-more",
           "prices": {
-            "mix": 7
+            "mix": 7,
+            "mixLarge": 8
           }
         }
       ]
@@ -1552,16 +1844,19 @@
         },
         {
           "name": "Souvlykos BBQ",
+          "slug": "souvlikos",
           "address": "Leof, Nik Nikolaidi 49",
           "lat": 34.78063823,
           "lng": 32.43393252,
           "url": "https://wolt.com/en/cyp/paphos/restaurant/souvlikos",
           "prices": {
             "souvlaki": 7.3,
+            "souvlakiLarge": 9,
             "chicken": 7.3,
-            "mix": 7.3
-          },
-          "slug": "souvlikos"
+            "chickenLarge": 9,
+            "mix": 7.3,
+            "mixLarge": 9
+          }
         },
         {
           "name": "Sti Ladokolla Greek Grill",
@@ -1572,8 +1867,11 @@
           "url": "https://wolt.com/en/cyp/paphos/restaurant/sti-ladokolla-greek-grill",
           "prices": {
             "souvlaki": 7.5,
+            "souvlakiLarge": 9.5,
             "mix": 7.5,
-            "chicken": 8
+            "mixLarge": 9.5,
+            "chicken": 8,
+            "chickenLarge": 10
           }
         },
         {
@@ -1615,15 +1913,19 @@
         },
         {
           "name": "Kati Psinete sti Geroskipou",
+          "slug": "kati-psinete-sti-geroskipou",
           "address": "Archiepiskopou Makariou III, Geroskipou",
           "lat": 34.76342433,
           "lng": 32.44846942,
           "url": "https://wolt.com/en/cyp/paphos/restaurant/kati-psinete-sti-geroskipou",
           "prices": {
             "chicken": 7.9,
-            "souvlaki": 7.9
-          },
-          "slug": "kati-psinete-sti-geroskipou"
+            "chickenLarge": 9.4,
+            "mix": 7.9,
+            "mixLarge": 9.4,
+            "souvlaki": 7.9,
+            "souvlakiLarge": 9.4
+          }
         },
         {
           "name": "Corfu Grill",
@@ -1652,15 +1954,16 @@
         },
         {
           "name": "Pagkratios Traditional Tavern",
+          "slug": "pagkratios-traditional-tavern",
           "address": "Ippokratous 11 ",
           "lat": 34.77939337,
           "lng": 32.42090317,
           "url": "https://wolt.com/en/cyp/paphos/restaurant/pagkratios-traditional-tavern",
           "prices": {
+            "mix": 8,
             "chicken": 8,
             "souvlaki": 8
-          },
-          "slug": "pagkratios-traditional-tavern"
+          }
         },
         {
           "name": "Greek Bites",
@@ -1684,8 +1987,11 @@
           "url": "https://wolt.com/en/cyp/paphos/restaurant/tavernaki-paphos",
           "prices": {
             "souvlaki": 8.2,
+            "souvlakiLarge": 11.1,
             "mix": 7.9,
-            "chicken": 8.8
+            "chicken": 8.8,
+            "chickenLarge": 11.7,
+            "mixLarge": 10.4
           }
         },
         {
@@ -1697,18 +2003,11 @@
           "url": "https://wolt.com/en/cyp/paphos/restaurant/souvlakeri-o-kokoras",
           "prices": {
             "souvlaki": 8.5,
-            "chicken": 8.5
-          }
-        },
-        {
-          "name": "Pitta Express",
-          "slug": "pitta-express",
-          "address": "Neofytou Nikolaidi 43",
-          "lat": 34.77311999,
-          "lng": 32.42979078,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/pitta-express",
-          "prices": {
-            "mix": 7.8
+            "souvlakiLarge": 9.5,
+            "mix": 8.5,
+            "mixLarge": 9.5,
+            "chicken": 8.5,
+            "chickenLarge": 9.5
           }
         },
         {
@@ -1720,6 +2019,29 @@
           "url": "https://wolt.com/en/cyp/paphos/restaurant/asado-express",
           "prices": {
             "mix": 17
+          }
+        },
+        {
+          "name": "Pasalimani Kebab House",
+          "slug": "pasalimani-kebab-house",
+          "address": "Akamantidos 1",
+          "lat": 34.784216107137595,
+          "lng": 32.421542247283924,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/pasalimani-kebab-house",
+          "prices": {
+            "mix": 7.7,
+            "mixLarge": 9.4
+          }
+        },
+        {
+          "name": "Pitta Express",
+          "slug": "pitta-express",
+          "address": "Neofytou Nikolaidi 43",
+          "lat": 34.77311999,
+          "lng": 32.42979078,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/pitta-express",
+          "prices": {
+            "mix": 7.8
           }
         },
         {
@@ -1752,7 +2074,9 @@
           "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/souvlakopoleio-poleos",
           "prices": {
             "souvlaki": 7.5,
-            "chicken": 7.5
+            "souvlakiLarge": 9.5,
+            "chicken": 7.5,
+            "chickenLarge": 9.5
           }
         },
         {
@@ -1769,6 +2093,22 @@
           }
         },
         {
+          "name": "To Steki Tou \"Boss''",
+          "slug": "tavernakiboss",
+          "address": "Nikou Psara 21",
+          "lat": 35.03680319,
+          "lng": 33.98225613,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/tavernakiboss",
+          "prices": {
+            "souvlaki": 8,
+            "souvlakiLarge": 9.5,
+            "mix": 9,
+            "mixLarge": 10.5,
+            "chicken": 8.5,
+            "chickenLarge": 10
+          }
+        },
+        {
           "name": "Sesoula Kalamaki Kappari",
           "slug": "sesoula-kalamaki-kappari",
           "address": "Leoforos Kappari 64, Paralimni, Cyprus",
@@ -1777,20 +2117,11 @@
           "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/sesoula-kalamaki-kappari",
           "prices": {
             "chicken": 8,
+            "chickenLarge": 9,
             "souvlaki": 8,
-            "mix": 8
-          }
-        },
-        {
-          "name": "Hollywood Bar & Grill",
-          "slug": "hollywood-bar-grill",
-          "address": "Protaras Avenue 265, Paralimni",
-          "lat": 35.04881697,
-          "lng": 34.01153506,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/hollywood-bar-grill",
-          "prices": {
-            "souvlaki": 9,
-            "chicken": 9
+            "souvlakiLarge": 9,
+            "mix": 8,
+            "mixLarge": 9
           }
         },
         {
@@ -1802,8 +2133,24 @@
           "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/vangelis-tavern",
           "prices": {
             "chicken": 10,
+            "chickenLarge": 11.5,
             "mix": 10,
-            "souvlaki": 9
+            "mixLarge": 11.5,
+            "souvlaki": 9,
+            "souvlakiLarge": 10.5
+          }
+        },
+        {
+          "name": "Hollywood Bar & Grill",
+          "slug": "hollywood-bar-grill",
+          "address": "Protaras Avenue 265, Paralimni",
+          "lat": 35.04881697,
+          "lng": 34.01153506,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/hollywood-bar-grill",
+          "prices": {
+            "souvlaki": 9,
+            "chicken": 9,
+            "mix": 10
           }
         },
         {
