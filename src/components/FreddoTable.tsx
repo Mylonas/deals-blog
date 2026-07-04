@@ -58,13 +58,25 @@ function haversine(lat1: number, lng1: number, lat2: number, lng2: number) {
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
+const SHOW = 15;
+
+const ALL_LABEL = { en: "All Cyprus", el: "Όλη η Κύπρος", ru: "Весь Кипр" };
+
 export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: Lang }) {
   const t = T[lang];
-  const [cityKey, setCityKey] = useState(data.cities[0]?.key ?? "nicosia");
+  const [cityKey, setCityKey] = useState("all");
   const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [geoState, setGeoState] = useState<GeoState>("idle");
 
-  const city = data.cities.find((c) => c.key === cityKey) ?? data.cities[0];
+  const cities = useMemo<City[]>(
+    () => [
+      { key: "all", label: ALL_LABEL, cafes: data.cities.flatMap((c) => c.cafes) },
+      ...data.cities,
+    ],
+    [data]
+  );
+
+  const city = cities.find((c) => c.key === cityKey) ?? cities[0];
 
   const requestLocation = useCallback(() => {
     if (!navigator.geolocation) {
@@ -101,7 +113,7 @@ export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: La
       }
       return a.freddo - b.freddo;
     });
-    return list;
+    return list.slice(0, SHOW);
   }, [city, userCoords]);
 
   const updated = new Date(data.updatedAt).toLocaleString(
@@ -113,7 +125,7 @@ export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: La
     <div>
       {/* City tabs */}
       <div className="flex gap-2 mb-4 flex-wrap">
-        {data.cities.map((c) => (
+        {cities.map((c) => (
           <button
             key={c.key}
             onClick={() => setCityKey(c.key)}
