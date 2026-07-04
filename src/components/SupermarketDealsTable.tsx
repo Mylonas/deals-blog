@@ -16,10 +16,12 @@ type Deal = {
   eKalathiUrl: string;
   availableAtChains: number | null;
   history?: PricePoint[];
+  lowSince?: string; // present on all-time-low deals: date the low first appeared
 };
 
 type Lang = "en" | "el" | "ru";
 type SortKey = "price" | "discount" | "name";
+type Tab = "savings" | "lows";
 
 const T = {
   en: {
@@ -27,6 +29,10 @@ const T = {
     sortPrice: "Cheapest first", sortDiscount: "Biggest saving", sortName: "A → Z",
     updated: "Updated", onSale: "On sale", viewAll: "Compare prices →",
     trend: "6-month price trend",
+    tabSavings: "Biggest savings", tabLows: "All-time lows",
+    lowestEver: "Lowest ever", since: "since",
+    noLows: "No products hit a fresh all-time low this week — check back soon.",
+    lowsIntro: "Products whose price just dropped to the lowest level ever recorded on e-Kalathi (tracked since September 2025). The % badge shows how far below the previous record the new price is.",
     note: "Prices from e-kalathi.gov.cy — the Cyprus government's official price observatory. Click any product to compare prices across all supermarket chains. The trend line shows the typical shelf price across chains, which may sit above the lowest price shown.",
   },
   el: {
@@ -34,6 +40,10 @@ const T = {
     sortPrice: "Φθηνότερα πρώτα", sortDiscount: "Μεγαλύτερη έκπτωση", sortName: "Α → Ω",
     updated: "Ενημέρωση", onSale: "Σε προσφορά", viewAll: "Σύγκριση τιμών →",
     trend: "Τάση τιμής 6 μηνών",
+    tabSavings: "Μεγαλύτερες εκπτώσεις", tabLows: "Ιστορικά χαμηλά",
+    lowestEver: "Χαμηλότερη τιμή ποτέ", since: "από",
+    noLows: "Κανένα προϊόν δεν έφτασε σε νέο ιστορικό χαμηλό αυτή την εβδομάδα — ελέγξτε ξανά σύντομα.",
+    lowsIntro: "Προϊόντα των οποίων η τιμή μόλις έπεσε στο χαμηλότερο επίπεδο που έχει καταγραφεί ποτέ στο e-Kalathi (παρακολούθηση από Σεπτέμβριο 2025). Το ποσοστό δείχνει πόσο κάτω από το προηγούμενο ρεκόρ είναι η νέα τιμή.",
     note: "Τιμές από το e-kalathi.gov.cy — το επίσημο παρατηρητήριο τιμών της Κυπριακής Κυβέρνησης. Κάντε κλικ σε κάθε προϊόν για να συγκρίνετε τιμές σε όλες τις αλυσίδες. Η γραμμή τάσης δείχνει την τυπική τιμή ραφιού μεταξύ αλυσίδων, που μπορεί να είναι πάνω από τη χαμηλότερη τιμή.",
   },
   ru: {
@@ -41,6 +51,10 @@ const T = {
     sortPrice: "Сначала дешевле", sortDiscount: "Наибольшая скидка", sortName: "А → Я",
     updated: "Обновлено", onSale: "Акция", viewAll: "Сравнить цены →",
     trend: "Динамика цены за 6 месяцев",
+    tabSavings: "Лучшие скидки", tabLows: "Исторический минимум",
+    lowestEver: "Минимум за всё время", since: "с",
+    noLows: "На этой неделе ни один товар не достиг нового исторического минимума — загляните позже.",
+    lowsIntro: "Товары, цена которых только что опустилась до самого низкого уровня за всю историю наблюдений e-Kalathi (с сентября 2025). Процент показывает, насколько новая цена ниже предыдущего рекорда.",
     note: "Цены с e-kalathi.gov.cy — официального государственного ценового мониторинга Кипра. Нажмите на продукт, чтобы сравнить цены во всех супермаркетах. Линия тренда показывает типичную цену на полке по сетям, которая может быть выше минимальной.",
   },
 };
@@ -81,18 +95,21 @@ function Sparkline({ history, label }: { history: PricePoint[]; label: string })
 }
 
 export default function SupermarketDealsTable({
-  deals, lang, updatedAt,
-}: { deals: Deal[]; lang: Lang; updatedAt: string }) {
+  deals, allTimeLows = [], lang, updatedAt,
+}: { deals: Deal[]; allTimeLows?: Deal[]; lang: Lang; updatedAt: string }) {
+  const [tab, setTab] = useState<Tab>("savings");
   const [sort, setSort] = useState<SortKey>("discount");
   const t = T[lang];
 
+  const active = tab === "savings" ? deals : allTimeLows;
+
   const sorted = useMemo(() => {
-    return [...deals].sort((a, b) => {
+    return [...active].sort((a, b) => {
       if (sort === "price") return a.price - b.price;
       if (sort === "discount") return b.discountPct - a.discountPct;
       return a.name.localeCompare(b.name);
     });
-  }, [deals, sort]);
+  }, [active, sort]);
 
   const updated = new Date(updatedAt).toLocaleString(
     lang === "en" ? "en-GB" : lang === "el" ? "el-GR" : "ru-RU",
@@ -101,6 +118,27 @@ export default function SupermarketDealsTable({
 
   return (
     <div>
+      {/* Tabs */}
+      <div className="flex gap-2 mb-5 flex-wrap">
+        {(["savings", "lows"] as Tab[]).map((k) => (
+          <button
+            key={k}
+            onClick={() => setTab(k)}
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
+              tab === k
+                ? "bg-amber-500 text-white"
+                : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+            }`}
+          >
+            {k === "savings" ? t.tabSavings : t.tabLows}
+          </button>
+        ))}
+      </div>
+
+      {tab === "lows" && (
+        <p className="mb-5 text-sm text-gray-500 dark:text-gray-400">{t.lowsIntro}</p>
+      )}
+
       {/* Sort controls */}
       <div className="flex items-center gap-2 mb-5 flex-wrap">
         <span className="text-sm text-gray-500 dark:text-gray-400 mr-1">
@@ -123,6 +161,11 @@ export default function SupermarketDealsTable({
           {t.updated}: {updated}
         </span>
       </div>
+
+      {/* Empty state for the lows tab */}
+      {tab === "lows" && sorted.length === 0 && (
+        <p className="text-sm text-gray-400 dark:text-gray-500 py-8 text-center">{t.noLows}</p>
+      )}
 
       {/* Product cards grid */}
       <div className="grid gap-3 sm:grid-cols-2">
@@ -157,6 +200,16 @@ export default function SupermarketDealsTable({
                 <p className="text-sm font-semibold text-gray-800 dark:text-gray-100 leading-snug mt-0.5 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                   {deal.name}
                 </p>
+                {/* All-time-low badge */}
+                {deal.lowSince && (
+                  <span className="inline-block mt-1.5 text-[10px] font-bold px-2 py-0.5 rounded-full bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300">
+                    ⬇ {t.lowestEver} · {t.since}{" "}
+                    {new Date(deal.lowSince).toLocaleDateString(
+                      lang === "en" ? "en-GB" : lang === "el" ? "el-GR" : "ru-RU",
+                      { day: "numeric", month: "short" }
+                    )}
+                  </span>
+                )}
                 {/* Price row */}
                 <div className="flex items-center gap-2 mt-2">
                   <span className="text-lg font-bold text-amber-600 dark:text-amber-400">

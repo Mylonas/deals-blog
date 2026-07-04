@@ -1,9 +1,8 @@
 name: Update Supermarket Deals
 
+# Runs once daily at 06:00 UTC, dispatched by the Cloudflare Worker cron
+# (workers/cron-trigger). No GitHub schedule here — it would double-fire.
 on:
-  schedule:
-    # Daily at 06:00 UTC — prices don't change more than once a day
-    - cron: "0 6 * * *"
   workflow_dispatch:
 
 jobs:
@@ -36,7 +35,7 @@ jobs:
         run: |
           git config user.name "DealsHub Bot"
           git config user.email "bot@dealshub.cy"
-          git add src/data/supermarket-deals.json
+          git add src/data/supermarket-deals.json src/data/product-price-history.json
           git commit -m "chore: update supermarket deals $(date +'%Y-%m-%d')"
           git pull --rebase origin master
           git push origin master
