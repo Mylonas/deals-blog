@@ -1,9 +1,9 @@
-name: Update Coffee Prices (Monthly Headless)
+name: Update Coffee Prices (Weekly)
 
 on:
   schedule:
-    # 1st of every month at 06:00 UTC
-    - cron: "0 6 1 * *"
+    # Every Monday at 06:00 UTC — Wolt API scrape is cheap, no browser needed
+    - cron: "0 6 * * 1"
   workflow_dispatch:
 
 jobs:
@@ -24,22 +24,8 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install Playwright + Chromium
-        run: npx playwright install chromium --with-deps
-
-      - name: Scrape coffee prices
-        run: DEBUG=1 node scripts/update-coffee-prices-headless.mjs
-
-      - name: Upload debug screenshots
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: coffee-scraper-debug
-          path: /tmp/coffee-debug/
-          if-no-files-found: ignore
+      - name: Update Freddo prices via Wolt API
+        run: node scripts/update-freddo-prices.mjs
 
       - name: Regenerate markdown posts
         run: node scripts/update-coffee-prices.mjs
@@ -53,7 +39,7 @@ jobs:
           git add posts/en/cheapest-coffee-nicosia.md
           git add posts/el/cheapest-coffee-nicosia.md
           git add posts/ru/cheapest-coffee-nicosia.md
-          git diff --cached --quiet || (git commit -m "chore: update coffee prices via headless scraper $(date +'%Y-%m')" && echo "changed=true" >> $GITHUB_OUTPUT)
+          git diff --cached --quiet || (git commit -m "chore: update coffee prices via Wolt API $(date +'%Y-%m-%d')" && echo "changed=true" >> $GITHUB_OUTPUT)
           git pull --rebase origin master
           git push origin master
 
