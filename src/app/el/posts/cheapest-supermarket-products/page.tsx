@@ -3,9 +3,9 @@ import data from "@/data/supermarket-deals.json";
 import Link from "next/link";
 
 export const metadata = {
-  title: "30 Φθηνότερα Προϊόντα Σούπερ Μάρκετ στην Κύπρο — Ζωντανές Τιμές",
+  title: "Top 20 Μεγαλύτερες Εκπτώσεις σε Σούπερ Μάρκετ Κύπρου — Ζωντανές Προσφορές",
   description:
-    "Τα 30 φθηνότερα προϊόντα που διατίθενται αυτή τη στιγμή σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου, από το επίσημο παρατηρητήριο τιμών e-Kalathi. Ενημέρωση καθημερινά.",
+    "Τα 20 προϊόντα με τις μεγαλύτερες μειώσεις τιμής αυτή τη στιγμή σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου, από το επίσημο παρατηρητήριο τιμών e-Kalathi. Ενημέρωση καθημερινά.",
 };
 
 export default function CheapestSupermarketProductsEL() {
@@ -19,10 +19,10 @@ export default function CheapestSupermarketProductsEL() {
       </div>
 
       <h1 className="text-3xl font-bold mb-3 leading-tight">
-        30 Φθηνότερα Προϊόντα Σούπερ Μάρκετ στην Κύπρο
+        Top 20 Μεγαλύτερες Εκπτώσεις σε Σούπερ Μάρκετ Κύπρου
       </h1>
       <p className="text-gray-500 dark:text-gray-400 mb-8">
-        Τα προϊόντα με τις χαμηλότερες τιμές αυτή τη στιγμή σε όλα τα μεγάλα
+        Τα 20 προϊόντα με τις μεγαλύτερες μειώσεις τιμής αυτή τη στιγμή σε όλα τα μεγάλα
         σούπερ μάρκετ της Κύπρου, από το{" "}
         <a
           href="https://www.e-kalathi.gov.cy"

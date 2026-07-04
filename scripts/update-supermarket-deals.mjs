@@ -1,6 +1,7 @@
 /**
- * Fetches the 30 cheapest products currently available across Cyprus supermarkets
- * from e-kalathi.gov.cy and writes src/data/supermarket-deals.json.
+ * Fetches ALL products from e-kalathi.gov.cy, finds the top 20 with the
+ * biggest discount (previousPrice vs startPrice), and writes
+ * src/data/supermarket-deals.json.
  *
  * Note: the e-kalathi public API exposes global minimum prices only — per-chain
  * pricing requires authentication. Prices shown are the lowest available anywhere.
@@ -16,6 +17,9 @@ const ROOT = path.join(__dirname, "..");
 const API = "https://www.e-kalathi.gov.cy/ekalathi-website-server/api";
 const OUT = path.join(ROOT, "src", "data", "supermarket-deals.json");
 
+const PAGE_SIZE = 200;
+const TOP_N = 20;
+
 const CATEGORY_LABELS = {
   "WATER":                      { en: "Water",           el: "Νερό",               ru: "Вода" },
   "FRESH MILK":                 { en: "Fresh Milk",      el: "Φρέσκο Γάλα",        ru: "Свежее молоко" },
@@ -30,7 +34,7 @@ const CATEGORY_LABELS = {
   "NAPKINGS AND KITCHEN ROLL":  { en: "Paper Products",  el: "Χαρτικά",            ru: "Бумажные изделия" },
   "FRUIT AND VEGETABLE JUICES": { en: "Juices",          el: "Χυμοί",              ru: "Соки" },
   "WET WIPES":                  { en: "Wet Wipes",       el: "Μωρομάντηλα",        ru: "Влажные салфетки" },
-  "BREAD":                      { en: "Bread",           el: "Ψωμί",               ru: "Хлеб" },
+  "BREAD":                      { en: "Bread",           el: "Ψωμί",               ru: "Хлεβ" },
   "RICE":                       { en: "Rice",            el: "Ρύζι",               ru: "Рис" },
   "OLIVE OIL":                  { en: "Olive Oil",       el: "Ελαιόλαδο",          ru: "Оливковое масло" },
   "COFFEE":                     { en: "Coffee",          el: "Καφές",              ru: "Кофе" },
@@ -38,27 +42,60 @@ const CATEGORY_LABELS = {
   "BUTTER":                     { en: "Butter",          el: "Βούτυρο",            ru: "Масло" },
 };
 
-async function fetchCheapest(size = 30) {
-  const url = `${API}/fetch-product-list?page=0&size=${size}&productName=`;
+async function fetchPage(page) {
+  const url = `${API}/fetch-product-list?page=${page}&size=${PAGE_SIZE}&productName=`;
   const res = await fetch(url, {
     headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" },
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const data = await res.json();
-  return data.content || [];
+  if (!res.ok) throw new Error(`HTTP ${res.status} on page ${page}`);
+  return res.json();
+}
+
+async function fetchAllProducts() {
+  const first = await fetchPage(0);
+  const totalPages = first.totalPages ?? 1;
+  const all = [...(first.content || [])];
+  console.log(`  Page 0/${totalPages - 1} — ${all.length} products so far`);
+
+  for (let p = 1; p < totalPages; p++) {
+    const data = await fetchPage(p);
+    const batch = data.content || [];
+    all.push(...batch);
+    console.log(`  Page ${p}/${totalPages - 1} — ${all.length} products so far`);
+    if (batch.length < PAGE_SIZE) break; // safety: last page may be short
+  }
+
+  return all;
+}
+
+function discountPct(curr, prev) {
+  if (prev > 0 && curr < prev) return Math.round((1 - curr / prev) * 100);
+  return 0;
 }
 
 async function main() {
-  console.log("Fetching cheapest supermarket products from e-kalathi.gov.cy...");
+  console.log("Fetching ALL supermarket products from e-kalathi.gov.cy...");
 
-  const products = await fetchCheapest(30);
+  const products = await fetchAllProducts();
+  console.log(`Total products fetched: ${products.length}`);
 
-  const deals = products.map((p) => {
-    const prev = p.previousPrice || 0;
-    const curr = p.startPrice || 0;
-    const discountPct = prev > 0 && curr < prev
-      ? Math.round((1 - curr / prev) * 100)
-      : 0;
+  // Keep only products with a genuine price reduction
+  const withDiscount = products
+    .map((p) => ({
+      ...p,
+      _curr: p.startPrice || 0,
+      _prev: p.previousPrice || 0,
+      _disc: discountPct(p.startPrice || 0, p.previousPrice || 0),
+    }))
+    .filter((p) => p._disc > 0 && p._curr > 0);
+
+  console.log(`Products with discount: ${withDiscount.length}`);
+
+  // Sort descending by discount %, take top N
+  withDiscount.sort((a, b) => b._disc - a._disc);
+  const top = withDiscount.slice(0, TOP_N);
+
+  const deals = top.map((p) => {
     const catLabels = CATEGORY_LABELS[p.productCategoryNameEnglish] || {
       en: p.productCategoryNameEnglish || "Other",
       el: p.productCategoryNameEnglish || "Άλλο",
@@ -67,9 +104,9 @@ async function main() {
     return {
       productMasterId: p.productMasterId,
       name: p.name,
-      price: curr,
-      previousPrice: prev || null,
-      discountPct,
+      price: p._curr,
+      previousPrice: p._prev,
+      discountPct: p._disc,
       category: catLabels.en,
       categoryEl: catLabels.el,
       categoryRu: catLabels.ru,
@@ -85,14 +122,11 @@ async function main() {
   };
 
   fs.writeFileSync(OUT, JSON.stringify(output, null, 2) + "\n");
-  console.log(`Wrote ${deals.length} deals → ${OUT}`);
-
-  deals.slice(0, 10).forEach((d) => {
-    const disc = d.discountPct > 0 ? ` (-${d.discountPct}%)` : "";
-    console.log(`  €${d.price.toFixed(2)}${disc} ${d.name.slice(0, 50)}`);
+  console.log(`\nTop ${TOP_N} biggest savings:`);
+  deals.forEach((d, i) => {
+    console.log(`  ${i + 1}. -${d.discountPct}% €${d.price.toFixed(2)} (was €${d.previousPrice.toFixed(2)}) ${d.name.slice(0, 50)}`);
   });
-
-  console.log("Done.");
+  console.log(`\nWrote ${deals.length} deals → ${OUT}`);
 }
 
 main().catch((e) => { console.error("Failed:", e.message); process.exit(1); });

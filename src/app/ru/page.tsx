@@ -60,9 +60,9 @@ export default function HomeRu() {
               <span className="text-xs text-amber-600 dark:text-amber-400 font-semibold">В РЕАЛЬНОМ ВРЕМЕНИ ●</span>
             </div>
             <h2 className="text-lg font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
-              30 самых дешёвых продуктов в супермаркетах Кипра
+              Топ-20 лучших скидок в супермаркетах Кипра
             </h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Продукты с минимальными ценами во всех крупных супермаркетах Кипра, по данным государственного ценового мониторинга e-Kalathi. Обновляется ежедневно.</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">20 товаров с наибольшим снижением цены во всех крупных супермаркетах Кипра, по данным государственного ценового мониторинга e-Kalathi. Обновляется ежедневно.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Читать далее →</div>
           </Link>
           {pinned.map((post) => (

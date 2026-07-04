@@ -3,9 +3,9 @@ import data from "@/data/supermarket-deals.json";
 import Link from "next/link";
 
 export const metadata = {
-  title: "30 Cheapest Supermarket Products in Cyprus — Live Prices",
+  title: "Top 20 Biggest Supermarket Savings in Cyprus — Live Deals",
   description:
-    "The 30 cheapest products available right now across all major Cyprus supermarkets, sourced from the government's e-Kalathi price observatory. Updated daily.",
+    "The 20 products with the biggest price cuts right now across all major Cyprus supermarkets, sourced from the government's e-Kalathi price observatory. Updated daily.",
 };
 
 export default function CheapestSupermarketProductsEN() {
@@ -19,11 +19,11 @@ export default function CheapestSupermarketProductsEN() {
       </div>
 
       <h1 className="text-3xl font-bold mb-3 leading-tight">
-        30 Cheapest Supermarket Products in Cyprus
+        Top 20 Biggest Supermarket Savings in Cyprus
       </h1>
       <p className="text-gray-500 dark:text-gray-400 mb-8">
-        The lowest-priced products available right now across all major Cyprus
-        supermarkets, sourced from the government&apos;s{" "}
+        The 20 products with the biggest price cuts available right now across all
+        major Cyprus supermarkets, sourced from the government&apos;s{" "}
         <a
           href="https://www.e-kalathi.gov.cy"
           target="_blank"

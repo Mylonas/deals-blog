@@ -60,9 +60,9 @@ export default function HomeEl() {
               <span className="text-xs text-amber-600 dark:text-amber-400 font-semibold">ΖΩΝΤΑΝΑ ●</span>
             </div>
             <h2 className="text-lg font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
-              30 Φθηνότερα Προϊόντα στα Σούπερ Μάρκετ της Κύπρου
+              Top 20 Μεγαλύτερες Εκπτώσεις στα Σούπερ Μάρκετ Κύπρου
             </h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Τα προϊόντα με τις χαμηλότερες τιμές αυτή τη στιγμή σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου, από το e-Kalathi. Ενημέρωση καθημερινά.</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Τα 20 προϊόντα με τις μεγαλύτερες μειώσεις τιμής αυτή τη στιγμή σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου, από το e-Kalathi. Ενημέρωση καθημερινά.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Διαβάστε περισσότερα →</div>
           </Link>
           {pinned.map((post) => (
