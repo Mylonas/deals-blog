@@ -108,17 +108,29 @@ async function fetchPriceHistory(productMasterId, from, to) {
 }
 
 // ── history cache ─────────────────────────────────────────────────────────────
-// The cache stores change-points only: [date, price] pairs where the price
-// differs from the previous day. Reconstructing gives the full daily series,
-// so daily runs only need to fetch the days since the last run instead of
-// re-downloading 10 months × 476 products.
+// Each product carries its own freshness: { asOf, points }, where points are
+// change-points only — [date, price] pairs where the price differs from the
+// previous day. Reconstructing gives the full daily series, so daily runs only
+// fetch the days since each product's own asOf. A product whose fetch fails
+// simply keeps its entry (history ends at its asOf) — no eviction, no silent
+// price extension, and chronic endpoint failures can't erode the cache.
 
 function loadCache() {
-  if (!fs.existsSync(CACHE)) return { asOf: null, products: {} };
+  if (!fs.existsSync(CACHE)) return { products: {} };
   try {
-    return JSON.parse(fs.readFileSync(CACHE, "utf8"));
+    const raw = JSON.parse(fs.readFileSync(CACHE, "utf8"));
+    const products = {};
+    for (const [id, entry] of Object.entries(raw.products || {})) {
+      if (Array.isArray(entry)) {
+        // legacy format: bare points array under a global asOf
+        if (raw.asOf && entry.length) products[id] = { asOf: raw.asOf, points: entry };
+      } else if (entry?.asOf && entry?.points?.length) {
+        products[id] = entry;
+      }
+    }
+    return { products };
   } catch {
-    return { asOf: null, products: {} };
+    return { products: {} };
   }
 }
 
@@ -153,47 +165,43 @@ function compressDaily(daily) {
  */
 async function updateHistories(cache, ids) {
   const today = new Date().toISOString().slice(0, 10);
-  const prevAsOf = cache.asOf; // snapshot — cache.asOf may be checkpointed mid-run
   const map = new Map();
-  const processed = new Set(); // ids refreshed to `today` this run
-  const failedIds = new Set();
   let done = 0;
   let fullLoads = 0;
+  let failed = 0;
   const queue = [...ids];
 
-  // Persist progress so a killed run doesn't lose everything. Only products
-  // refreshed THIS run go in — older cached entries aren't complete to
-  // `today` and would silently extend stale prices under the new asOf.
+  // Persist progress so a killed run doesn't lose everything. Every entry
+  // carries its own asOf, so writing the whole cache mid-run is always safe.
   function checkpoint() {
-    const snapshot = { asOf: today, products: {} };
-    for (const id of processed) snapshot.products[id] = cache.products[id];
-    fs.writeFileSync(CACHE, JSON.stringify(snapshot) + "\n");
+    fs.writeFileSync(CACHE, JSON.stringify(cache) + "\n");
   }
 
   async function worker() {
     while (queue.length) {
       const id = queue.shift();
-      const cached = cache.products[id];
+      const entry = cache.products[id];
       try {
         let daily;
-        if (!cached?.length || !prevAsOf) {
+        if (!entry) {
           daily = await fetchPriceHistory(id, EKALATHI_EPOCH, today);
           fullLoads++;
         } else {
-          daily = expandPoints(cached, prevAsOf);
-          if (prevAsOf < today) {
-            const delta = await fetchPriceHistory(id, prevAsOf, today);
+          daily = expandPoints(entry.points, entry.asOf);
+          if (entry.asOf < today) {
+            const delta = await fetchPriceHistory(id, entry.asOf, today);
             const byDate = new Map(daily.map((e) => [e.d, e]));
             for (const e of delta) byDate.set(e.d, e);
             daily = [...byDate.values()].sort((a, b) => a.d.localeCompare(b.d));
           }
         }
-        cache.products[id] = compressDaily(daily);
-        processed.add(id);
+        cache.products[id] = { asOf: today, points: compressDaily(daily) };
         map.set(id, daily);
       } catch {
-        failedIds.add(id);
-        map.set(id, cached ? expandPoints(cached, prevAsOf) : []);
+        failed++;
+        // keep the existing entry untouched — its history simply ends at its
+        // own asOf and the next successful run extends it
+        map.set(id, entry ? expandPoints(entry.points, entry.asOf) : []);
       }
       done++;
       if (done % 50 === 0) checkpoint();
@@ -202,11 +210,7 @@ async function updateHistories(cache, ids) {
   }
 
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
-  // Failed products are evicted so the next run does a clean full fetch for
-  // them — keeping stale points under today's asOf would freeze their price.
-  for (const id of failedIds) delete cache.products[id];
-  cache.asOf = today;
-  console.log(`  ${done}/${ids.length} done (${fullLoads} full loads${failedIds.size ? `, ${failedIds.size} failed` : ""})`);
+  console.log(`  ${done}/${ids.length} done (${fullLoads} full loads${failed ? `, ${failed} failed` : ""})`);
   return map;
 }
 
@@ -217,6 +221,10 @@ async function updateHistories(cache, ids) {
  */
 function detectAllTimeLow(history) {
   if (history.length < ATL_MIN_HISTORY) return null;
+
+  // stale history (fetch failing for days) must not present an old low as news
+  const staleCutoff = new Date(Date.now() - 2 * 86400000).toISOString().slice(0, 10);
+  if (history[history.length - 1].d < staleCutoff) return null;
 
   const latest = history[history.length - 1];
   const min = Math.min(...history.map((h) => h.p));
@@ -275,14 +283,27 @@ async function main() {
   console.log(`Total products fetched: ${products.length}`);
 
   const cache = loadCache();
+  const cachedCount = Object.keys(cache.products).length;
   console.log(
-    cache.asOf
-      ? `\nUpdating price histories (cache as of ${cache.asOf})...`
+    cachedCount
+      ? `\nUpdating price histories (${cachedCount} products cached)...`
       : `\nNo cache found — full history load for all ${products.length} products...`
   );
   const histories = await updateHistories(cache, products.map((p) => p.productMasterId));
   fs.writeFileSync(CACHE, JSON.stringify(cache) + "\n");
   console.log(`Cache saved → ${CACHE}`);
+
+  // If the history endpoint is down wholesale, keep the previous run's
+  // sparklines instead of publishing empty charts.
+  const prevDeals = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) : null;
+  const prevHistoryById = new Map(
+    (prevDeals?.deals || []).concat(prevDeals?.allTimeLows || []).map((d) => [d.productMasterId, d.history])
+  );
+  const sparklineOrPrev = (id) => {
+    const fresh = sparkline(histories.get(id) || []);
+    if (fresh.length >= 2) return fresh;
+    return prevHistoryById.get(id) || fresh;
+  };
 
   // ── Tab 1: top 20 by list discount ──────────────────────────────────────────
   const withDiscount = products
@@ -302,7 +323,7 @@ async function main() {
       price: p._curr,
       previousPrice: p._prev,
       discountPct: p._disc,
-      history: sparkline(histories.get(p.productMasterId) || []),
+      history: sparklineOrPrev(p.productMasterId),
     })
   );
 
