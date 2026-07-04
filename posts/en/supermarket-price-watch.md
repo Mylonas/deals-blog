@@ -12,18 +12,18 @@ Live prices for the 10 most-bought household staples in Cyprus, sourced from the
 
 > Updated 4 July 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
-| Staple | Cheapest Price | Store |
+| Staple | Cheapest Price | Brand |
 |---------|---------|--------|
-| Fresh Milk 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | LIDL |
-| Eggs | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | LIDL |
-| Halloumi 200g | **[€1.89](https://www.e-kalathi.gov.cy/product-information/254)** | LIDL |
-| Spaghetti 500g | **[€0.93](https://www.e-kalathi.gov.cy/product-information/1069)** | LIDL |
-| Olive Oil 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | LIDL |
-| Water 1.5L ×6 | **[€1.99](https://www.e-kalathi.gov.cy/product-information/2077)** | LIDL |
-| Yogurt | **[€1.79](https://www.e-kalathi.gov.cy/product-information/280)** | LIDL |
-| Rice 1kg | **[€1.90](https://www.e-kalathi.gov.cy/product-information/1120)** | LIDL |
-| Orange Juice 1L | **[€2.25](https://www.e-kalathi.gov.cy/product-information/2120)** | LIDL |
-| Coca-Cola 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | LIDL |
+| Fresh Milk 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
+| Eggs | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
+| Halloumi 200g | **[€1.89](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
+| Spaghetti 500g | **[€0.93](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
+| Olive Oil 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
+| Water 1.5L ×6 | **[€1.99](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
+| Yogurt 450g | **[€1.49](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
+| Rice 1kg | **[€1.90](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
+| Orange Juice 1L | **[€2.25](https://www.e-kalathi.gov.cy/product-information/2120)** | Delta |
+| Coca-Cola 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
 
 <!-- PRICES_END -->
 

@@ -42,11 +42,30 @@ const STAPLES = [
   { key: "spaghetti", search: "spaghetti",         label: "Spaghetti 500g",       labelEl: "Σπαγγέτι 500g",        labelRu: "Спагетти 500г" },
   { key: "oliveoil",  search: "virgin olive oil",  label: "Olive Oil 1L",         labelEl: "Ελαιόλαδο 1L",         labelRu: "Оливковое масло 1L" },
   { key: "water",     search: "Kykkos 1.5L",       label: "Water 1.5L ×6",        labelEl: "Νερό 1.5L ×6",         labelRu: "Вода 1.5L ×6" },
-  { key: "yogurt",    search: "yogurt",            label: "Yogurt",               labelEl: "Γιαούρτι",              labelRu: "Йогурт" },
+  { key: "yogurt",    search: "straggato yoghurt", label: "Yogurt 450g",          labelEl: "Γιαούρτι 450g",        labelRu: "Йогурт 450г" },
   { key: "rice",      search: "rice carolina",     label: "Rice 1kg",             labelEl: "Ρύζι 1kg",             labelRu: "Рис 1кг" },
   { key: "oj",        search: "orange juice 1L",   label: "Orange Juice 1L",      labelEl: "Χυμός Πορτοκάλι 1L",  labelRu: "Апельсиновый сок 1L" },
   { key: "cocacola",  search: "Coca Cola 1L",      label: "Coca-Cola 1L ×2",      labelEl: "Coca-Cola 1L ×2",      labelRu: "Кока-Кола 1L ×2" },
 ];
+
+// Known brands seen on e-kalathi — matched anywhere in the product name,
+// longest first so "Charalambides Christis" wins over "Charalambides".
+// The API has no brand field, so this is derived from the name.
+const KNOWN_BRANDS = [
+  "Charalambides Christis", "Charalambides", "Christis",
+  "Coca Cola", "Coca-Cola", "Mitsides", "Nikiforou", "Kykkos",
+  "Despina", "Delta", "Lanitis", "Alambra", "Pittas", "Athienitis",
+  "Grigoriou", "Zorbas", "Lurpak", "Total", "Fage", "3A",
+];
+
+function extractBrand(name) {
+  if (!name) return null;
+  const lower = name.toLowerCase();
+  for (const brand of KNOWN_BRANDS) {
+    if (lower.includes(brand.toLowerCase())) return brand;
+  }
+  return name.split(/\s+/)[0]; // fallback: leading word is almost always the brand
+}
 
 async function get(url) {
   const res = await fetch(url, {
@@ -116,6 +135,7 @@ async function main() {
       productId: product ? product.productMasterId : null,
       productCode: product ? product.code : null,
       productName: product ? product.name : null,
+      brand: product ? extractBrand(product.name) : null,
       store: store,
     })),
   };
@@ -138,17 +158,17 @@ async function main() {
 function buildMarkdownBlock(results, lang) {
   const today = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
   const t = {
-    en: { updated: `Updated ${today}`, col1: "Staple", col2: "Cheapest Price", col3: "Store" },
-    el: { updated: `Ενημέρωση ${today}`, col1: "Προϊόν", col2: "Φθηνότερη Τιμή", col3: "Κατάστημα" },
-    ru: { updated: `Обновлено ${today}`, col1: "Продукт", col2: "Мин. цена", col3: "Магазин" },
+    en: { updated: `Updated ${today}`, col1: "Staple", col2: "Cheapest Price", col3: "Brand" },
+    el: { updated: `Ενημέρωση ${today}`, col1: "Προϊόν", col2: "Φθηνότερη Τιμή", col3: "Μάρκα" },
+    ru: { updated: `Обновлено ${today}`, col1: "Продукт", col2: "Мин. цена", col3: "Бренд" },
   }[lang];
 
-  const rows = results.map(({ staple, product, store }) => {
+  const rows = results.map(({ staple, product }) => {
     const label = lang === "en" ? staple.label : lang === "el" ? staple.labelEl : staple.labelRu;
     if (!product) return `| ${label} | — | — |`;
     const link = `https://www.e-kalathi.gov.cy/product-information/${product.productMasterId}`;
     const price = `[€${product.startPrice.toFixed(2)}](${link})`;
-    return `| ${label} | **${price}** | ${store ?? "—"} |`;
+    return `| ${label} | **${price}** | ${extractBrand(product.name) ?? "—"} |`;
   }).join("\n");
 
   return `
