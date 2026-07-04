@@ -23,6 +23,13 @@ function writeJson(rel, data) {
   fs.writeFileSync(path.join(ROOT, rel), JSON.stringify(data, null, 2) + "\n");
 }
 
+/** Set (or insert) an `updated:` frontmatter field so readers see freshness. */
+function touchUpdated(content) {
+  const today = new Date().toISOString().slice(0, 10);
+  if (/^updated:.*$/m.test(content)) return content.replace(/^updated:.*$/m, `updated: "${today}"`);
+  return content.replace(/^(date:.*)$/m, `$1\nupdated: "${today}"`);
+}
+
 function updatePost(rel, newBlock) {
   const file = path.join(ROOT, rel);
   const content = fs.readFileSync(file, "utf8");
@@ -31,7 +38,8 @@ function updatePost(rel, newBlock) {
   const si = content.indexOf(START);
   const ei = content.indexOf(END);
   if (si === -1 || ei === -1) { console.error(`Markers not found in ${rel}`); return; }
-  fs.writeFileSync(file, content.slice(0, si + START.length) + "\n" + newBlock + "\n" + content.slice(ei), "utf8");
+  const next = content.slice(0, si + START.length) + "\n" + newBlock + "\n" + content.slice(ei);
+  fs.writeFileSync(file, touchUpdated(next), "utf8");
   console.log(`Updated ${rel}`);
 }
 

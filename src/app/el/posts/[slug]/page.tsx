@@ -53,6 +53,16 @@ export default async function PostPageEl({
               year: "numeric",
             })}
           </time>
+          {post.updated && post.updated !== post.date && (
+            <span className="text-sm text-amber-600 dark:text-amber-400 font-medium">
+              Ενημερώθηκε{" "}
+              {new Date(post.updated).toLocaleDateString("el-GR", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+            </span>
+          )}
         </div>
         <h1 className="text-3xl font-bold leading-tight mb-3">{post.title}</h1>
         <p className="text-lg text-gray-500 dark:text-gray-400">{post.summary}</p>
