@@ -153,11 +153,22 @@ function compressDaily(daily) {
  */
 async function updateHistories(cache, ids) {
   const today = new Date().toISOString().slice(0, 10);
+  const prevAsOf = cache.asOf; // snapshot — cache.asOf may be checkpointed mid-run
   const map = new Map();
+  const processed = new Set(); // ids refreshed to `today` this run
+  const failedIds = new Set();
   let done = 0;
-  let failed = 0;
   let fullLoads = 0;
   const queue = [...ids];
+
+  // Persist progress so a killed run doesn't lose everything. Only products
+  // refreshed THIS run go in — older cached entries aren't complete to
+  // `today` and would silently extend stale prices under the new asOf.
+  function checkpoint() {
+    const snapshot = { asOf: today, products: {} };
+    for (const id of processed) snapshot.products[id] = cache.products[id];
+    fs.writeFileSync(CACHE, JSON.stringify(snapshot) + "\n");
+  }
 
   async function worker() {
     while (queue.length) {
@@ -165,32 +176,37 @@ async function updateHistories(cache, ids) {
       const cached = cache.products[id];
       try {
         let daily;
-        if (!cached?.length || !cache.asOf) {
+        if (!cached?.length || !prevAsOf) {
           daily = await fetchPriceHistory(id, EKALATHI_EPOCH, today);
           fullLoads++;
         } else {
-          daily = expandPoints(cached, cache.asOf);
-          if (cache.asOf < today) {
-            const delta = await fetchPriceHistory(id, cache.asOf, today);
+          daily = expandPoints(cached, prevAsOf);
+          if (prevAsOf < today) {
+            const delta = await fetchPriceHistory(id, prevAsOf, today);
             const byDate = new Map(daily.map((e) => [e.d, e]));
             for (const e of delta) byDate.set(e.d, e);
             daily = [...byDate.values()].sort((a, b) => a.d.localeCompare(b.d));
           }
         }
         cache.products[id] = compressDaily(daily);
+        processed.add(id);
         map.set(id, daily);
       } catch {
-        failed++;
-        map.set(id, cached ? expandPoints(cached, cache.asOf) : []);
+        failedIds.add(id);
+        map.set(id, cached ? expandPoints(cached, prevAsOf) : []);
       }
       done++;
+      if (done % 50 === 0) checkpoint();
       if (done % 100 === 0) console.log(`  ${done}/${ids.length} histories updated...`);
     }
   }
 
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
+  // Failed products are evicted so the next run does a clean full fetch for
+  // them — keeping stale points under today's asOf would freeze their price.
+  for (const id of failedIds) delete cache.products[id];
   cache.asOf = today;
-  console.log(`  ${done}/${ids.length} done (${fullLoads} full loads${failed ? `, ${failed} failed` : ""})`);
+  console.log(`  ${done}/${ids.length} done (${fullLoads} full loads${failedIds.size ? `, ${failedIds.size} failed` : ""})`);
   return map;
 }
 
