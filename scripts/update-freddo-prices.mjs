@@ -57,10 +57,20 @@ async function searchVenues(query) {
   return venues;
 }
 
-/** First venue whose normalized name contains the normalized café name. */
+/**
+ * First venue whose normalized name contains the normalized café name.
+ * Also compares with spaces stripped so "Coffee Brands" matches Wolt's
+ * one-word "Coffeebrands Kaimakli".
+ */
 function matchVenue(venues, cafeName) {
   const want = normalize(cafeName);
-  return venues.find((v) => normalize(v.name).includes(want)) ?? null;
+  const wantTight = want.replace(/ /g, "");
+  return (
+    venues.find((v) => {
+      const n = normalize(v.name);
+      return n.includes(want) || n.replace(/ /g, "").includes(wantTight);
+    }) ?? null
+  );
 }
 
 async function fetchAssortment(slug) {
@@ -142,6 +152,9 @@ for (const item of data.items) {
     }
 
     console.log(`  ✓ venue: ${venue.name} [${venue.slug}]`);
+    if (item.notes === "Not on Wolt — price unavailable.") {
+      item.notes = "Also on Wolt."; // venue came back — drop the stale not-found note
+    }
     const assortment = await fetchAssortment(venue.slug);
 
     const freddo = findFreddo(assortment.items);

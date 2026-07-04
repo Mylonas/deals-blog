@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-04T16:25:49.072Z",
-  "scrapedAt": "2026-07-04T16:25:48.922Z",
+  "updatedAt": "2026-07-04T16:51:44.377Z",
+  "scrapedAt": "2026-07-04T16:51:44.217Z",
   "note": "Top drinks and Freddo prices scraped monthly via Playwright from Wolt/Foody/Bolt Food Cyprus. topDrinks is empty until the first monthly run.",
   "items": [
     {
@@ -53,14 +53,45 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": null,
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffeebrands-kaimakli",
         "foody": null,
         "bolt": null
       },
-      "topDrinks": [],
-      "freddo": null,
-      "delivery": null,
-      "notes": "Not on Wolt — price unavailable."
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 2.7,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 2.6,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 3.2,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Caramel Macchiato",
+          "price": 3.8,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 2.7,
+      "delivery": 2.7,
+      "notes": "Also on Wolt."
     },
     {
       "cafe": "Gregory's",
@@ -444,6 +475,636 @@
       "freddo": 3.95,
       "delivery": 3.95,
       "notes": "Also on Wolt & Bolt Food. Premium pricing."
+    },
+    {
+      "cafe": "Deli. Lidas",
+      "type": "independent",
+      "singleLocation": true,
+      "mapsUrl": "https://www.google.com/maps/search/Deli.%20Lidas%20Nicosia%20Cyprus",
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/deli-lidas",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 1.95,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 1.95,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Cappuccino",
+          "price": 1.95,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Frappe",
+          "price": 1.95,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Nescafe",
+          "price": 1.95,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 1.95,
+      "delivery": 1.95,
+      "notes": "Cheapest freddo on Wolt Nicosia."
+    },
+    {
+      "cafe": "Bake On Wood",
+      "type": "independent",
+      "singleLocation": true,
+      "mapsUrl": "https://www.google.com/maps/search/Bake%20On%20Wood%20Nicosia%20Cyprus",
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/bake-on-wood",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 2,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 2,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 2.5,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 2.5,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Mocha",
+          "price": 2.7,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 2,
+      "delivery": 2,
+      "notes": "Bakery-café, Nicosia."
+    },
+    {
+      "cafe": "Bubble Tale",
+      "type": "independent",
+      "singleLocation": true,
+      "mapsUrl": "https://www.google.com/maps/search/Bubble%20Tale%20Nicosia%20Cyprus",
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/bubble-tale-ledras",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Just Coffee Nut",
+          "price": 3.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Toffee Coffee",
+          "price": 3.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Cinnamon Spin'o",
+          "price": 3.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Espresso",
+          "price": 1.6,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Americano",
+          "price": 2.3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Espresso",
+          "price": 2.3,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 2.3,
+      "delivery": 2.3,
+      "notes": "Bubble tea shop on Ledras that also does freddo."
+    },
+    {
+      "cafe": "Vienna Bakeries",
+      "type": "chain",
+      "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/vienna-bakeries-latsia",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 2.3,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 2.3,
+      "delivery": 2.3,
+      "notes": "Bakery chain."
+    },
+    {
+      "cafe": "Bakalicom",
+      "type": "independent",
+      "singleLocation": true,
+      "mapsUrl": "https://www.google.com/maps/search/Bakalicom%20Nicosia%20Cyprus",
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/bakalicom",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 2.3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 2.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 2.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 2.3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Dark Mocha",
+          "price": 2.8,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 2.3,
+      "delivery": 2.3,
+      "notes": "Deli-café, Nicosia."
+    },
+    {
+      "cafe": "Le Gout",
+      "type": "chain",
+      "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/le-gout-geri",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 2.4,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte Macchiato",
+          "price": 3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 2.4,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 2.4,
+      "delivery": 2.4,
+      "notes": "Bakery chain with several Nicosia branches."
+    },
+    {
+      "cafe": "Coffee Cow",
+      "type": "independent",
+      "singleLocation": true,
+      "mapsUrl": "https://www.google.com/maps/search/Coffee%20Cow%20Nicosia%20Cyprus",
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-cow-strovolos",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 2.5,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 2.5,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 2.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Caramel Macchiato",
+          "price": 3.5,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 2.5,
+      "delivery": 2.5,
+      "notes": "Strovolos."
+    },
+    {
+      "cafe": "Brew Lab",
+      "type": "independent",
+      "singleLocation": true,
+      "mapsUrl": "https://www.google.com/maps/search/Brew%20Lab%20Nicosia%20Cyprus",
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/brew-lab",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 2.5,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Espresso Large",
+          "price": 3.2,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 2.5,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 2.5,
+      "delivery": 2.5,
+      "notes": "Specialty coffee, Nicosia."
+    },
+    {
+      "cafe": "Coffee Lab",
+      "type": "chain",
+      "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-lab-k-cineplex",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 2.7,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 3.2,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 2.7,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 3.2,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced  Caramel Latte",
+          "price": 3.5,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 2.7,
+      "delivery": 2.7,
+      "notes": "Also at K-Cineplex and Central Park."
+    },
+    {
+      "cafe": "Bruno Coffee Stores",
+      "type": "chain",
+      "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/bruno-coffee-stores-2",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 2.7,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 2.7,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Flat White",
+          "price": 2.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 3,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 2.7,
+      "delivery": 2.7,
+      "notes": "Greek chain."
+    },
+    {
+      "cafe": "Kawacom's Ipanema Espresso",
+      "type": "chain",
+      "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/kawacoms-ipanema-espresso-ifigeneias",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Freddo Espresso",
+          "price": 2.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 2.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Flat White",
+          "price": 3.3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 3.3,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 2.8,
+      "delivery": 2.8,
+      "notes": "Five branches across Nicosia."
+    },
+    {
+      "cafe": "PAUL",
+      "type": "chain",
+      "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/paul-zenas-kanther",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Espresso Single",
+          "price": 1.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Espresso Double",
+          "price": 2.3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Cyprus Coffee Single",
+          "price": 1.9,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Cyprus Coffee Double",
+          "price": 2.3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Americano",
+          "price": 2.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Espresso",
+          "price": 3.4,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 3.4,
+      "delivery": 3.4,
+      "notes": "French bakery chain."
+    },
+    {
+      "cafe": "Arabica Coffee House",
+      "type": "chain",
+      "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/arabica-coffee-strovolos",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Specialty Blend Coffee Beans",
+          "price": 10,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Κόκκοι καφέ μονής προέλευσης από το Περού",
+          "price": 10,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Κόκκοι καφέ μοναδικής προέλευσης Βραζιλίας",
+          "price": 10,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Κόκκοι καφέ μονής προέλευσης από την Ονδούρα",
+          "price": 10,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Espresso",
+          "price": 3.5,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 3.5,
+      "delivery": 3.5,
+      "notes": "Engomi & Strovolos."
+    },
+    {
+      "cafe": "Cafe La Mode",
+      "type": "chain",
+      "singleLocation": false,
+      "sources": {
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/cafe-la-mode",
+        "foody": null,
+        "bolt": null
+      },
+      "topDrinks": [
+        {
+          "name": "Local Water",
+          "price": 1.7,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Perrier Sparkling Water",
+          "price": 3.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Ice Tea Peach",
+          "price": 3.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Ice Tea Lemon",
+          "price": 3.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Coca Cola",
+          "price": 3.2,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Espresso",
+          "price": 4.2,
+          "platform": "wolt",
+          "popular": false
+        }
+      ],
+      "freddo": 4.2,
+      "delivery": 4.2,
+      "notes": "All-day café chain."
     }
   ]
 }

@@ -9,29 +9,44 @@ pinned: true
 Мы отслеживаем цены на Фреддо Эспрессо во всех крупных кофейных сетях и независимых заведениях Кипра. Кафе с единственной локацией имеют ссылку на Google Maps.
 
 <!-- COFFEE_PRICES_START -->
-*Цены последний раз проверены: 4 июл. 2026 г., 19:25 (EET). Популярные напитки обновляются ежемесячно через Wolt / Foody / Bolt Food.*
+*Цены последний раз проверены: 4 июл. 2026 г., 19:51 (EET). Популярные напитки обновляются ежемесячно через Wolt / Foody / Bolt Food.*
 
 ## Фреддо Эспрессо — По всему Кипру
 
 | Кафе | Цена | Через Доставку | Примечания |
 |------|-------|-------|-------|
+| **[Deli. Lidas](https://www.google.com/maps/search/Deli.%20Lidas%20Nicosia%20Cyprus)** | €1.95 | €1.95 | Cheapest freddo on Wolt Nicosia. |
+| **[Bake On Wood](https://www.google.com/maps/search/Bake%20On%20Wood%20Nicosia%20Cyprus)** | €2.00 | €2.00 | Bakery-café, Nicosia. |
+| **[Bubble Tale](https://www.google.com/maps/search/Bubble%20Tale%20Nicosia%20Cyprus)** | €2.30 | €2.30 | Bubble tea shop on Ledras that also does freddo. |
+| **Vienna Bakeries** | €2.30 | €2.30 | Bakery chain. |
+| **[Bakalicom](https://www.google.com/maps/search/Bakalicom%20Nicosia%20Cyprus)** | €2.30 | €2.30 | Deli-café, Nicosia. |
+| **Le Gout** | €2.40 | €2.40 | Bakery chain with several Nicosia branches. |
 | **Coffeeway** | €2.50 | €2.50 | Best value freddo island-wide. Drive-throughs available across Cyprus. |
+| **[Coffee Cow](https://www.google.com/maps/search/Coffee%20Cow%20Nicosia%20Cyprus)** | €2.50 | €2.50 | Strovolos. |
+| **[Brew Lab](https://www.google.com/maps/search/Brew%20Lab%20Nicosia%20Cyprus)** | €2.50 | €2.50 | Specialty coffee, Nicosia. |
+| **Coffee Brands** | €2.70 | €2.70 | Also on Wolt. |
+| **Coffee Lab** | €2.70 | €2.70 | Also at K-Cineplex and Central Park. |
+| **Bruno Coffee Stores** | €2.70 | €2.70 | Greek chain. |
 | **Gregory's** | €2.80 | €2.80 | Also on Wolt (+~€0.50). Good froth on freddo. |
 | **Coffee Island** | €2.80 | €2.80 | Also on Wolt & Bolt Food. |
+| **Kawacom's Ipanema Espresso** | €2.80 | €2.80 | Five branches across Nicosia. |
 | **Mikel Coffee** | €2.90 | €2.90 | Greek specialty chain. Also on Wolt. |
 | **Second Cup** | €2.95 | €2.95 | Canadian chain. |
+| **PAUL** | €3.40 | €3.40 | French bakery chain. |
+| **Arabica Coffee House** | €3.50 | €3.50 | Engomi & Strovolos. |
 | **Costa Coffee** | €3.70 | €3.70 | Also on Wolt & Bolt Food. |
 | **Gloria Jean's** | €3.80 | €3.80 | Also on Foody & Bolt Food. |
 | **Starbucks** | €3.95 | €3.95 | Also on Wolt & Bolt Food. Premium pricing. |
 | **Caffe Nero** | €4.00 | €4.00 | Also on Wolt & Bolt Food. |
+| **Cafe La Mode** | €4.20 | €4.20 | All-day café chain. |
 
-**Winner**: **Coffeeway** — €2.50
+**Winner**: **[Deli. Lidas](https://www.google.com/maps/search/Deli.%20Lidas%20Nicosia%20Cyprus)** — €1.95
 
 > Цены на доставку приблизительные и включают типичную комиссию платформы (Wolt / Bolt Food / Foody).
 
 ## Самые Популярные Напитки по Кафе
 
-*Популярные напитки — последнее обновление: 4 июл. 2026 г., 19:25.*
+*Популярные напитки — последнее обновление: 4 июл. 2026 г., 19:51.*
 
 ### Coffeeway
 
@@ -42,6 +57,16 @@ pinned: true
 | Iced Americano | €2.50 | Wolt |
 | Iced Latte | €3.00 | Wolt |
 | Caramel Temptation | €3.80 | Wolt |
+
+### Coffee Brands
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €2.70 | Wolt |
+| Freddo Cappuccino | €3.00 | Wolt |
+| Iced Americano | €2.60 | Wolt |
+| Iced Latte | €3.20 | Wolt |
+| Iced Caramel Macchiato | €3.80 | Wolt |
 
 ### Gregory's
 
@@ -121,4 +146,143 @@ pinned: true
 | Iced Americano | €3.85 | Wolt |
 | Iced Latte | €4.30 | Wolt |
 | Iced Caramel Macchiato | €5.95 | Wolt |
+
+### [Deli. Lidas](https://www.google.com/maps/search/Deli.%20Lidas%20Nicosia%20Cyprus)
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €1.95 | Wolt |
+| Freddo Cappuccino | €1.95 | Wolt |
+| Cappuccino | €1.95 | Wolt |
+| Frappe | €1.95 | Wolt |
+| Nescafe | €1.95 | Wolt |
+
+### [Bake On Wood](https://www.google.com/maps/search/Bake%20On%20Wood%20Nicosia%20Cyprus)
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €2.00 | Wolt |
+| Iced Americano | €2.00 | Wolt |
+| Freddo Cappuccino | €2.50 | Wolt |
+| Iced Latte | €2.50 | Wolt |
+| Iced Mocha | €2.70 | Wolt |
+
+### [Bubble Tale](https://www.google.com/maps/search/Bubble%20Tale%20Nicosia%20Cyprus)
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Just Coffee Nut | €3.80 | Wolt |
+| Toffee Coffee | €3.80 | Wolt |
+| Cinnamon Spin'o | €3.80 | Wolt |
+| Espresso | €1.60 | Wolt |
+| Americano | €2.30 | Wolt |
+| Freddo Espresso | €2.30 | Wolt |
+
+### Vienna Bakeries
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €2.30 | Wolt |
+
+### [Bakalicom](https://www.google.com/maps/search/Bakalicom%20Nicosia%20Cyprus)
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €2.30 | Wolt |
+| Freddo Cappuccino | €2.80 | Wolt |
+| Iced Latte | €2.80 | Wolt |
+| Iced Americano | €2.30 | Wolt |
+| Iced Dark Mocha | €2.80 | Wolt |
+
+### Le Gout
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €2.40 | Wolt |
+| Freddo Cappuccino | €3.00 | Wolt |
+| Iced Latte | €3.00 | Wolt |
+| Iced Latte Macchiato | €3.00 | Wolt |
+| Iced Americano | €2.40 | Wolt |
+
+### [Coffee Cow](https://www.google.com/maps/search/Coffee%20Cow%20Nicosia%20Cyprus)
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €2.50 | Wolt |
+| Freddo Cappuccino | €3.00 | Wolt |
+| Iced Americano | €2.50 | Wolt |
+| Iced Latte | €2.80 | Wolt |
+| Iced Caramel Macchiato | €3.50 | Wolt |
+
+### [Brew Lab](https://www.google.com/maps/search/Brew%20Lab%20Nicosia%20Cyprus)
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €2.50 | Wolt |
+| Freddo Cappuccino | €3.00 | Wolt |
+| Freddo Espresso Large | €3.20 | Wolt |
+| Iced Latte | €3.00 | Wolt |
+| Iced Americano | €2.50 | Wolt |
+
+### Coffee Lab
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €2.70 | Wolt |
+| Freddo Cappuccino | €3.20 | Wolt |
+| Iced Americano | €2.70 | Wolt |
+| Iced Latte | €3.20 | Wolt |
+| Iced  Caramel Latte | €3.50 | Wolt |
+
+### Bruno Coffee Stores
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €2.70 | Wolt |
+| Freddo Cappuccino | €3.00 | Wolt |
+| Iced Americano | €2.70 | Wolt |
+| Iced Flat White | €2.80 | Wolt |
+| Iced Latte | €3.00 | Wolt |
+
+### Kawacom's Ipanema Espresso
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €2.80 | Wolt |
+| Iced Americano | €2.80 | Wolt |
+| Freddo Cappuccino | €3.00 | Wolt |
+| Freddo Flat White | €3.30 | Wolt |
+| Iced Latte | €3.30 | Wolt |
+
+### PAUL
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Espresso Single | €1.80 | Wolt |
+| Espresso Double | €2.30 | Wolt |
+| Cyprus Coffee Single | €1.90 | Wolt |
+| Cyprus Coffee Double | €2.30 | Wolt |
+| Americano | €2.80 | Wolt |
+| Freddo Espresso | €3.40 | Wolt |
+
+### Arabica Coffee House
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Specialty Blend Coffee Beans | €10.00 | Wolt |
+| Κόκκοι καφέ μονής προέλευσης από το Περού | €10.00 | Wolt |
+| Κόκκοι καφέ μοναδικής προέλευσης Βραζιλίας | €10.00 | Wolt |
+| Κόκκοι καφέ μονής προέλευσης από την Ονδούρα | €10.00 | Wolt |
+| Freddo Espresso | €3.50 | Wolt |
+
+### Cafe La Mode
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Local Water | €1.70 | Wolt |
+| Perrier Sparkling Water | €3.80 | Wolt |
+| Ice Tea Peach | €3.80 | Wolt |
+| Ice Tea Lemon | €3.80 | Wolt |
+| Coca Cola | €3.20 | Wolt |
+| Freddo Espresso | €4.20 | Wolt |
 <!-- COFFEE_PRICES_END -->
