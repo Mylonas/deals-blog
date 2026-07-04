@@ -7,7 +7,13 @@ import {
 } from "recharts";
 
 type FuelStats = { min: number; avg: number; max: number };
-type HistoryEntry = { ts: string; "95": FuelStats; "98": FuelStats; diesel: FuelStats };
+type HistoryEntry = {
+  ts: string;
+  "95": FuelStats;
+  "98": FuelStats;
+  diesel: FuelStats;
+  heating?: FuelStats;
+};
 
 type Lang = "en" | "el" | "ru";
 type View = "min" | "avg" | "max";
@@ -18,6 +24,7 @@ const LABELS = {
     d7: "7 days", d30: "30 days", d90: "90 days", d365: "1 year",
     noData: "Not enough history yet — check back soon.",
     diesel: "Diesel",
+    heating: "Heating Oil",
     viewMin: "Lowest", viewAvg: "Average", viewMax: "Highest",
   },
   el: {
@@ -25,6 +32,7 @@ const LABELS = {
     d7: "7 ημέρες", d30: "30 ημέρες", d90: "90 ημέρες", d365: "1 χρόνος",
     noData: "Δεν υπάρχει αρκετό ιστορικό ακόμα — ελέγξτε ξανά σύντομα.",
     diesel: "Πετρέλαιο",
+    heating: "Πετρέλαιο Θέρμανσης",
     viewMin: "Χαμηλότερη", viewAvg: "Μέση", viewMax: "Υψηλότερη",
   },
   ru: {
@@ -32,6 +40,7 @@ const LABELS = {
     d7: "7 дней", d30: "30 дней", d90: "90 дней", d365: "1 год",
     noData: "Истории пока недостаточно — загляните позже.",
     diesel: "Дизель",
+    heating: "Печное топливо",
     viewMin: "Мин.", viewAvg: "Средняя", viewMax: "Макс.",
   },
 };
@@ -62,9 +71,10 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
       .filter(e => new Date(e.ts).getTime() >= cutoff && e["95"] && typeof e["95"] === "object")
       .map(e => ({
         date: formatDate(e.ts),
-        "95":   e["95"][view],
-        "98":   e["98"][view],
-        diesel: e.diesel[view],
+        "95":     e["95"][view],
+        "98":     e["98"][view],
+        diesel:   e.diesel[view],
+        heating:  e.heating?.[view] ?? null,
       }));
   }, [history, days, view]);
 
@@ -72,7 +82,11 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
     return <p className="text-sm text-gray-400 dark:text-gray-500 py-4">{t.noData}</p>;
   }
 
-  const prices = filtered.flatMap(e => [e["95"], e["98"], e.diesel]);
+  const prices = filtered.flatMap(e => {
+    const vals: number[] = [e["95"], e["98"], e.diesel];
+    if (e.heating !== null) vals.push(e.heating);
+    return vals;
+  });
   const minP = Math.floor((Math.min(...prices) - 0.05) * 100) / 100;
   const maxP = Math.ceil((Math.max(...prices) + 0.05) * 100) / 100;
 
@@ -142,9 +156,10 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
               }}
             />
             <Legend wrapperStyle={{ fontSize: "0.75rem" }} />
-            <Line type="monotone" dataKey="95"     name="Unleaded 95" stroke="#f59e0b" strokeWidth={2} dot={false} />
-            <Line type="monotone" dataKey="98"     name="Unleaded 98" stroke="#3b82f6" strokeWidth={2} dot={false} />
-            <Line type="monotone" dataKey="diesel" name={t.diesel}    stroke="#10b981" strokeWidth={2} dot={false} />
+            <Line type="monotone" dataKey="95"      name="Unleaded 95" stroke="#f59e0b" strokeWidth={2} dot={false} />
+            <Line type="monotone" dataKey="98"      name="Unleaded 98" stroke="#3b82f6" strokeWidth={2} dot={false} />
+            <Line type="monotone" dataKey="diesel"  name={t.diesel}    stroke="#10b981" strokeWidth={2} dot={false} />
+            <Line type="monotone" dataKey="heating" name={t.heating}   stroke="#ef4444" strokeWidth={2} dot={false} connectNulls={false} />
           </LineChart>
         </ResponsiveContainer>
       </div>
