@@ -66,10 +66,11 @@ const CUTS = [
 // Pork chop is a portion dish (Μπριζόλα Μερίδα / Pork Chop Portion) — never
 // sold in pitta, so it's matched separately without the pitta requirement.
 // Excluded lookalikes: beef/veal/lamb brizola, παϊδάκια (ribs), πανσέτα
-// (belly), bacon. Items under €5 are per-piece add-ons, not a portion.
+// (belly), bacon, and μπριζολάκι (the diminutive — a small chop, not a full
+// portion). Items under €5 are per-piece add-ons, not a portion.
 const PORKCHOP = (n) =>
   /pork ?chop|μπριζολ|brizol/.test(n) &&
-  !/μοσχαρ|beef|veal|αρν|lamb|κοτοπουλ|chicken|παιδακ|πανσετ|panset|bacon|μπεικον/.test(n) &&
+  !/μπριζολακ|brizolak|μοσχαρ|beef|veal|αρν|lamb|κοτοπουλ|chicken|παιδακ|πανσετ|panset|bacon|μπεικον|small|μικρ|κομματι|kommati|piece|τεμαχ|παιδικ|kids|child/.test(n) &&
   !PITA_RE.test(n);
 const PORKCHOP_MIN_CENTS = 500;
 
