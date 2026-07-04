@@ -9,6 +9,7 @@ type Item = {
   price: number | null;
   productId: number | null;
   productName: string | null;
+  brand?: string | null;
   store: string | null;
 };
 
@@ -109,8 +110,8 @@ export default function SupermarketTable({ items, lang, updatedAt }: { items: It
                     )}
                   </td>
                   <td className="px-4 py-3 text-gray-600 dark:text-gray-400">
-                    {item.productName ? (
-                      item.productName
+                    {item.brand || item.productName ? (
+                      <span title={item.productName ?? undefined}>{item.brand ?? item.productName}</span>
                     ) : item.productId ? (
                       <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline text-xs">
                         {t.noBrand} →
