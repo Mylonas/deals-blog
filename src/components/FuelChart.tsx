@@ -91,11 +91,16 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
   const prices = filtered.flatMap(e => {
     const vals: number[] = [e["95"], e["98"], e.diesel];
     if (e.heating !== null) vals.push(e.heating);
-    if (e.brent !== null) vals.push(e.brent);
     return vals;
   });
   const minP = Math.floor((Math.min(...prices) - 0.05) * 100) / 100;
   const maxP = Math.ceil((Math.max(...prices) + 0.05) * 100) / 100;
+
+  // Brent lives on its own right-hand axis so it doesn't squash the pump lines
+  const brentVals = filtered.map(e => e.brent).filter((v): v is number => v !== null);
+  const hasBrent = brentVals.length > 0;
+  const brentMin = hasBrent ? Math.floor((Math.min(...brentVals) - 0.02) * 100) / 100 : 0;
+  const brentMax = hasBrent ? Math.ceil((Math.max(...brentVals) + 0.02) * 100) / 100 : 1;
 
   const viewLabel: Record<View, string> = { min: t.viewMin, avg: t.viewAvg, max: t.viewMax };
 
@@ -147,12 +152,23 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
               interval="preserveStartEnd"
             />
             <YAxis
+              yAxisId="left"
               domain={[minP, maxP]}
               tickFormatter={v => `€${v.toFixed(3)}`}
               tick={{ fontSize: 11, fill: "currentColor" }}
               className="text-gray-500 dark:text-gray-400"
               width={60}
             />
+            {hasBrent && (
+              <YAxis
+                yAxisId="right"
+                orientation="right"
+                domain={[brentMin, brentMax]}
+                tickFormatter={v => `€${v.toFixed(3)}`}
+                tick={{ fontSize: 11, fill: "#8b5cf6" }}
+                width={60}
+              />
+            )}
             <Tooltip
               formatter={(v, name) => [`€${Number(v).toFixed(3)}`, name as string]}
               contentStyle={{
@@ -163,11 +179,13 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
               }}
             />
             <Legend wrapperStyle={{ fontSize: "0.75rem" }} />
-            <Line type="monotone" dataKey="95"      name="Unleaded 95" stroke="#f59e0b" strokeWidth={2} dot={false} />
-            <Line type="monotone" dataKey="98"      name="Unleaded 98" stroke="#3b82f6" strokeWidth={2} dot={false} />
-            <Line type="monotone" dataKey="diesel"  name={t.diesel}    stroke="#10b981" strokeWidth={2} dot={false} />
-            <Line type="monotone" dataKey="heating" name={t.heating}   stroke="#ef4444" strokeWidth={2} dot={false} connectNulls={false} />
-            <Line type="monotone" dataKey="brent"   name={t.brent}     stroke="#8b5cf6" strokeWidth={2} strokeDasharray="6 3" dot={false} connectNulls={false} />
+            <Line yAxisId="left"  type="monotone" dataKey="95"      name="Unleaded 95" stroke="#f59e0b" strokeWidth={2} dot={false} />
+            <Line yAxisId="left"  type="monotone" dataKey="98"      name="Unleaded 98" stroke="#3b82f6" strokeWidth={2} dot={false} />
+            <Line yAxisId="left"  type="monotone" dataKey="diesel"  name={t.diesel}    stroke="#10b981" strokeWidth={2} dot={false} />
+            <Line yAxisId="left"  type="monotone" dataKey="heating" name={t.heating}   stroke="#ef4444" strokeWidth={2} dot={false} connectNulls={false} />
+            {hasBrent && (
+              <Line yAxisId="right" type="monotone" dataKey="brent" name={t.brent}     stroke="#8b5cf6" strokeWidth={2} strokeDasharray="6 3" dot={false} connectNulls={false} />
+            )}
           </LineChart>
         </ResponsiveContainer>
       </div>
