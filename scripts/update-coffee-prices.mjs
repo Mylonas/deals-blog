@@ -57,58 +57,62 @@ function platformLabel(platform) {
   return MAP[platform] || platform;
 }
 
-function buildBlock(items, updatedAt, scrapedAt, lang) {
+function buildBlock(items, cities, updatedAt, scrapedAt, lang) {
   const locale = lang === "el" ? "el-GR" : lang === "ru" ? "ru-RU" : "en-GB";
   const ts = formatDate(updatedAt, locale);
   const scrapedTs = scrapedAt ? formatDate(scrapedAt, locale) : null;
 
   const T = {
     en: {
-      updated: `*Prices last checked: ${ts} (EET). Top drinks updated monthly via Wolt / Foody / Bolt Food.*`,
-      freddo: "Freddo Espresso — All Cyprus",
-      topDrinks: "Most Popular Drinks by Café",
+      updated: `*Prices last checked: ${ts} (EET). Updated weekly via Wolt.*`,
+      freddo: "Freddo Espresso — Cheapest by City",
+      topDrinks: "Most Popular Drinks by Café (Nicosia)",
       noTopDrinks: "*Top drinks data is being collected — check back next month.*",
       cafe: "Café", price: "Price", delivery: "Via Delivery App", notes: "Notes",
-      drink: "Drink", source: "Source", popular: "⭐ Popular",
-      deliveryNote: "> Delivery prices are approximate and include typical platform fee (Wolt / Bolt Food / Foody). Actual price may vary by branch.",
+      drink: "Drink", source: "Source", popular: "⭐ Popular", winner: "Cheapest",
+      deliveryNote: "> Prices are Wolt listings and may include a platform markup over the counter price. Cheapest branch shown per café brand.",
       scrapedNote: scrapedTs ? `*Top drinks last scraped: ${scrapedTs}.*` : "",
     },
     el: {
-      updated: `*Τελευταία ενημέρωση: ${ts} (ΕΕΤ). Δημοφιλή ποτά ανανεώνονται μηνιαία μέσω Wolt / Foody / Bolt Food.*`,
-      freddo: "Freddo Espresso — Πανκύπρια",
-      topDrinks: "Πιο Δημοφιλή Ποτά ανά Καφετέρια",
+      updated: `*Τελευταία ενημέρωση: ${ts} (ΕΕΤ). Εβδομαδιαία ενημέρωση μέσω Wolt.*`,
+      freddo: "Freddo Espresso — Φθηνότερα ανά Πόλη",
+      topDrinks: "Πιο Δημοφιλή Ποτά ανά Καφετέρια (Λευκωσία)",
       noTopDrinks: "*Τα δεδομένα για τα δημοφιλή ποτά συλλέγονται — επιστρέψτε τον επόμενο μήνα.*",
       cafe: "Καφετέρια", price: "Τιμή", delivery: "Μέσω Delivery", notes: "Σημειώσεις",
-      drink: "Ποτό", source: "Πηγή", popular: "⭐ Δημοφιλές",
-      deliveryNote: "> Οι τιμές delivery είναι κατά προσέγγιση και περιλαμβάνουν τυπική χρέωση πλατφόρμας (Wolt / Bolt Food / Foody).",
+      drink: "Ποτό", source: "Πηγή", popular: "⭐ Δημοφιλές", winner: "Φθηνότερο",
+      deliveryNote: "> Οι τιμές είναι από το Wolt και ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Εμφανίζεται το φθηνότερο υποκατάστημα ανά αλυσίδα.",
       scrapedNote: scrapedTs ? `*Δημοφιλή ποτά — τελευταία συλλογή: ${scrapedTs}.*` : "",
     },
     ru: {
-      updated: `*Цены последний раз проверены: ${ts} (EET). Популярные напитки обновляются ежемесячно через Wolt / Foody / Bolt Food.*`,
-      freddo: "Фреддо Эспрессо — По всему Кипру",
-      topDrinks: "Самые Популярные Напитки по Кафе",
+      updated: `*Цены последний раз проверены: ${ts} (EET). Обновляется еженедельно через Wolt.*`,
+      freddo: "Фреддо Эспрессо — Самые дешёвые по городам",
+      topDrinks: "Самые Популярные Напитки по Кафе (Никосия)",
       noTopDrinks: "*Данные о популярных напитках собираются — загляните в следующем месяце.*",
       cafe: "Кафе", price: "Цена", delivery: "Через Доставку", notes: "Примечания",
-      drink: "Напиток", source: "Источник", popular: "⭐ Популярное",
-      deliveryNote: "> Цены на доставку приблизительные и включают типичную комиссию платформы (Wolt / Bolt Food / Foody).",
+      drink: "Напиток", source: "Источник", popular: "⭐ Популярное", winner: "Самое дешёвое",
+      deliveryNote: "> Цены указаны по данным Wolt и могут включать наценку платформы. Для каждой сети показан самый дешёвый филиал.",
       scrapedNote: scrapedTs ? `*Популярные напитки — последнее обновление: ${scrapedTs}.*` : "",
     },
   };
 
   const t = T[lang];
 
-  // ── section 1: Freddo comparison table ──────────────────────────────────────
-  const sorted = [...items]
-    .filter((r) => r.freddo != null)
-    .sort((a, b) => a.freddo - b.freddo);
+  // ── section 1: per-city Freddo tables ───────────────────────────────────────
+  const citySections = (cities || []).map((city) => {
+    const rows = city.cafes.map((c) => `| **[${c.cafe}](${c.url})** | ${euro(c.freddo)} |`);
+    const winner = city.cafes[0];
+    return [
+      `### ${city.label[lang] ?? city.label.en}`,
+      "",
+      `| ${t.cafe} | ${t.price} |`,
+      `|------|-------|`,
+      ...rows,
+      "",
+      winner ? `**${t.winner}**: **[${winner.cafe}](${winner.url})** — ${euro(winner.freddo)}` : "",
+    ].join("\n");
+  });
 
-  const winner = sorted[0];
-
-  const fredTable = [
-    `| ${t.cafe} | ${t.price} | ${t.delivery} | ${t.notes} |`,
-    `|------|-------|-------|-------|`,
-    ...sorted.map((r) => `| **${cafeName(r)}** | ${euro(r.freddo)} | ${euro(r.delivery)} | ${r.notes || "—"} |`),
-  ].join("\n");
+  const fredTable = citySections.join("\n\n");
 
   // ── section 2: top drinks per café ──────────────────────────────────────────
   const cafesWithTopDrinks = items.filter((r) => r.topDrinks?.length > 0);
@@ -146,8 +150,6 @@ function buildBlock(items, updatedAt, scrapedAt, lang) {
 
 ${fredTable}
 
-**Winner**: **${cafeName(winner)}** — ${euro(winner.freddo)}
-
 ${t.deliveryNote}
 
 ${topDrinksSection}`;
@@ -161,10 +163,10 @@ const data = readJson(dataFile);
 data.updatedAt = new Date().toISOString();
 writeJson(dataFile, data);
 
-const { items, scrapedAt } = data;
+const { items, cities, scrapedAt } = data;
 
-updatePost("posts/en/cheapest-coffee-nicosia.md", buildBlock(items, data.updatedAt, scrapedAt, "en"));
-updatePost("posts/el/cheapest-coffee-nicosia.md", buildBlock(items, data.updatedAt, scrapedAt, "el"));
-updatePost("posts/ru/cheapest-coffee-nicosia.md", buildBlock(items, data.updatedAt, scrapedAt, "ru"));
+updatePost("posts/en/cheapest-coffee-nicosia.md", buildBlock(items, cities, data.updatedAt, scrapedAt, "en"));
+updatePost("posts/el/cheapest-coffee-nicosia.md", buildBlock(items, cities, data.updatedAt, scrapedAt, "el"));
+updatePost("posts/ru/cheapest-coffee-nicosia.md", buildBlock(items, cities, data.updatedAt, scrapedAt, "ru"));
 
 console.log("Coffee prices updated:", data.updatedAt);
