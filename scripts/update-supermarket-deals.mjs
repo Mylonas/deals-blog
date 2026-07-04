@@ -19,6 +19,7 @@ const OUT = path.join(ROOT, "src", "data", "supermarket-deals.json");
 
 const PAGE_SIZE = 200;
 const TOP_N = 20;
+const HISTORY_DAYS = 180;
 
 const CATEGORY_LABELS = {
   "WATER":                      { en: "Water",           el: "Νερό",               ru: "Вода" },
@@ -73,6 +74,23 @@ function discountPct(curr, prev) {
   return 0;
 }
 
+/**
+ * Daily price history from the public price-diagram endpoint.
+ * Note: this price is an across-chains figure, not the minimum — it gives the
+ * trend, not the exact deal price. Returns [{ d: "YYYY-MM-DD", p: number }].
+ */
+async function fetchPriceHistory(productMasterId) {
+  const to = new Date().toISOString().slice(0, 10);
+  const from = new Date(Date.now() - HISTORY_DAYS * 86400000).toISOString().slice(0, 10);
+  const url = `${API}/fetch-product-price-diagram?id=${productMasterId}&from=${from}&to=${to}`;
+  const res = await fetch(url, {
+    headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" },
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status} fetching history for ${productMasterId}`);
+  const entries = await res.json();
+  return entries.map((e) => ({ d: e.date, p: e.price }));
+}
+
 async function main() {
   console.log("Fetching ALL supermarket products from e-kalathi.gov.cy...");
 
@@ -113,8 +131,19 @@ async function main() {
       thumbnailUrl: p.productThumbnailUrl || null,
       eKalathiUrl: `https://www.e-kalathi.gov.cy/product-information/${p.productMasterId}`,
       availableAtChains: p.numberOfChains || null,
+      history: [],
     };
   });
+
+  console.log(`\nFetching ${HISTORY_DAYS}-day price history for each deal...`);
+  for (const d of deals) {
+    try {
+      d.history = await fetchPriceHistory(d.productMasterId);
+      console.log(`  ${d.productMasterId}: ${d.history.length} days`);
+    } catch (e) {
+      console.warn(`  ${d.productMasterId}: history failed — ${e.message}`);
+    }
+  }
 
   const output = {
     updatedAt: new Date().toISOString(),
