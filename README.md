@@ -102,6 +102,7 @@ deals-blog/
 |------|--------|--------|
 | Fuel prices | [eforms.eservices.cyprus.gov.cy](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) | POST form (CSRF token → form submit) |
 | Supermarket prices | [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy) | REST API (`/fetch-product-list`) |
+| Supermarket price history & all-time lows | [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy) | REST API (`/fetch-product-price-diagram`, daily prices since Sep 2025, paced + cached) |
 | Coffee prices | Manually curated in `src/data/coffee-prices.json` | JSON → markdown generation |
 | Trending topics | Google News RSS, Cyprus Mail, Philenews, Sigmalive | RSS parsing + keyword categorisation |
 
@@ -185,7 +186,7 @@ feature/my-feature  →  dev  →  master
 
 See [CHANGELOG.md](./CHANGELOG.md) for full history.
 
-Latest: **[v1.6.0](https://github.com/Mylonas/deals-blog/releases/tag/v1.6.0)** — Fuel price history chart (1 year, deduped), supermarket JSON cron fix, dark mode polish on dedicated pages.
+Latest: **[v1.7.0](https://github.com/Mylonas/deals-blog/releases/tag/v1.7.0)** — All-time lows tab live with e-Kalathi price history, fuel stats over the full station market, souvlaki portion-comparability fixes (verified against Foody & Bolt).
 
 Release procedure follows the project's [release guide](https://github.com/Mylonas/deals-blog/releases): semver tagging, CHANGELOG update, annotated git tag, structured release notes with rollback procedure.
 
