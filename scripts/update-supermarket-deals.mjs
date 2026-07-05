@@ -28,7 +28,10 @@ const EKALATHI_EPOCH = "2025-09-01"; // e-kalathi has no data before Sep 2025
 const ATL_RECENT_DAYS = 7;           // low must have first appeared within this window
 const ATL_MIN_HISTORY = 30;          // need at least this many days to call it an all-time low
 const ATL_MAX = 20;
-const CONCURRENCY = 8;
+// e-kalathi rate-limits bursts: 8 parallel workers made ~80% of history
+// fetches fail even with backoff, while paced sequential requests succeed.
+const CONCURRENCY = 2;
+const REQUEST_GAP_MS = 250; // per-worker pause between requests
 
 const CATEGORY_LABELS = {
   "WATER":                      { en: "Water",           el: "Νερό",               ru: "Вода" },
@@ -90,8 +93,8 @@ function discountPct(curr, prev) {
 async function fetchPriceHistory(productMasterId, from, to) {
   const url = `${API}/fetch-product-price-diagram?id=${productMasterId}&from=${from}&to=${to}`;
   let lastErr;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    if (attempt > 0) await new Promise((r) => setTimeout(r, 3000 * attempt)); // back off on rate limit
+  for (let attempt = 0; attempt < 4; attempt++) {
+    if (attempt > 0) await new Promise((r) => setTimeout(r, 10000 * attempt)); // back off on rate limit
     try {
       const res = await fetch(url, {
         headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" },
@@ -206,6 +209,7 @@ async function updateHistories(cache, ids) {
       done++;
       if (done % 50 === 0) checkpoint();
       if (done % 100 === 0) console.log(`  ${done}/${ids.length} histories updated...`);
+      await new Promise((r) => setTimeout(r, REQUEST_GAP_MS)); // pace requests — see CONCURRENCY note
     }
   }
 
