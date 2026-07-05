@@ -52,14 +52,15 @@ jobs:
           git add src/data/price-history-shards/shard-${{ matrix.shard }}.json 2>/dev/null || exit 0
           git diff --cached --quiet && exit 0
           git commit -m "chore: price history shard ${{ matrix.shard }} $(date +'%Y-%m-%d')"
-          # 10 shards push near-simultaneously; each touches only its own
-          # file, so rebase always succeeds — just retry until a push lands.
-          for i in 1 2 3 4 5 6 7 8 9 10; do
-            git push origin master && exit 0
-            sleep $((RANDOM % 8 + 2))
+          # 10 shards push near-simultaneously (worst when they all time out
+          # together); each touches only its own file, so rebase always
+          # succeeds — rebase first, then retry with jitter until a push lands.
+          for i in $(seq 1 15); do
             git pull --rebase origin master
+            git push origin master && exit 0
+            sleep $((RANDOM % 10 + 2))
           done
-          echo "::error::shard ${{ matrix.shard }}: push failed after 10 attempts"
+          echo "::error::shard ${{ matrix.shard }}: push failed after 15 attempts"
           exit 1
 
   merge:
@@ -85,8 +86,13 @@ jobs:
 
       # Everything the shards fetched is already current in the cache, so this
       # only re-fetches stragglers, then recomputes deals + all-time lows.
+      # When the API is in a heavy-throttle mood the straggler crawl can take
+      # hours — cap it and commit whatever the merge + partial crawl produced
+      # (the deals script checkpoints its cache as it goes).
       - name: Recompute deals and all-time lows
         run: node scripts/update-supermarket-deals.mjs
+        timeout-minutes: 30
+        continue-on-error: true
 
       - name: Check for changes
         id: changes
