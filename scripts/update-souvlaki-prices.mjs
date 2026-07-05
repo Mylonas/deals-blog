@@ -44,13 +44,18 @@ function normalize(s) {
 // "Ενισχυμένη" (also sold as "large pitta") is its own format with its own cuts.
 const PITA_RE = /pita|πιτα/;
 const GREEK_RE = /ελληνικ|greek|ellinik/;
-const MINI_RE = /μινι|mini|παιδικ|paidik|kids|child/;
+const MINI_RE = /μινι|mini|μικρ|mikr|παιδικ|paidik|kids|child/;
 const LARGE_RE = /ενισχυμεν|enisximen|enishimen|large|μεγαλ|διπλ|double|\bxl\b/;
 // Most venues sell large as a size option on the base item, not a separate
 // item — resolve option groups that are clearly about size and price the
 // upgrade as base + delta.
 const SIZE_GROUP_RE = /μεγεθ|size|μεριδα|portion|πιτα|pita/;
 const NOT_SIZE_VALUE_RE = /σαλατ|salad|πατατ|fries|chips|ποτο|drink|αναψυκτικ|dip|σως|sauce/;
+// Some venues default the size group to a small pitta at +0 (e.g. Mr. Boo:
+// μικρό +0, κανονικό +3, ενισχυμένο +5) — there the item base price is the
+// SMALL, and the regular cut is base + the κανονικό delta.
+const SMALL_VALUE_RE = /μικρ|mikr|small|μινι|mini|παιδικ|paidik|kids|child/;
+const REGULAR_VALUE_RE = /κανονικ|kanonik|regular|normal/;
 
 const PORK_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /pork|χοιριν/.test(n) && !/chicken|κοτοπουλ/.test(n);
 const CHICKEN_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /chicken|κοτοπουλ/.test(n);
@@ -103,31 +108,53 @@ async function listSouvlakiVenues(lat, lon) {
 }
 
 /**
- * Cheapest large-size upgrade attached to an item, in euros added to the
- * base price. Only size-type option groups count, and salad/fries/drink
- * upgrade values never do.
+ * Size-option deltas attached to an item, in euros added to the base price.
+ * Only size-type option groups count, and salad/fries/drink upgrade values
+ * never do. Returns:
+ *   - large:   cheapest large-size upgrade, or null
+ *   - regular: extra cost of the regular size when the group defaults to a
+ *              zero-cost small (base price = small pitta), else 0
  */
-function largeUpgradeDelta(item, optionsById) {
-  let best = null;
+function sizeDeltas(item, optionsById) {
+  let large = null;
+  let regular = 0;
   for (const ref of item.options || []) {
     const group = optionsById.get(ref.option_id) ?? optionsById.get(ref.id);
     const groupName = normalize(group?.name ?? ref.name ?? "");
     if (!SIZE_GROUP_RE.test(groupName)) continue;
+    let hasFreeSmall = false;
+    let regularDelta = null;
     for (const value of group?.values || []) {
       const vn = normalize(value.name || "");
-      if (!LARGE_RE.test(vn) || NOT_SIZE_VALUE_RE.test(vn)) continue;
+      if (NOT_SIZE_VALUE_RE.test(vn)) continue;
       if (typeof value.price !== "number" || value.price < 0) continue;
       const delta = value.price / 100;
-      if (best == null || delta < best) best = delta;
+      if (LARGE_RE.test(vn)) {
+        if (large == null || delta < large) large = delta;
+      } else if (SMALL_VALUE_RE.test(vn) && delta === 0) {
+        hasFreeSmall = true;
+      } else if (REGULAR_VALUE_RE.test(vn)) {
+        if (regularDelta == null || delta < regularDelta) regularDelta = delta;
+      }
     }
+    // zero-cost small alongside a paid regular ⇒ the base price is the small
+    if (hasFreeSmall && regularDelta > 0) regular = regularDelta;
   }
-  return best;
+  return { large, regular };
 }
 
 function extractCuts(assortment) {
   const items = assortment.items || [];
   const optionsById = new Map();
   for (const o of assortment.options || []) optionsById.set(o.id, o);
+  // menu category per item — some venues put the portion signal there instead
+  // of the item name (e.g. Fettas: "Pork Souvlaki Pita" €5.25 under
+  // "GREEK PITA WRAPS" vs the same name €7.80 under "CYPRIOT PITTA")
+  const categoryOf = new Map();
+  for (const c of assortment.categories || []) {
+    const cn = normalize(c.name);
+    for (const id of c.item_ids || []) categoryOf.set(id, cn);
+  }
 
   const prices = {};
   const take = (key, eur) => {
@@ -138,24 +165,26 @@ function extractCuts(assortment) {
     // items priced 0 are "configure options" placeholders — not a real price
     if (item.price == null || item.price < 100) continue;
     const n = normalize(item.name);
+    const cat = categoryOf.get(item.id) || "";
     const eur = item.price / 100;
 
     // pork chop: portion dish, no pitta in the name
     if (PORKCHOP(n) && item.price >= PORKCHOP_MIN_CENTS) take("porkchop", eur);
 
-    if (!PITA_RE.test(n)) continue;
-    if (GREEK_RE.test(n) || MINI_RE.test(n)) continue; // smaller portions — never counted
+    if (!PITA_RE.test(n) && !PITA_RE.test(cat)) continue;
+    // smaller portions — never counted, whether flagged in the name or the category
+    if (GREEK_RE.test(n) || MINI_RE.test(n) || GREEK_RE.test(cat) || MINI_RE.test(cat)) continue;
     const isLarge = LARGE_RE.test(n);
 
     for (const cut of CUTS) {
       if ((cut.size === "large") !== isLarge) continue;
       if (!cut.test(n)) continue;
-      take(cut.key, eur);
+      const { large, regular } = sizeDeltas(item, optionsById);
+      // when the size group defaults to a free small, base price is the
+      // small pitta — the regular cut costs base + regular delta
+      take(cut.key, eur + (isLarge ? 0 : regular));
       // large sold as a size option on the regular item: base + upgrade delta
-      if (cut.largeKey) {
-        const delta = largeUpgradeDelta(item, optionsById);
-        if (delta != null) take(cut.largeKey, eur + delta);
-      }
+      if (cut.largeKey && large != null) take(cut.largeKey, eur + large);
     }
   }
   return prices;
