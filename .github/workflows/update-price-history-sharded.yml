@@ -1,0 +1,113 @@
+name: Update Price History (Sharded)
+
+# Fetches e-kalathi daily price history using 10 parallel runners — each
+# matrix job gets its own VM (its own IP), so no single IP makes enough
+# requests to trip the rate limiter (~48 products per shard).
+#
+# Failure-tolerant by design:
+#   - fail-fast is off: one dead shard never cancels the others
+#   - each shard checkpoints its file as it goes and commits with if: always(),
+#     so a job that dies halfway still lands the products it fetched
+#   - the merge job runs with if: always() and combines whatever shards exist,
+#     then recomputes deals + all-time lows from the merged cache
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 5 * * *" # daily, before the 06:00 UTC deals dispatch
+
+jobs:
+  shard:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Fetch price histories for shard ${{ matrix.shard }}
+        env:
+          SHARD: ${{ matrix.shard }}
+          SHARDS: "10"
+        run: node scripts/fetch-price-history-shard.mjs
+        timeout-minutes: 15
+
+      # Runs even when the fetch step failed or timed out — the shard file is
+      # checkpointed continuously, so partial results are worth committing.
+      - name: Commit shard results (even on failure)
+        if: always()
+        run: |
+          git config user.name "DealsHub Bot"
+          git config user.email "bot@dealshub.cy"
+          git add src/data/price-history-shards/shard-${{ matrix.shard }}.json 2>/dev/null || exit 0
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: price history shard ${{ matrix.shard }} $(date +'%Y-%m-%d')"
+          # 10 shards push near-simultaneously; each touches only its own
+          # file, so rebase always succeeds — just retry until a push lands.
+          for i in 1 2 3 4 5 6 7 8 9 10; do
+            git push origin master && exit 0
+            sleep $((RANDOM % 8 + 2))
+            git pull --rebase origin master
+          done
+          echo "::error::shard ${{ matrix.shard }}: push failed after 10 attempts"
+          exit 1
+
+  merge:
+    needs: shard
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - name: Checkout (fresh — includes all shard commits)
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Merge shards into the shared history cache
+        run: node scripts/merge-price-history-shards.mjs
+
+      # Everything the shards fetched is already current in the cache, so this
+      # only re-fetches stragglers, then recomputes deals + all-time lows.
+      - name: Recompute deals and all-time lows
+        run: node scripts/update-supermarket-deals.mjs
+
+      - name: Check for changes
+        id: changes
+        run: git diff --quiet || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "DealsHub Bot"
+          git config user.email "bot@dealshub.cy"
+          git add src/data/supermarket-deals.json src/data/product-price-history.json
+          git commit -m "chore: merge price history shards $(date +'%Y-%m-%d')"
+          for i in 1 2 3 4 5; do
+            git push origin master && exit 0
+            sleep $((RANDOM % 8 + 2))
+            git pull --rebase origin master
+          done
+          exit 1
+
+      - name: Trigger Cloudflare redeploy
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref master
