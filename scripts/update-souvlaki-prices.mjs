@@ -37,12 +37,14 @@ function normalize(s) {
 }
 
 // All cuts are matched in pita format only, so venues are compared like-for-like.
-// Plain "pita" in Cyprus means Cypriot pitta and counts as-is; only items
-// explicitly marked as Greek pitta (ελληνική) are excluded — that's a much
-// smaller portion and not comparable.
+// Plain "pita" in Cyprus means Cypriot pitta and counts as-is; items marked as
+// Greek pitta (ελληνική), mini, or kids are excluded — those are much smaller
+// portions and not comparable (verified against Foody/Bolt menus: e.g. Kazamias
+// sells a €4.50 mini next to the €8.00 regular Cypriot pita).
 // "Ενισχυμένη" (also sold as "large pitta") is its own format with its own cuts.
 const PITA_RE = /pita|πιτα/;
 const GREEK_RE = /ελληνικ|greek|ellinik/;
+const MINI_RE = /μινι|mini|παιδικ|paidik|kids|child/;
 const LARGE_RE = /ενισχυμεν|enisximen|enishimen|large|μεγαλ|διπλ|double|\bxl\b/;
 // Most venues sell large as a size option on the base item, not a separate
 // item — resolve option groups that are clearly about size and price the
@@ -142,7 +144,7 @@ function extractCuts(assortment) {
     if (PORKCHOP(n) && item.price >= PORKCHOP_MIN_CENTS) take("porkchop", eur);
 
     if (!PITA_RE.test(n)) continue;
-    if (GREEK_RE.test(n)) continue; // Greek pitta is a smaller portion — never counted
+    if (GREEK_RE.test(n) || MINI_RE.test(n)) continue; // smaller portions — never counted
     const isLarge = LARGE_RE.test(n);
 
     for (const cut of CUTS) {
