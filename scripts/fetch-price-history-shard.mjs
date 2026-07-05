@@ -43,9 +43,25 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function fetchAllProductIds() {
   const ids = [];
   for (let page = 0; ; page++) {
-    const res = await fetch(`${API}/fetch-product-list?page=${page}&size=${PAGE_SIZE}&productName=`, { headers: HEADERS });
-    if (!res.ok) throw new Error(`product list HTTP ${res.status}`);
-    const json = await res.json();
+    // retry like history fetches — a single transient failure here would
+    // otherwise kill the whole shard before it fetched anything
+    let json;
+    let lastErr;
+    for (let attempt = 0; attempt < 4; attempt++) {
+      if (attempt > 0) await sleep(10000 * attempt);
+      try {
+        const res = await fetch(`${API}/fetch-product-list?page=${page}&size=${PAGE_SIZE}&productName=`, {
+          headers: HEADERS,
+          signal: AbortSignal.timeout(20000),
+        });
+        if (!res.ok) { lastErr = new Error(`product list HTTP ${res.status}`); continue; }
+        json = await res.json();
+        break;
+      } catch (e) {
+        lastErr = e;
+      }
+    }
+    if (!json) throw lastErr;
     for (const p of json.content || []) ids.push(p.productMasterId);
     if (json.last || (json.content || []).length < PAGE_SIZE) break;
     await sleep(REQUEST_GAP_MS);
