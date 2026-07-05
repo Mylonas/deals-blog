@@ -10,6 +10,27 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.7.0] — 2026-07-05
+
+### Added
+- **All-time lows on the supermarket page** — the "All-time lows" tab now has live data: products whose price just dropped to the lowest level ever recorded on e-Kalathi (first entry: Grigoriou Salami Extra 300g at €1.80, 3% below its previous record)
+- Full daily price-history retrieval from e-Kalathi via the public `fetch-product-price-diagram` endpoint (per-product, back to Sep 2025), cached incrementally in `src/data/product-price-history.json`
+
+### Changed
+- `update-supermarket-deals.mjs` paces e-Kalathi history fetches (concurrency 8 → 2, 250 ms request gap, 10 s+ retry backoff) — bursts tripped the API rate limiter and made ~80% of history fetches fail
+
+### Fixed
+- **Fuel price history stats covered only the 100 cheapest stations** — the chart's "Highest" line showed the 100th-cheapest price (€1.467 for Unleaded 95) instead of the true market maximum (€1.639 across all 319 stations); averages were also biased low. Stats now cover every station, and the history dedupe check compares avg/max too
+- **Souvlaki prices counted small portions as the regular cut** (verified against Foody and Bolt Food menus):
+  - mini/kids pitas in item names are now excluded (Kazamias showed €4.50 for a mini instead of €8.00 regular)
+  - venues that default the size option to a free small pitta are now priced at base + regular delta (Mr. Boo pork: €5 → €8)
+  - Greek-pita/mini exclusions and the pita requirement now also inspect the menu category (Fettas sold identically-named items at €5.25 under "Greek Pita Wraps" and €7.80 under "Cypriot Pitta")
+
+### Rollback
+Redeploy `v1.6.0` tag via Cloudflare Pages dashboard, or revert the relevant merge commits and push to master.
+
+---
+
 ## [1.6.0] — 2026-06-29
 
 ### Added
