@@ -263,10 +263,14 @@ async function main() {
     const html = await fetchPricesForType(fuel.id, token, cookies);
     const stations = extractStations(html, 7);
     const allStations = extractStations(html, 100);
+    // every station, untruncated — min/avg/max stats must cover the whole
+    // market, not just the 100 cheapest (the old cap made "max" really mean
+    // "100th cheapest": €1.467 instead of the true €1.639 for 95)
+    const everyStation = extractStations(html, Infinity);
 
     const min = stations.length > 0 ? stations[0].price : 0;
-    console.log(`  ${fuel.label95En}: ${allStations.length} stations total, cheapest €${min.toFixed(3)}`);
-    results.push({ stations, allStations, min, fuelId: fuel.id, labelEn: fuel.label95En });
+    console.log(`  ${fuel.label95En}: ${everyStation.length} stations total, cheapest €${min.toFixed(3)}`);
+    results.push({ stations, allStations, everyStation, min, fuelId: fuel.id, labelEn: fuel.label95En });
   }
 
   // Write JSON for the interactive page
@@ -292,10 +296,10 @@ async function main() {
     return { min, avg, max };
   }
 
-  const stats95      = stats(results[0].allStations);
-  const stats98      = stats(results[1].allStations);
-  const statsDiesel  = stats(results[2].allStations);
-  const statsHeating = stats(results[3].allStations);
+  const stats95      = stats(results[0].everyStation);
+  const stats98      = stats(results[1].everyStation);
+  const statsDiesel  = stats(results[2].everyStation);
+  const statsHeating = stats(results[3].everyStation);
 
   const historyFile = fs.existsSync(HISTORY_OUT)
     ? JSON.parse(fs.readFileSync(HISTORY_OUT, "utf8"))
@@ -313,11 +317,12 @@ async function main() {
   }
 
   const last = historyFile.history[historyFile.history.length - 1];
+  const changed = (prev, curr) => !prev || prev.min !== curr.min || prev.avg !== curr.avg || prev.max !== curr.max;
   const pricesChanged = !last
-    || last["95"].min !== stats95.min
-    || last["98"].min !== stats98.min
-    || last.diesel.min !== statsDiesel.min
-    || (last.heating?.min ?? -1) !== statsHeating.min;
+    || changed(last["95"], stats95)
+    || changed(last["98"], stats98)
+    || changed(last.diesel, statsDiesel)
+    || changed(last.heating, statsHeating);
 
   if (validData && pricesChanged) {
     const brent = await fetchBrentEurPerLitre();
