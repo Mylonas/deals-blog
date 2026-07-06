@@ -10,7 +10,7 @@ pinned: true
 We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Limassol, Larnaca, Paphos and the Ayia Napa area — and show the cheapest places in each city. Prices come from Wolt listings and are updated weekly.
 
 <!-- COFFEE_PRICES_START -->
-*Prices last checked: 6 Jul 2026, 03:10 (EET). Updated weekly via Wolt.*
+*Prices last checked: 6 Jul 2026, 07:53 (EET). Updated weekly via Wolt.*
 
 ## Freddo Espresso — Cheapest by City
 
