@@ -37,7 +37,7 @@ const T = {
     denied: "Location access denied — showing cheapest first.",
     unsupported: "Geolocation is not supported by this browser.",
     empty: "No venues offer this cut in pita right now.",
-    note: "Pitta prices exclude Greek pitta (smaller portion); large pitta = ενισχυμένη, priced from the venue's size upgrade when sold as an option. Pork chop is a portion dish. Prices are Wolt listings and may include a platform markup. Updated weekly.",
+    note: "Prices are for the regular Cypriot pitta — Greek, Arabic, mini and half pittas are excluded as smaller/non-comparable, and where a venue's default is a smaller size the regular (κανονική) upgrade price is used. Large pitta = ενισχυμένη. Pork chop is a portion dish. Prices are Wolt listings and may include a platform markup. Updated weekly.",
   },
   el: {
     cuts: { souvlaki: "Σουβλάκι Χοιρινό", chicken: "Σουβλάκι Κοτόπουλο", mix: "Μιχτή", souvlakiLarge: "Χοιρινό — Ενισχυμένη", chickenLarge: "Κοτόπουλο — Ενισχυμένη", mixLarge: "Μιχτή — Ενισχυμένη", porkchop: "Μπριζόλα (μερίδα)" } as Record<CutKey, string>,
@@ -47,7 +47,7 @@ const T = {
     denied: "Δεν δόθηκε πρόσβαση τοποθεσίας — εμφανίζονται τα φθηνότερα πρώτα.",
     unsupported: "Ο περιηγητής δεν υποστηρίζει γεωεντοπισμό.",
     empty: "Κανένα μαγαζί δεν προσφέρει αυτό το είδος σε πίτα αυτή τη στιγμή.",
-    note: "Οι τιμές πίτας δεν περιλαμβάνουν ελληνική πίτα (μικρότερη μερίδα)· η ενισχυμένη υπολογίζεται και από την επιλογή μεγέθους όπου προσφέρεται. Η μπριζόλα είναι μερίδα. Τιμές από το Wolt, ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Εβδομαδιαία ενημέρωση.",
+    note: "Οι τιμές αφορούν κανονική κυπριακή πίτα — ελληνική, αραβική, μίνι και μισή πίτα εξαιρούνται ως μικρότερες/μη συγκρίσιμες, και όπου το προεπιλεγμένο μέγεθος είναι μικρότερο χρησιμοποιείται η τιμή της κανονικής. Ενισχυμένη = μεγάλη πίτα. Η μπριζόλα είναι μερίδα. Τιμές από το Wolt, ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Εβδομαδιαία ενημέρωση.",
   },
   ru: {
     cuts: { souvlaki: "Сувлаки (свинина)", chicken: "Сувлаки (курица)", mix: "Микс", souvlakiLarge: "Свинина — большая пита", chickenLarge: "Курица — большая пита", mixLarge: "Микс — большая пита", porkchop: "Свиная отбивная (порция)" } as Record<CutKey, string>,
@@ -57,7 +57,7 @@ const T = {
     denied: "Доступ к геолокации не разрешён — показаны самые дешёвые.",
     unsupported: "Браузер не поддерживает геолокацию.",
     empty: "Сейчас ни одно заведение не предлагает этот вариант в пите.",
-    note: "Цены на питу не включают греческую питу (меньшая порция); большая пита (ενισχυμένη) считается и по опции размера, где она предлагается. Свиная отбивная — порционное блюдо. Цены по данным Wolt, возможна наценка платформы. Обновляется еженедельно.",
+    note: "Цены указаны за обычную кипрскую питу — греческая, арабская, мини и половинная пита исключены как меньшие/несравнимые; если размер по умолчанию меньше, берётся цена обычного размера (κανονική). Большая пита = ενισχυμένη. Свиная отбивная — порционное блюдо. Цены по данным Wolt, возможна наценка платформы. Обновляется еженедельно.",
   },
 };
 
