@@ -128,8 +128,10 @@ export default function SouvlakiMap({
         const min = Math.min(...prices);
         return (L as any).divIcon({
           className: "",
+          // inline-block: the icon wrapper is 0×0, a block div would collapse
+          // to zero width and the background would only cover its padding
           html: `<div style="
-              background:#1e293b;color:#fff;font:600 11px/1.2 system-ui,sans-serif;
+              display:inline-block;background:#1e293b;color:#fff;font:600 11px/1.2 system-ui,sans-serif;
               padding:5px 8px;border-radius:999px;border:2px solid #fff;
               box-shadow:0 1px 4px rgba(0,0,0,.45);white-space:nowrap;text-align:center;
               transform:translate(-50%,-50%);">${c.getChildCount()} · ${t.from} €${min.toFixed(2)}</div>`,
@@ -142,8 +144,10 @@ export default function SouvlakiMap({
       const cheapest = v.price <= minPrice + 0.001;
       const icon = L.divIcon({
         className: "", // no default styles — the pill carries everything
+        // inline-block: the icon wrapper is 0×0, a block div would collapse
+        // to zero width and the background would only cover its padding
         html: `<div style="
-            background:${cheapest ? "#16a34a" : "#f59e0b"};color:#fff;
+            display:inline-block;background:${cheapest ? "#16a34a" : "#f59e0b"};color:#fff;
             font:600 11px/1 system-ui,sans-serif;padding:4px 7px;border-radius:999px;
             box-shadow:0 1px 4px rgba(0,0,0,.4);white-space:nowrap;transform:translate(-50%,-100%);
             border:2px solid #fff;">€${v.price.toFixed(2)}</div>`,
