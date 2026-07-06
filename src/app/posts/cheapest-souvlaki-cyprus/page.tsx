@@ -23,8 +23,9 @@ export default function CheapestSouvlakiEN() {
       </h1>
       <p className="text-gray-500 dark:text-gray-400 mb-8">
         Souvlaki pita prices across Cyprus — pork souvlaki, chicken souvlaki, pork
-        chop and mix — always sorted cheapest first. Pick your city, or use the
-        near-me button to sort by distance. Updated weekly from Wolt.
+        chop and mix — always sorted cheapest first. Pick your city, switch to the
+        map view to see venues around you, or use the near-me button to sort by
+        distance. Updated weekly from Wolt.
       </p>
 
       <SouvlakiTable data={data as any} lang="en" />
