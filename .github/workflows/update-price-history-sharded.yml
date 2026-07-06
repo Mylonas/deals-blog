@@ -73,10 +73,17 @@ jobs:
       contents: write
       actions: write
     steps:
-      - name: Checkout (fresh — includes all shard commits)
+      # ref: master is essential — the default checkout pins the workflow's
+      # TRIGGER commit, which predates every shard push made during this run,
+      # so the merge would silently see yesterday's shard files.
+      - name: Checkout latest master (includes all shard commits)
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: master
+
+      - name: Pull any last-second shard pushes
+        run: git pull origin master
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
