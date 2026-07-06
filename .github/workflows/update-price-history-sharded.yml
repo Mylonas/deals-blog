@@ -40,7 +40,9 @@ jobs:
           SHARD: ${{ matrix.shard }}
           SHARDS: "10"
         run: node scripts/fetch-price-history-shard.mjs
-        timeout-minutes: 15
+        # e-kalathi soft-throttles by delaying responses (~12s each when warm);
+        # 48 products/shard needs ~10 min, so leave real headroom
+        timeout-minutes: 25
 
       # Runs even when the fetch step failed or timed out — the shard file is
       # checkpointed continuously, so partial results are worth committing.
