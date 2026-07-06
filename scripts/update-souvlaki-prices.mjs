@@ -37,25 +37,34 @@ function normalize(s) {
 }
 
 // All cuts are matched in pita format only, so venues are compared like-for-like.
-// Plain "pita" in Cyprus means Cypriot pitta and counts as-is; items marked as
-// Greek pitta (ελληνική), mini, or kids are excluded — those are much smaller
-// portions and not comparable (verified against Foody/Bolt menus: e.g. Kazamias
-// sells a €4.50 mini next to the €8.00 regular Cypriot pita).
+// Plain "pita" in Cyprus means Cypriot pitta and counts as-is. Not comparable
+// and always excluded (checked in both item name and menu category):
+//   - Greek pitta (ελληνική / "πίτες GR") and Arabic pitta — different, smaller formats
+//   - mini / kids / half (μισή) pittas — smaller portions
+// (verified against Foody/Bolt menus and user checks: e.g. Kazamias sells a
+// €4.50 mini next to the €8.00 regular; Souvlaki.gr sells Greek pitta only.)
 // "Ενισχυμένη" (also sold as "large pitta") is its own format with its own cuts.
 const PITA_RE = /pita|πιτα/;
-const GREEK_RE = /ελληνικ|greek|ellinik/;
-const MINI_RE = /μινι|mini|μικρ|mikr|παιδικ|paidik|kids|child/;
+const GREEK_RE = /ελληνικ|greek|ellinik|αραβικ|arabic|\bgr\b/;
+const MINI_RE = /μινι|mini|μικρ|mikr|μιση|misi|half|παιδικ|paidik|kids|child/;
+// Explicitly Cypriot pitta (name or category). When a venue sells the same cut
+// both as Cypriot pitta and as another pitta type (e.g. Thymari: "Premium
+// Πίτα" €6.50 vs "Κυπριακή Πίτα" €8.60), the Cypriot price is the comparable one.
+const CYPRIOT_RE = /κυπριακ|kypriak|cypriot/;
 const LARGE_RE = /ενισχυμεν|enisximen|enishimen|large|μεγαλ|διπλ|double|\bxl\b/;
 // Most venues sell large as a size option on the base item, not a separate
 // item — resolve option groups that are clearly about size and price the
 // upgrade as base + delta.
 const SIZE_GROUP_RE = /μεγεθ|size|μεριδα|portion|πιτα|pita/;
 const NOT_SIZE_VALUE_RE = /σαλατ|salad|πατατ|fries|chips|ποτο|drink|αναψυκτικ|dip|σως|sauce/;
-// Some venues default the size group to a small pitta at +0 (e.g. Mr. Boo:
-// μικρό +0, κανονικό +3, ενισχυμένο +5) — there the item base price is the
-// SMALL, and the regular cut is base + the κανονικό delta.
-const SMALL_VALUE_RE = /μικρ|mikr|small|μινι|mini|παιδικ|paidik|kids|child/;
-const REGULAR_VALUE_RE = /κανονικ|kanonik|regular|normal/;
+// Some venues default the size/pitta-type group to a free non-comparable base
+// at +0 — the item base price is then NOT the regular Cypriot pitta:
+//   - Mr. Boo:            μικρό +0,     κανονικό +3.00
+//   - Romios / Dimitris:  μισή +0,      κανονική +2.25 / +2.00
+//   - Gyrevontas Ellada:  ελληνική +0,  κυπριακή +2.50
+// In all of these the regular cut is base + the regular/Cypriot value's delta.
+const SMALL_VALUE_RE = /μικρ|mikr|small|μινι|mini|μιση|misi|half|παιδικ|paidik|kids|child|ελληνικ|greek|ellinik|αραβικ|arabic/;
+const REGULAR_VALUE_RE = /κανονικ|kanonik|regular|normal|κυπριακ|kypriak|cypriot/;
 
 const PORK_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /pork|χοιριν/.test(n) && !/chicken|κοτοπουλ/.test(n);
 const CHICKEN_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /chicken|κοτοπουλ/.test(n);
@@ -156,10 +165,15 @@ function extractCuts(assortment) {
     for (const id of c.item_ids || []) categoryOf.set(id, cn);
   }
 
-  const prices = {};
-  const take = (key, eur) => {
-    if (prices[key] == null || eur < prices[key]) prices[key] = eur;
+  // Two tiers: explicitly-Cypriot pitta items win over generic pitta items,
+  // so a venue's "Premium"/house pitta never undercuts its real Cypriot one.
+  const cypriot = {};
+  const generic = {};
+  const takeInto = (map, key, eur) => {
+    if (map[key] == null || eur < map[key]) map[key] = eur;
   };
+  const prices = {};
+  const take = (key, eur) => takeInto(prices, key, eur); // porkchop & non-tiered
 
   for (const item of items) {
     // items priced 0 are "configure options" placeholders — not a real price
@@ -176,16 +190,21 @@ function extractCuts(assortment) {
     if (GREEK_RE.test(n) || MINI_RE.test(n) || GREEK_RE.test(cat) || MINI_RE.test(cat)) continue;
     const isLarge = LARGE_RE.test(n);
 
+    const tier = CYPRIOT_RE.test(n) || CYPRIOT_RE.test(cat) ? cypriot : generic;
     for (const cut of CUTS) {
       if ((cut.size === "large") !== isLarge) continue;
       if (!cut.test(n)) continue;
       const { large, regular } = sizeDeltas(item, optionsById);
-      // when the size group defaults to a free small, base price is the
-      // small pitta — the regular cut costs base + regular delta
-      take(cut.key, eur + (isLarge ? 0 : regular));
+      // when the size group defaults to a free small/Greek pitta, base price
+      // is that variant — the regular cut costs base + regular delta
+      takeInto(tier, cut.key, eur + (isLarge ? 0 : regular));
       // large sold as a size option on the regular item: base + upgrade delta
-      if (cut.largeKey && large != null) take(cut.largeKey, eur + large);
+      if (cut.largeKey && large != null) takeInto(tier, cut.largeKey, eur + large);
     }
+  }
+  // explicit Cypriot beats generic per cut; porkchop already sits in `prices`
+  for (const key of new Set([...Object.keys(cypriot), ...Object.keys(generic)])) {
+    prices[key] = cypriot[key] ?? generic[key];
   }
   return prices;
 }
@@ -250,26 +269,33 @@ async function scanCity(city, prevVenues) {
   return results;
 }
 
+// exported for refresh-souvlaki-venue.mjs (targeted single-venue refetch)
+export { extractCuts, ASSORTMENT_API, HEADERS, OUT };
+
 // ── main ──────────────────────────────────────────────────────────────────────
+// Only run the full scan when executed directly — importing the module for
+// extractCuts must not trigger a five-city crawl.
+import { pathToFileURL } from "url";
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) : { cities: [] };
+  const prevByCity = new Map((prev.cities || []).map((c) => [c.key, c.venues]));
 
-const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) : { cities: [] };
-const prevByCity = new Map((prev.cities || []).map((c) => [c.key, c.venues]));
-
-const data = { updatedAt: null, cities: [] };
-for (const city of CITIES) {
-  console.log(`\n══ ${city.label.en} ══`);
-  try {
-    const venues = await scanCity(city, prevByCity.get(city.key));
-    data.cities.push({ key: city.key, label: city.label, venues });
-  } catch (err) {
-    // whole city failed — keep the previous scan's data rather than dropping it
-    const kept = prevByCity.get(city.key) || [];
-    data.cities.push({ key: city.key, label: city.label, venues: kept });
-    console.log(`  ✗ ${err.message} — kept ${kept.length} venues from previous scan`);
+  const data = { updatedAt: null, cities: [] };
+  for (const city of CITIES) {
+    console.log(`\n══ ${city.label.en} ══`);
+    try {
+      const venues = await scanCity(city, prevByCity.get(city.key));
+      data.cities.push({ key: city.key, label: city.label, venues });
+    } catch (err) {
+      // whole city failed — keep the previous scan's data rather than dropping it
+      const kept = prevByCity.get(city.key) || [];
+      data.cities.push({ key: city.key, label: city.label, venues: kept });
+      console.log(`  ✗ ${err.message} — kept ${kept.length} venues from previous scan`);
+    }
+    await new Promise((r) => setTimeout(r, 5000));
   }
-  await new Promise((r) => setTimeout(r, 5000));
-}
 
-data.updatedAt = new Date().toISOString();
-fs.writeFileSync(OUT, JSON.stringify(data, null, 2) + "\n");
-console.log(`\nWrote ${data.cities.reduce((n, c) => n + c.venues.length, 0)} venues across ${data.cities.length} cities → ${OUT}`);
+  data.updatedAt = new Date().toISOString();
+  fs.writeFileSync(OUT, JSON.stringify(data, null, 2) + "\n");
+  console.log(`\nWrote ${data.cities.reduce((n, c) => n + c.venues.length, 0)} venues across ${data.cities.length} cities → ${OUT}`);
+}
