@@ -55,9 +55,9 @@ pinned: true
 | EKO | [Λεωφ. Σαριγιάννη Τ.Κ 2831](https://www.google.com/maps?q=35.070157,32.930054) | Ευρύχου | €1.305 |
 | PETROLINA | [Αρχ. Μακαρίου Γ΄ 17 Τ.Κ 2800](https://www.google.com/maps?q=34.991233,32.902827) | Κακοπετριά | €1.305 |
 | STAROIL | [Λεώφ. Μητροπολίτη Χρύσανθου Σαριγιάννη 110 Τ.Κ 2831](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%8E%CF%86.%20%CE%9C%CE%B7%CF%84%CF%81%CE%BF%CF%80%CE%BF%CE%BB%CE%AF%CF%84%CE%B7%20%CE%A7%CF%81%CF%8D%CF%83%CE%B1%CE%BD%CE%B8%CE%BF%CF%85%20%CE%A3%CE%B1%CF%81%CE%B9%CE%B3%CE%B9%CE%AC%CE%BD%CE%BD%CE%B7%20110%20%CE%A4.%CE%9A%202831) | Ευρύχου | €1.305 |
+| SHELL | [Αρχ. Μακαρίου Γ&#39; 126 Τ.Κ 2827](https://www.google.com/maps/search/%CE%91%CF%81%CF%87.%20%CE%9C%CE%B1%CE%BA%CE%B1%CF%81%CE%AF%CE%BF%CF%85%20%CE%93%26%2339%3B%20126%20%CE%A4.%CE%9A%202827) | Γαλάτα | €1.308 |
 | SHELL | [Αρχ. Μακαρίου Γ&#39; 11 Τ.Κ 2800](https://www.google.com/maps/search/%CE%91%CF%81%CF%87.%20%CE%9C%CE%B1%CE%BA%CE%B1%CF%81%CE%AF%CE%BF%CF%85%20%CE%93%26%2339%3B%2011%20%CE%A4.%CE%9A%202800) | Κακοπετριά | €1.309 |
 | PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.318 |
-| PETROLINA | [Γρηγόρη Αυξεντίου 76, Κοκκινοτριμιθιά Τ.Κ 2660](https://www.google.com/maps?q=35.148666,33.212235) | Κοκκινοτριμιθιά | €1.319 |
 
 > Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 6 July 2026
 
