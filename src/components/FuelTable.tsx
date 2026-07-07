@@ -1,6 +1,10 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
+import dynamic from "next/dynamic";
+
+// Leaflet touches `window` at import time — load the map client-side only
+const PriceMap = dynamic(() => import("./PriceMap"), { ssr: false });
 
 interface Station {
   brand: string;
@@ -85,6 +89,8 @@ const UI = {
   en: {
     nearMe: "Near Me", locating: "Locating…", denied: "Location denied", unsupported: "Location unavailable",
     nearMeActive: "Near Me ✕", nearMeSubtitle: "Sorted by distance from your location",
+    viewList: "☰ List", viewMap: "🗺 Map",
+    mapOpen: "Open in Google Maps →", mapAria: "Petrol stations map",
     all: "All", brand: "Brand", address: "Address", area: "Area", dist: "Dist.", price: "Price",
     showingNearest: (n: number) => `Showing ${n} nearest stations`,
     showingCheapest: (n: number, d: string) => `Showing ${n} cheapest stations${d !== "All" ? ` in ${d}` : ""}`,
@@ -94,6 +100,8 @@ const UI = {
   el: {
     nearMe: "Κοντά μου", locating: "Εντοπισμός…", denied: "Άρνηση τοποθεσίας", unsupported: "Μη διαθέσιμο",
     nearMeActive: "Κοντά μου ✕", nearMeSubtitle: "Ταξινόμηση κατά απόσταση",
+    viewList: "☰ Λίστα", viewMap: "🗺 Χάρτης",
+    mapOpen: "Άνοιγμα στο Google Maps →", mapAria: "Χάρτης πρατηρίων καυσίμων",
     all: "Όλες", brand: "Εταιρεία", address: "Διεύθυνση", area: "Περιοχή", dist: "Απόσταση", price: "Τιμή",
     showingNearest: (n: number) => `Εμφάνιση ${n} κοντινότερων πρατηρίων`,
     showingCheapest: (n: number, d: string) => `Εμφάνιση ${n} φθηνότερων πρατηρίων${d !== "Όλες" ? ` σε ${d}` : ""}`,
@@ -103,6 +111,8 @@ const UI = {
   ru: {
     nearMe: "Рядом", locating: "Поиск…", denied: "Геолокация отклонена", unsupported: "Недоступно",
     nearMeActive: "Рядом ✕", nearMeSubtitle: "Сортировка по расстоянию",
+    viewList: "☰ Список", viewMap: "🗺 Карта",
+    mapOpen: "Открыть в Google Maps →", mapAria: "Карта АЗС",
     all: "Все", brand: "Бренд", address: "Адрес", area: "Район", dist: "Расст.", price: "Цена",
     showingNearest: (n: number) => `Показано ${n} ближайших АЗС`,
     showingCheapest: (n: number, d: string) => `Показано ${n} дешевейших АЗС${d !== "Все" ? ` в ${d}` : ""}`,
@@ -132,6 +142,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
   const availableKeys = FUEL_KEYS.filter((k) => !!data.fuels[k]);
   const [fuel, setFuel] = useState<FuelKey>("95");
   const [district, setDistrict] = useState(districtKeys[0]); // "All" / "Όλες" / "Все"
+  const [view, setView] = useState<"list" | "map">("list");
   const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [geoState, setGeoState] = useState<GeoState>("idle");
 
@@ -158,7 +169,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
 
   const SHOW = 10;
 
-  const stations = useMemo(() => {
+  const allStations = useMemo(() => {
     const all = data.fuels[fuel]?.stations ?? [];
 
     if (userCoords) {
@@ -170,14 +181,16 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
         }))
         .sort((a, b) => a.distance - b.distance);
       const withoutCoords = all.filter((s) => s.lat === null || s.lng === null);
-      return [...withDist, ...withoutCoords].slice(0, SHOW);
+      return [...withDist, ...withoutCoords];
     }
 
     // district state holds the i18n label (e.g. "Όλες") — map back to EN key for filtering
     const enKey = Object.keys(districtLabels).find((k) => districtLabels[k] === district) ?? "All";
-    const filtered = enKey === "All" ? all : all.filter((s) => getDistrict(s.district) === enKey);
-    return filtered.slice(0, SHOW);
+    return enKey === "All" ? all : all.filter((s) => getDistrict(s.district) === enKey);
   }, [fuel, district, data, userCoords, districtLabels]);
+
+  // the list stays short and scannable; the map shows every station
+  const stations = useMemo(() => allStations.slice(0, SHOW), [allStations]);
 
   const isNearMe = geoState === "active" && userCoords !== null;
 
@@ -252,10 +265,54 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
         {isNearMe && (
           <span className="text-xs text-blue-600 dark:text-blue-400">{t.nearMeSubtitle}</span>
         )}
+
+        {/* List / Map view toggle */}
+        <div className="ml-auto flex rounded-full border border-gray-300 dark:border-gray-600 overflow-hidden">
+          {(["list", "map"] as const).map((v) => (
+            <button
+              key={v}
+              onClick={() => setView(v)}
+              className={`px-3 py-1.5 text-xs font-medium transition-colors ${
+                view === v
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+              }`}
+              aria-pressed={view === v}
+            >
+              {v === "list" ? t.viewList : t.viewMap}
+            </button>
+          ))}
+        </div>
       </div>
 
+      {/* Map view — every matching station, price-pill markers */}
+      {view === "map" && (
+        allStations.length === 0 ? (
+          <p className="text-gray-500 dark:text-gray-400 text-sm py-4">
+            {t.noResults(fuelLabels[fuel], district)}
+          </p>
+        ) : (
+          <PriceMap
+            venues={allStations.map((s) => ({
+              name: s.brand,
+              address: s.address,
+              lat: s.lat,
+              lng: s.lng,
+              url: s.mapsUrl,
+              price: s.price,
+              distance: (s as any).distance ?? null,
+            }))}
+            userCoords={userCoords}
+            lang={lang}
+            linkLabel={t.mapOpen}
+            ariaLabel={t.mapAria}
+            priceDecimals={3}
+          />
+        )
+      )}
+
       {/* Results */}
-      {stations.length === 0 ? (
+      {view === "list" && (stations.length === 0 ? (
         <p className="text-gray-500 dark:text-gray-400 text-sm py-4">
           {t.noResults(fuelLabels[fuel], district)}
         </p>
@@ -313,7 +370,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
             </table>
           </div>
         </>
-      )}
+      ))}
 
       <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
         {formatDate(data.updatedAt)} ·{" "}

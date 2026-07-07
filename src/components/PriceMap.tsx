@@ -17,9 +17,9 @@ export type MapVenue = {
 type Lang = "en" | "el" | "ru";
 
 const T = {
-  en: { order: "Order on Wolt →", away: "km away", street: "Street", light: "Light", dark: "Dark", from: "from" },
-  el: { order: "Παραγγελία στο Wolt →", away: "χλμ μακριά", street: "Κανονικός", light: "Ανοιχτός", dark: "Σκούρος", from: "από" },
-  ru: { order: "Заказать на Wolt →", away: "км от вас", street: "Улицы", light: "Светлая", dark: "Тёмная", from: "от" },
+  en: { away: "km away", street: "Street", light: "Light", dark: "Dark", from: "from" },
+  el: { away: "χλμ μακριά", street: "Κανονικός", light: "Ανοιχτός", dark: "Σκούρος", from: "από" },
+  ru: { away: "км от вас", street: "Улицы", light: "Светлая", dark: "Тёмная", from: "от" },
 };
 
 // Cyprus, wide view — used when no user location and no venues to fit
@@ -42,22 +42,29 @@ const BASE_LAYERS = {
 };
 
 /**
- * Leaflet map of souvlaki venues. Markers are price pills (cheapest = green)
- * grouped into clusters at low zoom — a cluster bubble shows the venue count
- * and the cheapest price inside it, so the map stays readable with hundreds
- * of venues. A layers control (top right) switches the base map between
- * Street, Light and Dark tiles — Light/Dark make the price pills stand out.
+ * Leaflet map of priced venues (souvlaki places, cafés, petrol stations…).
+ * Markers are price pills (cheapest = green) grouped into clusters at low
+ * zoom — a cluster bubble shows the venue count and the cheapest price
+ * inside it, so the map stays readable with hundreds of venues. A layers
+ * control (top right) switches the base map between Street, Light and Dark
+ * tiles — Light/Dark make the price pills stand out.
  * Leaflet touches `window` at import time, so it's imported dynamically
  * inside useEffect — this component must stay client-only.
  */
-export default function SouvlakiMap({
+export default function PriceMap({
   venues,
   userCoords,
   lang,
+  linkLabel,
+  ariaLabel,
+  priceDecimals = 2,
 }: {
   venues: MapVenue[];
   userCoords: { lat: number; lng: number } | null;
   lang: Lang;
+  linkLabel: string;
+  ariaLabel: string;
+  priceDecimals?: number;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<LeafletMap | null>(null);
@@ -65,6 +72,8 @@ export default function SouvlakiMap({
   const userRef = useRef<LayerGroup | null>(null);
   const controlRef = useRef<Control.Layers | null>(null);
   const t = T[lang];
+
+  const fmt = (price: number) => `€${price.toFixed(priceDecimals)}`;
 
   async function loadLeaflet() {
     const L = (await import("leaflet")).default;
@@ -134,14 +143,17 @@ export default function SouvlakiMap({
               display:inline-block;background:#1e293b;color:#fff;font:600 11px/1.2 system-ui,sans-serif;
               padding:5px 8px;border-radius:999px;border:2px solid #fff;
               box-shadow:0 1px 4px rgba(0,0,0,.45);white-space:nowrap;text-align:center;
-              transform:translate(-50%,-50%);">${c.getChildCount()} · ${t.from} €${min.toFixed(2)}</div>`,
+              transform:translate(-50%,-50%);">${c.getChildCount()} · ${t.from} ${fmt(min)}</div>`,
           iconSize: [0, 0],
         });
       },
     });
 
+    // pill prices differ at the 3rd decimal for fuel — keep the epsilon
+    // below the smallest displayed step so ties still count as cheapest
+    const epsilon = 0.1 ** (priceDecimals + 1);
     for (const v of located) {
-      const cheapest = v.price <= minPrice + 0.001;
+      const cheapest = v.price <= minPrice + epsilon;
       const icon = L.divIcon({
         className: "", // no default styles — the pill carries everything
         // inline-block: the icon wrapper is 0×0, a block div would collapse
@@ -150,7 +162,7 @@ export default function SouvlakiMap({
             display:inline-block;background:${cheapest ? "#16a34a" : "#f59e0b"};color:#fff;
             font:600 11px/1 system-ui,sans-serif;padding:4px 7px;border-radius:999px;
             box-shadow:0 1px 4px rgba(0,0,0,.4);white-space:nowrap;transform:translate(-50%,-100%);
-            border:2px solid #fff;">€${v.price.toFixed(2)}</div>`,
+            border:2px solid #fff;">${fmt(v.price)}</div>`,
         iconSize: [0, 0],
       });
       const distance =
@@ -162,9 +174,9 @@ export default function SouvlakiMap({
            <strong>${v.name}</strong>
            ${v.address ? `<div style="color:#6b7280;font-size:11px;">${v.address}</div>` : ""}
            ${distance}
-           <div style="margin-top:4px;font-weight:700;color:#d97706;">€${v.price.toFixed(2)}</div>
+           <div style="margin-top:4px;font-weight:700;color:#d97706;">${fmt(v.price)}</div>
            <a href="${v.url}" target="_blank" rel="noopener noreferrer"
-              style="display:inline-block;margin-top:6px;color:#2563eb;font-size:12px;">${t.order}</a>
+              style="display:inline-block;margin-top:6px;color:#2563eb;font-size:12px;">${linkLabel}</a>
          </div>`
       );
       cluster.addLayer(marker);
@@ -203,7 +215,7 @@ export default function SouvlakiMap({
       ref={containerRef}
       className="h-[480px] w-full rounded-xl border border-gray-200 dark:border-gray-700 z-0"
       role="application"
-      aria-label="Souvlaki venues map"
+      aria-label={ariaLabel}
     />
   );
 }
