@@ -66,9 +66,20 @@ const NOT_SIZE_VALUE_RE = /σαλατ|salad|πατατ|fries|chips|ποτο|drin
 const SMALL_VALUE_RE = /μικρ|mikr|small|μινι|mini|μιση|misi|half|παιδικ|paidik|kids|child|ελληνικ|greek|ellinik|αραβικ|arabic/;
 const REGULAR_VALUE_RE = /κανονικ|kanonik|regular|normal|κυπριακ|kypriak|cypriot/;
 
-const PORK_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /pork|χοιριν/.test(n) && !/chicken|κοτοπουλ/.test(n);
-const CHICKEN_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /chicken|κοτοπουλ/.test(n);
-const MIX = (n) => /\bmix|μιχτ|μιξ|μιγμα|mikti/.test(n);
+// Cypriot mix = pork souvlaki + sheftalia in one pitta. Venues often spell it
+// out instead of saying "mix" — "Σουβλάκια & Σιεφταλιά", "Souvlaki and
+// Sheftalia" — so a souvlaki/pork + sheftalia combination counts as mix too.
+// Gyros/doner "mix" (e.g. "πίτα mix γύρος χοιρινό & κοτόπουλο") is a different
+// dish and never counts, whether the gyros signal is in the name or category.
+const SHEFTALIA_RE = /s(?:hi|h|ie|i)?eftal|σι?εφταλ/;
+const GYRO_RE = /γυρ|gyro|doner|ντονερ|shawarma|σαουαρμα/;
+// combo items ("σουβλάκι & σιεφταλιά") are mix, not pork/chicken souvlaki
+const PORK_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /pork|χοιριν/.test(n) && !/chicken|κοτοπουλ/.test(n) && !SHEFTALIA_RE.test(n);
+const CHICKEN_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /chicken|κοτοπουλ/.test(n) && !SHEFTALIA_RE.test(n);
+const MIX = (n, cat = "") =>
+  !GYRO_RE.test(n) && !GYRO_RE.test(cat) &&
+  (/\bmix|μιχτ|μιξ|μιγμα|mikti/.test(n) ||
+    (/souvlak|σουβλακ|χοιριν|pork/.test(n) && SHEFTALIA_RE.test(n)));
 
 const CUTS = [
   { key: "souvlaki",      test: PORK_SOUVLAKI,    size: "regular", largeKey: "souvlakiLarge" },
@@ -193,7 +204,7 @@ function extractCuts(assortment) {
     const tier = CYPRIOT_RE.test(n) || CYPRIOT_RE.test(cat) ? cypriot : generic;
     for (const cut of CUTS) {
       if ((cut.size === "large") !== isLarge) continue;
-      if (!cut.test(n)) continue;
+      if (!cut.test(n, cat)) continue;
       const { large, regular } = sizeDeltas(item, optionsById);
       // when the size group defaults to a free small/Greek pitta, base price
       // is that variant — the regular cut costs base + regular delta
