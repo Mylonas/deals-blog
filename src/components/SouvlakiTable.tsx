@@ -3,7 +3,7 @@ import { useState, useMemo, useCallback } from "react";
 import dynamic from "next/dynamic";
 
 // Leaflet touches `window` at import time — load the map client-side only
-const SouvlakiMap = dynamic(() => import("./SouvlakiMap"), { ssr: false });
+const PriceMap = dynamic(() => import("./PriceMap"), { ssr: false });
 
 type Venue = {
   name: string;
@@ -32,6 +32,7 @@ const T = {
   en: {
     cuts: { souvlaki: "Pork Souvlaki", chicken: "Chicken Souvlaki", mix: "Mix", souvlakiLarge: "Pork — Large Pitta", chickenLarge: "Chicken — Large Pitta", mixLarge: "Mix — Large Pitta", porkchop: "Pork Chop (portion)" } as Record<CutKey, string>,
     venue: "Place", price: "Price", updated: "Updated", order: "Order →",
+    mapOrder: "Order on Wolt →", mapAria: "Souvlaki venues map",
     viewList: "☰ List", viewMap: "🗺 Map",
     nearMe: "📍 Near me", nearActive: "📍 Nearby first", clear: "✕",
     denied: "Location access denied — showing cheapest first.",
@@ -42,6 +43,7 @@ const T = {
   el: {
     cuts: { souvlaki: "Σουβλάκι Χοιρινό", chicken: "Σουβλάκι Κοτόπουλο", mix: "Μιχτή", souvlakiLarge: "Χοιρινό — Ενισχυμένη", chickenLarge: "Κοτόπουλο — Ενισχυμένη", mixLarge: "Μιχτή — Ενισχυμένη", porkchop: "Μπριζόλα (μερίδα)" } as Record<CutKey, string>,
     venue: "Μαγαζί", price: "Τιμή", updated: "Ενημέρωση", order: "Παραγγελία →",
+    mapOrder: "Παραγγελία στο Wolt →", mapAria: "Χάρτης μαγαζιών σουβλακιού",
     viewList: "☰ Λίστα", viewMap: "🗺 Χάρτης",
     nearMe: "📍 Κοντά μου", nearActive: "📍 Κοντινά πρώτα", clear: "✕",
     denied: "Δεν δόθηκε πρόσβαση τοποθεσίας — εμφανίζονται τα φθηνότερα πρώτα.",
@@ -52,6 +54,7 @@ const T = {
   ru: {
     cuts: { souvlaki: "Сувлаки (свинина)", chicken: "Сувлаки (курица)", mix: "Микс", souvlakiLarge: "Свинина — большая пита", chickenLarge: "Курица — большая пита", mixLarge: "Микс — большая пита", porkchop: "Свиная отбивная (порция)" } as Record<CutKey, string>,
     venue: "Заведение", price: "Цена", updated: "Обновлено", order: "Заказать →",
+    mapOrder: "Заказать на Wolt →", mapAria: "Карта заведений с сувлаки",
     viewList: "☰ Список", viewMap: "🗺 Карта",
     nearMe: "📍 Рядом со мной", nearActive: "📍 Сначала ближайшие", clear: "✕",
     denied: "Доступ к геолокации не разрешён — показаны самые дешёвые.",
@@ -220,7 +223,7 @@ export default function SouvlakiTable({ data, lang }: { data: SouvlakiData; lang
         allRows.length === 0 ? (
           <p className="text-sm text-gray-400 dark:text-gray-500 py-8 text-center">{t.empty}</p>
         ) : (
-          <SouvlakiMap venues={allRows} userCoords={userCoords} lang={lang} />
+          <PriceMap venues={allRows} userCoords={userCoords} lang={lang} linkLabel={t.mapOrder} ariaLabel={t.mapAria} />
         )
       )}
 
