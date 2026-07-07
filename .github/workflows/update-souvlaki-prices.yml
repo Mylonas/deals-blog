@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "DealsHub Bot"
           git config user.email "bot@dealshub.cy"
-          git add src/data/souvlaki-prices.json
+          git add src/data/souvlaki-prices.json src/data/souvlaki-prices-wolt.json
           git commit -m "chore: update souvlaki prices $(date +'%Y-%m-%d')"
           git pull --rebase origin master
           git push origin master

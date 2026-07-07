@@ -1,0 +1,59 @@
+name: Update Souvlaki Prices — Bolt (Weekly)
+
+# Bolt Food scan. Runs after the Tuesday Wolt scan so the merge sees fresh
+# data from both platforms. Bolt's API rate-limits hard (~5 requests bursts),
+# so the scan is single-threaded and paced — expect it to take hours. The
+# script checkpoints per venue and carries failed venues over, so even a
+# timed-out run commits useful data.
+on:
+  schedule:
+    - cron: "0 9 * * 2" # Tuesday 09:00 UTC, Wolt scan runs at 06:00
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    permissions:
+      contents: write
+      actions: write # needed to dispatch deploy.yml after data update
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Scan Bolt Food and merge platforms
+        run: node scripts/update-souvlaki-prices-bolt.mjs
+        timeout-minutes: 300
+        continue-on-error: true # partial scans still produce a valid merge
+
+      - name: Check for changes
+        id: changes
+        run: git diff --quiet || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "DealsHub Bot"
+          git config user.email "bot@dealshub.cy"
+          git add src/data/souvlaki-prices-bolt.json src/data/souvlaki-prices.json
+          git commit -m "chore: update souvlaki prices from Bolt $(date +'%Y-%m-%d')"
+          for i in 1 2 3 4 5; do
+            git push origin master && exit 0
+            sleep $((RANDOM % 8 + 2))
+            git pull --rebase origin master || true
+          done
+          exit 1
+
+      - name: Trigger Cloudflare redeploy
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref master

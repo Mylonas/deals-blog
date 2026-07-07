@@ -1,19 +1,21 @@
 /**
- * Scans Wolt Cyprus for souvlaki prices in every city and writes
- * src/data/souvlaki-prices.json for the interactive souvlaki page.
+ * Scans Wolt Cyprus for souvlaki prices in every city, writes the raw scan to
+ * src/data/souvlaki-prices-wolt.json, then merges it with the Bolt Food scan
+ * (if present) into src/data/souvlaki-prices.json for the souvlaki page.
  *
  * Tracks pita cuts (pork, chicken, mix — regular and large/enisximeni) plus
  * pork chop, which is a portion dish (Μπριζόλα Μερίδα) and never in pita.
  *
- * Note: Foody and Bolt Food APIs require authentication, so Wolt is the only
- * feasible unauthenticated source. Prices are Wolt listings and may include
- * a platform markup over counter prices.
+ * Bolt Food is scanned separately by update-souvlaki-prices-bolt.mjs (its
+ * client API is unauthenticated too, just heavily rate-limited). Prices are
+ * platform listings and may include a markup over counter prices.
  *
  * Run weekly via GitHub Actions: node scripts/update-souvlaki-prices.mjs
  */
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { WOLT_OUT, mergeAndWrite } from "./merge-souvlaki-sources.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -280,15 +282,25 @@ async function scanCity(city, prevVenues) {
   return results;
 }
 
-// exported for refresh-souvlaki-venue.mjs (targeted single-venue refetch)
-export { extractCuts, ASSORTMENT_API, HEADERS, OUT };
+// exported for refresh-souvlaki-venue.mjs (targeted single-venue refetch) and
+// update-souvlaki-prices-bolt.mjs (shared cut matchers so both platforms
+// classify menu items identically)
+export { extractCuts, ASSORTMENT_API, HEADERS, OUT, CITIES, normalize };
+export { PITA_RE, GREEK_RE, MINI_RE, CYPRIOT_RE, LARGE_RE, SIZE_GROUP_RE, NOT_SIZE_VALUE_RE, SMALL_VALUE_RE, REGULAR_VALUE_RE };
+export { SHEFTALIA_RE, GYRO_RE, PORK_SOUVLAKI, CHICKEN_SOUVLAKI, MIX, CUTS, PORKCHOP, PORKCHOP_MIN_CENTS };
 
 // ── main ──────────────────────────────────────────────────────────────────────
 // Only run the full scan when executed directly — importing the module for
 // extractCuts must not trigger a five-city crawl.
 import { pathToFileURL } from "url";
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) : { cities: [] };
+  // carry-over source: the raw Wolt file; fall back to the merged file from
+  // before the wolt/bolt split (filtering out any bolt-only entries)
+  const prevFile = fs.existsSync(WOLT_OUT) ? WOLT_OUT : OUT;
+  const prev = fs.existsSync(prevFile) ? JSON.parse(fs.readFileSync(prevFile, "utf8")) : { cities: [] };
+  for (const c of prev.cities || []) {
+    c.venues = (c.venues || []).filter((v) => !v.platforms || v.platforms.includes("wolt"));
+  }
   const prevByCity = new Map((prev.cities || []).map((c) => [c.key, c.venues]));
 
   const data = { updatedAt: null, cities: [] };
@@ -307,6 +319,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   }
 
   data.updatedAt = new Date().toISOString();
-  fs.writeFileSync(OUT, JSON.stringify(data, null, 2) + "\n");
-  console.log(`\nWrote ${data.cities.reduce((n, c) => n + c.venues.length, 0)} venues across ${data.cities.length} cities → ${OUT}`);
+  fs.writeFileSync(WOLT_OUT, JSON.stringify(data, null, 2) + "\n");
+  console.log(`\nWrote ${data.cities.reduce((n, c) => n + c.venues.length, 0)} venues across ${data.cities.length} cities → ${WOLT_OUT}`);
+  mergeAndWrite();
 }
