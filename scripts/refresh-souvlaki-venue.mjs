@@ -8,6 +8,7 @@
  */
 import fs from "fs";
 import { extractCuts, ASSORTMENT_API, HEADERS, OUT } from "./update-souvlaki-prices.mjs";
+import { WOLT_OUT, mergeAndWrite } from "./merge-souvlaki-sources.mjs";
 
 const slugs = process.argv.slice(2);
 if (!slugs.length) {
@@ -35,7 +36,10 @@ async function fetchAssortment(slug) {
   throw lastErr;
 }
 
-const data = JSON.parse(fs.readFileSync(OUT, "utf8"));
+// patch the raw Wolt scan (falling back to the pre-split merged file), then
+// re-merge so the page data picks the change up
+const DATA_FILE = fs.existsSync(WOLT_OUT) ? WOLT_OUT : OUT;
+const data = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
 let patched = 0;
 
 for (const slug of slugs) {
@@ -61,8 +65,9 @@ for (const slug of slugs) {
 
 if (patched) {
   data.updatedAt = new Date().toISOString();
-  fs.writeFileSync(OUT, JSON.stringify(data, null, 2) + "\n");
-  console.log(`Patched ${patched}/${slugs.length} venues → ${OUT}`);
+  fs.writeFileSync(DATA_FILE === OUT ? WOLT_OUT : DATA_FILE, JSON.stringify(data, null, 2) + "\n");
+  console.log(`Patched ${patched}/${slugs.length} venues → ${WOLT_OUT}`);
+  mergeAndWrite();
 } else {
   console.log("Nothing patched.");
 }
