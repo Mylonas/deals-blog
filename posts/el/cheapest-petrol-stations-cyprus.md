@@ -1,7 +1,7 @@
 ---
 title: "Φθηνότερα Πρατήρια Καυσίμων στην Κύπρο — Ζωντανή Παρακολούθηση"
 date: "2026-06-28"
-updated: "2026-07-06"
+updated: "2026-07-07"
 category: "Καύσιμα"
 summary: "Ζωντανές τιμές για Αμόλυβδη 95, Αμόλυβδη 98 και Πετρέλαιο Κίνησης σε πρατήρια ανά την Κύπρο. Ενημερώνεται κάθε ώρα από το επίσημο παρατηρητήριο τιμών."
 pinned: true
@@ -59,6 +59,6 @@ pinned: true
 | SHELL | [Αρχ. Μακαρίου Γ&#39; 11 Τ.Κ 2800](https://www.google.com/maps/search/%CE%91%CF%81%CF%87.%20%CE%9C%CE%B1%CE%BA%CE%B1%CF%81%CE%AF%CE%BF%CF%85%20%CE%93%26%2339%3B%2011%20%CE%A4.%CE%9A%202800) | Κακοπετριά | €1.309 |
 | PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.318 |
 
-> Πηγή: [Παρατηρητήριο Τιμών Καυσίμων Κύπρου](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — ενημέρωση 6 Ιουλίου 2026
+> Πηγή: [Παρατηρητήριο Τιμών Καυσίμων Κύπρου](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — ενημέρωση 7 Ιουλίου 2026
 
 <!-- FUEL_PRICES_END -->
