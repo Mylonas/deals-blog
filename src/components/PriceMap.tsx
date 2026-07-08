@@ -4,6 +4,8 @@ import "leaflet/dist/leaflet.css";
 import "leaflet.markercluster/dist/MarkerCluster.css";
 import type { Map as LeafletMap, LayerGroup, Control } from "leaflet";
 
+type Provider = "wolt" | "bolt" | "foody";
+
 export type MapVenue = {
   name: string;
   address: string | null;
@@ -12,9 +14,50 @@ export type MapVenue = {
   url: string;
   price: number;
   distance: number | null;
+  // multi-platform venues (souvlaki): show a badge per platform in the popup.
+  // Absent for single-source maps (coffee, fuel) — they keep the plain link.
+  platforms?: Provider[];
+  boltUrl?: string;
+  foodyUrl?: string;
 };
 
 type Lang = "en" | "el" | "ru";
+
+// popup provider badges — inline styles because the label/colours must survive
+// inside Leaflet's popup HTML regardless of the page's CSS
+const PROVIDER_LABEL: Record<Provider, string> = { wolt: "Wolt", bolt: "Bolt", foody: "Foody" };
+const PROVIDER_STYLE: Record<Provider, string> = {
+  wolt: "background:#cffafe;color:#0e7490;",
+  bolt: "background:#dcfce7;color:#15803d;",
+  foody: "background:#ffe4e6;color:#be123c;",
+};
+const PROVIDER_ORDER: Provider[] = ["wolt", "bolt", "foody"];
+
+// primary platform's link is in `url`; each extra platform's is in `<p>Url`
+function platformUrl(v: MapVenue, p: Provider): string | undefined {
+  const primary = v.platforms?.[0] ?? "wolt";
+  if (p === primary) return v.url;
+  const u = (v as Record<string, unknown>)[`${p}Url`];
+  return typeof u === "string" ? u : undefined;
+}
+
+function orderHtml(v: MapVenue, linkLabel: string): string {
+  // single-source maps: keep the original one-link behaviour
+  if (!v.platforms?.length) {
+    return `<a href="${v.url}" target="_blank" rel="noopener noreferrer"
+              style="display:inline-block;margin-top:6px;color:#2563eb;font-size:12px;">${linkLabel}</a>`;
+  }
+  const badges = PROVIDER_ORDER.filter((p) => v.platforms!.includes(p))
+    .map((p) => {
+      const href = platformUrl(v, p);
+      const style = `display:inline-block;margin:6px 6px 0 0;padding:2px 8px;border-radius:9999px;font-size:11px;font-weight:600;text-decoration:none;${PROVIDER_STYLE[p]}`;
+      return href
+        ? `<a href="${href}" target="_blank" rel="noopener noreferrer" style="${style}">${PROVIDER_LABEL[p]}</a>`
+        : `<span style="${style}">${PROVIDER_LABEL[p]}</span>`;
+    })
+    .join("");
+  return `<div style="margin-top:2px;font-size:11px;color:#6b7280;">${linkLabel}</div>${badges}`;
+}
 
 const T = {
   en: { away: "km away", street: "Street", light: "Light", dark: "Dark", from: "from" },
@@ -175,8 +218,7 @@ export default function PriceMap({
            ${v.address ? `<div style="color:#6b7280;font-size:11px;">${v.address}</div>` : ""}
            ${distance}
            <div style="margin-top:4px;font-weight:700;color:#d97706;">${fmt(v.price)}</div>
-           <a href="${v.url}" target="_blank" rel="noopener noreferrer"
-              style="display:inline-block;margin-top:6px;color:#2563eb;font-size:12px;">${linkLabel}</a>
+           ${orderHtml(v, linkLabel)}
          </div>`
       );
       cluster.addLayer(marker);
