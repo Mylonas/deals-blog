@@ -208,6 +208,12 @@ export function extractFoodyCuts(menu) {
   return prices;
 }
 
+// the souvlaki page compares souvlaki-in-pita; a venue whose only match is a
+// pork-chop portion (e.g. a Georgian grill's mtsvadi) is not a souvlaki
+// destination, so require at least one real pita cut before counting it
+const PITA_CUT_KEYS = ["souvlaki", "souvlakiLarge", "chicken", "chickenLarge", "mix", "mixLarge"];
+export const hasPitaCut = (prices) => PITA_CUT_KEYS.some((k) => prices[k] != null);
+
 async function scrapeVenue(page, venue) {
   await page.goto(venue.url, { waitUntil: "domcontentloaded", timeout: NAV_TIMEOUT });
   // the menu JSON-LD is injected after the client render — poll briefly for it
@@ -290,11 +296,11 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
         scanned++;
         try {
           const { prices, geo } = await scrapeVenue(page, g);
-          if (Object.keys(prices).length > 0) {
+          if (hasPitaCut(prices)) {
             venues.push({ name: g.name, slug: g.slug, url: g.url, lat: geo?.lat ?? null, lng: geo?.lng ?? null, prices, source: "foody" });
             console.log(`  ✓ ${g.name}: ${JSON.stringify(prices)}`);
           } else {
-            console.log(`  – ${g.name}: no comparable pita cuts`);
+            console.log(`  – ${g.name}: no souvlaki-in-pita cuts`);
           }
         } catch (e) {
           console.log(`  ⚠ ${g.name}: ${e.message}`);
