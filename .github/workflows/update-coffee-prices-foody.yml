@@ -1,0 +1,69 @@
+name: Update Coffee Prices — Foody (Weekly)
+
+# Foody coffee gap scraper. Runs after the Wolt (06:00) and Bolt (09:00) scans
+# so the gap filter sees both and only opens menus for cafés neither covers.
+# Foody has no open menu API, so this drives a headless browser (Playwright)
+# and reads each venue's JSON-LD menu. It checkpoints per venue and carries
+# failed venues over, so a partial run still produces a valid merge.
+on:
+  schedule:
+    - cron: "0 12 * * 1" # Monday 12:00 UTC, after Wolt (06:00) + Bolt (09:00)
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+      actions: write # needed to dispatch deploy.yml after data update
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Scrape Foody gap cafés and merge platforms
+        run: node scripts/update-coffee-prices-foody.mjs
+        timeout-minutes: 90
+        continue-on-error: true # partial scrapes still produce a valid merge
+
+      - name: Regenerate markdown posts
+        run: node scripts/update-coffee-prices.mjs
+
+      - name: Check for changes
+        id: changes
+        run: git diff --quiet || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "DealsHub Bot"
+          git config user.email "bot@dealshub.cy"
+          git add src/data/coffee-prices-foody.json src/data/coffee-prices.json
+          git add posts/en/cheapest-coffee-nicosia.md posts/el/cheapest-coffee-nicosia.md posts/ru/cheapest-coffee-nicosia.md
+          git commit -m "chore: update coffee prices from Foody $(date +'%Y-%m-%d')"
+          for i in 1 2 3 4 5; do
+            git push origin master && exit 0
+            sleep $((RANDOM % 8 + 2))
+            git pull --rebase origin master || true
+          done
+          exit 1
+
+      - name: Trigger Cloudflare redeploy
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref master
