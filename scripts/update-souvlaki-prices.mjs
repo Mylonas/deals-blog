@@ -41,13 +41,14 @@ function normalize(s) {
 // All cuts are matched in pita format only, so venues are compared like-for-like.
 // Plain "pita" in Cyprus means Cypriot pitta and counts as-is. Not comparable
 // and always excluded (checked in both item name and menu category):
-//   - Greek pitta (ελληνική / "πίτες GR") and Arabic pitta — different, smaller formats
+//   - Greek pitta (ελληνική / "πίτες GR"), incl. τυλιχτό (a Greek-style wrap —
+//     same thing, per user), and Arabic pitta — different, smaller formats
 //   - mini / kids / half (μισή) pittas — smaller portions
 // (verified against Foody/Bolt menus and user checks: e.g. Kazamias sells a
 // €4.50 mini next to the €8.00 regular; Souvlaki.gr sells Greek pitta only.)
 // "Ενισχυμένη" (also sold as "large pitta") is its own format with its own cuts.
 const PITA_RE = /pita|πιτα/;
-const GREEK_RE = /ελληνικ|greek|ellinik|αραβικ|arabic|\bgr\b/;
+const GREEK_RE = /ελληνικ|greek|ellinik|αραβικ|arabic|\bgr\b|τυλιχτ|t[iy]li(?:cht|xt|ht)/;
 const MINI_RE = /μινι|mini|μικρ|mikr|μιση|misi|half|παιδικ|paidik|kids|child/;
 // Explicitly Cypriot pitta (name or category). When a venue sells the same cut
 // both as Cypriot pitta and as another pitta type (e.g. Thymari: "Premium
