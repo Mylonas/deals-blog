@@ -111,7 +111,9 @@ async function discoverVenues(page, city) {
       const btn = page.locator("button", { hasText: new RegExp(`^\\s*${chip}\\s*$`, "i") }).first();
       if (!(await btn.count())) continue;
       await btn.scrollIntoViewIfNeeded().catch(() => {});
-      await btn.click({ timeout: 5000 });
+      // the chip carousel's prev/next overlay intercepts pointer events on
+      // some viewports — fall back to a force click before giving up
+      await btn.click({ timeout: 5000 }).catch(() => btn.click({ timeout: 5000, force: true }));
       await sleep(2500);
       if (DEBUG) await page.screenshot({ path: `${DEBUG_DIR}/${city.key}-${chip}.png` }).catch(() => {});
       const before = found.size;
