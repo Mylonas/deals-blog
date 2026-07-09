@@ -1,9 +1,17 @@
 name: Update Supermarket Deals
 
-# Runs once daily at 06:00 UTC, dispatched by the Cloudflare Worker cron
-# (workers/cron-trigger). No GitHub schedule here — it would double-fire.
+# Runs once daily at 06:00 UTC via GitHub's schedule, like every other data
+# workflow in this repo. The Cloudflare Worker (workers/cron-trigger) no longer
+# dispatches this workflow — its daily dispatch never fired, which left the
+# deals data stale.
 on:
+  schedule:
+    - cron: "0 6 * * *"
   workflow_dispatch:
+
+concurrency:
+  group: update-supermarket-deals
+  cancel-in-progress: false
 
 jobs:
   update:
