@@ -92,6 +92,19 @@ function parseCoordinates(row) {
   return null;
 }
 
+// the portal HTML-encodes Greek addresses ("Μακαρίου Γ&#39;") — decode the
+// entities it actually uses so they don't show up literally on the site
+function decodeEntities(s) {
+  return s
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n))
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&nbsp;/g, " ");
+}
+
 function extractStations(html, limit = 7) {
   const rows = [];
   const trRegex = /<tr>([\s\S]*?)<\/tr>/gi;
@@ -100,7 +113,7 @@ function extractStations(html, limit = 7) {
     const row = m[1];
     const coordMatch = parseCoordinates(row);
     const cells = [...row.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((c) =>
-      c[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
+      decodeEntities(c[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim())
     );
     if (cells.length >= 5) {
       const price = parseFloat(cells[4]);
@@ -292,11 +305,11 @@ async function main() {
     console.log(`Fetching prices for ${fuel.label95En}...`);
     const html = await fetchPricesForType(fuel.id, token, cookies);
     const stations = extractStations(html, 7);
-    const allStations = extractStations(html, 100);
-    // every station, untruncated — min/avg/max stats must cover the whole
-    // market, not just the 100 cheapest (the old cap made "max" really mean
-    // "100th cheapest": €1.467 instead of the true €1.639 for 95)
-    const everyStation = extractStations(html, Infinity);
+    // every station, untruncated — the old top-100 cap silently dropped whole
+    // districts from the map: Paphos is the priciest market and its cheapest
+    // station ranks ~#120, so no Paphos station ever made the cut
+    const allStations = extractStations(html, Infinity);
+    const everyStation = allStations;
 
     const min = stations.length > 0 ? stations[0].price : 0;
     console.log(`  ${fuel.label95En}: ${everyStation.length} stations total, cheapest €${min.toFixed(3)}`);
