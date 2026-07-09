@@ -5,6 +5,8 @@ import dynamic from "next/dynamic";
 // Leaflet touches `window` at import time — load the map client-side only
 const PriceMap = dynamic(() => import("./PriceMap"), { ssr: false });
 
+type Provider = "wolt" | "bolt" | "foody";
+
 type Cafe = {
   cafe: string;
   freddo: number;
@@ -12,7 +14,30 @@ type Cafe = {
   lat?: number | null;
   lng?: number | null;
   url: string;
+  // multi-platform fields written by merge-coffee-sources.mjs
+  platforms?: Provider[];
+  freddoSource?: Provider;
+  boltUrl?: string;
+  foodyUrl?: string;
 };
+
+// order matters — badges render in this sequence
+const PROVIDERS: Provider[] = ["wolt", "bolt", "foody"];
+const PROVIDER_LABEL: Record<Provider, string> = { wolt: "Wolt", bolt: "Bolt", foody: "Foody" };
+const PROVIDER_CLASS: Record<Provider, string> = {
+  wolt: "bg-cyan-100 text-cyan-700 hover:bg-cyan-200 dark:bg-cyan-900/30 dark:text-cyan-300 dark:hover:bg-cyan-900/50",
+  bolt: "bg-green-100 text-green-700 hover:bg-green-200 dark:bg-green-900/30 dark:text-green-300 dark:hover:bg-green-900/50",
+  foody: "bg-rose-100 text-rose-700 hover:bg-rose-200 dark:bg-rose-900/30 dark:text-rose-300 dark:hover:bg-rose-900/50",
+};
+
+// the merged café keeps its primary platform's link in `url` and each extra
+// platform's link in `<platform>Url` (see merge-coffee-sources.mjs)
+function platformUrl(c: Cafe, platform: Provider): string | undefined {
+  const primary = c.platforms?.[0] ?? "wolt";
+  if (platform === primary) return c.url;
+  const u = (c as Record<string, unknown>)[`${platform}Url`];
+  return typeof u === "string" ? u : undefined;
+}
 
 type City = {
   key: string;
@@ -27,34 +52,34 @@ type GeoState = "idle" | "loading" | "active" | "denied" | "unsupported";
 
 const T = {
   en: {
-    venue: "Café", price: "Freddo Espresso", updated: "Updated", order: "Order →",
-    mapOrder: "Order on Wolt →", mapAria: "Café map",
+    venue: "Café", price: "Freddo Espresso", updated: "Updated", order: "Order →", providers: "Order from",
+    mapOrder: "Order from", mapAria: "Café map",
     viewList: "☰ List", viewMap: "🗺 Map",
     nearMe: "📍 Near me", nearActive: "📍 Nearby first", clear: "✕",
     denied: "Location access denied — showing cheapest first.",
     unsupported: "Geolocation is not supported by this browser.",
     empty: "No café data for this city yet — check back soon.",
-    note: "Prices are Wolt listings and may include a platform markup over the counter price. Cheapest branch shown per café brand. Updated weekly.",
+    note: "Each price is the cheapest across Wolt, Bolt and Foody for that café; the badges link to each platform and prices may include a platform markup over the counter price. Cheapest branch shown per café brand. Updated weekly.",
   },
   el: {
-    venue: "Καφετέρια", price: "Freddo Espresso", updated: "Ενημέρωση", order: "Παραγγελία →",
-    mapOrder: "Παραγγελία στο Wolt →", mapAria: "Χάρτης καφετεριών",
+    venue: "Καφετέρια", price: "Freddo Espresso", updated: "Ενημέρωση", order: "Παραγγελία →", providers: "Παραγγελία από",
+    mapOrder: "Παραγγελία από", mapAria: "Χάρτης καφετεριών",
     viewList: "☰ Λίστα", viewMap: "🗺 Χάρτης",
     nearMe: "📍 Κοντά μου", nearActive: "📍 Κοντινά πρώτα", clear: "✕",
     denied: "Δεν δόθηκε πρόσβαση τοποθεσίας — εμφανίζονται τα φθηνότερα πρώτα.",
     unsupported: "Ο περιηγητής δεν υποστηρίζει γεωεντοπισμό.",
     empty: "Δεν υπάρχουν ακόμα δεδομένα για αυτή την πόλη — ελέγξτε ξανά σύντομα.",
-    note: "Οι τιμές είναι από το Wolt και ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Εμφανίζεται το φθηνότερο υποκατάστημα ανά αλυσίδα. Εβδομαδιαία ενημέρωση.",
+    note: "Κάθε τιμή είναι η φθηνότερη ανά καφετέρια μεταξύ Wolt, Bolt και Foody· τα σήματα συνδέουν στην κάθε πλατφόρμα και ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Εμφανίζεται το φθηνότερο υποκατάστημα ανά αλυσίδα. Εβδομαδιαία ενημέρωση.",
   },
   ru: {
-    venue: "Кафе", price: "Фреддо Эспрессо", updated: "Обновлено", order: "Заказать →",
-    mapOrder: "Заказать на Wolt →", mapAria: "Карта кафе",
+    venue: "Кафе", price: "Фреддо Эспрессо", updated: "Обновлено", order: "Заказать →", providers: "Заказать в",
+    mapOrder: "Заказать в", mapAria: "Карта кафе",
     viewList: "☰ Список", viewMap: "🗺 Карта",
     nearMe: "📍 Рядом со мной", nearActive: "📍 Сначала ближайшие", clear: "✕",
     denied: "Доступ к геолокации не разрешён — показаны самые дешёвые.",
     unsupported: "Браузер не поддерживает геолокацию.",
     empty: "Для этого города пока нет данных — загляните позже.",
-    note: "Цены указаны по данным Wolt и могут включать наценку платформы. Для каждой сети показан самый дешёвый филиал. Обновляется еженедельно.",
+    note: "Каждая цена — самая низкая по кафе среди Wolt, Bolt и Foody; значки ведут на каждую платформу, возможна наценка платформы. Для каждой сети показан самый дешёвый филиал. Обновляется еженедельно.",
   },
 };
 
@@ -206,6 +231,9 @@ export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: La
               url: c.url,
               price: c.freddo,
               distance: c.distance,
+              platforms: c.platforms?.length ? c.platforms : ["wolt"],
+              boltUrl: c.boltUrl,
+              foodyUrl: c.foodyUrl,
             }))}
             userCoords={userCoords}
             lang={lang}
@@ -226,7 +254,7 @@ export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: La
                 <th className="px-4 py-3 text-left">{t.venue}</th>
                 <th className="px-4 py-3 text-left">{t.price}</th>
                 {userCoords && <th className="px-4 py-3 text-left">km</th>}
-                <th className="px-4 py-3"></th>
+                <th className="px-4 py-3 text-left">{t.providers}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
@@ -246,15 +274,20 @@ export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: La
                       {c.distance != null ? c.distance.toFixed(1) : "—"}
                     </td>
                   )}
-                  <td className="px-4 py-3 text-right">
-                    <a
-                      href={c.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-blue-500 dark:text-blue-400 hover:underline whitespace-nowrap"
-                    >
-                      {t.order}
-                    </a>
+                  <td className="px-4 py-3">
+                    <div className="flex gap-1.5 flex-wrap">
+                      {PROVIDERS.filter((p) => (c.platforms?.length ? c.platforms : ["wolt"]).includes(p)).map((p) => {
+                        const href = platformUrl(c, p);
+                        const cls = `text-xs font-semibold px-2 py-0.5 rounded-full transition-colors ${PROVIDER_CLASS[p]}`;
+                        return href ? (
+                          <a key={p} href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+                            {PROVIDER_LABEL[p]}
+                          </a>
+                        ) : (
+                          <span key={p} className={cls}>{PROVIDER_LABEL[p]}</span>
+                        );
+                      })}
+                    </div>
                   </td>
                 </tr>
               ))}

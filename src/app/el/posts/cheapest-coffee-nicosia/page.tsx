@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Φθηνότερο Freddo Espresso στην Κύπρο — Ζωντανές Τιμές ανά Πόλη",
   description:
-    "Τιμές Freddo Espresso σε Λευκωσία, Λεμεσό, Λάρνακα, Πάφο και Αγία Νάπα — οι φθηνότερες καφετέριες σε κάθε πόλη, πάντα με το φθηνότερο πρώτο. Εβδομαδιαία ενημέρωση μέσω Wolt.",
+    "Τιμές Freddo Espresso σε Λευκωσία, Λεμεσό, Λάρνακα, Πάφο και Αγία Νάπα — οι φθηνότερες καφετέριες σε κάθε πόλη, πάντα με το φθηνότερο πρώτο. Εβδομαδιαία ενημέρωση μέσω Wolt, Bolt Food και Foody.",
 };
 
 export default function CheapestFreddoEL() {
@@ -24,7 +24,7 @@ export default function CheapestFreddoEL() {
       <p className="text-gray-500 dark:text-gray-400 mb-8">
         Τιμές Freddo Espresso σε όλη την Κύπρο, πάντα με το φθηνότερο πρώτο.
         Διαλέξτε πόλη ή πατήστε «Κοντά μου» για ταξινόμηση με βάση την απόσταση.
-        Εβδομαδιαία ενημέρωση μέσω Wolt.
+        Εβδομαδιαία ενημέρωση μέσω Wolt, Bolt Food και Foody.
       </p>
 
       <FreddoTable data={data as any} lang="el" />

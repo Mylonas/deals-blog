@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Cheapest Freddo Espresso in Cyprus — Live Prices by City",
   description:
-    "Freddo Espresso prices in Nicosia, Limassol, Larnaca, Paphos and Ayia Napa — the cheapest cafés in each city, always sorted cheapest first. Updated weekly from Wolt.",
+    "Freddo Espresso prices in Nicosia, Limassol, Larnaca, Paphos and Ayia Napa — the cheapest cafés in each city, always sorted cheapest first. Updated weekly from Wolt, Bolt Food and Foody.",
 };
 
 export default function CheapestFreddoEN() {
@@ -24,7 +24,7 @@ export default function CheapestFreddoEN() {
       <p className="text-gray-500 dark:text-gray-400 mb-8">
         Freddo Espresso prices across Cyprus, always sorted cheapest first. Pick
         your city, or use the near-me button to sort by distance. Updated weekly
-        from Wolt.
+        from Wolt, Bolt Food and Foody.
       </p>
 
       <FreddoTable data={data as any} lang="en" />
