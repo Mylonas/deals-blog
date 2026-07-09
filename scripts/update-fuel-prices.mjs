@@ -62,13 +62,43 @@ async function fetchPricesForType(typeId, token, cookies) {
   return res.text();
 }
 
+/**
+ * The portal links each station to DisplayMap?coordinates=… in one of two
+ * formats: decimal ("34.98,33.12") or DMS ("34°59'53.31\"N,32°53'52.81\"E",
+ * sometimes space-separated). ~60 of ~320 stations use DMS — without this
+ * they'd have no coordinates and drop off the map.
+ */
+function parseCoordinates(row) {
+  const m = row.match(/coordinates=([^"&]+)/);
+  if (!m) return null;
+  let raw;
+  try {
+    raw = decodeURIComponent(m[1]);
+  } catch {
+    return null;
+  }
+  const dec = raw.match(/^\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*$/);
+  if (dec) return { lat: parseFloat(dec[1]), lng: parseFloat(dec[2]) };
+  const dms = [...raw.matchAll(/(\d+)°(\d+)'([\d.]+)"\s*([NSEW])/g)];
+  if (dms.length === 2) {
+    const toDecimal = ([, d, min, sec, hemi]) => {
+      const v = +d + +min / 60 + +sec / 3600;
+      return hemi === "S" || hemi === "W" ? -v : v;
+    };
+    const a = toDecimal(dms[0]);
+    const b = toDecimal(dms[1]);
+    return "NS".includes(dms[0][4]) ? { lat: a, lng: b } : { lat: b, lng: a };
+  }
+  return null;
+}
+
 function extractStations(html, limit = 7) {
   const rows = [];
   const trRegex = /<tr>([\s\S]*?)<\/tr>/gi;
   let m;
   while ((m = trRegex.exec(html)) !== null) {
     const row = m[1];
-    const coordMatch = row.match(/coordinates=([0-9.]+)%2C([0-9.]+)/);
+    const coordMatch = parseCoordinates(row);
     const cells = [...row.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((c) =>
       c[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
     );
@@ -77,10 +107,10 @@ function extractStations(html, limit = 7) {
       if (!isNaN(price) && price > 0.5 && price < 4) {
         const address = cells[2].split("τηλ:")[0].trim();
         const mapsUrl = coordMatch
-          ? `https://www.google.com/maps?q=${coordMatch[1]},${coordMatch[2]}`
+          ? `https://www.google.com/maps?q=${coordMatch.lat},${coordMatch.lng}`
           : `https://www.google.com/maps/search/${encodeURIComponent(address)}`;
-        const lat = coordMatch ? parseFloat(coordMatch[1]) : null;
-        const lng = coordMatch ? parseFloat(coordMatch[2]) : null;
+        const lat = coordMatch ? coordMatch.lat : null;
+        const lng = coordMatch ? coordMatch.lng : null;
         rows.push({ brand: cells[0], address, district: cells[3], price, mapsUrl, lat, lng });
       }
     }
