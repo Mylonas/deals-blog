@@ -41,11 +41,11 @@ pinned: true
 |-------|-------|-------|------|
 | SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.484 |
 | PETROLINA | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.92598333,33.54103333) | Καλό Χωριό Λάρνακας | €1.484 |
+| SHELL | [Αρχ. Μακαρίου Γ&#39; 126 Τ.Κ 2827](https://www.google.com/maps/search/%CE%91%CF%81%CF%87.%20%CE%9C%CE%B1%CE%BA%CE%B1%CF%81%CE%AF%CE%BF%CF%85%20%CE%93%26%2339%3B%20126%20%CE%A4.%CE%9A%202827) | Γαλάτα | €1.489 |
 | FILL N GO | [Λεωφ. Λάρνακος 1 Τ.Κ 7648](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9B%CE%AC%CF%81%CE%BD%CE%B1%CE%BA%CE%BF%CF%82%201%20%CE%A4.%CE%9A%207648) | Πυργά | €1.489 |
 | PETROLINA | [Λεωφ. Ελλάδος 65 Τ.Κ 7101](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%BF%CF%82%2065%20%CE%A4.%CE%9A%207101) | Αραδίππου | €1.489 |
 | SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.489 |
-| SHELL | [Αρχ. Μακαρίου Γ&#39; 11 Τ.Κ 2800](https://www.google.com/maps/search/%CE%91%CF%81%CF%87.%20%CE%9C%CE%B1%CE%BA%CE%B1%CF%81%CE%AF%CE%BF%CF%85%20%CE%93%26%2339%3B%2011%20%CE%A4.%CE%9A%202800) | Κακοπετριά | €1.490 |
-| PETROLINA | [Αρχ. Μακαρίου Γ΄ 17 Τ.Κ 2800](https://www.google.com/maps?q=34.991233,32.902827) | Κακοπετριά | €1.490 |
+| EKO | [Λεωφ. Σαριγιάννη Τ.Κ 2831](https://www.google.com/maps?q=35.070157,32.930054) | Ευρύχου | €1.490 |
 
 ## 7 самых дешёвых АЗС прямо сейчас — Печное топливо
 
