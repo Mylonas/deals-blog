@@ -60,9 +60,9 @@ function orderHtml(v: MapVenue, linkLabel: string): string {
 }
 
 const T = {
-  en: { away: "km away", street: "Street", light: "Light", dark: "Dark", from: "from" },
-  el: { away: "χλμ μακριά", street: "Κανονικός", light: "Ανοιχτός", dark: "Σκούρος", from: "από" },
-  ru: { away: "км от вас", street: "Улицы", light: "Светлая", dark: "Тёмная", from: "от" },
+  en: { away: "km away", street: "Street", light: "Light", dark: "Dark", from: "from", unmapped: "No location on the map yet:" },
+  el: { away: "χλμ μακριά", street: "Κανονικός", light: "Ανοιχτός", dark: "Σκούρος", from: "από", unmapped: "Χωρίς τοποθεσία στον χάρτη ακόμα:" },
+  ru: { away: "км от вас", street: "Улицы", light: "Светлая", dark: "Тёмная", from: "от", unmapped: "Пока без точки на карте:" },
 };
 
 // Cyprus, wide view — used when no user location and no venues to fit
@@ -252,12 +252,32 @@ export default function PriceMap({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [venues, userCoords, lang]);
 
+  // venues without coordinates can't get a marker — list them under the map
+  // so every venue stays visible in map view
+  const unmapped = venues.filter((v) => v.lat == null || v.lng == null);
+
   return (
-    <div
-      ref={containerRef}
-      className="h-[480px] w-full rounded-xl border border-gray-200 dark:border-gray-700 z-0"
-      role="application"
-      aria-label={ariaLabel}
-    />
+    <div>
+      <div
+        ref={containerRef}
+        className="h-[480px] w-full rounded-xl border border-gray-200 dark:border-gray-700 z-0"
+        role="application"
+        aria-label={ariaLabel}
+      />
+      {unmapped.length > 0 && (
+        <div className="mt-3 text-xs text-gray-500 dark:text-gray-400">
+          <span className="font-semibold">{t.unmapped}</span>{" "}
+          {unmapped.map((v, i) => (
+            <span key={v.url + v.name}>
+              {i > 0 && " · "}
+              <a href={v.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline">
+                {v.name}
+              </a>{" "}
+              ({fmt(v.price)})
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }

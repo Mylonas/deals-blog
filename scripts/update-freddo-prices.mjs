@@ -18,11 +18,12 @@
  */
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
+import { WOLT_OUT, MERGED_OUT, mergeAndWrite } from "./merge-coffee-sources.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const DATA_FILE = path.join(ROOT, "src/data/coffee-prices.json");
+const DATA_FILE = MERGED_OUT;
 
 const SEARCH_API = "https://restaurant-api.wolt.com/v1/pages/search";
 const VENUES_API = "https://restaurant-api.wolt.com/v1/pages/restaurants";
@@ -31,7 +32,7 @@ const NICOSIA = { lat: 35.1856, lon: 33.3823 };
 const HEADERS = { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" };
 
 // All Wolt Cyprus cities — each gets its own section on the page
-const CITIES = [
+export const CITIES = [
   { key: "nicosia",   lat: 35.1856, lon: 33.3823, label: { en: "Nicosia",               el: "Λευκωσία",              ru: "Никосия" } },
   { key: "limassol",  lat: 34.7071, lon: 33.0226, label: { en: "Limassol",              el: "Λεμεσός",               ru: "Лимасол" } },
   { key: "larnaca",   lat: 34.9167, lon: 33.6233, label: { en: "Larnaca",               el: "Λάρνακα",               ru: "Ларнака" } },
@@ -42,7 +43,7 @@ const TOP_PER_CITY = 12;
 const CONCURRENCY = 10;
 
 /** Lowercase, fold accents, strip punctuation — "Caffè Nero" ≈ "caffe nero". */
-function normalize(s) {
+export function normalize(s) {
   return (s || "")
     .toLowerCase()
     .normalize("NFD")
@@ -96,7 +97,7 @@ async function fetchAssortment(slug) {
  * base size of a "Classic" line (e.g. Mikel's "Freddo Espresso Classic
  * Regular"), then the shortest remaining name (longer = flavoured variant).
  */
-function findFreddo(items) {
+export function findFreddo(items) {
   const candidates = items.filter((i) => /freddo\s*espresso/i.test(i.name) && i.price != null);
   if (!candidates.length) return null;
   const score = (name) => {
@@ -176,7 +177,7 @@ async function listCafes(lat, lon) {
  * Venues of one brand share their first two name tokens ("Mikel Coffee X",
  * "Caffè Nero Y") — group on that and keep each brand's cheapest branch.
  */
-function brandKey(name) {
+export function brandKey(name) {
   return normalize(name).split(" ").slice(0, 2).join(" ");
 }
 
@@ -233,6 +234,8 @@ async function scanCity(city) {
 }
 
 // ── main ──────────────────────────────────────────────────────────────────────
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
 
 const data = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
 
@@ -294,6 +297,13 @@ data.scrapedAt = new Date().toISOString();
 data.updatedAt = data.scrapedAt;
 fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2) + "\n");
 
+// the raw Wolt city scan is the canonical merge base — Bolt and Foody cafés
+// are folded onto it by merge-coffee-sources.mjs
+fs.writeFileSync(WOLT_OUT, JSON.stringify({ updatedAt: data.scrapedAt, cities: data.cities }, null, 2) + "\n");
+mergeAndWrite();
+
 const withPrice = data.items.filter((i) => i.freddo != null).length;
 console.log(`\nDone. ${withPrice}/${data.items.length} curated cafés + ${data.cities.length} city scans.`);
 console.log("Run node scripts/update-coffee-prices.mjs to regenerate the posts.");
+
+}

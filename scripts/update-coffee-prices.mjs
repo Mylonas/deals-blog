@@ -72,33 +72,33 @@ function buildBlock(items, cities, updatedAt, scrapedAt, lang) {
 
   const T = {
     en: {
-      updated: `*Prices last checked: ${ts} (EET). Updated weekly via Wolt.*`,
+      updated: `*Prices last checked: ${ts} (EET). Updated weekly via Wolt, Bolt Food and Foody.*`,
       freddo: "Freddo Espresso — Cheapest by City",
       topDrinks: "Most Popular Drinks by Café (Nicosia)",
       noTopDrinks: "*Top drinks data is being collected — check back next month.*",
       cafe: "Café", price: "Price", delivery: "Via Delivery App", notes: "Notes",
       drink: "Drink", source: "Source", popular: "⭐ Popular", winner: "Cheapest",
-      deliveryNote: "> Prices are Wolt listings and may include a platform markup over the counter price. Cheapest branch shown per café brand.",
+      deliveryNote: "> Each price is the cheapest across Wolt, Bolt Food and Foody for that café and may include a platform markup over the counter price. Cheapest branch shown per café brand.",
       scrapedNote: scrapedTs ? `*Top drinks last scraped: ${scrapedTs}.*` : "",
     },
     el: {
-      updated: `*Τελευταία ενημέρωση: ${ts} (ΕΕΤ). Εβδομαδιαία ενημέρωση μέσω Wolt.*`,
+      updated: `*Τελευταία ενημέρωση: ${ts} (ΕΕΤ). Εβδομαδιαία ενημέρωση μέσω Wolt, Bolt Food και Foody.*`,
       freddo: "Freddo Espresso — Φθηνότερα ανά Πόλη",
       topDrinks: "Πιο Δημοφιλή Ποτά ανά Καφετέρια (Λευκωσία)",
       noTopDrinks: "*Τα δεδομένα για τα δημοφιλή ποτά συλλέγονται — επιστρέψτε τον επόμενο μήνα.*",
       cafe: "Καφετέρια", price: "Τιμή", delivery: "Μέσω Delivery", notes: "Σημειώσεις",
       drink: "Ποτό", source: "Πηγή", popular: "⭐ Δημοφιλές", winner: "Φθηνότερο",
-      deliveryNote: "> Οι τιμές είναι από το Wolt και ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Εμφανίζεται το φθηνότερο υποκατάστημα ανά αλυσίδα.",
+      deliveryNote: "> Κάθε τιμή είναι η φθηνότερη ανά καφετέρια μεταξύ Wolt, Bolt Food και Foody και ενδέχεται να περιλαμβάνει προσαύξηση πλατφόρμας. Εμφανίζεται το φθηνότερο υποκατάστημα ανά αλυσίδα.",
       scrapedNote: scrapedTs ? `*Δημοφιλή ποτά — τελευταία συλλογή: ${scrapedTs}.*` : "",
     },
     ru: {
-      updated: `*Цены последний раз проверены: ${ts} (EET). Обновляется еженедельно через Wolt.*`,
+      updated: `*Цены последний раз проверены: ${ts} (EET). Обновляется еженедельно через Wolt, Bolt Food и Foody.*`,
       freddo: "Фреддо Эспрессо — Самые дешёвые по городам",
       topDrinks: "Самые Популярные Напитки по Кафе (Никосия)",
       noTopDrinks: "*Данные о популярных напитках собираются — загляните в следующем месяце.*",
       cafe: "Кафе", price: "Цена", delivery: "Через Доставку", notes: "Примечания",
       drink: "Напиток", source: "Источник", popular: "⭐ Популярное", winner: "Самое дешёвое",
-      deliveryNote: "> Цены указаны по данным Wolt и могут включать наценку платформы. Для каждой сети показан самый дешёвый филиал.",
+      deliveryNote: "> Каждая цена — самая низкая по кафе среди Wolt, Bolt Food и Foody и может включать наценку платформы. Для каждой сети показан самый дешёвый филиал.",
       scrapedNote: scrapedTs ? `*Популярные напитки — последнее обновление: ${scrapedTs}.*` : "",
     },
   };
@@ -106,14 +106,25 @@ function buildBlock(items, cities, updatedAt, scrapedAt, lang) {
   const t = T[lang];
 
   // ── section 1: per-city Freddo tables ───────────────────────────────────────
+  // one link per platform the café was found on; the primary platform's link
+  // is `url`, extras live in `<platform>Url` (see merge-coffee-sources.mjs)
+  const platformLinks = (c) => {
+    const platforms = c.platforms?.length ? c.platforms : ["wolt"];
+    return platforms
+      .map((p, i) => {
+        const href = i === 0 ? c.url : c[`${p}Url`];
+        return href ? `[${platformLabel(p)}](${href})` : platformLabel(p);
+      })
+      .join(" · ");
+  };
   const citySections = (cities || []).map((city) => {
-    const rows = city.cafes.map((c) => `| **[${c.cafe}](${c.url})** | ${euro(c.freddo)} |`);
+    const rows = city.cafes.map((c) => `| **[${c.cafe}](${c.url})** | ${euro(c.freddo)} | ${platformLinks(c)} |`);
     const winner = city.cafes[0];
     return [
       `### ${city.label[lang] ?? city.label.en}`,
       "",
-      `| ${t.cafe} | ${t.price} |`,
-      `|------|-------|`,
+      `| ${t.cafe} | ${t.price} | ${t.delivery} |`,
+      `|------|-------|--------|`,
       ...rows,
       "",
       winner ? `**${t.winner}**: **[${winner.cafe}](${winner.url})** — ${euro(winner.freddo)}` : "",

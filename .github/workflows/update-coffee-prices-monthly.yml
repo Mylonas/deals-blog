@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name "DealsHub Bot"
           git config user.email "bot@dealshub.cy"
-          git add src/data/coffee-prices.json
+          git add src/data/coffee-prices.json src/data/coffee-prices-wolt.json
           git add posts/en/cheapest-coffee-nicosia.md
           git add posts/el/cheapest-coffee-nicosia.md
           git add posts/ru/cheapest-coffee-nicosia.md
