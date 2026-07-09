@@ -26,7 +26,10 @@ interface FuelData {
   };
 }
 
-// Map Greek municipality names → 5 main Cyprus districts
+// Map Greek municipality names → 5 main Cyprus districts.
+// Ambiguous names that exist in two districts (Αγία Βαρβάρα, Μανδριά,
+// Περιστερώνα) are deliberately absent — the coordinate fallback in
+// getDistrict decides those per station.
 const DISTRICT_MAP: Record<string, string> = {
   "Λευκωσία": "Nicosia", "Αγλαντζιά": "Nicosia", "Λακατάμεια": "Nicosia",
   "Λατσιά": "Nicosia", "Καϊμακλί": "Nicosia", "Παλλουριώτισσα": "Nicosia",
@@ -34,19 +37,53 @@ const DISTRICT_MAP: Record<string, string> = {
   "Γαλάτα": "Nicosia", "Ευρύχου": "Nicosia", "Κακοπετριά": "Nicosia",
   "Πέρα Χωριό Νήσου": "Nicosia", "Στρόβολος": "Nicosia", "Έγκωμη": "Nicosia",
   "Ίδαλιο": "Nicosia", "Λύση": "Nicosia", "Μόρφου": "Nicosia",
+  "Άγιος Δομέτιος": "Nicosia", "Ακάκι": "Nicosia", "Ακρόπολη": "Nicosia",
+  "Αρεδιού": "Nicosia", "Αστρομερίτης": "Nicosia", "Δασούπολη": "Nicosia",
+  "Δευτερά": "Nicosia", "Κάτω Πύργος": "Nicosia", "Κλήρου": "Nicosia",
+  "Κοκκινοτριμιθιά": "Nicosia", "Λυθροδόντας": "Nicosia", "Λύμπια": "Nicosia",
+  "Πέρα Ορεινής": "Nicosia", "Παλιομέτοχο": "Nicosia", "Πεδουλάς": "Nicosia",
   "Λεμεσός": "Limassol", "Δρόμος Καλαβασού - Ζυγίου": "Limassol",
   "Πολεμίδια": "Limassol", "Μέσα Γειτονιά": "Limassol", "Γερμασόγεια": "Limassol",
   "Αγία Φύλα": "Limassol", "Κολόσσι": "Limassol", "Επισκοπή": "Limassol",
+  "Άγιος Αθανάσιος": "Limassol", "Ύψωνας": "Limassol", "Αγρός": "Limassol",
+  "Βάση Επισκοπής": "Limassol", "Κάτω Πολεμίδια": "Limassol",
+  "Κυπερούντα": "Limassol", "Μονή": "Limassol", "Πάνω Κυβίδες": "Limassol",
+  "Πάνω Πλάτρες": "Limassol", "Παλώδια": "Limassol", "Παραμύθα": "Limassol",
+  "Παρεκκλησιά": "Limassol", "Πελένδρι": "Limassol", "Πεντάκωμο": "Limassol",
+  "Πισσούρι": "Limassol", "Σαϊτάς": "Limassol", "Τραχώνι": "Limassol",
+  "Τριμίκλινη": "Limassol", "Τουριστική Περ. Αγίου Τύχωνα": "Limassol",
   "Λάρνακα": "Larnaca", "Αραδίππου": "Larnaca", "Δεκέλεια": "Larnaca",
   "Καλό Χωριό Λάρνακας": "Larnaca", "Λειβάδια": "Larnaca", "Κίτι": "Larnaca",
   "Μενεού": "Larnaca", "Κόρνος": "Larnaca", "Τρούλλοι": "Larnaca",
+  "Αγγλισίδες": "Larnaca", "Αθιένου": "Larnaca", "Αλεθρικό": "Larnaca",
+  "Δρομολαξιά": "Larnaca", "Δρόμος Λάρνακας - Δεκέλειας": "Larnaca",
+  "Καλαβασός": "Larnaca", "Κοφίνου": "Larnaca", "Λεύκαρα": "Larnaca",
+  "Μαζωτός": "Larnaca", "Μοσφιλωτή": "Larnaca", "Ξυλοφάγου": "Larnaca",
+  "Ορμήδεια": "Larnaca", "Ορόκλινη": "Larnaca", "Πυργά": "Larnaca",
+  "Πύλα": "Larnaca", "Σκαρίνου": "Larnaca", "Χοιροκιτία": "Larnaca",
+  "Περιφερειακός Δρόμος Ξυλοτύμπου": "Larnaca",
   "Πάφος": "Paphos", "Χλώρακα": "Paphos", "Κισσόνεργα": "Paphos",
   "Μεσόγη": "Paphos", "Γεροσκήπου": "Paphos", "Τάλα": "Paphos",
-  "Πέγεια": "Paphos", "Κολώνη": "Paphos",
+  "Πέγεια": "Paphos", "Κολώνη": "Paphos", "Έμπα": "Paphos",
+  "Αργάκα": "Paphos", "Αρόδες": "Paphos", "Γουδί": "Paphos",
+  "Δρούσια": "Paphos", "Κονιά": "Paphos", "Νικόκλεια": "Paphos",
+  "Πόλης Χρυσοχούς": "Paphos", "Στρουμπί": "Paphos",
+  "Τάφοι των Βασιλέων": "Paphos", "Τίμη": "Paphos", "Τρεμιθούσα": "Paphos",
   "Αμμόχωστος": "Famagusta", "Αβδελλερό": "Famagusta", "Αυγόρου": "Famagusta",
   "Δερύνεια": "Famagusta", "Σωτήρα": "Famagusta", "Παραλίμνι": "Famagusta",
-  "Αχερίτου": "Famagusta", "Λιοπέτρι": "Famagusta",
+  "Αχερίτου": "Famagusta", "Λιοπέτρι": "Famagusta", "Αγία Νάπα": "Famagusta",
+  "Βρυσούλες": "Famagusta", "Δασάκι της Άχνας": "Famagusta",
+  "Πρωταράς": "Famagusta",
 };
+
+// fallback for municipality names the map doesn't know: nearest district hub
+const DISTRICT_HUBS: [string, number, number][] = [
+  ["Nicosia", 35.170, 33.360],
+  ["Limassol", 34.685, 33.040],
+  ["Larnaca", 34.918, 33.620],
+  ["Paphos", 34.775, 32.424],
+  ["Famagusta", 35.040, 33.980],
+];
 
 const DISTRICTS = ["All", "Nicosia", "Limassol", "Larnaca", "Paphos", "Famagusta"];
 const FUEL_KEYS = ["95", "98", "diesel", "heating"] as const;
@@ -59,8 +96,19 @@ const FUEL_LABELS: Record<FuelKey, string> = {
   "heating": "Heating Oil",
 };
 
-function getDistrict(raw: string): string {
-  return DISTRICT_MAP[raw] ?? raw;
+function getDistrict(s: Station): string {
+  const mapped = DISTRICT_MAP[s.district];
+  if (mapped) return mapped;
+  if (s.lat != null && s.lng != null) {
+    let best = s.district;
+    let bestDist = Infinity;
+    for (const [name, lat, lng] of DISTRICT_HUBS) {
+      const d = haversine(s.lat, s.lng, lat, lng);
+      if (d < bestDist) { bestDist = d; best = name; }
+    }
+    return best;
+  }
+  return s.district;
 }
 
 function formatDate(iso: string) {
@@ -186,7 +234,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
 
     // district state holds the i18n label (e.g. "Όλες") — map back to EN key for filtering
     const enKey = Object.keys(districtLabels).find((k) => districtLabels[k] === district) ?? "All";
-    return enKey === "All" ? all : all.filter((s) => getDistrict(s.district) === enKey);
+    return enKey === "All" ? all : all.filter((s) => getDistrict(s) === enKey);
   }, [fuel, district, data, userCoords, districtLabels]);
 
   // the list stays short and scannable; the map shows every station
