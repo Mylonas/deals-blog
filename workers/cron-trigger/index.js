@@ -15,10 +15,10 @@ const HOURLY_WORKFLOWS = [
   "update-supermarket-prices.yml",
 ];
 
-// Runs once daily (GitHub's daily schedule is reliable enough; only add here if it stalls)
-const DAILY_WORKFLOWS = [
-  "update-supermarket-deals.yml",
-];
+// Runs once daily. Empty: update-supermarket-deals.yml moved to a GitHub
+// schedule (this worker's daily dispatch never fired and the data went stale).
+// Only add a workflow here if its GitHub schedule stalls chronically.
+const DAILY_WORKFLOWS = [];
 const GH_API = "https://api.github.com";
 
 async function dispatchWorkflow(workflow, token) {

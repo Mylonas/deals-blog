@@ -39,6 +39,7 @@ export default function CheapestSupermarketProductsEN() {
       <SupermarketDealsTable
         deals={(data as any).deals}
         allTimeLows={(data as any).allTimeLows ?? []}
+        nearLows={(data as any).nearLows ?? []}
         lang="en"
         updatedAt={(data as any).updatedAt}
       />

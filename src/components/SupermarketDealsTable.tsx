@@ -17,6 +17,8 @@ type Deal = {
   availableAtChains: number | null;
   history?: PricePoint[];
   lowSince?: string; // present on all-time-low deals: date the low first appeared
+  atlPrice?: number; // present on near-low deals: the all-time-low price itself
+  pctAboveLow?: number; // present on near-low deals: how far above the low, in %
 };
 
 type Lang = "en" | "el" | "ru";
@@ -31,8 +33,9 @@ const T = {
     trend: "6-month price trend",
     tabSavings: "Biggest savings", tabLows: "All-time lows",
     lowestEver: "Lowest ever", since: "since",
-    noLows: "No products hit a fresh all-time low this week — check back soon.",
-    lowsIntro: "Products whose price just dropped to the lowest level ever recorded on e-Kalathi (tracked since September 2025). The % badge shows how far below the previous record the new price is.",
+    nearLow: "Near lowest ever", aboveLow: "above the record low of",
+    noLows: "No products are at or near an all-time low right now — check back soon.",
+    lowsIntro: "Products whose price just dropped to the lowest level ever recorded on e-Kalathi (tracked since September 2025), plus products currently within 2% of their all-time low. The green % badge shows how far below the previous record a new low is; the amber badge shows how close a price is to its record.",
     note: "Prices from e-kalathi.gov.cy — the Cyprus government's official price observatory. Click any product to compare prices across all supermarket chains. The trend line shows the typical shelf price across chains, which may sit above the lowest price shown.",
   },
   el: {
@@ -42,8 +45,9 @@ const T = {
     trend: "Τάση τιμής 6 μηνών",
     tabSavings: "Μεγαλύτερες εκπτώσεις", tabLows: "Ιστορικά χαμηλά",
     lowestEver: "Χαμηλότερη τιμή ποτέ", since: "από",
-    noLows: "Κανένα προϊόν δεν έφτασε σε νέο ιστορικό χαμηλό αυτή την εβδομάδα — ελέγξτε ξανά σύντομα.",
-    lowsIntro: "Προϊόντα των οποίων η τιμή μόλις έπεσε στο χαμηλότερο επίπεδο που έχει καταγραφεί ποτέ στο e-Kalathi (παρακολούθηση από Σεπτέμβριο 2025). Το ποσοστό δείχνει πόσο κάτω από το προηγούμενο ρεκόρ είναι η νέα τιμή.",
+    nearLow: "Κοντά στο ιστορικό χαμηλό", aboveLow: "πάνω από το ρεκόρ των",
+    noLows: "Κανένα προϊόν δεν βρίσκεται σε ή κοντά σε ιστορικό χαμηλό αυτή τη στιγμή — ελέγξτε ξανά σύντομα.",
+    lowsIntro: "Προϊόντα των οποίων η τιμή μόλις έπεσε στο χαμηλότερο επίπεδο που έχει καταγραφεί ποτέ στο e-Kalathi (παρακολούθηση από Σεπτέμβριο 2025), μαζί με προϊόντα που βρίσκονται αυτή τη στιγμή έως 2% πάνω από το ιστορικό τους χαμηλό. Το πράσινο ποσοστό δείχνει πόσο κάτω από το προηγούμενο ρεκόρ είναι ένα νέο χαμηλό· το πορτοκαλί σήμα δείχνει πόσο κοντά στο ρεκόρ είναι η τιμή.",
     note: "Τιμές από το e-kalathi.gov.cy — το επίσημο παρατηρητήριο τιμών της Κυπριακής Κυβέρνησης. Κάντε κλικ σε κάθε προϊόν για να συγκρίνετε τιμές σε όλες τις αλυσίδες. Η γραμμή τάσης δείχνει την τυπική τιμή ραφιού μεταξύ αλυσίδων, που μπορεί να είναι πάνω από τη χαμηλότερη τιμή.",
   },
   ru: {
@@ -53,8 +57,9 @@ const T = {
     trend: "Динамика цены за 6 месяцев",
     tabSavings: "Лучшие скидки", tabLows: "Исторический минимум",
     lowestEver: "Минимум за всё время", since: "с",
-    noLows: "На этой неделе ни один товар не достиг нового исторического минимума — загляните позже.",
-    lowsIntro: "Товары, цена которых только что опустилась до самого низкого уровня за всю историю наблюдений e-Kalathi (с сентября 2025). Процент показывает, насколько новая цена ниже предыдущего рекорда.",
+    nearLow: "Близко к минимуму", aboveLow: "выше рекордных",
+    noLows: "Сейчас ни один товар не находится на историческом минимуме или рядом с ним — загляните позже.",
+    lowsIntro: "Товары, цена которых только что опустилась до самого низкого уровня за всю историю наблюдений e-Kalathi (с сентября 2025), а также товары, которые сейчас находятся в пределах 2% от своего исторического минимума. Зелёный процент показывает, насколько новая цена ниже предыдущего рекорда; янтарный значок — насколько цена близка к рекорду.",
     note: "Цены с e-kalathi.gov.cy — официального государственного ценового мониторинга Кипра. Нажмите на продукт, чтобы сравнить цены во всех супермаркетах. Линия тренда показывает типичную цену на полке по сетям, которая может быть выше минимальной.",
   },
 };
@@ -95,13 +100,15 @@ function Sparkline({ history, label }: { history: PricePoint[]; label: string })
 }
 
 export default function SupermarketDealsTable({
-  deals, allTimeLows = [], lang, updatedAt,
-}: { deals: Deal[]; allTimeLows?: Deal[]; lang: Lang; updatedAt: string }) {
+  deals, allTimeLows = [], nearLows = [], lang, updatedAt,
+}: { deals: Deal[]; allTimeLows?: Deal[]; nearLows?: Deal[]; lang: Lang; updatedAt: string }) {
   const [tab, setTab] = useState<Tab>("savings");
   const [sort, setSort] = useState<SortKey>("discount");
   const t = T[lang];
 
-  const active = tab === "savings" ? deals : allTimeLows;
+  // Fresh ATLs first, then near-lows (which carry discountPct 0, so the
+  // default discount sort keeps that order)
+  const active = tab === "savings" ? deals : [...allTimeLows, ...nearLows];
 
   const sorted = useMemo(() => {
     return [...active].sort((a, b) => {
@@ -208,6 +215,12 @@ export default function SupermarketDealsTable({
                       lang === "en" ? "en-GB" : lang === "el" ? "el-GR" : "ru-RU",
                       { day: "numeric", month: "short" }
                     )}
+                  </span>
+                )}
+                {/* Near-all-time-low badge */}
+                {deal.pctAboveLow != null && deal.atlPrice != null && (
+                  <span className="inline-block mt-1.5 text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
+                    ≈ {t.nearLow} · +{deal.pctAboveLow}% {t.aboveLow} €{deal.atlPrice.toFixed(2)}
                   </span>
                 )}
                 {/* Price row */}
