@@ -1,8 +1,9 @@
 /**
  * Fetches ALL products from e-kalathi.gov.cy plus each product's full daily
- * price history, then writes src/data/supermarket-deals.json with two lists:
+ * price history, then writes src/data/supermarket-deals.json with three lists:
  *   - deals:       top 20 products by discount % (previousPrice vs startPrice)
  *   - allTimeLows: products whose price just hit its lowest recorded level
+ *   - nearLows:    products currently within NEAR_ATL_PCT % of their all-time low
  *
  * Note: the e-kalathi public API exposes global minimum prices only — per-chain
  * pricing requires authentication. Prices shown are the lowest available anywhere.
@@ -28,6 +29,8 @@ const EKALATHI_EPOCH = "2025-09-01"; // e-kalathi has no data before Sep 2025
 const ATL_RECENT_DAYS = 7;           // low must have first appeared within this window
 const ATL_MIN_HISTORY = 30;          // need at least this many days to call it an all-time low
 const ATL_MAX = 20;
+const NEAR_ATL_PCT = 2;              // "near low": current price within this % above the all-time low
+const NEAR_ATL_MAX = 20;
 // e-kalathi rate-limits bursts: 8 parallel workers made ~80% of history
 // fetches fail even with backoff, while paced sequential requests succeed.
 const CONCURRENCY = 2;
@@ -252,6 +255,29 @@ function detectAllTimeLow(history) {
   };
 }
 
+/**
+ * A product is near its all-time low when its latest price sits within
+ * NEAR_ATL_PCT % above the minimum of its history — close to the record but
+ * not at it (at-the-record is detectAllTimeLow's territory). Unlike a fresh
+ * ATL this is a state, not news, so there is no recency window.
+ * Returns { price, low, pctAbove } or null.
+ */
+function detectNearLow(history) {
+  if (history.length < ATL_MIN_HISTORY) return null;
+
+  const staleCutoff = new Date(Date.now() - 2 * 86400000).toISOString().slice(0, 10);
+  if (history[history.length - 1].d < staleCutoff) return null;
+
+  const latest = history[history.length - 1].p;
+  const min = Math.min(...history.map((h) => h.p));
+  if (min <= 0 || latest <= min) return null;
+
+  const pctAbove = ((latest - min) / min) * 100;
+  if (pctAbove > NEAR_ATL_PCT) return null;
+
+  return { price: latest, low: min, pctAbove: Math.round(pctAbove * 10) / 10 };
+}
+
 function toDeal(p, { price, previousPrice, discountPct: disc, history, lowSince = undefined }) {
   const catLabels = CATEGORY_LABELS[p.productCategoryNameEnglish] || {
     en: p.productCategoryNameEnglish || "Other",
@@ -288,14 +314,29 @@ async function main() {
 
   const cache = loadCache();
   const cachedCount = Object.keys(cache.products).length;
-  console.log(
-    cachedCount
-      ? `\nUpdating price histories (${cachedCount} products cached)...`
-      : `\nNo cache found — full history load for all ${products.length} products...`
-  );
-  const histories = await updateHistories(cache, products.map((p) => p.productMasterId));
-  fs.writeFileSync(CACHE, JSON.stringify(cache) + "\n");
-  console.log(`Cache saved → ${CACHE}`);
+
+  // --no-history-fetch: build output from the cached histories as-is. For local
+  // runs — the history endpoint rate-limits residential IPs so hard that a
+  // refresh takes hours, while CI completes fine. Stale entries are filtered
+  // by the detectors' own staleness cutoffs, so this can't publish old news.
+  const skipHistoryFetch = process.argv.includes("--no-history-fetch");
+
+  let histories;
+  if (skipHistoryFetch) {
+    console.log(`\nSkipping history fetch (--no-history-fetch) — using ${cachedCount} cached histories as-is`);
+    histories = new Map(
+      Object.entries(cache.products).map(([id, entry]) => [Number(id), expandPoints(entry.points, entry.asOf)])
+    );
+  } else {
+    console.log(
+      cachedCount
+        ? `\nUpdating price histories (${cachedCount} products cached)...`
+        : `\nNo cache found — full history load for all ${products.length} products...`
+    );
+    histories = await updateHistories(cache, products.map((p) => p.productMasterId));
+    fs.writeFileSync(CACHE, JSON.stringify(cache) + "\n");
+    console.log(`Cache saved → ${CACHE}`);
+  }
 
   // If the history endpoint is down wholesale, keep the previous run's
   // sparklines instead of publishing empty charts.
@@ -355,10 +396,38 @@ async function main() {
     console.log(`  ${i + 1}. €${d.price.toFixed(2)} (prev low €${d.previousPrice.toFixed(2)}, -${d.discountPct}%, since ${d.lowSince}) ${d.name.slice(0, 45)}`);
   });
 
+  // ── Tab 2 (continued): products within NEAR_ATL_PCT % of their all-time low ─
+  const atlIds = new Set(allTimeLows.map((d) => d.productMasterId));
+  const nearCandidates = [];
+  for (const p of products) {
+    if (atlIds.has(p.productMasterId)) continue;
+    const history = histories.get(p.productMasterId) || [];
+    const near = detectNearLow(history);
+    if (near) nearCandidates.push({ p, near, history });
+  }
+
+  nearCandidates.sort((a, b) => a.near.pctAbove - b.near.pctAbove);
+  const nearLows = nearCandidates.slice(0, NEAR_ATL_MAX).map(({ p, near, history }) => ({
+    ...toDeal(p, {
+      price: near.price,
+      previousPrice: null,
+      discountPct: 0,
+      history: sparkline(history),
+    }),
+    atlPrice: near.low,
+    pctAboveLow: near.pctAbove,
+  }));
+
+  console.log(`\nNear all-time lows (within ${NEAR_ATL_PCT}%): ${nearCandidates.length} found, keeping top ${nearLows.length}:`);
+  nearLows.forEach((d, i) => {
+    console.log(`  ${i + 1}. €${d.price.toFixed(2)} (+${d.pctAboveLow}% above low €${d.atlPrice.toFixed(2)}) ${d.name.slice(0, 45)}`);
+  });
+
   const output = {
     updatedAt: new Date().toISOString(),
     deals,
     allTimeLows,
+    nearLows,
   };
 
   fs.writeFileSync(OUT, JSON.stringify(output, null, 2) + "\n");
@@ -366,7 +435,7 @@ async function main() {
   deals.forEach((d, i) => {
     console.log(`  ${i + 1}. -${d.discountPct}% €${d.price.toFixed(2)} (was €${d.previousPrice.toFixed(2)}) ${d.name.slice(0, 50)}`);
   });
-  console.log(`\nWrote ${deals.length} deals + ${allTimeLows.length} all-time lows → ${OUT}`);
+  console.log(`\nWrote ${deals.length} deals + ${allTimeLows.length} all-time lows + ${nearLows.length} near-lows → ${OUT}`);
 }
 
 main().catch((e) => { console.error("Failed:", e.message); process.exit(1); });
