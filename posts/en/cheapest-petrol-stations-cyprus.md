@@ -32,8 +32,8 @@ pinned: true
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.439 |
 | PETROLINA | [Λεωφ. Λάρνακος 5 Τ.Κ 1035](https://www.google.com/maps?q=35.1727,33.3726) | Λευκωσία | €1.439 |
 | EKO | [Λεωφ. Σαριγιάννη Τ.Κ 2831](https://www.google.com/maps?q=35.070157,32.930054) | Ευρύχου | €1.459 |
+| PETROLINA | [Αρχ. Μακαρίου Γ΄ 17 Τ.Κ 2800](https://www.google.com/maps?q=34.991233,32.902827) | Κακοπετριά | €1.459 |
 | STAROIL | [Λεώφ. Μητροπολίτη Χρύσανθου Σαριγιάννη 110 Τ.Κ 2831](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%8E%CF%86.%20%CE%9C%CE%B7%CF%84%CF%81%CE%BF%CF%80%CE%BF%CE%BB%CE%AF%CF%84%CE%B7%20%CE%A7%CF%81%CF%8D%CF%83%CE%B1%CE%BD%CE%B8%CE%BF%CF%85%20%CE%A3%CE%B1%CF%81%CE%B9%CE%B3%CE%B9%CE%AC%CE%BD%CE%BD%CE%B7%20110%20%CE%A4.%CE%9A%202831) | Ευρύχου | €1.459 |
-| PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.468 |
 
 ## 7 Cheapest Stations Right Now — Diesel
 
@@ -44,8 +44,8 @@ pinned: true
 | FILL N GO | [Λεωφ. Λάρνακος 1 Τ.Κ 7648](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9B%CE%AC%CF%81%CE%BD%CE%B1%CE%BA%CE%BF%CF%82%201%20%CE%A4.%CE%9A%207648) | Πυργά | €1.489 |
 | PETROLINA | [Λεωφ. Ελλάδος 65 Τ.Κ 7101](https://www.google.com/maps/search/%CE%9B%CE%B5%CF%89%CF%86.%20%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%BF%CF%82%2065%20%CE%A4.%CE%9A%207101) | Αραδίππου | €1.489 |
 | SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.489 |
-| SHELL | [Αρχ. Μακαρίου Γ&#39; 126 Τ.Κ 2827](https://www.google.com/maps/search/%CE%91%CF%81%CF%87.%20%CE%9C%CE%B1%CE%BA%CE%B1%CF%81%CE%AF%CE%BF%CF%85%20%CE%93%26%2339%3B%20126%20%CE%A4.%CE%9A%202827) | Γαλάτα | €1.498 |
-| PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.499 |
+| SHELL | [Αρχ. Μακαρίου Γ&#39; 11 Τ.Κ 2800](https://www.google.com/maps/search/%CE%91%CF%81%CF%87.%20%CE%9C%CE%B1%CE%BA%CE%B1%CF%81%CE%AF%CE%BF%CF%85%20%CE%93%26%2339%3B%2011%20%CE%A4.%CE%9A%202800) | Κακοπετριά | €1.490 |
+| PETROLINA | [Αρχ. Μακαρίου Γ΄ 17 Τ.Κ 2800](https://www.google.com/maps?q=34.991233,32.902827) | Κακοπετριά | €1.490 |
 
 ## 7 Cheapest Stations Right Now — Heating Oil
 
