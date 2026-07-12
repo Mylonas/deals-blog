@@ -22,7 +22,7 @@
  *   BOLT_GAP_MS=10000             base gap between requests
  */
 import fs from "fs";
-import { CITIES, normalize, findFreddo, brandKey } from "./update-freddo-prices.mjs";
+import { CITIES, normalize, findFreddo, FREDDO_MIN_EUR, brandKey } from "./update-freddo-prices.mjs";
 import { WOLT_OUT, BOLT_OUT, MERGED_OUT, mergeAndWrite, sameCafe } from "./merge-coffee-sources.mjs";
 
 const API = "https://deliveryuser.live.boltsvc.net";
@@ -119,7 +119,7 @@ export function extractBoltFreddo(categoryFetches) {
       items.push({ name: it.name?.value || "", price });
     }
   }
-  const freddo = findFreddo(items);
+  const freddo = findFreddo(items, FREDDO_MIN_EUR);
   return freddo ? freddo.price : null;
 }
 

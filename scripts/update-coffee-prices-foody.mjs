@@ -2,10 +2,12 @@
  * Targeted Foody Cyprus coffee scraper — fills GAPS only.
  *
  * Foody has no unauthenticated JSON menu API, so — exactly like the souvlaki
- * Foody scan — this drives Playwright and reads each venue's JSON-LD menu.
- * Because a browser scrape is slow, it does NOT re-price cafés already
- * covered: it discovers coffee venues per city, drops any that match a
- * Wolt/Bolt café already in coffee-prices.json, and only opens menus for the
+ * Foody scan — venue discovery walks the public brands sitemap (see
+ * foody-discovery.mjs; the delivery listing pages are area-scoped and only
+ * ever show one neighbourhood), then Playwright reads each venue page's
+ * client-injected JSON-LD menu. Because a browser scrape is slow, it does NOT
+ * re-price cafés already covered: it drops any discovered café that matches a
+ * Wolt/Bolt café already in coffee-prices.json and only opens menus for the
  * remaining GAP cafés.
  *
  * Output: src/data/coffee-prices-foody.json, then a 3-way merge into the
@@ -19,99 +21,21 @@
  */
 import fs from "fs";
 import { chromium } from "playwright";
-import { CITIES, findFreddo } from "./update-freddo-prices.mjs";
+import { CITIES, findFreddo, FREDDO_MIN_EUR } from "./update-freddo-prices.mjs";
 import { FOODY_OUT, MERGED_OUT, WOLT_OUT, BOLT_OUT, mergeAndWrite, sameCafe } from "./merge-coffee-sources.mjs";
+import { discoverFoodyVenues } from "./foody-discovery.mjs";
 
 const DEBUG = process.env.DEBUG === "1";
 const DEBUG_DIR = "/tmp/foody-coffee-debug";
 const ONLY_CITIES = process.env.FOODY_CITIES ? new Set(process.env.FOODY_CITIES.split(",")) : null;
 const MAX_VENUES = parseInt(process.env.FOODY_MAX_VENUES ?? "0", 10) || Infinity;
 
-// Foody cuisine chips that carry cafés; clicking each filters the list
-const CUISINE_CHIPS = ["Coffee", "Καφές", "Cafe", "Breakfast"];
-// per-card cuisine labels worth scraping (the robust discovery signal)
-const COFFEE_CUISINE_RE = /coffee|cafe|café|espresso|καφ/i;
+// brand-page title cuisines that carry cafés (also Breakfast/Brunch places,
+// which usually serve freddo espresso)
+const COFFEE_CUISINE_RE = /coffee|cafe|café|espresso|breakfast|brunch|καφ/i;
 const NAV_TIMEOUT = 45000;
 
-// Foody delivery-page slug per city
-const FOODY_CITY_SLUG = {
-  nicosia: "nicosia",
-  limassol: "limassol",
-  larnaca: "larnaca",
-  paphos: "paphos",
-  famagusta: "agia-napa",
-};
-
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-// ── discovery: coffee venues delivering to a city ─────────────────────────────
-
-const collectVenueLinks = (page) =>
-  page.evaluate(() => {
-    const out = [];
-    for (const a of document.querySelectorAll('a[href*="/delivery/menu/"]')) {
-      const href = a.getAttribute("href");
-      const slug = href.split("/delivery/menu/")[1]?.split(/[/?#]/)[0];
-      // the clean shop name is the anchor's aria-label (falls back to the title
-      // element) — the raw textContent also carries price, rating and cuisine
-      const name = (a.getAttribute("aria-label") || a.querySelector('[class*="cc-title"], p')?.textContent || "")
-        .replace(/\s+/g, " ").trim().slice(0, 80);
-      const cuisine = (a.querySelector('[class*="cc-category"]')?.textContent || "").trim();
-      if (slug) out.push({ slug, name, href, cuisine });
-    }
-    return out;
-  });
-
-async function discoverVenues(page, city) {
-  const found = new Map(); // slug → { name, cuisine, url }
-  const slug = FOODY_CITY_SLUG[city.key] || city.key;
-  await page.goto(`https://www.foody.com.cy/delivery/${slug}`, { waitUntil: "domcontentloaded", timeout: NAV_TIMEOUT });
-  await sleep(2500);
-
-  // only keep cards whose cuisine label looks coffee-relevant (unless a
-  // cuisine chip already scoped the whole list, in which case keep all)
-  const absorb = (links, { cuisineFiltered = false } = {}) => {
-    for (const l of links) {
-      if (found.has(l.slug)) continue;
-      if (!cuisineFiltered && !COFFEE_CUISINE_RE.test(l.cuisine || "")) continue;
-      found.set(l.slug, {
-        name: l.name || l.slug.replace(/-/g, " "),
-        cuisine: l.cuisine || "",
-        url: l.href.startsWith("http") ? l.href : `https://www.foody.com.cy${l.href}`,
-      });
-    }
-  };
-
-  // 1) scroll the default listing, keeping only coffee-cuisine cards
-  for (let i = 0; i < 12; i++) {
-    absorb(await collectVenueLinks(page));
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await sleep(1200);
-  }
-
-  // 2) also click each coffee cuisine chip (when present) and keep the whole
-  // filtered list — catches cafés whose card label is generic
-  for (const chip of CUISINE_CHIPS) {
-    try {
-      const btn = page.locator("button", { hasText: new RegExp(`^\\s*${chip}\\s*$`, "i") }).first();
-      if (!(await btn.count())) continue;
-      await btn.scrollIntoViewIfNeeded().catch(() => {});
-      // the chip carousel's prev/next overlay intercepts pointer events on
-      // some viewports — fall back to a force click before giving up
-      await btn.click({ timeout: 5000 }).catch(() => btn.click({ timeout: 5000, force: true }));
-      await sleep(2500);
-      if (DEBUG) await page.screenshot({ path: `${DEBUG_DIR}/${city.key}-${chip}.png` }).catch(() => {});
-      const before = found.size;
-      absorb(await collectVenueLinks(page), { cuisineFiltered: chip !== "Breakfast" });
-      console.log(`    "${chip}": +${found.size - before} venues`);
-      await btn.click({ timeout: 5000 }).catch(() => {}); // toggle off before next
-      await sleep(1000);
-    } catch (e) {
-      console.log(`    chip "${chip}" failed: ${e.message}`);
-    }
-  }
-  return [...found.entries()].map(([slug, v]) => ({ slug, ...v }));
-}
 
 // ── menu extraction ───────────────────────────────────────────────────────────
 
@@ -162,7 +86,7 @@ async function scrapeVenue(page, venue) {
     data = await extractMenu(page);
   }
   if (DEBUG) await page.screenshot({ path: `${DEBUG_DIR}/${venue.slug}-menu.png`, fullPage: true }).catch(() => {});
-  const freddo = findFreddo(data.items);
+  const freddo = findFreddo(data.items, FREDDO_MIN_EUR);
   return { freddo: freddo ? freddo.price : null, geo: data.geo };
 }
 
@@ -202,7 +126,25 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   };
 
   try {
-    for (const city of CITIES) {
+    // sitemap discovery covers all cities in one pass (see foody-discovery.mjs)
+    let discoveredByCity = null;
+    try {
+      discoveredByCity = await discoverFoodyVenues(context.request, {
+        cuisineRe: COFFEE_CUISINE_RE,
+        onlyCities: ONLY_CITIES,
+      });
+    } catch (e) {
+      // no discovery → nothing to scrape; re-emit the previous scan so the
+      // merge still sees a valid (if stale) Foody source
+      console.log(`✗ sitemap discovery failed (${e.message}) — keeping previous scan`);
+      process.exitCode = 1;
+      for (const city of CITIES) {
+        const kept = prevByCity.get(city.key);
+        if (kept?.length) data.cities.push({ key: city.key, label: city.label, cafes: kept });
+      }
+    }
+
+    for (const city of discoveredByCity ? CITIES : []) {
       if (ONLY_CITIES && !ONLY_CITIES.has(city.key)) {
         const kept = prevByCity.get(city.key);
         if (kept?.length) data.cities.push({ key: city.key, label: city.label, cafes: kept });
@@ -213,16 +155,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       const cityEntry = { key: city.key, label: city.label, cafes };
       data.cities.push(cityEntry);
 
-      let discovered = [];
-      try {
-        discovered = await discoverVenues(page, city);
-        console.log(`  discovered ${discovered.length} coffee venues`);
-      } catch (e) {
-        cityEntry.cafes = prevByCity.get(city.key) || [];
-        console.log(`  ✗ discovery failed (${e.message}) — kept ${cityEntry.cafes.length} from previous scan`);
-        checkpoint();
-        continue;
-      }
+      const discovered = discoveredByCity.get(city.key) || [];
+      console.log(`  discovered ${discovered.length} coffee venues`);
 
       // keep only cafés NOT already covered by Wolt/Bolt
       const existing = existingCafes(city.key);
