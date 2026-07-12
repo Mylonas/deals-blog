@@ -60,10 +60,17 @@ function nameTokens(name) {
   );
 }
 
+const normName = (s) =>
+  (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-zα-ω0-9]+/g, " ").trim();
+
 function tokenOverlap(a, b) {
   const ta = nameTokens(a);
   const tb = nameTokens(b);
-  if (!ta.size || !tb.size) return 0;
+  if (!ta.size || !tb.size) {
+    // names made only of stop/short tokens ("AD Souvlaki", "J.F.C Restaurant")
+    // carry no identity tokens — fall back to whole-name equality
+    return normName(a) && normName(a) === normName(b) ? 1 : 0;
+  }
   let hits = 0;
   for (const t of ta) if (tb.has(t)) hits++;
   return hits / Math.min(ta.size, tb.size);
@@ -117,15 +124,20 @@ function foldInto(base, incoming, platform) {
 
 /** Fold one source's venue list for a city onto the running merged list. */
 function foldCity(merged, sourceVenues, platform) {
+  // a source can list the same venue twice (e.g. Foody's sitemap keeps an old
+  // and a new listing side by side) — collapse those before folding
+  const source = [];
+  for (const sv of sourceVenues || []) if (!source.some((o) => sameVenue(o, sv))) source.push(sv);
+
   const used = new Set();
   for (let i = 0; i < merged.length; i++) {
-    const idx = (sourceVenues || []).findIndex((sv, j) => !used.has(j) && sameVenue(merged[i], sv));
+    const idx = source.findIndex((sv, j) => !used.has(j) && sameVenue(merged[i], sv));
     if (idx >= 0) {
       used.add(idx);
-      merged[i] = foldInto(merged[i], sourceVenues[idx], platform);
+      merged[i] = foldInto(merged[i], source[idx], platform);
     }
   }
-  (sourceVenues || []).forEach((sv, j) => {
+  source.forEach((sv, j) => {
     if (!used.has(j)) merged.push({ ...sv, platforms: [platform] });
   });
   return merged;

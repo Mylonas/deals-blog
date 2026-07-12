@@ -92,13 +92,19 @@ async function fetchAssortment(slug) {
   return res.json();
 }
 
+// below this a "Freddo Espresso" price is a venue-side data-entry error or an
+// option row (e.g. €0.65 sugar/extra-shot lines), not a drink price
+export const FREDDO_MIN_EUR = 1.5;
+export const FREDDO_MIN_CENTS = FREDDO_MIN_EUR * 100;
+
 /**
  * Pick the plain Freddo Espresso among variants: exact name first, then the
  * base size of a "Classic" line (e.g. Mikel's "Freddo Espresso Classic
  * Regular"), then the shortest remaining name (longer = flavoured variant).
+ * `minPrice` is in the caller's price unit (Wolt: cents, Bolt/Foody: euros).
  */
-export function findFreddo(items) {
-  const candidates = items.filter((i) => /freddo\s*espresso/i.test(i.name) && i.price != null);
+export function findFreddo(items, minPrice = 0) {
+  const candidates = items.filter((i) => /freddo\s*espresso/i.test(i.name) && i.price != null && i.price >= minPrice);
   if (!candidates.length) return null;
   const score = (name) => {
     const n = normalize(name);
@@ -138,7 +144,7 @@ function buildTopDrinks(assortment) {
     if (top.length >= 5) break;
   }
 
-  const freddo = findFreddo(assortment.items);
+  const freddo = findFreddo(assortment.items, FREDDO_MIN_CENTS);
   if (freddo && !seen.has(freddo.name.trim().toLowerCase())) {
     top.push({ name: freddo.name.trim(), price: freddo.price / 100, platform: "wolt", popular: false });
   }
@@ -203,7 +209,7 @@ async function scanCity(city) {
           if (res.status === 404 || res.status === 410) { ok = true; break; } // venue gone — don't retry
           if (!res.ok) continue;
           const assortment = await res.json();
-          const freddo = findFreddo(assortment.items || []);
+          const freddo = findFreddo(assortment.items || [], FREDDO_MIN_CENTS);
           if (freddo) found.push({ ...v, freddo: freddo.price / 100 });
           ok = true;
         } catch {}
@@ -260,7 +266,7 @@ for (const item of data.items) {
     }
     const assortment = await fetchAssortment(venue.slug);
 
-    const freddo = findFreddo(assortment.items);
+    const freddo = findFreddo(assortment.items, FREDDO_MIN_CENTS);
     if (freddo) {
       item.freddo = freddo.price / 100;
       // the verified price IS the Wolt listing — keep the delivery column in sync
