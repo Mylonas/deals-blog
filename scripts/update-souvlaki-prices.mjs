@@ -309,6 +309,9 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     console.log(`\n══ ${city.label.en} ══`);
     try {
       const venues = await scanCity(city, prevByCity.get(city.key));
+      // a soft block (HTTP 200 with no venues) must not erase the carry-over
+      // baseline — treat an empty scan like a failed one
+      if (!venues.length) throw new Error("scan returned 0 venues");
       data.cities.push({ key: city.key, label: city.label, venues });
     } catch (err) {
       // whole city failed — keep the previous scan's data rather than dropping it
@@ -317,6 +320,11 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       console.log(`  ✗ ${err.message} — kept ${kept.length} venues from previous scan`);
     }
     await new Promise((r) => setTimeout(r, 5000));
+  }
+
+  if (!data.cities.some((c) => c.venues?.length)) {
+    console.error("\n✗ Wolt scan produced no venue data for any city — aborting without writing.");
+    process.exit(1);
   }
 
   data.updatedAt = new Date().toISOString();
