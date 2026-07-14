@@ -286,17 +286,35 @@ for (const item of data.items) {
   }
 }
 
-// City-by-city freddo tables for the whole island
+// City-by-city freddo tables for the whole island. A failed or empty scan
+// (Wolt blocking the runner, rate limits) keeps the city's previous Wolt data
+// instead of dropping it.
+const prevWolt = fs.existsSync(WOLT_OUT) ? JSON.parse(fs.readFileSync(WOLT_OUT, "utf8")) : { cities: [] };
+const prevCities = new Map((prevWolt.cities || []).map((c) => [c.key, c]));
 data.cities = [];
+let scanned = 0;
 for (const city of CITIES) {
   console.log(`\n══ ${city.label.en} ══`);
   try {
     const cafes = await scanCity(city);
+    if (!cafes.length) throw new Error("scan returned 0 cafés");
     data.cities.push({ key: city.key, label: city.label, cafes });
+    scanned++;
   } catch (err) {
-    console.log(`  ✗ ${err.message} — city skipped`);
+    const prev = prevCities.get(city.key);
+    if (prev?.cafes?.length) {
+      console.log(`  ✗ ${err.message} — keeping previous data (${prev.cafes.length} cafés)`);
+      data.cities.push(prev);
+    } else {
+      console.log(`  ✗ ${err.message} — city skipped`);
+    }
   }
   await new Promise((r) => setTimeout(r, 5000)); // breathe between cities — avoid rate limiting
+}
+
+if (scanned === 0 && !data.cities.some((c) => c.cafes?.length)) {
+  console.error("\n✗ Wolt scan produced no café data for any city — aborting without writing.");
+  process.exit(1);
 }
 
 data.scrapedAt = new Date().toISOString();

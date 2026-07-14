@@ -146,17 +146,29 @@ function foldCity(merged, sourceCafes, platform) {
 export function mergeCoffee(wolt, extras) {
   const present = extras.filter((e) => e.data?.cities?.length);
   const byCity = present.map((e) => ({ platform: e.platform, map: new Map(e.data.cities.map((c) => [c.key, c.cafes])) }));
+  // union of every source's cities — a failed Wolt scan (empty cities) must
+  // not erase the Bolt/Foody cafés from the merged file
+  const cityDefs = [];
+  const seenKeys = new Set();
+  for (const src of [wolt, ...present.map((e) => e.data)]) {
+    for (const c of src.cities || []) {
+      if (seenKeys.has(c.key)) continue;
+      seenKeys.add(c.key);
+      cityDefs.push({ key: c.key, label: c.label });
+    }
+  }
+  const woltByKey = new Map((wolt.cities || []).map((c) => [c.key, c.cafes]));
   return {
     updatedAt: new Date().toISOString(),
     sources: {
       wolt: wolt.updatedAt,
       ...Object.fromEntries(present.map((e) => [e.platform, e.data.updatedAt])),
     },
-    cities: wolt.cities.map((c) => {
-      let merged = (c.cafes || []).map((v) => ({ ...v, freddoSource: "wolt", platforms: ["wolt"] }));
-      for (const { platform, map } of byCity) merged = foldCity(merged, map.get(c.key), platform);
+    cities: cityDefs.map(({ key, label }) => {
+      let merged = (woltByKey.get(key) || []).map((v) => ({ ...v, freddoSource: "wolt", platforms: ["wolt"] }));
+      for (const { platform, map } of byCity) merged = foldCity(merged, map.get(key), platform);
       merged.sort((a, b) => (a.freddo ?? 99) - (b.freddo ?? 99));
-      return { key: c.key, label: c.label, cafes: merged };
+      return { key, label, cafes: merged };
     }),
   };
 }
