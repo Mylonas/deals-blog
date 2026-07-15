@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T10:22:56.632Z",
+  "updatedAt": "2026-07-15T10:53:08.484Z",
   "fuels": {
     "95": {
       "label": "Unleaded 95",
@@ -4034,12 +4034,30 @@
         },
         {
           "brand": "ESSO",
+          "address": "Τζελάλ Μπαγιάρ 4 Τ.Κ 3042",
+          "district": "Λεμεσός",
+          "price": 1.519,
+          "mapsUrl": "https://www.google.com/maps?q=34.6720404678677,33.0372434981475",
+          "lat": 34.6720404678677,
+          "lng": 33.0372434981475
+        },
+        {
+          "brand": "ESSO",
           "address": "Λεώφ. Αγίου Αθανασίου 13 Τ.Κ 4107",
           "district": "Άγιος Αθανάσιος",
           "price": 1.519,
           "mapsUrl": "https://www.google.com/maps?q=34.709661,33.060646",
           "lat": 34.709661,
           "lng": 33.060646
+        },
+        {
+          "brand": "EKO",
+          "address": "εντός Διεθνούς Αεροδρομίου Πάφου Τ.Κ 8507",
+          "district": "Τίμη",
+          "price": 1.519,
+          "mapsUrl": "https://www.google.com/maps?q=34.710452,32.490238",
+          "lat": 34.710452,
+          "lng": 32.490238
         },
         {
           "brand": "EKO",
@@ -4076,15 +4094,6 @@
           "mapsUrl": "https://www.google.com/maps?q=34.760461,32.422081",
           "lat": 34.760461,
           "lng": 32.422081
-        },
-        {
-          "brand": "EKO",
-          "address": "εντός Διεθνούς Αεροδρομίου Πάφου Τ.Κ 8507",
-          "district": "Τίμη",
-          "price": 1.519,
-          "mapsUrl": "https://www.google.com/maps?q=34.710452,32.490238",
-          "lat": 34.710452,
-          "lng": 32.490238
         },
         {
           "brand": "EKO",
@@ -4241,51 +4250,6 @@
         },
         {
           "brand": "PETROLINA",
-          "address": "Λεώφ. Αγίου Γεωργίου Τ.Κ 8560",
-          "district": "Πέγεια",
-          "price": 1.524,
-          "mapsUrl": "https://www.google.com/maps?q=34.87136,32.36097",
-          "lat": 34.87136,
-          "lng": 32.36097
-        },
-        {
-          "brand": "PETROLINA",
-          "address": "Λεωφ. Στροβόλου 279 Τ.Κ 2048",
-          "district": "Στρόβολος",
-          "price": 1.524,
-          "mapsUrl": "https://www.google.com/maps?q=35.128309,33.325049",
-          "lat": 35.128309,
-          "lng": 33.325049
-        },
-        {
-          "brand": "ENI",
-          "address": "Λεωφ. Κυριάκου Μάτση Τ.Κ 8300",
-          "district": "Κονιά",
-          "price": 1.524,
-          "mapsUrl": "https://www.google.com/maps?q=34.7740602,32.4592027",
-          "lat": 34.7740602,
-          "lng": 32.4592027
-        },
-        {
-          "brand": "PETROLINA",
-          "address": "Κύριος Δρόμος Πεδουλά – Προδρόμου Τ.Κ 2850",
-          "district": "Πεδουλάς",
-          "price": 1.524,
-          "mapsUrl": "https://www.google.com/maps?q=34.97021,32.82599",
-          "lat": 34.97021,
-          "lng": 32.82599
-        },
-        {
-          "brand": "PETROLINA",
-          "address": "Λεωφ. Πρωταρά - Κάβο Γκρέκο 227 Τ.Κ 5295",
-          "district": "Πρωταράς",
-          "price": 1.524,
-          "mapsUrl": "https://www.google.com/maps?q=35.027565,34.031999",
-          "lat": 35.027565,
-          "lng": 34.031999
-        },
-        {
-          "brand": "PETROLINA",
           "address": "Λεωφ. Αρχ. Μακαρίου Γ΄2, Πέρα Χωριό Τ.Κ 2572",
           "district": "Πέρα Χωριό Νήσου",
           "price": 1.524,
@@ -4328,6 +4292,51 @@
           "mapsUrl": "https://www.google.com/maps?q=34.993175,33.99039",
           "lat": 34.993175,
           "lng": 33.99039
+        },
+        {
+          "brand": "PETROLINA",
+          "address": "Λεώφ. Αγίου Γεωργίου Τ.Κ 8560",
+          "district": "Πέγεια",
+          "price": 1.524,
+          "mapsUrl": "https://www.google.com/maps?q=34.87136,32.36097",
+          "lat": 34.87136,
+          "lng": 32.36097
+        },
+        {
+          "brand": "PETROLINA",
+          "address": "Λεωφ. Στροβόλου 279 Τ.Κ 2048",
+          "district": "Στρόβολος",
+          "price": 1.524,
+          "mapsUrl": "https://www.google.com/maps?q=35.128309,33.325049",
+          "lat": 35.128309,
+          "lng": 33.325049
+        },
+        {
+          "brand": "ENI",
+          "address": "Λεωφ. Κυριάκου Μάτση Τ.Κ 8300",
+          "district": "Κονιά",
+          "price": 1.524,
+          "mapsUrl": "https://www.google.com/maps?q=34.7740602,32.4592027",
+          "lat": 34.7740602,
+          "lng": 32.4592027
+        },
+        {
+          "brand": "PETROLINA",
+          "address": "Κύριος Δρόμος Πεδουλά – Προδρόμου Τ.Κ 2850",
+          "district": "Πεδουλάς",
+          "price": 1.524,
+          "mapsUrl": "https://www.google.com/maps?q=34.97021,32.82599",
+          "lat": 34.97021,
+          "lng": 32.82599
+        },
+        {
+          "brand": "PETROLINA",
+          "address": "Λεωφ. Πρωταρά - Κάβο Γκρέκο 227 Τ.Κ 5295",
+          "district": "Πρωταράς",
+          "price": 1.524,
+          "mapsUrl": "https://www.google.com/maps?q=35.027565,34.031999",
+          "lat": 35.027565,
+          "lng": 34.031999
         },
         {
           "brand": "PETROLINA",
@@ -5012,15 +5021,6 @@
           "mapsUrl": "https://www.google.com/maps?q=34.84668333,33.573",
           "lat": 34.84668333,
           "lng": 33.573
-        },
-        {
-          "brand": "ESSO",
-          "address": "Τζελάλ Μπαγιάρ 4 Τ.Κ 3042",
-          "district": "Λεμεσός",
-          "price": 1.569,
-          "mapsUrl": "https://www.google.com/maps?q=34.6720404678677,33.0372434981475",
-          "lat": 34.6720404678677,
-          "lng": 33.0372434981475
         },
         {
           "brand": "ESSO",
@@ -6406,6 +6406,15 @@
         },
         {
           "brand": "ESSO",
+          "address": "Τζελάλ Μπαγιάρ 4 Τ.Κ 3042",
+          "district": "Λεμεσός",
+          "price": 1.549,
+          "mapsUrl": "https://www.google.com/maps?q=34.6720404678677,33.0372434981475",
+          "lat": 34.6720404678677,
+          "lng": 33.0372434981475
+        },
+        {
+          "brand": "ESSO",
           "address": "Μακεδονιτίσσης 105 Τ.Κ 2057",
           "district": "Στρόβολος",
           "price": 1.549,
@@ -6793,15 +6802,6 @@
         },
         {
           "brand": "PETROLINA",
-          "address": "Κάθετος Δρόμος Νέου Λιμανιού Τ.Κ 4150",
-          "district": "Κάτω Πολεμίδια",
-          "price": 1.568,
-          "mapsUrl": "https://www.google.com/maps?q=34.6754556,32.988516",
-          "lat": 34.6754556,
-          "lng": 32.988516
-        },
-        {
-          "brand": "PETROLINA",
           "address": "Δρόμος Αμιάντου – Καρβουνά Τ.Κ 4876",
           "district": "Κυπερούντα",
           "price": 1.568,
@@ -6892,6 +6892,15 @@
         },
         {
           "brand": "PETROLINA",
+          "address": "Κάθετος Δρόμος Νέου Λιμανιού Τ.Κ 4150",
+          "district": "Κάτω Πολεμίδια",
+          "price": 1.568,
+          "mapsUrl": "https://www.google.com/maps?q=34.6754556,32.988516",
+          "lat": 34.6754556,
+          "lng": 32.988516
+        },
+        {
+          "brand": "PETROLINA",
           "address": "Λεωφ. Τάσσου Παπαδόπουλου 7 (δίπλα από πρώην Διυλιστήριο) Τ.Κ 6059",
           "district": "Λειβάδια",
           "price": 1.568,
@@ -6910,21 +6919,21 @@
         },
         {
           "brand": "EKO",
-          "address": "Λεωφ. Δημητρίου Βικέλα 97 Τ.Κ 2037",
-          "district": "Στρόβολος",
-          "price": 1.568,
-          "mapsUrl": "https://www.google.com/maps?q=35.117444444444445,33.356611111111114",
-          "lat": 35.117444444444445,
-          "lng": 33.356611111111114
-        },
-        {
-          "brand": "EKO",
           "address": "Λεωφ. Αρχ. Μακαρίου Γ΄ 82 Τ.Κ 7550",
           "district": "Κίτι",
           "price": 1.568,
           "mapsUrl": "https://www.google.com/maps?q=34.852781,33.581026",
           "lat": 34.852781,
           "lng": 33.581026
+        },
+        {
+          "brand": "EKO",
+          "address": "Λεωφ. Δημητρίου Βικέλα 97 Τ.Κ 2037",
+          "district": "Στρόβολος",
+          "price": 1.568,
+          "mapsUrl": "https://www.google.com/maps?q=35.117444444444445,33.356611111111114",
+          "lat": 35.117444444444445,
+          "lng": 33.356611111111114
         },
         {
           "brand": "EKO",
@@ -7009,24 +7018,6 @@
         },
         {
           "brand": "EKO",
-          "address": "Λεωφ. Δημοκρατίας 54 Τ.Κ 2034",
-          "district": "Στρόβολος",
-          "price": 1.568,
-          "mapsUrl": "https://www.google.com/maps?q=35.131505,33.361001",
-          "lat": 35.131505,
-          "lng": 33.361001
-        },
-        {
-          "brand": "EKO",
-          "address": "Γωνία Ναυαρίνου 2 & Ταγματάρχου Πουλίου Τ.Κ 1100",
-          "district": "Λευκωσία",
-          "price": 1.568,
-          "mapsUrl": "https://www.google.com/maps?q=35.171615,33.345687",
-          "lat": 35.171615,
-          "lng": 33.345687
-        },
-        {
-          "brand": "EKO",
           "address": "Λεωφ. Λουκή Ακρίτα 1 Τ.Κ 1100",
           "district": "Λευκωσία",
           "price": 1.568,
@@ -7045,6 +7036,15 @@
         },
         {
           "brand": "EKO",
+          "address": "Γωνία Ναυαρίνου 2 & Ταγματάρχου Πουλίου Τ.Κ 1100",
+          "district": "Λευκωσία",
+          "price": 1.568,
+          "mapsUrl": "https://www.google.com/maps?q=35.171615,33.345687",
+          "lat": 35.171615,
+          "lng": 33.345687
+        },
+        {
+          "brand": "EKO",
           "address": "Μάρκου Δράκου 1 Τ.Κ 5510",
           "district": "Αυγόρου",
           "price": 1.568,
@@ -7054,12 +7054,12 @@
         },
         {
           "brand": "EKO",
-          "address": "Λεωφ. Τσερίου 127 Στρόβολος Τ.Κ 2045",
+          "address": "Λεωφ. Δημοκρατίας 54 Τ.Κ 2034",
           "district": "Στρόβολος",
           "price": 1.568,
-          "mapsUrl": "https://www.google.com/maps?q=35.128667,33.33847",
-          "lat": 35.128667,
-          "lng": 33.33847
+          "mapsUrl": "https://www.google.com/maps?q=35.131505,33.361001",
+          "lat": 35.131505,
+          "lng": 33.361001
         },
         {
           "brand": "EKO",
@@ -7078,6 +7078,15 @@
           "mapsUrl": "https://www.google.com/maps?q=35.024897,33.963177",
           "lat": 35.024897,
           "lng": 33.963177
+        },
+        {
+          "brand": "EKO",
+          "address": "Λεωφ. Τσερίου 127 Στρόβολος Τ.Κ 2045",
+          "district": "Στρόβολος",
+          "price": 1.568,
+          "mapsUrl": "https://www.google.com/maps?q=35.128667,33.33847",
+          "lat": 35.128667,
+          "lng": 33.33847
         },
         {
           "brand": "EKO",
@@ -7162,6 +7171,15 @@
         },
         {
           "brand": "EKO",
+          "address": "Λεωφ. Αρχ.Μακαρίου Γ' 158 Τ.Κ 5380",
+          "district": "Δερύνεια",
+          "price": 1.568,
+          "mapsUrl": "https://www.google.com/maps?q=35.055028,33.942739",
+          "lat": 35.055028,
+          "lng": 33.942739
+        },
+        {
+          "brand": "EKO",
           "address": "Λεωφ. Αρχ.Μιχαήλ 43 (Παρισσινός) Τ.Κ 2057",
           "district": "Στρόβολος",
           "price": 1.568,
@@ -7177,15 +7195,6 @@
           "mapsUrl": "https://www.google.com/maps?q=35.137332,33.350634",
           "lat": 35.137332,
           "lng": 33.350634
-        },
-        {
-          "brand": "EKO",
-          "address": "Λεωφ. Αρχ.Μακαρίου Γ' 158 Τ.Κ 5380",
-          "district": "Δερύνεια",
-          "price": 1.568,
-          "mapsUrl": "https://www.google.com/maps?q=35.055028,33.942739",
-          "lat": 35.055028,
-          "lng": 33.942739
         },
         {
           "brand": "STAROIL",
@@ -7279,15 +7288,6 @@
         },
         {
           "brand": "ESSO",
-          "address": "Τζελάλ Μπαγιάρ 4 Τ.Κ 3042",
-          "district": "Λεμεσός",
-          "price": 1.569,
-          "mapsUrl": "https://www.google.com/maps?q=34.6720404678677,33.0372434981475",
-          "lat": 34.6720404678677,
-          "lng": 33.0372434981475
-        },
-        {
-          "brand": "ESSO",
           "address": "Αγίας Ζώνης 14 Τ.Κ 3027",
           "district": "Λεμεσός",
           "price": 1.569,
@@ -7351,21 +7351,21 @@
         },
         {
           "brand": "EKO",
-          "address": "Μαργαρίτας 45 Τ.Κ 4878",
-          "district": "Πελένδρι",
-          "price": 1.569,
-          "mapsUrl": "https://www.google.com/maps?q=34.890934,32.957813",
-          "lat": 34.890934,
-          "lng": 32.957813
-        },
-        {
-          "brand": "EKO",
           "address": "Αγίου Γεωργίου 99 Τ.Κ 4180",
           "district": "Ύψωνας",
           "price": 1.569,
           "mapsUrl": "https://www.google.com/maps?q=34.682444,32.952385",
           "lat": 34.682444,
           "lng": 32.952385
+        },
+        {
+          "brand": "EKO",
+          "address": "Μαργαρίτας 45 Τ.Κ 4878",
+          "district": "Πελένδρι",
+          "price": 1.569,
+          "mapsUrl": "https://www.google.com/maps?q=34.890934,32.957813",
+          "lat": 34.890934,
+          "lng": 32.957813
         },
         {
           "brand": "EKO",
@@ -7683,6 +7683,15 @@
           "lng": 33.3404218637543
         },
         {
+          "brand": "PETROLINA",
+          "address": "Λεωφ. Αρχ. Μακαρίου Γ΄ 89 Τ.Κ 1071",
+          "district": "Λευκωσία",
+          "price": 1.579,
+          "mapsUrl": "https://www.google.com/maps?q=35.1609,33.3711",
+          "lat": 35.1609,
+          "lng": 33.3711
+        },
+        {
           "brand": "ESSO",
           "address": "Φρ. Ρούσβελτ 263 Τ.Κ 3046",
           "district": "Λεμεσός",
@@ -7774,21 +7783,21 @@
         },
         {
           "brand": "PETROLINA",
-          "address": "Λεώφ. Αγίου Γεωργίου Τ.Κ 8560",
-          "district": "Πέγεια",
-          "price": 1.588,
-          "mapsUrl": "https://www.google.com/maps?q=34.87136,32.36097",
-          "lat": 34.87136,
-          "lng": 32.36097
-        },
-        {
-          "brand": "PETROLINA",
           "address": "Ευαγόρα Παλληκαρίδη 105 Τ.Κ 8010",
           "district": "Πάφος",
           "price": 1.588,
           "mapsUrl": "https://www.google.com/maps?q=34.7798,32.4248",
           "lat": 34.7798,
           "lng": 32.4248
+        },
+        {
+          "brand": "PETROLINA",
+          "address": "Λεώφ. Αγίου Γεωργίου Τ.Κ 8560",
+          "district": "Πέγεια",
+          "price": 1.588,
+          "mapsUrl": "https://www.google.com/maps?q=34.87136,32.36097",
+          "lat": 34.87136,
+          "lng": 32.36097
         },
         {
           "brand": "EKO",
@@ -7972,21 +7981,21 @@
         },
         {
           "brand": "SHELL",
-          "address": "28ης Οκτωβρίου 305 Τ.Κ 3105",
-          "district": "Λεμεσός",
-          "price": 1.589,
-          "mapsUrl": "https://www.google.com/maps?q=34.68142222222222,33.05461388888889",
-          "lat": 34.68142222222222,
-          "lng": 33.05461388888889
-        },
-        {
-          "brand": "SHELL",
           "address": "Λεωφ. Γρηγόρη Αυξεντίου 16 Τ.Κ 2368",
           "district": "Άγιος Δομέτιος",
           "price": 1.589,
           "mapsUrl": "https://www.google.com/maps?q=35.171394444444445,33.33889166666667",
           "lat": 35.171394444444445,
           "lng": 33.33889166666667
+        },
+        {
+          "brand": "SHELL",
+          "address": "28ης Οκτωβρίου 305 Τ.Κ 3105",
+          "district": "Λεμεσός",
+          "price": 1.589,
+          "mapsUrl": "https://www.google.com/maps?q=34.68142222222222,33.05461388888889",
+          "lat": 34.68142222222222,
+          "lng": 33.05461388888889
         },
         {
           "brand": "SHELL",
@@ -8008,6 +8017,15 @@
         },
         {
           "brand": "SHELL",
+          "address": "Λεωφ. Αμμοχώστου 83 Τ.Κ 5390",
+          "district": "Σωτήρα",
+          "price": 1.589,
+          "mapsUrl": "https://www.google.com/maps?q=35.037925,33.955026",
+          "lat": 35.037925,
+          "lng": 33.955026
+        },
+        {
+          "brand": "SHELL",
           "address": "Λεωφ. Τσερίου 228 Τ.Κ 2044",
           "district": "Στρόβολος",
           "price": 1.589,
@@ -8023,15 +8041,6 @@
           "mapsUrl": "https://www.google.com/maps?q=35.14863888888889,33.35194444444445",
           "lat": 35.14863888888889,
           "lng": 33.35194444444445
-        },
-        {
-          "brand": "SHELL",
-          "address": "Φρ. Ρούσβελτ 92 Τ.Κ 3011",
-          "district": "Λεμεσός",
-          "price": 1.589,
-          "mapsUrl": "https://www.google.com/maps?q=34.6665,33.023777777777774",
-          "lat": 34.6665,
-          "lng": 33.023777777777774
         },
         {
           "brand": "SHELL",
@@ -8062,12 +8071,12 @@
         },
         {
           "brand": "SHELL",
-          "address": "Λεωφ. Αμμοχώστου 83 Τ.Κ 5390",
-          "district": "Σωτήρα",
+          "address": "Φρ. Ρούσβελτ 92 Τ.Κ 3011",
+          "district": "Λεμεσός",
           "price": 1.589,
-          "mapsUrl": "https://www.google.com/maps?q=35.037925,33.955026",
-          "lat": 35.037925,
-          "lng": 33.955026
+          "mapsUrl": "https://www.google.com/maps?q=34.6665,33.023777777777774",
+          "lat": 34.6665,
+          "lng": 33.023777777777774
         },
         {
           "brand": "SHELL",
@@ -8500,15 +8509,6 @@
           "mapsUrl": "https://www.google.com/maps?q=35.035702,32.427888",
           "lat": 35.035702,
           "lng": 32.427888
-        },
-        {
-          "brand": "PETROLINA",
-          "address": "Λεωφ. Αρχ. Μακαρίου Γ΄ 89 Τ.Κ 1071",
-          "district": "Λευκωσία",
-          "price": 1.679,
-          "mapsUrl": "https://www.google.com/maps?q=35.1609,33.3711",
-          "lat": 35.1609,
-          "lng": 33.3711
         },
         {
           "brand": "PETROLINA",
