@@ -33,7 +33,7 @@ import {
   CUTS, PORKCHOP, PORKCHOP_MIN_CENTS,
 } from "./update-souvlaki-prices.mjs";
 import { FOODY_OUT, MERGED_OUT, WOLT_OUT, BOLT_OUT, mergeAndWrite, sameVenue } from "./merge-souvlaki-sources.mjs";
-import { discoverFoodyVenues } from "./foody-discovery.mjs";
+import { discoverFoodyVenues, geoInCity } from "./foody-discovery.mjs";
 
 const DEBUG = process.env.DEBUG === "1";
 const DEBUG_DIR = "/tmp/foody-souvlaki-debug";
@@ -226,7 +226,10 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
         try {
           const { prices, geo } = await scrapeVenue(page, g);
           if (hasPitaCut(prices)) {
-            venues.push({ name: g.name, slug: g.slug, url: g.url, lat: geo?.lat ?? null, lng: geo?.lng ?? null, prices, source: "foody" });
+            // chain brand pages carry one branch's coords — only trust them
+            // for the city they're actually in
+            const geoOk = geoInCity(geo, city);
+            venues.push({ name: g.name, slug: g.slug, url: g.url, lat: geoOk ? geo.lat : null, lng: geoOk ? geo.lng : null, prices, source: "foody" });
             console.log(`  ✓ ${g.name}: ${JSON.stringify(prices)}`);
           } else {
             console.log(`  – ${g.name}: no souvlaki-in-pita cuts`);

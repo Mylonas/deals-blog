@@ -101,6 +101,17 @@ const SHOW = 15;
 
 const ALL_LABEL = { en: "All Cyprus", el: "Όλη η Κύπρος", ru: "Весь Кипр" };
 
+// Foody chains have one brand page listed under every city they deliver in —
+// the combined tab must show that venue once, not once per city
+function dedupeByUrl(venues: Venue[]): Venue[] {
+  const best = new Map<string, Venue>();
+  for (const v of venues) {
+    const prev = best.get(v.url);
+    if (!prev || (v.prices.souvlaki ?? 99) < (prev.prices.souvlaki ?? 99)) best.set(v.url, v);
+  }
+  return [...best.values()];
+}
+
 export default function SouvlakiTable({ data, lang }: { data: SouvlakiData; lang: Lang }) {
   const t = T[lang];
   const [cityKey, setCityKey] = useState("all");
@@ -111,7 +122,7 @@ export default function SouvlakiTable({ data, lang }: { data: SouvlakiData; lang
 
   const cities = useMemo<City[]>(
     () => [
-      { key: "all", label: ALL_LABEL, venues: data.cities.flatMap((c) => c.venues) },
+      { key: "all", label: ALL_LABEL, venues: dedupeByUrl(data.cities.flatMap((c) => c.venues)) },
       ...data.cities,
     ],
     [data]

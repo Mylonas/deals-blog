@@ -23,7 +23,7 @@ import fs from "fs";
 import { chromium } from "playwright";
 import { CITIES, findFreddo, FREDDO_MIN_EUR } from "./update-freddo-prices.mjs";
 import { FOODY_OUT, MERGED_OUT, WOLT_OUT, BOLT_OUT, mergeAndWrite, sameCafe } from "./merge-coffee-sources.mjs";
-import { discoverFoodyVenues } from "./foody-discovery.mjs";
+import { discoverFoodyVenues, geoInCity } from "./foody-discovery.mjs";
 
 const DEBUG = process.env.DEBUG === "1";
 const DEBUG_DIR = "/tmp/foody-coffee-debug";
@@ -170,7 +170,10 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
         try {
           const { freddo, geo } = await scrapeVenue(page, g);
           if (freddo != null) {
-            cafes.push({ cafe: g.name, freddo, slug: g.slug, url: g.url, address: null, lat: geo?.lat ?? null, lng: geo?.lng ?? null, source: "foody" });
+            // chain brand pages carry one branch's coords — only trust them
+            // for the city they're actually in
+            const geoOk = geoInCity(geo, city);
+            cafes.push({ cafe: g.name, freddo, slug: g.slug, url: g.url, address: null, lat: geoOk ? geo.lat : null, lng: geoOk ? geo.lng : null, source: "foody" });
             console.log(`  ✓ ${g.name}: €${freddo.toFixed(2)}`);
           } else {
             console.log(`  – ${g.name}: no Freddo Espresso on the menu`);
