@@ -97,6 +97,17 @@ const SHOW = 15;
 
 const ALL_LABEL = { en: "All Cyprus", el: "Όλη η Κύπρος", ru: "Весь Кипр" };
 
+// Foody chains have one brand page listed under every city they deliver in —
+// the combined tab must show that venue once, not once per city
+function dedupeByUrl(cafes: Cafe[]): Cafe[] {
+  const best = new Map<string, Cafe>();
+  for (const c of cafes) {
+    const prev = best.get(c.url);
+    if (!prev || c.freddo < prev.freddo) best.set(c.url, c);
+  }
+  return [...best.values()];
+}
+
 export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: Lang }) {
   const t = T[lang];
   const [cityKey, setCityKey] = useState("all");
@@ -106,7 +117,7 @@ export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: La
 
   const cities = useMemo<City[]>(
     () => [
-      { key: "all", label: ALL_LABEL, cafes: data.cities.flatMap((c) => c.cafes) },
+      { key: "all", label: ALL_LABEL, cafes: dedupeByUrl(data.cities.flatMap((c) => c.cafes)) },
       ...data.cities,
     ],
     [data]
