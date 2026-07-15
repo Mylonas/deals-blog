@@ -1,7 +1,7 @@
 ---
 title: "Cheapest Freddo Espresso in Cyprus — Live Prices"
 date: "2026-06-28"
-updated: "2026-07-15"
+updated: "2026-07-14"
 category: "Food & Drink"
 summary: "Freddo Espresso prices in Nicosia, Limassol, Larnaca, Paphos and Ayia Napa — the cheapest cafés in each city, updated weekly from Wolt, Bolt Food and Foody."
 pinned: true
@@ -10,7 +10,7 @@ pinned: true
 We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Limassol, Larnaca, Paphos and the Ayia Napa area — and show the cheapest places in each city. Prices come from Wolt, Bolt Food and Foody listings — each café shows its cheapest platform — and are updated weekly.
 
 <!-- COFFEE_PRICES_START -->
-*Prices last checked: 15 Jul 2026, 03:00 (EET). Updated weekly via Wolt, Bolt Food and Foody.*
+*Prices last checked: 14 Jul 2026, 22:23 (EET). Updated weekly via Wolt, Bolt Food and Foody.*
 
 ## Freddo Espresso — Cheapest by City
 
@@ -283,8 +283,6 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 | **[Charmani Gefseon](https://www.foody.com.cy/delivery/leykosia/charmani-geyseon)** | €3.30 | [Foody](https://www.foody.com.cy/delivery/leykosia/charmani-geyseon) |
 | **[Boutique Patisserie](https://www.foody.com.cy/delivery/leykosia/boutique-patisserie)** | €3.30 | [Foody](https://www.foody.com.cy/delivery/leykosia/boutique-patisserie) |
 | **[The Daily Roast](https://www.foody.com.cy/delivery/leykosia/the-daily-roast)** | €3.40 | [Foody](https://www.foody.com.cy/delivery/leykosia/the-daily-roast) |
-| **[Arabica Coffee House Engomi](https://www.foody.com.cy/delivery/leykosia/arabica-coffee-house-engomi-2000516315)** | €3.50 | [Foody](https://www.foody.com.cy/delivery/leykosia/arabica-coffee-house-engomi-2000516315) |
-| **[Coffee Lab](https://www.foody.com.cy/delivery/menu/coffee-lab)** | €3.50 | [Foody](https://www.foody.com.cy/delivery/menu/coffee-lab) |
 | **[Grigoris](https://www.foody.com.cy/delivery/menu/grigoris)** | €3.60 | [Foody](https://www.foody.com.cy/delivery/menu/grigoris) |
 | **[Co Embassy](https://www.foody.com.cy/delivery/leykosia/co-embassy-2000684657)** | €3.70 | [Foody](https://www.foody.com.cy/delivery/leykosia/co-embassy-2000684657) |
 | **[Gloria Jean's Coffees](https://www.foody.com.cy/delivery/menu/gloria-jeans-coffees)** | €3.80 | [Foody](https://www.foody.com.cy/delivery/menu/gloria-jeans-coffees) |
@@ -407,7 +405,6 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 | **[Bark & Brew Espresso Bar](https://www.foody.com.cy/delivery/lemesos/bark-kai-brew-espresso-bar-2000504839)** | €2.80 | [Foody](https://www.foody.com.cy/delivery/lemesos/bark-kai-brew-espresso-bar-2000504839) |
 | **[KawaMaka](https://www.foody.com.cy/delivery/lemesos/kawamaka-2000711546)** | €2.80 | [Foody](https://www.foody.com.cy/delivery/lemesos/kawamaka-2000711546) |
 | **[EL COCO CAFE](https://www.foody.com.cy/delivery/lemesos/el-coco-cafe-2000271785)** | €2.80 | [Foody](https://www.foody.com.cy/delivery/lemesos/el-coco-cafe-2000271785) |
-| **[COFFEEHOUSE](https://www.foody.com.cy/delivery/menu/coffeehouse)** | €2.80 | [Foody](https://www.foody.com.cy/delivery/menu/coffeehouse) |
 | **[Pablo Coffee House](https://www.foody.com.cy/delivery/lemesos/pablo-coffee-house-2000426213)** | €2.80 | [Foody](https://www.foody.com.cy/delivery/lemesos/pablo-coffee-house-2000426213) |
 | **[Don's Society Cafe](https://www.foody.com.cy/delivery/lemesos/dons-society-cafe)** | €2.80 | [Foody](https://www.foody.com.cy/delivery/lemesos/dons-society-cafe) |
 | **[Boss Coffee](https://www.foody.com.cy/delivery/lemesos/boss-coffee)** | €2.80 | [Foody](https://www.foody.com.cy/delivery/lemesos/boss-coffee) |
@@ -658,7 +655,6 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 | **[A Kxoffee Project X foodhaus](https://www.foody.com.cy/delivery/menu/a-kxoffee-project-x-foodhaus)** | €3.30 | [Foody](https://www.foody.com.cy/delivery/menu/a-kxoffee-project-x-foodhaus) |
 | **[Stephanie Rose Cafe Confectionery](https://www.foody.com.cy/delivery/pafos/stephanie-rose-cafe-confectionery-2000526806)** | €3.50 | [Foody](https://www.foody.com.cy/delivery/pafos/stephanie-rose-cafe-confectionery-2000526806) |
 | **[Coffee Lab Paphos Eleftheriou Venizelou](https://www.foody.com.cy/delivery/pafos/coffee-lab-paphos-eleftheriou-venizelou)** | €3.50 | [Foody](https://www.foody.com.cy/delivery/pafos/coffee-lab-paphos-eleftheriou-venizelou) |
-| **[Coffee Lab](https://www.foody.com.cy/delivery/menu/coffee-lab)** | €3.50 | [Foody](https://www.foody.com.cy/delivery/menu/coffee-lab) |
 | **[Bon Vivant Brunch & Cakes](https://www.foody.com.cy/delivery/pafos/bon-vivant-brunch-kai-cakes-2000394295)** | €3.50 | [Foody](https://www.foody.com.cy/delivery/pafos/bon-vivant-brunch-kai-cakes-2000394295) |
 | **[To Dasoudi](https://www.foody.com.cy/delivery/pafos/to-dasoudi-2000729469)** | €3.50 | [Foody](https://www.foody.com.cy/delivery/pafos/to-dasoudi-2000729469) |
 | **[Nama Specialty](https://www.foody.com.cy/delivery/pafos/nama-specialty-2000743367)** | €3.70 | [Foody](https://www.foody.com.cy/delivery/pafos/nama-specialty-2000743367) |

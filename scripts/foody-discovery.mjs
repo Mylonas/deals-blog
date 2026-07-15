@@ -22,6 +22,21 @@
 
 const SITEMAP_BRANDS = "https://www.foody.com.cy/sitemap/brands";
 
+/**
+ * True when scraped venue coords plausibly belong to the assigned city.
+ * Chain brand pages (/delivery/menu/{slug}) are listed under every district
+ * the chain delivers in but carry ONE branch's coordinates — copies in other
+ * cities must not claim them, or near-me distances point at the wrong city.
+ */
+export function geoInCity(geo, city, maxKm = 25) {
+  if (geo?.lat == null || geo?.lng == null) return false;
+  const rad = (d) => (d * Math.PI) / 180;
+  const dLat = rad(geo.lat - city.lat);
+  const dLng = rad(geo.lng - city.lon);
+  const s = Math.sin(dLat / 2) ** 2 + Math.cos(rad(city.lat)) * Math.cos(rad(geo.lat)) * Math.sin(dLng / 2) ** 2;
+  return 6371 * 2 * Math.asin(Math.sqrt(s)) <= maxKm;
+}
+
 export const DISTRICT_TO_CITY = {
   leykosia: "nicosia",
   leukosia: "nicosia",
