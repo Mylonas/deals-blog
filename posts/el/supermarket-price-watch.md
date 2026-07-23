@@ -15,7 +15,7 @@ pinned: false
 
 | Προϊόν | Φθηνότερη Τιμή | Μάρκα |
 |---------|---------|--------|
-| Φρέσκο Γάλα 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
+| Φρέσκο Γάλα 1L | **[€1.64](https://www.e-kalathi.gov.cy/product-information/27)** | Charalambides |
 | Αβγά | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
 | Χαλλούμι 200g | **[€2.09](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Σπαγγέτι 500g | **[€0.93](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
@@ -24,7 +24,7 @@ pinned: false
 | Γιαούρτι 450g | **[€1.95](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
 | Ρύζι 1kg | **[€1.90](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
 | Χυμός Πορτοκάλι 1L | **[€2.29](https://www.e-kalathi.gov.cy/product-information/2120)** | Delta |
-| Coca-Cola 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
+| Coca-Cola 1L ×2 | **[€2.33](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
 
 <!-- PRICES_END -->
 
