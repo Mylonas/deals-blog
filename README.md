@@ -13,6 +13,7 @@ Consumer deals blog for Cyprus — live-tracked prices for fuel, coffee, superma
 | **Live fuel tracker** | Unleaded 95, Unleaded 98 & Diesel — top 100 stations cached, top 10 shown; district + Near Me filters; GPS map links; price history chart (up to 1 year). Source: Cyprus Gov Petroleum Prices Portal |
 | **Supermarket price watch** | 10 household staples tracked across all major chains. Source: e-kalathi.gov.cy |
 | **Coffee price tracker** | Freddo Espresso prices across 13 café chains, island-wide + delivery app surcharges |
+| **Bazaraki cars** | Every car currently listed on Bazaraki, cheapest first, with make / year / fuel / gearbox / body / city / price / mileage filters. Updated daily via the site's JSON API (Cloudflare bypass via playwright-extra stealth) |
 | **Trends dashboard** | Internal page at `/trends` — Cyprus news, Wikipedia, YouTube & Reddit trending topics; post ideas via Claude API |
 | **Dark mode** | Sun/moon toggle in header; `localStorage` persistence; respects `prefers-color-scheme`; no flash on load |
 | **Trilingual** | Every post exists in English (`/`), Greek (`/el/`), and Russian (`/ru/`) with full i18n in interactive components |
@@ -86,6 +87,7 @@ deals-blog/
 | `cheapest-petrol-stations-cyprus` | Fuel | ✅ Hourly (gov portal) |
 | `supermarket-price-watch` | Food & Drink | ✅ Hourly (e-kalathi) |
 | `cheapest-coffee-nicosia` | Food & Drink | ✅ Hourly |
+| `cheapest-cars-cyprus` | Vehicles | ✅ Daily (Bazaraki) |
 | `cheapest-cinema-tickets-cyprus` | Entertainment | — |
 | `cheapest-gym-memberships-nicosia-limassol` | Entertainment | — |
 | `cheapest-internet-broadband-cyprus` | Utilities | — |
@@ -105,6 +107,7 @@ deals-blog/
 | Supermarket price history & all-time lows | [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy) | REST API (`/fetch-product-price-diagram`, daily prices since Sep 2025, paced + cached) |
 | Coffee prices | Manually curated in `src/data/coffee-prices.json` | JSON → markdown generation |
 | Trending topics | Google News RSS, Cyprus Mail, Philenews, Sigmalive | RSS parsing + keyword categorisation |
+| Bazaraki cars | [bazaraki.com](https://www.bazaraki.com) | Internal JSON API `/api/items/?rubric=5`; Cloudflare Managed Challenge cleared once with playwright-extra + stealth, then same-origin fetches carry `cf_clearance` |
 
 ---
 
@@ -137,6 +140,7 @@ All workflows use `[skip ci]` on their commits to avoid deploy loops.
 | `update-fuel-prices.yml` | Every hour | Scrapes gov portal for 95/98/diesel, commits updated posts + JSON |
 | `update-supermarket-prices.yml` | Every hour | Fetches e-kalathi API, commits updated JSON + posts |
 | `update-coffee-prices.yml` | Every hour | Refreshes `updatedAt` timestamp, commits updated posts |
+| `update-bazaraki-cars.yml` | Daily at 03:00 UTC | Scrapes every car listing from Bazaraki's JSON API (rubric 5), commits updated JSON |
 | `fetch-trending-topics.yml` | Every 3 hours | Scrapes Cyprus RSS + YouTube + Reddit + Wikipedia, commits JSON |
 | `watchdog.yml` | Every 2 hours | Checks data freshness; re-triggers stale workflows; opens GitHub Issue after 3 failures |
 
@@ -186,7 +190,7 @@ feature/my-feature  →  dev  →  master
 
 See [CHANGELOG.md](./CHANGELOG.md) for full history.
 
-Latest: **[v1.7.0](https://github.com/Mylonas/deals-blog/releases/tag/v1.7.0)** — All-time lows tab live with e-Kalathi price history, fuel stats over the full station market, souvlaki portion-comparability fixes (verified against Foody & Bolt).
+Latest: **[v1.8.0](https://github.com/Mylonas/deals-blog/releases/tag/v1.8.0)** — Cheapest Cars in Cyprus: every Bazaraki car listing, cheapest first, with make/year/fuel/gearbox/body/city/price/mileage filters. Trilingual, daily.
 
 Release procedure follows the project's [release guide](https://github.com/Mylonas/deals-blog/releases): semver tagging, CHANGELOG update, annotated git tag, structured release notes with rollback procedure.
 

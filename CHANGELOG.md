@@ -10,6 +10,25 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.8.0] — 2026-07-23
+
+### Added
+- **Cheapest Cars in Cyprus** — new live page at `/posts/cheapest-cars-cyprus` (EN/EL/RU) showing every car listing on Bazaraki, sorted cheapest first, with client-side filters for make, city, fuel, gearbox, body type, year range, price range and mileage cap; 40-per-page pagination
+- `scripts/update-bazaraki-cars.mjs` — scrapes rubric 5 (cars, trucks & vans) from Bazaraki's internal JSON API (`/api/items/`); Cloudflare Managed Challenge is cleared once on the homepage with playwright-extra + puppeteer-extra-plugin-stealth, then API pages are read same-origin so the `cf_clearance` cookie carries. Decodes coded attrs (year, fuel, body type, gearbox, drive, engine size, doors, colour) using the option maps read from the category page's filter selects
+- `src/components/CarsTable.tsx` — trilingual filterable table (image, make/model, year, engine, fuel, gearbox, mileage, body, city, price)
+- `.github/workflows/update-bazaraki-cars.yml` — daily scrape at 03:00 UTC (offset from the other 06:00 daily jobs)
+
+### Changed
+- Home page (EN/EL/RU) now includes a "Vehicles" / "Οχήματα" / "Транспорт" category card for the new cars page
+
+### Dependencies
+- Added `playwright-extra` and `puppeteer-extra-plugin-stealth` — same pair the sibling `cyprus-house-listings` project uses to clear Bazaraki's Cloudflare wall
+
+### Rollback
+Redeploy `v1.7.0` tag via Cloudflare Pages dashboard, or revert the relevant merge commits and push to master.
+
+---
+
 ## [1.7.0] — 2026-07-05
 
 ### Added
