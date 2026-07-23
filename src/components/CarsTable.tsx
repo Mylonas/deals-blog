@@ -34,6 +34,8 @@ const T: Record<Lang, Record<string, string>> = {
   en: {
     total: "cars", search: "Search make or model…", any: "Any",
     make: "Make", city: "City", fuel: "Fuel", gearbox: "Gearbox", body: "Body",
+    drive: "Drive", doors: "Doors", colour: "Colour",
+    engineMin: "Engine ≥ L", engineMax: "Engine ≤ L",
     yearMin: "Year from", yearMax: "Year to",
     priceMin: "Min €", priceMax: "Max €", mileageMax: "Max km",
     sortPrice: "Cheapest first", sortPriceDesc: "Most expensive",
@@ -41,11 +43,12 @@ const T: Record<Lang, Record<string, string>> = {
     sortKm: "Lowest km", clear: "Clear filters",
     photo: "Photo", car: "Car", year: "Year", km: "Kilometres", price: "Price", loc: "Location",
     view: "View →", none: "No cars match your filters.", showing: "Showing", of: "of", updated: "Updated",
-    diesel: "Diesel", petrol: "Petrol", hybrid: "Hybrid", electric: "Electric", automatic: "Auto", manual: "Manual",
   },
   el: {
     total: "αυτοκίνητα", search: "Μάρκα ή μοντέλο…", any: "Όλα",
     make: "Μάρκα", city: "Πόλη", fuel: "Καύσιμο", gearbox: "Κιβώτιο", body: "Αμάξωμα",
+    drive: "Κίνηση", doors: "Πόρτες", colour: "Χρώμα",
+    engineMin: "Κυβικά ≥ L", engineMax: "Κυβικά ≤ L",
     yearMin: "Έτος από", yearMax: "Έτος έως",
     priceMin: "Ελάχ. €", priceMax: "Μέγ. €", mileageMax: "Μέγ. km",
     sortPrice: "Φθηνότερα πρώτα", sortPriceDesc: "Ακριβότερα πρώτα",
@@ -53,11 +56,12 @@ const T: Record<Lang, Record<string, string>> = {
     sortKm: "Λιγότερα km", clear: "Καθαρισμός",
     photo: "Φωτ.", car: "Αυτοκίνητο", year: "Έτος", km: "Χιλιόμετρα", price: "Τιμή", loc: "Περιοχή",
     view: "Δείτε →", none: "Καμία αγγελία με αυτά τα κριτήρια.", showing: "Εμφάνιση", of: "από", updated: "Ενημέρωση",
-    diesel: "Ντίζελ", petrol: "Βενζίνη", hybrid: "Υβριδικό", electric: "Ηλεκτρικό", automatic: "Αυτόμ.", manual: "Χειροκίν.",
   },
   ru: {
     total: "авто", search: "Марка или модель…", any: "Любое",
     make: "Марка", city: "Город", fuel: "Топливо", gearbox: "Коробка", body: "Кузов",
+    drive: "Привод", doors: "Двери", colour: "Цвет",
+    engineMin: "Двигатель ≥ L", engineMax: "Двигатель ≤ L",
     yearMin: "Год от", yearMax: "Год до",
     priceMin: "Мин €", priceMax: "Макс €", mileageMax: "Макс км",
     sortPrice: "Сначала дешевле", sortPriceDesc: "Сначала дороже",
@@ -65,7 +69,6 @@ const T: Record<Lang, Record<string, string>> = {
     sortKm: "Меньше км", clear: "Сбросить",
     photo: "Фото", car: "Авто", year: "Год", km: "Километры", price: "Цена", loc: "Город",
     view: "Смотреть →", none: "Нет авто по этим фильтрам.", showing: "Показано", of: "из", updated: "Обновлено",
-    diesel: "Дизель", petrol: "Бензин", hybrid: "Гибрид", electric: "Электро", automatic: "Авто", manual: "Механика",
   },
 };
 
@@ -97,6 +100,11 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
   const [priceMin, setPriceMin] = useState("");
   const [priceMax, setPriceMax] = useState("");
   const [mileageMax, setMileageMax] = useState("");
+  const [drive, setDrive] = useState("");
+  const [doors, setDoors] = useState("");
+  const [colour, setColour] = useState("");
+  const [engineMin, setEngineMin] = useState("");
+  const [engineMax, setEngineMax] = useState("");
   const [sort, setSort] = useState<SortKey>("price");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
   const [page, setPage] = useState(1);
@@ -106,6 +114,9 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
   const fuels = useMemo(() => uniqueSorted(data.cars, (c) => c.fuel), [data.cars]);
   const gearboxes = useMemo(() => uniqueSorted(data.cars, (c) => c.gearbox), [data.cars]);
   const bodies = useMemo(() => uniqueSorted(data.cars, (c) => c.body), [data.cars]);
+  const drives = useMemo(() => uniqueSorted(data.cars, (c) => c.drive), [data.cars]);
+  const doorsList = useMemo(() => uniqueSorted(data.cars, (c) => c.doors), [data.cars]);
+  const colours = useMemo(() => uniqueSorted(data.cars, (c) => c.colour), [data.cars]);
 
   const filtered = useMemo(() => {
     const qLower = q.trim().toLowerCase();
@@ -114,6 +125,8 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
     const pmin = priceMin ? Number(priceMin) : null;
     const pmax = priceMax ? Number(priceMax) : null;
     const kmax = mileageMax ? Number(mileageMax) : null;
+    const emin = engineMin ? Number(engineMin) : null;
+    const emax = engineMax ? Number(engineMax) : null;
     const out: Car[] = [];
     for (const c of data.cars) {
       if (make && c.make !== make) continue;
@@ -121,11 +134,16 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
       if (fuel && c.fuel !== fuel) continue;
       if (gearbox && c.gearbox !== gearbox) continue;
       if (body && c.body !== body) continue;
+      if (drive && c.drive !== drive) continue;
+      if (doors && c.doors !== doors) continue;
+      if (colour && c.colour !== colour) continue;
       if (ymin != null && (c.year == null || c.year < ymin)) continue;
       if (ymax != null && (c.year == null || c.year > ymax)) continue;
       if (pmin != null && c.price < pmin) continue;
       if (pmax != null && c.price > pmax) continue;
       if (kmax != null && (c.mileage == null || c.mileage > kmax)) continue;
+      if (emin != null && (c.engineL == null || c.engineL < emin)) continue;
+      if (emax != null && (c.engineL == null || c.engineL > emax)) continue;
       if (qLower) {
         const hay = `${c.make ?? ""} ${c.model ?? ""} ${c.title ?? ""}`.toLowerCase();
         if (!hay.includes(qLower)) continue;
@@ -139,7 +157,7 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
       return (Number(av) - Number(bv)) * dir;
     });
     return out;
-  }, [data.cars, make, city, fuel, gearbox, body, yearMin, yearMax, priceMin, priceMax, mileageMax, q, sort, sortDir]);
+  }, [data.cars, make, city, fuel, gearbox, body, drive, doors, colour, yearMin, yearMax, priceMin, priceMax, mileageMax, engineMin, engineMax, q, sort, sortDir]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
@@ -159,7 +177,9 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
 
   const clearAll = () => {
     setQ(""); setMake(""); setCity(""); setFuel(""); setGearbox(""); setBody("");
+    setDrive(""); setDoors(""); setColour("");
     setYearMin(""); setYearMax(""); setPriceMin(""); setPriceMax(""); setMileageMax("");
+    setEngineMin(""); setEngineMax("");
     setSort("price"); setSortDir("asc"); setPage(1);
   };
 
@@ -209,6 +229,28 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
           <option value="">{t.body} — {t.any}</option>
           {bodies.map((b) => <option key={b} value={b}>{b}</option>)}
         </select>
+        <select value={drive} onChange={(e) => onFilterChange(() => setDrive(e.target.value))} className={selectCls}>
+          <option value="">{t.drive} — {t.any}</option>
+          {drives.map((d) => <option key={d} value={d}>{d}</option>)}
+        </select>
+        <select value={doors} onChange={(e) => onFilterChange(() => setDoors(e.target.value))} className={selectCls}>
+          <option value="">{t.doors} — {t.any}</option>
+          {doorsList.map((d) => <option key={d} value={d}>{d}</option>)}
+        </select>
+        <select value={colour} onChange={(e) => onFilterChange(() => setColour(e.target.value))} className={selectCls}>
+          <option value="">{t.colour} — {t.any}</option>
+          {colours.map((c) => <option key={c} value={c}>{c}</option>)}
+        </select>
+        <input
+          type="number" inputMode="decimal" min={0} max={10} step={0.1}
+          value={engineMin} onChange={(e) => onFilterChange(() => setEngineMin(e.target.value))}
+          placeholder={t.engineMin} className={inputCls}
+        />
+        <input
+          type="number" inputMode="decimal" min={0} max={10} step={0.1}
+          value={engineMax} onChange={(e) => onFilterChange(() => setEngineMax(e.target.value))}
+          placeholder={t.engineMax} className={inputCls}
+        />
         <input
           type="number" inputMode="numeric" min={1950} max={2030}
           value={yearMin} onChange={(e) => onFilterChange(() => setYearMin(e.target.value))}
@@ -284,7 +326,10 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
                   {[c.year, c.engine, c.fuel, c.gearbox].filter(Boolean).join(" · ")}
                 </div>
                 <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 truncate">
-                  {[c.mileage != null ? `${numFmt(c.mileage)} km` : null, c.body, c.city].filter(Boolean).join(" · ")}
+                  {[c.mileage != null ? `${numFmt(c.mileage)} km` : null, c.body, c.drive, c.doors ? `${c.doors} ${t.doors.toLowerCase()}` : null].filter(Boolean).join(" · ")}
+                </div>
+                <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 truncate">
+                  {[c.colour, c.city].filter(Boolean).join(" · ")}
                 </div>
                 <div className="mt-1 flex items-baseline gap-2">
                   <span className="text-base font-bold text-blue-600 dark:text-blue-400">
