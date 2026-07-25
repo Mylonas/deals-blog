@@ -1,7 +1,7 @@
 ---
 title: "Cheapest Petrol Stations in Cyprus — Live Tracker"
 date: "2026-06-28"
-updated: "2026-07-24"
+updated: "2026-07-25"
 category: "Fuel"
 summary: "Live prices for Unleaded 95, Unleaded 98, and Diesel across petrol stations in Cyprus. Updated hourly from the official Cyprus government fuel observatory."
 pinned: true
@@ -59,6 +59,6 @@ pinned: true
 | SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.329 |
 | EKO | [Ελευθερίας 27 Τ.Κ 7102](https://www.google.com/maps?q=34.935446,33.59272) | Αραδίππου | €1.329 |
 
-> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 24 July 2026
+> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 25 July 2026
 
 <!-- FUEL_PRICES_END -->
