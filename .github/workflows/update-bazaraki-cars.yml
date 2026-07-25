@@ -1,12 +1,17 @@
-name: Update Bazaraki Cars (Daily)
+name: Update Bazaraki Cars (manual)
 
-# Scrape every car listing on Bazaraki (rubric 5) via its JSON API. Runs once
-# a day at 03:00 UTC — earlier than the other daily jobs (06:00) to spread
-# load. Playwright is used only to clear the Cloudflare Managed Challenge on
-# the homepage, then the API is read same-origin with the cf_clearance cookie.
+# NOT scheduled. Bazaraki's Cloudflare protection serves its managed challenge
+# to every client from a datacenter IP — curl, stealth Chromium and fetch alike
+# — so this cannot run on the Actions runners. The nightly schedule that used to
+# live here failed at clearCloudflare on every run from 2026-07-24 while
+# reporting the failure to nobody, and the car data silently froze at 2026-07-23.
+#
+# The scrape now runs on the laptop:  npm run cars:local
+# then commit src/data/bazaraki-cars.json as normal.
+#
+# Kept dispatch-only so the job can still be triggered by hand if the block ever
+# lifts, or from a self-hosted runner on a residential connection.
 on:
-  schedule:
-    - cron: "0 3 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -35,8 +40,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
 
       - name: Scrape Bazaraki cars
         run: node scripts/update-bazaraki-cars.mjs
