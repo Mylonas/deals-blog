@@ -1,7 +1,7 @@
 ---
 title: "Мониторинг цен в супермаркетах — 10 основных продуктов"
 date: "2026-06-28"
-updated: "2026-07-23"
+updated: "2026-07-25"
 category: "Еда и напитки"
 summary: "Актуальные цены на 10 базовых товаров во всех крупных супермаркетах Кипра. Обновляется 4 раза в день с официального портала e-kalathi.gov.cy."
 pinned: false
@@ -11,7 +11,7 @@ pinned: false
 
 <!-- PRICES_START -->
 
-> Обновлено 23 July 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Обновлено 25 July 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
 | Продукт | Мин. цена | Бренд |
 |---------|---------|--------|
@@ -21,7 +21,7 @@ pinned: false
 | Спагетти 500г | **[€0.93](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Оливковое масло 1L | **[€3.60](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
 | Вода 1.5L ×6 | **[€2.12](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
-| Йогурт 450г | **[€2.00](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
+| Йогурт 450г | **[€1.49](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
 | Рис 1кг | **[€1.90](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
 | Апельсиновый сок 1L | **[€2.29](https://www.e-kalathi.gov.cy/product-information/2120)** | Delta |
 | Кока-Кола 1L ×2 | **[€2.33](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
