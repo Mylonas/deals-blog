@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Φθηνότερα Αυτοκίνητα στην Κύπρο — Ζωντανές Αγγελίες Bazaraki",
   description:
-    "Όλα τα αυτοκίνητα προς πώληση στο Bazaraki, ταξινομημένα από τα φθηνότερα. Φίλτρα ανά μάρκα, έτος, καύσιμο, κιβώτιο, τύπο αμαξώματος, πόλη, τιμή και χιλιόμετρα. Ημερήσια ενημέρωση.",
+    "Όλα τα αυτοκίνητα προς πώληση στο Bazaraki, ταξινομημένα από τα φθηνότερα. Φίλτρα ανά μάρκα, έτος, καύσιμο, κιβώτιο, τύπο αμαξώματος, πόλη, τιμή και χιλιόμετρα.",
 };
 
 export default function CheapestCarsEL() {
@@ -23,7 +23,10 @@ export default function CheapestCarsEL() {
         Κάθε αυτοκίνητο που είναι αναρτημένο στο Bazaraki, με τα φθηνότερα πρώτα.
         Φίλτρα ανά μάρκα, έτος, καύσιμο, κιβώτιο, αμάξωμα, πόλη, τιμή και
         χιλιόμετρα. Τιμές και φωτογραφίες αντλούνται απευθείας από το
-        bazaraki.com, με καθημερινή ενημέρωση.
+        bazaraki.com. Τελευταία ενημέρωση:{" "}
+        {new Date(data.updatedAt).toLocaleDateString("el-GR", {
+          day: "numeric", month: "long", year: "numeric",
+        })}.
       </p>
 
       <CarsTable data={data as unknown as CarsData} lang="el" />

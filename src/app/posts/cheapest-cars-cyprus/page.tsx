@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Cheapest Cars in Cyprus — Live Bazaraki Listings",
   description:
-    "Every car for sale on Bazaraki Cyprus, sorted cheapest first. Filter by make, year, fuel, gearbox, body type, city, price and mileage. Updated daily.",
+    "Every car for sale on Bazaraki Cyprus, sorted cheapest first. Filter by make, year, fuel, gearbox, body type, city, price and mileage.",
 };
 
 export default function CheapestCarsEN() {
@@ -22,7 +22,10 @@ export default function CheapestCarsEN() {
       <p className="text-gray-500 dark:text-gray-400 mb-8">
         Every car listed on Bazaraki, cheapest first. Filter by make, year, fuel type,
         gearbox, body, city, price range and mileage. Prices and photos are pulled
-        straight from bazaraki.com, refreshed once a day.
+        straight from bazaraki.com. Last refreshed{" "}
+        {new Date(data.updatedAt).toLocaleDateString("en-GB", {
+          day: "numeric", month: "long", year: "numeric",
+        })}.
       </p>
 
       <CarsTable data={data as unknown as CarsData} lang="en" />

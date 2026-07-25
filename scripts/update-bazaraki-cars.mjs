@@ -5,11 +5,20 @@
  * category page's filter <select>s, and write the result to
  * src/data/bazaraki-cars.json.
  *
- * Bazaraki puts every human-facing page behind a Cloudflare Managed Challenge
- * that headless Chromium can't solve, so we use playwright-extra + stealth to
- * clear the challenge once on the homepage, then read /api/items/ from inside
- * the cleared browser context — same-origin fetches carry the cf_clearance
- * cookie. Same trick as scripts/scrape-bazaraki.mjs in cyprus-house-listings.
+ * Bazaraki puts every human-facing page behind a Cloudflare Managed Challenge.
+ * The stealth-browser trick this used to rely on (playwright-extra + puppeteer-
+ * extra-plugin-stealth, clear the challenge on the homepage, then read the API
+ * same-origin) stopped working: the nightly workflow failed at clearCloudflare
+ * every run from 2026-07-24, leaving the data frozen at its 2026-07-23 state.
+ *
+ * curl gets a 200 where the stealth browser and Node's fetch() both get a 403,
+ * so the API is now read with curl (see lib/curl-fetch.mjs) and no browser is
+ * involved at all. Same fix as scripts/scrape-bazaraki.mjs in
+ * cyprus-house-listings.
+ *
+ * This only works from a residential IP. Measured from an Actions runner, every
+ * client is challenged — curl, stealth Chromium and fetch alike — so this is a
+ * local command (`npm run cars:local`), not a scheduled workflow.
  *
  * Env:
  *   BAZARAKI_MAX_PAGES  cap on API pages (24 items each). Default: unlimited.
@@ -17,10 +26,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { chromium } from "playwright-extra";
-import stealth from "puppeteer-extra-plugin-stealth";
-
-chromium.use(stealth());
+import { curlFetchJson } from "./lib/curl-fetch.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -159,62 +165,50 @@ function mapItem(raw) {
   };
 }
 
-async function clearCloudflare(page) {
-  await page.goto("https://www.bazaraki.com/", { waitUntil: "domcontentloaded", timeout: 60000 });
-  for (let i = 0; i < 25; i++) {
-    await page.waitForTimeout(1000);
-    const t = await page.title();
-    if (!/just a moment/i.test(t)) return;
-  }
-  throw new Error("Could not clear Cloudflare challenge on bazaraki.com");
-}
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-async function fetchPage(page, pg) {
-  const url = `/api/items/?rubric=${CARS_RUBRIC}&page=${pg}`;
-  return page.evaluate(async (u) => {
-    const r = await fetch(u, { headers: { "X-Requested-With": "XMLHttpRequest" } });
-    if (!r.ok) return { error: r.status };
-    return r.json();
-  }, url);
+async function fetchPage(pg) {
+  const url = `https://www.bazaraki.com/api/items/?rubric=${CARS_RUBRIC}&page=${pg}`;
+  try {
+    return await curlFetchJson(url);
+  } catch (err) {
+    // curlFetchJson already retried connection-level failures; anything that
+    // reaches here is an HTTP status, so surface it in the shape the loop
+    // below expects.
+    const status = Number(/HTTP (\d+)/.exec(err.message)?.[1]) || 0;
+    return { error: status };
+  }
 }
 
 async function main() {
-  const browser = await chromium.launch({ headless: true });
-  const ctx = await browser.newContext({
-    userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    viewport: { width: 1366, height: 768 },
-    locale: "en-US",
-  });
-  const page = await ctx.newPage();
-
-  console.error("Clearing Cloudflare challenge...");
-  await clearCloudflare(page);
-
   const seen = new Set();
   const cars = [];
   let pg = 1;
   let empty = 0;
+  let throttled = 0;
   while (pg <= MAX_PAGES) {
-    let payload;
-    try {
-      payload = await fetchPage(page, pg);
-    } catch (err) {
-      console.error(`page ${pg}: fetch threw: ${err.message}`);
-      break;
-    }
+    const payload = await fetchPage(pg);
     if (payload?.error) {
       console.error(`page ${pg}: HTTP ${payload.error}`);
+      // Back off and retry a throttle or a challenge a few times, but give up
+      // rather than spin forever — from a datacenter IP every page 403s, and
+      // the old code would have retried that indefinitely.
       if (payload.error === 429 || payload.error === 403) {
-        await page.waitForTimeout(5000);
+        if (++throttled > 5) {
+          console.error("Giving up after 5 consecutive 403/429s — blocked, not throttled.");
+          break;
+        }
+        await sleep(5000 * throttled);
         continue;
       }
       break;
     }
+    throttled = 0;
     const results = payload?.results ?? [];
     if (!results.length) {
       empty++;
       if (empty >= 2) break;
-      await page.waitForTimeout(400);
+      await sleep(400);
       pg++;
       continue;
     }
@@ -231,16 +225,30 @@ async function main() {
     }
     if (!payload.next && results.length < 10) break;
     pg++;
-    await page.waitForTimeout(200);
+    await sleep(200);
   }
 
   cars.sort((a, b) => a.price - b.price);
 
+  // A run cut short by a block or a dropped connection would otherwise replace
+  // a full catalogue with a fragment, and the page would quietly show a
+  // fraction of the market. Refuse to shrink the dataset by more than half
+  // unless FORCE=1 says the drop is real.
+  if (fs.existsSync(OUT) && !process.env.FORCE) {
+    const prev = JSON.parse(fs.readFileSync(OUT, "utf-8"));
+    const before = prev.count ?? prev.cars?.length ?? 0;
+    if (before > 0 && cars.length < before * 0.5) {
+      console.error(
+        `Refusing to write: ${cars.length} cars is less than half of the ${before} already on file.\n` +
+        `The run was probably cut short. Re-run, or set FORCE=1 if the drop is genuine.`
+      );
+      process.exit(1);
+    }
+  }
+
   const out = { updatedAt: new Date().toISOString(), source: "bazaraki.com", count: cars.length, cars };
   fs.writeFileSync(OUT, JSON.stringify(out));
   console.error(`Wrote ${cars.length} cars to ${path.relative(ROOT, OUT)} (${(fs.statSync(OUT).size / 1024 / 1024).toFixed(1)} MB)`);
-
-  await browser.close();
 }
 
 main().catch(err => { console.error(err); process.exit(1); });

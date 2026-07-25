@@ -8,6 +8,14 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+- **Bazaraki cars scrape works again.** `update-bazaraki-cars.yml` had failed at `clearCloudflare` on every nightly run since 2026-07-24 — the stealth-browser trick no longer clears Cloudflare — leaving `bazaraki-cars.json` frozen at its 2026-07-23 state while the workflow went red unnoticed each morning. The scraper now reads the JSON API with curl (`scripts/lib/curl-fetch.mjs`), no browser involved.
+- The block is by **IP reputation**, not client: measured from an Actions runner, curl, stealth Chromium and `fetch()` are all challenged, while the same curl call succeeds from a residential connection. The workflow is therefore dispatch-only and the scrape runs locally via `npm run cars:local`.
+- The scraper refuses to write a dataset less than half the size of the one on disk, so a run cut short can no longer replace the full catalogue with a fragment (`FORCE=1` overrides). Repeated 403/429s now give up after 5 attempts instead of retrying forever.
+
+### Changed
+- The cars page no longer claims a daily update. It shows the data's actual `updatedAt` date instead, in EN, EL and RU.
+
 ---
 
 ## [1.8.0] — 2026-07-23
