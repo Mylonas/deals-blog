@@ -13,7 +13,7 @@ Consumer deals blog for Cyprus — live-tracked prices for fuel, coffee, superma
 | **Live fuel tracker** | Unleaded 95, Unleaded 98 & Diesel — top 100 stations cached, top 10 shown; district + Near Me filters; GPS map links; price history chart (up to 1 year). Source: Cyprus Gov Petroleum Prices Portal |
 | **Supermarket price watch** | 10 household staples tracked across all major chains. Source: e-kalathi.gov.cy |
 | **Coffee price tracker** | Freddo Espresso prices across 13 café chains, island-wide + delivery app surcharges |
-| **Bazaraki cars** | Every car currently listed on Bazaraki, cheapest first, with make / year / fuel / gearbox / body / city / price / mileage filters. Updated daily via the site's JSON API (Cloudflare bypass via playwright-extra stealth) |
+| **Bazaraki cars** | Every car currently listed on Bazaraki, cheapest first, with make / year / fuel / gearbox / body / city / price / mileage filters. Refreshed by hand via the site's JSON API — `npm run cars:local` from a residential connection (see Bazaraki access below) |
 | **Trends dashboard** | Internal page at `/trends` — Cyprus news, Wikipedia, YouTube & Reddit trending topics; post ideas via Claude API |
 | **Dark mode** | Sun/moon toggle in header; `localStorage` persistence; respects `prefers-color-scheme`; no flash on load |
 | **Trilingual** | Every post exists in English (`/`), Greek (`/el/`), and Russian (`/ru/`) with full i18n in interactive components |
@@ -87,7 +87,7 @@ deals-blog/
 | `cheapest-petrol-stations-cyprus` | Fuel | ✅ Hourly (gov portal) |
 | `supermarket-price-watch` | Food & Drink | ✅ Hourly (e-kalathi) |
 | `cheapest-coffee-nicosia` | Food & Drink | ✅ Hourly |
-| `cheapest-cars-cyprus` | Vehicles | ✅ Daily (Bazaraki) |
+| `cheapest-cars-cyprus` | Vehicles | ⚠️ Manual (Bazaraki — `npm run cars:local`) |
 | `cheapest-cinema-tickets-cyprus` | Entertainment | — |
 | `cheapest-gym-memberships-nicosia-limassol` | Entertainment | — |
 | `cheapest-internet-broadband-cyprus` | Utilities | — |
@@ -107,7 +107,7 @@ deals-blog/
 | Supermarket price history & all-time lows | [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy) | REST API (`/fetch-product-price-diagram`, daily prices since Sep 2025, paced + cached) |
 | Coffee prices | Manually curated in `src/data/coffee-prices.json` | JSON → markdown generation |
 | Trending topics | Google News RSS, Cyprus Mail, Philenews, Sigmalive | RSS parsing + keyword categorisation |
-| Bazaraki cars | [bazaraki.com](https://www.bazaraki.com) | Internal JSON API `/api/items/?rubric=5`; Cloudflare Managed Challenge cleared once with playwright-extra + stealth, then same-origin fetches carry `cf_clearance` |
+| Bazaraki cars | [bazaraki.com](https://www.bazaraki.com) | Internal JSON API `/api/items/?rubric=5`, read with curl. Laptop-only — Cloudflare challenges every client from a datacenter IP |
 
 ---
 
@@ -126,7 +126,32 @@ node scripts/update-fuel-prices.mjs
 node scripts/update-supermarket-prices.mjs
 node scripts/update-coffee-prices.mjs
 node scripts/fetch-trending-topics.mjs   # set ANTHROPIC_API_KEY for AI suggestions
+npm run cars:local                       # Bazaraki cars — must be run locally, see below
 ```
+
+### Bazaraki access: why cars refresh by hand
+
+Bazaraki sits behind a Cloudflare managed challenge that is applied by **IP
+reputation**, not by client. Measured from a GitHub Actions runner, `curl`, a
+stealth-patched headless Chromium and Node's `fetch()` all receive the challenge;
+from a residential Cyprus connection the same `curl` call gets a 200.
+
+This was not obvious for a while. `update-bazaraki-cars.yml` ran nightly on the
+stealth-browser trick and **failed at `clearCloudflare` on every run from
+2026-07-24**, so the car data sat frozen at its 2026-07-23 state while the
+workflow quietly went red each morning.
+
+Consequences:
+
+- The scrape is now `npm run cars:local`, run from the laptop, and the JSON is
+  committed like any other change. The workflow is dispatch-only.
+- The scraper uses curl (`scripts/lib/curl-fetch.mjs`), not a browser — Node's
+  `fetch()` is refused even locally, so **do not "simplify" it back to `fetch()`**.
+- It refuses to write a dataset less than half the size of the one on disk, so a
+  run cut short cannot replace the full catalogue with a fragment. `FORCE=1`
+  overrides when a drop is genuine.
+- The same helper and the same constraint apply to Bazaraki in the
+  `cyprus-house-listings` repo; the two copies are kept in sync by hand.
 
 ---
 
@@ -140,7 +165,7 @@ All workflows use `[skip ci]` on their commits to avoid deploy loops.
 | `update-fuel-prices.yml` | Every hour | Scrapes gov portal for 95/98/diesel, commits updated posts + JSON |
 | `update-supermarket-prices.yml` | Every hour | Fetches e-kalathi API, commits updated JSON + posts |
 | `update-coffee-prices.yml` | Every hour | Refreshes `updatedAt` timestamp, commits updated posts |
-| `update-bazaraki-cars.yml` | Daily at 03:00 UTC | Scrapes every car listing from Bazaraki's JSON API (rubric 5), commits updated JSON |
+| `update-bazaraki-cars.yml` | Manual dispatch only | Cannot run on the runners — see Bazaraki access below. Kept for a future self-hosted runner |
 | `fetch-trending-topics.yml` | Every 3 hours | Scrapes Cyprus RSS + YouTube + Reddit + Wikipedia, commits JSON |
 | `watchdog.yml` | Every 2 hours | Checks data freshness; re-triggers stale workflows; opens GitHub Issue after 3 failures |
 

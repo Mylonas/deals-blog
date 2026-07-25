@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Самые дешёвые авто на Кипре — актуальные объявления Bazaraki",
   description:
-    "Все автомобили с Bazaraki Кипр, сначала самые дешёвые. Фильтры по марке, году, топливу, коробке, типу кузова, городу, цене и пробегу. Обновляется ежедневно.",
+    "Все автомобили с Bazaraki Кипр, сначала самые дешёвые. Фильтры по марке, году, топливу, коробке, типу кузова, городу, цене и пробегу.",
 };
 
 export default function CheapestCarsRU() {
@@ -22,7 +22,10 @@ export default function CheapestCarsRU() {
       <p className="text-gray-500 dark:text-gray-400 mb-8">
         Все автомобили, выставленные на Bazaraki, начиная с самых дешёвых. Фильтры
         по марке, году, топливу, коробке передач, кузову, городу, цене и пробегу.
-        Цены и фото берутся напрямую с bazaraki.com и обновляются раз в день.
+        Цены и фото берутся напрямую с bazaraki.com. Последнее обновление:{" "}
+        {new Date(data.updatedAt).toLocaleDateString("ru-RU", {
+          day: "numeric", month: "long", year: "numeric",
+        })}.
       </p>
 
       <CarsTable data={data as unknown as CarsData} lang="ru" />
