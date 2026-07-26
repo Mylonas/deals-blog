@@ -42,7 +42,8 @@ trap 'rm -rf "$STASH_DIR"' EXIT
 for f in "${FILES[@]}"; do
   if [ -e "$f" ]; then
     mkdir -p "$STASH_DIR/$(dirname "$f")"
-    cp "$f" "$STASH_DIR/$f"
+    # -r so a directory argument (e.g. history/) works as well as a file
+    cp -r "$f" "$STASH_DIR/$f"
   fi
 done
 
@@ -56,8 +57,16 @@ for attempt in 1 2 3 4 5; do
   restored=0
   for f in "${FILES[@]}"; do
     if [ -e "$STASH_DIR/$f" ]; then
-      mkdir -p "$(dirname "$f")"
-      cp "$STASH_DIR/$f" "$f"
+      if [ -d "$STASH_DIR/$f" ]; then
+        # Merge our contents into whatever the remote has, rather than `cp -r`
+        # onto an existing directory (which nests it) or replacing it wholesale
+        # (which would delete snapshots another run added meanwhile).
+        mkdir -p "$f"
+        cp -r "$STASH_DIR/$f/." "$f/"
+      else
+        mkdir -p "$(dirname "$f")"
+        cp "$STASH_DIR/$f" "$f"
+      fi
       restored=$((restored + 1))
     fi
   done
