@@ -10,7 +10,7 @@ name: Update Bazaraki Cars (manual)
 # then commit src/data/bazaraki-cars.json as normal.
 #
 # Kept dispatch-only so the job can still be triggered by hand if the block ever
-# lifts, or from a self-hosted runner on a residential connection.
+# lifts. Self-hosted runners are explicitly not an option for this project.
 on:
   workflow_dispatch:
 
