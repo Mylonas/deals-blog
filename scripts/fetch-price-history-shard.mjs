@@ -83,7 +83,11 @@ async function fetchPriceHistory(id, from, to) {
       const res = await fetch(url, { headers: HEADERS, signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
       if (!res.ok) { lastErr = new Error(`HTTP ${res.status}`); continue; }
       const entries = await res.json();
-      return entries.map((e) => ({ d: e.date, p: e.price }));
+      // A price of 0 means "no price recorded that day" (product not listed
+      // anywhere), not a free product. Dropping the day carries the previous
+      // price forward instead of writing a €0.00 low into the cache — which is
+      // what filled the all-time-lows list with free groceries on 2026-07-26.
+      return entries.map((e) => ({ d: e.date, p: e.price })).filter((e) => e.p > 0);
     } catch (e) {
       lastErr = e;
     }
@@ -93,9 +97,14 @@ async function fetchPriceHistory(id, from, to) {
 
 // ── change-point cache format (same as update-supermarket-deals.mjs) ──────────
 
-/** Expand change-points back into a daily series up to asOf. */
-function expandPoints(points, asOf) {
-  if (!points?.length) return [];
+/**
+ * Expand change-points back into a daily series up to asOf. Non-positive
+ * prices are dropped first — they are "no price recorded" markers, and older
+ * shards and caches may still hold them (see fetchPriceHistory).
+ */
+function expandPoints(rawPoints, asOf) {
+  const points = (rawPoints || []).filter(([, p]) => p > 0);
+  if (!points.length) return [];
   const daily = [];
   let i = 0;
   const end = new Date(asOf + "T00:00:00Z");
