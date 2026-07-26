@@ -16,6 +16,11 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    # ~80 min of real work at e-kalathi's current speed (476 products, 2 workers,
+    # ~20s per history fetch). Without a cap this job inherits the 6h default: on
+    # 2026-07-25 it ran 4h14m against a slow endpoint and was killed before it
+    # could commit anything. Fail in two hours instead of burning an afternoon.
+    timeout-minutes: 120
     permissions:
       contents: write
       actions: write
