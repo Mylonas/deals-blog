@@ -15,8 +15,9 @@ const HOURLY_WORKFLOWS = [
   "update-supermarket-prices.yml",
 ];
 
-// Runs once daily. Empty: update-supermarket-deals.yml moved to a GitHub
-// schedule (this worker's daily dispatch never fired and the data went stale).
+// Runs once daily. Empty: update-supermarket-deals.yml no longer has a schedule
+// of its own at all — the deals recompute lives in the merge job of
+// update-price-history-sharded.yml, after the shards it depends on.
 // Only add a workflow here if its GitHub schedule stalls chronically.
 const DAILY_WORKFLOWS = [];
 const GH_API = "https://api.github.com";

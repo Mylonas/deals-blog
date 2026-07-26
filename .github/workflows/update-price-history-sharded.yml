@@ -13,7 +13,7 @@ name: Update Price History (Sharded)
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 5 * * *" # daily, before the 06:00 UTC deals dispatch
+    - cron: "30 5 * * *" # daily; also the only scheduled deals refresh (see merge job)
 
 jobs:
   shard:
@@ -89,9 +89,19 @@ jobs:
       # When the API is in a heavy-throttle mood the straggler crawl can take
       # hours — cap it and commit whatever the merge + partial crawl produced
       # (the deals script checkpoints its cache as it goes).
+      # The only scheduled path that refreshes supermarket-deals.json, since the
+      # standalone 06:00 job was collapsed into here. It sits after the merge on
+      # purpose: deals and all-time lows are computed from the price history the
+      # shards just refreshed, so running it earlier only ever used stale data.
+      #
+      # 240 min, not 30: with a healthy cache this takes about a minute, but a
+      # cache that has fallen behind needs a real catch-up crawl (~99 products/
+      # hour measured 2026-07-26), and a 30-minute cap would have made the
+      # backlog permanent. continue-on-error keeps the commit below reachable —
+      # the script checkpoints as it goes, so a capped run still helps the next.
       - name: Recompute deals and all-time lows
         run: node scripts/update-supermarket-deals.mjs
-        timeout-minutes: 30
+        timeout-minutes: 240
         continue-on-error: true
 
       - name: Check for changes
