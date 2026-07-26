@@ -1,0 +1,78 @@
+name: Stale data alert (7 days)
+
+# The ONLY workflow in this repo that is meant to reach your inbox.
+#
+# Everything else is deliberately quiet: the data workflows run at least every
+# 2 days, and watchdog.yml re-triggers anything that slips, every 2 hours,
+# without telling anyone. If all of that has failed for more than 7 days, this
+# opens (or updates) a single GitHub Issue — and GitHub emails you about it.
+#
+# It never fails the run. A red run is not the notification channel here; the
+# issue is. That way nothing before the 7-day mark can generate mail.
+on:
+  schedule:
+    - cron: "0 8 * * *"   # daily 08:00 UTC, after the 05:30 history job has settled
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master   # the data lives on master; the trigger commit may predate today's updates
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Look for data older than 7 days
+        id: check
+        run: |
+          node scripts/check-stale-week.mjs > /tmp/stale-report.md
+          if [ -s /tmp/stale-report.md ]; then
+            echo "stale=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "stale=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open or update the alert issue
+        if: steps.check.outputs.stale == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="Stale data: something has not updated in over 7 days"
+          # One issue, reused. A fresh issue every day would be its own spam.
+          EXISTING=$(gh issue list --label=stale-data --state=open --json number,title \
+            --jq ".[] | select(.title == \"$TITLE\") | .number" | head -1)
+
+          {
+            cat /tmp/stale-report.md
+            echo
+            echo "_Last checked: $(date -u '+%Y-%m-%d %H:%M UTC')_"
+          } > /tmp/issue-body.md
+
+          if [ -n "$EXISTING" ]; then
+            gh issue edit "$EXISTING" --body-file /tmp/issue-body.md
+            echo "Updated existing issue #$EXISTING (no new notification)."
+          else
+            gh issue create \
+              --title "$TITLE" \
+              --label "stale-data" \
+              --body-file /tmp/issue-body.md
+            echo "Opened a new issue — this is the one that emails you."
+          fi
+
+      - name: Report result in the run summary
+        run: |
+          if [ "${{ steps.check.outputs.stale }}" = "true" ]; then
+            echo "### Stale data detected" >> "$GITHUB_STEP_SUMMARY"
+            cat /tmp/stale-report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "All data fresher than 7 days." >> "$GITHUB_STEP_SUMMARY"
+          fi
