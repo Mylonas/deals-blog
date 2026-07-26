@@ -12,7 +12,9 @@
  * lands whatever it managed to fetch. Products are assigned by
  * productMasterId % SHARDS — stable across runs, no coordination needed.
  *
- * Env: SHARD (0-based index, required), SHARDS (total, default 10)
+ * Env: SHARD (0-based index, required), SHARDS (total, default 10),
+ *      FORCE (re-pull each product's full history instead of just the days
+ *      since its cached asOf — see FORCE below)
  */
 import fs from "fs";
 import path from "path";
@@ -31,6 +33,17 @@ if (isNaN(SHARD) || SHARD < 0 || SHARD >= SHARDS) {
   process.exit(1);
 }
 const OUT = path.join(SHARDS_DIR, `shard-${SHARD}.json`);
+
+// Normal runs trust the cache: a product already at today's asOf costs no
+// request, and a known product only fetches the days since its own asOf. That
+// makes bad data sticky — if the source served a wrong figure for a day, the
+// cache keeps it forever. FORCE=1 re-fetches every assigned product's full
+// history from the epoch and overlays it on the cached series, so any day the
+// API still serves gets corrected. Recovery tool, not a routine setting: it
+// turns a ~1-minute shard into ~48 paced requests (10-20 min), close to the
+// workflow's 25-minute cap — the checkpointing means a capped run still lands
+// what it fetched, and the next forced run continues from there.
+const FORCE = /^(1|true|yes)$/i.test(process.env.FORCE ?? "");
 
 const EKALATHI_EPOCH = "2025-09-01"; // e-kalathi has no data before Sep 2025
 const REQUEST_GAP_MS = 250;
@@ -149,7 +162,7 @@ async function main() {
     if (!seed[id] || entry.asOf > seed[id].asOf) seed[id] = entry;
   }
 
-  console.log(`Shard ${SHARD}/${SHARDS} — fetching product list...`);
+  console.log(`Shard ${SHARD}/${SHARDS} — fetching product list...${FORCE ? " (FORCE: full re-pull)" : ""}`);
   const allIds = await fetchAllProductIds();
   const mine = allIds.filter((id) => id % SHARDS === SHARD);
   console.log(`Assigned ${mine.length} of ${allIds.length} products`);
@@ -167,13 +180,15 @@ async function main() {
   for (const id of mine) {
     const entry = seed[id];
     try {
-      if (entry && entry.asOf >= today) {
+      if (entry && entry.asOf >= today && !FORCE) {
         products[id] = entry; // already current — no request needed
         fresh++;
       } else if (entry) {
-        // known product: fetch only the days since its own asOf
+        // known product: fetch only the days since its own asOf. Under FORCE,
+        // re-pull the whole range instead and overlay it — days the API no
+        // longer serves keep their cached value rather than vanishing.
         const daily = expandPoints(entry.points, entry.asOf);
-        const delta = await fetchPriceHistory(id, entry.asOf, today);
+        const delta = await fetchPriceHistory(id, FORCE ? EKALATHI_EPOCH : entry.asOf, today);
         const byDate = new Map(daily.map((e) => [e.d, e]));
         for (const e of delta) byDate.set(e.d, e);
         const merged = [...byDate.values()].sort((a, b) => a.d.localeCompare(b.d));
