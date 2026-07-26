@@ -72,7 +72,7 @@ function buildBlock(items, cities, updatedAt, scrapedAt, lang) {
 
   const T = {
     en: {
-      updated: `*Prices last checked: ${ts} (EET). Updated weekly via Wolt, Bolt Food and Foody.*`,
+      updated: `*Prices last checked: ${ts} (EET). Updated every 2 days via Wolt, Bolt Food and Foody.*`,
       freddo: "Freddo Espresso — Cheapest by City",
       topDrinks: "Most Popular Drinks by Café (Nicosia)",
       noTopDrinks: "*Top drinks data is being collected — check back next month.*",
@@ -82,7 +82,7 @@ function buildBlock(items, cities, updatedAt, scrapedAt, lang) {
       scrapedNote: scrapedTs ? `*Top drinks last scraped: ${scrapedTs}.*` : "",
     },
     el: {
-      updated: `*Τελευταία ενημέρωση: ${ts} (ΕΕΤ). Εβδομαδιαία ενημέρωση μέσω Wolt, Bolt Food και Foody.*`,
+      updated: `*Τελευταία ενημέρωση: ${ts} (ΕΕΤ). Ενημέρωση κάθε 2 ημέρες μέσω Wolt, Bolt Food και Foody.*`,
       freddo: "Freddo Espresso — Φθηνότερα ανά Πόλη",
       topDrinks: "Πιο Δημοφιλή Ποτά ανά Καφετέρια (Λευκωσία)",
       noTopDrinks: "*Τα δεδομένα για τα δημοφιλή ποτά συλλέγονται — επιστρέψτε τον επόμενο μήνα.*",
@@ -92,7 +92,7 @@ function buildBlock(items, cities, updatedAt, scrapedAt, lang) {
       scrapedNote: scrapedTs ? `*Δημοφιλή ποτά — τελευταία συλλογή: ${scrapedTs}.*` : "",
     },
     ru: {
-      updated: `*Цены последний раз проверены: ${ts} (EET). Обновляется еженедельно через Wolt, Bolt Food и Foody.*`,
+      updated: `*Цены последний раз проверены: ${ts} (EET). Обновляется каждые 2 дня через Wolt, Bolt Food и Foody.*`,
       freddo: "Фреддо Эспрессо — Самые дешёвые по городам",
       topDrinks: "Самые Популярные Напитки по Кафе (Никосия)",
       noTopDrinks: "*Данные о популярных напитках собираются — загляните в следующем месяце.*",

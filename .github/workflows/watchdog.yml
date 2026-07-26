@@ -1,5 +1,12 @@
 name: Watchdog - Auto-heal stale data
 
+# Silent self-healing only. This job re-triggers a workflow whose data has gone
+# stale and tells nobody — it used to open a GitHub Issue after three
+# consecutive failures, which meant an email long before one was wanted.
+#
+# Notification is now a single channel with a single threshold: stale-alert.yml
+# opens an issue only when a file is more than 7 days old. Nothing in this
+# workflow should ever generate mail.
 on:
   schedule:
     - cron: "30 */2 * * *"   # every 2 hours, offset from data crons (which run on :00)
@@ -11,7 +18,6 @@ jobs:
     permissions:
       contents: read
       actions: write   # re-trigger workflows
-      issues: write    # open issues when persistently failing
 
     steps:
       - uses: actions/checkout@v4
@@ -20,7 +26,7 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Check data freshness, re-trigger stale workflows, open issue if persistent
+      - name: Check data freshness and re-trigger stale workflows
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
@@ -33,73 +39,11 @@ jobs:
             exit 0
           fi
 
-          echo "Stale workflows detected:"
+          echo "Stale workflows detected — re-triggering:"
           cat /tmp/stale-workflows.txt
 
           while IFS= read -r workflow; do
-            echo "--- Checking recent runs for: $workflow ---"
-
-            # Get last 3 completed run conclusions for this workflow
-            recent=$(gh run list \
-              --workflow="$workflow" \
-              --limit=3 \
-              --json conclusion \
-              --jq '[.[] | .conclusion] | map(select(. != null))')
-
-            echo "Recent conclusions: $recent"
-
-            # Check if all 3 recent runs failed
-            all_failed=$(node -e "
-              const runs = JSON.parse('$recent');
-              const failed = runs.length >= 3 && runs.every(c => c === 'failure');
-              process.stdout.write(failed ? 'yes' : 'no');
-            " 2>/dev/null || echo "no")
-
-            if [ "$all_failed" = "yes" ]; then
-              echo "WARNING: $workflow has failed 3 times in a row - opening GitHub Issue"
-
-              # Avoid duplicate issues - check if one is already open
-              existing=$(gh issue list \
-                --label="watchdog" \
-                --state=open \
-                --search="$workflow" \
-                --json number \
-                --jq '.[0].number // empty')
-
-              if [ -z "$existing" ]; then
-                node -e "
-                  const fs = require('fs');
-                  const wf = process.env.WF;
-                  const repo = process.env.REPO;
-                  const ts = new Date().toUTCString();
-                  const body = [
-                    '## Watchdog Alert',
-                    '',
-                    'The workflow \`' + wf + '\` has failed **3 consecutive times**.',
-                    '',
-                    'Auto-retry has been attempted but the issue persists - manual investigation required.',
-                    '',
-                    '**Detected at:** ' + ts,
-                    '',
-                    '### Next steps',
-                    '1. Check the [workflow run logs](https://github.com/' + repo + '/actions/workflows/' + wf + ')',
-                    '2. Fix the underlying issue (API change, script bug, secret expired)',
-                    '3. Close this issue once resolved - the watchdog will reopen it if failures recur',
-                  ].join('\n');
-                  fs.writeFileSync('/tmp/issue-body.md', body);
-                " WF="$workflow"
-                gh issue create \
-                  --title "Persistent failure: $workflow" \
-                  --label "watchdog,bug" \
-                  --body-file /tmp/issue-body.md
-                echo "Issue created."
-              else
-                echo "Issue #$existing already open - skipping duplicate."
-              fi
-            else
-              echo "-> Re-triggering $workflow"
-              gh workflow run "$workflow"
-            fi
-
+            echo "-> Re-triggering $workflow"
+            gh workflow run "$workflow" || echo "   (dispatch failed; stale-alert.yml reports it if it persists)"
             sleep 5
           done < /tmp/stale-workflows.txt
