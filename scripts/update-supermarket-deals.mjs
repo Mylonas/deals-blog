@@ -34,6 +34,12 @@ const NEAR_ATL_MAX = 20;
 // e-kalathi rate-limits bursts: 8 parallel workers made ~80% of history
 // fetches fail even with backoff, while paced sequential requests succeed.
 const CONCURRENCY = 2;
+// FORCE=1 re-fetches every product's full history instead of only the days
+// since its cached asOf — the way to correct figures the source served wrong
+// and the cache has been carrying ever since. Slow by nature: all 476 products
+// through 2 paced workers is roughly an hour, well inside this workflow's
+// 240-minute cap, and the cache checkpoints every 50 products either way.
+const FORCE = /^(1|true|yes)$/i.test(process.env.FORCE ?? "");
 const REQUEST_GAP_MS = 250; // per-worker pause between requests
 // The price-diagram endpoint answers in 14-24s (measured 2026-07-25). It used
 // to be well under 20s, and the 20s timeout that was fine then began aborting
@@ -209,8 +215,11 @@ async function updateHistories(cache, ids) {
           fullLoads++;
         } else {
           daily = expandPoints(entry.points, entry.asOf);
-          if (entry.asOf < today) {
-            const delta = await fetchPriceHistory(id, entry.asOf, today);
+          if (entry.asOf < today || FORCE) {
+            // FORCE re-pulls the whole range and overlays it, so a day the
+            // source got wrong is corrected instead of cached forever; days
+            // the API no longer serves keep their cached value.
+            const delta = await fetchPriceHistory(id, FORCE ? EKALATHI_EPOCH : entry.asOf, today);
             const byDate = new Map(daily.map((e) => [e.d, e]));
             for (const e of delta) byDate.set(e.d, e);
             daily = [...byDate.values()].sort((a, b) => a.d.localeCompare(b.d));
@@ -339,15 +348,18 @@ async function main() {
 
   let histories;
   if (skipHistoryFetch) {
+    if (FORCE) console.log("\nFORCE ignored — --no-history-fetch makes no requests at all");
     console.log(`\nSkipping history fetch (--no-history-fetch) — using ${cachedCount} cached histories as-is`);
     histories = new Map(
       Object.entries(cache.products).map(([id, entry]) => [Number(id), expandPoints(entry.points, entry.asOf)])
     );
   } else {
     console.log(
-      cachedCount
-        ? `\nUpdating price histories (${cachedCount} products cached)...`
-        : `\nNo cache found — full history load for all ${products.length} products...`
+      FORCE
+        ? `\nFORCE — re-pulling full history for all ${products.length} products (ignoring ${cachedCount} cached asOf dates)...`
+        : cachedCount
+          ? `\nUpdating price histories (${cachedCount} products cached)...`
+          : `\nNo cache found — full history load for all ${products.length} products...`
     );
     histories = await updateHistories(cache, products.map((p) => p.productMasterId));
     fs.writeFileSync(CACHE, JSON.stringify(cache) + "\n");

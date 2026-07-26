@@ -12,6 +12,11 @@ name: Update Price History (Sharded)
 #     then recomputes deals + all-time lows from the merged cache
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Re-pull each product's FULL history instead of only the days since its cached asOf. Use to correct figures the source served wrong; a forced run takes 10-20 min per shard instead of ~1 min."
+        type: boolean
+        default: false
   schedule:
     - cron: "30 5 * * *" # daily; also the only scheduled deals refresh (see merge job)
 
@@ -39,6 +44,7 @@ jobs:
         env:
           SHARD: ${{ matrix.shard }}
           SHARDS: "10"
+          FORCE: ${{ inputs.force && '1' || '' }}
         run: node scripts/fetch-price-history-shard.mjs
         # e-kalathi soft-throttles by delaying responses (~12s each when warm);
         # 48 products/shard needs ~10 min, so leave real headroom.
