@@ -46,13 +46,9 @@ jobs:
       - name: Commit and push if changed
         if: steps.changes.outputs.changed == 'true'
         run: |
-          git config user.name "DealsHub Bot"
-          git config user.email "bot@dealshub.cy"
-          git add src/data/supermarket-deals.json src/data/product-price-history.json
-          git commit -m "chore: update supermarket deals $(date +'%Y-%m-%d')"
-          git pull --rebase origin master
-          git push origin master
-
+          bash scripts/ci/commit-data.sh "chore: update supermarket deals $(date +'%Y-%m-%d')" \
+            src/data/supermarket-deals.json \
+            src/data/product-price-history.json
       - name: Trigger Cloudflare redeploy
         if: steps.changes.outputs.changed == 'true'
         env:
