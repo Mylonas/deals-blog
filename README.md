@@ -169,7 +169,7 @@ All workflows use `[skip ci]` on their commits to avoid deploy loops.
 | `update-price-history-sharded.yml` | Daily 05:30 UTC | 10 parallel shards refresh the e-kalathi price history, then a merge job recomputes deals + all-time lows and commits both. Fails if the cache ends up under 50% fresh |
 | `update-supermarket-deals.yml` | Manual dispatch only | Same script as the merge job above. Collapsed into it so deals are computed *after* the history they depend on; kept for manual rebuilds |
 | `fetch-trending-topics.yml` | Every 3 hours | Scrapes Cyprus RSS + YouTube + Reddit + Wikipedia, commits JSON |
-| `watchdog.yml` | Every 2 hours | Checks data freshness; re-triggers stale workflows; opens GitHub Issue after 3 failures |
+| `watchdog.yml` | Every 2 hours | Checks freshness of all 13 data files (hourly, daily and weekly); re-triggers stale workflows; opens GitHub Issue after 3 failures. Bazaraki cars is reported but never re-dispatched — it cannot run in CI |
 
 ### Required Secrets
 
