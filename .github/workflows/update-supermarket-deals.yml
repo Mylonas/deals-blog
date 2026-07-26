@@ -16,11 +16,11 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    # ~80 min of real work at e-kalathi's current speed (476 products, 2 workers,
-    # ~20s per history fetch). Without a cap this job inherits the 6h default: on
-    # 2026-07-25 it ran 4h14m against a slow endpoint and was killed before it
-    # could commit anything. Fail in two hours instead of burning an afternoon.
-    timeout-minutes: 120
+    # Measured 2026-07-26 against a cache 18 days stale: ~99 products/hour, so a
+    # catch-up run needs ~5h; steady-state daily deltas are far quicker. The cap
+    # exists to bound a pathological run, not to cut a normal one short — the
+    # step below is what actually stops work, and it lets the commit still run.
+    timeout-minutes: 270
     permissions:
       contents: write
       actions: write
@@ -36,8 +36,15 @@ jobs:
         with:
           node-version: "24"
 
+      # continue-on-error is the point: the history cache checkpoints every 50
+      # products, so a run that runs out of time has still made real progress
+      # for the next one. Without this a timeout kills the job before the
+      # commit step and the work is discarded — which is exactly how this
+      # workflow lost 17 days of updates.
       - name: Fetch cheapest supermarket products
         run: node scripts/update-supermarket-deals.mjs
+        timeout-minutes: 240
+        continue-on-error: true
 
       - name: Check for changes
         id: changes
