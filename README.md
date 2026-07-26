@@ -177,11 +177,38 @@ than fails.
 | `update-supermarket-prices.yml` | Every hour | Fetches e-kalathi API, commits updated JSON + posts |
 | `update-coffee-prices.yml` | Every hour | Refreshes `updatedAt` timestamp, commits updated posts |
 | `update-bazaraki-cars.yml` | Manual dispatch only | Cannot run on the runners — see Bazaraki access below. Refresh with `npm run cars:local` |
-| `update-price-history-sharded.yml` | Daily 05:30 UTC | 10 parallel shards refresh the e-kalathi price history, then a merge job recomputes deals + all-time lows and commits both. Warns (does not fail) if the cache ends up under 50% fresh |
+| `update-price-history-sharded.yml` | Daily 05:30 UTC | 10 parallel shards refresh the e-kalathi price history, then a merge job recomputes deals + all-time lows and commits both. Warns (does not fail) if the cache ends up under 50% fresh. Dispatch takes a **force** input — see below |
 | `update-supermarket-deals.yml` | Manual dispatch only | Same script as the merge job above. Collapsed into it so deals are computed *after* the history they depend on; kept for manual rebuilds |
 | `fetch-trending-topics.yml` | Every 3 hours | Scrapes Cyprus RSS + YouTube + Reddit + Wikipedia, commits JSON |
 | `watchdog.yml` | Every 2 hours | Checks freshness of all 12 monitored data files and silently re-triggers anything stale. Never notifies |
 | `stale-alert.yml` | Daily 08:00 UTC | **The only workflow that emails you.** Opens/updates one GitHub Issue when a data file is more than 7 days old. Silent otherwise |
+
+### Forcing a full history re-pull
+
+The price-history cache is incremental: a product already at today's `asOf`
+costs no request, and a known product only fetches the days since its own
+`asOf`. That keeps the daily run to about a minute, but it makes bad data
+**sticky** — a figure the source served wrong stays cached forever, because
+nothing ever asks for that day again.
+
+`FORCE=1` re-pulls each product's full history from the epoch and overlays it on
+the cached series, correcting every day the API still serves while keeping days
+it no longer returns. Both ingestion scripts honour it, and both dispatch
+workflows expose it as a `force` checkbox:
+
+```bash
+gh workflow run update-price-history-sharded.yml --ref master -f force=true
+```
+
+Prefer the sharded workflow — it spreads the work over 10 runners (10–20 min per
+shard, against the job's 25-minute cap; partial progress is checkpointed and
+committed either way). The standalone `update-supermarket-deals.yml` does the
+same thing serially through 2 paced workers, roughly an hour for the catalogue.
+This is a recovery tool, not a routine setting — the daily incremental run is
+what should normally keep the cache current.
+
+> Unrelated to the Bazaraki scraper's `FORCE=1` above, which overrides that
+> script's dataset-shrink guard. Different scripts, same env-var name.
 
 ### Required Secrets
 

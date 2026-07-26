@@ -14,6 +14,11 @@ name: Update Supermarket Deals
 # from the current cache without waiting for, or re-running, the shards.
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Re-pull every product's FULL history instead of only the days since its cached asOf. Serial and slow (~1h for the whole catalogue) — prefer the sharded workflow's force input, which spreads the same work over 10 runners."
+        type: boolean
+        default: false
 
 concurrency:
   group: update-supermarket-deals
@@ -49,6 +54,8 @@ jobs:
       # workflow lost 17 days of updates.
       - name: Fetch cheapest supermarket products
         run: node scripts/update-supermarket-deals.mjs
+        env:
+          FORCE: ${{ inputs.force && '1' || '' }}
         timeout-minutes: 240
         continue-on-error: true
 
