@@ -35,6 +35,13 @@ const NEAR_ATL_MAX = 20;
 // fetches fail even with backoff, while paced sequential requests succeed.
 const CONCURRENCY = 2;
 const REQUEST_GAP_MS = 250; // per-worker pause between requests
+// The price-diagram endpoint answers in 14-24s (measured 2026-07-25). It used
+// to be well under 20s, and the 20s timeout that was fine then began aborting
+// almost every request around 2026-07-08 — four attempts plus backoff turned
+// each product into ~140s of nothing, the daily job ran 4h+ and was killed
+// before it could commit, and the data froze. Keep this comfortably above the
+// observed response time; it is a slow endpoint, not a broken one.
+const HISTORY_TIMEOUT_MS = 60000;
 
 const CATEGORY_LABELS = {
   "WATER":                      { en: "Water",           el: "Νερό",               ru: "Вода" },
@@ -101,7 +108,7 @@ async function fetchPriceHistory(productMasterId, from, to) {
     try {
       const res = await fetch(url, {
         headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" },
-        signal: AbortSignal.timeout(20000),
+        signal: AbortSignal.timeout(HISTORY_TIMEOUT_MS),
       });
       if (!res.ok) { lastErr = new Error(`HTTP ${res.status}`); continue; }
       const entries = await res.json();
