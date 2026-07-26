@@ -1,4 +1,4 @@
-name: Update Coffee Prices — Foody (Weekly)
+name: Update Coffee Prices — Foody (every 2 days)
 
 # Foody coffee gap scraper. Runs after the Wolt (06:00) and Bolt (09:00) scans
 # so the gap filter sees both and only opens menus for cafés neither covers.
@@ -7,7 +7,7 @@ name: Update Coffee Prices — Foody (Weekly)
 # failed venues over, so a partial run still produces a valid merge.
 on:
   schedule:
-    - cron: "0 12 * * 1" # Monday 12:00 UTC, after Wolt (06:00) + Bolt (09:00)
+    - cron: "0 12 */2 * *" # 12:00 UTC every 2 days, after Wolt (06:00) + Bolt (09:00)
   workflow_dispatch:
 
 jobs:

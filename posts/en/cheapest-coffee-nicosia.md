@@ -3,14 +3,14 @@ title: "Cheapest Freddo Espresso in Cyprus — Live Prices"
 date: "2026-06-28"
 updated: "2026-07-26"
 category: "Food & Drink"
-summary: "Freddo Espresso prices in Nicosia, Limassol, Larnaca, Paphos and Ayia Napa — the cheapest cafés in each city, updated weekly from Wolt, Bolt Food and Foody."
+summary: "Freddo Espresso prices in Nicosia, Limassol, Larnaca, Paphos and Ayia Napa — the cheapest cafés in each city, updated every 2 days from Wolt, Bolt Food and Foody."
 pinned: true
 ---
 
-We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Limassol, Larnaca, Paphos and the Ayia Napa area — and show the cheapest places in each city. Prices come from Wolt, Bolt Food and Foody listings — each café shows its cheapest platform — and are updated weekly.
+We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Limassol, Larnaca, Paphos and the Ayia Napa area — and show the cheapest places in each city. Prices come from Wolt, Bolt Food and Foody listings — each café shows its cheapest platform — and are updated every 2 days.
 
 <!-- COFFEE_PRICES_START -->
-*Prices last checked: 26 Jul 2026, 03:02 (EET). Updated weekly via Wolt, Bolt Food and Foody.*
+*Prices last checked: 26 Jul 2026, 03:02 (EET). Updated every 2 days via Wolt, Bolt Food and Foody.*
 
 ## Freddo Espresso — Cheapest by City
 

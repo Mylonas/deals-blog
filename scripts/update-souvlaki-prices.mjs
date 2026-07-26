@@ -10,7 +10,7 @@
  * client API is unauthenticated too, just heavily rate-limited). Prices are
  * platform listings and may include a markup over counter prices.
  *
- * Run weekly via GitHub Actions: node scripts/update-souvlaki-prices.mjs
+ * Run every 2 days via GitHub Actions: node scripts/update-souvlaki-prices.mjs
  */
 import fs from "fs";
 import path from "path";

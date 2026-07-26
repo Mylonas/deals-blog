@@ -120,12 +120,16 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run deploy.yml --ref master
 
-      # Deliberately last: the shards swallow fetch timeouts, so without this the
-      # run goes green no matter how little it achieved. Everything above has
-      # already committed whatever progress was made — this only decides the
-      # colour of the run, so a degraded upstream is visible instead of silent.
-      - name: Fail if the cache is not fresh
+      # Warns, does not fail. A red run can generate mail, and the only thing
+      # allowed to do that is stale-alert.yml at the 7-day mark. A degraded
+      # cache shows up here as a warning annotation and in the run summary; if
+      # it stays degraded, the data ages past 7 days and the alert fires then.
+      - name: Warn if the cache is not fresh
         if: steps.merge.outputs.healthy == 'false'
         run: |
-          echo "::error::Cache is only ${{ steps.merge.outputs.fresh }}/${{ steps.merge.outputs.total }} fresh (${{ steps.merge.outputs.fresh_pct }}%). Progress was committed; the run is marked failed so the degradation is visible. Check e-kalathi response times against FETCH_TIMEOUT_MS in scripts/fetch-price-history-shard.mjs."
-          exit 1
+          echo "::warning::Cache is only ${{ steps.merge.outputs.fresh }}/${{ steps.merge.outputs.total }} fresh (${{ steps.merge.outputs.fresh_pct }}%). Progress was committed. Check e-kalathi response times against FETCH_TIMEOUT_MS in scripts/fetch-price-history-shard.mjs."
+          {
+            echo "### Cache freshness below floor"
+            echo "${{ steps.merge.outputs.fresh }}/${{ steps.merge.outputs.total }} products fresh (${{ steps.merge.outputs.fresh_pct }}%)."
+            echo "Not failing the run — stale-alert.yml reports this if the data ages past 7 days."
+          } >> "$GITHUB_STEP_SUMMARY"
