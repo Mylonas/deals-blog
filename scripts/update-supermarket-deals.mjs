@@ -112,7 +112,10 @@ async function fetchPriceHistory(productMasterId, from, to) {
       });
       if (!res.ok) { lastErr = new Error(`HTTP ${res.status}`); continue; }
       const entries = await res.json();
-      return entries.map((e) => ({ d: e.date, p: e.price }));
+      // A price of 0 means "no price recorded that day" (product not listed
+      // anywhere), not a free product. Dropping the day leaves the previous
+      // price carried forward instead of a bogus €0.00 record low.
+      return entries.map((e) => ({ d: e.date, p: e.price })).filter((e) => e.p > 0);
     } catch (e) {
       lastErr = e;
     }
@@ -147,9 +150,14 @@ function loadCache() {
   }
 }
 
-/** Expand change-points back into a daily series up to asOf. */
-function expandPoints(points, asOf) {
-  if (!points?.length) return [];
+/**
+ * Expand change-points back into a daily series up to asOf. Non-positive
+ * prices are dropped first — they are "no price recorded" markers, and older
+ * caches may still hold them (see fetchPriceHistory).
+ */
+function expandPoints(rawPoints, asOf) {
+  const points = (rawPoints || []).filter(([, p]) => p > 0);
+  if (!points.length) return [];
   const daily = [];
   let i = 0;
   const end = new Date(asOf + "T00:00:00Z");
@@ -242,6 +250,7 @@ function detectAllTimeLow(history) {
 
   const latest = history[history.length - 1];
   const min = Math.min(...history.map((h) => h.p));
+  if (min <= 0) return null; // missing-price marker, not a real record low
   if (latest.p !== min) return null;
 
   const firstLowIdx = history.findIndex((h) => h.p === min);
