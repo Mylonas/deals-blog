@@ -62,26 +62,39 @@ console.log(`Merged ${shardFiles.length} shards: cache ${before} → ${total} pr
 
 // The shards deliberately swallow fetch timeouts so one slow product cannot
 // fail a whole shard. The cost is this job going green while achieving nothing:
-// on 2026-07-25 it reported success having updated 10 of 476 products, and had
-// been doing so since ~2026-07-08 unnoticed.
+// on 2026-07-25 it reported success having refreshed 10 of 476 products, and
+// had been doing so since ~2026-07-08 unnoticed.
 //
-// Report the coverage rather than exiting non-zero here — the commit step runs
-// after this one, and failing now would throw away the partial progress the
-// shards did make. The workflow fails on this output *after* committing.
-const MIN_UPDATED_PCT = 25;
-const updatedPct = total ? (contributed / total) * 100 : 0;
-const healthy = total === 0 || updatedPct >= MIN_UPDATED_PCT;
+// Health is measured as *how fresh the cache is*, not how many entries this run
+// advanced. Those are different questions, and the first attempt at this guard
+// asked the wrong one: `contributed` counts entries strictly newer than what was
+// already on disk, so when something else has already brought the cache up to
+// date today — the standalone deals job at 06:00, say — a flawless shard run
+// contributes ~0 and looked like total failure. That false alarm failed the
+// 2026-07-26 run while the cache was in fact 476/476 fresh.
+//
+// Report rather than exit non-zero: the commit step runs after this one, and
+// failing here would discard the progress the shards did make. The workflow
+// fails on this output *after* committing.
+const MIN_FRESH_PCT = 50;
+const FRESH_WINDOW_DAYS = 2; // tolerate a run near midnight UTC, or e-kalathi lagging a day
 
+const cutoff = new Date(Date.now() - FRESH_WINDOW_DAYS * 86400000).toISOString().slice(0, 10);
+const fresh = Object.values(merged).filter((e) => (e?.asOf ?? "") >= cutoff).length;
+const freshPct = total ? (fresh / total) * 100 : 0;
+const healthy = total === 0 || freshPct >= MIN_FRESH_PCT;
+
+console.log(`Cache freshness: ${fresh}/${total} products at ${cutoff} or newer (${freshPct.toFixed(1)}%).`);
 if (!healthy) {
   console.log(
-    `Coverage ${updatedPct.toFixed(1)}% is below the ${MIN_UPDATED_PCT}% floor. ` +
-    `Usual cause: e-kalathi responding slower than FETCH_TIMEOUT_MS in fetch-price-history-shard.mjs.`
+    `Below the ${MIN_FRESH_PCT}% floor. Usual cause: e-kalathi responding slower than ` +
+    `FETCH_TIMEOUT_MS in fetch-price-history-shard.mjs.`
   );
 }
 
 if (process.env.GITHUB_OUTPUT) {
   fs.appendFileSync(
     process.env.GITHUB_OUTPUT,
-    `updated=${contributed}\ntotal=${total}\nupdated_pct=${updatedPct.toFixed(1)}\nhealthy=${healthy}\n`
+    `updated=${contributed}\ntotal=${total}\nfresh=${fresh}\nfresh_pct=${freshPct.toFixed(1)}\nhealthy=${healthy}\n`
   );
 }
