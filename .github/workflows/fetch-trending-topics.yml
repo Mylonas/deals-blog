@@ -28,9 +28,7 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/data/trending-topics.json
-          git diff --cached --quiet || git commit -m "chore: update trending topics [skip ci]"
-          git pull --rebase origin master
-          git push
+          COMMIT_NAME="github-actions[bot]" \
+          COMMIT_EMAIL="github-actions[bot]@users.noreply.github.com" \
+          bash scripts/ci/commit-data.sh "chore: update trending topics [skip ci]" \
+            src/data/trending-topics.json

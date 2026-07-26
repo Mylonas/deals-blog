@@ -34,17 +34,12 @@ jobs:
       - name: Commit and push if changed
         if: steps.changes.outputs.changed == 'true'
         run: |
-          git config user.name "DealsHub Bot"
-          git config user.email "bot@dealshub.cy"
-          git add posts/en/cheapest-petrol-stations-cyprus.md
-          git add posts/el/cheapest-petrol-stations-cyprus.md
-          git add posts/ru/cheapest-petrol-stations-cyprus.md
-          git add src/data/fuel-prices.json
-          git add src/data/fuel-price-history.json
-          git commit -m "chore: auto-update fuel prices $(date +'%Y-%m-%d %H:%M UTC')"
-          git pull --rebase origin master
-          git push origin master
-
+          bash scripts/ci/commit-data.sh "chore: auto-update fuel prices $(date +'%Y-%m-%d %H:%M UTC')" \
+            posts/en/cheapest-petrol-stations-cyprus.md \
+            posts/el/cheapest-petrol-stations-cyprus.md \
+            posts/ru/cheapest-petrol-stations-cyprus.md \
+            src/data/fuel-prices.json \
+            src/data/fuel-price-history.json
       - name: Trigger Cloudflare redeploy
         if: steps.changes.outputs.changed == 'true'
         env:

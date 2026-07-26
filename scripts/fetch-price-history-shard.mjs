@@ -36,6 +36,11 @@ const EKALATHI_EPOCH = "2025-09-01"; // e-kalathi has no data before Sep 2025
 const REQUEST_GAP_MS = 250;
 const PAGE_SIZE = 200;
 const CHECKPOINT_EVERY = 10;
+// The price-diagram endpoint answers in 14-24s (measured 2026-07-25). The old
+// 20s timeout aborted nearly every request from ~2026-07-08, and because this
+// job deliberately does not fail on fetch timeouts it kept reporting success
+// while updating ~2% of the cache. Keep well above the observed response time.
+const FETCH_TIMEOUT_MS = 60000;
 
 const HEADERS = { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -52,7 +57,7 @@ async function fetchAllProductIds() {
       try {
         const res = await fetch(`${API}/fetch-product-list?page=${page}&size=${PAGE_SIZE}&productName=`, {
           headers: HEADERS,
-          signal: AbortSignal.timeout(20000),
+          signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
         });
         if (!res.ok) { lastErr = new Error(`product list HTTP ${res.status}`); continue; }
         json = await res.json();
@@ -75,7 +80,7 @@ async function fetchPriceHistory(id, from, to) {
   for (let attempt = 0; attempt < 4; attempt++) {
     if (attempt > 0) await sleep(10000 * attempt); // back off on rate limit
     try {
-      const res = await fetch(url, { headers: HEADERS, signal: AbortSignal.timeout(20000) });
+      const res = await fetch(url, { headers: HEADERS, signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
       if (!res.ok) { lastErr = new Error(`HTTP ${res.status}`); continue; }
       const entries = await res.json();
       return entries.map((e) => ({ d: e.date, p: e.price }));

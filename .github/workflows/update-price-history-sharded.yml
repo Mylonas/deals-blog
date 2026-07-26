@@ -52,23 +52,8 @@ jobs:
       - name: Commit shard results (even on failure)
         if: always()
         run: |
-          git config user.name "DealsHub Bot"
-          git config user.email "bot@dealshub.cy"
-          git add src/data/price-history-shards/shard-${{ matrix.shard }}.json 2>/dev/null || exit 0
-          git diff --cached --quiet && exit 0
-          git commit -m "chore: price history shard ${{ matrix.shard }} $(date +'%Y-%m-%d')"
-          # 10 shards push near-simultaneously (worst when they all time out
-          # together); each touches only its own file, so rebase always
-          # succeeds — rebase first, then retry with jitter until a push lands.
-          for i in $(seq 1 15); do
-            # || true: this step runs under bash -e, so a transient pull
-            # failure would otherwise abort the loop instead of retrying
-            git pull --rebase origin master || true
-            git push origin master && exit 0
-            sleep $((RANDOM % 10 + 2))
-          done
-          echo "::error::shard ${{ matrix.shard }}: push failed after 15 attempts"
-          exit 1
+          bash scripts/ci/commit-data.sh "chore: price history shard ${{ matrix.shard }} $(date +'%Y-%m-%d')" \
+            "src/data/price-history-shards/shard-${{ matrix.shard }}.json"
 
   merge:
     needs: shard
@@ -96,6 +81,7 @@ jobs:
           node-version: "24"
 
       - name: Merge shards into the shared history cache
+        id: merge
         run: node scripts/merge-price-history-shards.mjs
 
       # Everything the shards fetched is already current in the cache, so this
@@ -115,19 +101,21 @@ jobs:
       - name: Commit and push if changed
         if: steps.changes.outputs.changed == 'true'
         run: |
-          git config user.name "DealsHub Bot"
-          git config user.email "bot@dealshub.cy"
-          git add src/data/supermarket-deals.json src/data/product-price-history.json
-          git commit -m "chore: merge price history shards $(date +'%Y-%m-%d')"
-          for i in 1 2 3 4 5; do
-            git push origin master && exit 0
-            sleep $((RANDOM % 8 + 2))
-            git pull --rebase origin master || true
-          done
-          exit 1
-
+          bash scripts/ci/commit-data.sh "chore: merge price history shards $(date +'%Y-%m-%d')" \
+            src/data/supermarket-deals.json \
+            src/data/product-price-history.json
       - name: Trigger Cloudflare redeploy
         if: steps.changes.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run deploy.yml --ref master
+
+      # Deliberately last: the shards swallow fetch timeouts, so without this the
+      # run goes green no matter how little it achieved. Everything above has
+      # already committed whatever progress was made — this only decides the
+      # colour of the run, so a degraded upstream is visible instead of silent.
+      - name: Fail if too little of the cache was refreshed
+        if: steps.merge.outputs.healthy == 'false'
+        run: |
+          echo "::error::Only ${{ steps.merge.outputs.updated }}/${{ steps.merge.outputs.total }} products refreshed (${{ steps.merge.outputs.updated_pct }}%). Progress was committed; the run is marked failed so the degradation is visible. Check e-kalathi response times against FETCH_TIMEOUT_MS in scripts/fetch-price-history-shard.mjs."
+          exit 1

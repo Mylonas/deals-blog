@@ -23,9 +23,10 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/data/coffee-prices.json posts/en/cheapest-coffee-nicosia.md posts/el/cheapest-coffee-nicosia.md posts/ru/cheapest-coffee-nicosia.md
-          git diff --cached --quiet || git commit -m "chore: update coffee prices"
-          git pull --rebase origin master
-          git push
+          COMMIT_NAME="github-actions[bot]" \
+          COMMIT_EMAIL="github-actions[bot]@users.noreply.github.com" \
+          bash scripts/ci/commit-data.sh "chore: update coffee prices" \
+            src/data/coffee-prices.json \
+            posts/en/cheapest-coffee-nicosia.md \
+            posts/el/cheapest-coffee-nicosia.md \
+            posts/ru/cheapest-coffee-nicosia.md

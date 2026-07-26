@@ -33,16 +33,12 @@ jobs:
       - name: Commit and push if changed
         id: coffee_push
         run: |
-          git config user.name "DealsHub Bot"
-          git config user.email "bot@dealshub.cy"
-          git add src/data/coffee-prices.json src/data/coffee-prices-wolt.json
-          git add posts/en/cheapest-coffee-nicosia.md
-          git add posts/el/cheapest-coffee-nicosia.md
-          git add posts/ru/cheapest-coffee-nicosia.md
-          git diff --cached --quiet || (git commit -m "chore: update coffee prices via Wolt API $(date +'%Y-%m-%d')" && echo "changed=true" >> $GITHUB_OUTPUT)
-          git pull --rebase origin master
-          git push origin master
-
+          bash scripts/ci/commit-data.sh "chore: update coffee prices via Wolt API $(date +'%Y-%m-%d')" \
+            src/data/coffee-prices.json \
+            src/data/coffee-prices-wolt.json \
+            posts/en/cheapest-coffee-nicosia.md \
+            posts/el/cheapest-coffee-nicosia.md \
+            posts/ru/cheapest-coffee-nicosia.md
       - name: Trigger Cloudflare redeploy
         if: steps.coffee_push.outputs.changed == 'true'
         env:
