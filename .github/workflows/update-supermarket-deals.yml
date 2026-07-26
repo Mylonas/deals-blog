@@ -1,12 +1,18 @@
 name: Update Supermarket Deals
 
-# Runs once daily at 06:00 UTC via GitHub's schedule, like every other data
-# workflow in this repo. The Cloudflare Worker (workers/cron-trigger) no longer
-# dispatches this workflow — its daily dispatch never fired, which left the
-# deals data stale.
+# NOT scheduled. update-price-history-sharded.yml already runs this same script
+# as its "Recompute deals and all-time lows" step, in the one place where the
+# ordering is correct: after the shards have refreshed the price history the
+# deals are computed from.
+#
+# This used to also run standalone at 06:00, 90 minutes before the sharded job.
+# That was duplicated work computed from a stale cache, and it caused a real
+# false alarm — the 06:00 run left nothing for the 07:30 run to update, and the
+# freshness guard read "0 updated" as total failure.
+#
+# Kept dispatch-only as a manual recovery path: run it by hand to rebuild deals
+# from the current cache without waiting for, or re-running, the shards.
 on:
-  schedule:
-    - cron: "0 6 * * *"
   workflow_dispatch:
 
 concurrency:
