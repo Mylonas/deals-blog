@@ -200,10 +200,30 @@ workflows expose it as a `force` checkbox:
 gh workflow run update-price-history-sharded.yml --ref master -f force=true
 ```
 
-Prefer the sharded workflow — it spreads the work over 10 runners (10–20 min per
-shard, against the job's 25-minute cap; partial progress is checkpointed and
-committed either way). The standalone `update-supermarket-deals.yml` does the
-same thing serially through 2 paced workers, roughly an hour for the catalogue.
+**Run it locally, not from Actions.** Measured 2026-07-26: a forced sharded run
+timed out all 10 shards at the 25-minute cap and committed nothing at all. A
+full-range query (epoch→today, ~330 days) is far heavier than the one-day delta
+the daily run makes, and from a GitHub runner IP those requests hang past the
+60s timeout — each fully-failing product burns ~5 min in retries plus backoff,
+so a shard gets through a handful before it is killed. The same query from a
+residential Cyprus connection answers in ~15s, the identical IP-reputation
+asymmetry described for Bazaraki above.
+
+```bash
+FORCE=1 node scripts/update-supermarket-deals.mjs
+```
+
+That is the path that works: ~1 hour for the catalogue through 2 paced workers,
+cache checkpointed every 50 products, then commit the result like any other data
+change. The `force` dispatch inputs are kept because they cost nothing and may
+work if e-kalathi's throttling changes — but treat a forced Actions run as
+unproven, and check that the cache diff is non-empty before believing it.
+
+> Watch out: the fetch step is `continue-on-error`, so a forced run that
+> achieves nothing still reports **success**. The freshness check does not catch
+> it either — every product is still at today's `asOf`, so the cache reads as
+> 100% fresh whether or not anything was actually re-pulled.
+
 This is a recovery tool, not a routine setting — the daily incremental run is
 what should normally keep the cache current.
 

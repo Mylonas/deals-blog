@@ -39,10 +39,14 @@ const OUT = path.join(SHARDS_DIR, `shard-${SHARD}.json`);
 // makes bad data sticky — if the source served a wrong figure for a day, the
 // cache keeps it forever. FORCE=1 re-fetches every assigned product's full
 // history from the epoch and overlays it on the cached series, so any day the
-// API still serves gets corrected. Recovery tool, not a routine setting: it
-// turns a ~1-minute shard into ~48 paced requests (10-20 min), close to the
-// workflow's 25-minute cap — the checkpointing means a capped run still lands
-// what it fetched, and the next forced run continues from there.
+// API still serves gets corrected.
+//
+// Does not work from GitHub Actions (measured 2026-07-26): a full-range query
+// is far heavier than the daily delta, runner IPs get no answer inside the 60s
+// timeout, and all 10 shards died at the 25-minute cap having committed
+// nothing — fewer than CHECKPOINT_EVERY products completed, so not even a
+// partial file was written. Run it locally instead, where the same query
+// answers in ~15s; see "Forcing a full history re-pull" in the README.
 const FORCE = /^(1|true|yes)$/i.test(process.env.FORCE ?? "");
 
 const EKALATHI_EPOCH = "2025-09-01"; // e-kalathi has no data before Sep 2025
