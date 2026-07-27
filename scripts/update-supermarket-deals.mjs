@@ -37,8 +37,9 @@ const CONCURRENCY = 2;
 // FORCE=1 re-fetches every product's full history instead of only the days
 // since its cached asOf — the way to correct figures the source served wrong
 // and the cache has been carrying ever since. Slow by nature: all 476 products
-// through 2 paced workers is roughly an hour, well inside this workflow's
-// 240-minute cap, and the cache checkpoints every 50 products either way.
+// through 2 paced workers is roughly an hour, and the cache checkpoints every
+// 50 products. Run this locally — full-range queries go unanswered from GitHub
+// runner IPs (see fetch-price-history-shard.mjs and the README).
 const FORCE = /^(1|true|yes)$/i.test(process.env.FORCE ?? "");
 const REQUEST_GAP_MS = 250; // per-worker pause between requests
 // The price-diagram endpoint answers in 14-24s (measured 2026-07-25). It used
