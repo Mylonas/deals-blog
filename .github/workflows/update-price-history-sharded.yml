@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
     inputs:
       force:
-        description: "Re-pull each product's FULL history instead of only the days since its cached asOf. Use to correct figures the source served wrong; a forced run takes 10-20 min per shard instead of ~1 min."
+        description: "Re-pull each product's FULL history instead of only the days since its cached asOf. KNOWN NOT TO WORK HERE: e-kalathi does not serve full-range queries to runner IPs, and a forced run times out every shard having committed nothing. Run FORCE=1 locally instead — see the README."
         type: boolean
         default: false
   schedule:

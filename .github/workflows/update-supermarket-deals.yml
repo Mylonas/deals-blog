@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
     inputs:
       force:
-        description: "Re-pull every product's FULL history instead of only the days since its cached asOf. Serial and slow (~1h for the whole catalogue) — prefer the sharded workflow's force input, which spreads the same work over 10 runners."
+        description: "Re-pull every product's FULL history instead of only the days since its cached asOf. Serial and slow (~1h), and subject to the same runner-IP throttling that makes the sharded workflow's force input useless — run FORCE=1 locally instead. See the README."
         type: boolean
         default: false
 
