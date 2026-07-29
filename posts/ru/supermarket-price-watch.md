@@ -16,7 +16,7 @@ pinned: false
 | Продукт | Мин. цена | Бренд |
 |---------|---------|--------|
 | Свежее молоко 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
-| Яйца | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
+| Яйца | **[€2.15](https://www.e-kalathi.gov.cy/product-information/414)** | Nikiforou |
 | Халлуми 200г | **[€2.09](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Спагетти 500г | **[€0.89](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Оливковое масло 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
@@ -24,7 +24,7 @@ pinned: false
 | Йогурт 450г | **[€1.95](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
 | Рис 1кг | **[€1.90](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
 | Апельсиновый сок 1L | **[€2.29](https://www.e-kalathi.gov.cy/product-information/2120)** | Delta |
-| Кока-Кола 1L ×2 | **[€2.33](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
+| Кока-Кола 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
 
 <!-- PRICES_END -->
 
