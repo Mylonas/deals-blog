@@ -1,7 +1,7 @@
 ---
 title: "Cheapest Petrol Stations in Cyprus — Live Tracker"
 date: "2026-06-28"
-updated: "2026-07-28"
+updated: "2026-07-29"
 category: "Fuel"
 summary: "Live prices for Unleaded 95, Unleaded 98, and Diesel across petrol stations in Cyprus. Updated hourly from the official Cyprus government fuel observatory."
 pinned: true
@@ -41,10 +41,10 @@ pinned: true
 |-------|---------|------|-------|
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.548 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.548 |
+| SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.569 |
 | SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.569 |
 | PETROLINA | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.92598333,33.54103333) | Καλό Χωριό Λάρνακας | €1.569 |
 | PETROLINA | [Λεωφ. Ελλάδος 65 Τ.Κ 7101](https://www.google.com/maps?q=34.92766666666667,33.58225) | Αραδίππου | €1.579 |
-| SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.579 |
 | ESSO | [Λεωφ. Νίκης 37 Τ.Κ 1087](https://www.google.com/maps?q=35.1565679511699,33.3580602362457) | Ακρόπολη | €1.589 |
 
 ## 7 Cheapest Stations Right Now — Heating Oil
@@ -59,6 +59,6 @@ pinned: true
 | PETROLINA | [Λεωφ. Ελλάδος 65 Τ.Κ 7101](https://www.google.com/maps?q=34.92766666666667,33.58225) | Αραδίππου | €1.329 |
 | SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.329 |
 
-> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 28 July 2026
+> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 29 July 2026
 
 <!-- FUEL_PRICES_END -->
