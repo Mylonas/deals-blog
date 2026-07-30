@@ -6,13 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "cars:local": "node scripts/update-bazaraki-cars.mjs"
+    "cars:local": "node scripts/update-bazaraki-cars.mjs",
+    "jobs": "node scripts/jobs/scrape-jobs.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
     "next": "^15.1.0",
+    "pdfjs-dist": "^6.2.108",
     "playwright-extra": "^4.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "react": "^19.0.0",
@@ -30,7 +32,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.0.1",
-    "playwright": "^1.61.1",
+    "playwright": "^1.62.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
