@@ -30,10 +30,10 @@ pinned: true
 | PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.529 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.529 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.529 |
-| EKO | [Λεωφ. Λευκωσίας 108 Τ.Κ 2540](https://www.google.com/maps?q=35.0342474332179,33.4088325048936) | Δάλι | €1.529 |
-| EKO | [Λεωφ. Γερίου Τ.Κ 2200](https://www.google.com/maps?q=35.1061438772506,33.3969139903519) | Γέρι | €1.529 |
 | EKO | [Λεωφ. Σαριγιάννη Τ.Κ 2831](https://www.google.com/maps?q=35.070157,32.930054) | Ευρύχου | €1.545 |
 | PETROLINA | [Αρχ. Μακαρίου Γ΄ 17 Τ.Κ 2800](https://www.google.com/maps?q=34.991233,32.902827) | Κακοπετριά | €1.545 |
+| STAROIL | [Λεώφ. Μητροπολίτη Χρύσανθου Σαριγιάννη 110 Τ.Κ 2831](https://www.google.com/maps?q=35.05938888888888,32.91291666666667) | Ευρύχου | €1.545 |
+| JACKOSON | [Δρόμος Παλαιχωρίου - Αγρού Τ.Κ 4860](https://www.google.com/maps/search/%CE%94%CF%81%CF%8C%CE%BC%CE%BF%CF%82%20%CE%A0%CE%B1%CE%BB%CE%B1%CE%B9%CF%87%CF%89%CF%81%CE%AF%CE%BF%CF%85%20-%20%CE%91%CE%B3%CF%81%CE%BF%CF%8D%20%CE%A4.%CE%9A%204860) | Αγρός | €1.547 |
 
 ## 7 Cheapest Stations Right Now — Diesel
 
