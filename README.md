@@ -108,6 +108,7 @@ deals-blog/
 | Coffee prices | Manually curated in `src/data/coffee-prices.json` | JSON → markdown generation |
 | Trending topics | Google News RSS, Cyprus Mail, Philenews, Sigmalive | RSS parsing + keyword categorisation |
 | Bazaraki cars | [bazaraki.com](https://www.bazaraki.com) | Internal JSON API `/api/items/?rubric=5`, read with curl. Laptop-only — Cloudflare challenges every client from a datacenter IP |
+| Public-sector jobs | 43 official sources — ΕΔΥ, semi-government bodies, the 5 district organisations, all 20 municipalities | HTML + WordPress REST + PDF text extraction. See [Public Sector Jobs](#public-sector-jobs) |
 
 ---
 
@@ -180,6 +181,7 @@ than fails.
 | `update-price-history-sharded.yml` | Daily 05:30 UTC | 10 parallel shards refresh the e-kalathi price history, then a merge job recomputes deals + all-time lows and commits both. Warns (does not fail) if the cache ends up under 50% fresh. Dispatch takes a **force** input — see below |
 | `update-supermarket-deals.yml` | Manual dispatch only | Same script as the merge job above. Collapsed into it so deals are computed *after* the history they depend on; kept for manual rebuilds |
 | `fetch-trending-topics.yml` | Every 3 hours | Scrapes Cyprus RSS + YouTube + Reddit + Wikipedia, commits JSON |
+| `update-public-jobs.yml` | Daily 05:10 UTC | Scrapes 43 public-sector employers, reads closing dates out of the PDF notices, commits the data + PDF cache and triggers a redeploy |
 | `watchdog.yml` | Every 2 hours | Checks freshness of all 12 monitored data files and silently re-triggers anything stale. Never notifies |
 | `stale-alert.yml` | Daily 08:00 UTC | **The only workflow that emails you.** Opens/updates one GitHub Issue when a data file is more than 7 days old. Silent otherwise |
 
@@ -281,6 +283,59 @@ Latest: **[v1.8.0](https://github.com/Mylonas/deals-blog/releases/tag/v1.8.0)** 
 Release procedure follows the project's [release guide](https://github.com/Mylonas/deals-blog/releases): semver tagging, CHANGELOG update, annotated git tag, structured release notes with rollback procedure.
 
 ---
+
+## Public Sector Jobs
+
+Public pages at [`/jobs`](https://deals-blog.pages.dev/jobs/), `/el/jobs`, `/ru/jobs` — every
+currently open public-sector vacancy in Cyprus, from 43 official sources: the ΕΔΥ
+civil-service competitions, the semi-government organisations (Cyta, ΑΗΚ, Αρχή Λιμένων,
+ΟΚΥπΥ, ΡΑΕΚ, CySEC, ΡΙΚ, Κεντρική Τράπεζα, ΟΧΣ, ΚΟΑ, ΚΟΔΑΠ, ΧΑΚ, the three public
+universities), all five Επαρχιακοί Οργανισμοί Αυτοδιοίκησης, and all 20 municipalities.
+
+```bash
+npm run jobs                        # scrape everything, report what is new
+npm run jobs -- --only psc          # one source
+npm run jobs -- --no-pdf            # skip reading deadlines out of PDFs
+node scripts/jobs/diagnose.mjs --zero   # explain every source that returned nothing
+```
+
+There is no vacancy API anywhere in Cyprus government — only HTML pages and PDFs. The
+scraper lives in `scripts/jobs/`, `sources.json` lists every employer, and each entry names
+an adapter:
+
+| Adapter | Used for |
+|---------|----------|
+| `psc` | The ΕΔΥ table. Authoritative for the civil service; mirrors the Επίσημη Εφημερίδα της Δημοκρατίας, published most **Fridays**, with Gazette + notification numbers |
+| `wp` | WordPress REST API — most municipalities. Finds dedicated job post types, then keyword-searches posts and pages, and always also scans the vacancies page (notices are often PDFs the API cannot see) |
+| `site` | Everything else: finds the «Κενές Θέσεις» page from the site's own nav, then reads the vacancy-shaped links. Keyword-driven, not selector-driven, so a redesign does not silently break it |
+| `browser` | Playwright + stealth, for Πανεπιστήμιο Κύπρου only — it 403s plain clients *and* bare headless Chromium |
+
+**Deadlines** come from the link text, then the PDF notice itself (pdf.js), then the
+WordPress API, then a dated URL. `lib/pdf.mjs` reads the closing date out of each notice and
+caches the result in `src/data/public-jobs-pdf-cache.json` — a published notice never
+changes, so each PDF is fetched once. Bump `PARSER_VERSION` when changing the extraction
+logic: a cached "no deadline found" is one parser's verdict, and stale nulls otherwise
+outlive the fix.
+
+### Gotchas worth keeping
+
+- **Accents.** Uppercasing Greek strips them, so a heading `ΘΕΣΕΙΣ ΕΡΓΑΣΙΑΣ` never matches a
+  pattern written `εργασίας`, however case-insensitive the regex. Every pattern in
+  `lib/util.mjs` is accent-free and compared through `matches()`, which folds first.
+- **Never derive a deadline from a URL.** `…/Theseis Ergasias/2026/03-2026.pdf` reads as
+  26/03/2026 to any date regex, which silently expired every ΡΑΕΚ posting.
+- **«Περισσότερα» is not a vacancies link.** Page discovery follows only labels that *name*
+  the vacancies page; following a "read more" lands on whatever news item is top of the
+  homepage.
+- **Undated notices never expire**, so they must be dated from somewhere — the URL path
+  (`/uploads/2026/05/`) if nothing else. Skipping this reported 106 phantom openings.
+- **pdf.js emits text run by run**, so a date arrives as «1 4 Αυγούστου 202 6»; the digit
+  gaps must be closed before parsing. The date is usually near the *end* of the notice.
+- Job titles stay in Greek on all three pages, as each employer publishes them. Only the
+  interface is translated — machine-translating an official notice would misrepresent it.
+
+The legally binding source is always the Επίσημη Εφημερίδα της Δημοκρατίας. Treat this as a
+monitor, not the record.
 
 ## Trends Dashboard
 
