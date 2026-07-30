@@ -1,17 +1,27 @@
 {
-  "_comment": "Public-sector employers to watch. adapter: psc = the ΕΔΥ table; wp = WordPress REST search; site = discover the vacancies page from the homepage and scrape its links. Set vacanciesUrl to skip discovery when the page is known.",
+  "_comment": "Public-sector employers to watch. adapter: psc = the ΕΔΥ table; wp = WordPress REST search; site = discover the vacancies page from the homepage and scrape its links; browser = the same through Chromium; exelsys = the hosted Exelsys ATS. Set vacanciesUrl to skip discovery when the page is known. district = where the employer is based, or pancyprus for the island-wide bodies.",
   "sources": [
     {
       "id": "psc",
       "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
       "sector": "civil-service",
+      "district": "pancyprus",
       "adapter": "psc",
       "url": "https://www.psc.gov.cy/psc/psc.nsf/classificatio4b_gr/classificatio4b_gr?OpenForm="
+    },
+    {
+      "id": "eey",
+      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
+      "sector": "civil-service",
+      "district": "pancyprus",
+      "adapter": "site",
+      "homepage": "https://www.eey.gov.cy/"
     },
     {
       "id": "cyta",
       "name": "Cyta (ΑΤΗΚ)",
       "sector": "semi-government",
+      "district": "pancyprus",
       "adapter": "site",
       "homepage": "https://www.cyta.com.cy/",
       "vacanciesUrl": "https://www.cyta.com.cy/careers/el"
@@ -20,6 +30,7 @@
       "id": "eac",
       "name": "ΑΗΚ / Electricity Authority of Cyprus",
       "sector": "semi-government",
+      "district": "pancyprus",
       "adapter": "browser",
       "homepage": "https://www.eac.com.cy/EL/Pages/default.aspx",
       "vacanciesUrl": "https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx"
@@ -28,6 +39,7 @@
       "id": "cpa",
       "name": "Αρχή Λιμένων Κύπρου",
       "sector": "semi-government",
+      "district": "pancyprus",
       "adapter": "site",
       "homepage": "https://www.cpa.gov.cy/",
       "vacanciesUrl": "https://www.cpa.gov.cy/el/vacancies"
@@ -36,30 +48,96 @@
       "id": "shso",
       "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
       "sector": "semi-government",
+      "district": "pancyprus",
       "adapter": "wp",
       "homepage": "https://shso.org.cy/",
       "vacanciesUrl": "https://shso.org.cy/job-position/"
     },
     {
+      "id": "hio",
+      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "sector": "semi-government",
+      "district": "pancyprus",
+      "adapter": "site",
+      "homepage": "https://www.gesy.org.cy/el-gr/home",
+      "vacanciesUrl": "https://www.gesy.org.cy/el-gr/hiovacancies"
+    },
+    {
       "id": "cera",
       "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
       "sector": "semi-government",
+      "district": "nicosia",
       "adapter": "site",
       "homepage": "https://www.cera.org.cy/",
       "vacanciesUrl": "https://www.cera.org.cy/el-gr/raek/details/theseis-ergasias"
     },
     {
+      "id": "ocecpr",
+      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "site",
+      "homepage": "https://www.ocecpr.org.cy/",
+      "vacanciesUrl": "https://www.ocecpr.org.cy/kenes-thesis"
+    },
+    {
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "site",
+      "homepage": "https://www.crta.org.cy/index.php/el/",
+      "vacanciesUrl": "https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html"
+    },
+    {
+      "id": "competition",
+      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "site",
+      "homepage": "https://www.competition.gov.cy/",
+      "vacanciesUrl": "https://www.competition.gov.cy/competition/competition.nsf/page34_gr/page34_gr?OpenDocument"
+    },
+    {
       "id": "cso",
       "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
       "sector": "semi-government",
+      "district": "nicosia",
       "adapter": "wp",
       "homepage": "https://cso.org.cy/",
       "vacanciesUrl": "https://cso.org.cy/%ce%b8%ce%b5%cf%83%ce%b5%ce%b9%cf%83-%ce%b5%cf%81%ce%b3%ce%b1%cf%83%ce%b9%ce%b1%cf%83/"
     },
     {
+      "id": "cyada",
+      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "wp",
+      "homepage": "https://www.cyada.org.cy/"
+    },
+    {
+      "id": "onek",
+      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "wp",
+      "homepage": "https://onek.org.cy/",
+      "vacanciesUrl": "https://onek.org.cy/poioi-eimaste/proslipseis/"
+    },
+    {
+      "id": "thoc",
+      "name": "ΘΟΚ (Θεατρικός Οργανισμός Κύπρου)",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "site",
+      "homepage": "https://www.thoc.org.cy/",
+      "vacanciesUrl": "https://www.thoc.org.cy/el/about/cooperation/applications"
+    },
+    {
       "id": "cysec",
       "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
       "sector": "semi-government",
+      "district": "nicosia",
       "adapter": "site",
       "homepage": "https://www.cysec.gov.cy/el-GR/home/",
       "vacanciesUrl": null
@@ -68,6 +146,7 @@
       "id": "cybc",
       "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
       "sector": "semi-government",
+      "district": "nicosia",
       "adapter": "site",
       "homepage": "https://cybc.com.cy/"
     },
@@ -75,14 +154,102 @@
       "id": "centralbank",
       "name": "Κεντρική Τράπεζα της Κύπρου",
       "sector": "semi-government",
+      "district": "nicosia",
       "adapter": "site",
       "homepage": "https://www.centralbank.cy/el/",
       "vacanciesUrl": "https://www.centralbank.cy/el/the-bank/employment"
     },
     {
+      "id": "hfc",
+      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "wp",
+      "homepage": "https://www.hfc.com.cy/",
+      "vacanciesUrl": "https://www.hfc.com.cy/category/%ce%b8%ce%b5%cf%83%ce%b5%ce%b9%cf%83-%ce%b5%cf%81%ce%b3%ce%b1%cf%83%ce%b9%ce%b1%cf%83/"
+    },
+    {
+      "id": "kedipes",
+      "name": "ΚΕΔΙΠΕΣ",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "wp",
+      "homepage": "https://kedipes.com.cy/",
+      "vacanciesUrl": "https://kedipes.com.cy/%ce%ba%ce%b1%cf%81%ce%b9%ce%ad%cf%81%ce%b1/"
+    },
+    {
+      "id": "kodap",
+      "name": "ΚΟΔΑΠ",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "wp",
+      "homepage": "https://kodap.org.cy/"
+    },
+    {
+      "id": "cse",
+      "name": "Χρηματιστήριο Αξιών Κύπρου",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "site",
+      "homepage": "https://www.cse.com.cy/el-GR/home/"
+    },
+    {
+      "id": "cys",
+      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "wp",
+      "homepage": "https://www.cys.org.cy/",
+      "vacanciesUrl": "https://www.cys.org.cy/employment-opportunities/"
+    },
+    {
+      "id": "anad",
+      "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "site",
+      "homepage": "https://www.anad.org.cy/",
+      "vacanciesUrl": "https://vacancies.anad.org.cy/"
+    },
+    {
+      "id": "nba",
+      "name": "Εθνική Αρχή Στοιχημάτων",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "wp",
+      "homepage": "https://www.nba.gov.cy/"
+    },
+    {
+      "id": "research",
+      "name": "ΙδΕΚ (Ίδρυμα Έρευνας και Καινοτομίας)",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "wp",
+      "homepage": "https://www.research.org.cy/",
+      "vacanciesUrl": "https://www.research.org.cy/iek/anthropino-dynamiko/"
+    },
+    {
+      "id": "ucm",
+      "name": "Ένωση Δήμων Κύπρου",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "wp",
+      "homepage": "https://ucm.org.cy/",
+      "vacanciesUrl": "https://ucm.org.cy/drasis/prokiryxis/"
+    },
+    {
+      "id": "ekk",
+      "name": "Ένωση Κοινοτήτων Κύπρου",
+      "sector": "semi-government",
+      "district": "nicosia",
+      "adapter": "wp",
+      "homepage": "https://www.ekk.org.cy/"
+    },
+    {
       "id": "ucy",
       "name": "Πανεπιστήμιο Κύπρου",
-      "sector": "semi-government",
+      "sector": "university",
+      "district": "nicosia",
       "adapter": "browser",
       "homepage": "https://www.ucy.ac.cy/",
       "vacanciesUrl": "https://www.ucy.ac.cy/hr/employment/vacancies/administrative-staff/"
@@ -90,7 +257,8 @@
     {
       "id": "ucy-academic",
       "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
-      "sector": "semi-government",
+      "sector": "university",
+      "district": "nicosia",
       "adapter": "browser",
       "homepage": "https://www.ucy.ac.cy/",
       "vacanciesUrl": "https://www.ucy.ac.cy/hr/employment/vacancies/academic-staff/"
@@ -98,7 +266,8 @@
     {
       "id": "cut",
       "name": "ΤΕΠΑΚ",
-      "sector": "semi-government",
+      "sector": "university",
+      "district": "limassol",
       "adapter": "site",
       "homepage": "https://www.cut.ac.cy/",
       "vacanciesUrl": "https://www.cut.ac.cy/university/administration/administrative-services/hr/jobs/"
@@ -106,15 +275,61 @@
     {
       "id": "ouc",
       "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
-      "sector": "semi-government",
+      "sector": "university",
+      "district": "nicosia",
       "adapter": "site",
       "homepage": "https://www.ouc.ac.cy/",
       "vacanciesUrl": "https://www.ouc.ac.cy/index.php/el/vacancies"
     },
     {
+      "id": "cing",
+      "name": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
+      "sector": "research",
+      "district": "nicosia",
+      "adapter": "site",
+      "homepage": "https://www.cing.ac.cy/",
+      "vacanciesUrl": "https://www.cing.ac.cy/en/vacancies"
+    },
+    {
+      "id": "cyi",
+      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "sector": "research",
+      "district": "nicosia",
+      "adapter": "exelsys",
+      "homepage": "https://www.cyi.ac.cy/",
+      "vacanciesUrl": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566"
+    },
+    {
+      "id": "cyens",
+      "name": "CYENS Centre of Excellence",
+      "sector": "research",
+      "district": "nicosia",
+      "adapter": "wp",
+      "homepage": "https://www.cyens.org.cy/",
+      "vacanciesUrl": "https://www.cyens.org.cy/work-with-us/"
+    },
+    {
+      "id": "eratosthenes",
+      "name": "ERATOSTHENES Centre of Excellence",
+      "sector": "research",
+      "district": "limassol",
+      "adapter": "wp",
+      "homepage": "https://eratosthenes.org.cy/"
+    },
+    {
+      "id": "cmmi",
+      "name": "Cyprus Marine and Maritime Institute",
+      "sector": "research",
+      "district": "larnaca",
+      "adapter": "wp",
+      "homepage": "https://www.cmmi.blue/",
+      "vacanciesUrl": "https://www.cmmi.blue/vacancies/"
+    },
+    {
       "id": "eoa-lefkosias",
       "name": "ΕΟΑ Λευκωσίας",
       "sector": "district-organisation",
+      "district": "nicosia",
       "adapter": "wp",
       "homepage": "https://ndlgo.org.cy/",
       "vacanciesUrl": "https://ndlgo.org.cy/organization/job-placements/"
@@ -123,6 +338,7 @@
       "id": "eoa-lemesou",
       "name": "ΕΟΑ Λεμεσού",
       "sector": "district-organisation",
+      "district": "limassol",
       "adapter": "site",
       "homepage": "https://eoalemesos.org.cy/",
       "vacanciesUrl": "https://eoalemesos.org.cy/el/news-category/θέσεις-εργασίας/1"
@@ -131,6 +347,7 @@
       "id": "eoa-larnakas",
       "name": "ΕΟΑ Λάρνακας",
       "sector": "district-organisation",
+      "district": "larnaca",
       "adapter": "wp",
       "homepage": "https://eoal.org.cy/",
       "vacanciesUrl": "https://eoal.org.cy/enimerosi/prokiryxeis/kenes-theseis/"
@@ -139,6 +356,7 @@
       "id": "eoa-pafou",
       "name": "ΕΟΑ Πάφου",
       "sector": "district-organisation",
+      "district": "paphos",
       "adapter": "wp",
       "homepage": "https://eoap.org.cy/",
       "vacanciesUrl": "https://eoap.org.cy/careers/"
@@ -147,43 +365,16 @@
       "id": "eoa-ammochostou",
       "name": "ΕΟΑ Αμμοχώστου",
       "sector": "district-organisation",
+      "district": "famagusta",
       "adapter": "wp",
       "homepage": "https://eoaa.org.cy/",
       "vacanciesUrl": "https://eoaa.org.cy/employeement/"
     },
     {
-      "id": "hfc",
-      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
-      "sector": "semi-government",
-      "adapter": "wp",
-      "homepage": "https://www.hfc.com.cy/",
-      "vacanciesUrl": "https://www.hfc.com.cy/category/%ce%b8%ce%b5%cf%83%ce%b5%ce%b9%cf%83-%ce%b5%cf%81%ce%b3%ce%b1%cf%83%ce%b9%ce%b1%cf%83/"
-    },
-    {
-      "id": "kodap",
-      "name": "ΚΟΔΑΠ",
-      "sector": "semi-government",
-      "adapter": "wp",
-      "homepage": "https://kodap.org.cy/"
-    },
-    {
-      "id": "cse",
-      "name": "Χρηματιστήριο Αξιών Κύπρου",
-      "sector": "semi-government",
-      "adapter": "site",
-      "homepage": "https://www.cse.com.cy/el-GR/home/"
-    },
-    {
-      "id": "eey",
-      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
-      "sector": "civil-service",
-      "adapter": "site",
-      "homepage": "https://www.eey.gov.cy/"
-    },
-    {
       "id": "dimos-lefkosias",
       "name": "Δήμος Λευκωσίας",
       "sector": "municipality",
+      "district": "nicosia",
       "adapter": "site",
       "homepage": "https://www.nicosia.org.cy/"
     },
@@ -191,6 +382,7 @@
       "id": "dimos-lakatamias",
       "name": "Δήμος Λακατάμειας",
       "sector": "municipality",
+      "district": "nicosia",
       "adapter": "wp",
       "homepage": "https://www.lakatamia.org.cy/"
     },
@@ -198,6 +390,7 @@
       "id": "dimos-strovolou",
       "name": "Δήμος Στροβόλου",
       "sector": "municipality",
+      "district": "nicosia",
       "adapter": "wp",
       "homepage": "https://www.strovolos.org.cy/"
     },
@@ -205,6 +398,7 @@
       "id": "dimos-latsion-geriou",
       "name": "Δήμος Λατσιών-Γερίου",
       "sector": "municipality",
+      "district": "nicosia",
       "adapter": "wp",
       "homepage": "https://latsia-geri.eu/",
       "vacanciesUrl": "https://latsia-geri.eu/kenes-theseis/"
@@ -213,6 +407,7 @@
       "id": "dimos-notias-lefkosias",
       "name": "Δήμος Νότιας Λευκωσίας-Ιδαλίου",
       "sector": "municipality",
+      "district": "nicosia",
       "adapter": "site",
       "homepage": "https://sni.org.cy/el/welcome",
       "vacanciesUrl": "https://sni.org.cy/el/theseis-ergasias"
@@ -221,6 +416,7 @@
       "id": "dimos-lemesou",
       "name": "Δήμος Λεμεσού",
       "sector": "municipality",
+      "district": "limassol",
       "adapter": "site",
       "homepage": "https://www.limassol.org.cy/",
       "vacanciesUrl": "https://www.limassol.org.cy/el/trexouses-kenes-theseis-ergasias"
@@ -229,6 +425,7 @@
       "id": "dimos-anatolikis-lemesou",
       "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
       "sector": "municipality",
+      "district": "limassol",
       "adapter": "wp",
       "homepage": "https://amathounta.org.cy/"
     },
@@ -236,6 +433,7 @@
       "id": "dimos-polemidion",
       "name": "Δήμος Πολεμιδιών",
       "sector": "municipality",
+      "district": "limassol",
       "adapter": "site",
       "homepage": "http://www.polemidiamunicipal.com.cy/"
     },
@@ -243,6 +441,7 @@
       "id": "dimos-dytikis-lemesou",
       "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
       "sector": "municipality",
+      "district": "limassol",
       "adapter": "wp",
       "homepage": "https://www.ipsonas.org/"
     },
@@ -250,6 +449,7 @@
       "id": "dimos-dromolaxias-meneou",
       "name": "Δήμος Δρομολαξιάς-Μενεού",
       "sector": "municipality",
+      "district": "larnaca",
       "adapter": "wp",
       "homepage": "https://www.dromolaxia-meneou.com.cy/"
     },
@@ -257,6 +457,7 @@
       "id": "dimos-larnakas",
       "name": "Δήμος Λάρνακας",
       "sector": "municipality",
+      "district": "larnaca",
       "adapter": "wp",
       "homepage": "https://www.larnaka.org.cy/",
       "timeout": 60000
@@ -265,6 +466,7 @@
       "id": "dimos-aradippou",
       "name": "Δήμος Αραδίππου",
       "sector": "municipality",
+      "district": "larnaca",
       "adapter": "wp",
       "homepage": "https://www.aradippou.org.cy/",
       "vacanciesUrl": "https://aradippou.org.cy/vacancies/"
@@ -273,6 +475,7 @@
       "id": "dimos-lefkaron",
       "name": "Δήμος Λευκάρων",
       "sector": "municipality",
+      "district": "larnaca",
       "adapter": "site",
       "homepage": "https://www.lefkara.org.cy/",
       "vacanciesUrl": "https://www.lefkara.org.cy/el/news"
@@ -281,6 +484,7 @@
       "id": "dimos-athienou",
       "name": "Δήμος Αθηένου",
       "sector": "municipality",
+      "district": "larnaca",
       "adapter": "wp",
       "homepage": "https://www.athienou.org.cy/"
     },
@@ -288,6 +492,7 @@
       "id": "dimos-pafou",
       "name": "Δήμος Πάφου",
       "sector": "municipality",
+      "district": "paphos",
       "adapter": "wp",
       "homepage": "https://pafos.org.cy/"
     },
@@ -295,6 +500,7 @@
       "id": "dimos-anatolikis-pafou",
       "name": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
       "sector": "municipality",
+      "district": "paphos",
       "adapter": "wp",
       "homepage": "https://www.geroskipou.org.cy/"
     },
@@ -302,6 +508,7 @@
       "id": "dimos-akama",
       "name": "Δήμος Ακάμα (Πέγεια)",
       "sector": "municipality",
+      "district": "paphos",
       "adapter": "wp",
       "homepage": "https://akamasmunicipality.org.cy/"
     },
@@ -309,6 +516,7 @@
       "id": "dimos-polis-chrysochous",
       "name": "Δήμος Πόλης Χρυσοχούς",
       "sector": "municipality",
+      "district": "paphos",
       "adapter": "site",
       "homepage": "https://www.polis.org.cy/"
     },
@@ -316,6 +524,7 @@
       "id": "dimos-agias-napas",
       "name": "Δήμος Αγίας Νάπας",
       "sector": "municipality",
+      "district": "famagusta",
       "adapter": "site",
       "homepage": "https://www.ayianapa.org.cy/",
       "vacanciesUrl": "https://www.ayianapa.org.cy/el/enimerosi/nea-anakoinoseis"
@@ -324,13 +533,16 @@
       "id": "dimos-ammochostou",
       "name": "Δήμος Παραλιμνίου-Δερύνειας",
       "sector": "municipality",
+      "district": "famagusta",
       "adapter": "wp",
       "homepage": "https://www.paralimni.org.cy/"
     }
   ],
   "_missing": [
-    "Δήμος Δυτικής Λεμεσού (Ύψωνας) — official site not located yet",
-    "Δήμος Ακάμα (Πέγεια) — official site not located yet",
-    "Δήμος Δρομολαξιάς-Μενεού — dromolaxia-meneou.com.cy returns a database error"
+    "Συμβούλια Υδατοπρομήθειας και Αποχετεύσεων — abolished by the 2024 reform; their staff and vacancies moved to the ΕΟΑ, which are covered above. wbn.org.cy, wbl.com.cy, larnacawater.org.cy, sbn.org.cy and sapa.org.cy no longer resolve.",
+    "ΚΟΑΠ (Κυπριακός Οργανισμός Αγροτικών Πληρωμών) — capo.gov.cy renders its whole site from JavaScript and exposes no links to scrape.",
+    "Σχολικές Εφορείες — 20+ separate boards, most without a website; they advertise in the press.",
+    "ΚΥΠΕ — cna.org.cy/el/prokhrykseis is a news page wrapped in the agency's own headlines, so every scan returns articles about other people's προκηρύξεις and never a vacancy.",
+    "ΕΤΕΚ — its «Θέσεις Εργασίας» page advertises private-sector posts to members, not ΕΤΕΚ's own."
   ]
 }
