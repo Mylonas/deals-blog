@@ -30,6 +30,20 @@ async function discover(homepage, timeout) {
   return best?.href ?? null;
 }
 
+/** True when href is a page of this site in its own right, not the listing itself. */
+function isOwnPage(href, listingUrl) {
+  try {
+    const link = new URL(href);
+    const listing = new URL(listingUrl);
+    // `www.` is dropped on both sides: ΑΡΚ serves its pages from www but links
+    // its own notices at the bare domain, which is still the same site.
+    const host = (url) => url.hostname.replace(/^www\./, '');
+    return host(link) === host(listing) && link.pathname !== listing.pathname;
+  } catch {
+    return false;
+  }
+}
+
 /** Shared by both page-scanning adapters: vacancy-shaped links on a listing page. */
 export function extractJobs(html, listingUrl) {
   const found = new Map();
@@ -38,13 +52,23 @@ export function extractJobs(html, listingUrl) {
     if (href === listingUrl) continue;
     if (matches(NAV_LABEL_RE, label)) continue; // menu entry, not an opening
     const isDoc = DOCUMENT_RE.test(href);
-    const hrefText = decodeURIComponent(href);
-    if (!matches(VACANCY_RE, label) && !(isDoc && matches(VACANCY_RE, hrefText))) continue;
-    if (!isDoc && label.length < 10) continue;
+    // Separators become spaces before matching: a slug reads «κενες-θεσεις-…»,
+    // and every pattern here is written with whitespace between the words.
+    const hrefText = decodeURIComponent(href).replace(/[-_+]+/g, ' ');
+    // A notice linked from an image or a bare anchor carries no label at all —
+    // Αρχή Ραδιοτηλεόρασης publishes every one of them that way. The URL still
+    // names the post, so fall back to it rather than dropping the opening.
+    // Confined to same-host links at a path of their own: without that, every
+    // «#top» anchor and every share-widget link on a page called /vacancies/
+    // matches the vacancy wording in the address it is decorating.
+    const namedByUrl =
+      matches(GENERIC_LINK_RE, label) && matches(VACANCY_RE, hrefText) && isOwnPage(href, listingUrl);
+    if (!matches(VACANCY_RE, label) && !((isDoc || namedByUrl) && matches(VACANCY_RE, hrefText))) continue;
+    if (!isDoc && !namedByUrl && label.length < 10) continue;
 
     // «Download» tells the reader nothing; the filename usually carries the post.
-    const title = isDoc && matches(GENERIC_LINK_RE, label) ? titleFromPdfUrl(href) : label;
-    if (!title) continue;
+    const title = (isDoc || namedByUrl) && matches(GENERIC_LINK_RE, label) ? titleFromPdfUrl(href) : label;
+    if (!title || (namedByUrl && title.length < 10)) continue;
 
     found.set(href, {
       title,

@@ -16,13 +16,14 @@ import * as psc from './adapters/psc.mjs';
 import * as wp from './adapters/wp.mjs';
 import * as site from './adapters/site.mjs';
 import * as browser from './adapters/browser.mjs';
+import * as exelsys from './adapters/exelsys.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DATA_DIR = join(ROOT, 'src', 'data');
 const JOBS_FILE = join(DATA_DIR, 'public-jobs.json');
 const SEEN_FILE = join(DATA_DIR, 'public-jobs-seen.json');
 
-const ADAPTERS = { psc: psc.scrape, wp: wp.scrape, site: site.scrape, browser: browser.scrape };
+const ADAPTERS = { psc: psc.scrape, wp: wp.scrape, site: site.scrape, browser: browser.scrape, exelsys: exelsys.scrape };
 const CONCURRENCY = 6;
 
 // Municipality news feeds keep vacancy posts online for years. Without an
@@ -119,6 +120,7 @@ async function scrapeSource(source) {
       sourceId: source.id,
       employer: source.name,
       sector: source.sector,
+      district: source.district,
       ...job,
     }));
     return { source, error: null, jobs };

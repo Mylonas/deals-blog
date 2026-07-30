@@ -108,7 +108,7 @@ deals-blog/
 | Coffee prices | Manually curated in `src/data/coffee-prices.json` | JSON → markdown generation |
 | Trending topics | Google News RSS, Cyprus Mail, Philenews, Sigmalive | RSS parsing + keyword categorisation |
 | Bazaraki cars | [bazaraki.com](https://www.bazaraki.com) | Internal JSON API `/api/items/?rubric=5`, read with curl. Laptop-only — Cloudflare challenges every client from a datacenter IP |
-| Public-sector jobs | 43 official sources — ΕΔΥ, semi-government bodies, the 5 district organisations, all 20 municipalities | HTML + WordPress REST + PDF text extraction. See [Public Sector Jobs](#public-sector-jobs) |
+| Public-sector jobs | 62 official sources — ΕΔΥ, semi-government bodies, universities, research institutes, the 5 district organisations, all 20 municipalities; filterable by district | HTML + WordPress REST + PDF text extraction. See [Public Sector Jobs](#public-sector-jobs) |
 
 ---
 
@@ -181,7 +181,7 @@ than fails.
 | `update-price-history-sharded.yml` | Daily 05:30 UTC | 10 parallel shards refresh the e-kalathi price history, then a merge job recomputes deals + all-time lows and commits both. Warns (does not fail) if the cache ends up under 50% fresh. Dispatch takes a **force** input — see below |
 | `update-supermarket-deals.yml` | Manual dispatch only | Same script as the merge job above. Collapsed into it so deals are computed *after* the history they depend on; kept for manual rebuilds |
 | `fetch-trending-topics.yml` | Every 3 hours | Scrapes Cyprus RSS + YouTube + Reddit + Wikipedia, commits JSON |
-| `update-public-jobs.yml` | Daily 05:10 UTC | Scrapes 43 public-sector employers, reads closing dates out of the PDF notices, commits the data + PDF cache and triggers a redeploy |
+| `update-public-jobs.yml` | Daily 05:10 UTC | Scrapes 62 public-sector employers, reads closing dates out of the PDF notices, commits the data + PDF cache and triggers a redeploy |
 | `watchdog.yml` | Every 2 hours | Checks freshness of all 12 monitored data files and silently re-triggers anything stale. Never notifies |
 | `stale-alert.yml` | Daily 08:00 UTC | **The only workflow that emails you.** Opens/updates one GitHub Issue when a data file is more than 7 days old. Silent otherwise |
 
@@ -287,10 +287,18 @@ Release procedure follows the project's [release guide](https://github.com/Mylon
 ## Public Sector Jobs
 
 Public pages at [`/jobs`](https://deals-blog.pages.dev/jobs/), `/el/jobs`, `/ru/jobs` — every
-currently open public-sector vacancy in Cyprus, from 43 official sources: the ΕΔΥ
-civil-service competitions, the semi-government organisations (Cyta, ΑΗΚ, Αρχή Λιμένων,
-ΟΚΥπΥ, ΡΑΕΚ, CySEC, ΡΙΚ, Κεντρική Τράπεζα, ΟΧΣ, ΚΟΑ, ΚΟΔΑΠ, ΧΑΚ, the three public
-universities), all five Επαρχιακοί Οργανισμοί Αυτοδιοίκησης, and all 20 municipalities.
+currently open public-sector vacancy in Cyprus, from 62 official sources: the ΕΔΥ
+civil-service competitions and ΕΕΥ teaching appointments, the semi-government organisations
+(Cyta, ΑΗΚ, Αρχή Λιμένων, ΟΚΥπΥ, ΟΑΥ, ΡΑΕΚ, ΓΕΡΗΕΤ, Αρχή Ραδιοτηλεόρασης, Επιτροπή
+Ανταγωνισμού, CySEC, ΡΙΚ, Κεντρική Τράπεζα, ΟΧΣ, ΚΕΔΙΠΕΣ, ΚΟΑ, ΟΝΕΚ, ΘΟΚ, ΚΟΔΑΠ, ΧΑΚ, CYS,
+ΑνΑΔ, ΙδΕΚ…), the three public universities, the research institutes (Ινστιτούτο Νευρολογίας
+και Γενετικής, Ινστιτούτο Κύπρου, CYENS, ERATOSTHENES, CMMI), all five Επαρχιακοί Οργανισμοί
+Αυτοδιοίκησης, and all 20 municipalities.
+
+Every source carries a **district**, so the table filters to one επαρχία. Island-wide
+employers stay visible under all of them — filtering to Λάρνακα must not hide the ΕΔΥ
+competitions. The Συμβούλια Υδατοπρομήθειας and Αποχετεύσεων need no sources of their own:
+the 2024 reform folded them into the ΕΟΑ.
 
 ```bash
 npm run jobs                        # scrape everything, report what is new
@@ -308,7 +316,8 @@ an adapter:
 | `psc` | The ΕΔΥ table. Authoritative for the civil service; mirrors the Επίσημη Εφημερίδα της Δημοκρατίας, published most **Fridays**, with Gazette + notification numbers |
 | `wp` | WordPress REST API — most municipalities. Finds dedicated job post types, then keyword-searches posts and pages, and always also scans the vacancies page (notices are often PDFs the API cannot see) |
 | `site` | Everything else: finds the «Κενές Θέσεις» page from the site's own nav, then reads the vacancy-shaped links. Keyword-driven, not selector-driven, so a redesign does not silently break it |
-| `browser` | Playwright + stealth, for Πανεπιστήμιο Κύπρου only — it 403s plain clients *and* bare headless Chromium |
+| `browser` | Playwright + stealth, for Πανεπιστήμιο Κύπρου and ΑΗΚ — they 403 plain clients *and* bare headless Chromium |
+| `exelsys` | The hosted Exelsys ATS (Ινστιτούτο Κύπρου). Server-rendered, but its postings are not links at all — each is an `<h3 onclick="openVacancy('2026/0416')">` with no href — so `site` sees an empty page |
 
 **Deadlines** come from the link text, then the PDF notice itself (pdf.js), then the
 WordPress API, then a dated URL. `lib/pdf.mjs` reads the closing date out of each notice and
@@ -322,6 +331,13 @@ outlive the fix.
 - **Accents.** Uppercasing Greek strips them, so a heading `ΘΕΣΕΙΣ ΕΡΓΑΣΙΑΣ` never matches a
   pattern written `εργασίας`, however case-insensitive the regex. Every pattern in
   `lib/util.mjs` is accent-free and compared through `matches()`, which folds first.
+- **Final sigma, for the same reason.** Lowercasing `ΚΕΝΕΣ ΘΕΣΕΙΣ` gives `κενεσ θεσεισ` with
+  a *medial* sigma, so a pattern spelled `θέσεις` misses it — which is exactly how Αρχή
+  Ραδιοτηλεόρασης's notices, whose slugs come from an uppercase headline, stayed invisible.
+  `fold()` normalises ς → σ; write σ, never ς, in a pattern.
+- **WordPress ignores a repeated `slug=`** and keeps only the last one. The date lookup sent
+  twenty at a time and got one back, leaving nineteen undated — and an undated notice never
+  expires, so postings from 2018 were still listed as open. Comma-separate them.
 - **Never derive a deadline from a URL.** `…/Theseis Ergasias/2026/03-2026.pdf` reads as
   26/03/2026 to any date regex, which silently expired every ΡΑΕΚ posting.
 - **«Περισσότερα» is not a vacancies link.** Page discovery follows only labels that *name*

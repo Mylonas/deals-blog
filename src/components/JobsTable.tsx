@@ -8,6 +8,7 @@ export type Job = {
   sourceId: string;
   employer: string;
   sector: string;
+  district?: string;
   title: string;
   url: string;
   published: string | null;
@@ -22,6 +23,7 @@ const T: Record<Lang, Record<string, string>> = {
   en: {
     total: "open positions", search: "Search position or employer…", any: "All",
     sector: "Sector", employer: "Employer", deadline: "Deadline", position: "Position",
+    district: "District",
     sortDeadline: "Closing soonest", sortEmployer: "By employer", sortNewest: "Newest first",
     clear: "Clear filters", none: "No positions match your filters.",
     showing: "Showing", of: "of", updated: "Updated", noDeadline: "—",
@@ -32,6 +34,7 @@ const T: Record<Lang, Record<string, string>> = {
   el: {
     total: "κενές θέσεις", search: "Αναζήτηση θέσης ή εργοδότη…", any: "Όλα",
     sector: "Τομέας", employer: "Εργοδότης", deadline: "Προθεσμία", position: "Θέση",
+    district: "Επαρχία",
     sortDeadline: "Λήγουν σύντομα", sortEmployer: "Ανά εργοδότη", sortNewest: "Νεότερες πρώτα",
     clear: "Καθαρισμός", none: "Καμία θέση με αυτά τα κριτήρια.",
     showing: "Εμφάνιση", of: "από", updated: "Ενημέρωση", noDeadline: "—",
@@ -42,6 +45,7 @@ const T: Record<Lang, Record<string, string>> = {
   ru: {
     total: "вакансий", search: "Поиск должности или работодателя…", any: "Все",
     sector: "Сектор", employer: "Работодатель", deadline: "Срок подачи", position: "Должность",
+    district: "Район",
     sortDeadline: "Скоро закрытие", sortEmployer: "По работодателю", sortNewest: "Сначала новые",
     clear: "Сбросить", none: "Нет вакансий по этим фильтрам.",
     showing: "Показано", of: "из", updated: "Обновлено", noDeadline: "—",
@@ -54,8 +58,21 @@ const T: Record<Lang, Record<string, string>> = {
 const SECTORS: Record<string, Record<Lang, string>> = {
   "civil-service": { en: "Civil Service", el: "Δημόσια Υπηρεσία", ru: "Госслужба" },
   "semi-government": { en: "Semi-government", el: "Ημικρατικοί", ru: "Полугосударственные" },
+  university: { en: "Universities", el: "Πανεπιστήμια", ru: "Университеты" },
+  research: { en: "Research Centres", el: "Ερευνητικά Κέντρα", ru: "Научные центры" },
   "district-organisation": { en: "District Organisations", el: "Επαρχιακοί Οργανισμοί", ru: "Районные организации" },
   municipality: { en: "Municipalities", el: "Δήμοι", ru: "Муниципалитеты" },
+};
+
+// Key order is the dropdown order: the island-wide bucket first, then the
+// districts as the map reads them.
+const DISTRICTS: Record<string, Record<Lang, string>> = {
+  pancyprus: { en: "Island-wide", el: "Παγκύπρια", ru: "По всему острову" },
+  nicosia: { en: "Nicosia", el: "Λευκωσία", ru: "Никосия" },
+  limassol: { en: "Limassol", el: "Λεμεσός", ru: "Лимасол" },
+  larnaca: { en: "Larnaca", el: "Λάρνακα", ru: "Ларнака" },
+  paphos: { en: "Paphos", el: "Πάφος", ru: "Пафос" },
+  famagusta: { en: "Famagusta", el: "Αμμόχωστος", ru: "Фамагуста" },
 };
 
 const PAGE_SIZE = 40;
@@ -68,6 +85,7 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
   const t = T[lang];
   const [q, setQ] = useState("");
   const [sector, setSector] = useState("");
+  const [district, setDistrict] = useState("");
   const [employer, setEmployer] = useState("");
   const [datedOnly, setDatedOnly] = useState(false);
   const [sort, setSort] = useState<"deadline" | "employer" | "newest">("deadline");
@@ -77,12 +95,24 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
     () => [...new Set(data.jobs.map((j) => j.employer))].sort((a, b) => a.localeCompare(b, "el")),
     [data.jobs],
   );
-  const sectors = useMemo(() => [...new Set(data.jobs.map((j) => j.sector))], [data.jobs]);
+  // Driven off the label maps rather than the data, so both dropdowns keep a
+  // deliberate order instead of whichever employer happened to be scraped first.
+  const sectors = useMemo(
+    () => Object.keys(SECTORS).filter((s) => data.jobs.some((j) => j.sector === s)),
+    [data.jobs],
+  );
+  const districts = useMemo(
+    () => Object.keys(DISTRICTS).filter((d) => data.jobs.some((j) => j.district === d)),
+    [data.jobs],
+  );
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
     const rows = data.jobs.filter((job) => {
       if (sector && job.sector !== sector) return false;
+      // Island-wide employers stay visible under every district: an ΕΔΥ
+      // competition is open to Larnaca whatever the Commission's own address is.
+      if (district && job.district !== district && job.district !== "pancyprus") return false;
       if (employer && job.employer !== employer) return false;
       if (datedOnly && !job.deadline) return false;
       if (needle && !`${job.title} ${job.employer}`.toLowerCase().includes(needle)) return false;
@@ -98,11 +128,11 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
       if (b.deadline) return 1;
       return a.employer.localeCompare(b.employer, "el");
     });
-  }, [data.jobs, q, sector, employer, datedOnly, sort]);
+  }, [data.jobs, q, sector, district, employer, datedOnly, sort]);
 
   const visible = filtered.slice(0, page * PAGE_SIZE);
   const reset = () => {
-    setQ(""); setSector(""); setEmployer(""); setDatedOnly(false); setPage(1);
+    setQ(""); setSector(""); setDistrict(""); setEmployer(""); setDatedOnly(false); setPage(1);
   };
 
   return (
@@ -117,8 +147,16 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
           value={q}
           onChange={(e) => { setQ(e.target.value); setPage(1); }}
           placeholder={t.search}
-          className="border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700 sm:col-span-2"
+          className="border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700 sm:col-span-2 lg:col-span-4"
         />
+        <select
+          value={district}
+          onChange={(e) => { setDistrict(e.target.value); setPage(1); }}
+          className="border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700"
+        >
+          <option value="">{t.district}: {t.any}</option>
+          {districts.map((d) => <option key={d} value={d}>{DISTRICTS[d][lang]}</option>)}
+        </select>
         <select
           value={sector}
           onChange={(e) => { setSector(e.target.value); setPage(1); }}
@@ -172,7 +210,12 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
                 const urgent = left !== null && left <= 7;
                 return (
                   <tr key={job.id} className="border-t border-gray-200 dark:border-gray-800 align-top">
-                    <td className="py-2.5 pr-3 text-gray-500 dark:text-gray-400 whitespace-nowrap">{job.employer}</td>
+                    <td className="py-2.5 pr-3 text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                      {job.employer}
+                      {job.district && DISTRICTS[job.district] && (
+                        <span className="block text-xs text-gray-400">{DISTRICTS[job.district][lang]}</span>
+                      )}
+                    </td>
                     <td className="py-2.5 pr-3">
                       <a
                         href={job.url}
