@@ -54,7 +54,10 @@ async function withPublishedDates(jobs, base, timeout) {
   for (let i = 0; i < slugs.length; i += 20) {
     const chunk = slugs.slice(i, i + 20);
     const url = new URL('/wp-json/wp/v2/posts', base);
-    for (const slug of chunk) url.searchParams.append('slug', slug);
+    // Comma-separated, not a repeated `slug=` parameter: WP keeps only the last
+    // of those, so a chunk of 20 silently resolved one date and left the other
+    // nineteen null — and an undated notice never expires.
+    url.searchParams.set('slug', chunk.join(','));
     url.searchParams.set('per_page', '100');
     url.searchParams.set('_fields', 'slug,date');
     try {

@@ -5,7 +5,7 @@ on:
     # 05:10 UTC daily. The ΕΔΥ competitions only change when the Gazette is
     # published (most Fridays), but the municipalities and semi-government
     # bodies post on their own schedule, so a daily pass keeps deadlines honest
-    # without hammering 43 small government sites.
+    # without hammering 62 small government sites.
     - cron: "10 5 * * *"
   workflow_dispatch:
 
@@ -35,8 +35,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Only Πανεπιστήμιο Κύπρου needs a browser — it serves plain clients a
-      # challenge. Every other source is a straight fetch.
+      # Only Πανεπιστήμιο Κύπρου and ΑΗΚ need a browser — they serve plain
+      # clients a challenge. Every other source is a straight fetch.
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 

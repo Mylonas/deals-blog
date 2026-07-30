@@ -45,12 +45,18 @@ export function decode(html) {
  * uppercasing Greek drops the accents — «Θέσεις Εργασίας» becomes «ΘΕΣΕΙΣ
  * ΕΡΓΑΣΙΑΣ», which no accented pattern matches however case-insensitive it is.
  * Every pattern below is written accent-free and tested against this.
+ *
+ * Final sigma is folded to medial for the same reason: lowercasing «ΚΕΝΕΣ
+ * ΘΕΣΕΙΣ» yields «κενεσ θεσεισ», so a pattern spelled with ς misses it — which
+ * is how ΑΡΚ's notices, whose slugs come from an uppercase headline, were
+ * invisible. Write σ, never ς, in the patterns below.
  */
 export function fold(value) {
   return String(value)
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
-    .toLowerCase();
+    .toLowerCase()
+    .replace(/ς/g, 'σ');
 }
 
 /** Tests one of the patterns below against accent-folded text. */
@@ -87,7 +93,7 @@ const GREEK_MONTHS = [
 // Tolerates the ordinal suffix and stray punctuation that notices use:
 // «14 Αυγούστου 2026», «την 31 η Αυγούστου , 2026», «1ης Σεπτεμβρίου 2026».
 const GREEK_DATE_RE = new RegExp(
-  `(\\d{1,2})\\s*(?:η[ςν]?|ον|ου)?\\s+(${GREEK_MONTHS.join('|')})\\S*\\s*,?\\s*(\\d{4})`,
+  `(\\d{1,2})\\s*(?:η[σν]?|ον|ου)?\\s+(${GREEK_MONTHS.join('|')})\\S*\\s*,?\\s*(\\d{4})`,
 );
 
 /** A date anywhere in a string -> yyyy-mm-dd. Handles dd/mm/yyyy and Greek long form. */
@@ -116,7 +122,7 @@ export function findDate(value) {
 // English equivalents the universities and semi-government bodies use.
 // προκ[ηυ]ρ[υη]ξ also catches the common misspelling «προκύρηξη».
 export const VACANCY_RE =
-  /(κεν[εη]ς?\s*θεσ|θεσ(?:η|εις|εων)\s+εργασ|προκ[ηυ]ρ[υη]ξ|προσληψ|στελεχωσ|ωρομισθ|vacanc|job\s+(?:opening|position)|recruitment|careers?)/;
+  /(κεν[εη]σ?\s*θεσ|θεσ(?:η|εισ|εων)\s+εργασ|προκ[ηυ]ρ[υη]ξ|προσληψ|στελεχωσ|ωρομισθ|vacanc|job\s+(?:opening|position)|recruitment|careers?)/;
 
 // The same vocabulary covers procurement, scholarships and grant schemes —
 // «προκήρυξη διαγωνισμού» is a tender, not a job. Drop those outright.
@@ -124,18 +130,27 @@ export const NOT_A_JOB_RE = new RegExp(
   [
     // procurement, grants, scholarships — same «προκήρυξη» wording, different thing
     'διαγωνισμ', 'προσφορα', 'προσφορων', 'υποτροφ', 'στεγαστικ',
-    'σχεδιο\\s+(?:χορηγι|παροχ|αναζωογ)', 'υποβολης\\s+προτασεων',
+    'σχεδιο\\s+(?:χορηγι|παροχ|αναζωογ)', 'υποβολησ\\s+προτασεων',
     'tender', 'procurement', 'scholarship',
     // outcomes of a past competition, not an opening
-    'αποτελεσματα', 'καταλογος\\s+επιτυχοντων', 'επιτυχοντ',
+    'αποτελεσματ', 'καταλογοσ\\s+επιτυχοντων', 'επιτυχοντ',
+    // the same, for the sites whose only title is a latin-transliterated slug
+    'apotelesmat', 'prokatarktikos\\s+katalogos', 'epitychont',
     // the exam/interview machinery around a competition that has already closed
-    'γραπτ[ηες]+\\s+εξετασ', 'τεστ\\s+ικανοτητ', 'προφορικ[ηες]+\\s+εξετασ',
-    'ολοκληρωμενες\\s+προκηρυξεις',
+    'γραπτ[ηεσ]+\\s+εξετασ', 'τεστ\\s+ικανοτητ', 'προφορικ[ηεσ]+\\s+εξετασ',
+    'ολοκληρωμενεσ\\s+προκηρυξεισ',
     // paperwork attached to a posting: the application form, the terms annex
     // separators are flexible: these often arrive as a filename, «ΠΛΑΙΣΙΟ-ΓΙΑ-ΠΡΟΣΛΗΨΗ-….pdf»
-    '^αιτηση', 'εντυπο[\\s-]+αιτησ', '^παραρτημα', '^οδηγιες', 'πλαισιο[\\s-]+για[\\s-]+προσληψη',
+    '^αιτηση', 'εντυπο[\\s-]+αιτησ', '^παραρτημα', '^οδηγιεσ', 'πλαισιο[\\s-]+για[\\s-]+προσληψη',
     // union/party notices that mention θέσεις εργασίας in passing
     'συνδιασκεψ', 'συνεδρι', 'συντεχν',
+    // the standing rules of recruitment, and the GDPR notice every applicant
+    // portal links beside its postings — permanent fixtures, never an opening
+    'κανονισμ\\S*\\s+προσληψ', 'πολιτικη\\s+προσληψ', 'δηλωση\\s+επεξεργασιασ',
+    'recruitment\\s+(privacy|policy|regulation)', 'regulation\\s+concerning',
+    'privacy\\s+notice',
+    // a withdrawn competition, and the property notices that share the wording
+    '^ακυρωση', 'ενοικιασ', 'εκμισθωσ',
   ].join('|'),
 );
 
@@ -159,7 +174,11 @@ export function dateFromUrlPath(href) {
   return upload ? `${upload[1]}-${upload[2]}-01` : null;
 }
 
-/** A usable title for a document link whose label is generic: the filename, cleaned up. */
+/**
+ * A usable title for a link whose label says nothing: its last path segment,
+ * cleaned up. Works for a PDF filename and equally for the slug of an ordinary
+ * page — ΑΡΚ links its notices from an image, so the URL is all there is.
+ */
 export function titleFromPdfUrl(href) {
   const file = decodeURIComponent(href.split('/').pop().split('?')[0]);
   return file
@@ -172,12 +191,12 @@ export function titleFromPdfUrl(href) {
 // Labels that name the vacancies page itself — these are what we follow when
 // discovering where an employer lists its openings.
 export const DISCOVERY_LABEL_RE =
-  /^(κενες?\s*θεσεις(\s*εργασιας)?|θεσεις\s*εργασιας|προκηρυξεις|εργοδοτηση|ευκαιριες\s*εργοδοτησης|προσληψεις|σταδιοδρομια|vacancies|careers?|jobs|recruitment|employment)$/;
+  /^(κενεσ?\s*θεσεισ(\s*εργασιασ)?|θεσεισ\s*εργασιασ|προκηρυξεισ(\s*θεσεων)?|εργοδοτηση|ευκαιριεσ\s*(εργοδοτησησ|απασχολησησ)|προσληψεισ|σταδιοδρομια|καριερα|vacancies|careers?|jobs|recruitment|employment(\s*opportunities)?|work\s*with\s*us)$/;
 
 // Labels to drop when reading a listing page: the page's own nav, plus generic
 // "read more" links. These must NOT be discovery targets — following a
 // «Περισσότερα» from a homepage lands on whatever news item happens to be at the
 // top, which is how four sources silently scraped an unrelated article.
 export const NAV_LABEL_RE = new RegExp(
-  `^(${DISCOVERY_LABEL_RE.source.slice(1, -1)}|αρχειο\\s+προκηρυξεων|archive|περισσοτερα|more|δειτε\\s+ολ(?:ες|α).*|skip\\s+to\\s+content)$`,
+  `^(${DISCOVERY_LABEL_RE.source.slice(1, -1)}|αρχειο\\s+προκηρυξεων|archive|περισσοτερα|more|δειτε\\s+ολ(?:εσ|α).*|skip\\s+to\\s+content)$`,
 );

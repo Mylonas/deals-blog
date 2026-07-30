@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Cyprus Public Sector Jobs — Live Vacancies",
   description:
-    "Every open public-sector vacancy in Cyprus in one place: the civil service (ΕΔΥ), semi-government organisations, the five district organisations and all 20 municipalities.",
+    "Every open public-sector vacancy in Cyprus in one place: the civil service (ΕΔΥ), semi-government organisations, the public universities and research institutes, the five district organisations and all 20 municipalities — filterable by district.",
 };
 
 export default function PublicJobsEN() {
@@ -20,11 +20,13 @@ export default function PublicJobsEN() {
 
       <h1 className="text-3xl font-bold mb-3 leading-tight">Cyprus Public Sector Jobs</h1>
       <p className="text-gray-500 dark:text-gray-400 mb-8">
-        Every open public-sector vacancy in Cyprus, gathered from 43 official sources:
+        Every open public-sector vacancy in Cyprus, gathered from 62 official sources:
         the civil service competitions published by the ΕΔΥ, the semi-government
-        organisations (Cyta, ΑΗΚ, Αρχή Λιμένων, ΟΚΥπΥ, the universities), the five
-        district organisations and all 20 municipalities. Closing dates are read from
-        the official notices themselves. Last refreshed{" "}
+        organisations (Cyta, ΑΗΚ, Αρχή Λιμένων, ΟΚΥπΥ, ΟΑΥ, the regulators), the
+        public universities, the research institutes (Ινστιτούτο Νευρολογίας και
+        Γενετικής, The Cyprus Institute, CYENS), the five district organisations and
+        all 20 municipalities. Filter by district to see only what is open near you.
+        Closing dates are read from the official notices themselves. Last refreshed{" "}
         {new Date(data.fetchedAt).toLocaleDateString("en-GB", {
           day: "numeric", month: "long", year: "numeric",
         })}.
