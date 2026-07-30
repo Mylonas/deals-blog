@@ -38,6 +38,20 @@ export default function HomeRu() {
         </div>
         <div className="grid gap-5 sm:grid-cols-2">
           <Link
+            href="/ru/jobs"
+            className="bg-amber-50 dark:bg-amber-950/20 rounded-2xl border border-amber-200 dark:border-amber-900/40 p-5 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all group"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Работа</span>
+              <span className="text-xs text-amber-600 dark:text-amber-400 font-semibold">LIVE ●</span>
+            </div>
+            <h2 className="text-lg font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
+              Вакансии госсектора Кипра
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Все открытые вакансии госслужбы, полугосударственных и районных организаций и всех 20 муниципалитетов. Обновляется ежедневно.</p>
+            <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Подробнее →</div>
+          </Link>
+          <Link
             href="/ru/posts/supermarket-price-watch"
             className="bg-amber-50 dark:bg-amber-950/20 rounded-2xl border border-amber-200 dark:border-amber-900/40 p-5 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all group"
           >

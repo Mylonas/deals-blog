@@ -1,0 +1,65 @@
+name: Update Cyprus public-sector jobs
+
+on:
+  schedule:
+    # 05:10 UTC daily. The ΕΔΥ competitions only change when the Gazette is
+    # published (most Fridays), but the municipalities and semi-government
+    # bodies post on their own schedule, so a daily pass keeps deadlines honest
+    # without hammering 43 small government sites.
+    - cron: "10 5 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: update-public-jobs
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Only Πανεπιστήμιο Κύπρου needs a browser — it serves plain clients a
+      # challenge. Every other source is a straight fetch.
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Scrape public-sector vacancies
+        run: npm run jobs
+        timeout-minutes: 25
+
+      - name: Check for changes
+        id: changes
+        run: git diff --quiet || echo "changed=true" >> $GITHUB_OUTPUT
+
+      # The PDF cache is committed too: a published notice never changes, so
+      # without it every run would re-download and re-parse ~126 PDFs.
+      - name: Commit and push if changed
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          bash scripts/ci/commit-data.sh "chore: update public-sector jobs $(date +'%Y-%m-%d')" \
+            src/data/public-jobs.json \
+            src/data/public-jobs-seen.json \
+            src/data/public-jobs-pdf-cache.json
+
+      - name: Trigger Cloudflare redeploy
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref master
