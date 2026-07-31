@@ -1,7 +1,7 @@
 ---
 title: "Παρακολούθηση Τιμών Σούπερ Μάρκετ — 10 Βασικά Προϊόντα"
 date: "2026-06-28"
-updated: "2026-07-30"
+updated: "2026-07-31"
 category: "Φαγητό & Ποτό"
 summary: "Ζωντανές τιμές για 10 βασικά οικιακά προϊόντα σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου. Ενημερώνεται 4 φορές την ημέρα από το επίσημο e-kalathi.gov.cy."
 pinned: false
@@ -11,7 +11,7 @@ pinned: false
 
 <!-- PRICES_START -->
 
-> Ενημέρωση 30 July 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Ενημέρωση 31 July 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
 | Προϊόν | Φθηνότερη Τιμή | Μάρκα |
 |---------|---------|--------|
