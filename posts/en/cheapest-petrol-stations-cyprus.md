@@ -1,7 +1,7 @@
 ---
 title: "Cheapest Petrol Stations in Cyprus — Live Tracker"
 date: "2026-06-28"
-updated: "2026-07-31"
+updated: "2026-08-01"
 category: "Fuel"
 summary: "Live prices for Unleaded 95, Unleaded 98, and Diesel across petrol stations in Cyprus. Updated hourly from the official Cyprus government fuel observatory."
 pinned: true
@@ -16,12 +16,12 @@ pinned: true
 | Brand | Address | Area | Price |
 |-------|---------|------|-------|
 | EKO | [Λεωφ. Δημοσθένη Σεβέρη 49 Τ.Κ 1080](https://www.google.com/maps?q=35.15764,33.352016) | Λευκωσία | €1.475 |
-| PETROLINA | [Λεωφ. Γ.Γρίβα Διγενή 17 Τ.Κ 1082](https://www.google.com/maps?q=35.162832,33.35741) | Λευκωσία | €1.475 |
 | SHELL | [Αρχ. Μακαρίου Γ' 126 Τ.Κ 2827](https://www.google.com/maps?q=34.99814166666667,32.898002777777776) | Γαλάτα | €1.490 |
 | PETROLINA | [Αρχ. Μακαρίου Γ΄ 17 Τ.Κ 2800](https://www.google.com/maps?q=34.991233,32.902827) | Κακοπετριά | €1.490 |
 | SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.494 |
 | PETROLINA | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.92598333,33.54103333) | Καλό Χωριό Λάρνακας | €1.494 |
 | EKO | [Λεωφ. Σαριγιάννη Τ.Κ 2831](https://www.google.com/maps?q=35.070157,32.930054) | Ευρύχου | €1.497 |
+| STAROIL | [Λεώφ. Μητροπολίτη Χρύσανθου Σαριγιάννη 110 Τ.Κ 2831](https://www.google.com/maps?q=35.05938888888888,32.91291666666667) | Ευρύχου | €1.497 |
 
 ## 7 Cheapest Stations Right Now — Unleaded 98
 
@@ -59,6 +59,6 @@ pinned: true
 | SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.329 |
 | SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.329 |
 
-> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 31 July 2026
+> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 1 August 2026
 
 <!-- FUEL_PRICES_END -->
