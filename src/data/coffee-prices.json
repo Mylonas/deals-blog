@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-05T07:42:15.931Z",
-  "scrapedAt": "2026-08-03T09:34:26.818Z",
+  "updatedAt": "2026-08-05T08:28:33.993Z",
+  "scrapedAt": "2026-08-05T08:28:33.841Z",
   "note": "Top drinks and Freddo prices scraped monthly via Playwright from Wolt/Foody/Bolt Food Cyprus. topDrinks is empty until the first monthly run.",
   "items": [
     {
@@ -424,38 +424,38 @@
       },
       "topDrinks": [
         {
-          "name": "Freddo Espresso",
-          "price": 3.95,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Freddo Cappuccino",
-          "price": 4.25,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Iced Americano",
-          "price": 3.85,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Iced Latte",
-          "price": 4.3,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
           "name": "Iced Caramel Macchiato",
           "price": 5.95,
           "platform": "wolt",
           "popular": false
+        },
+        {
+          "name": "Iced Mocha",
+          "price": 4.95,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced White Mocha",
+          "price": 5.1,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Starbucks Doubleshot™ Iced Coffee",
+          "price": 4.5,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Brown Sugar Oat Shaken Espresso",
+          "price": 6.1,
+          "platform": "wolt",
+          "popular": false
         }
       ],
-      "freddo": 3.95,
-      "delivery": 3.95,
+      "freddo": null,
+      "delivery": null,
       "notes": "Also on Wolt & Bolt Food. Premium pricing."
     },
     {
@@ -811,44 +811,44 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-lab-k-cineplex",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-lab-central-park",
         "foody": null,
         "bolt": null
       },
       "topDrinks": [
         {
           "name": "Freddo Espresso",
-          "price": 2.7,
+          "price": 2.5,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Freddo Cappuccino",
-          "price": 3.2,
+          "name": "Freddo On The Rocks",
+          "price": 2.5,
           "platform": "wolt",
           "popular": false
         },
         {
           "name": "Iced Americano",
-          "price": 2.7,
+          "price": 2.5,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Iced Latte",
-          "price": 3.2,
+          "name": "Freddo Cappuccino",
+          "price": 3,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Iced  Caramel Latte",
-          "price": 3.5,
+          "name": "Freddo Cappuccino Flat White",
+          "price": 3,
           "platform": "wolt",
           "popular": false
         }
       ],
-      "freddo": 2.7,
-      "delivery": 2.7,
+      "freddo": 2.5,
+      "delivery": 2.5,
       "notes": "Also at K-Cineplex and Central Park."
     },
     {
@@ -901,45 +901,14 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/kawacoms-ipanema-espresso-pallouriotissa",
+        "wolt": null,
         "foody": null,
         "bolt": null
       },
-      "topDrinks": [
-        {
-          "name": "Freddo Espresso",
-          "price": 2.8,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Iced Americano",
-          "price": 2.8,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Freddo Cappuccino",
-          "price": 3,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Freddo Flat White",
-          "price": 3.3,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Iced Latte",
-          "price": 3.3,
-          "platform": "wolt",
-          "popular": false
-        }
-      ],
-      "freddo": 2.8,
+      "topDrinks": [],
+      "freddo": null,
       "delivery": 2.8,
-      "notes": "Five branches across Nicosia."
+      "notes": "Not on Wolt — price unavailable."
     },
     {
       "cafe": "PAUL",
@@ -1108,6 +1077,21 @@
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
+          ]
+        },
+        {
+          "cafe": "Between the Bread Cafe",
+          "freddo": 1.8,
+          "slug": "119786-between-the-bread-cafe",
+          "provider_id": 119786,
+          "address": "Leoforos Strovolou 100, Demarchio Strovolou\r\n\r\n2042 Nicosia",
+          "lat": 35.144141,
+          "lng": 33.343617,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/119786-between-the-bread-cafe",
+          "source": "bolt",
+          "freddoSource": "bolt",
+          "platforms": [
+            "bolt"
           ]
         },
         {
@@ -1532,21 +1516,6 @@
           ]
         },
         {
-          "cafe": "Gusto Cafe",
-          "freddo": 2.3,
-          "slug": "532589-gusto-cafe",
-          "provider_id": 532589,
-          "address": "B18 2 2360 Nicosia Cyprus",
-          "lat": 35.17134,
-          "lng": 33.340724,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/532589-gusto-cafe",
-          "source": "bolt",
-          "freddoSource": "bolt",
-          "platforms": [
-            "bolt"
-          ]
-        },
-        {
           "cafe": "Caffe Milano Agios Dometios",
           "freddo": 2.3,
           "slug": "round-n-about-coffee-shop",
@@ -1968,21 +1937,6 @@
           ]
         },
         {
-          "cafe": "Two Chimp Coffee & Cake",
-          "freddo": 2.5,
-          "slug": "45411-two-chimp-coffee-cake",
-          "provider_id": 45411,
-          "address": "Pindarou 18 D, Nicosia 1060, Cyprus",
-          "lat": 35.167353,
-          "lng": 33.367637,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake",
-          "source": "bolt",
-          "freddoSource": "bolt",
-          "platforms": [
-            "bolt"
-          ]
-        },
-        {
           "cafe": "Grind Caffe",
           "freddo": 2.5,
           "slug": "2691-grind-caffe",
@@ -2042,6 +1996,21 @@
           "lat": 35.18081,
           "lng": 33.38556,
           "url": "https://food.bolt.eu/en/261-nicosia/p/137145-room-9-cafe",
+          "source": "bolt",
+          "freddoSource": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
+          "cafe": "Two Chimp Coffee & Cake",
+          "freddo": 2.5,
+          "slug": "45411-two-chimp-coffee-cake",
+          "provider_id": 45411,
+          "address": "Pindarou 18 D, Nicosia 1060, Cyprus",
+          "lat": 35.167353,
+          "lng": 33.367637,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake",
           "source": "bolt",
           "freddoSource": "bolt",
           "platforms": [
@@ -9994,8 +9963,8 @@
     }
   ],
   "sources": {
-    "wolt": "2026-08-03T09:34:26.818Z",
-    "bolt": "2026-08-01T15:41:07.086Z",
-    "foody": "2026-08-01T13:00:10.553Z"
+    "wolt": "2026-08-05T08:28:33.841Z",
+    "bolt": "2026-08-03T17:28:11.978Z",
+    "foody": "2026-08-03T14:19:11.927Z"
   }
 }

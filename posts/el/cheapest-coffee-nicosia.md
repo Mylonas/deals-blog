@@ -10,7 +10,7 @@ pinned: true
 Παρακολουθούμε τις τιμές Freddo Espresso σε καφετέριες σε όλη την Κύπρο — Λευκωσία, Λεμεσό, Λάρνακα, Πάφο και την περιοχή Αγίας Νάπας — και δείχνουμε τα φθηνότερα μέρη σε κάθε πόλη. Οι τιμές προέρχονται από Wolt, Bolt Food και Foody — για κάθε καφετέρια εμφανίζεται η φθηνότερη πλατφόρμα — και ενημερώνονται κάθε 2 ημέρες.
 
 <!-- COFFEE_PRICES_START -->
-*Τελευταία ενημέρωση: 5 Αυγ 2026, 10:42 π.μ. (ΕΕΤ). Ενημέρωση κάθε 2 ημέρες μέσω Wolt, Bolt Food και Foody.*
+*Τελευταία ενημέρωση: 5 Αυγ 2026, 11:28 π.μ. (ΕΕΤ). Ενημέρωση κάθε 2 ημέρες μέσω Wolt, Bolt Food και Foody.*
 
 ## Freddo Espresso — Φθηνότερα ανά Πόλη
 
@@ -19,6 +19,7 @@ pinned: true
 | Καφετέρια | Τιμή | Μέσω Delivery |
 |------|-------|--------|
 | **[True Heart Cafe](https://wolt.com/en/cyp/nicosia/restaurant/true-heart-cafe)** | €1.80 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/true-heart-cafe) |
+| **[Between the Bread Cafe](https://food.bolt.eu/en/261-nicosia/p/119786-between-the-bread-cafe)** | €1.80 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/119786-between-the-bread-cafe) |
 | **[Mini Cafe Mini Donuts](https://www.foody.com.cy/delivery/leykosia/mini-cafe-mini-donuts)** | €1.80 | [Foody](https://www.foody.com.cy/delivery/leykosia/mini-cafe-mini-donuts) |
 | **[Pi Baked & Brew](https://wolt.com/en/cyp/nicosia/restaurant/pi-baked-brew)** | €1.90 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/pi-baked-brew) |
 | **[Bake On Wood](https://wolt.com/en/cyp/nicosia/restaurant/bake-on-wood)** | €2.00 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/bake-on-wood) |
@@ -50,7 +51,6 @@ pinned: true
 | **[Bubble Tale Ledras](https://wolt.com/en/cyp/nicosia/restaurant/bubble-tale-ledras)** | €2.30 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/bubble-tale-ledras) · [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/103618-bubble-tale-nicosia) |
 | **[Vienna Bakeries Latsia](https://wolt.com/en/cyp/nicosia/restaurant/vienna-bakeries-latsia)** | €2.30 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/vienna-bakeries-latsia) |
 | **[Bakalicom](https://wolt.com/en/cyp/nicosia/restaurant/bakalicom)** | €2.30 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/bakalicom) |
-| **[Gusto Cafe](https://food.bolt.eu/en/261-nicosia/p/532589-gusto-cafe)** | €2.30 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/532589-gusto-cafe) |
 | **[Caffe Milano Agios Dometios](https://www.foody.com.cy/delivery/leykosia/round-n-about-coffee-shop)** | €2.30 | [Foody](https://www.foody.com.cy/delivery/leykosia/round-n-about-coffee-shop) |
 | **[1957 Sports Bar & Café](https://www.foody.com.cy/delivery/leykosia/1957-sports-bar-caf)** | €2.30 | [Foody](https://www.foody.com.cy/delivery/leykosia/1957-sports-bar-caf) |
 | **[Reverso Café](https://www.foody.com.cy/delivery/leykosia/reverso-cafe-2000276564)** | €2.30 | [Foody](https://www.foody.com.cy/delivery/leykosia/reverso-cafe-2000276564) |
@@ -81,11 +81,11 @@ pinned: true
 | **[Le Gout Athalassas](https://www.foody.com.cy/delivery/leykosia/le-gout-athalassas-2000780410)** | €2.40 | [Foody](https://www.foody.com.cy/delivery/leykosia/le-gout-athalassas-2000780410) |
 | **[nonna Rosa Breakfast and Coffee](https://www.foody.com.cy/delivery/leykosia/nonna-rosa-breakfast-and-coffee-2000691642)** | €2.43 | [Foody](https://www.foody.com.cy/delivery/leykosia/nonna-rosa-breakfast-and-coffee-2000691642) |
 | **[Street Coffee](https://food.bolt.eu/en/261-nicosia/p/75062-street-coffee)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/75062-street-coffee) |
-| **[Two Chimp Coffee & Cake](https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake) |
 | **[Grind Caffe](https://food.bolt.eu/en/261-nicosia/p/2691-grind-caffe)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/2691-grind-caffe) · [Foody](https://www.foody.com.cy/delivery/menu/grind-caffe) |
 | **[Trust Me Coffee Shop](https://food.bolt.eu/en/261-nicosia/p/292653-trust-me-coffee-shop)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/292653-trust-me-coffee-shop) · [Foody](https://www.foody.com.cy/delivery/leykosia/trust-me-coffee-shop-2000775954) |
 | **[Coffeeway](https://food.bolt.eu/en/261-nicosia/p/105215-coffeeway)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/105215-coffeeway) · [Foody](https://www.foody.com.cy/delivery/menu/coffeeway) |
 | **[Room 9 Cafe](https://food.bolt.eu/en/261-nicosia/p/137145-room-9-cafe)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/137145-room-9-cafe) |
+| **[Two Chimp Coffee & Cake](https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake) |
 | **[Centro Coffee & Bites](https://food.bolt.eu/en/261-nicosia/p/91876-centro-coffee-bites)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/91876-centro-coffee-bites) |
 | **[Prima Volta Coffee](https://food.bolt.eu/en/261-nicosia/p/160509-prima-volta-coffee)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/160509-prima-volta-coffee) · [Foody](https://www.foody.com.cy/delivery/leykosia/prima-volta-2000604869) |
 | **[FRANKLIN COFFEE HOUSE CYPRUS](https://www.foody.com.cy/delivery/leykosia/franklin-coffee-house-cyprus-2000673337)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/leykosia/franklin-coffee-house-cyprus-2000673337) |
@@ -691,7 +691,7 @@ pinned: true
 
 ## Πιο Δημοφιλή Ποτά ανά Καφετέρια (Λευκωσία)
 
-*Δημοφιλή ποτά — τελευταία συλλογή: 3 Αυγ 2026, 12:34 μ.μ..*
+*Δημοφιλή ποτά — τελευταία συλλογή: 5 Αυγ 2026, 11:28 π.μ..*
 
 ### Coffeeway
 
@@ -783,11 +783,11 @@ pinned: true
 
 | Ποτό | Τιμή | Πηγή |
 |------|-------|--------|
-| Freddo Espresso | €3.95 | Wolt |
-| Freddo Cappuccino | €4.25 | Wolt |
-| Iced Americano | €3.85 | Wolt |
-| Iced Latte | €4.30 | Wolt |
 | Iced Caramel Macchiato | €5.95 | Wolt |
+| Iced Mocha | €4.95 | Wolt |
+| Iced White Mocha | €5.10 | Wolt |
+| Starbucks Doubleshot™ Iced Coffee | €4.50 | Wolt |
+| Iced Brown Sugar Oat Shaken Espresso | €6.10 | Wolt |
 
 ### [Deli. Lidas](https://www.google.com/maps/search/Deli.%20Lidas%20Nicosia%20Cyprus)
 
@@ -870,11 +870,11 @@ pinned: true
 
 | Ποτό | Τιμή | Πηγή |
 |------|-------|--------|
-| Freddo Espresso | €2.70 | Wolt |
-| Freddo Cappuccino | €3.20 | Wolt |
-| Iced Americano | €2.70 | Wolt |
-| Iced Latte | €3.20 | Wolt |
-| Iced  Caramel Latte | €3.50 | Wolt |
+| Freddo Espresso | €2.50 | Wolt |
+| Freddo On The Rocks | €2.50 | Wolt |
+| Iced Americano | €2.50 | Wolt |
+| Freddo Cappuccino | €3.00 | Wolt |
+| Freddo Cappuccino Flat White | €3.00 | Wolt |
 
 ### Bruno Coffee Stores
 
@@ -885,16 +885,6 @@ pinned: true
 | Iced Americano | €2.70 | Wolt |
 | Iced Flat White | €2.80 | Wolt |
 | Iced Latte | €3.00 | Wolt |
-
-### Kawacom's Ipanema Espresso
-
-| Ποτό | Τιμή | Πηγή |
-|------|-------|--------|
-| Freddo Espresso | €2.80 | Wolt |
-| Iced Americano | €2.80 | Wolt |
-| Freddo Cappuccino | €3.00 | Wolt |
-| Freddo Flat White | €3.30 | Wolt |
-| Iced Latte | €3.30 | Wolt |
 
 ### PAUL
 
