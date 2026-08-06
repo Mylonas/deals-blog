@@ -2,8 +2,11 @@ name: Update Souvlaki Prices — Wolt (every 2 days)
 
 on:
   schedule:
-    # Every Tuesday at 06:00 UTC — Wolt API scan, no browser needed
-    - cron: "0 6 */2 * *"
+    # 06:30 UTC every 2 days — Wolt API scan, no browser needed.
+    # Offset half an hour from the coffee Wolt scan at 06:00 so the two do not
+    # hit Wolt at the same instant; both finish in minutes, so 30 minutes is
+    # clear separation.
+    - cron: "30 6 */2 * *"
   workflow_dispatch:
 
 jobs:
