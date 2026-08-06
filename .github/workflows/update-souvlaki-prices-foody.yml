@@ -1,6 +1,6 @@
 name: Update Souvlaki Prices — Foody (every 2 days)
 
-# Foody gap scraper. Runs after the Wolt (06:00) and Bolt (09:00) scans so the
+# Foody gap scraper. Runs after the Wolt (06:30) and Bolt (09:30) scans so the
 # gap filter sees both and only opens menus for souvlaki venues neither covers.
 # Foody has no open menu API, so this drives a headless browser (Playwright)
 # and reads each venue's JSON-LD menu. It checkpoints per venue and carries

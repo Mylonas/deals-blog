@@ -7,7 +7,11 @@ name: Update Souvlaki Prices — Bolt (every 2 days)
 # timed-out run commits useful data.
 on:
   schedule:
-    - cron: "0 9 */2 * *" # 09:00 UTC every 2 days, after the Wolt scan at 06:00
+    # 09:30, half an hour after the coffee Bolt scan at 09:00, so the two do not
+    # start their bursts together. Note this only staggers the START: both scans
+    # can run up to 5 hours, so they still overlap for most of it. Serialising
+    # them properly needs a shared concurrency group, not a cron offset.
+    - cron: "30 9 */2 * *" # 09:30 UTC every 2 days, after the Wolt scan at 06:30
   workflow_dispatch:
 
 jobs:
