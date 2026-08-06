@@ -2,7 +2,9 @@ name: Update Coffee Prices — Wolt (every 2 days)
 
 on:
   schedule:
-    # 06:00 UTC every 2 days — Wolt API scrape is cheap, no browser needed
+    # 06:00 UTC every 2 days — Wolt API scrape is cheap, no browser needed.
+    # The souvlaki Wolt scan is offset to 06:30 so the two do not hit Wolt at
+    # the same instant.
     - cron: "0 6 */2 * *"
   workflow_dispatch:
 
@@ -30,8 +32,20 @@ jobs:
       - name: Regenerate markdown posts
         run: node scripts/update-coffee-prices.mjs
 
+      # Same two-step shape as every other data workflow: detect the change
+      # first, then gate both the commit and the redeploy on it. This used to
+      # hang the redeploy off an `outputs.changed` on the commit step itself,
+      # but commit-data.sh writes nothing to $GITHUB_OUTPUT, so the condition
+      # was never true and this scan never triggered a rebuild. Pushes made with
+      # GITHUB_TOKEN do not fire deploy.yml's `on: push`, so that dispatch is the
+      # only route from a data commit to production — losing it meant fresh Wolt
+      # prices sat in master until some other workflow happened to deploy.
+      - name: Check for changes
+        id: changes
+        run: git diff --quiet || echo "changed=true" >> $GITHUB_OUTPUT
+
       - name: Commit and push if changed
-        id: coffee_push
+        if: steps.changes.outputs.changed == 'true'
         run: |
           bash scripts/ci/commit-data.sh "chore: update coffee prices via Wolt API $(date +'%Y-%m-%d')" \
             src/data/coffee-prices.json \
@@ -40,7 +54,7 @@ jobs:
             posts/el/cheapest-coffee-nicosia.md \
             posts/ru/cheapest-coffee-nicosia.md
       - name: Trigger Cloudflare redeploy
-        if: steps.coffee_push.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run deploy.yml --ref master
