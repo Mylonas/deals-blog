@@ -7,7 +7,7 @@ name: Update Souvlaki Prices — Foody (every 2 days)
 # failed venues over, so a partial run still produces a valid merge.
 on:
   schedule:
-    - cron: "0 11 */2 * *" # 11:00 UTC every 2 days, after Wolt (06:00) + Bolt (09:00)
+    - cron: "0 11 */2 * *" # 11:00 UTC every 2 days, after Wolt (06:30) + Bolt (09:30)
   workflow_dispatch:
 
 jobs:
