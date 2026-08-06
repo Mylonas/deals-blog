@@ -16,11 +16,17 @@
 //   retrigger  - false for files whose workflow cannot self-heal; they are
 //                reported but never re-dispatched, so the issue-after-3-failures
 //                path is not spammed with runs that are expected to fail
-// Every data workflow now runs at least every 2 days, so anything past ~2.5
-// days has missed a run. These thresholds only drive the silent re-trigger —
+// Every scheduled data workflow runs at least every 2 days, so anything past
+// ~2.5 days has missed a run. These thresholds only drive the silent re-trigger —
 // email is handled separately, and only at 7 days, by stale-alert.yml.
+//
+// Files refreshed by hand are watched too, on a weekly threshold. They cannot
+// self-heal, so they carry retrigger: false and reach a human via the 7-day
+// email instead — which is the only thing that makes a manual job's neglect
+// visible at all.
 const TWO_DAY_MAX_AGE = 60;
 const DAILY_MAX_AGE = 36;
+const WEEKLY_MAX_AGE = 168;
 
 export const CHECKS = [
   {
@@ -109,4 +115,17 @@ export const CHECKS = [
     maxAgeHours: TWO_DAY_MAX_AGE,
   },
 
+  // Weekly — refreshed by hand, because Bazaraki's Cloudflare challenge cannot
+  // be cleared from a datacenter IP (see update-bazaraki-cars.yml). Nothing
+  // watched this file before, which is precisely how it froze at 2026-07-23 and
+  // again at 2026-07-25 without anyone finding out. retrigger: false because
+  // dispatching the workflow would fail on the runner every time; the 7-day
+  // email is the whole point of the entry.
+  {
+    file: "src/data/bazaraki-cars.json",
+    workflow: "update-bazaraki-cars.yml",
+    label: "Bazaraki Cars (manual — run `npm run cars:local`)",
+    maxAgeHours: WEEKLY_MAX_AGE,
+    retrigger: false,
+  },
 ];
