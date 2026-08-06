@@ -5,7 +5,9 @@
  *   2. Top drinks per café section (populated after monthly headless scrape)
  *
  * Run: node scripts/update-coffee-prices.mjs
- * Called by update-coffee-prices-monthly.yml after the headless scraper.
+ * Called as the post-regeneration step of every coffee workflow — the Wolt, Bolt
+ * and Foody scans each run it after their own merge, and update-coffee-prices.yml
+ * runs it hourly on its own to keep the merged file and the posts in step.
  */
 
 import fs from "fs";

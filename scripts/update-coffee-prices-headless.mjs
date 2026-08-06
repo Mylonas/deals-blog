@@ -6,8 +6,11 @@
  * Debug mode:    DEBUG=1 node scripts/update-coffee-prices-headless.mjs
  *   → saves screenshots + HTML snapshots to /tmp/coffee-debug/
  *
- * Called by .github/workflows/update-coffee-prices-monthly.yml on the 1st of each month.
- * After this script runs, update-coffee-prices.mjs regenerates the markdown posts.
+ * No workflow calls this — it is a manual fallback for when the Wolt/Bolt/Foody
+ * API scans cannot resolve a venue and the menu has to be read from the rendered
+ * page. The scheduled path is update-coffee-prices-wolt.yml (Wolt API, every 2
+ * days) plus the -bolt and -foody scans. Run update-coffee-prices.mjs afterwards
+ * to regenerate the markdown posts.
  *
  * How venue discovery works:
  *   For Wolt — we search the Nicosia Cyprus city page for the café name, click the

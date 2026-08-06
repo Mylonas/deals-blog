@@ -54,6 +54,17 @@ export const CHECKS = [
     maxAgeHours: 4,
   },
 
+  // Daily — the public-sector jobs feed. Stamps `fetchedAt` rather than
+  // `updatedAt`, which is why it needs a freshness reader; it was watched by
+  // nothing at all before, despite being a daily user-facing dataset.
+  {
+    file: "src/data/public-jobs.json",
+    workflow: "update-public-jobs.yml",
+    label: "Public-sector Jobs",
+    maxAgeHours: DAILY_MAX_AGE,
+    freshness: (raw) => raw.fetchedAt ?? null,
+  },
+
   // Daily — both produced by the merge job of the sharded history workflow.
   {
     file: "src/data/supermarket-deals.json",
@@ -92,7 +103,7 @@ export const CHECKS = [
   },
   {
     file: "src/data/coffee-prices-wolt.json",
-    workflow: "update-coffee-prices-monthly.yml",
+    workflow: "update-coffee-prices-wolt.yml",
     label: "Coffee — Wolt",
     maxAgeHours: TWO_DAY_MAX_AGE,
   },
@@ -112,6 +123,15 @@ export const CHECKS = [
     file: "src/data/souvlaki-prices-foody.json",
     workflow: "update-souvlaki-prices-foody.yml",
     label: "Souvlaki — Foody",
+    maxAgeHours: TWO_DAY_MAX_AGE,
+  },
+  {
+    // The coffee side watched all three of its per-vendor files while the
+    // souvlaki side watched only Bolt and Foody, so a Wolt scan that quietly
+    // stopped producing would have shown up nowhere.
+    file: "src/data/souvlaki-prices-wolt.json",
+    workflow: "update-souvlaki-prices.yml",
+    label: "Souvlaki — Wolt",
     maxAgeHours: TWO_DAY_MAX_AGE,
   },
 
