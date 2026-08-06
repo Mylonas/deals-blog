@@ -1,7 +1,8 @@
 name: Update Coffee Prices — Bolt (every 2 days)
 
-# Bolt Food coffee scan. Runs after the Monday Wolt scan so the merge sees
-# fresh data from both platforms. Bolt's API rate-limits hard (~5 request
+# Bolt Food coffee scan. Runs after the same day's Wolt scan (06:00) so the merge
+# sees fresh data from both platforms — the cron is day-of-month based, not
+# weekly, so there is no fixed weekday. Bolt's API rate-limits hard (~5 request
 # bursts), so the scan is single-threaded and paced — expect it to take hours.
 # The script checkpoints per venue and carries failed venues over, so even a
 # timed-out run commits useful data.

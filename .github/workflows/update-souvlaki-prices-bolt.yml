@@ -1,7 +1,8 @@
 name: Update Souvlaki Prices — Bolt (every 2 days)
 
-# Bolt Food scan. Runs after the Tuesday Wolt scan so the merge sees fresh
-# data from both platforms. Bolt's API rate-limits hard (~5 requests bursts),
+# Bolt Food scan. Runs after the same day's Wolt scan (06:30) so the merge sees
+# fresh data from both platforms — the cron is day-of-month based, not weekly, so
+# there is no fixed weekday. Bolt's API rate-limits hard (~5 requests bursts),
 # so the scan is single-threaded and paced — expect it to take hours. The
 # script checkpoints per venue and carries failed venues over, so even a
 # timed-out run commits useful data.
