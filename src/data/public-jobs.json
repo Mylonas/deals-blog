@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-05T07:49:18.391Z",
+  "fetchedAt": "2026-08-06T07:50:30.769Z",
   "count": 122,
   "sources": [
     {
@@ -27,14 +27,20 @@
       "error": "HTTP 403"
     },
     {
+      "id": "hio",
+      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "eey",
       "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
       "count": 0,
       "error": null
     },
     {
-      "id": "hio",
-      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "id": "cera",
+      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
       "count": 0,
       "error": null
     },
@@ -45,15 +51,15 @@
       "error": null
     },
     {
-      "id": "cso",
-      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
-      "count": 1,
+      "id": "cyada",
+      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
+      "count": 0,
       "error": null
     },
     {
-      "id": "cera",
-      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
-      "count": 0,
+      "id": "cso",
+      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
+      "count": 1,
       "error": null
     },
     {
@@ -63,21 +69,9 @@
       "error": null
     },
     {
-      "id": "cyada",
-      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "cybc",
       "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
       "count": 0,
-      "error": null
-    },
-    {
-      "id": "crta",
-      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
-      "count": 1,
       "error": null
     },
     {
@@ -93,14 +87,20 @@
       "error": null
     },
     {
-      "id": "kodap",
-      "name": "ΚΟΔΑΠ",
+      "id": "kedipes",
+      "name": "ΚΕΔΙΠΕΣ",
       "count": 0,
       "error": null
     },
     {
-      "id": "kedipes",
-      "name": "ΚΕΔΙΠΕΣ",
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "kodap",
+      "name": "ΚΟΔΑΠ",
       "count": 0,
       "error": null
     },
@@ -117,8 +117,8 @@
       "error": null
     },
     {
-      "id": "cys",
-      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
+      "id": "hfc",
+      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
       "count": 0,
       "error": null
     },
@@ -129,14 +129,8 @@
       "error": null
     },
     {
-      "id": "onek",
-      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "hfc",
-      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
+      "id": "cys",
+      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
       "count": 0,
       "error": null
     },
@@ -153,20 +147,32 @@
       "error": null
     },
     {
-      "id": "cut",
-      "name": "ΤΕΠΑΚ",
-      "count": 5,
-      "error": null
-    },
-    {
       "id": "ucm",
       "name": "Ένωση Δήμων Κύπρου",
       "count": 0,
       "error": null
     },
     {
+      "id": "cut",
+      "name": "ΤΕΠΑΚ",
+      "count": 5,
+      "error": null
+    },
+    {
       "id": "ouc",
       "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "eac",
+      "name": "ΑΗΚ / Electricity Authority of Cyprus",
+      "count": 0,
+      "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\", waiting until \"domcontentloaded\"\n"
+    },
+    {
+      "id": "ucy",
+      "name": "Πανεπιστήμιο Κύπρου",
       "count": 0,
       "error": null
     },
@@ -177,9 +183,15 @@
       "error": null
     },
     {
+      "id": "eratosthenes",
+      "name": "ERATOSTHENES Centre of Excellence",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "cyi",
       "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "count": 7,
+      "count": 8,
       "error": null
     },
     {
@@ -189,14 +201,14 @@
       "error": null
     },
     {
-      "id": "eratosthenes",
-      "name": "ERATOSTHENES Centre of Excellence",
-      "count": 0,
+      "id": "eoa-lemesou",
+      "name": "ΕΟΑ Λεμεσού",
+      "count": 9,
       "error": null
     },
     {
-      "id": "ucy",
-      "name": "Πανεπιστήμιο Κύπρου",
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
       "count": 0,
       "error": null
     },
@@ -213,50 +225,14 @@
       "error": null
     },
     {
-      "id": "eoa-lemesou",
-      "name": "ΕΟΑ Λεμεσού",
-      "count": 9,
-      "error": null
-    },
-    {
-      "id": "eoa-lefkosias",
-      "name": "ΕΟΑ Λευκωσίας",
-      "count": 3,
-      "error": null
-    },
-    {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "eoa-larnakas",
-      "name": "ΕΟΑ Λάρνακας",
-      "count": 3,
-      "error": null
-    },
-    {
       "id": "dimos-lefkosias",
       "name": "Δήμος Λευκωσίας",
       "count": 5,
       "error": null
     },
     {
-      "id": "eac",
-      "name": "ΑΗΚ / Electricity Authority of Cyprus",
-      "count": 0,
-      "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\", waiting until \"domcontentloaded\"\n"
-    },
-    {
-      "id": "dimos-notias-lefkosias",
-      "name": "Δήμος Νότιας Λευκωσίας-Ιδαλίου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-lemesou",
-      "name": "Δήμος Λεμεσού",
+      "id": "eoa-lefkosias",
+      "name": "ΕΟΑ Λευκωσίας",
       "count": 3,
       "error": null
     },
@@ -267,26 +243,38 @@
       "error": null
     },
     {
-      "id": "dimos-polemidion",
-      "name": "Δήμος Πολεμιδιών",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "dimos-lakatamias",
       "name": "Δήμος Λακατάμειας",
       "count": 0,
       "error": null
     },
     {
-      "id": "dimos-latsion-geriou",
-      "name": "Δήμος Λατσιών-Γερίου",
-      "count": 1,
+      "id": "dimos-notias-lefkosias",
+      "name": "Δήμος Νότιας Λευκωσίας-Ιδαλίου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "eoa-larnakas",
+      "name": "ΕΟΑ Λάρνακας",
+      "count": 3,
+      "error": null
+    },
+    {
+      "id": "dimos-lemesou",
+      "name": "Δήμος Λεμεσού",
+      "count": 3,
       "error": null
     },
     {
       "id": "eoa-pafou",
       "name": "ΕΟΑ Πάφου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-polemidion",
+      "name": "Δήμος Πολεμιδιών",
       "count": 0,
       "error": null
     },
@@ -297,9 +285,9 @@
       "error": null
     },
     {
-      "id": "dimos-lefkaron",
-      "name": "Δήμος Λευκάρων",
-      "count": 0,
+      "id": "dimos-latsion-geriou",
+      "name": "Δήμος Λατσιών-Γερίου",
+      "count": 1,
       "error": null
     },
     {
@@ -309,15 +297,9 @@
       "error": null
     },
     {
-      "id": "dimos-pafou",
-      "name": "Δήμος Πάφου",
-      "count": 2,
-      "error": null
-    },
-    {
-      "id": "dimos-strovolou",
-      "name": "Δήμος Στροβόλου",
-      "count": 4,
+      "id": "dimos-lefkaron",
+      "name": "Δήμος Λευκάρων",
+      "count": 0,
       "error": null
     },
     {
@@ -327,27 +309,15 @@
       "error": null
     },
     {
+      "id": "dimos-strovolou",
+      "name": "Δήμος Στροβόλου",
+      "count": 4,
+      "error": null
+    },
+    {
       "id": "dimos-dromolaxias-meneou",
       "name": "Δήμος Δρομολαξιάς-Μενεού",
       "count": 5,
-      "error": null
-    },
-    {
-      "id": "dimos-polis-chrysochous",
-      "name": "Δήμος Πόλης Χρυσοχούς",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-agias-napas",
-      "name": "Δήμος Αγίας Νάπας",
-      "count": 2,
-      "error": null
-    },
-    {
-      "id": "dimos-athienou",
-      "name": "Δήμος Αθηένου",
-      "count": 1,
       "error": null
     },
     {
@@ -357,8 +327,32 @@
       "error": null
     },
     {
+      "id": "dimos-pafou",
+      "name": "Δήμος Πάφου",
+      "count": 2,
+      "error": null
+    },
+    {
+      "id": "dimos-polis-chrysochous",
+      "name": "Δήμος Πόλης Χρυσοχούς",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "dimos-larnakas",
       "name": "Δήμος Λάρνακας",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "dimos-athienou",
+      "name": "Δήμος Αθηένου",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "dimos-agias-napas",
+      "name": "Δήμος Αγίας Νάπας",
       "count": 2,
       "error": null
     },
@@ -372,6 +366,12 @@
       "id": "dimos-anatolikis-pafou",
       "name": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
       "count": 4,
+      "error": null
+    },
+    {
+      "id": "onek",
+      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
+      "count": 0,
       "error": null
     }
   ],
@@ -715,18 +715,6 @@
       "url": "https://kourion.org/plirosi-kenis-thesis-leitourgou-technikis-ypiresias/",
       "published": null,
       "deadline": null,
-      "reference": null
-    },
-    {
-      "id": "25c615948553",
-      "sourceId": "dimos-larnakas",
-      "employer": "Δήμος Λάρνακας",
-      "sector": "municipality",
-      "district": "larnaca",
-      "title": "ΕΠΑΝΑΠΡΟΚΗΡΥΞΗ: Παροχή Υπηρεσιών Συμβούλων Μελετητών για την Αναβάθμιση του Πάρκου Αγίας Παρασκευής στο Δημοτικό Διαμέρισμα Λιβαδιών (αρ.διαγ 56/2026)",
-      "url": "https://www.larnaka.org.cy/epanaprokiryksi-parochi-ypiresion-symvoulon-meletiton-gia-tin-anavathmisi-tou-parkou-agias-paraskevis-sto-dimotiko-diamerisma-livadion-ar-diag-56-2026/",
-      "published": "2026-07-31",
-      "deadline": "2026-08-05",
       "reference": null
     },
     {
@@ -1342,6 +1330,18 @@
       "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0415",
       "published": null,
       "deadline": null,
+      "reference": null
+    },
+    {
+      "id": "4dadb34153f4",
+      "sourceId": "cyi",
+      "employer": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "sector": "research",
+      "district": "nicosia",
+      "title": "Post-doctoral Research Fellow in Climate-Sensitive Vector-Borne Disease Risk (ref. no. CARE-C_PDF_26_05)",
+      "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0419",
+      "published": null,
+      "deadline": "2026-08-31",
       "reference": null
     },
     {
