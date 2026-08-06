@@ -47,7 +47,17 @@ for f in "${FILES[@]}"; do
   fi
 done
 
-for attempt in 1 2 3 4 5; do
+# Ten sharded jobs share one 25-minute fetch timeout, so they reach this push
+# within seconds of each other and contend for the same ref lock. Five attempts
+# spaced a flat 2-9s apart is not enough headroom for that: the losers all wake
+# inside the same narrow window and collide again, and shard 5 exhausted its five
+# attempts in 13 seconds on 2026-08-04 having scraped its products for 25 minutes.
+# So retry more times, and back off exponentially with full jitter — the point of
+# the widening random window is to decorrelate the contenders rather than to wait
+# longer. An uncontended push still exits on attempt 1 and never sleeps at all.
+ATTEMPTS=12
+
+for (( attempt = 1; attempt <= ATTEMPTS; attempt++ )); do
   git fetch origin master
   # Discard any half-finished state from a previous attempt, then start from
   # exactly what is on the remote right now.
@@ -84,9 +94,16 @@ for attempt in 1 2 3 4 5; do
     exit 0
   fi
 
-  echo "Push rejected (attempt $attempt) — someone else pushed first; retrying."
-  sleep $((RANDOM % 8 + 2))
+  echo "Push rejected (attempt $attempt/$ATTEMPTS) — someone else pushed first; retrying."
+  # Window doubles per attempt (4s, 8s, 16s...) and caps at 64s, so a heavily
+  # contended branch keeps retrying for ~10 minutes at worst instead of ~30s.
+  if [ "$attempt" -lt 5 ]; then
+    window=$(( 2 ** (attempt + 1) ))
+  else
+    window=64
+  fi
+  sleep $(( RANDOM % window + 2 ))
 done
 
-echo "::error::Could not push after 5 attempts."
+echo "::error::Could not push after $ATTEMPTS attempts."
 exit 1
