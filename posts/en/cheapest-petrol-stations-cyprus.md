@@ -53,11 +53,11 @@ pinned: true
 |-------|---------|------|-------|
 | SHELL | [Αρχ. Μακαρίου Γ' 126 Τ.Κ 2827](https://www.google.com/maps?q=34.99814166666667,32.898002777777776) | Γαλάτα | €1.305 |
 | SHELL | [Αρχ. Μακαρίου Γ' 11 Τ.Κ 2800](https://www.google.com/maps?q=34.992275,32.90260277777778) | Κακοπετριά | €1.305 |
-| ESSO | [Ασπρόκρεμου 10 Τ.Κ 8505](https://www.google.com/maps?q=34.727105,32.569073) | Νικόκλεια | €1.343 |
 | EKO | [Λεωφ. Προδρόμου 111 Τ.Κ 2063](https://www.google.com/maps?q=35.162777,33.347181) | Στρόβολος | €1.344 |
 | ESSO | [Λεωφ.Γ.Γρίβα Διγενή 43 Τ.Κ 6045](https://www.google.com/maps?q=34.9187491493678,33.6186334558197) | Λάρνακα | €1.345 |
 | EKO | [Λεωφ. Αρχ. Μακαρίου Γ' 204 Τ.Κ 3030](https://www.google.com/maps?q=34.68753,33.045896) | Λεμεσός | €1.347 |
 | ESSO | [Λεωφ. Στροβόλου 278 Τ.Κ 2048](https://www.google.com/maps?q=35.1287232428282,33.324758841803) | Στρόβολος | €1.349 |
+| EKO | [Λεωφ. Σαριγιάννη Τ.Κ 2831](https://www.google.com/maps?q=35.070157,32.930054) | Ευρύχου | €1.357 |
 
 > Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 7 August 2026
 
