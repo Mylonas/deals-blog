@@ -48,3 +48,25 @@
 .dark .prose strong {
   color: #f1f5f9;
 }
+
+/* Jobs map pins (JobsMap.tsx). The pin itself is styled inline, inside Leaflet's
+   own markup; these are the two things an inline style cannot express. */
+
+/* Scaled about its own centre, so the phone scale never moves a pin off its
+   town. A phone shows the whole island in a third of the width, so the pins have
+   to shrink with it or Λευκωσία and its suburbs merge into one unreadable blob. */
+.jobs-pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--jobs-pin-scale, 1));
+  transition: opacity 0.15s;
+}
+.jobs-pin.dim {
+  opacity: 0.35;
+}
+@media (max-width: 640px) {
+  :root {
+    --jobs-pin-scale: 0.62;
+  }
+}
