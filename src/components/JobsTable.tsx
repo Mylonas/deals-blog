@@ -1,7 +1,23 @@
 "use client";
 import { useMemo, useState } from "react";
+import dynamic from "next/dynamic";
+
+import { PANCYPRUS_PLACE } from "./JobsMap";
+
+// Leaflet touches window at import time, so the map can only load in the
+// browser — same treatment as PriceMap on the price pages.
+const JobsMap = dynamic(() => import("./JobsMap"), { ssr: false });
 
 type Lang = "en" | "el" | "ru";
+
+/** One town a job is tied to, resolved by scripts/jobs/lib/location.mjs. */
+export type JobLocation = {
+  name: string;
+  district: string;
+  districtName: string;
+  lat: number;
+  lon: number;
+};
 
 export type Job = {
   id: string;
@@ -15,6 +31,9 @@ export type Job = {
   deadline: string | null;
   reference: string | null;
   deadlineFrom?: string;
+  /** Absent on data scraped before the map was added — treat as unplaced. */
+  locations?: JobLocation[];
+  locationFrom?: "title" | "employer" | "district" | "pancyprus";
 };
 
 export type JobsData = { fetchedAt: string; count: number; jobs: Job[] };
@@ -90,6 +109,15 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
   const [datedOnly, setDatedOnly] = useState(false);
   const [sort, setSort] = useState<"deadline" | "employer" | "newest">("deadline");
   const [page, setPage] = useState(1);
+  // A town name, PANCYPRUS_PLACE, or null for everywhere. Separate from the
+  // district dropdown on purpose: the map narrows to one town, the dropdown to a
+  // whole district, and the two are useful together.
+  const [place, setPlace] = useState<string | null>(null);
+
+  const selectPlace = (next: string | null) => {
+    setPlace((current) => (current === next ? null : next));
+    setPage(1);
+  };
 
   const employers = useMemo(
     () => [...new Set(data.jobs.map((j) => j.employer))].sort((a, b) => a.localeCompare(b, "el")),
@@ -115,6 +143,10 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
       if (district && job.district !== district && job.district !== "pancyprus") return false;
       if (employer && job.employer !== employer) return false;
       if (datedOnly && !job.deadline) return false;
+      // The island-wide chip is the complement of the pins: a post with no town
+      // is not shown anywhere on the map, so this is the only way to reach it.
+      if (place === PANCYPRUS_PLACE && (job.locations ?? []).length > 0) return false;
+      if (place !== null && place !== PANCYPRUS_PLACE && !(job.locations ?? []).some((l) => l.name === place)) return false;
       if (needle && !`${job.title} ${job.employer}`.toLowerCase().includes(needle)) return false;
       return true;
     });
@@ -128,11 +160,11 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
       if (b.deadline) return 1;
       return a.employer.localeCompare(b.employer, "el");
     });
-  }, [data.jobs, q, sector, district, employer, datedOnly, sort]);
+  }, [data.jobs, q, sector, district, employer, datedOnly, place, sort]);
 
   const visible = filtered.slice(0, page * PAGE_SIZE);
   const reset = () => {
-    setQ(""); setSector(""); setDistrict(""); setEmployer(""); setDatedOnly(false); setPage(1);
+    setQ(""); setSector(""); setDistrict(""); setEmployer(""); setDatedOnly(false); setPlace(null); setPage(1);
   };
 
   return (
@@ -141,6 +173,10 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
         <span className="font-semibold">{filtered.length} {t.total}</span>
         <span className="text-gray-500 dark:text-gray-400">· {t.updated} {data.fetchedAt.slice(0, 10)}</span>
       </div>
+
+      {/* Every job, not `filtered` — the pins are the overview, so they must not
+          shrink as the table filters or clicking one would erase the rest. */}
+      <JobsMap jobs={data.jobs} place={place} onSelect={selectPlace} lang={lang} />
 
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4 mb-4">
         <input
