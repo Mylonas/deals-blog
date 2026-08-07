@@ -10,7 +10,7 @@ pinned: true
 We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Limassol, Larnaca, Paphos and the Ayia Napa area — and show the cheapest places in each city. Prices come from Wolt, Bolt Food and Foody listings — each café shows its cheapest platform — and are updated every 2 days.
 
 <!-- COFFEE_PRICES_START -->
-*Prices last checked: 7 Aug 2026, 14:49 (EET). Updated every 2 days via Wolt, Bolt Food and Foody.*
+*Prices last checked: 7 Aug 2026, 15:42 (EET). Updated every 2 days via Wolt, Bolt Food and Foody.*
 
 ## Freddo Espresso — Cheapest by City
 
@@ -19,7 +19,6 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 | Café | Price | Via Delivery App |
 |------|-------|--------|
 | **[True Heart Cafe](https://wolt.com/en/cyp/nicosia/restaurant/true-heart-cafe)** | €1.80 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/true-heart-cafe) |
-| **[Between the Bread Cafe](https://food.bolt.eu/en/261-nicosia/p/119786-between-the-bread-cafe)** | €1.80 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/119786-between-the-bread-cafe) |
 | **[Mini Cafe Mini Donuts](https://www.foody.com.cy/delivery/leykosia/mini-cafe-mini-donuts)** | €1.80 | [Foody](https://www.foody.com.cy/delivery/leykosia/mini-cafe-mini-donuts) |
 | **[Pi Baked & Brew](https://wolt.com/en/cyp/nicosia/restaurant/pi-baked-brew)** | €1.90 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/pi-baked-brew) |
 | **[Bake On Wood](https://wolt.com/en/cyp/nicosia/restaurant/bake-on-wood)** | €2.00 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/bake-on-wood) |
@@ -81,11 +80,11 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 | **[Le Gout Athalassas](https://www.foody.com.cy/delivery/leykosia/le-gout-athalassas-2000780410)** | €2.40 | [Foody](https://www.foody.com.cy/delivery/leykosia/le-gout-athalassas-2000780410) |
 | **[nonna Rosa Breakfast and Coffee](https://www.foody.com.cy/delivery/leykosia/nonna-rosa-breakfast-and-coffee-2000691642)** | €2.43 | [Foody](https://www.foody.com.cy/delivery/leykosia/nonna-rosa-breakfast-and-coffee-2000691642) |
 | **[Street Coffee](https://food.bolt.eu/en/261-nicosia/p/75062-street-coffee)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/75062-street-coffee) |
+| **[Two Chimp Coffee & Cake](https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake) |
 | **[Grind Caffe](https://food.bolt.eu/en/261-nicosia/p/2691-grind-caffe)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/2691-grind-caffe) · [Foody](https://www.foody.com.cy/delivery/menu/grind-caffe) |
 | **[Trust Me Coffee Shop](https://food.bolt.eu/en/261-nicosia/p/292653-trust-me-coffee-shop)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/292653-trust-me-coffee-shop) · [Foody](https://www.foody.com.cy/delivery/leykosia/trust-me-coffee-shop-2000775954) |
 | **[Coffeeway](https://food.bolt.eu/en/261-nicosia/p/105215-coffeeway)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/105215-coffeeway) · [Foody](https://www.foody.com.cy/delivery/menu/coffeeway) |
 | **[Room 9 Cafe](https://food.bolt.eu/en/261-nicosia/p/137145-room-9-cafe)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/137145-room-9-cafe) |
-| **[Two Chimp Coffee & Cake](https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake) |
 | **[Centro Coffee & Bites](https://food.bolt.eu/en/261-nicosia/p/91876-centro-coffee-bites)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/91876-centro-coffee-bites) |
 | **[Prima Volta Coffee](https://food.bolt.eu/en/261-nicosia/p/160509-prima-volta-coffee)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/160509-prima-volta-coffee) · [Foody](https://www.foody.com.cy/delivery/leykosia/prima-volta-2000604869) |
 | **[FRANKLIN COFFEE HOUSE CYPRUS](https://www.foody.com.cy/delivery/leykosia/franklin-coffee-house-cyprus-2000673337)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/leykosia/franklin-coffee-house-cyprus-2000673337) |
@@ -157,13 +156,13 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 | **[Cavello Coffee & Bagels](https://www.foody.com.cy/delivery/leykosia/cavello-coffee-kai-bagels-2000746159)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/leykosia/cavello-coffee-kai-bagels-2000746159) |
 | **[Chosen Coffee Shop](https://www.foody.com.cy/delivery/leykosia/chosen-coffee-shop-2000687823)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/leykosia/chosen-coffee-shop-2000687823) |
 | **[CAFE!N](https://www.foody.com.cy/delivery/leykosia/cafe-n-2000659184)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/leykosia/cafe-n-2000659184) |
+| **[Coffee Wave](https://food.bolt.eu/en/261-nicosia/p/622560-coffee-wave)** | €2.60 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/622560-coffee-wave) · [Foody](https://www.foody.com.cy/delivery/leykosia/coffee-wave-2000730637) |
 | **[Coffee Savvy](https://www.foody.com.cy/delivery/leykosia/coffee-savvy-2000474593)** | €2.60 | [Foody](https://www.foody.com.cy/delivery/leykosia/coffee-savvy-2000474593) |
 | **[Cultivos Coffee](https://www.foody.com.cy/delivery/leykosia/cultivos-coffee-2000740730)** | €2.60 | [Foody](https://www.foody.com.cy/delivery/leykosia/cultivos-coffee-2000740730) |
 | **[Arabica Coffee House](https://www.foody.com.cy/delivery/menu/arabica-coffee-house)** | €2.60 | [Foody](https://www.foody.com.cy/delivery/menu/arabica-coffee-house) |
 | **[KIKIRIKOU](https://www.foody.com.cy/delivery/leykosia/kikirikou-2000581989)** | €2.60 | [Foody](https://www.foody.com.cy/delivery/leykosia/kikirikou-2000581989) |
 | **[Coffeebox](https://www.foody.com.cy/delivery/leykosia/coffeebox)** | €2.60 | [Foody](https://www.foody.com.cy/delivery/leykosia/coffeebox) |
 | **[3 Cups Coffee](https://www.foody.com.cy/delivery/leykosia/3-cups-coffee-2000718656)** | €2.60 | [Foody](https://www.foody.com.cy/delivery/leykosia/3-cups-coffee-2000718656) |
-| **[Coffee Wave](https://www.foody.com.cy/delivery/leykosia/coffee-wave-2000730637)** | €2.60 | [Foody](https://www.foody.com.cy/delivery/leykosia/coffee-wave-2000730637) |
 | **[Bean Bar Mall of Cyprus](https://www.foody.com.cy/delivery/leykosia/bean-bar-mall-of-cyprus-2000704130)** | €2.65 | [Foody](https://www.foody.com.cy/delivery/leykosia/bean-bar-mall-of-cyprus-2000704130) |
 | **[Lost in Caffeine](https://www.foody.com.cy/delivery/leykosia/lost-in-caffeine)** | €2.65 | [Foody](https://www.foody.com.cy/delivery/leykosia/lost-in-caffeine) |
 | **[Coffee Flavors Snack Bar](https://www.foody.com.cy/delivery/leykosia/coffee-flavors-snack-bar-2000447549)** | €2.70 | [Foody](https://www.foody.com.cy/delivery/leykosia/coffee-flavors-snack-bar-2000447549) |
