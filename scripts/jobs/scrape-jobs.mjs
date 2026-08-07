@@ -11,6 +11,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { matches, fold, DOCUMENT_RE, NOT_A_JOB_RE } from './lib/util.mjs';
+import { resolveLocations } from './lib/location.mjs';
 import { deadlineFromPdf, saveCache } from './lib/pdf.mjs';
 import * as psc from './adapters/psc.mjs';
 import * as wp from './adapters/wp.mjs';
@@ -115,14 +116,21 @@ async function scrapeSource(source) {
   const scrape = ADAPTERS[source.adapter];
   if (!scrape) return { source, error: `unknown adapter "${source.adapter}"`, jobs: [] };
   try {
-    const jobs = (await scrape(source)).map((job) => ({
-      id: jobId(source.id, job.url),
-      sourceId: source.id,
-      employer: source.name,
-      sector: source.sector,
-      district: source.district,
-      ...job,
-    }));
+    // Locations are resolved here, where `source` is still in scope: the
+    // fallback pin is its district seat, and only sources.json knows that.
+    // Resolution reads the title and employer, so it has to run on the merged
+    // row rather than the raw scraped one.
+    const jobs = (await scrape(source)).map((job) => {
+      const row = {
+        id: jobId(source.id, job.url),
+        sourceId: source.id,
+        employer: source.name,
+        sector: source.sector,
+        district: source.district,
+        ...job,
+      };
+      return { ...row, ...resolveLocations(row, source) };
+    });
     return { source, error: null, jobs };
   } catch (err) {
     return { source, error: err.message, jobs: [] };

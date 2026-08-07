@@ -1,0 +1,67 @@
+{
+  "_comment": "Where a job is. Aliases are matched accent- and case-insensitively against job titles (see scripts/lib/location.mjs), so they can be written here in their natural accented form. List every inflected form a notice might use — Greek notices name a town in the genitive far more often than the nominative («Γενικό Νοσοκομείο Λεμεσού»).",
+
+  "map": { "center": [34.92, 33.2], "zoom": 9, "bounds": [[34.5, 32.2], [35.75, 34.15]] },
+
+  "districts": [
+    { "id": "nicosia", "name": "Λευκωσία", "lat": 35.1856, "lon": 33.3823 },
+    { "id": "limassol", "name": "Λεμεσός", "lat": 34.7071, "lon": 33.0226 },
+    { "id": "larnaca", "name": "Λάρνακα", "lat": 34.9182, "lon": 33.6201 },
+    { "id": "paphos", "name": "Πάφος", "lat": 34.7754, "lon": 32.4245 },
+    { "id": "famagusta", "name": "Αμμόχωστος", "lat": 35.04, "lon": 33.9833 }
+  ],
+
+  "places": [
+    { "name": "Λευκωσία", "district": "nicosia", "lat": 35.1856, "lon": 33.3823, "seat": true, "aliases": ["Λευκωσία", "Λευκωσίας", "Nicosia", "Lefkosia"] },
+    { "name": "Στρόβολος", "district": "nicosia", "lat": 35.1414, "lon": 33.345, "aliases": ["Στρόβολος", "Στροβόλου", "Strovolos"] },
+    { "name": "Λακατάμεια", "district": "nicosia", "lat": 35.1039, "lon": 33.3229, "aliases": ["Λακατάμεια", "Λακατάμειας", "Λακατάμια", "Λακαταμιάς"] },
+    { "name": "Λατσιά", "district": "nicosia", "lat": 35.1017, "lon": 33.3833, "aliases": ["Λατσιά", "Λατσιών"] },
+    { "name": "Γέρι", "district": "nicosia", "lat": 35.085, "lon": 33.4056, "aliases": ["Γέρι", "Γερίου"] },
+    { "name": "Ιδάλιο", "district": "nicosia", "lat": 35.0206, "lon": 33.4256, "aliases": ["Ιδάλιο", "Ιδαλίου", "Δάλι", "Δαλιού"] },
+    { "name": "Αγλαντζιά", "district": "nicosia", "lat": 35.1547, "lon": 33.3936, "aliases": ["Αγλαντζιά", "Αγλαντζιάς"] },
+    { "name": "Έγκωμη", "district": "nicosia", "lat": 35.1611, "lon": 33.3339, "aliases": ["Έγκωμη", "Έγκωμης", "Εγκώμη", "Εγκώμης"] },
+    { "name": "Άγιος Δομέτιος", "district": "nicosia", "lat": 35.1697, "lon": 33.3308, "aliases": ["Άγιος Δομέτιος", "Αγίου Δομετίου"] },
+    { "name": "Τσέρι", "district": "nicosia", "lat": 35.0517, "lon": 33.3556, "aliases": ["Τσέρι", "Τσερίου"] },
+    { "name": "Κοκκινοτριμιθιά", "district": "nicosia", "lat": 35.1264, "lon": 33.2214, "aliases": ["Κοκκινοτριμιθιά", "Κοκκινοτριμιθιάς"] },
+    { "name": "Λύμπια", "district": "nicosia", "lat": 35.0106, "lon": 33.4444, "aliases": ["Λύμπια", "Λυμπιών"] },
+
+    { "name": "Λεμεσός", "district": "limassol", "lat": 34.7071, "lon": 33.0226, "seat": true, "aliases": ["Λεμεσός", "Λεμεσού", "Limassol", "Lemesos"] },
+    { "name": "Αμαθούντα", "district": "limassol", "lat": 34.7128, "lon": 33.1361, "aliases": ["Αμαθούντα", "Αμαθούντας", "Άγιος Τύχωνας", "Αγίου Τύχωνα"] },
+    { "name": "Πολεμίδια", "district": "limassol", "lat": 34.6939, "lon": 32.9764, "aliases": ["Πολεμίδια", "Πολεμιδιών"] },
+    { "name": "Ύψωνας", "district": "limassol", "lat": 34.7014, "lon": 32.9464, "aliases": ["Ύψωνας", "Ύψωνα", "Κούριο", "Κουρίου"] },
+    { "name": "Γερμασόγεια", "district": "limassol", "lat": 34.7167, "lon": 33.0972, "aliases": ["Γερμασόγεια", "Γερμασόγειας"] },
+    { "name": "Μέσα Γειτονιά", "district": "limassol", "lat": 34.6975, "lon": 33.0286, "aliases": ["Μέσα Γειτονιά", "Μέσα Γειτονιάς"] },
+    { "name": "Άγιος Αθανάσιος", "district": "limassol", "lat": 34.7, "lon": 33.0667, "aliases": ["Άγιος Αθανάσιος", "Αγίου Αθανασίου"] },
+    { "name": "Τρόοδος", "district": "limassol", "lat": 34.9236, "lon": 32.8619, "aliases": ["Τρόοδος", "Τροόδους"] },
+    { "name": "Κυπερούντα", "district": "limassol", "lat": 34.9403, "lon": 32.9853, "aliases": ["Κυπερούντα", "Κυπερούντας"] },
+
+    { "name": "Λάρνακα", "district": "larnaca", "lat": 34.9182, "lon": 33.6201, "seat": true, "aliases": ["Λάρνακα", "Λάρνακας", "Larnaca", "Larnaka"] },
+    { "name": "Αραδίππου", "district": "larnaca", "lat": 34.95, "lon": 33.5983, "aliases": ["Αραδίππου", "Αραδίππος"] },
+    { "name": "Δρομολαξιά", "district": "larnaca", "lat": 34.8783, "lon": 33.5794, "aliases": ["Δρομολαξιά", "Δρομολαξιάς"] },
+    { "name": "Μενεού", "district": "larnaca", "lat": 34.8619, "lon": 33.5947, "aliases": ["Μενεού"] },
+    { "name": "Λεύκαρα", "district": "larnaca", "lat": 34.8667, "lon": 33.305, "aliases": ["Λεύκαρα", "Λευκάρων"] },
+    { "name": "Αθηένου", "district": "larnaca", "lat": 35.05, "lon": 33.5333, "aliases": ["Αθηένου", "Αθηαίνου"] },
+    { "name": "Ορόκλινη", "district": "larnaca", "lat": 34.9836, "lon": 33.6892, "aliases": ["Ορόκλινη", "Ορόκλινης", "Βορόκληνη"] },
+    { "name": "Λιβάδια", "district": "larnaca", "lat": 34.9394, "lon": 33.6461, "aliases": ["Λιβάδια", "Λιβαδιών"] },
+    { "name": "Ξυλοφάγου", "district": "larnaca", "lat": 34.9744, "lon": 33.8342, "aliases": ["Ξυλοφάγου", "Ξυλοφάγος"] },
+    { "name": "Κίτι", "district": "larnaca", "lat": 34.8419, "lon": 33.5722, "aliases": ["Κίτι", "Κιτίου"] },
+    { "name": "Περβόλια", "district": "larnaca", "lat": 34.8175, "lon": 33.59, "aliases": ["Περβόλια", "Περβολιών"] },
+
+    { "name": "Πάφος", "district": "paphos", "lat": 34.7754, "lon": 32.4245, "seat": true, "aliases": ["Πάφος", "Πάφου", "Paphos", "Pafos"] },
+    { "name": "Γεροσκήπου", "district": "paphos", "lat": 34.7581, "lon": 32.455, "aliases": ["Γεροσκήπου", "Γεροσκήπος"] },
+    { "name": "Πέγεια", "district": "paphos", "lat": 34.8833, "lon": 32.3833, "aliases": ["Πέγεια", "Πέγειας", "Ακάμα", "Ακάμας"] },
+    { "name": "Πόλη Χρυσοχούς", "district": "paphos", "lat": 35.0333, "lon": 32.425, "aliases": ["Πόλη Χρυσοχούς", "Πόλης Χρυσοχούς", "Πόλις Χρυσοχούς", "Πόλεως Χρυσοχούς", "Χρυσοχούς"] },
+    { "name": "Χλώρακα", "district": "paphos", "lat": 34.7947, "lon": 32.4133, "aliases": ["Χλώρακα", "Χλώρακας"] },
+    { "name": "Κισσόνεργα", "district": "paphos", "lat": 34.8069, "lon": 32.3958, "aliases": ["Κισσόνεργα", "Κισσόνεργας"] },
+
+    { "name": "Παραλίμνι", "district": "famagusta", "lat": 35.04, "lon": 33.9833, "aliases": ["Παραλίμνι", "Παραλιμνίου"] },
+    { "name": "Δερύνεια", "district": "famagusta", "lat": 35.0575, "lon": 33.9553, "aliases": ["Δερύνεια", "Δερύνειας"] },
+    { "name": "Αγία Νάπα", "district": "famagusta", "lat": 34.9884, "lon": 33.9993, "aliases": ["Αγία Νάπα", "Αγίας Νάπας", "Ayia Napa"] },
+    { "name": "Σωτήρα", "district": "famagusta", "lat": 35.0331, "lon": 33.9511, "aliases": ["Σωτήρα", "Σωτήρας"] },
+    { "name": "Λιοπέτρι", "district": "famagusta", "lat": 35.01, "lon": 33.8931, "aliases": ["Λιοπέτρι", "Λιοπετρίου"] },
+    { "name": "Αυγόρου", "district": "famagusta", "lat": 35.0247, "lon": 33.8214, "aliases": ["Αυγόρου"] },
+    { "name": "Φρέναρος", "district": "famagusta", "lat": 35.0142, "lon": 33.8639, "aliases": ["Φρέναρος", "Φρενάρους"] },
+    { "name": "Πρωταράς", "district": "famagusta", "lat": 35.0125, "lon": 34.0583, "aliases": ["Πρωταράς", "Πρωταρά"] },
+    { "name": "Αμμόχωστος (ελεύθερη επαρχία)", "district": "famagusta", "lat": 35.0353, "lon": 33.9614, "seat": true, "aliases": ["Αμμόχωστος", "Αμμοχώστου", "Famagusta"] }
+  ]
+}
