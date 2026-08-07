@@ -7,8 +7,23 @@ name: Update Souvlaki Prices — Foody (every 2 days)
 # failed venues over, so a partial run still produces a valid merge.
 on:
   schedule:
-    - cron: "0 11 */2 * *" # 11:00 UTC every 2 days, after Wolt (06:30) + Bolt (09:30)
+    # 11:00, after that morning's Wolt scan (06:30). It does NOT follow the same
+    # day's Bolt scan: Bolt runs for five hours and, now that the Bolt pair is
+    # serialised, this dataset's Bolt scan does not even start until about 14:00.
+    # The gap filter therefore reads the previous cycle's Bolt coverage, which is
+    # fine — it is which venues Bolt covers that matters, and that barely moves
+    # between cycles. Worst case the filter opens a few menus Bolt would have
+    # covered, and the run takes about a minute either way.
+    - cron: "0 11 */2 * *" # 11:00 UTC every 2 days
   workflow_dispatch:
+
+# Shared with update-coffee-prices-foody.yml so the two Playwright scrapes never
+# drive Foody at once. They cannot collide today — each finishes in about a minute
+# and they start an hour apart — but the job is capped at 120 minutes, and a scan
+# drifting anywhere near that would overlap its sibling. Free insurance.
+concurrency:
+  group: vendor-foody
+  cancel-in-progress: false
 
 jobs:
   update:

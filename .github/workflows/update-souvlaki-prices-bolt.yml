@@ -8,12 +8,20 @@ name: Update Souvlaki Prices — Bolt (every 2 days)
 # timed-out run commits useful data.
 on:
   schedule:
-    # 09:30, half an hour after the coffee Bolt scan at 09:00, so the two do not
-    # start their bursts together. Note this only staggers the START: both scans
-    # can run up to 5 hours, so they still overlap for most of it. Serialising
-    # them properly needs a shared concurrency group, not a cron offset.
+    # 09:30, half an hour after the coffee Bolt scan at 09:00. The offset now only
+    # decides which of the two goes first — the shared concurrency group below is
+    # what actually keeps them off Bolt at the same time. Coffee starts at 09:00
+    # and so takes the group; this scan stays pending until it finishes, which in
+    # practice means starting around 14:00.
     - cron: "30 9 */2 * *" # 09:30 UTC every 2 days, after the Wolt scan at 06:30
   workflow_dispatch:
+
+# Shared with update-coffee-prices-bolt.yml — see the longer note there. Both
+# scans burn the full 300-minute budget every run, so a cron offset could never
+# separate them; this group makes the second one wait.
+concurrency:
+  group: vendor-bolt
+  cancel-in-progress: false
 
 jobs:
   update:
