@@ -7,8 +7,19 @@ name: Update Coffee Prices — Foody (every 2 days)
 # failed venues over, so a partial run still produces a valid merge.
 on:
   schedule:
-    - cron: "0 12 */2 * *" # 12:00 UTC every 2 days, after Wolt (06:00) + Bolt (09:00)
+    # 12:00, after that morning's Wolt scan (06:00). It does NOT follow the same
+    # day's Bolt scan — that starts at 09:00 and runs a full five hours, so it is
+    # still going. The gap filter reads the previous cycle's Bolt coverage, which
+    # is fine: which venues Bolt covers barely moves between cycles.
+    - cron: "0 12 */2 * *" # 12:00 UTC every 2 days
   workflow_dispatch:
+
+# Shared with update-souvlaki-prices-foody.yml — see the note there. Keeps the two
+# headless-browser scrapes off Foody simultaneously if either ever slows towards
+# its 120-minute cap.
+concurrency:
+  group: vendor-foody
+  cancel-in-progress: false
 
 jobs:
   update:

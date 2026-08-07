@@ -11,6 +11,21 @@ on:
     - cron: "0 9 */2 * *" # 09:00 UTC every 2 days, after the Wolt scan at 06:00
   workflow_dispatch:
 
+# Shared with update-souvlaki-prices-bolt.yml: both scan Bolt Food, and each one
+# uses its entire 300-minute budget every time (measured 300.4 and 300.5 minutes
+# on 2026-08-07 — the pacing the rate limiter forces means they always hit the
+# cap). Starting them 30 minutes apart therefore left them hammering Bolt
+# together for four and a half hours; only a shared group actually separates
+# them. The second run waits instead of starting, so the pair takes ~10 hours
+# end to end.
+#
+# cancel-in-progress is false because the queued scan is work we still want, not
+# a superseded duplicate — cancelling it would silently skip a whole cycle for
+# one of the two datasets.
+concurrency:
+  group: vendor-bolt
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
