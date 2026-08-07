@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-08-05T08:43:44.324Z",
+  "updatedAt": "2026-08-07T07:23:54.827Z",
   "sources": {
-    "wolt": "2026-08-05T08:43:44.318Z",
-    "bolt": "2026-08-03T17:12:23.253Z",
-    "foody": "2026-08-03T13:35:01.660Z"
+    "wolt": "2026-08-07T07:23:54.822Z",
+    "bolt": "2026-08-05T16:11:06.635Z",
+    "foody": "2026-08-05T12:49:31.911Z"
   },
   "cities": [
     {
@@ -566,28 +566,6 @@
           "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/4087-ta-piatokamomata"
         },
         {
-          "name": "Souvlaki D",
-          "slug": "40337-souvlaki-d",
-          "provider_id": 40337,
-          "address": "57 Agiou Andrea, 1040 Nicosia",
-          "lat": 35.17823,
-          "lng": 33.38152,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/40337-souvlaki-d",
-          "prices": {
-            "porkchop": 11,
-            "mix": 7,
-            "mixLarge": 8.5,
-            "chicken": 7,
-            "chickenLarge": 8.5,
-            "souvlaki": 7,
-            "souvlakiLarge": 8.5
-          },
-          "source": "bolt",
-          "platforms": [
-            "bolt"
-          ]
-        },
-        {
           "name": "Dareios Souvlakia",
           "slug": "81162-dareios-souvlakia",
           "provider_id": 81162,
@@ -603,6 +581,28 @@
             "chickenLarge": 9,
             "mix": 7,
             "mixLarge": 8
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
+          "name": "Souvlaki D",
+          "slug": "40337-souvlaki-d",
+          "provider_id": 40337,
+          "address": "57 Agiou Andrea, 1040 Nicosia",
+          "lat": 35.17823,
+          "lng": 33.38152,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/40337-souvlaki-d",
+          "prices": {
+            "porkchop": 11,
+            "mix": 7,
+            "mixLarge": 8.5,
+            "chicken": 7,
+            "chickenLarge": 8.5,
+            "souvlaki": 7,
+            "souvlakiLarge": 8.5
           },
           "source": "bolt",
           "platforms": [
@@ -2687,27 +2687,6 @@
           ]
         },
         {
-          "name": "Cozy Grill",
-          "slug": "442657-cozy-grill",
-          "provider_id": 442657,
-          "address": "Gravias 3 2369 Nicosia Cyprus",
-          "lat": 35.168866,
-          "lng": 33.326332,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/442657-cozy-grill",
-          "prices": {
-            "chicken": 9.5,
-            "chickenLarge": 12,
-            "mix": 8.5,
-            "mixLarge": 10.5,
-            "souvlaki": 8.5,
-            "souvlakiLarge": 10.5
-          },
-          "source": "bolt",
-          "platforms": [
-            "bolt"
-          ]
-        },
-        {
           "name": "Kalamaki Souvlaki",
           "slug": "174638-kalamaki-souvlaki",
           "provider_id": 174638,
@@ -2723,6 +2702,27 @@
             "mixLarge": 9.5,
             "souvlaki": 8.5,
             "souvlakiLarge": 9.5
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
+          "name": "Cozy Grill",
+          "slug": "442657-cozy-grill",
+          "provider_id": 442657,
+          "address": "Gravias 3 2369 Nicosia Cyprus",
+          "lat": 35.168866,
+          "lng": 33.326332,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/442657-cozy-grill",
+          "prices": {
+            "chicken": 9.5,
+            "chickenLarge": 12,
+            "mix": 8.5,
+            "mixLarge": 10.5,
+            "souvlaki": 8.5,
+            "souvlakiLarge": 10.5
           },
           "source": "bolt",
           "platforms": [
@@ -3756,7 +3756,7 @@
             "souvlaki": 7,
             "mix": 7.8,
             "chicken": 7.8,
-            "mixLarge": 13,
+            "mixLarge": 12,
             "chickenLarge": 13,
             "souvlakiLarge": 11.5
           },
@@ -3774,6 +3774,37 @@
             "souvlakiLarge": "bolt"
           },
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/11390-stathis-grillhouse"
+        },
+        {
+          "name": "Souvlakia Doxa Polemidion",
+          "slug": "souvlakia-doxa-polemidion",
+          "address": "Ezekia Papaioannou 9",
+          "lat": 34.6933219,
+          "lng": 33.0053061,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-doxa-polemidion",
+          "prices": {
+            "mix": 7.5,
+            "mixLarge": 9.5,
+            "chicken": 7.7,
+            "chickenLarge": 9.7,
+            "souvlaki": 7,
+            "souvlakiLarge": 9,
+            "porkchop": 16
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "mix": "wolt",
+            "mixLarge": "wolt",
+            "chicken": "wolt",
+            "chickenLarge": "wolt",
+            "souvlaki": "bolt",
+            "souvlakiLarge": "bolt",
+            "porkchop": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/127815-doxa-polemidion-taste-of-home"
         },
         {
           "name": "Souvlakia Orfanides",
@@ -3897,25 +3928,6 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/68258-souvlakia-othellos"
         },
         {
-          "name": "Souvlakia Doxa Polemidion",
-          "slug": "souvlakia-doxa-polemidion",
-          "address": "Ezekia Papaioannou 9",
-          "lat": 34.6933219,
-          "lng": 33.0053061,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-doxa-polemidion",
-          "prices": {
-            "mix": 7.5,
-            "mixLarge": 9.5,
-            "chicken": 7.7,
-            "chickenLarge": 9.7,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 9.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "To Ladolemono",
           "slug": "to-ladolemono",
           "address": "76 Agias Sofias",
@@ -4020,28 +4032,6 @@
           },
           "platforms": [
             "wolt"
-          ]
-        },
-        {
-          "name": "Souvlakia Maria",
-          "slug": "45475-souvlakia-maria",
-          "provider_id": 45475,
-          "address": "10os dromos no 38, Kato polemidia, 4157",
-          "lat": 34.69,
-          "lng": 32.99736,
-          "url": "https://food.bolt.eu/en/442-limassol/p/45475-souvlakia-maria",
-          "prices": {
-            "porkchop": 14.5,
-            "mix": 7.5,
-            "mixLarge": 9,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 9,
-            "chicken": 8,
-            "chickenLarge": 9.5
-          },
-          "source": "bolt",
-          "platforms": [
-            "bolt"
           ]
         },
         {
@@ -4300,7 +4290,6 @@
           },
           "platforms": [
             "wolt",
-            "bolt",
             "foody"
           ],
           "priceSources": {
@@ -4311,7 +4300,6 @@
             "souvlakiLarge": "foody",
             "chickenLarge": "foody"
           },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/147439-tsitsis-o-aktipitos-grill-house",
           "foodyUrl": "https://www.foody.com.cy/delivery/lemesos/tsitsis-o-aktypitos-2000619548"
         },
         {
@@ -4672,19 +4660,8 @@
             "mixLarge": 9.82
           },
           "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt",
-            "souvlaki": "wolt",
-            "chicken": "wolt",
-            "mix": "wolt",
-            "chickenLarge": "wolt",
-            "souvlakiLarge": "wolt",
-            "mixLarge": "wolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/30282-i-pitta-tou-pappou"
+            "wolt"
+          ]
         },
         {
           "name": "Jimmy's Kebab",
@@ -5187,11 +5164,16 @@
           "lng": 33.03457736,
           "url": "https://wolt.com/en/cyp/limassol/restaurant/confuzio-cafe",
           "prices": {
-            "porkchop": 18.8
+            "porkchop": 18.5
           },
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/8640-confuzio-cafe"
         },
         {
           "name": "Mpourlotto Sti Sxara",
@@ -5327,20 +5309,11 @@
           "lng": 32.99376456,
           "url": "https://wolt.com/en/cyp/limassol/restaurant/proastio-taverna",
           "prices": {
-            "porkchop": 15.9,
-            "mix": 10.5,
-            "mixLarge": 11.5
+            "porkchop": 15.9
           },
           "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt",
-            "mix": "bolt",
-            "mixLarge": "bolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/68993-taverna-proastio"
+            "wolt"
+          ]
         },
         {
           "name": "Aletri Tavern",
@@ -5395,8 +5368,13 @@
             "porkchop": 13
           },
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/200465-i-gonia-tis-gefsis"
         },
         {
           "name": "Draught Microbrewery Restaurant",
@@ -5456,6 +5434,22 @@
           "url": "https://food.bolt.eu/en/442-limassol/p/57257-psistaria-souzi-tros",
           "prices": {
             "porkchop": 14
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
+          "name": "Psistaria Nostimies",
+          "slug": "92283-psistaria-nostimies",
+          "provider_id": 92283,
+          "address": "Archiepiskopou Makariou III, 4001 Limassol",
+          "lat": 34.69457,
+          "lng": 33.045,
+          "url": "https://food.bolt.eu/en/442-limassol/p/92283-psistaria-nostimies",
+          "prices": {
+            "porkchop": 7.8
           },
           "source": "bolt",
           "platforms": [
