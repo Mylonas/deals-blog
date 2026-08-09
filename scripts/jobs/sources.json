@@ -63,15 +63,6 @@
       "vacanciesUrl": "https://www.gesy.org.cy/el-gr/hiovacancies"
     },
     {
-      "id": "dsa",
-      "name": "Αρχή Ψηφιακής Ασφάλειας (ΑΨΑ)",
-      "sector": "semi-government",
-      "district": "nicosia",
-      "adapter": "browser",
-      "homepage": "https://dsa.cy/",
-      "vacanciesUrl": "https://dsa.cy/careers"
-    },
-    {
       "id": "cera",
       "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
       "sector": "semi-government",
@@ -552,6 +543,7 @@
     "ΚΟΑΠ (Κυπριακός Οργανισμός Αγροτικών Πληρωμών) — capo.gov.cy renders its whole site from JavaScript and exposes no links to scrape.",
     "Σχολικές Εφορείες — 20+ separate boards, most without a website; they advertise in the press.",
     "ΚΥΠΕ — cna.org.cy/el/prokhrykseis is a news page wrapped in the agency's own headlines, so every scan returns articles about other people's προκηρύξεις and never a vacancy.",
-    "ΕΤΕΚ — its «Θέσεις Εργασίας» page advertises private-sector posts to members, not ΕΤΕΚ's own."
+    "ΕΤΕΚ — its «Θέσεις Εργασίας» page advertises private-sector posts to members, not ΕΤΕΚ's own.",
+    "Αρχή Ψηφιακής Ασφάλειας (ΑΨΑ / DSA) — dsa.cy/careers is an undated archive that keeps every past προκήρυξη (incl. ones marked ΔΙΑΚΟΠΗΚΕ and concluded competitions with published results). With no deadline or date per posting the scraper cannot tell open from closed, so it surfaces only stale notices. Re-add with a dated adapter if the DSA ever posts a live vacancy."
   ]
 }
