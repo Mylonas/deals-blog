@@ -39,7 +39,7 @@ export async function close() {
 }
 
 /** Loads a URL and returns its rendered HTML, waiting out any interstitial. */
-async function render(url, timeout = 45000) {
+export async function render(url, timeout = 45000) {
   const browser = await getBrowser();
   const context = await browser.newContext({
     locale: 'el-GR',
