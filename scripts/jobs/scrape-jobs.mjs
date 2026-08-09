@@ -180,10 +180,26 @@ async function main() {
   const merged = dedupe(results.flatMap((r) => r.jobs));
   const pdfStats = await addPdfDeadlines(merged, { skip: process.argv.includes('--no-pdf') });
 
-  const jobs = merged
-    .filter((job) => keepAll || isOpen(job, maxAgeDays))
-    .sort((a, b) => a.employer.localeCompare(b.employer, 'el') || a.title.localeCompare(b.title, 'el'));
   const failures = results.filter((r) => r.error);
+  const fresh = merged.filter((job) => keepAll || isOpen(job, maxAgeDays));
+
+  // Carry forward the last-known-good openings of any source that failed this
+  // run (after the browser fallback) — a temporary block or a hard IP ban (ΑΗΚ
+  // firewalls the runner ranges at the TCP level, so nothing renders) must not
+  // make an employer's vacancies vanish. Bounded by the same freshness filter,
+  // so a post that has genuinely closed still ages out; the entries refresh the
+  // next time that source is reachable — e.g. the local daily run, which scrapes
+  // from a residential IP the government firewalls do not block.
+  const failedIds = new Set(failures.map((r) => r.source.id));
+  const freshIds = new Set(fresh.map((job) => job.id));
+  const previous = await readJson(JOBS_FILE, { jobs: [] });
+  const carried = (previous.jobs ?? [])
+    .filter((job) => failedIds.has(job.sourceId) && !freshIds.has(job.id) && isOpen(job, maxAgeDays))
+    .map((job) => ({ ...job, carriedForward: true }));
+
+  const jobs = [...fresh, ...carried].sort(
+    (a, b) => a.employer.localeCompare(b.employer, 'el') || a.title.localeCompare(b.title, 'el'),
+  );
   const kept = new Map(results.map((r) => [r.source.id, jobs.filter((job) => job.sourceId === r.source.id).length]));
 
   const seen = await readJson(SEEN_FILE, {});
@@ -218,6 +234,8 @@ async function main() {
           // browser to get in, and which are genuinely inaccessible.
           ...(r.via && r.via !== r.source.adapter ? { via: r.via } : {}),
           ...(r.blocked ? { blocked: true } : {}),
+          // Errored this run, but its prior openings were kept rather than dropped.
+          ...(r.error && (kept.get(r.source.id) ?? 0) > 0 ? { carriedForward: true } : {}),
         })),
         jobs,
       },
@@ -254,7 +272,11 @@ async function main() {
   }
   if (failures.length > 0) {
     console.log(`\n${failures.length} source(s) failed:`);
-    for (const f of failures) console.log(`  ${f.blocked ? '⛔' : '✗'} ${f.source.name}: ${f.error}`);
+    for (const f of failures) {
+      const n = kept.get(f.source.id) ?? 0;
+      const tag = n > 0 ? `carried ${n} prior` : f.blocked ? 'inaccessible' : 'no prior data';
+      console.log(`  ${f.blocked ? '⛔' : '✗'} ${f.source.name} [${tag}]: ${f.error.split('\n')[0]}`);
+    }
   }
 }
 
