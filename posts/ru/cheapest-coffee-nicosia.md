@@ -1,7 +1,7 @@
 ---
 title: "Самый дешёвый Freddo Espresso на Кипре — Живые цены"
 date: "2026-06-28"
-updated: "2026-08-07"
+updated: "2026-08-09"
 category: "Еда и напитки"
 summary: "Цены на Фреддо Эспрессо в Никосии, Лимасоле, Ларнаке, Пафосе и Айя-Напе — самые дешёвые кафе в каждом городе, обновление каждые 2 дня через Wolt, Bolt Food и Foody."
 pinned: true
@@ -10,7 +10,7 @@ pinned: true
 Мы отслеживаем цены на Фреддо Эспрессо в кафе по всему Кипру — Никосия, Лимасол, Ларнака, Пафос и район Айя-Напы — и показываем самые дешёвые места в каждом городе. Цены берутся из Wolt, Bolt Food и Foody — для каждого кафе показана самая дешёвая платформа — и обновляются каждые 2 дня.
 
 <!-- COFFEE_PRICES_START -->
-*Цены последний раз проверены: 7 авг. 2026 г., 23:18 (EET). Обновляется каждые 2 дня через Wolt, Bolt Food и Foody.*
+*Цены последний раз проверены: 9 авг. 2026 г., 19:38 (EET). Обновляется каждые 2 дня через Wolt, Bolt Food и Foody.*
 
 ## Фреддо Эспрессо — Самые дешёвые по городам
 
@@ -690,7 +690,7 @@ pinned: true
 
 ## Самые Популярные Напитки по Кафе (Никосия)
 
-*Популярные напитки — последнее обновление: 5 авг. 2026 г., 11:28.*
+*Популярные напитки — последнее обновление: 9 авг. 2026 г., 09:35.*
 
 ### Coffeeway
 
@@ -766,7 +766,11 @@ pinned: true
 
 | Напиток | Цена | Источник |
 |------|-------|--------|
-| Freddo Espresso 14oz | €3.00 | Wolt |
+| Freddo Espresso | €2.95 | Wolt |
+| Freddo Cappuccino | €3.15 | Wolt |
+| Iced Latte | €3.35 | Wolt |
+| Iced Signature Latte | €3.60 | Wolt |
+| Iced Americano | €2.50 | Wolt |
 
 ### Costa Coffee
 
@@ -869,11 +873,11 @@ pinned: true
 
 | Напиток | Цена | Источник |
 |------|-------|--------|
-| Freddo Espresso | €2.50 | Wolt |
-| Freddo On The Rocks | €2.50 | Wolt |
-| Iced Americano | €2.50 | Wolt |
-| Freddo Cappuccino | €3.00 | Wolt |
-| Freddo Cappuccino Flat White | €3.00 | Wolt |
+| Freddo Espresso | €2.70 | Wolt |
+| Freddo Cappuccino | €3.20 | Wolt |
+| Iced Americano | €2.70 | Wolt |
+| Iced Latte | €3.20 | Wolt |
+| Iced  Caramel Latte | €3.50 | Wolt |
 
 ### Bruno Coffee Stores
 

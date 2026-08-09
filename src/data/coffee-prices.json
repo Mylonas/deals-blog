@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-07T20:18:30.230Z",
-  "scrapedAt": "2026-08-05T08:28:33.841Z",
+  "updatedAt": "2026-08-09T16:38:51.563Z",
+  "scrapedAt": "2026-08-09T06:35:44.105Z",
   "note": "Top drinks and Freddo prices scraped monthly via Playwright from Wolt/Foody/Bolt Food Cyprus. topDrinks is empty until the first monthly run.",
   "items": [
     {
@@ -337,20 +337,44 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/second-cup-recanto-cafe",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/second-cup-engomi",
         "foody": null,
         "bolt": null
       },
       "topDrinks": [
         {
-          "name": "Freddo Espresso 14oz",
-          "price": 3,
+          "name": "Freddo Espresso",
+          "price": 2.95,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 3.15,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 3.35,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Signature Latte",
+          "price": 3.6,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 2.5,
           "platform": "wolt",
           "popular": false
         }
       ],
-      "freddo": 3,
-      "delivery": 3,
+      "freddo": 2.95,
+      "delivery": 2.95,
       "notes": "Canadian chain."
     },
     {
@@ -811,44 +835,44 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-lab-central-park",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/coffee-lab-k-cineplex",
         "foody": null,
         "bolt": null
       },
       "topDrinks": [
         {
           "name": "Freddo Espresso",
-          "price": 2.5,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Freddo On The Rocks",
-          "price": 2.5,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Iced Americano",
-          "price": 2.5,
+          "price": 2.7,
           "platform": "wolt",
           "popular": false
         },
         {
           "name": "Freddo Cappuccino",
-          "price": 3,
+          "price": 3.2,
           "platform": "wolt",
           "popular": false
         },
         {
-          "name": "Freddo Cappuccino Flat White",
-          "price": 3,
+          "name": "Iced Americano",
+          "price": 2.7,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 3.2,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced  Caramel Latte",
+          "price": 3.5,
           "platform": "wolt",
           "popular": false
         }
       ],
-      "freddo": 2.5,
-      "delivery": 2.5,
+      "freddo": 2.7,
+      "delivery": 2.7,
       "notes": "Also at K-Cineplex and Central Park."
     },
     {
@@ -9952,7 +9976,7 @@
     }
   ],
   "sources": {
-    "wolt": "2026-08-05T08:28:33.841Z",
+    "wolt": "2026-08-09T06:35:44.105Z",
     "bolt": "2026-08-07T15:00:12.718Z",
     "foody": "2026-08-07T20:18:29.931Z"
   }

@@ -13,6 +13,7 @@ Consumer deals blog for Cyprus — live-tracked prices for fuel, coffee, superma
 | **Live fuel tracker** | Unleaded 95, Unleaded 98 & Diesel — top 100 stations cached, top 10 shown; district + Near Me filters; GPS map links; price history chart (up to 1 year). Source: Cyprus Gov Petroleum Prices Portal |
 | **Supermarket price watch** | 10 household staples tracked across all major chains. Source: e-kalathi.gov.cy |
 | **Coffee price tracker** | Freddo Espresso prices across 13 café chains, island-wide + delivery app surcharges |
+| **Souvlaki price tracker** | Live page at `/posts/cheapest-souvlaki-cyprus` (EN/EL/RU), priced across Wolt, Bolt Food and Foody by the same per-vendor scan pattern as coffee |
 | **Bazaraki cars** | Every car currently listed on Bazaraki, cheapest first, with make / year / fuel / gearbox / body / city / price / mileage filters. Refreshed by hand via the site's JSON API — `npm run cars:local` from a residential connection (see Bazaraki access below) |
 | **Trends dashboard** | Internal page at `/trends` — Cyprus news, Wikipedia, YouTube & Reddit trending topics; post ideas via Claude API |
 | **Dark mode** | Sun/moon toggle in header; `localStorage` persistence; respects `prefers-color-scheme`; no flash on load |
@@ -177,6 +178,8 @@ than fails.
 | `update-fuel-prices.yml` | Every hour | Scrapes gov portal for 95/98/diesel, commits updated posts + JSON |
 | `update-supermarket-prices.yml` | Every hour | Fetches e-kalathi API, commits updated JSON + posts |
 | `update-coffee-prices.yml` | Every hour | Refreshes `updatedAt` timestamp, commits updated posts |
+| `update-coffee-prices-{wolt,bolt,foody}.yml` | Every 2 days, staggered | One workflow per delivery platform, each scraping café Freddo Espresso prices into its own `coffee-prices-<vendor>.json`; the hourly job above merges them. Staggered (Wolt 06:00, Bolt 09:00, Foody separately) with a shared concurrency group so two scans never hit the same vendor at once |
+| `update-souvlaki-prices{,-bolt,-foody}.yml` | Every 2 days, staggered | The same pattern for souvlaki prices, offset half an hour from the coffee scans (Wolt 06:30, Bolt 09:30) |
 | `update-bazaraki-cars.yml` | Manual dispatch only | Cannot run on the runners — see Bazaraki access below. Refresh with `npm run cars:local` |
 | `update-price-history-sharded.yml` | Daily 05:30 UTC | 10 parallel shards refresh the e-kalathi price history, then a merge job recomputes deals + all-time lows and commits both. Warns (does not fail) if the cache ends up under 50% fresh. Dispatch takes a **force** input — see below |
 | `update-supermarket-deals.yml` | Manual dispatch only | Same script as the merge job above. Collapsed into it so deals are computed *after* the history they depend on; kept for manual rebuilds |
@@ -278,7 +281,7 @@ feature/my-feature  →  dev  →  master
 
 See [CHANGELOG.md](./CHANGELOG.md) for full history.
 
-Latest: **[v1.8.0](https://github.com/Mylonas/deals-blog/releases/tag/v1.8.0)** — Cheapest Cars in Cyprus: every Bazaraki car listing, cheapest first, with make/year/fuel/gearbox/body/city/price/mileage filters. Trilingual, daily.
+Latest: **[v1.9.0](https://github.com/Mylonas/deals-blog/releases/tag/v1.9.0)** — data-integrity release: all-time lows no longer report €0.00 when the source drops a product, the Bazaraki cars scrape works again (curl instead of a stealth browser, now dispatch-only), and `FORCE=1` can re-pull a full price history to correct data the incremental cache would otherwise keep forever.
 
 Release procedure follows the project's [release guide](https://github.com/Mylonas/deals-blog/releases): semver tagging, CHANGELOG update, annotated git tag, structured release notes with rollback procedure.
 
