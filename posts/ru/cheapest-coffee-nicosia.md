@@ -10,7 +10,7 @@ pinned: true
 Мы отслеживаем цены на Фреддо Эспрессо в кафе по всему Кипру — Никосия, Лимасол, Ларнака, Пафос и район Айя-Напы — и показываем самые дешёвые места в каждом городе. Цены берутся из Wolt, Bolt Food и Foody — для каждого кафе показана самая дешёвая платформа — и обновляются каждые 2 дня.
 
 <!-- COFFEE_PRICES_START -->
-*Цены последний раз проверены: 9 авг. 2026 г., 08:09 (EET). Обновляется каждые 2 дня через Wolt, Bolt Food и Foody.*
+*Цены последний раз проверены: 9 авг. 2026 г., 09:35 (EET). Обновляется каждые 2 дня через Wolt, Bolt Food и Foody.*
 
 ## Фреддо Эспрессо — Самые дешёвые по городам
 
@@ -690,7 +690,7 @@ pinned: true
 
 ## Самые Популярные Напитки по Кафе (Никосия)
 
-*Популярные напитки — последнее обновление: 8 авг. 2026 г., 00:13.*
+*Популярные напитки — последнее обновление: 9 авг. 2026 г., 09:35.*
 
 ### Coffeeway
 
@@ -735,10 +735,10 @@ pinned: true
 | Напиток | Цена | Источник |
 |------|-------|--------|
 | Coffee Beans 1kg | €32.00 | Wolt |
-| Mikel Aldo Capsules 10pcs | €4.80 | Wolt |
-| Mikel Livia Capsules 10pcs | €4.80 | Wolt |
-| Mikel Capsules Decaf 10pcs | €4.90 | Wolt |
 | Water 0.50 l | €0.80 | Wolt |
+| Stela Beer | €3.50 | Wolt |
+| Corona Beer | €3.50 | Wolt |
+| Carlsberg Beer | €2.50 | Wolt |
 | Freddo Espresso Classic Regular | €2.90 | Wolt |
 
 ### Caffe Nero
@@ -769,7 +769,7 @@ pinned: true
 | Freddo Espresso | €2.95 | Wolt |
 | Freddo Cappuccino | €3.15 | Wolt |
 | Iced Latte | €3.35 | Wolt |
-| Iced Signature Latte | €3.35 | Wolt |
+| Iced Signature Latte | €3.60 | Wolt |
 | Iced Americano | €2.50 | Wolt |
 
 ### Costa Coffee
@@ -829,6 +829,16 @@ pinned: true
 |------|-------|--------|
 | Freddo Espresso | €2.30 | Wolt |
 
+### [Bakalicom](https://www.google.com/maps/search/Bakalicom%20Nicosia%20Cyprus)
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €2.30 | Wolt |
+| Freddo Cappuccino | €2.80 | Wolt |
+| Iced Latte | €2.80 | Wolt |
+| Iced Americano | €2.30 | Wolt |
+| Iced Dark Mocha | €2.80 | Wolt |
+
 ### Le Gout
 
 | Напиток | Цена | Источник |
@@ -863,11 +873,11 @@ pinned: true
 
 | Напиток | Цена | Источник |
 |------|-------|--------|
-| Freddo Espresso | €2.50 | Wolt |
-| Freddo On The Rocks | €2.50 | Wolt |
-| Iced Americano | €2.50 | Wolt |
-| Freddo Cappuccino | €3.00 | Wolt |
-| Freddo Cappuccino Flat White | €3.00 | Wolt |
+| Freddo Espresso | €2.70 | Wolt |
+| Freddo Cappuccino | €3.20 | Wolt |
+| Iced Americano | €2.70 | Wolt |
+| Iced Latte | €3.20 | Wolt |
+| Iced  Caramel Latte | €3.50 | Wolt |
 
 ### Bruno Coffee Stores
 

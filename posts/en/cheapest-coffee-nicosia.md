@@ -10,7 +10,7 @@ pinned: true
 We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Limassol, Larnaca, Paphos and the Ayia Napa area — and show the cheapest places in each city. Prices come from Wolt, Bolt Food and Foody listings — each café shows its cheapest platform — and are updated every 2 days.
 
 <!-- COFFEE_PRICES_START -->
-*Prices last checked: 9 Aug 2026, 08:09 (EET). Updated every 2 days via Wolt, Bolt Food and Foody.*
+*Prices last checked: 9 Aug 2026, 09:35 (EET). Updated every 2 days via Wolt, Bolt Food and Foody.*
 
 ## Freddo Espresso — Cheapest by City
 
@@ -690,7 +690,7 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 
 ## Most Popular Drinks by Café (Nicosia)
 
-*Top drinks last scraped: 8 Aug 2026, 00:13.*
+*Top drinks last scraped: 9 Aug 2026, 09:35.*
 
 ### Coffeeway
 
@@ -735,10 +735,10 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 | Drink | Price | Source |
 |------|-------|--------|
 | Coffee Beans 1kg | €32.00 | Wolt |
-| Mikel Aldo Capsules 10pcs | €4.80 | Wolt |
-| Mikel Livia Capsules 10pcs | €4.80 | Wolt |
-| Mikel Capsules Decaf 10pcs | €4.90 | Wolt |
 | Water 0.50 l | €0.80 | Wolt |
+| Stela Beer | €3.50 | Wolt |
+| Corona Beer | €3.50 | Wolt |
+| Carlsberg Beer | €2.50 | Wolt |
 | Freddo Espresso Classic Regular | €2.90 | Wolt |
 
 ### Caffe Nero
@@ -769,7 +769,7 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 | Freddo Espresso | €2.95 | Wolt |
 | Freddo Cappuccino | €3.15 | Wolt |
 | Iced Latte | €3.35 | Wolt |
-| Iced Signature Latte | €3.35 | Wolt |
+| Iced Signature Latte | €3.60 | Wolt |
 | Iced Americano | €2.50 | Wolt |
 
 ### Costa Coffee
@@ -829,6 +829,16 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 |------|-------|--------|
 | Freddo Espresso | €2.30 | Wolt |
 
+### [Bakalicom](https://www.google.com/maps/search/Bakalicom%20Nicosia%20Cyprus)
+
+| Drink | Price | Source |
+|------|-------|--------|
+| Freddo Espresso | €2.30 | Wolt |
+| Freddo Cappuccino | €2.80 | Wolt |
+| Iced Latte | €2.80 | Wolt |
+| Iced Americano | €2.30 | Wolt |
+| Iced Dark Mocha | €2.80 | Wolt |
+
 ### Le Gout
 
 | Drink | Price | Source |
@@ -863,11 +873,11 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 
 | Drink | Price | Source |
 |------|-------|--------|
-| Freddo Espresso | €2.50 | Wolt |
-| Freddo On The Rocks | €2.50 | Wolt |
-| Iced Americano | €2.50 | Wolt |
-| Freddo Cappuccino | €3.00 | Wolt |
-| Freddo Cappuccino Flat White | €3.00 | Wolt |
+| Freddo Espresso | €2.70 | Wolt |
+| Freddo Cappuccino | €3.20 | Wolt |
+| Iced Americano | €2.70 | Wolt |
+| Iced Latte | €3.20 | Wolt |
+| Iced  Caramel Latte | €3.50 | Wolt |
 
 ### Bruno Coffee Stores
 
