@@ -27,6 +27,13 @@ const SEEN_FILE = join(DATA_DIR, 'public-jobs-seen.json');
 const ADAPTERS = { psc: psc.scrape, wp: wp.scrape, site: site.scrape, browser: browser.scrape, exelsys: exelsys.scrape };
 const CONCURRENCY = 6;
 
+// A plain-fetch adapter can be turned away by anti-bot protection — a 403/401,
+// a 429, or a Cloudflare interstitial — while a real (stealth) browser is let
+// straight through. Detect that shape so a blocked source is retried through
+// Chromium instead of being dropped as if the employer had no vacancies.
+const BLOCKED_RE = /HTTP\s*(401|403|429)\b|forbidden|just a moment|attention required|checking your browser|cloudflare/i;
+const isBlocked = (err) => BLOCKED_RE.test(err?.message ?? '');
+
 // Municipality news feeds keep vacancy posts online for years. Without an
 // explicit deadline we treat anything older than this as long closed.
 const MAX_AGE_DAYS = 150;
@@ -114,27 +121,43 @@ async function runPool(items, worker) {
 
 async function scrapeSource(source) {
   const scrape = ADAPTERS[source.adapter];
-  if (!scrape) return { source, error: `unknown adapter "${source.adapter}"`, jobs: [] };
+  if (!scrape) return { source, error: `unknown adapter "${source.adapter}"`, jobs: [], via: source.adapter };
+
+  let raw;
+  let via = source.adapter;
   try {
-    // Locations are resolved here, where `source` is still in scope: the
-    // fallback pin is its district seat, and only sources.json knows that.
-    // Resolution reads the title and employer, so it has to run on the merged
-    // row rather than the raw scraped one.
-    const jobs = (await scrape(source)).map((job) => {
-      const row = {
-        id: jobId(source.id, job.url),
-        sourceId: source.id,
-        employer: source.name,
-        sector: source.sector,
-        district: source.district,
-        ...job,
-      };
-      return { ...row, ...resolveLocations(row, source) };
-    });
-    return { source, error: null, jobs };
+    raw = await scrape(source);
   } catch (err) {
-    return { source, error: err.message, jobs: [] };
+    // Blocked plain-fetch source: retry once through the browser adapter. Only
+    // if that ALSO fails do we record it as genuinely inaccessible (blocked:
+    // true), rather than silently excluding it.
+    if (source.adapter !== 'browser' && isBlocked(err)) {
+      try {
+        raw = await browser.scrape(source);
+        via = `${source.adapter}→browser`;
+      } catch (err2) {
+        return { source, error: `${err.message}; browser fallback: ${err2.message}`, jobs: [], via, blocked: true };
+      }
+    } else {
+      return { source, error: err.message, jobs: [], via };
+    }
   }
+
+  // Locations are resolved here, where `source` is still in scope: the fallback
+  // pin is its district seat, and only sources.json knows that. Resolution reads
+  // the title and employer, so it has to run on the merged row.
+  const jobs = raw.map((job) => {
+    const row = {
+      id: jobId(source.id, job.url),
+      sourceId: source.id,
+      employer: source.name,
+      sector: source.sector,
+      district: source.district,
+      ...job,
+    };
+    return { ...row, ...resolveLocations(row, source) };
+  });
+  return { source, error: null, jobs, via };
 }
 
 async function main() {
@@ -179,7 +202,16 @@ async function main() {
       {
         fetchedAt,
         count: jobs.length,
-        sources: results.map((r) => ({ id: r.source.id, name: r.source.name, count: kept.get(r.source.id) ?? 0, error: r.error })),
+        sources: results.map((r) => ({
+          id: r.source.id,
+          name: r.source.name,
+          count: kept.get(r.source.id) ?? 0,
+          error: r.error,
+          // Recorded so the coverage report can show which employers needed a
+          // browser to get in, and which are genuinely inaccessible.
+          ...(r.via && r.via !== r.source.adapter ? { via: r.via } : {}),
+          ...(r.blocked ? { blocked: true } : {}),
+        })),
         jobs,
       },
       null,
@@ -208,9 +240,14 @@ async function main() {
   } else {
     console.log('\nNothing new since the last run.');
   }
+  const recovered = results.filter((r) => !r.error && r.via && r.via !== r.source.adapter);
+  if (recovered.length > 0) {
+    console.log(`\n${recovered.length} source(s) recovered via browser fallback:`);
+    for (const r of recovered) console.log(`  ↻ ${r.source.name} (${r.via})`);
+  }
   if (failures.length > 0) {
     console.log(`\n${failures.length} source(s) failed:`);
-    for (const f of failures) console.log(`  ✗ ${f.source.name}: ${f.error}`);
+    for (const f of failures) console.log(`  ${f.blocked ? '⛔' : '✗'} ${f.source.name}: ${f.error}`);
   }
 }
 
