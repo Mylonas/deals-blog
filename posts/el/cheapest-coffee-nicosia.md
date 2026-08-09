@@ -1,7 +1,7 @@
 ---
 title: "Φθηνότερο Freddo Espresso στην Κύπρο — Ζωντανές Τιμές"
 date: "2026-06-28"
-updated: "2026-08-07"
+updated: "2026-08-09"
 category: "Φαγητό & Ποτό"
 summary: "Τιμές Freddo Espresso σε Λευκωσία, Λεμεσό, Λάρνακα, Πάφο και Αγία Νάπα — οι φθηνότερες καφετέριες σε κάθε πόλη, ενημέρωση κάθε 2 ημέρες μέσω Wolt, Bolt Food και Foody."
 pinned: true
@@ -10,7 +10,7 @@ pinned: true
 Παρακολουθούμε τις τιμές Freddo Espresso σε καφετέριες σε όλη την Κύπρο — Λευκωσία, Λεμεσό, Λάρνακα, Πάφο και την περιοχή Αγίας Νάπας — και δείχνουμε τα φθηνότερα μέρη σε κάθε πόλη. Οι τιμές προέρχονται από Wolt, Bolt Food και Foody — για κάθε καφετέρια εμφανίζεται η φθηνότερη πλατφόρμα — και ενημερώνονται κάθε 2 ημέρες.
 
 <!-- COFFEE_PRICES_START -->
-*Τελευταία ενημέρωση: 7 Αυγ 2026, 11:18 μ.μ. (ΕΕΤ). Ενημέρωση κάθε 2 ημέρες μέσω Wolt, Bolt Food και Foody.*
+*Τελευταία ενημέρωση: 9 Αυγ 2026, 07:38 μ.μ. (ΕΕΤ). Ενημέρωση κάθε 2 ημέρες μέσω Wolt, Bolt Food και Foody.*
 
 ## Freddo Espresso — Φθηνότερα ανά Πόλη
 
@@ -690,7 +690,7 @@ pinned: true
 
 ## Πιο Δημοφιλή Ποτά ανά Καφετέρια (Λευκωσία)
 
-*Δημοφιλή ποτά — τελευταία συλλογή: 5 Αυγ 2026, 11:28 π.μ..*
+*Δημοφιλή ποτά — τελευταία συλλογή: 9 Αυγ 2026, 09:35 π.μ..*
 
 ### Coffeeway
 
@@ -766,7 +766,11 @@ pinned: true
 
 | Ποτό | Τιμή | Πηγή |
 |------|-------|--------|
-| Freddo Espresso 14oz | €3.00 | Wolt |
+| Freddo Espresso | €2.95 | Wolt |
+| Freddo Cappuccino | €3.15 | Wolt |
+| Iced Latte | €3.35 | Wolt |
+| Iced Signature Latte | €3.60 | Wolt |
+| Iced Americano | €2.50 | Wolt |
 
 ### Costa Coffee
 
@@ -869,11 +873,11 @@ pinned: true
 
 | Ποτό | Τιμή | Πηγή |
 |------|-------|--------|
-| Freddo Espresso | €2.50 | Wolt |
-| Freddo On The Rocks | €2.50 | Wolt |
-| Iced Americano | €2.50 | Wolt |
-| Freddo Cappuccino | €3.00 | Wolt |
-| Freddo Cappuccino Flat White | €3.00 | Wolt |
+| Freddo Espresso | €2.70 | Wolt |
+| Freddo Cappuccino | €3.20 | Wolt |
+| Iced Americano | €2.70 | Wolt |
+| Iced Latte | €3.20 | Wolt |
+| Iced  Caramel Latte | €3.50 | Wolt |
 
 ### Bruno Coffee Stores
 

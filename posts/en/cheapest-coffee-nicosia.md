@@ -1,7 +1,7 @@
 ---
 title: "Cheapest Freddo Espresso in Cyprus — Live Prices"
 date: "2026-06-28"
-updated: "2026-08-07"
+updated: "2026-08-09"
 category: "Food & Drink"
 summary: "Freddo Espresso prices in Nicosia, Limassol, Larnaca, Paphos and Ayia Napa — the cheapest cafés in each city, updated every 2 days from Wolt, Bolt Food and Foody."
 pinned: true
@@ -10,7 +10,7 @@ pinned: true
 We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Limassol, Larnaca, Paphos and the Ayia Napa area — and show the cheapest places in each city. Prices come from Wolt, Bolt Food and Foody listings — each café shows its cheapest platform — and are updated every 2 days.
 
 <!-- COFFEE_PRICES_START -->
-*Prices last checked: 7 Aug 2026, 23:18 (EET). Updated every 2 days via Wolt, Bolt Food and Foody.*
+*Prices last checked: 9 Aug 2026, 19:38 (EET). Updated every 2 days via Wolt, Bolt Food and Foody.*
 
 ## Freddo Espresso — Cheapest by City
 
@@ -690,7 +690,7 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 
 ## Most Popular Drinks by Café (Nicosia)
 
-*Top drinks last scraped: 5 Aug 2026, 11:28.*
+*Top drinks last scraped: 9 Aug 2026, 09:35.*
 
 ### Coffeeway
 
@@ -766,7 +766,11 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 
 | Drink | Price | Source |
 |------|-------|--------|
-| Freddo Espresso 14oz | €3.00 | Wolt |
+| Freddo Espresso | €2.95 | Wolt |
+| Freddo Cappuccino | €3.15 | Wolt |
+| Iced Latte | €3.35 | Wolt |
+| Iced Signature Latte | €3.60 | Wolt |
+| Iced Americano | €2.50 | Wolt |
 
 ### Costa Coffee
 
@@ -869,11 +873,11 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 
 | Drink | Price | Source |
 |------|-------|--------|
-| Freddo Espresso | €2.50 | Wolt |
-| Freddo On The Rocks | €2.50 | Wolt |
-| Iced Americano | €2.50 | Wolt |
-| Freddo Cappuccino | €3.00 | Wolt |
-| Freddo Cappuccino Flat White | €3.00 | Wolt |
+| Freddo Espresso | €2.70 | Wolt |
+| Freddo Cappuccino | €3.20 | Wolt |
+| Iced Americano | €2.70 | Wolt |
+| Iced Latte | €3.20 | Wolt |
+| Iced  Caramel Latte | €3.50 | Wolt |
 
 ### Bruno Coffee Stores
 
