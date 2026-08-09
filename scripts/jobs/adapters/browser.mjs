@@ -47,7 +47,20 @@ export async function render(url, timeout = 45000) {
   });
   const page = await context.newPage();
   try {
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout });
+    try {
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout });
+    } catch (err) {
+      // A slow ASPX/portal page (ΑΗΚ) can miss domcontentloaded inside the
+      // budget even though the HTML is already on the way. Retry waiting only
+      // for the navigation to commit — the response has started — then give the
+      // DOM a moment to fill in. Better a late page than a dropped employer.
+      if (/timeout/i.test(err.message)) {
+        await page.goto(url, { waitUntil: 'commit', timeout });
+        await page.waitForTimeout(5000);
+      } else {
+        throw err;
+      }
+    }
     // Cloudflare serves a challenge first and swaps in the real page a moment
     // later; a settled network is the cheapest signal that it is done.
     await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
