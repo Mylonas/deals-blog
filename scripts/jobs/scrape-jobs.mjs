@@ -27,12 +27,19 @@ const SEEN_FILE = join(DATA_DIR, 'public-jobs-seen.json');
 const ADAPTERS = { psc: psc.scrape, wp: wp.scrape, site: site.scrape, browser: browser.scrape, exelsys: exelsys.scrape };
 const CONCURRENCY = 6;
 
-// A plain-fetch adapter can be turned away by anti-bot protection — a 403/401,
-// a 429, or a Cloudflare interstitial — while a real (stealth) browser is let
-// straight through. Detect that shape so a blocked source is retried through
-// Chromium instead of being dropped as if the employer had no vacancies.
+// A plain-fetch adapter can be turned away two ways from a datacenter IP:
+//  - anti-bot protection — a 403/401, a 429, or a Cloudflare interstitial;
+//  - a network-layer refusal — the connection reset / DNS / TLS drop that
+//    `fetch` surfaces as the opaque "fetch failed".
+// In both cases a real (stealth) browser with a genuine fingerprint is often
+// let straight through, so both are worth a browser retry rather than dropping
+// the employer as if it had no vacancies.
 const BLOCKED_RE = /HTTP\s*(401|403|429)\b|forbidden|just a moment|attention required|checking your browser|cloudflare/i;
-const isBlocked = (err) => BLOCKED_RE.test(err?.message ?? '');
+const NETWORK_RE = /fetch failed|ECONNRESET|ECONNREFUSED|ETIMEDOUT|ENOTFOUND|EAI_AGAIN|socket|terminated|network|UND_ERR|and_err/i;
+const shouldBrowserRetry = (err) => {
+  const m = err?.message ?? '';
+  return BLOCKED_RE.test(m) || NETWORK_RE.test(m);
+};
 
 // Municipality news feeds keep vacancy posts online for years. Without an
 // explicit deadline we treat anything older than this as long closed.
@@ -131,7 +138,7 @@ async function scrapeSource(source) {
     // Blocked plain-fetch source: retry once through the browser adapter. Only
     // if that ALSO fails do we record it as genuinely inaccessible (blocked:
     // true), rather than silently excluding it.
-    if (source.adapter !== 'browser' && isBlocked(err)) {
+    if (source.adapter !== 'browser' && shouldBrowserRetry(err)) {
       try {
         raw = await browser.scrape(source);
         via = `${source.adapter}→browser`;
