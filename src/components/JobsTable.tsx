@@ -38,6 +38,37 @@ export type Job = {
 
 export type JobsData = { fetchedAt: string; count: number; jobs: Job[] };
 
+/**
+ * Whether a post goes through the ΕΔΥ general written examination before the
+ * application, inferred from the title — the source notices carry no explicit
+ * flag. It is a Public Service mechanism, so it is only meaningful for the
+ * civil-service sector; semi-government bodies, municipalities, universities and
+ * research centres run their own procedures.
+ *
+ *   "required" — a general entry grade whose entry scale does not exceed A8.
+ *   "none"     — a senior/promotion post (filled by interview), or a body that
+ *                does not use the general exam at all.
+ *   "unknown"  — a civil-service post whose title does not reveal the scale;
+ *                the applicant must read the notice. Deliberately not guessed.
+ */
+export type ExamStatus = "required" | "none" | "unknown";
+
+// Promotion and senior first-entry scales are filled through interview, not the
+// general written examination — these are the words the notices use for them.
+const SENIOR_RE = /ΑΝΩΤΕΡ|ΠΡΩΤΟΣ|ΠΡΩΤΗ|ΔΙΕΥΘΥΝΤ|ΕΦΟΡΟΣ|ΠΡΟΪΣΤΑΜΕΝ/;
+// Salary-scale tokens as the notices write them: "Α8", "Κλίμακα Α2-Α5-Α7".
+// Greek Alpha or Latin A; we take the lowest number as the entry scale.
+const SCALE_RE = /[ΑA]\s?(\d{1,2})/g;
+
+export function classifyExam(job: Pick<Job, "sector" | "title">): ExamStatus {
+  if (job.sector !== "civil-service") return "none";
+  const title = job.title.toUpperCase();
+  if (SENIOR_RE.test(title)) return "none";
+  const scales = [...title.matchAll(SCALE_RE)].map((m) => Number(m[1])).filter((n) => n >= 1 && n <= 16);
+  if (scales.length === 0) return "unknown";
+  return Math.min(...scales) <= 8 ? "required" : "unknown";
+}
+
 const T: Record<Lang, Record<string, string>> = {
   en: {
     total: "open positions", search: "Search position or employer…", any: "All",
@@ -49,6 +80,9 @@ const T: Record<Lang, Record<string, string>> = {
     closingSoon: "closes in", days: "days", today: "closes today",
     withDeadline: "With a stated deadline only",
     note: "Positions are listed in Greek, as published by each employer.",
+    exam: "Written exam", examRequired: "Exam required first", examNone: "No general exam",
+    examUnknown: "Check the notice", examTag: "Exam", checkTag: "Check notice",
+    examNote: "“Written exam” is inferred from the title: the Public Service (ΕΔΥ) general written examination applies to general entry grades (entry scale up to A8) and is sat before applying. Senior, promotion and specialised posts are filled by interview. Always confirm in the official notice.",
   },
   el: {
     total: "κενές θέσεις", search: "Αναζήτηση θέσης ή εργοδότη…", any: "Όλα",
@@ -60,6 +94,9 @@ const T: Record<Lang, Record<string, string>> = {
     closingSoon: "λήγει σε", days: "μέρες", today: "λήγει σήμερα",
     withDeadline: "Μόνο με δηλωμένη προθεσμία",
     note: "Οι θέσεις παρατίθενται όπως δημοσιεύονται από κάθε εργοδότη.",
+    exam: "Γραπτή εξέταση", examRequired: "Απαιτείται εξέταση πρώτα", examNone: "Χωρίς γενική εξέταση",
+    examUnknown: "Βλ. προκήρυξη", examTag: "Εξέταση", checkTag: "Βλ. προκήρυξη",
+    examNote: "Η ένδειξη «Γραπτή εξέταση» προκύπτει από τον τίτλο: η γενική γραπτή εξέταση της Επιτροπής Δημόσιας Υπηρεσίας (ΕΔΥ) αφορά γενικές θέσεις εισδοχής (αρχική κλίμακα έως Α8) και προηγείται της αίτησης. Θέσεις ευθύνης, προαγωγής και εξειδικευμένες πληρώνονται με συνέντευξη. Επιβεβαιώνετε πάντα στην επίσημη προκήρυξη.",
   },
   ru: {
     total: "вакансий", search: "Поиск должности или работодателя…", any: "Все",
@@ -71,6 +108,9 @@ const T: Record<Lang, Record<string, string>> = {
     closingSoon: "до закрытия", days: "дн.", today: "закрывается сегодня",
     withDeadline: "Только с указанным сроком",
     note: "Вакансии приводятся на греческом языке, как их публикует работодатель.",
+    exam: "Письменный экзамен", examRequired: "Сначала нужен экзамен", examNone: "Без общего экзамена",
+    examUnknown: "См. объявление", examTag: "Экзамен", checkTag: "См. объявление",
+    examNote: "Отметка «Письменный экзамен» выводится из названия: общий письменный экзамен Комиссии по госслужбе (ЕДY) касается общих должностей начального уровня (начальная шкала до A8) и сдаётся до подачи заявления. Руководящие, продвиженческие и узкоспециальные должности замещаются по собеседованию. Всегда сверяйтесь с официальным объявлением.",
   },
 };
 
@@ -106,6 +146,7 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
   const [sector, setSector] = useState("");
   const [district, setDistrict] = useState("");
   const [employer, setEmployer] = useState("");
+  const [exam, setExam] = useState<"" | ExamStatus>("");
   const [datedOnly, setDatedOnly] = useState(false);
   const [sort, setSort] = useState<"deadline" | "employer" | "newest">("deadline");
   const [page, setPage] = useState(1);
@@ -142,6 +183,7 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
       // competition is open to Larnaca whatever the Commission's own address is.
       if (district && job.district !== district && job.district !== "pancyprus") return false;
       if (employer && job.employer !== employer) return false;
+      if (exam && classifyExam(job) !== exam) return false;
       if (datedOnly && !job.deadline) return false;
       // The island-wide chip is the complement of the pins: a post with no town
       // is not shown anywhere on the map, so this is the only way to reach it.
@@ -160,11 +202,11 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
       if (b.deadline) return 1;
       return a.employer.localeCompare(b.employer, "el");
     });
-  }, [data.jobs, q, sector, district, employer, datedOnly, place, sort]);
+  }, [data.jobs, q, sector, district, employer, exam, datedOnly, place, sort]);
 
   const visible = filtered.slice(0, page * PAGE_SIZE);
   const reset = () => {
-    setQ(""); setSector(""); setDistrict(""); setEmployer(""); setDatedOnly(false); setPlace(null); setPage(1);
+    setQ(""); setSector(""); setDistrict(""); setEmployer(""); setExam(""); setDatedOnly(false); setPlace(null); setPage(1);
   };
 
   return (
@@ -200,6 +242,16 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
         >
           <option value="">{t.sector}: {t.any}</option>
           {sectors.map((s) => <option key={s} value={s}>{SECTORS[s]?.[lang] ?? s}</option>)}
+        </select>
+        <select
+          value={exam}
+          onChange={(e) => { setExam(e.target.value as "" | ExamStatus); setPage(1); }}
+          className="border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700"
+        >
+          <option value="">{t.exam}: {t.any}</option>
+          <option value="required">{t.examRequired}</option>
+          <option value="none">{t.examNone}</option>
+          <option value="unknown">{t.examUnknown}</option>
         </select>
         <select
           value={employer}
@@ -244,6 +296,7 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
               {visible.map((job) => {
                 const left = job.deadline ? daysUntil(job.deadline) : null;
                 const urgent = left !== null && left <= 7;
+                const ex = classifyExam(job);
                 return (
                   <tr key={job.id} className="border-t border-gray-200 dark:border-gray-800 align-top">
                     <td className="py-2.5 pr-3 text-gray-500 dark:text-gray-400 whitespace-nowrap">
@@ -263,6 +316,16 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
                       </a>
                       {job.reference && (
                         <span className="block text-xs text-gray-400">{job.reference}</span>
+                      )}
+                      {ex === "required" && (
+                        <span className="inline-block mt-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                          {t.examTag}
+                        </span>
+                      )}
+                      {ex === "unknown" && (
+                        <span className="inline-block mt-1 text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400">
+                          {t.checkTag}
+                        </span>
                       )}
                     </td>
                     <td className={`py-2.5 whitespace-nowrap tabular-nums ${urgent ? "text-red-600 dark:text-red-400 font-semibold" : ""}`}>
@@ -293,6 +356,7 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
       )}
 
       <p className="text-xs text-gray-400 mt-6">{t.note}</p>
+      <p className="text-xs text-gray-400 mt-2">{t.examNote}</p>
     </div>
   );
 }
