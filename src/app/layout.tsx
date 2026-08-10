@@ -42,6 +42,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </header>
         <main className="max-w-4xl mx-auto px-4 py-10">{children}</main>
         <footer className="border-t border-gray-200 dark:border-gray-800 mt-16 py-8 text-center text-sm text-gray-400 dark:text-gray-500">
+          <nav className="mb-2 flex justify-center gap-4">
+            <a href="/" className="hover:underline">Home</a>
+            <a href="/jobs/" className="hover:underline">Jobs</a>
+            <a href="/privacy/" className="hover:underline">Privacy Policy</a>
+          </nav>
           © {new Date().getFullYear()} DealsHub
         </footer>
       </body>
