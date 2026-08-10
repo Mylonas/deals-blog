@@ -176,7 +176,10 @@ async function main() {
   const config = JSON.parse(await readFile(join(ROOT, 'scripts', 'jobs', 'sources.json'), 'utf8'));
   const sources = config.sources.filter((s) => !only || only.includes(s.id));
 
-  const results = await runPool(sources, scrapeSource).finally(() => browser.close());
+  // A failed browser launch must not reject here — that would abort the whole
+  // run before it writes, dropping every plain-fetch source too. Swallow it; the
+  // browser sources already recorded their own errors.
+  const results = await runPool(sources, scrapeSource).finally(() => browser.close().catch(() => {}));
   const merged = dedupe(results.flatMap((r) => r.jobs));
   const pdfStats = await addPdfDeadlines(merged, { skip: process.argv.includes('--no-pdf') });
 

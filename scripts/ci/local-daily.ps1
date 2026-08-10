@@ -25,6 +25,20 @@ function Log($m) { "$(Get-Date -Format o)  $m" | Tee-Object -FilePath $log -Appe
 
 $changed = $false
 
+# Run a scrape and FAIL LOUDLY if it errors. npm/node is a native command, so a
+# non-zero exit does not throw in PowerShell — we must check $LASTEXITCODE, or a
+# crashed scrape silently looks like "nothing changed" (which is exactly how a
+# failed jobs run once masked itself). Output is teed into the log for diagnosis.
+function Scrape($label, $npmScript) {
+  Log "Scraping $label"
+  npm run $npmScript 2>&1 | Tee-Object -FilePath $log -Append | Out-Null
+  if ($LASTEXITCODE -ne 0) {
+    Log "ERROR: '$label' scrape exited $LASTEXITCODE — leaving its data untouched"
+    return $false
+  }
+  return $true
+}
+
 function CommitIf($paths, $message) {
   git add $paths
   git diff --cached --quiet
@@ -39,27 +53,43 @@ function CommitIf($paths, $message) {
 
 try {
   Log 'Pulling latest master'
-  git pull --ff-only origin master
+  git pull --rebase --autostash origin master
 
   # Full public-sector jobs scrape from a residential IP: gets ΑΗΚ and any other
-  # source the runner IPs are blocked from.
-  Log 'Scraping public-sector jobs (full)'
-  npm run jobs
-  CommitIf @(
-    'src/data/public-jobs.json',
-    'src/data/public-jobs-seen.json',
-    'src/data/public-jobs-pdf-cache.json'
-  ) "chore: local jobs refresh (incl. ΑΗΚ) $(Get-Date -Format 'yyyy-MM-dd')"
+  # source the runner IPs are blocked from. Only commit if the scrape succeeded.
+  if (Scrape 'public-sector jobs (full)' 'jobs') {
+    CommitIf @(
+      'src/data/public-jobs.json',
+      'src/data/public-jobs-seen.json',
+      'src/data/public-jobs-pdf-cache.json'
+    ) "chore: local jobs refresh (incl. ΑΗΚ) $(Get-Date -Format 'yyyy-MM-dd')"
+  }
 
   # Bazaraki cars — Cloudflare blocks CI, so this is the only path that works.
-  Log 'Scraping Bazaraki cars'
-  npm run cars:local
-  CommitIf @('src/data/bazaraki-cars.json') "chore: update bazaraki cars $(Get-Date -Format 'yyyy-MM-dd')"
+  if (Scrape 'Bazaraki cars' 'cars:local') {
+    CommitIf @('src/data/bazaraki-cars.json') "chore: update bazaraki cars $(Get-Date -Format 'yyyy-MM-dd')"
+  }
 
   if ($changed) {
-    Log 'Pushing and triggering redeploy'
-    git push origin master
-    gh workflow run deploy.yml --ref master
+    # Automated data commits land on master constantly, so by push time origin
+    # has usually moved on. Rebase onto it and retry rather than logging "Done"
+    # over a rejected push (which once stranded a commit locally for a day).
+    Log 'Pushing (rebase-on-reject, up to 3 tries)'
+    $pushed = $false
+    for ($i = 1; $i -le 3 -and -not $pushed; $i++) {
+      git push origin master
+      if ($LASTEXITCODE -eq 0) { $pushed = $true; break }
+      Log "Push rejected (attempt $i); rebasing on origin/master"
+      git fetch origin master
+      git rebase origin/master
+    }
+    if ($pushed) {
+      gh workflow run deploy.yml --ref master
+      Log 'Pushed and triggered redeploy.'
+    } else {
+      Log 'ERROR: push still failing after 3 attempts — commit is local only.'
+      exit 1
+    }
   } else {
     Log 'Nothing changed; no push.'
   }
