@@ -1,7 +1,7 @@
 ---
 title: "Cheapest Petrol Stations in Cyprus — Live Tracker"
 date: "2026-06-28"
-updated: "2026-08-09"
+updated: "2026-08-10"
 category: "Fuel"
 summary: "Live prices for Unleaded 95, Unleaded 98, and Diesel across petrol stations in Cyprus. Updated hourly from the official Cyprus government fuel observatory."
 pinned: true
@@ -28,12 +28,12 @@ pinned: true
 | Brand | Address | Area | Price |
 |-------|---------|------|-------|
 | PETROLINA | [Λεωφ. Τσερίου 145, Στρόβολος Τ.Κ 2045](https://www.google.com/maps?q=35.1267,33.3377) | Στρόβολος | €1.554 |
-| EKO | [Λεωφ. Σαριγιάννη Τ.Κ 2831](https://www.google.com/maps?q=35.070157,32.930054) | Ευρύχου | €1.583 |
-| STAROIL | [Λεώφ. Μητροπολίτη Χρύσανθου Σαριγιάννη 110 Τ.Κ 2831](https://www.google.com/maps?q=35.05938888888888,32.91291666666667) | Ευρύχου | €1.583 |
+| SHELL | [Λεωφ. Αμμοχώστου 57 Τ.Κ 1016](https://www.google.com/maps?q=35.170154,33.397329) | Παλλουριώτισσα | €1.579 |
+| EKO | [Λεωφ. Σαριγιάννη Τ.Κ 2831](https://www.google.com/maps?q=35.070157,32.930054) | Ευρύχου | €1.585 |
 | PETROLINA | [Αρχ. Μακαρίου Γ΄ 17 Τ.Κ 2800](https://www.google.com/maps?q=34.991233,32.902827) | Κακοπετριά | €1.585 |
+| STAROIL | [Λεώφ. Μητροπολίτη Χρύσανθου Σαριγιάννη 110 Τ.Κ 2831](https://www.google.com/maps?q=35.05938888888888,32.91291666666667) | Ευρύχου | €1.585 |
+| SHELL | [Tσερίου 36 Νήσου (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.059124999999995,33.36853611111111) | Πέρα Χωριό Νήσου | €1.589 |
 | PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.599 |
-| EKO | [Λεωφ. Αρχ. Μακαρίου Γ' 204 Τ.Κ 3030](https://www.google.com/maps?q=34.68753,33.045896) | Λεμεσός | €1.599 |
-| STAROIL | [Δημοκρατίας 40 Τ.Κ 3012](https://www.google.com/maps?q=34.66911111111111,33.02386111111111) | Λεμεσός | €1.604 |
 
 ## 7 Cheapest Stations Right Now — Diesel
 
@@ -59,6 +59,6 @@ pinned: true
 | EKO | [Λεωφ. Σαριγιάννη Τ.Κ 2831](https://www.google.com/maps?q=35.070157,32.930054) | Ευρύχου | €1.357 |
 | STAROIL | [Λεώφ. Μητροπολίτη Χρύσανθου Σαριγιάννη 110 Τ.Κ 2831](https://www.google.com/maps?q=35.05938888888888,32.91291666666667) | Ευρύχου | €1.357 |
 
-> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 9 August 2026
+> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 10 August 2026
 
 <!-- FUEL_PRICES_END -->
