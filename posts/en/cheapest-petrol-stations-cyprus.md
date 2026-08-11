@@ -32,8 +32,8 @@ pinned: true
 | EKO | [Λεωφ. Αρχ. Μακαρίου Γ' 204 Τ.Κ 3030](https://www.google.com/maps?q=34.68753,33.045896) | Λεμεσός | €1.599 |
 | ESSO | [Λεωφ. Νίκης 37 Τ.Κ 1087](https://www.google.com/maps?q=35.1565679511699,33.3580602362457) | Ακρόπολη | €1.606 |
 | PETROLINA | [Λεωφ. Κυριάκου Μάτση 28, Αγ.Ομολογητές Τ.Κ 1082](https://www.google.com/maps?q=35.1591,33.35478333) | Λευκωσία | €1.606 |
-| EKO | [Θεοκρίτου 57 Τ.Κ 7600](https://www.google.com/maps?q=35.058083,33.535842) | Αθιένου | €1.606 |
 | JACKOSON | [Δρόμος Παλαιχωρίου - Αγρού Τ.Κ 4860](https://www.google.com/maps/search/%CE%94%CF%81%CF%8C%CE%BC%CE%BF%CF%82%20%CE%A0%CE%B1%CE%BB%CE%B1%CE%B9%CF%87%CF%89%CF%81%CE%AF%CE%BF%CF%85%20-%20%CE%91%CE%B3%CF%81%CE%BF%CF%8D%20%CE%A4.%CE%9A%204860) | Αγρός | €1.607 |
+| EKO | [Λεωφ. Σαριγιάννη Τ.Κ 2831](https://www.google.com/maps?q=35.070157,32.930054) | Ευρύχου | €1.614 |
 
 ## 7 Cheapest Stations Right Now — Diesel
 
