@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-13T06:18:46.320Z",
-  "scrapedAt": "2026-08-11T06:44:02.501Z",
+  "updatedAt": "2026-08-13T07:08:13.467Z",
+  "scrapedAt": "2026-08-13T07:08:13.314Z",
   "note": "Top drinks and Freddo prices scraped monthly via Playwright from Wolt/Foody/Bolt Food Cyprus. topDrinks is empty until the first monthly run.",
   "items": [
     {
@@ -337,20 +337,44 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/second-cup-recanto-cafe",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/second-cup-engomi",
         "foody": null,
         "bolt": null
       },
       "topDrinks": [
         {
-          "name": "Freddo Espresso 14oz",
-          "price": 3,
+          "name": "Freddo Espresso",
+          "price": 2.95,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 3.15,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 3.35,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Signature Latte",
+          "price": 3.6,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 2.5,
           "platform": "wolt",
           "popular": false
         }
       ],
-      "freddo": 3,
-      "delivery": 3,
+      "freddo": 2.95,
+      "delivery": 2.95,
       "notes": "Canadian chain."
     },
     {
@@ -424,38 +448,38 @@
       },
       "topDrinks": [
         {
+          "name": "Freddo Espresso",
+          "price": 3.95,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 4.25,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 3.85,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 4.3,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
           "name": "Iced Caramel Macchiato",
           "price": 5.95,
           "platform": "wolt",
           "popular": false
-        },
-        {
-          "name": "Iced Mocha",
-          "price": 4.95,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Iced White Mocha",
-          "price": 5.1,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Starbucks Doubleshot™ Iced Coffee",
-          "price": 4.5,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Iced Brown Sugar Oat Shaken Espresso",
-          "price": 6.1,
-          "platform": "wolt",
-          "popular": false
         }
       ],
-      "freddo": null,
-      "delivery": null,
+      "freddo": 3.95,
+      "delivery": 3.95,
       "notes": "Also on Wolt & Bolt Food. Premium pricing."
     },
     {
@@ -563,43 +587,43 @@
       "topDrinks": [
         {
           "name": "Just Coffee Nut",
-          "price": 3.8,
+          "price": 4.1,
           "platform": "wolt",
           "popular": false
         },
         {
           "name": "Toffee Coffee",
-          "price": 3.8,
+          "price": 4.1,
           "platform": "wolt",
           "popular": false
         },
         {
           "name": "Cinnamon Spin'o",
-          "price": 3.8,
-          "platform": "wolt",
-          "popular": false
-        },
-        {
-          "name": "Espresso",
-          "price": 1.6,
+          "price": 4.1,
           "platform": "wolt",
           "popular": false
         },
         {
           "name": "Americano",
-          "price": 2.3,
+          "price": 2.8,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Cappuccino",
+          "price": 2.5,
           "platform": "wolt",
           "popular": false
         },
         {
           "name": "Freddo Espresso",
-          "price": 2.3,
+          "price": 2.8,
           "platform": "wolt",
           "popular": false
         }
       ],
-      "freddo": 2.3,
-      "delivery": 2.3,
+      "freddo": 2.8,
+      "delivery": 2.8,
       "notes": "Bubble tea shop on Ledras that also does freddo."
     },
     {
@@ -1080,6 +1104,21 @@
           ]
         },
         {
+          "cafe": "Between the Bread Cafe",
+          "freddo": 1.8,
+          "slug": "119786-between-the-bread-cafe",
+          "provider_id": 119786,
+          "address": "Leoforos Strovolou 100, Demarchio Strovolou\r\n\r\n2042 Nicosia",
+          "lat": 35.144141,
+          "lng": 33.343617,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/119786-between-the-bread-cafe",
+          "source": "bolt",
+          "freddoSource": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
           "cafe": "Mini Cafe Mini Donuts",
           "freddo": 1.8,
           "slug": "mini-cafe-mini-donuts",
@@ -1128,6 +1167,23 @@
           "platforms": [
             "wolt"
           ]
+        },
+        {
+          "cafe": "Presse Cafe",
+          "freddo": 2,
+          "slug": "13284-presse-cafe",
+          "provider_id": 13284,
+          "address": "STAVROU 96A, STROVOLOS",
+          "lat": 35.13477,
+          "lng": 33.35894,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/13284-presse-cafe",
+          "source": "bolt",
+          "freddoSource": "bolt",
+          "platforms": [
+            "bolt",
+            "foody"
+          ],
+          "foodyUrl": "https://www.foody.com.cy/delivery/menu/presse-cafe"
         },
         {
           "cafe": "Qawa espresso bar by Kawa coffee",
@@ -1193,20 +1249,6 @@
           "address": null,
           "lat": 35.167817,
           "lng": 33.373017,
-          "source": "foody",
-          "freddoSource": "foody",
-          "platforms": [
-            "foody"
-          ]
-        },
-        {
-          "cafe": "PRESSE CAFE",
-          "freddo": 2,
-          "slug": "presse-cafe",
-          "url": "https://www.foody.com.cy/delivery/menu/presse-cafe",
-          "address": null,
-          "lat": 35.134693,
-          "lng": 33.358906,
           "source": "foody",
           "freddoSource": "foody",
           "platforms": [
@@ -1469,10 +1511,8 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/bubble-tale-ledras",
           "freddoSource": "wolt",
           "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/103618-bubble-tale-nicosia"
+            "wolt"
+          ]
         },
         {
           "cafe": "Vienna Bakeries Latsia",
@@ -1501,12 +1541,12 @@
         {
           "cafe": "Gusto Cafe",
           "freddo": 2.3,
-          "slug": "143523-gusto-cafe",
-          "provider_id": 143523,
-          "address": "Nicosia, B18 2, Agios Dometios",
-          "lat": 35.171307,
-          "lng": 33.340722,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/143523-gusto-cafe",
+          "slug": "532589-gusto-cafe",
+          "provider_id": 532589,
+          "address": "B18 2 2360 Nicosia Cyprus",
+          "lat": 35.17134,
+          "lng": 33.340724,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/532589-gusto-cafe",
           "source": "bolt",
           "freddoSource": "bolt",
           "platforms": [
@@ -1516,16 +1556,19 @@
         {
           "cafe": "Caffe Milano Agios Dometios",
           "freddo": 2.3,
-          "slug": "round-n-about-coffee-shop",
-          "url": "https://www.foody.com.cy/delivery/leykosia/round-n-about-coffee-shop",
-          "address": null,
-          "lat": 35.177674,
-          "lng": 33.334274,
-          "source": "foody",
-          "freddoSource": "foody",
+          "slug": "85447-caffe-milano-agios-dometios",
+          "provider_id": 85447,
+          "address": "Ayiou Pavlou 116Β, Agios Dometios 2363",
+          "lat": 35.17761,
+          "lng": 33.33416,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/85447-caffe-milano-agios-dometios",
+          "source": "bolt",
+          "freddoSource": "bolt",
           "platforms": [
+            "bolt",
             "foody"
-          ]
+          ],
+          "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/round-n-about-coffee-shop"
         },
         {
           "cafe": "1957 Sports Bar & Café",
@@ -1935,23 +1978,6 @@
           ]
         },
         {
-          "cafe": "Coffeeway",
-          "freddo": 2.5,
-          "slug": "105215-coffeeway",
-          "provider_id": 105215,
-          "address": "Stavrou 74\r\n\r\n2035 Nicosia",
-          "lat": 35.134543,
-          "lng": 33.356288,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/105215-coffeeway",
-          "source": "bolt",
-          "freddoSource": "bolt",
-          "platforms": [
-            "bolt",
-            "foody"
-          ],
-          "foodyUrl": "https://www.foody.com.cy/delivery/menu/coffeeway"
-        },
-        {
           "cafe": "Two Chimp Coffee & Cake",
           "freddo": 2.5,
           "slug": "45411-two-chimp-coffee-cake",
@@ -1960,21 +1986,6 @@
           "lat": 35.167353,
           "lng": 33.367637,
           "url": "https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake",
-          "source": "bolt",
-          "freddoSource": "bolt",
-          "platforms": [
-            "bolt"
-          ]
-        },
-        {
-          "cafe": "Centro Coffee & Bites",
-          "freddo": 2.5,
-          "slug": "91876-centro-coffee-bites",
-          "provider_id": 91876,
-          "address": "Leoforos Georgiou Griva Digeni 6, 1066 Nicosia",
-          "lat": 35.1631,
-          "lng": 33.35842,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/91876-centro-coffee-bites",
           "source": "bolt",
           "freddoSource": "bolt",
           "platforms": [
@@ -1999,6 +2010,55 @@
           "foodyUrl": "https://www.foody.com.cy/delivery/menu/grind-caffe"
         },
         {
+          "cafe": "Trust Me Coffee Shop",
+          "freddo": 2.5,
+          "slug": "292653-trust-me-coffee-shop",
+          "provider_id": 292653,
+          "address": "Perikleous 36 2020 Nicosia Cyprus",
+          "lat": 35.143076,
+          "lng": 33.349009,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/292653-trust-me-coffee-shop",
+          "source": "bolt",
+          "freddoSource": "bolt",
+          "platforms": [
+            "bolt",
+            "foody"
+          ],
+          "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/trust-me-coffee-shop-2000775954"
+        },
+        {
+          "cafe": "Coffeeway",
+          "freddo": 2.5,
+          "slug": "105215-coffeeway",
+          "provider_id": 105215,
+          "address": "Stavrou 74\r\n\r\n2035 Nicosia",
+          "lat": 35.134543,
+          "lng": 33.356288,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/105215-coffeeway",
+          "source": "bolt",
+          "freddoSource": "bolt",
+          "platforms": [
+            "bolt",
+            "foody"
+          ],
+          "foodyUrl": "https://www.foody.com.cy/delivery/menu/coffeeway"
+        },
+        {
+          "cafe": "Centro Coffee & Bites",
+          "freddo": 2.5,
+          "slug": "91876-centro-coffee-bites",
+          "provider_id": 91876,
+          "address": "Leoforos Georgiou Griva Digeni 6, 1066 Nicosia",
+          "lat": 35.1631,
+          "lng": 33.35842,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/91876-centro-coffee-bites",
+          "source": "bolt",
+          "freddoSource": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
           "cafe": "Coffee Express Acropolis",
           "freddo": 2.5,
           "slug": "202357-coffee-express-acropolis",
@@ -2014,23 +2074,6 @@
             "foody"
           ],
           "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/coffee-express-acropolis-2000707491"
-        },
-        {
-          "cafe": "Wise Coffee - Crepes and More",
-          "freddo": 2.5,
-          "slug": "191417-wise-coffee-crepes-and-more",
-          "provider_id": 191417,
-          "address": "Panepistimiou 20 2109 Nicosia Cyprus",
-          "lat": 35.147519,
-          "lng": 33.409428,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/191417-wise-coffee-crepes-and-more",
-          "source": "bolt",
-          "freddoSource": "bolt",
-          "platforms": [
-            "bolt",
-            "foody"
-          ],
-          "foodyUrl": "https://www.foody.com.cy/delivery/menu/wise-coffee-crepes-and-more"
         },
         {
           "cafe": "FRANKLIN COFFEE HOUSE CYPRUS",
@@ -2292,20 +2335,6 @@
           "address": null,
           "lat": 35.121449,
           "lng": 33.324017,
-          "source": "foody",
-          "freddoSource": "foody",
-          "platforms": [
-            "foody"
-          ]
-        },
-        {
-          "cafe": "Trust Me Coffee Shop",
-          "freddo": 2.5,
-          "slug": "trust-me-coffee-shop-2000775954",
-          "url": "https://www.foody.com.cy/delivery/leykosia/trust-me-coffee-shop-2000775954",
-          "address": null,
-          "lat": 35.143076,
-          "lng": 33.349009,
           "source": "foody",
           "freddoSource": "foody",
           "platforms": [
@@ -2677,6 +2706,20 @@
           ]
         },
         {
+          "cafe": "Wise Coffee - Crepes and More",
+          "freddo": 2.5,
+          "slug": "wise-coffee-crepes-and-more",
+          "url": "https://www.foody.com.cy/delivery/menu/wise-coffee-crepes-and-more",
+          "address": null,
+          "lat": 35.147519,
+          "lng": 33.409428,
+          "source": "foody",
+          "freddoSource": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
           "cafe": "Olympic Cafe",
           "freddo": 2.5,
           "slug": "olympic-cafe-2000736870",
@@ -2985,38 +3028,6 @@
           ]
         },
         {
-          "cafe": "Kikirikou Coffee Co",
-          "freddo": 2.6,
-          "slug": "159600-kikirikou-coffee-co",
-          "provider_id": 159600,
-          "address": "Makedonitissis 94 2057 Nicosia Cyprus",
-          "lat": 35.146931,
-          "lng": 33.328373,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/159600-kikirikou-coffee-co",
-          "source": "bolt",
-          "freddoSource": "bolt",
-          "platforms": [
-            "bolt",
-            "foody"
-          ],
-          "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/kikirikou-2000581989"
-        },
-        {
-          "cafe": "Coffee Therapy",
-          "freddo": 2.6,
-          "slug": "79811-coffee-therapy",
-          "provider_id": 79811,
-          "address": "Aristokyprou 37, 1015 Nicosia",
-          "lat": 35.17005,
-          "lng": 33.36292,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/79811-coffee-therapy",
-          "source": "bolt",
-          "freddoSource": "bolt",
-          "platforms": [
-            "bolt"
-          ]
-        },
-        {
           "cafe": "Coffee Savvy",
           "freddo": 2.6,
           "slug": "coffee-savvy-2000474593",
@@ -3052,6 +3063,20 @@
           "address": null,
           "lat": null,
           "lng": null,
+          "source": "foody",
+          "freddoSource": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "cafe": "KIKIRIKOU",
+          "freddo": 2.6,
+          "slug": "kikirikou-2000581989",
+          "url": "https://www.foody.com.cy/delivery/leykosia/kikirikou-2000581989",
+          "address": null,
+          "lat": 35.146929,
+          "lng": 33.328375,
           "source": "foody",
           "freddoSource": "foody",
           "platforms": [
@@ -4895,8 +4920,10 @@
           "url": "https://wolt.com/en/cyp/limassol/restaurant/love-coffee",
           "freddoSource": "wolt",
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "bolt"
+          ],
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/81877-love-coffee"
         },
         {
           "cafe": "Coffee Time Cafe",
@@ -9964,8 +9991,8 @@
     }
   ],
   "sources": {
-    "wolt": "2026-08-11T06:44:02.501Z",
-    "bolt": "2026-08-09T14:37:47.761Z",
-    "foody": "2026-08-09T12:32:21.961Z"
+    "wolt": "2026-08-13T07:08:13.314Z",
+    "bolt": "2026-08-11T15:02:48.796Z",
+    "foody": "2026-08-11T12:43:45.590Z"
   }
 }
