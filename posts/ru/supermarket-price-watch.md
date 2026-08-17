@@ -24,7 +24,7 @@ pinned: false
 | Йогурт 450г | **[€3.55](https://www.e-kalathi.gov.cy/product-information/301)** | Charalambides Christis |
 | Рис 1кг | **[€1.90](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
 | Апельсиновый сок 1L | **[€2.25](https://www.e-kalathi.gov.cy/product-information/2120)** | Delta |
-| Кока-Кола 1L ×2 | **[€2.35](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
+| Кока-Кола 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
 
 <!-- PRICES_END -->
 
