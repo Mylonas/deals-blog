@@ -15,7 +15,7 @@ pinned: false
 
 | Продукт | Мин. цена | Бренд |
 |---------|---------|--------|
-| Свежее молоко 1L | **[€1.64](https://www.e-kalathi.gov.cy/product-information/27)** | Charalambides |
+| Свежее молоко 1L | **[€1.39](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
 | Яйца | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
 | Халлуми 200г | **[€1.90](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Спагетти 500г | **[€0.95](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
