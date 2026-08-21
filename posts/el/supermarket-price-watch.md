@@ -15,7 +15,7 @@ pinned: false
 
 | Προϊόν | Φθηνότερη Τιμή | Μάρκα |
 |---------|---------|--------|
-| Φρέσκο Γάλα 1L | **[€1.25](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
+| Φρέσκο Γάλα 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
 | Αβγά | **[€2.15](https://www.e-kalathi.gov.cy/product-information/414)** | Nikiforou |
 | Χαλλούμι 200g | **[€1.90](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Σπαγγέτι 500g | **[€0.95](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
