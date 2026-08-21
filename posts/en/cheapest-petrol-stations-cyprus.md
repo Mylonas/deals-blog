@@ -45,7 +45,7 @@ pinned: true
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.729 |
 | PETROLINA | [Λεωφ. Ελλάδος 65 Τ.Κ 7101](https://www.google.com/maps?q=34.92766666666667,33.58225) | Αραδίππου | €1.739 |
 | SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.739 |
-| ENI | [Λεωφ. Λάρνακος 125 Τ.Κ 1048](https://www.google.com/maps?q=35.1658,33.3822) | Παλλουριώτισσα | €1.746 |
+| PETROLINA | [Λεωφ. Λάρνακος 5 Τ.Κ 1035](https://www.google.com/maps?q=35.1727,33.3726) | Λευκωσία | €1.746 |
 
 ## 7 Cheapest Stations Right Now — Heating Oil
 
