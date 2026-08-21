@@ -56,8 +56,8 @@ pinned: true
 | ESSO | [Λεωφ. Στροβόλου 278 Τ.Κ 2048](https://www.google.com/maps?q=35.1287232428282,33.324758841803) | Στρόβολος | €1.349 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.359 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.359 |
-| FILL N GO | [Λεωφ. Λάρνακος 1 Τ.Κ 7648](https://www.google.com/maps?q=34.92639,33.44032) | Πυργά | €1.369 |
 | EKO | [Κυριάκου Μάτση 100 Τ.Κ 7102](https://www.google.com/maps?q=34.939014,33.601698) | Αραδίππου | €1.379 |
+| ESSO | [Λεωφόρος Λεμεσού 4 Τ.Κ 7647](https://www.google.com/maps?q=34.952087962963,33.4192546296296) | Μοσφιλωτή | €1.379 |
 
 > Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 21 August 2026
 
