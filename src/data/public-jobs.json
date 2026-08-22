@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-21T05:50:25.971Z",
-  "count": 87,
+  "fetchedAt": "2026-08-22T05:40:00.797Z",
+  "count": 80,
   "sources": [
     {
       "id": "cpa",
@@ -9,15 +9,15 @@
       "error": null
     },
     {
+      "id": "psc",
+      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
+      "count": 0,
+      "error": "ΕΔΥ table parsed as empty — check the selectors"
+    },
+    {
       "id": "cyta",
       "name": "Cyta (ΑΤΗΚ)",
       "count": 3,
-      "error": null
-    },
-    {
-      "id": "psc",
-      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
-      "count": 2,
       "error": null
     },
     {
@@ -45,6 +45,12 @@
       "error": null
     },
     {
+      "id": "cso",
+      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
+      "count": 1,
+      "error": null
+    },
+    {
       "id": "ocecpr",
       "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
       "count": 7,
@@ -52,20 +58,20 @@
       "via": "site→browser"
     },
     {
-      "id": "crta",
-      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "cso",
-      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
-      "count": 1,
-      "error": null
-    },
-    {
       "id": "thoc",
       "name": "ΘΟΚ (Θεατρικός Οργανισμός Κύπρου)",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "cyada",
+      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "cysec",
+      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
       "count": 1,
       "error": null
     },
@@ -82,21 +88,9 @@
       "error": null
     },
     {
-      "id": "cysec",
-      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
       "count": 1,
-      "error": null
-    },
-    {
-      "id": "cyada",
-      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "kedipes",
-      "name": "ΚΕΔΙΠΕΣ",
-      "count": 0,
       "error": null
     },
     {
@@ -112,9 +106,21 @@
       "error": null
     },
     {
+      "id": "kedipes",
+      "name": "ΚΕΔΙΠΕΣ",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "anad",
       "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 5,
       "error": null
     },
     {
@@ -130,9 +136,9 @@
       "error": null
     },
     {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 10,
+      "id": "cys",
+      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
+      "count": 0,
       "error": null
     },
     {
@@ -148,14 +154,20 @@
       "error": null
     },
     {
-      "id": "cys",
-      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
+      "id": "ucm",
+      "name": "Ένωση Δήμων Κύπρου",
       "count": 0,
       "error": null
     },
     {
-      "id": "ucm",
-      "name": "Ένωση Δήμων Κύπρου",
+      "id": "cut",
+      "name": "ΤΕΠΑΚ",
+      "count": 5,
+      "error": null
+    },
+    {
+      "id": "ouc",
+      "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
       "count": 0,
       "error": null
     },
@@ -166,21 +178,9 @@
       "error": null
     },
     {
-      "id": "ouc",
-      "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "cing",
       "name": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "count": 3,
-      "error": null
-    },
-    {
-      "id": "cut",
-      "name": "ΤΕΠΑΚ",
-      "count": 5,
       "error": null
     },
     {
@@ -220,8 +220,14 @@
       "error": null
     },
     {
-      "id": "eoa-ammochostou",
-      "name": "ΕΟΑ Αμμοχώστου",
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "eoa-pafou",
+      "name": "ΕΟΑ Πάφου",
       "count": 0,
       "error": null
     },
@@ -232,14 +238,8 @@
       "error": null
     },
     {
-      "id": "eoa-larnakas",
-      "name": "ΕΟΑ Λάρνακας",
-      "count": 3,
-      "error": null
-    },
-    {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
+      "id": "eoa-ammochostou",
+      "name": "ΕΟΑ Αμμοχώστου",
       "count": 0,
       "error": null
     },
@@ -247,6 +247,12 @@
       "id": "dimos-lefkosias",
       "name": "Δήμος Λευκωσίας",
       "count": 6,
+      "error": null
+    },
+    {
+      "id": "dimos-lakatamias",
+      "name": "Δήμος Λακατάμειας",
+      "count": 0,
       "error": null
     },
     {
@@ -262,14 +268,20 @@
       "error": null
     },
     {
-      "id": "dimos-anatolikis-lemesou",
-      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
+      "id": "dimos-polemidion",
+      "name": "Δήμος Πολεμιδιών",
       "count": 0,
       "error": null
     },
     {
-      "id": "dimos-polemidion",
-      "name": "Δήμος Πολεμιδιών",
+      "id": "eoa-larnakas",
+      "name": "ΕΟΑ Λάρνακας",
+      "count": 3,
+      "error": null
+    },
+    {
+      "id": "dimos-anatolikis-lemesou",
+      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
       "count": 0,
       "error": null
     },
@@ -280,21 +292,9 @@
       "error": null
     },
     {
-      "id": "dimos-strovolou",
-      "name": "Δήμος Στροβόλου",
-      "count": 4,
-      "error": null
-    },
-    {
-      "id": "dimos-dytikis-lemesou",
-      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
-      "count": 5,
-      "error": null
-    },
-    {
-      "id": "dimos-dromolaxias-meneou",
-      "name": "Δήμος Δρομολαξιάς-Μενεού",
-      "count": 5,
+      "id": "dimos-aradippou",
+      "name": "Δήμος Αραδίππου",
+      "count": 0,
       "error": null
     },
     {
@@ -304,38 +304,26 @@
       "error": null
     },
     {
-      "id": "dimos-larnakas",
-      "name": "Δήμος Λάρνακας",
-      "count": 1,
+      "id": "dimos-dytikis-lemesou",
+      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
+      "count": 5,
+      "error": null
+    },
+    {
+      "id": "dimos-strovolou",
+      "name": "Δήμος Στροβόλου",
+      "count": 4,
+      "error": null
+    },
+    {
+      "id": "dimos-dromolaxias-meneou",
+      "name": "Δήμος Δρομολαξιάς-Μενεού",
+      "count": 5,
       "error": null
     },
     {
       "id": "dimos-pafou",
       "name": "Δήμος Πάφου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-athienou",
-      "name": "Δήμος Αθηένου",
-      "count": 2,
-      "error": null
-    },
-    {
-      "id": "dimos-akama",
-      "name": "Δήμος Ακάμα (Πέγεια)",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "eoa-pafou",
-      "name": "ΕΟΑ Πάφου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-anatolikis-pafou",
-      "name": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
       "count": 0,
       "error": null
     },
@@ -352,6 +340,30 @@
       "error": null
     },
     {
+      "id": "dimos-akama",
+      "name": "Δήμος Ακάμα (Πέγεια)",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "dimos-athienou",
+      "name": "Δήμος Αθηένου",
+      "count": 2,
+      "error": null
+    },
+    {
+      "id": "dimos-larnakas",
+      "name": "Δήμος Λάρνακας",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "dimos-anatolikis-pafou",
+      "name": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "dimos-ammochostou",
       "name": "Δήμος Παραλιμνίου-Δερύνειας",
       "count": 2,
@@ -362,18 +374,6 @@
       "name": "ΑΗΚ / Electricity Authority of Cyprus",
       "count": 0,
       "error": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\nCall log:\n  - navigating to \"https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\", waiting until \"commit\"\n"
-    },
-    {
-      "id": "dimos-lakatamias",
-      "name": "Δήμος Λακατάμειας",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-aradippou",
-      "name": "Δήμος Αραδίππου",
-      "count": 0,
-      "error": null
     }
   ],
   "jobs": [
@@ -1631,34 +1631,6 @@
       "deadlineFrom": "pdf"
     },
     {
-      "id": "f8fff1f3cae9",
-      "sourceId": "psc",
-      "employer": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
-      "sector": "civil-service",
-      "district": "pancyprus",
-      "title": "ΑΝΩΤΕΡΟΣ ΛΕΙΤΟΥΡΓΟΣ ΕΠΙΘΕΩΡΗΣΗΣ ΕΡΓΑΣΙΑΣ, ΤΜΗΜΑ ΕΠΙΘΕΩΡΗΣΗΣ ΕΡΓΑΣΙΑΣ",
-      "url": "https://www.psc.gov.cy/psc/psc.nsf/All/41B4BBB07612B2F2C2258E4500225562/$file/%CE%91%CE%9D%CE%A9%CE%A4%CE%95%CE%A1%CE%9F%CE%A3%20%CE%9B%CE%95%CE%99%CE%A4%CE%9F%CE%A5%CE%A1%CE%93%CE%9F%CE%A3%20%CE%95%CE%A0%CE%99%CE%98%CE%95%CE%A9%CE%A1%CE%97%CE%A3%CE%97%CE%A3%20%CE%95%CE%A1%CE%93%CE%91%CE%A3%CE%99%CE%91%CE%A3.pdf?OpenElement",
-      "published": "2026-07-31",
-      "deadline": "2026-08-21",
-      "reference": "Ε.Ε. 5880 / γνωστοποίηση 1419",
-      "locations": [],
-      "locationFrom": "pancyprus"
-    },
-    {
-      "id": "0b5ac0c23fb1",
-      "sourceId": "psc",
-      "employer": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
-      "sector": "civil-service",
-      "district": "pancyprus",
-      "title": "ΠΡΩΤΟΣ ΛΕΙΤΟΥΡΓΟΣ ΑΕΡΟΠΟΡΙΚΩΝ ΚΙΝΗΣΕΩΝ, ΤΜΗΜΑ ΠΟΛΙΤΙΚΗΣ ΑΕΡΟΠΟΡΙΑΣ",
-      "url": "https://www.psc.gov.cy/psc/psc.nsf/All/94F87845F9F650F5C2258E450023B1ED/$file/2%20%CE%A0%CE%A1%CE%A9%CE%A4%CE%9F%CE%A3%20%CE%9B%CE%95%CE%99%CE%A4%CE%9F%CE%A5%CE%A1%CE%93%CE%9F%CE%A3%20%CE%91%CE%95%CE%A1%CE%9F%CE%A0%CE%9F%CE%A1%CE%99%CE%9A%CE%A9%CE%9D%20%CE%9A%CE%99%CE%9D%CE%97%CE%A3%CE%95%CE%A9%CE%9D.pdf?OpenElement",
-      "published": "2026-07-31",
-      "deadline": "2026-08-21",
-      "reference": "Ε.Ε. 5880 / γνωστοποίηση 1420",
-      "locations": [],
-      "locationFrom": "pancyprus"
-    },
-    {
       "id": "e2062a269e1e",
       "sourceId": "cysec",
       "employer": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
@@ -2126,123 +2098,6 @@
           "districtName": "Πάφος",
           "lat": 34.7754,
           "lon": 32.4245
-        }
-      ],
-      "locationFrom": "title"
-    },
-    {
-      "id": "e4f849416533",
-      "sourceId": "shso",
-      "employer": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "sector": "semi-government",
-      "district": "pancyprus",
-      "title": "Ιούλιος 2026 ΠΡΟΚΗΡΥΞΗ ΜΙΑΣ (1) ΚΕΝΗΣ ΘΕΣΗΣ ΙΑΤΡΙΚΟΥ ΛΕΙΤΟΥΡΓΟΥ (21/8/2026) Αναρτήθηκε 31/07/26 Πάφος Γενικό Νοσοκομείο Πάφου Πλήρης Απασχόλησης",
-      "url": "https://www.shso.org.cy/job-position/prokiryxi-mias-1-kenis-thesis-iatrikou-leitourgou-21-8-2026/",
-      "published": null,
-      "deadline": "2026-08-21",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Πάφος",
-          "district": "paphos",
-          "districtName": "Πάφος",
-          "lat": 34.7754,
-          "lon": 32.4245
-        }
-      ],
-      "locationFrom": "title"
-    },
-    {
-      "id": "69d341162316",
-      "sourceId": "shso",
-      "employer": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "sector": "semi-government",
-      "district": "pancyprus",
-      "title": "Ιούλιος 2026 ΠΡΟΚΗΡΥΞΗ ΜΙΑΣ (1) ΚΕΝΗΣ ΘΕΣΗΣ ΛΕΙΤΟΥΡΓΟΥ ΠΛΗΡΟΦΟΡΙΚΗΣ (ΔΙΑΧΕΙΡΙΣΗ ΙΣΤΟΣΕΛΙΔΑΣ, ΠΟΛΥΜΕΣΩΝ ΚΑΙ ΚΟΙΝΩΝΙΚΩΝ ΔΙΚΤΥΩΝ) (21/8/2026) Αναρτήθηκε 31/07/26 Λευκωσία Κεντρική Διοίκηση ΟΚΥπΥ Πλήρης Απασχόλησης",
-      "url": "https://www.shso.org.cy/job-position/prokiryxi-mias-1-kenis-thesis-leitourgou-pliroforikis-diacheirisi-istoselidas-polymeson-kai-koinonikon-diktyon-21-8-2026/",
-      "published": null,
-      "deadline": "2026-08-21",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "title"
-    },
-    {
-      "id": "134eedbff6df",
-      "sourceId": "shso",
-      "employer": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "sector": "semi-government",
-      "district": "pancyprus",
-      "title": "Ιούλιος 2026 ΠΡΟΚΗΡΥΞΗ ΜΙΑΣ (1) ΚΕΝΗΣ ΘΕΣΗΣ ΜΗΧΑΝΙΚΟΥ ΚΤΙΡΙΩΝ ΚΑΙ ΥΠΟΔΟΜΩΝ (ΠΟΛΙΤΙΚΗ ΜΗΧΑΝΙΚΗ) (21/8/2026) Αναρτήθηκε 31/07/26 Λευκωσία Γενικό Νοσοκομείο Λευκωσίας Πλήρης Απασχόλησης",
-      "url": "https://www.shso.org.cy/job-position/prokiryxi-mias-1-kenis-thesis-michanikou-ktirion-kai-ypodomon-politiki-michaniki/",
-      "published": null,
-      "deadline": "2026-08-21",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "title"
-    },
-    {
-      "id": "7f8fbc560d89",
-      "sourceId": "shso",
-      "employer": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "sector": "semi-government",
-      "district": "pancyprus",
-      "title": "Ιούλιος 2026 ΠΡΟΚΗΡΥΞΗ ΜΙΑΣ (1) ΚΕΝΗΣ ΘΕΣΗΣ ΟΙΚΟΝΟΜΙΚΟΥ ΔΙΕΥΘΥΝΤΗ ΔΙΕΥΘΥΝΣΗΣ ΛΑΡΝΑΚΑΣ – ΑΜΜΟΧΩΣΤΟΥ (21/8/2026) Αναρτήθηκε 31/07/26 Αμμόχωστος, Λάρνακα Γενικό Νοσοκομείο Αμμοχώστου, Γενικό Νοσοκομείο Λάρνακας Πλήρης Απασχόλησης",
-      "url": "https://www.shso.org.cy/job-position/prokiryxi-mias-1-kenis-thesis-oikonomikou-diefthynti-diefthynsis-larnakas-ammochostou/",
-      "published": null,
-      "deadline": "2026-08-21",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λάρνακα",
-          "district": "larnaca",
-          "districtName": "Λάρνακα",
-          "lat": 34.9182,
-          "lon": 33.6201
-        },
-        {
-          "name": "Αμμόχωστος (ελεύθερη επαρχία)",
-          "district": "famagusta",
-          "districtName": "Αμμόχωστος",
-          "lat": 35.0353,
-          "lon": 33.9614
-        }
-      ],
-      "locationFrom": "title"
-    },
-    {
-      "id": "9bd80b9a9ee1",
-      "sourceId": "shso",
-      "employer": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "sector": "semi-government",
-      "district": "pancyprus",
-      "title": "Ιούλιος 2026 ΠΡΟΚΗΡΥΞΗ ΜΙΑΣ (1) ΚΕΝΗΣ ΘΕΣΗΣ ΟΙΚΟΝΟΜΙΚΟΥ ΔΙΕΥΘΥΝΤΗ ΔΙΕΥΘΥΝΣΗΣ ΛΕΥΚΩΣΙΑΣ (21/8/2026) Αναρτήθηκε 31/07/26 Λευκωσία Γενικό Νοσοκομείο Λευκωσίας, Νοσοκομείο Αρχιεπίσκοπος Μακάριος ΙΙΙ Πλήρης Απασχόλησης",
-      "url": "https://www.shso.org.cy/job-position/prokiryxi-mias-1-kenis-thesis-oikonomikou-diefthynti-diefthynsis-lefkosias-21-8-2026/",
-      "published": null,
-      "deadline": "2026-08-21",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
         }
       ],
       "locationFrom": "title"
