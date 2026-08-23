@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-08-21T07:17:14.009Z",
+  "updatedAt": "2026-08-23T07:09:24.143Z",
   "sources": {
-    "wolt": "2026-08-21T07:17:14.004Z",
-    "bolt": "2026-08-19T19:36:41.631Z",
-    "foody": "2026-08-19T11:19:08.634Z"
+    "wolt": "2026-08-23T07:09:24.138Z",
+    "bolt": "2026-08-21T19:38:30.970Z",
+    "foody": "2026-08-21T11:18:54.275Z"
   },
   "cities": [
     {
@@ -1906,8 +1906,19 @@
             "mixLarge": 9.5
           },
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "wolt",
+            "souvlakiLarge": "wolt",
+            "chicken": "wolt",
+            "chickenLarge": "wolt",
+            "mix": "wolt",
+            "mixLarge": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/100005-the-bbq-house"
         },
         {
           "name": "Prosfigiko Swmateio Dikomo 74",
@@ -2445,25 +2456,6 @@
           ]
         },
         {
-          "name": "O Gyros tis Ellados",
-          "slug": "164362-o-gyros-tis-ellados",
-          "provider_id": 164362,
-          "address": "John Kennedy 3 1075 Nicosia Cyprus",
-          "lat": 35.161163,
-          "lng": 33.358837,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/164362-o-gyros-tis-ellados",
-          "prices": {
-            "porkchop": 14,
-            "mix": 8.2,
-            "souvlaki": 8.2,
-            "chicken": 8.2
-          },
-          "source": "bolt",
-          "platforms": [
-            "bolt"
-          ]
-        },
-        {
           "name": "Mixgrill Dinos (Onisilos Lakatamia)",
           "slug": "mix-grill-dinos",
           "url": "https://www.foody.com.cy/delivery/leykosia/mix-grill-dinos",
@@ -2610,6 +2602,25 @@
           },
           "platforms": [
             "wolt"
+          ]
+        },
+        {
+          "name": "O Gyros tis Ellados",
+          "slug": "164362-o-gyros-tis-ellados",
+          "provider_id": 164362,
+          "address": "John Kennedy 3 1075 Nicosia Cyprus",
+          "lat": 35.161163,
+          "lng": 33.358837,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/164362-o-gyros-tis-ellados",
+          "prices": {
+            "porkchop": 16,
+            "mix": 8.5,
+            "souvlaki": 8.5,
+            "chicken": 8.5
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt"
           ]
         },
         {
@@ -2864,8 +2875,7 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/piatsa-gourounaki-faneromeni",
           "prices": {
             "souvlaki": 9.1,
-            "chicken": 10.95,
-            "mix": 9.1
+            "chicken": 10.95
           },
           "platforms": [
             "wolt",
@@ -2873,8 +2883,7 @@
           ],
           "priceSources": {
             "souvlaki": "wolt",
-            "chicken": "wolt",
-            "mix": "bolt"
+            "chicken": "wolt"
           },
           "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/39799-piatsa-gourounaki"
         },
@@ -3921,11 +3930,25 @@
             "porkchop": 14.8,
             "souvlaki": 7.5,
             "mix": 7.8,
-            "chicken": 7.8
+            "chicken": 7.8,
+            "souvlakiLarge": 11.5,
+            "chickenLarge": 13,
+            "mixLarge": 12
           },
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "wolt",
+            "mix": "wolt",
+            "chicken": "wolt",
+            "souvlakiLarge": "bolt",
+            "chickenLarge": "bolt",
+            "mixLarge": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/11390-stathis-grillhouse"
         },
         {
           "name": "Christakis Kebab",
@@ -5365,6 +5388,22 @@
           ]
         },
         {
+          "name": "Psistaria Souzi Tros",
+          "slug": "57257-psistaria-souzi-tros",
+          "provider_id": 57257,
+          "address": "Agias filaxeos 112, 3110 Limassol",
+          "lat": 34.689349,
+          "lng": 33.036583,
+          "url": "https://food.bolt.eu/en/442-limassol/p/57257-psistaria-souzi-tros",
+          "prices": {
+            "porkchop": 14
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
           "name": "Psistaria Nostimies",
           "slug": "92283-psistaria-nostimies",
           "provider_id": 92283,
@@ -5580,16 +5619,8 @@
             "mix": 7.2
           },
           "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt",
-            "souvlaki": "wolt",
-            "chicken": "wolt",
-            "mix": "wolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/472527-valtou-rigani"
+            "wolt"
+          ]
         },
         {
           "name": "Takis Kebab House",
@@ -5637,8 +5668,7 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/quick-stop-grill",
           "prices": {
             "chicken": 7.5,
-            "souvlaki": 7.5,
-            "mix": 17.5
+            "souvlaki": 7.5
           },
           "platforms": [
             "wolt",
@@ -5646,8 +5676,7 @@
           ],
           "priceSources": {
             "chicken": "wolt",
-            "souvlaki": "wolt",
-            "mix": "bolt"
+            "souvlaki": "wolt"
           },
           "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/140449-quick-stop-grill"
         },
@@ -5659,13 +5688,20 @@
           "lng": 33.6356516,
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/gyrevontas-ellada",
           "prices": {
-            "porkchop": 12.8,
+            "porkchop": 11.5,
             "souvlaki": 7.5,
             "chicken": 7.5
           },
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "bolt",
+            "souvlaki": "wolt",
+            "chicken": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/802537-gyrevontas-ellada"
         },
         {
           "name": "To Parko Souvlaki & Grill",
@@ -5704,19 +5740,8 @@
             "mixLarge": 9
           },
           "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt",
-            "souvlaki": "wolt",
-            "souvlakiLarge": "wolt",
-            "chicken": "wolt",
-            "chickenLarge": "wolt",
-            "mix": "wolt",
-            "mixLarge": "wolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/141446-souvlakia-yiannis"
+            "wolt"
+          ]
         },
         {
           "name": "Taverna Zenon",
@@ -5981,31 +6006,6 @@
           "platforms": [
             "wolt"
           ]
-        },
-        {
-          "name": "I Gonia Mas",
-          "slug": "herculess-grill",
-          "address": "Ioanni Marsellou 2 ",
-          "lat": 34.92670101,
-          "lng": 33.6360946,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/herculess-grill",
-          "prices": {
-            "porkchop": 17,
-            "souvlaki": 8,
-            "chicken": 9,
-            "mix": 9
-          },
-          "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt",
-            "souvlaki": "bolt",
-            "chicken": "bolt",
-            "mix": "bolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/150330-i-gonia-mas"
         },
         {
           "name": "Tuck Inn",
@@ -6744,6 +6744,20 @@
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/anergoi-ptixiouxi-fastfood",
           "prices": {
             "porkchop": 13.5
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "I Gonia Mas",
+          "slug": "herculess-grill",
+          "address": "Ioanni Marsellou 2 ",
+          "lat": 34.92670101,
+          "lng": 33.6360946,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/herculess-grill",
+          "prices": {
+            "porkchop": 17
           },
           "platforms": [
             "wolt"
