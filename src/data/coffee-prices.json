@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-27T16:14:48.256Z",
-  "scrapedAt": "2026-08-25T06:24:14.568Z",
+  "updatedAt": "2026-08-27T17:04:03.081Z",
+  "scrapedAt": "2026-08-27T17:04:02.956Z",
   "note": "Top drinks and Freddo prices scraped monthly via Playwright from Wolt/Foody/Bolt Food Cyprus. topDrinks is empty until the first monthly run.",
   "items": [
     {
@@ -337,20 +337,44 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/second-cup-recanto-cafe",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/second-cup-plati",
         "foody": null,
         "bolt": null
       },
       "topDrinks": [
         {
-          "name": "Freddo Espresso 14oz",
-          "price": 3,
+          "name": "Freddo Espresso",
+          "price": 2.95,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Freddo Cappuccino",
+          "price": 3.15,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Latte",
+          "price": 3.35,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Signature Latte",
+          "price": 3.35,
+          "platform": "wolt",
+          "popular": false
+        },
+        {
+          "name": "Iced Americano",
+          "price": 2.5,
           "platform": "wolt",
           "popular": false
         }
       ],
-      "freddo": 3,
-      "delivery": 3,
+      "freddo": 2.95,
+      "delivery": 2.95,
       "notes": "Canadian chain."
     },
     {
@@ -373,7 +397,7 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/costa-coffee-kallipoleos",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/costametropolitan",
         "foody": null,
         "bolt": "https://food.bolt.eu/en-CY/261-nicosia/p/30353-costa-coffee-mall-of-cyprus"
       },
@@ -674,7 +698,7 @@
       "type": "chain",
       "singleLocation": false,
       "sources": {
-        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/le-gout-kaimakli",
+        "wolt": "https://wolt.com/en/cyp/nicosia/restaurant/le-gout-geri",
         "foody": null,
         "bolt": null
       },
@@ -693,7 +717,7 @@
         },
         {
           "name": "Iced Latte",
-          "price": 3.03,
+          "price": 3.3,
           "platform": "wolt",
           "popular": false
         },
@@ -1068,6 +1092,33 @@
       },
       "cafes": [
         {
+          "cafe": "True Heart Cafe",
+          "freddo": 1.8,
+          "address": "Giannou Kranidioti 10B, Nicosia, 1065",
+          "lat": 35.16365551141482,
+          "lng": 33.36002968072097,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/true-heart-cafe",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "cafe": "Between the Bread Cafe",
+          "freddo": 1.8,
+          "slug": "119786-between-the-bread-cafe",
+          "provider_id": 119786,
+          "address": "Leoforos Strovolou 100, Demarchio Strovolou\r\n\r\n2042 Nicosia",
+          "lat": 35.144141,
+          "lng": 33.343617,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/119786-between-the-bread-cafe",
+          "source": "bolt",
+          "freddoSource": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
           "cafe": "Mini Cafe Mini Donuts",
           "freddo": 1.8,
           "slug": "mini-cafe-mini-donuts",
@@ -1204,6 +1255,18 @@
           ]
         },
         {
+          "cafe": "Bake On Wood",
+          "freddo": 2.2,
+          "address": "Archbishop Makarios III, 19a",
+          "lat": 35.11667357,
+          "lng": 33.37868972,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/bake-on-wood",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "cafe": "Old Town Yiannis Canteen",
           "freddo": 2.2,
           "address": "Peonos 1",
@@ -1228,24 +1291,24 @@
           ]
         },
         {
-          "cafe": "You Coffee Latsia",
-          "freddo": 2.2,
-          "address": "Leoforos Archiepiskopou Makariou 115",
-          "lat": 35.10599861,
-          "lng": 33.38550091,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/you-coffee-latsia",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "cafe": "Hogar All Day",
           "freddo": 2.2,
           "address": "Stavrou 79, Office 201, Strovolos",
           "lat": 35.13580531,
           "lng": 33.35791569,
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/hogar-coffee",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "cafe": "You Coffee Latsia",
+          "freddo": 2.2,
+          "address": "Leoforos Archiepiskopou Makariou 115",
+          "lat": 35.10599861,
+          "lng": 33.38550091,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/you-coffee-latsia",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
@@ -1470,23 +1533,11 @@
           "freddoSource": "wolt",
           "platforms": [
             "wolt",
+            "bolt",
             "foody"
           ],
+          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/85447-caffe-milano-agios-dometios",
           "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/round-n-about-coffee-shop"
-        },
-        {
-          "cafe": "Pasafreddo",
-          "freddo": 2.3,
-          "address": "Atho, Nicosia ",
-          "lat": 35.16067685,
-          "lng": 33.3589124,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/dna-cafe",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt",
-            "foody"
-          ],
-          "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/pasafreddo-2000554864"
         },
         {
           "cafe": "Gusto Cafe",
@@ -1500,7 +1551,7 @@
             "wolt",
             "bolt"
           ],
-          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/143523-gusto-cafe"
+          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/532589-gusto-cafe"
         },
         {
           "cafe": "1957 Sports Bar & Café",
@@ -1657,6 +1708,20 @@
           ]
         },
         {
+          "cafe": "Pasafreddo",
+          "freddo": 2.3,
+          "slug": "pasafreddo-2000554864",
+          "url": "https://www.foody.com.cy/delivery/leykosia/pasafreddo-2000554864",
+          "address": null,
+          "lat": 35.16071,
+          "lng": 33.359031,
+          "source": "foody",
+          "freddoSource": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
           "cafe": "Cut Bulk Rest",
           "freddo": 2.3,
           "slug": "cut-bulk-rest-2000682453",
@@ -1710,18 +1775,6 @@
           "freddoSource": "foody",
           "platforms": [
             "foody"
-          ]
-        },
-        {
-          "cafe": "The Farm Coffee Shop",
-          "freddo": 2.4,
-          "address": "Stasikratous 45A",
-          "lat": 35.1651865,
-          "lng": 33.36281021,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/the-farm-coffee-roasters",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
           ]
         },
         {
@@ -1908,40 +1961,6 @@
           ]
         },
         {
-          "cafe": "Coffee Addicted",
-          "freddo": 2.5,
-          "slug": "140633-coffee-addicted",
-          "provider_id": 140633,
-          "address": "Kyrenias 121 b 2113 Nicosia Cyprus",
-          "lat": 35.148667,
-          "lng": 33.388099,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/140633-coffee-addicted",
-          "source": "bolt",
-          "freddoSource": "bolt",
-          "platforms": [
-            "bolt",
-            "foody"
-          ],
-          "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/coffee-addicted-2000576598"
-        },
-        {
-          "cafe": "Coffeeway",
-          "freddo": 2.5,
-          "slug": "105215-coffeeway",
-          "provider_id": 105215,
-          "address": "Stavrou 74\r\n\r\n2035 Nicosia",
-          "lat": 35.134543,
-          "lng": 33.356288,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/105215-coffeeway",
-          "source": "bolt",
-          "freddoSource": "bolt",
-          "platforms": [
-            "bolt",
-            "foody"
-          ],
-          "foodyUrl": "https://www.foody.com.cy/delivery/menu/coffeeway"
-        },
-        {
           "cafe": "Two Chimp Coffee & Cake",
           "freddo": 2.5,
           "slug": "45411-two-chimp-coffee-cake",
@@ -1950,36 +1969,6 @@
           "lat": 35.167353,
           "lng": 33.367637,
           "url": "https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake",
-          "source": "bolt",
-          "freddoSource": "bolt",
-          "platforms": [
-            "bolt"
-          ]
-        },
-        {
-          "cafe": "Akora All Day Cafe & Lounge",
-          "freddo": 2.5,
-          "slug": "124245-akora-all-day-cafe-lounge",
-          "provider_id": 124245,
-          "address": "Plateia Dimarchias 1 1016 Nicosia Cyprus",
-          "lat": 35.173974,
-          "lng": 33.364818,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/124245-akora-all-day-cafe-lounge",
-          "source": "bolt",
-          "freddoSource": "bolt",
-          "platforms": [
-            "bolt"
-          ]
-        },
-        {
-          "cafe": "Centro Coffee & Bites",
-          "freddo": 2.5,
-          "slug": "91876-centro-coffee-bites",
-          "provider_id": 91876,
-          "address": "Leoforos Georgiou Griva Digeni 6, 1066 Nicosia",
-          "lat": 35.1631,
-          "lng": 33.35842,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/91876-centro-coffee-bites",
           "source": "bolt",
           "freddoSource": "bolt",
           "platforms": [
@@ -2021,21 +2010,55 @@
           "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/coffee-express-acropolis-2000707491"
         },
         {
-          "cafe": "Wise Coffee - Crepes and More",
+          "cafe": "Coffee Addicted",
           "freddo": 2.5,
-          "slug": "191417-wise-coffee-crepes-and-more",
-          "provider_id": 191417,
-          "address": "Panepistimiou 20 2109 Nicosia Cyprus",
-          "lat": 35.147519,
-          "lng": 33.409428,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/191417-wise-coffee-crepes-and-more",
+          "slug": "140633-coffee-addicted",
+          "provider_id": 140633,
+          "address": "Kyrenias 121 b 2113 Nicosia Cyprus",
+          "lat": 35.148667,
+          "lng": 33.388099,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/140633-coffee-addicted",
           "source": "bolt",
           "freddoSource": "bolt",
           "platforms": [
             "bolt",
             "foody"
           ],
-          "foodyUrl": "https://www.foody.com.cy/delivery/menu/wise-coffee-crepes-and-more"
+          "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/coffee-addicted-2000576598"
+        },
+        {
+          "cafe": "Trust Me Coffee Shop",
+          "freddo": 2.5,
+          "slug": "292653-trust-me-coffee-shop",
+          "provider_id": 292653,
+          "address": "Perikleous 36 2020 Nicosia Cyprus",
+          "lat": 35.143076,
+          "lng": 33.349009,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/292653-trust-me-coffee-shop",
+          "source": "bolt",
+          "freddoSource": "bolt",
+          "platforms": [
+            "bolt",
+            "foody"
+          ],
+          "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/trust-me-coffee-shop-2000775954"
+        },
+        {
+          "cafe": "Coffeeway",
+          "freddo": 2.5,
+          "slug": "105215-coffeeway",
+          "provider_id": 105215,
+          "address": "Stavrou 74\r\n\r\n2035 Nicosia",
+          "lat": 35.134543,
+          "lng": 33.356288,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/105215-coffeeway",
+          "source": "bolt",
+          "freddoSource": "bolt",
+          "platforms": [
+            "bolt",
+            "foody"
+          ],
+          "foodyUrl": "https://www.foody.com.cy/delivery/menu/coffeeway"
         },
         {
           "cafe": "FRANKLIN COFFEE HOUSE CYPRUS",
@@ -2297,20 +2320,6 @@
           "address": null,
           "lat": 35.121449,
           "lng": 33.324017,
-          "source": "foody",
-          "freddoSource": "foody",
-          "platforms": [
-            "foody"
-          ]
-        },
-        {
-          "cafe": "Trust Me Coffee Shop",
-          "freddo": 2.5,
-          "slug": "trust-me-coffee-shop-2000775954",
-          "url": "https://www.foody.com.cy/delivery/leykosia/trust-me-coffee-shop-2000775954",
-          "address": null,
-          "lat": 35.143076,
-          "lng": 33.349009,
           "source": "foody",
           "freddoSource": "foody",
           "platforms": [
@@ -2668,6 +2677,20 @@
           ]
         },
         {
+          "cafe": "Wise Coffee - Crepes and More",
+          "freddo": 2.5,
+          "slug": "wise-coffee-crepes-and-more",
+          "url": "https://www.foody.com.cy/delivery/menu/wise-coffee-crepes-and-more",
+          "address": null,
+          "lat": 35.147519,
+          "lng": 33.409428,
+          "source": "foody",
+          "freddoSource": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
           "cafe": "Olympic Cafe",
           "freddo": 2.5,
           "slug": "olympic-cafe-2000736870",
@@ -2976,21 +2999,19 @@
           ]
         },
         {
-          "cafe": "Kikirikou Coffee Co",
+          "cafe": "Coffee Therapy",
           "freddo": 2.6,
-          "slug": "159600-kikirikou-coffee-co",
-          "provider_id": 159600,
-          "address": "Makedonitissis 94 2057 Nicosia Cyprus",
-          "lat": 35.146931,
-          "lng": 33.328373,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/159600-kikirikou-coffee-co",
+          "slug": "79811-coffee-therapy",
+          "provider_id": 79811,
+          "address": "Aristokyprou 37, 1015 Nicosia",
+          "lat": 35.17005,
+          "lng": 33.36292,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/79811-coffee-therapy",
           "source": "bolt",
           "freddoSource": "bolt",
           "platforms": [
-            "bolt",
-            "foody"
-          ],
-          "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/kikirikou-2000581989"
+            "bolt"
+          ]
         },
         {
           "cafe": "Coffee Savvy",
@@ -3028,6 +3049,20 @@
           "address": null,
           "lat": null,
           "lng": null,
+          "source": "foody",
+          "freddoSource": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "cafe": "KIKIRIKOU",
+          "freddo": 2.6,
+          "slug": "kikirikou-2000581989",
+          "url": "https://www.foody.com.cy/delivery/leykosia/kikirikou-2000581989",
+          "address": null,
+          "lat": 35.146929,
+          "lng": 33.328375,
           "source": "foody",
           "freddoSource": "foody",
           "platforms": [
@@ -4915,6 +4950,18 @@
           ]
         },
         {
+          "cafe": "Vendi Papafilippou Ice Cream",
+          "freddo": 2.3,
+          "address": "Georgiou Griva Digeni 99, Mesa Geitonia",
+          "lat": 34.69253269,
+          "lng": 33.06322146,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/vendi-papafilippou-ice-cream",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "cafe": "Goppion Cafe Omonoias",
           "freddo": 2.3,
           "address": "Omonoias 65",
@@ -5041,6 +5088,30 @@
           ]
         },
         {
+          "cafe": "Cafeneio",
+          "freddo": 2.4,
+          "address": "Sofias Vempou 8",
+          "lat": 34.70246773,
+          "lng": 33.03281337,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/cafe-neio",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "cafe": "The Doctor Espresso",
+          "freddo": 2.4,
+          "address": "Odos pafou 191, kato polemidia ",
+          "lat": 34.67575455,
+          "lng": 33.0036602,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/the-doctor-espresso",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "cafe": "Snack Attack",
           "freddo": 2.4,
           "address": "Agiou Ioanni 9a",
@@ -5123,36 +5194,12 @@
           ]
         },
         {
-          "cafe": "First Coffee",
+          "cafe": "Gspot",
           "freddo": 2.5,
-          "address": "P2M6+W2F, Avenita St",
-          "lat": 34.73518783,
-          "lng": 33.00970638,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/first-coffee",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "cafe": "Coffee Moment Break",
-          "freddo": 2.5,
-          "address": "150, Agias Filaxeos",
-          "lat": 34.69325765,
-          "lng": 33.03481441,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/coffee-moment-break",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "cafe": "Cafe 4 You",
-          "freddo": 2.5,
-          "address": "Ανοικοδομήσεως, 25, MARINA COURT, SHOP 1, Αγιος Αθανάσιος",
-          "lat": 34.70909182,
-          "lng": 33.05442334,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/cafe-4-you",
+          "address": "Agias Filaxeos 34A",
+          "lat": 34.6801366,
+          "lng": 33.0403531,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/gspot",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
@@ -5173,24 +5220,12 @@
           "foodyUrl": "https://www.foody.com.cy/delivery/lemesos/coffee-taste-polemidia-2000503066"
         },
         {
-          "cafe": "The Cake Room",
+          "cafe": "First Coffee",
           "freddo": 2.5,
-          "address": "76 Archiepiskopou Makariou III",
-          "lat": 34.68078165,
-          "lng": 33.02721898,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/the-cake-room",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "cafe": "Gspot",
-          "freddo": 2.5,
-          "address": "Agias Filaxeos 34A",
-          "lat": 34.6801366,
-          "lng": 33.0403531,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/gspot",
+          "address": "P2M6+W2F, Avenita St",
+          "lat": 34.73518783,
+          "lng": 33.00970638,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/first-coffee",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
@@ -7175,6 +7210,18 @@
           ]
         },
         {
+          "cafe": "Coffee Berry Spyrou Kyprianou",
+          "freddo": 2.4,
+          "address": "Spyrou Kyprianou 80-90",
+          "lat": 34.93027734,
+          "lng": 33.62161196,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/coffee-berry-spyrou-kyprianou",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "cafe": "Zorbas",
           "freddo": 2.4,
           "slug": "zorbas",
@@ -7217,62 +7264,62 @@
           ]
         },
         {
-          "cafe": "Ap' to Vorra",
+          "cafe": "Spotaki Coffee to Go",
           "freddo": 2.5,
-          "address": "Gregoris Auxentiou 2",
-          "lat": 34.91774102,
-          "lng": 33.63631936,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/ap-to-vorra",
+          "address": "Kritis 1, Aradippou",
+          "lat": 34.9110756,
+          "lng": 33.5909138,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/spotaki-coffee-to-go",
           "freddoSource": "wolt",
           "platforms": [
             "wolt",
             "foody"
           ],
-          "foodyUrl": "https://www.foody.com.cy/delivery/larnaka/mpougatsadiko-ap-to-vorra-2000404402"
+          "foodyUrl": "https://www.foody.com.cy/delivery/larnaka/spotaki-coffee-to-go-2000691403"
         },
         {
-          "cafe": "Panther Eye Coffee & More",
+          "cafe": "Cup. Cafe",
           "freddo": 2.5,
-          "address": "Agion Anargiron 38",
-          "lat": 34.935231522173154,
-          "lng": 33.62605981227483,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/panther-eye-coffee-more",
+          "address": "Vasileos Pavlou Square 31",
+          "lat": 34.91704017,
+          "lng": 33.63655109,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/cup-cafe-new",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
           ]
         },
         {
-          "cafe": "Tiny Cup Coffeeshop",
+          "cafe": "Fournoi Pirillos Kiti",
           "freddo": 2.5,
-          "address": "25is Martiou 44 Aradippou",
-          "lat": 34.95113459,
-          "lng": 33.59819148,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/tiny-cup-coffeeshop",
+          "address": " Archiepiskopou Makariou III 44, Kiti ",
+          "lat": 34.8494007,
+          "lng": 33.576079,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/fournoi-pirillos-kiti",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
           ]
         },
         {
-          "cafe": "The Bean Yard Coffee House",
+          "cafe": "Red Panda Specialty Coffee",
           "freddo": 2.5,
-          "address": "Inomenon Polition Amerikis 17",
-          "lat": 34.9223856,
-          "lng": 33.6067372,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/the-bean-yard-coffee-house",
+          "address": "Faneromenis 150",
+          "lat": 34.91137288,
+          "lng": 33.61730852,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/red-panda-coffe-co",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
           ]
         },
         {
-          "cafe": "Hot Shot Coffee Shop",
+          "cafe": "Brewtopia Coffee",
           "freddo": 2.5,
-          "address": "Markou Drakou 32, Shop 7",
-          "lat": 34.9192792,
-          "lng": 33.6267433,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/hot-shot-coffee-shop",
+          "address": "1is Apriliou 25 , Shop 1",
+          "lat": 34.91641490389894,
+          "lng": 33.61808892774255,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/brewtopia-coffee",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
@@ -7291,36 +7338,24 @@
           ]
         },
         {
-          "cafe": "Bakehouse By Florentia",
+          "cafe": "Kafeneion 26 Coffee House",
           "freddo": 2.5,
-          "address": "Meropis 9",
-          "lat": 34.93181109,
-          "lng": 33.63560509,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/florentia-bakehouse",
+          "address": "Ermou 26",
+          "lat": 34.9166762,
+          "lng": 33.6327874,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/kafeneion-26-coffee-house",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
           ]
         },
         {
-          "cafe": "Santai Lounge Larnaca",
+          "cafe": "Hot Shot Coffee Shop",
           "freddo": 2.5,
-          "address": "Stratigou Timagia 13",
-          "lat": 34.928173,
-          "lng": 33.617343,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/santai-lounge-larnaca",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "cafe": "Brewtopia Coffee",
-          "freddo": 2.5,
-          "address": "1is Apriliou 25 , Shop 1",
-          "lat": 34.91641490389894,
-          "lng": 33.61808892774255,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/brewtopia-coffee",
+          "address": "Markou Drakou 32, Shop 7",
+          "lat": 34.9192792,
+          "lng": 33.6267433,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/hot-shot-coffee-shop",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
@@ -7439,6 +7474,20 @@
           ]
         },
         {
+          "cafe": "Mpougatsadiko Ap' to Vorra",
+          "freddo": 2.5,
+          "slug": "mpougatsadiko-ap-to-vorra-2000404402",
+          "url": "https://www.foody.com.cy/delivery/larnaka/mpougatsadiko-ap-to-vorra-2000404402",
+          "address": null,
+          "lat": 34.917749,
+          "lng": 33.636327,
+          "source": "foody",
+          "freddoSource": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
           "cafe": "Coffee Taste",
           "freddo": 2.5,
           "slug": "coffee-taste",
@@ -7516,20 +7565,6 @@
           "address": null,
           "lat": 34.947886,
           "lng": 33.628023,
-          "source": "foody",
-          "freddoSource": "foody",
-          "platforms": [
-            "foody"
-          ]
-        },
-        {
-          "cafe": "Spotaki Coffee to go",
-          "freddo": 2.5,
-          "slug": "spotaki-coffee-to-go-2000691403",
-          "url": "https://www.foody.com.cy/delivery/larnaka/spotaki-coffee-to-go-2000691403",
-          "address": null,
-          "lat": 34.911076,
-          "lng": 33.590914,
           "source": "foody",
           "freddoSource": "foody",
           "platforms": [
@@ -8439,12 +8474,64 @@
           ]
         },
         {
-          "cafe": "Diexodos Coffee & Snack Boutique",
+          "cafe": "VK Cafe Paphos",
           "freddo": 2.5,
-          "address": "Rigenis 21, Yeroskipou",
-          "lat": 34.76530396,
-          "lng": 32.45307254,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/diexodos-coffee-and-snack-boutique",
+          "address": "58, Eleutheriou Venizelou ",
+          "lat": 34.78120117,
+          "lng": 32.43529434,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/vk-cafe-paphos",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt",
+            "foody"
+          ],
+          "foodyUrl": "https://www.foody.com.cy/delivery/pafos/vk-cafe-paphos"
+        },
+        {
+          "cafe": "Papantoniou Bakeries Kato Paphos",
+          "freddo": 2.5,
+          "address": "Apostolou Pavlou Avenue 41",
+          "lat": 34.76963573,
+          "lng": 32.41739866,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/papantoniou-bakeries-kato-paphos",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "cafe": "Frunch Piroski & Cafe",
+          "freddo": 2.5,
+          "address": "Archiepiskopou Makariou 3, 56, shop 3",
+          "lat": 34.77733349,
+          "lng": 32.42055381,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/frunch-piroski-cafe",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "cafe": "The 23 Cafe",
+          "freddo": 2.5,
+          "address": "30, Kinira",
+          "lat": 34.77568484,
+          "lng": 32.43126026,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/the-23-cafe",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt",
+            "foody"
+          ],
+          "foodyUrl": "https://www.foody.com.cy/delivery/pafos/the-23-cafe"
+        },
+        {
+          "cafe": "Rocket Snacks",
+          "freddo": 2.5,
+          "address": "Andrea Geroudi 11-13",
+          "lat": 34.77786537,
+          "lng": 32.42188647,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/rocket-snacks",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
@@ -8463,72 +8550,12 @@
           ]
         },
         {
-          "cafe": "Street Box Cafe",
+          "cafe": "Diexodos Coffee & Snack Boutique",
           "freddo": 2.5,
-          "address": "Archiepiskopou Makariou 3, Timi",
-          "lat": 34.72802322,
-          "lng": 32.51336883,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/street-box-cafe",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "cafe": "Rikano Coffee Shop Mesogi",
-          "freddo": 2.5,
-          "address": "Panikou Chatzipanagi 10 Mesogi",
-          "lat": 34.80862461,
-          "lng": 32.45027542,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/rikano-cafe-mesogi",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "cafe": "Churrito ",
-          "freddo": 2.5,
-          "address": "Fellachoglou 21, Shop 7",
-          "lat": 34.78034457,
-          "lng": 32.42067097,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/churrito",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "cafe": "Papantoniou Bakeries Archiepiskopou Makariou",
-          "freddo": 2.5,
-          "address": "Arch Makariou III Avenue 22, Yeroskipou, Cyprus",
-          "lat": 34.76193592,
-          "lng": 32.45038966,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/papantoniou-bakeries-archiepiskopou-makariou",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "cafe": "Rocket Snacks",
-          "freddo": 2.5,
-          "address": "Andrea Geroudi 11-13",
-          "lat": 34.77786537,
-          "lng": 32.42188647,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/rocket-snacks",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "cafe": "The Bean's Garage",
-          "freddo": 2.5,
-          "address": "Constantinou Kanari 61, Shop 1",
-          "lat": 34.77907181,
-          "lng": 32.41972204,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/the-beans-garage",
+          "address": "Rigenis 21, Yeroskipou",
+          "lat": 34.76530396,
+          "lng": 32.45307254,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/diexodos-coffee-and-snack-boutique",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
@@ -8553,6 +8580,18 @@
           "lat": 34.8240795,
           "lng": 32.4015908,
           "url": "https://wolt.com/en/cyp/paphos/restaurant/grind-bean",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "cafe": "Menmel Cafe",
+          "freddo": 2.5,
+          "address": "Archepiskopou III, Timi",
+          "lat": 34.73085867,
+          "lng": 32.50653755,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/menmel-cafe",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
@@ -8629,20 +8668,6 @@
           ]
         },
         {
-          "cafe": "The 23 Cafe",
-          "freddo": 2.5,
-          "slug": "the-23-cafe",
-          "url": "https://www.foody.com.cy/delivery/pafos/the-23-cafe",
-          "address": null,
-          "lat": 34.775654,
-          "lng": 32.431118,
-          "source": "foody",
-          "freddoSource": "foody",
-          "platforms": [
-            "foody"
-          ]
-        },
-        {
           "cafe": "Coffee Corner Tala",
           "freddo": 2.5,
           "slug": "coffee-corner-tala",
@@ -8678,20 +8703,6 @@
           "address": null,
           "lat": 34.794455,
           "lng": 32.423565,
-          "source": "foody",
-          "freddoSource": "foody",
-          "platforms": [
-            "foody"
-          ]
-        },
-        {
-          "cafe": "VK Cafe Paphos",
-          "freddo": 2.5,
-          "slug": "vk-cafe-paphos",
-          "url": "https://www.foody.com.cy/delivery/pafos/vk-cafe-paphos",
-          "address": null,
-          "lat": 34.781265,
-          "lng": 32.435303,
           "source": "foody",
           "freddoSource": "foody",
           "platforms": [
@@ -9311,30 +9322,6 @@
       },
       "cafes": [
         {
-          "cafe": "Casa Nostra Cafe",
-          "freddo": 2.2,
-          "address": "Griva Digeni 13",
-          "lat": 35.03987885,
-          "lng": 33.98093305,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/casa-nostra-cafe",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "cafe": "Coffee 2 Go N’ More - Periptero Assias",
-          "freddo": 2.2,
-          "address": "Georgiou Gourounia 232 Paralimni 5281",
-          "lat": 35.05603027,
-          "lng": 33.97134399,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/coffee-2-go-n-more",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "cafe": "All In Kiosk - Coffee",
           "freddo": 2.2,
           "slug": "all-in-kiosk",
@@ -9401,20 +9388,6 @@
           ]
         },
         {
-          "cafe": "One Way Coffee Shop",
-          "freddo": 2.4,
-          "address": "Plateia Hroon 1G, Swtira ",
-          "lat": 35.02819195114908,
-          "lng": 33.951581387222404,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/one-way-coffee-shop",
-          "freddoSource": "wolt",
-          "platforms": [
-            "wolt",
-            "foody"
-          ],
-          "foodyUrl": "https://www.foody.com.cy/delivery/ammochostos/one-way-coffee-shop-2000429699"
-        },
-        {
           "cafe": "Wake Up Breakfast",
           "freddo": 2.4,
           "slug": "wake-up-breakfast-2000586707",
@@ -9422,6 +9395,20 @@
           "address": null,
           "lat": 35.010646,
           "lng": 34.05392,
+          "source": "foody",
+          "freddoSource": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "cafe": "One Way Coffee Shop",
+          "freddo": 2.4,
+          "slug": "one-way-coffee-shop-2000429699",
+          "url": "https://www.foody.com.cy/delivery/ammochostos/one-way-coffee-shop-2000429699",
+          "address": null,
+          "lat": 35.028205,
+          "lng": 33.951515,
           "source": "foody",
           "freddoSource": "foody",
           "platforms": [
@@ -9443,12 +9430,24 @@
           ]
         },
         {
-          "cafe": "Coffee Roasters by Robustos",
+          "cafe": "SX Express Coffee",
           "freddo": 2.5,
-          "address": "Tasou Markou 15",
-          "lat": 35.04008882,
-          "lng": 33.97938156,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/coffee-roasters-by-robustos",
+          "address": "Nissi Avenue 46",
+          "lat": 34.98847727,
+          "lng": 33.9868882,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/sx-express-coffee",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "cafe": "Cups & Mugs",
+          "freddo": 2.5,
+          "address": "Dimokratias 33, Sotira",
+          "lat": 35.02790742,
+          "lng": 33.9484718,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/cups-mugs",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
@@ -9467,12 +9466,12 @@
           ]
         },
         {
-          "cafe": "Favorito Cafe",
+          "cafe": "Expresso Coffee Stop",
           "freddo": 2.5,
-          "address": "11 Archiepiskopou Makariou III Deryneia ",
-          "lat": 35.06247554,
-          "lng": 33.96006976,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/favorito-cafe",
+          "address": "Archiepiskopou Makariou III 6, Paralimni",
+          "lat": 35.03848918,
+          "lng": 33.98283424,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/expresso-coffee-stop",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
@@ -9533,18 +9532,18 @@
           ]
         },
         {
-          "cafe": "Fusis Coffee Shop",
+          "cafe": "Fusis",
           "freddo": 2.6,
-          "address": "Kryou Nerou 33, Ayia Napa ",
-          "lat": 34.98706111,
-          "lng": 34.00641691,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/fusis-coffee-shop",
-          "freddoSource": "wolt",
+          "slug": "fusis-2000342652",
+          "url": "https://www.foody.com.cy/delivery/ammochostos/fusis-2000342652",
+          "address": null,
+          "lat": 34.987121,
+          "lng": 34.006683,
+          "source": "foody",
+          "freddoSource": "foody",
           "platforms": [
-            "wolt",
             "foody"
-          ],
-          "foodyUrl": "https://www.foody.com.cy/delivery/ammochostos/fusis-2000342652"
+          ]
         },
         {
           "cafe": "Lokmas",
@@ -9567,6 +9566,18 @@
           "lat": 35.03931561,
           "lng": 33.98361517,
           "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/coffee-lab-paralimni",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "cafe": "Platon All Day Cafe",
+          "freddo": 2.7,
+          "address": "1ης Απριλίου 24, Paralimni",
+          "lat": 35.04438121,
+          "lng": 33.97755404,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/platon-all-day-cafe",
           "freddoSource": "wolt",
           "platforms": [
             "wolt"
@@ -9641,18 +9652,32 @@
           ]
         },
         {
+          "cafe": "Clock Café Paralimni",
+          "freddo": 2.8,
+          "address": "Apriliou 1st, 54",
+          "lat": 35.04223859,
+          "lng": 33.97773321,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/clock-caf-paralimni",
+          "freddoSource": "wolt",
+          "platforms": [
+            "wolt",
+            "foody"
+          ],
+          "foodyUrl": "https://www.foody.com.cy/delivery/menu/clock-cafe"
+        },
+        {
           "cafe": "Senso Cafe",
           "freddo": 2.8,
-          "slug": "senso-cafe",
-          "url": "https://www.foody.com.cy/delivery/paralimni/senso-cafe",
-          "address": null,
-          "lat": 35.03977,
-          "lng": 33.9826,
-          "source": "foody",
-          "freddoSource": "foody",
+          "address": "Ayiou Georgiou 11, Paralimni",
+          "lat": 35.03970684,
+          "lng": 33.98228385,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/senso",
+          "freddoSource": "wolt",
           "platforms": [
+            "wolt",
             "foody"
-          ]
+          ],
+          "foodyUrl": "https://www.foody.com.cy/delivery/paralimni/senso-cafe"
         },
         {
           "cafe": "365 Coffee Shop",
@@ -9715,20 +9740,6 @@
           "freddo": 2.8,
           "slug": "kawacom-ipanema-espresso",
           "url": "https://www.foody.com.cy/delivery/menu/kawacom-ipanema-espresso",
-          "address": null,
-          "lat": null,
-          "lng": null,
-          "source": "foody",
-          "freddoSource": "foody",
-          "platforms": [
-            "foody"
-          ]
-        },
-        {
-          "cafe": "Clock Cafe",
-          "freddo": 2.8,
-          "slug": "clock-cafe",
-          "url": "https://www.foody.com.cy/delivery/menu/clock-cafe",
           "address": null,
           "lat": null,
           "lng": null,
@@ -9952,8 +9963,8 @@
     }
   ],
   "sources": {
-    "wolt": "2026-08-25T06:24:14.568Z",
-    "bolt": "2026-08-23T14:29:11.640Z",
-    "foody": "2026-08-23T12:21:42.035Z"
+    "wolt": "2026-08-27T17:04:02.956Z",
+    "bolt": "2026-08-25T14:34:10.605Z",
+    "foody": "2026-08-25T12:30:44.556Z"
   }
 }
