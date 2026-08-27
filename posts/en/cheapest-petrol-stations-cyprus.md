@@ -1,7 +1,7 @@
 ---
 title: "Cheapest Petrol Stations in Cyprus — Live Tracker"
 date: "2026-06-28"
-updated: "2026-08-26"
+updated: "2026-08-27"
 category: "Fuel"
 summary: "Live prices for Unleaded 95, Unleaded 98, and Diesel across petrol stations in Cyprus. Updated hourly from the official Cyprus government fuel observatory."
 pinned: true
@@ -32,18 +32,18 @@ pinned: true
 | ENI | [Λεωφ. Λάρνακος 125 Τ.Κ 1048](https://www.google.com/maps?q=35.1658,33.3822) | Παλλουριώτισσα | €1.615 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.615 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.615 |
-| ESSO | [Λεωφ. Γ.Γρίβα Διγενή 31-35 Τ.Κ 1082](https://www.google.com/maps?q=35.1628065376475,33.3572777748687) | Λευκωσία | €1.615 |
 | PETROLINA | [Λεωφ. Λάρνακος 5 Τ.Κ 1035](https://www.google.com/maps?q=35.1727,33.3726) | Λευκωσία | €1.615 |
+| EKO | [Ελευθερίας 27 Τ.Κ 7102](https://www.google.com/maps?q=34.935446,33.59272) | Αραδίππου | €1.615 |
 
 ## 7 Cheapest Stations Right Now — Diesel
 
 | Brand | Address | Area | Price |
 |-------|---------|------|-------|
-| SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.725 |
-| SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.739 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.749 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.749 |
+| SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.777 |
 | PETROLINA | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.92598333,33.54103333) | Καλό Χωριό Λάρνακας | €1.777 |
+| SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.779 |
 | PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.783 |
 | ESSO | [Λεωφ. Νίκης 37 Τ.Κ 1087](https://www.google.com/maps?q=35.1565679511699,33.3580602362457) | Ακρόπολη | €1.788 |
 
@@ -59,6 +59,6 @@ pinned: true
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.399 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.399 |
 
-> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 26 August 2026
+> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 27 August 2026
 
 <!-- FUEL_PRICES_END -->
