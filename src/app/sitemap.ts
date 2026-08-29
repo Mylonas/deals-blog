@@ -31,7 +31,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const shared: { path: string; langs: Lang[]; priority: number }[] = [
     { path: "", langs: LANGS, priority: 1 },
     { path: "jobs", langs: LANGS, priority: 0.9 },
+    { path: "about", langs: LANGS, priority: 0.4 },
+    { path: "contact", langs: LANGS, priority: 0.3 },
     { path: "privacy", langs: LANGS, priority: 0.3 },
+    { path: "terms", langs: LANGS, priority: 0.3 },
     { path: "trends", langs: ["en"], priority: 0.5 },
   ];
   for (const { path, langs, priority } of shared) {
