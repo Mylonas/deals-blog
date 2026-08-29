@@ -8,6 +8,7 @@ export const metadata = {
   title: "Дешевейшие АЗС на Кипре — Актуальные цены",
   description:
     "Актуальные цены на топливо на АЗС Кипра. Фильтруйте по округу и типу топлива (АИ-95, АИ-98, Дизель), чтобы найти ближайшую дешёвую заправку. Обновляется каждый час.",
+  alternates: {"canonical":"/ru/posts/cheapest-petrol-stations-cyprus/","languages":{"en":"/posts/cheapest-petrol-stations-cyprus/","el":"/el/posts/cheapest-petrol-stations-cyprus/","ru":"/ru/posts/cheapest-petrol-stations-cyprus/","x-default":"/posts/cheapest-petrol-stations-cyprus/"}},
 };
 
 export default function FuelPricesPageRU() {

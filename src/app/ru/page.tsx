@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/posts";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "DealsHub — Лучшие предложения на Кипре",
+  description: "Сравнение цен на топливо, продукты, доставку еды и другое на Кипре. Обновление ежедневно.",
+  alternates: {
+    canonical: "/ru/",
+    languages: { en: "/", el: "/el/", ru: "/ru/", "x-default": "/" },
+  },
+};
 
 const categoryColors: Record<string, string> = {
   "Еда": "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",

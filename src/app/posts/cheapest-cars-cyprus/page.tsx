@@ -6,6 +6,7 @@ export const metadata = {
   title: "Cheapest Cars in Cyprus — Live Bazaraki Listings",
   description:
     "Every car for sale on Bazaraki Cyprus, sorted cheapest first. Filter by make, year, fuel, gearbox, body type, city, price and mileage.",
+  alternates: {"canonical":"/posts/cheapest-cars-cyprus/","languages":{"en":"/posts/cheapest-cars-cyprus/","el":"/el/posts/cheapest-cars-cyprus/","ru":"/ru/posts/cheapest-cars-cyprus/","x-default":"/posts/cheapest-cars-cyprus/"}},
 };
 
 export default function CheapestCarsEN() {

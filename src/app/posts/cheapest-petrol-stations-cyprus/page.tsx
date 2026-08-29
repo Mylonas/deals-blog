@@ -8,6 +8,7 @@ export const metadata = {
   title: "Cheapest Petrol Stations in Cyprus — Live Prices",
   description:
     "Live fuel prices across Cyprus. Filter by district and fuel type (Unleaded 95, 98, Diesel) to find the cheapest station near you. Updated hourly from the Cyprus government portal.",
+  alternates: {"canonical":"/posts/cheapest-petrol-stations-cyprus/","languages":{"en":"/posts/cheapest-petrol-stations-cyprus/","el":"/el/posts/cheapest-petrol-stations-cyprus/","ru":"/ru/posts/cheapest-petrol-stations-cyprus/","x-default":"/posts/cheapest-petrol-stations-cyprus/"}},
 };
 
 export default function FuelPricesPage() {

@@ -6,6 +6,7 @@ export const metadata = {
   title: "Φθηνότερο Freddo Espresso στην Κύπρο — Ζωντανές Τιμές ανά Πόλη",
   description:
     "Τιμές Freddo Espresso σε Λευκωσία, Λεμεσό, Λάρνακα, Πάφο και Αγία Νάπα — οι φθηνότερες καφετέριες σε κάθε πόλη, πάντα με το φθηνότερο πρώτο. Εβδομαδιαία ενημέρωση μέσω Wolt, Bolt Food και Foody.",
+  alternates: {"canonical":"/el/posts/cheapest-coffee-nicosia/","languages":{"en":"/posts/cheapest-coffee-nicosia/","el":"/el/posts/cheapest-coffee-nicosia/","ru":"/ru/posts/cheapest-coffee-nicosia/","x-default":"/posts/cheapest-coffee-nicosia/"}},
 };
 
 export default function CheapestFreddoEL() {

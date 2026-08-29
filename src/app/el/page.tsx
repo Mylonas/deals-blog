@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/posts";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "DealsHub — Οι Καλύτερες Προσφορές στην Κύπρο",
+  description: "Επιλεγμένες συγκρίσεις τιμών για καύσιμα, σούπερ μάρκετ, φαγητό και άλλα στην Κύπρο. Ενημέρωση καθημερινά.",
+  alternates: {
+    canonical: "/el/",
+    languages: { en: "/", el: "/el/", ru: "/ru/", "x-default": "/" },
+  },
+};
 
 const categoryColors: Record<string, string> = {
   "Φαγητό": "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",

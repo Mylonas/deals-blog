@@ -6,6 +6,7 @@ export const metadata = {
   title: "Топ-20 лучших скидок в супермаркетах Кипра — Актуальные акции",
   description:
     "20 товаров с наибольшим снижением цены во всех крупных супермаркетах Кипра, по данным государственного ценового мониторинга e-Kalathi. Обновляется ежедневно.",
+  alternates: {"canonical":"/ru/posts/cheapest-supermarket-products/","languages":{"en":"/posts/cheapest-supermarket-products/","el":"/el/posts/cheapest-supermarket-products/","ru":"/ru/posts/cheapest-supermarket-products/","x-default":"/posts/cheapest-supermarket-products/"}},
 };
 
 export default function CheapestSupermarketProductsRU() {

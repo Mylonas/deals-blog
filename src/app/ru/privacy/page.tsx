@@ -15,7 +15,7 @@ export default function PrivacyRu() {
   return (
     <article className="max-w-3xl">
       <h1 className="text-3xl font-bold mb-2">Политика конфиденциальности</h1>
-      <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">Последнее обновление: 10 августа 2026 г.</p>
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">Последнее обновление: 29 августа 2026 г.</p>
 
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
@@ -62,6 +62,22 @@ export default function PrivacyRu() {
             Объявления об акциях и вакансиях ведут на внешние сайты (магазины, приложения доставки,
             государственные страницы) с собственными политиками конфиденциальности, которые мы не
             контролируем.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-2">Ваши права по GDPR</h2>
+          <p>Если вы находитесь в Европейской экономической зоне или Великобритании, у вас есть право:</p>
+          <ul className="list-disc ml-6 mt-2 space-y-1">
+            <li>Получить доступ к любым персональным данным, которые мы храним</li>
+            <li>Запросить исправление или удаление ваших данных</li>
+            <li>Возразить против обработки или ограничить её</li>
+            <li>Запросить переносимость ваших данных</li>
+            <li>Отозвать согласие в любое время (для cookie используйте баннер согласия)</li>
+          </ul>
+          <p className="mt-2">
+            Для реализации любого из этих прав свяжитесь с нами:{" "}
+            <a className="text-blue-600 dark:text-blue-400 hover:underline" href="mailto:mikmylona@gmail.com">mikmylona@gmail.com</a>.
           </p>
         </section>
 

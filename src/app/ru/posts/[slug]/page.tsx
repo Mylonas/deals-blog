@@ -1,6 +1,27 @@
+import type { Metadata } from "next";
 import { getPost, getAllPosts } from "@/lib/posts";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://deals-blog.pages.dev";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  try {
+    const post = await getPost(slug, "ru");
+    return {
+      title: post.title,
+      description: post.summary,
+      openGraph: { title: post.title, description: post.summary, type: "article", publishedTime: post.date, ...(post.updated ? { modifiedTime: post.updated } : {}) },
+      alternates: {
+        canonical: `/ru/posts/${slug}/`,
+        languages: { en: `/posts/${slug}/`, el: `/el/posts/${slug}/`, ru: `/ru/posts/${slug}/`, "x-default": `/posts/${slug}/` },
+      },
+    };
+  } catch {
+    return {};
+  }
+}
 
 const categoryColors: Record<string, string> = {
   "Еда": "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",
@@ -35,8 +56,21 @@ export default async function PostPageRu({
 
   const badgeColor = categoryColors[post.category] ?? "bg-gray-100 text-gray-600";
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.summary,
+    datePublished: post.date,
+    ...(post.updated ? { dateModified: post.updated } : {}),
+    url: `${siteUrl}/ru/posts/${slug}/`,
+    inLanguage: "ru",
+    publisher: { "@type": "Organization", name: "DealsHub", url: siteUrl },
+  };
+
   return (
     <article>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Link href="/ru/" className="text-sm text-blue-500 hover:underline mb-6 inline-block">
         ← Назад ко всем предложениям
       </Link>

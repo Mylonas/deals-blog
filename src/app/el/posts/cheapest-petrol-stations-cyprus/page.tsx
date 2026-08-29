@@ -8,6 +8,7 @@ export const metadata = {
   title: "Φθηνότερα Πρατήρια Καυσίμων στην Κύπρο — Ζωντανές Τιμές",
   description:
     "Ζωντανές τιμές καυσίμων σε πρατήρια της Κύπρου. Φιλτράρετε κατά επαρχία και τύπο καυσίμου (Αμόλυβδη 95, 98, Πετρέλαιο) για να βρείτε το φθηνότερο κοντά σας. Ενημέρωση κάθε ώρα.",
+  alternates: {"canonical":"/el/posts/cheapest-petrol-stations-cyprus/","languages":{"en":"/posts/cheapest-petrol-stations-cyprus/","el":"/el/posts/cheapest-petrol-stations-cyprus/","ru":"/ru/posts/cheapest-petrol-stations-cyprus/","x-default":"/posts/cheapest-petrol-stations-cyprus/"}},
 };
 
 export default function FuelPricesPageEL() {

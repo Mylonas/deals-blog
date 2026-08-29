@@ -6,6 +6,7 @@ export const metadata = {
   title: "Мониторинг цен в супермаркетах — 10 основных продуктов",
   description:
     "Актуальные цены на 10 базовых товаров во всех крупных супермаркетах Кипра. Обновляется каждый час с e-kalathi.gov.cy.",
+  alternates: {"canonical":"/ru/posts/supermarket-price-watch/","languages":{"en":"/posts/supermarket-price-watch/","el":"/el/posts/supermarket-price-watch/","ru":"/ru/posts/supermarket-price-watch/","x-default":"/posts/supermarket-price-watch/"}},
 };
 
 export default function SupermarketPriceWatchRU() {

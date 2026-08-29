@@ -6,6 +6,7 @@ export const metadata = {
   title: "Φθηνότερα Αυτοκίνητα στην Κύπρο — Ζωντανές Αγγελίες Bazaraki",
   description:
     "Όλα τα αυτοκίνητα προς πώληση στο Bazaraki, ταξινομημένα από τα φθηνότερα. Φίλτρα ανά μάρκα, έτος, καύσιμο, κιβώτιο, τύπο αμαξώματος, πόλη, τιμή και χιλιόμετρα.",
+  alternates: {"canonical":"/el/posts/cheapest-cars-cyprus/","languages":{"en":"/posts/cheapest-cars-cyprus/","el":"/el/posts/cheapest-cars-cyprus/","ru":"/ru/posts/cheapest-cars-cyprus/","x-default":"/posts/cheapest-cars-cyprus/"}},
 };
 
 export default function CheapestCarsEL() {

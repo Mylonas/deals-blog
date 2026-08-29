@@ -6,6 +6,7 @@ export const metadata = {
   title: "Παρακολούθηση Τιμών Σούπερ Μάρκετ — 10 Βασικά Προϊόντα",
   description:
     "Ζωντανές τιμές για 10 βασικά οικιακά προϊόντα σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου. Ενημερώνεται κάθε ώρα από e-kalathi.gov.cy.",
+  alternates: {"canonical":"/el/posts/supermarket-price-watch/","languages":{"en":"/posts/supermarket-price-watch/","el":"/el/posts/supermarket-price-watch/","ru":"/ru/posts/supermarket-price-watch/","x-default":"/posts/supermarket-price-watch/"}},
 };
 
 export default function SupermarketPriceWatchEL() {
