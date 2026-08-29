@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-08-29T20:16:26.348Z",
+  "updatedAt": "2026-08-29T20:19:13.779Z",
   "sources": {
     "wolt": "2026-08-29T20:11:10.698Z",
-    "bolt": "2026-08-29T20:16:14.269Z",
-    "foody": "2026-08-29T20:16:23.592Z"
+    "bolt": "2026-08-29T20:18:59.306Z",
+    "foody": "2026-08-29T20:19:11.854Z"
   },
   "cities": [
     {
@@ -722,6 +722,31 @@
           ]
         },
         {
+          "name": "Gyros Stavros O Salonikios Aglantzia",
+          "slug": "gyros-stavros-salonikios-aglantzia",
+          "address": "Larnakos 110 Aglantzia Aglantzia",
+          "lat": 35.15485447,
+          "lng": 33.39903073,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/gyros-stavros-salonikios-aglantzia",
+          "prices": {
+            "souvlaki": 7.8,
+            "chicken": 8.4,
+            "souvlakiLarge": 5.8,
+            "chickenLarge": 6
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "souvlaki": "bolt",
+            "chicken": "bolt",
+            "souvlakiLarge": "bolt",
+            "chickenLarge": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/81910-gyros-stavros-o-salonikios-aglantzia"
+        },
+        {
           "name": "Souvlakia Adouloti Keryneia",
           "slug": "mezedopoleio-adoylouti-keryneia",
           "address": "7, Agiou Ioanni, Strovolos ",
@@ -1153,21 +1178,6 @@
           ]
         },
         {
-          "name": "Gyros Stavros O Salonikios Aglantzia",
-          "slug": "gyros-stavros-salonikios-aglantzia",
-          "address": "Larnakos 110 Aglantzia Aglantzia",
-          "lat": 35.15485447,
-          "lng": 33.39903073,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/gyros-stavros-salonikios-aglantzia",
-          "prices": {
-            "souvlaki": 8.3,
-            "chicken": 9
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "Gyro Project",
           "slug": "gyro-project",
           "address": "This is a virtual venue",
@@ -1179,8 +1189,14 @@
             "chicken": 9
           },
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "souvlaki": "wolt",
+            "chicken": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/292797-gyro-project"
         },
         {
           "name": "Koullis Kebab & Grill",
@@ -2050,6 +2066,26 @@
           ]
         },
         {
+          "name": "To souvlaki tis Lofou",
+          "slug": "to-soyvlaki-tis-lofoy",
+          "url": "https://www.foody.com.cy/delivery/lemesos/to-soyvlaki-tis-lofoy",
+          "lat": 34.688704,
+          "lng": 32.960037,
+          "prices": {
+            "porkchop": 14.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 10,
+            "chicken": 7.5,
+            "chickenLarge": 10,
+            "mix": 7.5,
+            "mixLarge": 10
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
           "name": "Romios Kebab",
           "slug": "romios-kebab-cy",
           "address": "Agias Fylaxeos 294A",
@@ -2225,10 +2261,39 @@
             "porkchop": 17,
             "souvlaki": 8,
             "mix": 8,
-            "chicken": 9
+            "chicken": 9,
+            "souvlakiLarge": 12,
+            "chickenLarge": 13
           },
           "platforms": [
-            "wolt"
+            "wolt",
+            "foody"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "wolt",
+            "mix": "wolt",
+            "chicken": "wolt",
+            "souvlakiLarge": "foody",
+            "chickenLarge": "foody"
+          },
+          "foodyUrl": "https://www.foody.com.cy/delivery/lemesos/tsitsis-o-aktypitos-2000619548"
+        },
+        {
+          "name": "Souvlakia Maria",
+          "slug": "souvlakia-maria-2000265298",
+          "url": "https://www.foody.com.cy/delivery/lemesos/souvlakia-maria-2000265298",
+          "lat": 34.690048,
+          "lng": 32.997308,
+          "prices": {
+            "porkchop": 14.5,
+            "souvlaki": 8,
+            "chicken": 7.5,
+            "mix": 8
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
           ]
         },
         {
@@ -2329,6 +2394,23 @@
           },
           "platforms": [
             "wolt"
+          ]
+        },
+        {
+          "name": "AEZ ZAKAKIOU",
+          "slug": "aez-zakakioy",
+          "url": "https://www.foody.com.cy/delivery/lemesos/aez-zakakioy",
+          "lat": 34.659502,
+          "lng": 33.004169,
+          "prices": {
+            "porkchop": 16.5,
+            "souvlaki": 8.5,
+            "mix": 8.5,
+            "chicken": 10
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
           ]
         },
         {
@@ -2850,6 +2932,73 @@
       },
       "venues": [
         {
+          "name": "Souvlaki.gr Larnaka",
+          "slug": "souvlakigr-larnaka",
+          "url": "https://www.foody.com.cy/delivery/larnaka/souvlakigr-larnaka",
+          "lat": 34.911286,
+          "lng": 33.636303,
+          "prices": {
+            "souvlaki": 5.5,
+            "chicken": 5.5
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "Psistaria Mavris",
+          "slug": "psistaria-mayris",
+          "url": "https://www.foody.com.cy/delivery/larnaka/psistaria-mayris",
+          "lat": 34.929306,
+          "lng": 33.636959,
+          "prices": {
+            "porkchop": 7,
+            "souvlaki": 6,
+            "souvlakiLarge": 7,
+            "chicken": 7,
+            "chickenLarge": 8
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "MatFood Kebab",
+          "slug": "matfood-kebab-2000471277",
+          "url": "https://www.foody.com.cy/delivery/larnaka/matfood-kebab-2000471277",
+          "lat": 34.869688,
+          "lng": 33.593188,
+          "prices": {
+            "porkchop": 18,
+            "souvlaki": 6,
+            "mix": 10,
+            "chicken": 6
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "Gastroland Multi-Kitchen Project",
+          "slug": "gastroland-multi-kitchen-project",
+          "url": "https://www.foody.com.cy/delivery/larnaka/gastroland-multi-kitchen-project",
+          "lat": 34.922291,
+          "lng": 33.627048,
+          "prices": {
+            "porkchop": 13.5,
+            "souvlaki": 6,
+            "chicken": 7,
+            "mix": 6.5
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
           "name": "Navy Marine",
           "slug": "navy-marine",
           "address": "Athenon 100",
@@ -3015,6 +3164,40 @@
           ]
         },
         {
+          "name": "Amfitheatro Grill & More",
+          "slug": "amfitheatro-grill-kai-more-2000476721",
+          "url": "https://www.foody.com.cy/delivery/larnaka/amfitheatro-grill-kai-more-2000476721",
+          "lat": 34.875195,
+          "lng": 33.589824,
+          "prices": {
+            "porkchop": 12,
+            "souvlaki": 7.5,
+            "chicken": 7.5,
+            "mix": 7.5
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "Estiatorio AEK Larnakas",
+          "slug": "estiatorio-aek-larnakas",
+          "url": "https://www.foody.com.cy/delivery/larnaka/estiatorio-aek-larnakas",
+          "lat": 34.920986,
+          "lng": 33.634048,
+          "prices": {
+            "porkchop": 10,
+            "souvlaki": 7.5,
+            "chicken": 8,
+            "mix": 7.5
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
           "name": "Valia Kebab House",
           "slug": "valia-kebab-house",
           "address": "Umm Haram 87",
@@ -3135,11 +3318,20 @@
           "prices": {
             "porkchop": 14,
             "chicken": 8,
-            "souvlaki": 8
+            "souvlaki": 8,
+            "mix": 8
           },
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "foody"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "chicken": "wolt",
+            "souvlaki": "wolt",
+            "mix": "foody"
+          },
+          "foodyUrl": "https://www.foody.com.cy/delivery/larnaka/tatsia-mezedotechneio-2000420300"
         },
         {
           "name": "Souvlakia Leoforos",
@@ -3159,6 +3351,111 @@
           },
           "platforms": [
             "wolt"
+          ]
+        },
+        {
+          "name": "Taverna ASIL",
+          "slug": "taverna-asil",
+          "url": "https://www.foody.com.cy/delivery/larnaka/taverna-asil",
+          "lat": 34.931089,
+          "lng": 33.617102,
+          "prices": {
+            "souvlaki": 8,
+            "souvlakiLarge": 9.5,
+            "chicken": 8.5,
+            "chickenLarge": 9.5,
+            "mix": 8.5,
+            "mixLarge": 10
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "Taverna To Koutouki tou Komiti O Afxentis sas",
+          "slug": "taverna-to-koytoyki-toy-komiti-o-ayxentis-sas-2000702305",
+          "url": "https://www.foody.com.cy/delivery/larnaka/taverna-to-koytoyki-toy-komiti-o-ayxentis-sas-2000702305",
+          "lat": 34.977606,
+          "lng": 33.849775,
+          "prices": {
+            "porkchop": 15,
+            "souvlaki": 8,
+            "chicken": 10,
+            "mix": 8
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "Taverna to deilino",
+          "slug": "taverna-to-deilino",
+          "url": "https://www.foody.com.cy/delivery/larnaka/taverna-to-deilino",
+          "lat": 34.911941,
+          "lng": 33.636774,
+          "prices": {
+            "porkchop": 17,
+            "souvlaki": 8,
+            "mix": 8.5,
+            "chicken": 9
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "Psinesai? Gyros Sta Karvouna",
+          "slug": "psinesai-gyros-sta-karvoyna-2000404390",
+          "url": "https://www.foody.com.cy/delivery/larnaka/psinesai-gyros-sta-karvoyna-2000404390",
+          "lat": 34.911064,
+          "lng": 33.634616,
+          "prices": {
+            "souvlaki": 8,
+            "chicken": 8
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "Vergi Grill House",
+          "slug": "vergi-grill-house",
+          "url": "https://www.foody.com.cy/delivery/larnaka/vergi-grill-house",
+          "lat": 34.926813,
+          "lng": 33.636079,
+          "prices": {
+            "porkchop": 17,
+            "souvlakiLarge": 9,
+            "souvlaki": 8,
+            "chicken": 9,
+            "mix": 9,
+            "chickenLarge": 10,
+            "mixLarge": 10
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "Farias Kitchen",
+          "slug": "farias-kitchen-2000700916",
+          "url": "https://www.foody.com.cy/delivery/larnaka/farias-kitchen-2000700916",
+          "lat": 34.97706,
+          "lng": 33.841511,
+          "prices": {
+            "porkchop": 14,
+            "souvlaki": 8,
+            "chicken": 8.5,
+            "mix": 8
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
           ]
         },
         {
@@ -3296,6 +3593,78 @@
           ]
         },
         {
+          "name": "Tou Christou to Souvlaki",
+          "slug": "toy-christoy-to-soyvlaki-2000680511",
+          "url": "https://www.foody.com.cy/delivery/larnaka/toy-christoy-to-soyvlaki-2000680511",
+          "lat": 34.952825,
+          "lng": 33.591432,
+          "prices": {
+            "souvlaki": 8.5,
+            "mix": 8.7,
+            "chicken": 8.5
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "Stou Nikola Souvlaki - Taverneio",
+          "slug": "stou-nikola-souvlaki-taverneio",
+          "url": "https://www.foody.com.cy/delivery/larnaka/stou-nikola-souvlaki-taverneio",
+          "lat": 34.854603,
+          "lng": 33.58305,
+          "prices": {
+            "porkchop": 15.5,
+            "souvlaki": 8.5,
+            "souvlakiLarge": 9.9,
+            "chicken": 9,
+            "chickenLarge": 10.9,
+            "mix": 10,
+            "mixLarge": 11
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "Souvlakia Pieris",
+          "slug": "soyvlakia-pieris-2000421733",
+          "url": "https://www.foody.com.cy/delivery/larnaka/soyvlakia-pieris-2000421733",
+          "lat": 34.923075,
+          "lng": 33.636541,
+          "prices": {
+            "souvlaki": 8.5,
+            "chicken": 9.5,
+            "mix": 9.5
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "Opa Souvlaki",
+          "slug": "opa-souvlaki-2000777578",
+          "url": "https://www.foody.com.cy/delivery/larnaka/opa-souvlaki-2000777578",
+          "lat": 34.847565,
+          "lng": 33.58329,
+          "prices": {
+            "porkchop": 16.5,
+            "mixLarge": 10.7,
+            "souvlaki": 8.7,
+            "mix": 9.7,
+            "souvlakiLarge": 9.7,
+            "chicken": 9.2,
+            "chickenLarge": 10.2
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
           "name": "Famelia",
           "slug": "famelia",
           "address": "Istikal 10",
@@ -3334,6 +3703,23 @@
           ]
         },
         {
+          "name": "La Veranda",
+          "slug": "la-veranda",
+          "url": "https://www.foody.com.cy/delivery/larnaka/la-veranda",
+          "lat": 34.978844,
+          "lng": 33.692844,
+          "prices": {
+            "porkchop": 14.9,
+            "souvlaki": 8.9,
+            "chicken": 9.9,
+            "mix": 9.9
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
           "name": "Alati Piperaki Metropolis Mall",
           "slug": "alati-piperaki-metropolis-mall",
           "address": "European Union Avenue 5, (Metropolis Mall)",
@@ -3366,6 +3752,23 @@
           },
           "platforms": [
             "wolt"
+          ]
+        },
+        {
+          "name": "Grill Lovers",
+          "slug": "grill-lovers",
+          "url": "https://www.foody.com.cy/delivery/larnaka/grill-lovers",
+          "lat": 34.959606,
+          "lng": 33.634949,
+          "prices": {
+            "porkchop": 16,
+            "souvlaki": 9,
+            "chicken": 9,
+            "mix": 9
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
           ]
         },
         {
@@ -3425,6 +3828,23 @@
           },
           "platforms": [
             "wolt"
+          ]
+        },
+        {
+          "name": "Taverna stou Peirati",
+          "slug": "taverna-stoy-peirati-2000556179",
+          "url": "https://www.foody.com.cy/delivery/larnaka/taverna-stoy-peirati-2000556179",
+          "lat": 34.985879,
+          "lng": 33.652449,
+          "prices": {
+            "porkchop": 14.5,
+            "souvlaki": 10,
+            "chicken": 10,
+            "mix": 11
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
           ]
         },
         {
@@ -3625,6 +4045,55 @@
           },
           "platforms": [
             "wolt"
+          ]
+        },
+        {
+          "name": "Souvlaki Express",
+          "slug": "souvlaki-express",
+          "url": "https://www.foody.com.cy/delivery/larnaka/souvlaki-express",
+          "lat": 34.910907,
+          "lng": 33.623019,
+          "prices": {
+            "porkchop": 13.9,
+            "souvlakiLarge": 8,
+            "chickenLarge": 9.5,
+            "mixLarge": 9.9
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "The Big Bad Wolf",
+          "slug": "the-big-bad-wolf",
+          "url": "https://www.foody.com.cy/delivery/menu/the-big-bad-wolf",
+          "lat": 34.919072,
+          "lng": 33.618577,
+          "prices": {
+            "porkchop": 12.4,
+            "souvlakiLarge": 8.9,
+            "chickenLarge": 8.9
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
+          ]
+        },
+        {
+          "name": "Star Snack",
+          "slug": "star-snack-2000512723",
+          "url": "https://www.foody.com.cy/delivery/larnaka/star-snack-2000512723",
+          "lat": 34.930075,
+          "lng": 33.638096,
+          "prices": {
+            "porkchop": 5.1,
+            "mix": 5.1,
+            "chicken": 5.1
+          },
+          "source": "foody",
+          "platforms": [
+            "foody"
           ]
         }
       ]
