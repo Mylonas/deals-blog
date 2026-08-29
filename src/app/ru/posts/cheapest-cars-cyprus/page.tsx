@@ -6,6 +6,7 @@ export const metadata = {
   title: "Самые дешёвые авто на Кипре — актуальные объявления Bazaraki",
   description:
     "Все автомобили с Bazaraki Кипр, сначала самые дешёвые. Фильтры по марке, году, топливу, коробке, типу кузова, городу, цене и пробегу.",
+  alternates: {"canonical":"/ru/posts/cheapest-cars-cyprus/","languages":{"en":"/posts/cheapest-cars-cyprus/","el":"/el/posts/cheapest-cars-cyprus/","ru":"/ru/posts/cheapest-cars-cyprus/","x-default":"/posts/cheapest-cars-cyprus/"}},
 };
 
 export default function CheapestCarsRU() {

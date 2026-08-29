@@ -15,7 +15,7 @@ export default function PrivacyEl() {
   return (
     <article className="max-w-3xl">
       <h1 className="text-3xl font-bold mb-2">Πολιτική Απορρήτου</h1>
-      <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">Τελευταία ενημέρωση: 10 Αυγούστου 2026</p>
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">Τελευταία ενημέρωση: 29 Αυγούστου 2026</p>
 
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
@@ -64,6 +64,22 @@ export default function PrivacyEl() {
             Οι καταχωρίσεις προσφορών και θέσεων παραπέμπουν σε εξωτερικούς ιστότοπους (καταστήματα,
             εφαρμογές delivery, κρατικές σελίδες) που έχουν τις δικές τους πολιτικές απορρήτου, τις
             οποίες δεν ελέγχουμε.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-2">Τα δικαιώματά σας βάσει GDPR</h2>
+          <p>Εάν βρίσκεστε στον Ευρωπαϊκό Οικονομικό Χώρο ή στο Ηνωμένο Βασίλειο, έχετε δικαίωμα:</p>
+          <ul className="list-disc ml-6 mt-2 space-y-1">
+            <li>Πρόσβασης σε τυχόν προσωπικά δεδομένα που διατηρούμε</li>
+            <li>Διόρθωσης ή διαγραφής των δεδομένων σας</li>
+            <li>Εναντίωσης ή περιορισμού της επεξεργασίας</li>
+            <li>Φορητότητας των δεδομένων σας</li>
+            <li>Ανάκλησης συγκατάθεσης ανά πάσα στιγμή (για cookies, χρησιμοποιήστε το banner συγκατάθεσης)</li>
+          </ul>
+          <p className="mt-2">
+            Για άσκηση οποιουδήποτε δικαιώματος, επικοινωνήστε:{" "}
+            <a className="text-blue-600 dark:text-blue-400 hover:underline" href="mailto:mikmylona@gmail.com">mikmylona@gmail.com</a>.
           </p>
         </section>
 

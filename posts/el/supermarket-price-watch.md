@@ -1,7 +1,7 @@
 ---
 title: "Παρακολούθηση Τιμών Σούπερ Μάρκετ — 10 Βασικά Προϊόντα"
 date: "2026-06-28"
-updated: "2026-08-10"
+updated: "2026-08-29"
 category: "Φαγητό & Ποτό"
 summary: "Ζωντανές τιμές για 10 βασικά οικιακά προϊόντα σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου. Ενημερώνεται 4 φορές την ημέρα από το επίσημο e-kalathi.gov.cy."
 pinned: false
@@ -11,20 +11,20 @@ pinned: false
 
 <!-- PRICES_START -->
 
-> Ενημέρωση 10 August 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Ενημέρωση 29 August 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
 | Προϊόν | Φθηνότερη Τιμή | Μάρκα |
 |---------|---------|--------|
 | Φρέσκο Γάλα 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
-| Αβγά | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
-| Χαλλούμι 200g | **[€1.89](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
+| Αβγά | **[€2.15](https://www.e-kalathi.gov.cy/product-information/414)** | Nikiforou |
+| Χαλλούμι 200g | **[€1.90](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Σπαγγέτι 500g | **[€0.95](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Ελαιόλαδο 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
 | Νερό 1.5L ×6 | **[€1.99](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
-| Γιαούρτι 450g | **[€3.75](https://www.e-kalathi.gov.cy/product-information/304)** | Charalambides Christis |
+| Γιαούρτι 450g | **[€1.94](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
 | Ρύζι 1kg | **[€1.90](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
 | Χυμός Πορτοκάλι 1L | **[€2.25](https://www.e-kalathi.gov.cy/product-information/2120)** | Delta |
-| Coca-Cola 1L ×2 | **[€2.35](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
+| Coca-Cola 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
 
 <!-- PRICES_END -->
 

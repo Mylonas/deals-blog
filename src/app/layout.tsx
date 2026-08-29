@@ -3,6 +3,7 @@ import "./globals.css";
 import LangSwitcher from "@/components/LangSwitcher";
 import ThemeToggle from "@/components/ThemeToggle";
 import CookieConsent from "@/components/CookieConsent";
+import AdSenseLoader from "@/components/AdSenseLoader";
 
 const siteName = process.env.NEXT_PUBLIC_SITE_NAME ?? "DealsHub";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   description: "The best deals, compared and ranked.",
   metadataBase: new URL(siteUrl),
   openGraph: { siteName, type: "website" },
+  twitter: { card: "summary_large_image" },
   other: { "google-adsense-account": "ca-pub-4547647290394610" },
 };
 
@@ -26,9 +28,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4547647290394610"
-          crossOrigin="anonymous"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: siteName,
+              url: siteUrl,
+              inLanguage: ["en", "el", "ru"],
+            }),
+          }}
         />
       </head>
       <body className="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-200">
@@ -60,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           © {new Date().getFullYear()} DealsHub
         </footer>
         <CookieConsent />
+        <AdSenseLoader />
       </body>
     </html>
   );

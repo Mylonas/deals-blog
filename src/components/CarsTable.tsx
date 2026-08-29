@@ -309,7 +309,7 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
               {c.image ? (
                 <img
                   src={c.image}
-                  alt=""
+                  alt={[c.make, c.model, c.year].filter(Boolean).join(" ")}
                   loading="lazy"
                   className="w-28 h-24 object-cover rounded-md flex-shrink-0 bg-gray-100 dark:bg-gray-800"
                 />

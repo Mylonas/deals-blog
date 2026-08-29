@@ -6,6 +6,7 @@ export const metadata = {
   title: "Cheapest Souvlaki in Cyprus — Live Prices by City",
   description:
     "Souvlaki pita prices in Nicosia, Limassol, Larnaca, Paphos and Ayia Napa — pork, chicken, pork chop and mix, always sorted cheapest first. Updated weekly from Wolt, Bolt and Foody.",
+  alternates: {"canonical":"/posts/cheapest-souvlaki-cyprus/","languages":{"en":"/posts/cheapest-souvlaki-cyprus/","el":"/el/posts/cheapest-souvlaki-cyprus/","ru":"/ru/posts/cheapest-souvlaki-cyprus/","x-default":"/posts/cheapest-souvlaki-cyprus/"}},
 };
 
 export default function CheapestSouvlakiEN() {

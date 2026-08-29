@@ -15,7 +15,7 @@ export default function PrivacyEn() {
   return (
     <article className="max-w-3xl prose-neutral">
       <h1 className="text-3xl font-bold mb-2">Privacy Policy</h1>
-      <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">Last updated: 10 August 2026</p>
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">Last updated: 29 August 2026</p>
 
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
@@ -62,6 +62,22 @@ export default function PrivacyEn() {
           <p>
             Deal and job listings link to external sites (retailers, delivery apps, government pages).
             Those sites have their own privacy policies, which we do not control.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-2">Your rights under GDPR</h2>
+          <p>If you are in the European Economic Area or the UK, you have the right to:</p>
+          <ul className="list-disc ml-6 mt-2 space-y-1">
+            <li>Access any personal data we hold about you</li>
+            <li>Request correction or deletion of your data</li>
+            <li>Object to or restrict processing of your data</li>
+            <li>Request portability of your data</li>
+            <li>Withdraw consent at any time (for cookie preferences, use the consent banner)</li>
+          </ul>
+          <p className="mt-2">
+            To exercise any of these rights, contact us at{" "}
+            <a className="text-blue-600 dark:text-blue-400 hover:underline" href="mailto:mikmylona@gmail.com">mikmylona@gmail.com</a>.
           </p>
         </section>
 

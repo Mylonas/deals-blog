@@ -11,11 +11,13 @@ export default function CookieConsent() {
 
   function accept() {
     localStorage.setItem("cookie-consent", "accepted");
+    window.dispatchEvent(new StorageEvent("storage", { key: "cookie-consent", newValue: "accepted" }));
     setVisible(false);
   }
 
   function decline() {
     localStorage.setItem("cookie-consent", "declined");
+    window.dispatchEvent(new StorageEvent("storage", { key: "cookie-consent", newValue: "declined" }));
     setVisible(false);
   }
 

@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/posts";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "DealsHub — Best Deals in Cyprus, Compared & Ranked",
+  description: "Hand-picked price comparisons for fuel, groceries, food delivery and more in Cyprus. Updated daily.",
+  alternates: {
+    canonical: "/",
+    languages: { en: "/", el: "/el/", ru: "/ru/", "x-default": "/" },
+  },
+};
 
 const categoryColors: Record<string, string> = {
   Food: "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",

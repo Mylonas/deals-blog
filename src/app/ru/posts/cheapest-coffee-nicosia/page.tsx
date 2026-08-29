@@ -6,6 +6,7 @@ export const metadata = {
   title: "Самый дешёвый Freddo Espresso на Кипре — Актуальные цены по городам",
   description:
     "Цены на Фреддо Эспрессо в Никосии, Лимасоле, Ларнаке, Пафосе и Айя-Напе — самые дешёвые кафе в каждом городе, всегда от самого дешёвого. Еженедельное обновление через Wolt, Bolt Food и Foody.",
+  alternates: {"canonical":"/ru/posts/cheapest-coffee-nicosia/","languages":{"en":"/posts/cheapest-coffee-nicosia/","el":"/el/posts/cheapest-coffee-nicosia/","ru":"/ru/posts/cheapest-coffee-nicosia/","x-default":"/posts/cheapest-coffee-nicosia/"}},
 };
 
 export default function CheapestFreddoRU() {
