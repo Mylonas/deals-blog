@@ -28,12 +28,12 @@ pinned: true
 | Brand | Address | Area | Price |
 |-------|---------|------|-------|
 | PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.615 |
-| ENI | [Λεωφ. Λάρνακος 125 Τ.Κ 1048](https://www.google.com/maps?q=35.1658,33.3822) | Παλλουριώτισσα | €1.615 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.615 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.615 |
-| PETROLINA | [Λεωφ. Λάρνακος 5 Τ.Κ 1035](https://www.google.com/maps?q=35.1727,33.3726) | Λευκωσία | €1.615 |
-| EKO | [Λεωφ. Λευκωσίας 108 Τ.Κ 2540](https://www.google.com/maps?q=35.0342474332179,33.4088325048936) | Δάλι | €1.619 |
-| EKO | [Λεωφ. Γερίου Τ.Κ 2200](https://www.google.com/maps?q=35.1061438772506,33.3969139903519) | Γέρι | €1.619 |
+| PETROLINA | [Λεωφ. Κυριάκου Μάτση 28, Αγ.Ομολογητές Τ.Κ 1082](https://www.google.com/maps?q=35.1591,33.35478333) | Λευκωσία | €1.625 |
+| ESSO | [Λεωφ. Γ.Γρίβα Διγενή 31-35 Τ.Κ 1082](https://www.google.com/maps?q=35.1628065376475,33.3572777748687) | Λευκωσία | €1.627 |
+| EKO | [Λεωφ. Σαριγιάννη Τ.Κ 2831](https://www.google.com/maps?q=35.070157,32.930054) | Ευρύχου | €1.631 |
+| PETROLINA | [Αρχ. Μακαρίου Γ΄ 17 Τ.Κ 2800](https://www.google.com/maps?q=34.991233,32.902827) | Κακοπετριά | €1.631 |
 
 ## 7 Cheapest Stations Right Now — Diesel
 
@@ -45,19 +45,19 @@ pinned: true
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.779 |
 | SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.779 |
 | PETROLINA | [Λεωφ. Ελλάδος 65 Τ.Κ 7101](https://www.google.com/maps?q=34.92766666666667,33.58225) | Αραδίππου | €1.789 |
-| ESSO | [Λεωφ. Νίκης 37 Τ.Κ 1087](https://www.google.com/maps?q=35.1565679511699,33.3580602362457) | Ακρόπολη | €1.808 |
+| PETROLINA | [Λεωφ. Κυριάκου Μάτση 28, Αγ.Ομολογητές Τ.Κ 1082](https://www.google.com/maps?q=35.1591,33.35478333) | Λευκωσία | €1.808 |
 
 ## 7 Cheapest Stations Right Now — Heating Oil
 
 | Brand | Address | Area | Price |
 |-------|---------|------|-------|
-| SHELL | [Αρχ. Μακαρίου Γ' 11 Τ.Κ 2800](https://www.google.com/maps?q=34.992275,32.90260277777778) | Κακοπετριά | €1.305 |
 | ESSO | [Λεωφ. Στροβόλου 278 Τ.Κ 2048](https://www.google.com/maps?q=35.1287232428282,33.324758841803) | Στρόβολος | €1.349 |
 | EKO | [Λεωφ. Αθαλάσσας 110 Τ.Κ 2024](https://www.google.com/maps?q=35.143786,33.36403) | Δασούπολη | €1.389 |
 | EKO | [Δεκέλεια Τ.Κ](https://www.google.com/maps?q=34.98291,33.71689) | Δεκέλεια | €1.390 |
 | ENI | [Αγίας Φυλάξεως 23-25 Τ.Κ 3025](https://www.google.com/maps?q=34.681279,33.038879) | Λεμεσός | €1.395 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.399 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.399 |
+| PETROLINA | [Λεωφ. Αθαλάσσας 113 Τ.Κ 2024](https://www.google.com/maps?q=35.14405,33.36443) | Δασούπολη | €1.400 |
 
 > Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 2 September 2026
 
