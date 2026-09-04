@@ -15,8 +15,8 @@ Live prices for the 10 most-bought household staples in Cyprus, sourced from the
 
 | Staple | Cheapest Price | Brand |
 |---------|---------|--------|
-| Fresh Milk 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
-| Eggs | **[€2.15](https://www.e-kalathi.gov.cy/product-information/414)** | Nikiforou |
+| Fresh Milk 1L | **[€1.58](https://www.e-kalathi.gov.cy/product-information/27)** | Charalambides |
+| Eggs | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
 | Halloumi 200g | **[€1.90](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Spaghetti 500g | **[€0.93](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Olive Oil 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
