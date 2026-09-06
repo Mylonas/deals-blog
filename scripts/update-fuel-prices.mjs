@@ -367,7 +367,24 @@ async function main() {
     || changed(last.diesel, statsDiesel)
     || changed(last.heating, statsHeating);
 
-  if (validData && pricesChanged) {
+  // Guard: reject entries where min dropped >15% vs the previous entry —
+  // the gov portal occasionally serves a single rogue station with a
+  // nonsense price (€0.619, €1.000) that creates a visible spike on the chart.
+  let spikeDetected = false;
+  if (validData && last) {
+    for (const k of ["95", "98", "diesel", "heating"]) {
+      const cur = { "95": stats95, "98": stats98, diesel: statsDiesel, heating: statsHeating }[k];
+      const prev = last[k];
+      if (!prev || !cur || cur.min === 0) continue;
+      const drop = (prev.min - cur.min) / prev.min;
+      if (drop > 0.15) {
+        console.log(`History: spike guard — ${k} min dropped ${(drop * 100).toFixed(1)}% (€${prev.min} → €${cur.min}), skipping.`);
+        spikeDetected = true;
+      }
+    }
+  }
+
+  if (validData && pricesChanged && !spikeDetected) {
     const brent = await fetchBrentEurPerLitre();
     const entry = {
       ts: new Date().toISOString(),
