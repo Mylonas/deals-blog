@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-09-07T12:52:36.679Z",
+  "updatedAt": "2026-09-09T11:39:05.014Z",
   "sources": {
-    "wolt": "2026-09-07T12:52:36.675Z",
-    "bolt": "2026-09-05T22:28:52.613Z",
-    "foody": "2026-09-05T13:38:04.480Z"
+    "wolt": "2026-09-09T11:39:05.008Z",
+    "bolt": "2026-09-08T00:54:36.219Z",
+    "foody": "2026-09-07T16:14:26.727Z"
   },
   "cities": [
     {
@@ -151,6 +151,37 @@
           "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/159137-gyros-o-thessalonikios-wrap-grill"
         },
         {
+          "name": "Chytron Gefseis",
+          "slug": "chytron-gefseis",
+          "address": "Chytron 11",
+          "lat": 35.16139193,
+          "lng": 33.36103489,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/chytron-gefseis",
+          "prices": {
+            "mix": 7.5,
+            "mixLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9.5,
+            "souvlaki": 7,
+            "souvlakiLarge": 8.5,
+            "porkchop": 9.5
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "mix": "wolt",
+            "mixLarge": "wolt",
+            "chicken": "wolt",
+            "chickenLarge": "wolt",
+            "souvlaki": "wolt",
+            "souvlakiLarge": "wolt",
+            "porkchop": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/11079-chytron-gefseis"
+        },
+        {
           "name": "Souvlaki Delta",
           "slug": "souvlaki-delta",
           "address": "57 Agiou Andreou, Pallouriotissa",
@@ -206,53 +237,6 @@
           ]
         },
         {
-          "name": "J.F.C Restaurant",
-          "slug": "jfc-restaurant",
-          "address": "Kantaras 62C, Kaimakli",
-          "lat": 35.18467154,
-          "lng": 33.389462,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/jfc-restaurant",
-          "prices": {
-            "porkchop": 9,
-            "souvlaki": 7,
-            "chicken": 8.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Chytron Gefseis",
-          "slug": "chytron-gefseis",
-          "address": "Chytron 11",
-          "lat": 35.16139193,
-          "lng": 33.36103489,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/chytron-gefseis",
-          "prices": {
-            "mix": 7.5,
-            "mixLarge": 9,
-            "chicken": 8,
-            "chickenLarge": 9.5,
-            "souvlaki": 7,
-            "souvlakiLarge": 8.5,
-            "porkchop": 9.5
-          },
-          "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "mix": "wolt",
-            "mixLarge": "wolt",
-            "chicken": "wolt",
-            "chickenLarge": "wolt",
-            "souvlaki": "wolt",
-            "souvlakiLarge": "wolt",
-            "porkchop": "bolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/11079-chytron-gefseis"
-        },
-        {
           "name": "Tavernaki Ta Piatokamomata",
           "slug": "tavernaki-ta-piatokamomata",
           "address": "Socratous 47, Pallouriotissa",
@@ -270,6 +254,7 @@
           },
           "platforms": [
             "wolt",
+            "bolt",
             "foody"
           ],
           "priceSources": {
@@ -281,7 +266,24 @@
             "chicken": "wolt",
             "chickenLarge": "wolt"
           },
+          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/4087-ta-piatokamomata",
           "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/ta-piatokamomata"
+        },
+        {
+          "name": "J.F.C Restaurant",
+          "slug": "jfc-restaurant",
+          "address": "Kantaras 62C, Kaimakli",
+          "lat": 35.18467154,
+          "lng": 33.389462,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/jfc-restaurant",
+          "prices": {
+            "porkchop": 9,
+            "souvlaki": 7,
+            "chicken": 8.5
+          },
+          "platforms": [
+            "wolt"
+          ]
         },
         {
           "name": "Taverna Eirini Platy",
@@ -473,17 +475,71 @@
           "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/to-steki-tis-scharas"
         },
         {
-          "name": "To Kouzinaki tis Stavroullas",
-          "slug": "to-kouzinaki-tis-stavroullas",
-          "address": "Agiou Georgiou 18B, Latsia",
-          "lat": 35.10414825,
-          "lng": 33.38342004,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-kouzinaki-tis-stavroullas",
+          "name": "I Apantisi",
+          "slug": "i-apantisi-nic",
+          "address": "Archiepiskopou Makariou III 98, Lakatamia",
+          "lat": 35.11741126,
+          "lng": 33.31181516,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/i-apantisi-nic",
           "prices": {
-            "porkchop": 8.5,
+            "porkchop": 11,
+            "chicken": 8.5,
+            "mix": 7.5,
             "souvlaki": 7.5,
+            "souvlakiLarge": 8.5,
+            "chickenLarge": 9.5,
+            "mixLarge": 8.5
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Dasoupolitiko Souvlaki",
+          "slug": "dasoupolitiko-souvlaki",
+          "address": "Antrea Avramidi, 60Β ",
+          "lat": 35.13998435,
+          "lng": 33.36367123,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/dasoupolitiko-souvlaki",
+          "prices": {
+            "porkchop": 12,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
             "chicken": 8,
-            "mix": 7.5
+            "chickenLarge": 9.5,
+            "mix": 6,
+            "mixLarge": 9
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "wolt",
+            "souvlakiLarge": "wolt",
+            "chicken": "wolt",
+            "chickenLarge": "wolt",
+            "mix": "bolt",
+            "mixLarge": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/87394-dasoupolitiko-souvlaki"
+        },
+        {
+          "name": "To Souvlaki Tis Nikis",
+          "slug": "to-souvlaki-tis-nikis",
+          "address": "Nikis 36Α",
+          "lat": 35.1571917,
+          "lng": 33.35771011,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-souvlaki-tis-nikis",
+          "prices": {
+            "porkchop": 12.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9.5,
+            "mix": 8,
+            "mixLarge": 9.5
           },
           "platforms": [
             "wolt"
@@ -521,59 +577,20 @@
           "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/203124-to-souvlaki-tou-demetri-stin-aek-kythreas"
         },
         {
-          "name": "To Souvlaki Tis Nikis",
-          "slug": "to-souvlaki-tis-nikis",
-          "address": "Nikis 36Α",
-          "lat": 35.1571917,
-          "lng": 33.35771011,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-souvlaki-tis-nikis",
-          "prices": {
-            "porkchop": 12.5,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 9,
-            "chicken": 8,
-            "chickenLarge": 9.5,
-            "mix": 8,
-            "mixLarge": 9.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Pita Pita Psitogefseis",
-          "slug": "pita-pita-psitogefseis",
-          "address": " 28th October 71, 2414engomi",
-          "lat": 35.15697736281591,
-          "lng": 33.314747401103375,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/pita-pita-psitogefseis",
-          "prices": {
-            "mix": 8,
-            "mixLarge": 9.5,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 9,
-            "chicken": 8,
-            "chickenLarge": 9.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "I Apantisi",
-          "slug": "i-apantisi-nic",
-          "address": "Archiepiskopou Makariou III 98, Lakatamia",
-          "lat": 35.11741126,
-          "lng": 33.31181516,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/i-apantisi-nic",
+          "name": "Souvlakia Marios",
+          "slug": "souvlakia-marios",
+          "address": "Aristofanous 115 Θ, Strovolos",
+          "lat": 35.12582707,
+          "lng": 33.34901507,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-marios",
           "prices": {
             "porkchop": 11,
-            "chicken": 8.5,
+            "chicken": 8,
             "mix": 7.5,
+            "mixLarge": 8.5,
             "souvlaki": 7.5,
             "souvlakiLarge": 8.5,
-            "chickenLarge": 9.5,
-            "mixLarge": 8.5
+            "chickenLarge": 11
           },
           "platforms": [
             "wolt"
@@ -596,44 +613,34 @@
             "chickenLarge": 10
           },
           "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Souvlakia Marios",
-          "slug": "souvlakia-marios",
-          "address": "Aristofanous 115 Θ, Strovolos",
-          "lat": 35.12582707,
-          "lng": 33.34901507,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-marios",
-          "prices": {
-            "porkchop": 11,
-            "chicken": 8,
-            "mix": 7.5,
-            "mixLarge": 8.5,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 8.5,
-            "chickenLarge": 11
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "wolt",
+            "souvlakiLarge": "wolt",
+            "mix": "wolt",
+            "mixLarge": "wolt",
+            "chicken": "wolt",
+            "chickenLarge": "wolt"
           },
-          "platforms": [
-            "wolt"
-          ]
+          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/4642548-karvounostimies"
         },
         {
-          "name": "Karvounolichoudies Tis Gianoullas & Tou Ovelix",
-          "slug": "karvounolixoudies-tis-gianoullas-kai-tou-ovelix",
-          "address": "Dimokratias 64, Strovolos",
-          "lat": 35.13264762,
-          "lng": 33.35908333,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/karvounolixoudies-tis-gianoullas-kai-tou-ovelix",
+          "name": "Pita Pita Psitogefseis",
+          "slug": "pita-pita-psitogefseis",
+          "address": " 28th October 71, 2414engomi",
+          "lat": 35.15697736281591,
+          "lng": 33.314747401103375,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/pita-pita-psitogefseis",
           "prices": {
-            "porkchop": 11,
-            "mix": 7.5,
-            "chicken": 8,
-            "mixLarge": 9,
-            "chickenLarge": 9.5,
+            "mix": 8,
+            "mixLarge": 9.5,
             "souvlaki": 7.5,
-            "souvlakiLarge": 9
+            "souvlakiLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9.5
           },
           "platforms": [
             "wolt"
@@ -654,6 +661,25 @@
             "chickenLarge": 10,
             "mix": 7.5,
             "mixLarge": 9
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Souvlakia PinElia",
+          "slug": "souvlakia-pinelia",
+          "address": "28th October 61a",
+          "lat": 35.15691112926439,
+          "lng": 33.31468504368897,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-pinelia",
+          "prices": {
+            "chicken": 8,
+            "chickenLarge": 9.5,
+            "mix": 8,
+            "mixLarge": 9.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9
           },
           "platforms": [
             "wolt"
@@ -691,25 +717,6 @@
           "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/47995-taverna-i-finitzia"
         },
         {
-          "name": "Souvlakia PinElia",
-          "slug": "souvlakia-pinelia",
-          "address": "28th October 61a",
-          "lat": 35.15691112926439,
-          "lng": 33.31468504368897,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-pinelia",
-          "prices": {
-            "chicken": 8,
-            "chickenLarge": 9.5,
-            "mix": 8,
-            "mixLarge": 9.5,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 9
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "Stelian Souvlakia",
           "slug": "stelian-souvlakia",
           "address": "Grigori Afxentiou 76",
@@ -737,56 +744,6 @@
             "mixLarge": "bolt"
           },
           "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/772889-stelian-souvlakia"
-        },
-        {
-          "name": "Dasoupolitiko Souvlaki",
-          "slug": "dasoupolitiko-souvlaki",
-          "address": "Antrea Avramidi, 60Β ",
-          "lat": 35.13998435,
-          "lng": 33.36367123,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/dasoupolitiko-souvlaki",
-          "prices": {
-            "porkchop": 12,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 9,
-            "chicken": 8,
-            "chickenLarge": 9.5,
-            "mix": 6,
-            "mixLarge": 9
-          },
-          "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt",
-            "souvlaki": "wolt",
-            "souvlakiLarge": "wolt",
-            "chicken": "wolt",
-            "chickenLarge": "wolt",
-            "mix": "bolt",
-            "mixLarge": "bolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/87394-dasoupolitiko-souvlaki"
-        },
-        {
-          "name": "Taverna 4307",
-          "slug": "taverna-4307",
-          "address": "Neas Egkomis 6, Viomixaniki Perioxi Egkomi ",
-          "lat": 35.16743177,
-          "lng": 33.32781463,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-4307",
-          "prices": {
-            "porkchop": 10,
-            "mix": 7.5,
-            "mixLarge": 9,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 9,
-            "chicken": 7.5
-          },
-          "platforms": [
-            "wolt"
-          ]
         },
         {
           "name": "Plaka Tavern",
@@ -837,6 +794,62 @@
             "souvlakiLarge": "wolt"
           },
           "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/175163-taverna-orfeas-nicosia"
+        },
+        {
+          "name": "Karvounolichoudies Tis Gianoullas & Tou Ovelix",
+          "slug": "karvounolixoudies-tis-gianoullas-kai-tou-ovelix",
+          "address": "Dimokratias 64, Strovolos",
+          "lat": 35.13264762,
+          "lng": 33.35908333,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/karvounolixoudies-tis-gianoullas-kai-tou-ovelix",
+          "prices": {
+            "porkchop": 11,
+            "mix": 7.5,
+            "chicken": 8,
+            "mixLarge": 9,
+            "chickenLarge": 9.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "To Kouzinaki tis Stavroullas",
+          "slug": "to-kouzinaki-tis-stavroullas",
+          "address": "Agiou Georgiou 18B, Latsia",
+          "lat": 35.10414825,
+          "lng": 33.38342004,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-kouzinaki-tis-stavroullas",
+          "prices": {
+            "porkchop": 9,
+            "souvlaki": 7.5,
+            "chicken": 8,
+            "mix": 7.5
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Taverna 4307",
+          "slug": "taverna-4307",
+          "address": "Neas Egkomis 6, Viomixaniki Perioxi Egkomi ",
+          "lat": 35.16743177,
+          "lng": 33.32781463,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-4307",
+          "prices": {
+            "porkchop": 10,
+            "mix": 7.5,
+            "mixLarge": 9,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "chicken": 7.5
+          },
+          "platforms": [
+            "wolt"
+          ]
         },
         {
           "name": "Tavernaki Kreatomperdemata",
@@ -895,26 +908,6 @@
           ]
         },
         {
-          "name": "I Drosia Grill House",
-          "slug": "i-drosia-grill-house",
-          "address": "68A Ippokratous ",
-          "lat": 35.17007213,
-          "lng": 33.36351615,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/i-drosia-grill-house",
-          "prices": {
-            "porkchop": 14,
-            "mix": 7.7,
-            "mixLarge": 9.2,
-            "chicken": 8,
-            "chickenLarge": 9.5,
-            "souvlaki": 7.7,
-            "souvlakiLarge": 9.2
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "To Meraklitikon Souvlaki Tis Athinon",
           "slug": "to-meraklitikon",
           "address": "Athinon 54B, Strovolos",
@@ -957,6 +950,26 @@
             "chicken": 8.5,
             "souvlaki": 7.7,
             "mix": 7.7
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "I Drosia Grill House",
+          "slug": "i-drosia-grill-house",
+          "address": "68A Ippokratous ",
+          "lat": 35.17007213,
+          "lng": 33.36351615,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/i-drosia-grill-house",
+          "prices": {
+            "porkchop": 14,
+            "mix": 7.7,
+            "mixLarge": 9.2,
+            "chicken": 8,
+            "chickenLarge": 9.5,
+            "souvlaki": 7.7,
+            "souvlakiLarge": 9.2
           },
           "platforms": [
             "wolt"
@@ -1007,77 +1020,6 @@
           "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/81910-gyros-stavros-o-salonikios-aglantzia"
         },
         {
-          "name": "Delish Grill",
-          "slug": "delish-grill",
-          "address": "Tseriou 268, Strovolos",
-          "lat": 35.11479558,
-          "lng": 33.3322407,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/delish-grill",
-          "prices": {
-            "porkchop": 14.5,
-            "mix": 9,
-            "souvlaki": 8,
-            "souvlakiLarge": 8
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "To Anamma",
-          "slug": "anamma",
-          "address": "Ledra Street 89 , Ledras, Nicosia,",
-          "lat": 35.17306369,
-          "lng": 33.36142125,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/anamma",
-          "prices": {
-            "porkchop": 14.8,
-            "souvlaki": 8,
-            "mix": 8,
-            "chicken": 8
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "George's Chris Restaurant",
-          "slug": "george-chris-restaurant",
-          "address": " Grigori Karekla 13",
-          "lat": 35.14615591,
-          "lng": 33.35690937,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/george-chris-restaurant",
-          "prices": {
-            "mix": 8,
-            "mixLarge": 10,
-            "souvlaki": 8,
-            "souvlakiLarge": 10
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Souvlakia Orfeas",
-          "slug": "souvlakia-orfeas",
-          "address": "Larnakos avenue 7A, Aglantzia",
-          "lat": 35.16122826,
-          "lng": 33.38691445,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-orfeas",
-          "prices": {
-            "porkchop": 12,
-            "souvlaki": 8,
-            "souvlakiLarge": 9,
-            "mix": 8,
-            "mixLarge": 9,
-            "chicken": 8,
-            "chickenLarge": 9
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "Gia Souvlaki Etsi Apla",
           "slug": "gia-souvlaki-etsi-apla",
           "address": "Metoxiou 41B",
@@ -1109,19 +1051,111 @@
           "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/112448-gia-souvlaki-etsi-apla"
         },
         {
-          "name": "Souvlakia Adouloti Keryneia",
-          "slug": "mezedopoleio-adoylouti-keryneia",
-          "address": "7, Agiou Ioanni, Strovolos ",
-          "lat": 35.1607285,
-          "lng": 33.34860757,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/mezedopoleio-adoylouti-keryneia",
+          "name": "Delish Grill",
+          "slug": "delish-grill",
+          "address": "Tseriou 268, Strovolos",
+          "lat": 35.11479558,
+          "lng": 33.3322407,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/delish-grill",
           "prices": {
-            "porkchop": 13,
+            "porkchop": 14.5,
+            "mix": 9,
+            "souvlaki": 8,
+            "souvlakiLarge": 8
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Souvlakia Orfeas",
+          "slug": "souvlakia-orfeas",
+          "address": "Larnakos avenue 7A, Aglantzia",
+          "lat": 35.16122826,
+          "lng": 33.38691445,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-orfeas",
+          "prices": {
+            "porkchop": 12,
             "souvlaki": 8,
             "souvlakiLarge": 9,
             "mix": 8,
             "mixLarge": 9,
-            "chicken": 9
+            "chicken": 8,
+            "chickenLarge": 9
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "George's Chris Restaurant",
+          "slug": "george-chris-restaurant",
+          "address": " Grigori Karekla 13",
+          "lat": 35.14615591,
+          "lng": 33.35690937,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/george-chris-restaurant",
+          "prices": {
+            "mix": 8,
+            "mixLarge": 10,
+            "souvlaki": 8,
+            "souvlakiLarge": 10
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Souvlakia Kazamias",
+          "slug": "souvlakia-kazamias",
+          "address": "Akropoleos 62",
+          "lat": 35.14970509,
+          "lng": 33.35977965,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-kazamias",
+          "prices": {
+            "porkchop": 14.5,
+            "souvlaki": 8,
+            "souvlakiLarge": 9,
+            "mix": 8.5,
+            "mixLarge": 9.5,
+            "chicken": 9,
+            "chickenLarge": 10
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "To Pikantiko",
+          "slug": "to-pikantiko",
+          "address": "Archiepiskopu Makariou 13, Lakatamia ",
+          "lat": 35.12164818,
+          "lng": 33.31935737,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-pikantiko",
+          "prices": {
+            "porkchop": 12,
+            "souvlaki": 8,
+            "souvlakiLarge": 9,
+            "mix": 8,
+            "mixLarge": 9,
+            "chicken": 9,
+            "chickenLarge": 10
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "To Anamma",
+          "slug": "anamma",
+          "address": "Ledra Street 89 , Ledras, Nicosia,",
+          "lat": 35.17306369,
+          "lng": 33.36142125,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/anamma",
+          "prices": {
+            "porkchop": 14.8,
+            "souvlaki": 8,
+            "mix": 8,
+            "chicken": 8
           },
           "platforms": [
             "wolt"
@@ -1148,20 +1182,39 @@
           ]
         },
         {
-          "name": "Prosfigiko Swmateio Dikomo 74",
-          "slug": "prosfigiko-swmateio-dikomo-74",
-          "address": "Leoforos Arch Makariou 77 Lakatamia",
-          "lat": 35.117075199909934,
-          "lng": 33.31212469380489,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/prosfigiko-swmateio-dikomo-74",
+          "name": "Souvlakia Adouloti Keryneia",
+          "slug": "mezedopoleio-adoylouti-keryneia",
+          "address": "7, Agiou Ioanni, Strovolos ",
+          "lat": 35.1607285,
+          "lng": 33.34860757,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/mezedopoleio-adoylouti-keryneia",
           "prices": {
             "porkchop": 13,
             "souvlaki": 8,
             "souvlakiLarge": 9,
             "mix": 8,
             "mixLarge": 9,
-            "chicken": 9,
-            "chickenLarge": 9.5
+            "chicken": 9
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "The BBQ House",
+          "slug": "the-bbq-house",
+          "address": "Ifigenias 36B ",
+          "lat": 35.15249367,
+          "lng": 33.36417393,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/the-bbq-house",
+          "prices": {
+            "porkchop": 15.5,
+            "souvlaki": 8,
+            "souvlakiLarge": 9.5,
+            "chicken": 8.5,
+            "chickenLarge": 10,
+            "mix": 8,
+            "mixLarge": 9.5
           },
           "platforms": [
             "wolt"
@@ -1199,40 +1252,20 @@
           "foodyUrl": "https://www.foody.com.cy/delivery/leykosia/taverna-takis-pampos"
         },
         {
-          "name": "The BBQ House",
-          "slug": "the-bbq-house",
-          "address": "Ifigenias 36B ",
-          "lat": 35.15249367,
-          "lng": 33.36417393,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/the-bbq-house",
+          "name": "Prosfigiko Swmateio Dikomo 74",
+          "slug": "prosfigiko-swmateio-dikomo-74",
+          "address": "Leoforos Arch Makariou 77 Lakatamia",
+          "lat": 35.117075199909934,
+          "lng": 33.31212469380489,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/prosfigiko-swmateio-dikomo-74",
           "prices": {
-            "porkchop": 15.5,
-            "souvlaki": 8,
-            "souvlakiLarge": 9.5,
-            "chicken": 8.5,
-            "chickenLarge": 10,
-            "mix": 8,
-            "mixLarge": 9.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "To Pikantiko",
-          "slug": "to-pikantiko",
-          "address": "Archiepiskopu Makariou 13, Lakatamia ",
-          "lat": 35.12164818,
-          "lng": 33.31935737,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-pikantiko",
-          "prices": {
-            "porkchop": 12,
+            "porkchop": 13,
             "souvlaki": 8,
             "souvlakiLarge": 9,
             "mix": 8,
             "mixLarge": 9,
             "chicken": 9,
-            "chickenLarge": 10
+            "chickenLarge": 9.5
           },
           "platforms": [
             "wolt"
@@ -1290,26 +1323,6 @@
             "mixLarge": 9,
             "chicken": 8,
             "chickenLarge": 9
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Souvlakia Kazamias",
-          "slug": "souvlakia-kazamias",
-          "address": "Akropoleos 62",
-          "lat": 35.14970509,
-          "lng": 33.35977965,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-kazamias",
-          "prices": {
-            "porkchop": 14.5,
-            "souvlaki": 8,
-            "souvlakiLarge": 9,
-            "mix": 8.5,
-            "mixLarge": 9.5,
-            "chicken": 9,
-            "chickenLarge": 10
           },
           "platforms": [
             "wolt"
@@ -1570,23 +1583,6 @@
           ]
         },
         {
-          "name": "Kivotos Tou Noe",
-          "slug": "kivotos-tou-noe",
-          "address": "Stasinou Avenue 25 ",
-          "lat": 35.16815,
-          "lng": 33.36662166,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/kivotos-tou-noe",
-          "prices": {
-            "porkchop": 13.5,
-            "mix": 8.5,
-            "souvlaki": 8.5,
-            "chicken": 9
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "Taverna Iparxo",
           "slug": "taverna-iparxo",
           "address": "Ayiou Georgiou, Latsia",
@@ -1598,6 +1594,23 @@
             "mix": 8.5,
             "chicken": 9.5,
             "souvlaki": 8.5
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Kivotos Tou Noe",
+          "slug": "kivotos-tou-noe",
+          "address": "Stasinou Avenue 25 ",
+          "lat": 35.16815,
+          "lng": 33.36662166,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/kivotos-tou-noe",
+          "prices": {
+            "porkchop": 13.5,
+            "mix": 8.5,
+            "souvlaki": 8.5,
+            "chicken": 9
           },
           "platforms": [
             "wolt"
@@ -1889,6 +1902,20 @@
           "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/183479-o-tatas"
         },
         {
+          "name": "Mega Gyros",
+          "slug": "mega-gyros",
+          "address": "Ilia Papakyriakou 17 Egkomi",
+          "lat": 35.15737497,
+          "lng": 33.31338786,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/mega-gyros",
+          "prices": {
+            "porkchop": 13.8
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "name": "Alexandra's Cuisine & Coffee",
           "slug": "alexandras-cuisine-coffee",
           "address": "Dimostheni Severi 22",
@@ -1908,28 +1935,14 @@
           "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/60844-alexandras-cuisine-and-coffee"
         },
         {
-          "name": "Kitchen Bar",
-          "slug": "kitchen-bar",
-          "address": "91 Larnakos Avenue, Aglantzia",
-          "lat": 35.1564709729968,
-          "lng": 33.39627653015418,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/kitchen-bar",
+          "name": "Souvlakia Christakis",
+          "slug": "souvlakia-christakis",
+          "address": "Leoforos Kostaki Pantelidi 28",
+          "lat": 35.17105224,
+          "lng": 33.35895317,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-christakis",
           "prices": {
-            "porkchop": 16.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Mega Gyros",
-          "slug": "mega-gyros",
-          "address": "Ilia Papakyriakou 17 Egkomi",
-          "lat": 35.15737497,
-          "lng": 33.31338786,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/mega-gyros",
-          "prices": {
-            "porkchop": 13.8
+            "porkchop": 10
           },
           "platforms": [
             "wolt"
@@ -1950,6 +1963,34 @@
           ]
         },
         {
+          "name": "Kitchen Bar",
+          "slug": "kitchen-bar",
+          "address": "91 Larnakos Avenue, Aglantzia",
+          "lat": 35.1564709729968,
+          "lng": 33.39627653015418,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/kitchen-bar",
+          "prices": {
+            "porkchop": 16.5
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Gia Souvlaki Opos Palia",
+          "slug": "gia-souvlaki-opos-palia",
+          "address": "Μαχαιρα 1, Strovolos",
+          "lat": 35.13392879,
+          "lng": 33.33023764,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/gia-souvlaki-opos-palia",
+          "prices": {
+            "porkchop": 14.5
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "name": "Food Park City Nicosia",
           "slug": "food-park-city-nicosia",
           "address": "Tseriou Avenue 180, Strovolos",
@@ -1964,6 +2005,20 @@
           ]
         },
         {
+          "name": "Paradosiako Egkomi",
+          "slug": "paradosiako",
+          "address": "28th October 11Δ, Egkomi ",
+          "lat": 35.16237454,
+          "lng": 33.31750079,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/paradosiako",
+          "prices": {
+            "porkchop": 11.5
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "name": "Tsolias ",
           "slug": "tsolias-nicosia",
           "address": "Νικοκλέους 4",
@@ -1972,20 +2027,6 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/tsolias-nicosia",
           "prices": {
             "porkchop": 12.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Souvlakia Christakis",
-          "slug": "souvlakia-christakis",
-          "address": "Leoforos Kostaki Pantelidi 28",
-          "lat": 35.17105224,
-          "lng": 33.35895317,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-christakis",
-          "prices": {
-            "porkchop": 10
           },
           "platforms": [
             "wolt"
@@ -2025,23 +2066,18 @@
           ]
         },
         {
-          "name": "Rookies Bar & Grill",
-          "slug": "rookies-bar-grill",
-          "address": "Stasandrou 10",
-          "lat": 35.16733833,
-          "lng": 33.36364341,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/rookies-bar-grill",
+          "name": "Ta Souvlakia Tou Kosta",
+          "slug": "ta-souvlakia-tou-kosta",
+          "address": "Plateia Paliggenesias 13",
+          "lat": 35.13376375,
+          "lng": 33.36539241,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/ta-souvlakia-tou-kosta",
           "prices": {
-            "porkchop": 16
+            "porkchop": 13.5
           },
           "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/129978-rookies-bar-and-grill"
+            "wolt"
+          ]
         },
         {
           "name": "Taverna Leventis",
@@ -2052,20 +2088,6 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-leventis-nicosia",
           "prices": {
             "porkchop": 13
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Ta Souvlakia Tou Kosta",
-          "slug": "ta-souvlakia-tou-kosta",
-          "address": "Plateia Paliggenesias 13",
-          "lat": 35.13376375,
-          "lng": 33.36539241,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/ta-souvlakia-tou-kosta",
-          "prices": {
-            "porkchop": 13.5
           },
           "platforms": [
             "wolt"
@@ -2084,6 +2106,25 @@
           "platforms": [
             "wolt"
           ]
+        },
+        {
+          "name": "Rookies Bar & Grill",
+          "slug": "rookies-bar-grill",
+          "address": "Stasandrou 10",
+          "lat": 35.16733833,
+          "lng": 33.36364341,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/rookies-bar-grill",
+          "prices": {
+            "porkchop": 16
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/129978-rookies-bar-and-grill"
         },
         {
           "name": "Stou Oresti PAOK Kythreas",
@@ -2105,20 +2146,6 @@
           "boltUrl": "https://food.bolt.eu/en/261-nicosia/p/40254-stou-oresti"
         },
         {
-          "name": "Zingaro Grill",
-          "slug": "zingaro-grill",
-          "address": "Lykavitou 28 Egkomi",
-          "lat": 35.14090377,
-          "lng": 33.31107198,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/zingaro-grill",
-          "prices": {
-            "porkchop": 13
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "Frangkolina Tavern",
           "slug": "fragkolina-tavern",
           "address": "6 Irakleiou",
@@ -2127,6 +2154,20 @@
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/fragkolina-tavern",
           "prices": {
             "porkchop": 12
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Zingaro Grill",
+          "slug": "zingaro-grill",
+          "address": "Lykavitou 28 Egkomi",
+          "lat": 35.14090377,
+          "lng": 33.31107198,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/zingaro-grill",
+          "prices": {
+            "porkchop": 13
           },
           "platforms": [
             "wolt"
@@ -2163,14 +2204,14 @@
           ]
         },
         {
-          "name": "Gia Souvlaki Opos Palia",
-          "slug": "gia-souvlaki-opos-palia",
-          "address": "Μαχαιρα 1, Strovolos",
-          "lat": 35.13392879,
-          "lng": 33.33023764,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/gia-souvlaki-opos-palia",
+          "name": "Cookshop",
+          "slug": "cookshop1",
+          "address": "Pindarou 6",
+          "lat": 35.16866251,
+          "lng": 33.36922832,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/cookshop1",
           "prices": {
-            "porkchop": 14.5
+            "porkchop": 17
           },
           "platforms": [
             "wolt"
@@ -2188,20 +2229,6 @@
             "mixLarge": 8.5,
             "chicken": 8,
             "chickenLarge": 9.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Cookshop",
-          "slug": "cookshop1",
-          "address": "Pindarou 6",
-          "lat": 35.16866251,
-          "lng": 33.36922832,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/cookshop1",
-          "prices": {
-            "porkchop": 17
           },
           "platforms": [
             "wolt"
@@ -2341,6 +2368,26 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/47699-fanis-restaurant"
         },
         {
+          "name": "Souvlakia Orphanides",
+          "slug": "orphanides-souvlakia",
+          "address": "Glastonos 98",
+          "lat": 34.681540523772384,
+          "lng": 33.04587602928626,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/orphanides-souvlakia",
+          "prices": {
+            "porkchop": 12,
+            "chicken": 7.5,
+            "chickenLarge": 9.5,
+            "mix": 7,
+            "mixLarge": 8,
+            "souvlaki": 7,
+            "souvlakiLarge": 8
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "name": "I Sterna",
           "slug": "sterna",
           "address": "Markou Drakou 31Α",
@@ -2372,23 +2419,6 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/19847-h-sterna"
         },
         {
-          "name": "Koush Koush Grill & More",
-          "slug": "koush-koush-grill-more",
-          "address": "Genniseos Tou Sotiros 4, Asomatos",
-          "lat": 34.63864414,
-          "lng": 32.96083956,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/koush-koush-grill-more",
-          "prices": {
-            "porkchop": 14,
-            "souvlaki": 7,
-            "chicken": 7,
-            "mix": 7
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "Rastoni Mezedopoleio",
           "slug": "rastoni-mezedopoleio",
           "address": "Georgiou Gennadiou 2",
@@ -2410,20 +2440,17 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/143228-rastoni"
         },
         {
-          "name": "Souvlakia Orphanides",
-          "slug": "orphanides-souvlakia",
-          "address": "Glastonos 98",
-          "lat": 34.681540523772384,
-          "lng": 33.04587602928626,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/orphanides-souvlakia",
+          "name": "Koush Koush Grill & More",
+          "slug": "koush-koush-grill-more",
+          "address": "Genniseos Tou Sotiros 4, Asomatos",
+          "lat": 34.63864414,
+          "lng": 32.96083956,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/koush-koush-grill-more",
           "prices": {
-            "porkchop": 12,
-            "chicken": 7.5,
-            "chickenLarge": 9.5,
-            "mix": 7,
-            "mixLarge": 8,
+            "porkchop": 14,
             "souvlaki": 7,
-            "souvlakiLarge": 8
+            "chicken": 7,
+            "mix": 7
           },
           "platforms": [
             "wolt"
@@ -2459,23 +2486,6 @@
             "porkchop": "bolt"
           },
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/127815-doxa-polemidion-taste-of-home"
-        },
-        {
-          "name": "Kebab & Curry Asian Cuisine",
-          "slug": "84848-kebab-curry-asian-cuisine",
-          "provider_id": 84848,
-          "address": "Agiou Andreou 91, 3036 limassol",
-          "lat": 34.67448,
-          "lng": 33.04553,
-          "url": "https://food.bolt.eu/en/442-limassol/p/84848-kebab-curry-asian-cuisine",
-          "prices": {
-            "souvlaki": 7,
-            "chicken": 7
-          },
-          "source": "bolt",
-          "platforms": [
-            "bolt"
-          ]
         },
         {
           "name": "Souvlakia Orfanides",
@@ -2515,6 +2525,23 @@
             "souvlakiLarge": 9,
             "mix": 7,
             "mixLarge": 9
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
+          "name": "Kebab & Curry Asian Cuisine",
+          "slug": "84848-kebab-curry-asian-cuisine",
+          "provider_id": 84848,
+          "address": "Agiou Andreou 91, 3036 limassol",
+          "lat": 34.67448,
+          "lng": 33.04553,
+          "url": "https://food.bolt.eu/en/442-limassol/p/84848-kebab-curry-asian-cuisine",
+          "prices": {
+            "souvlaki": 7,
+            "chicken": 7
           },
           "source": "bolt",
           "platforms": [
@@ -2573,24 +2600,29 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/26102-gyradiko-o-gigantas"
         },
         {
-          "name": "Souvlakia To Automato",
-          "slug": "souvlakia-to-automato",
-          "address": "kosti palama 121",
-          "lat": 34.70090964,
-          "lng": 33.03881418,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-to-automato",
+          "name": "Streat Grill",
+          "slug": "streat-grill",
+          "address": "This is a virtual venue",
+          "lat": 34.7091181,
+          "lng": 33.0553917,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/streat-grill",
           "prices": {
-            "porkchop": 15,
+            "porkchop": 14.5,
             "souvlaki": 7.5,
-            "souvlakiLarge": 9,
-            "chicken": 8,
-            "chickenLarge": 9.5,
-            "mix": 7.5,
-            "mixLarge": 9
+            "chicken": 7.9,
+            "mix": 7.9
           },
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "wolt",
+            "chicken": "wolt",
+            "mix": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/168977-streat-grill"
         },
         {
           "name": "Souvlakia Othellos",
@@ -2624,51 +2656,6 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/68258-souvlakia-othellos"
         },
         {
-          "name": "Streat Grill",
-          "slug": "streat-grill",
-          "address": "This is a virtual venue",
-          "lat": 34.7091181,
-          "lng": 33.0553917,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/streat-grill",
-          "prices": {
-            "porkchop": 14.5,
-            "souvlaki": 7.5,
-            "chicken": 7.9,
-            "mix": 7.9
-          },
-          "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt",
-            "souvlaki": "wolt",
-            "chicken": "wolt",
-            "mix": "wolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/168977-streat-grill"
-        },
-        {
-          "name": "Christakis Kebab",
-          "slug": "christakis-kebab",
-          "address": "Annis Marias 1",
-          "lat": 34.68750029,
-          "lng": 33.02143509,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/christakis-kebab",
-          "prices": {
-            "porkchop": 16,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 9,
-            "mix": 7.5,
-            "mixLarge": 9,
-            "chicken": 7.5,
-            "chickenLarge": 9
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "To Ladolemono",
           "slug": "to-ladolemono",
           "address": "76 Agias Sofias",
@@ -2700,24 +2687,35 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/176153-to-ladolemono"
         },
         {
-          "name": "Artimata",
-          "slug": "artimata",
-          "address": "Annis Marias 1 ",
-          "lat": 34.68742092,
-          "lng": 33.02147368,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/artimata",
+          "name": "Souvlakia To Automato",
+          "slug": "souvlakia-to-automato",
+          "address": "kosti palama 121",
+          "lat": 34.70090964,
+          "lng": 33.03881418,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-to-automato",
           "prices": {
-            "porkchop": 16,
-            "chicken": 7.5,
-            "chickenLarge": 9,
+            "porkchop": 15,
             "souvlaki": 7.5,
             "souvlakiLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9.5,
             "mix": 7.5,
             "mixLarge": 9
           },
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "wolt",
+            "souvlakiLarge": "wolt",
+            "chicken": "wolt",
+            "chickenLarge": "wolt",
+            "mix": "wolt",
+            "mixLarge": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/50425-souvlakia-to-automato"
         },
         {
           "name": "Stathis Grill House",
@@ -2751,6 +2749,46 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/11390-stathis-grillhouse"
         },
         {
+          "name": "Christakis Kebab",
+          "slug": "christakis-kebab",
+          "address": "Annis Marias 1",
+          "lat": 34.68750029,
+          "lng": 33.02143509,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/christakis-kebab",
+          "prices": {
+            "porkchop": 16,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "mix": 7.5,
+            "mixLarge": 9,
+            "chicken": 7.5,
+            "chickenLarge": 9
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Artimata",
+          "slug": "artimata",
+          "address": "Annis Marias 1 ",
+          "lat": 34.68742092,
+          "lng": 33.02147368,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/artimata",
+          "prices": {
+            "porkchop": 16,
+            "chicken": 7.5,
+            "chickenLarge": 9,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "mix": 7.5,
+            "mixLarge": 9
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "name": "Psistaria Strakottos",
           "slug": "68992-psistaria-strakottos",
           "provider_id": 68992,
@@ -2771,6 +2809,39 @@
           "platforms": [
             "bolt"
           ]
+        },
+        {
+          "name": "Souvlakia Maria",
+          "slug": "45475-souvlakia-maria",
+          "provider_id": 45475,
+          "address": "10os dromos no 38, Kato polemidia, 4157",
+          "lat": 34.69,
+          "lng": 32.99736,
+          "url": "https://food.bolt.eu/en/442-limassol/p/45475-souvlakia-maria",
+          "prices": {
+            "porkchop": 14.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "mix": 7.5,
+            "mixLarge": 9,
+            "chicken": 7.5,
+            "chickenLarge": 9.5
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt",
+            "foody"
+          ],
+          "priceSources": {
+            "porkchop": "bolt",
+            "souvlaki": "bolt",
+            "souvlakiLarge": "bolt",
+            "mix": "bolt",
+            "mixLarge": "bolt",
+            "chicken": "foody",
+            "chickenLarge": "bolt"
+          },
+          "foodyUrl": "https://www.foody.com.cy/delivery/lemesos/souvlakia-maria-2000265298"
         },
         {
           "name": "To souvlaki tis Lofou",
@@ -2831,88 +2902,6 @@
           "platforms": [
             "wolt"
           ]
-        },
-        {
-          "name": "Souvlakia Xristakis",
-          "slug": "souvlakia-xristakis",
-          "address": "Boriou Ipirou 25, Mesa Geitonia 4005, Cyprus",
-          "lat": 34.69759143,
-          "lng": 33.05304164,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-xristakis",
-          "prices": {
-            "porkchop": 17,
-            "mix": 8,
-            "mixLarge": 9,
-            "souvlaki": 8,
-            "souvlakiLarge": 9,
-            "chicken": 8,
-            "chickenLarge": 9
-          },
-          "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt",
-            "mix": "wolt",
-            "mixLarge": "wolt",
-            "souvlaki": "wolt",
-            "souvlakiLarge": "wolt",
-            "chicken": "wolt",
-            "chickenLarge": "wolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/7672-souvlakia-xristakis"
-        },
-        {
-          "name": "Mr. Boo",
-          "slug": "mr-boo",
-          "address": "Anikodomiseos 29,  Agios Athanasios ",
-          "lat": 34.70909011,
-          "lng": 33.05553048,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/mr-boo",
-          "prices": {
-            "porkchop": 14.5,
-            "chicken": 8,
-            "chickenLarge": 10,
-            "souvlaki": 8,
-            "souvlakiLarge": 10,
-            "mix": 8,
-            "mixLarge": 10
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Demetris Grill",
-          "slug": "dimitris-grill",
-          "address": "69, Arxiepiskopou Makariou, Mesa Gitonia ",
-          "lat": 34.69924198,
-          "lng": 33.04574826,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/dimitris-grill",
-          "prices": {
-            "porkchop": 16,
-            "souvlaki": 8,
-            "souvlakiLarge": 9.5,
-            "chicken": 8,
-            "chickenLarge": 9.5,
-            "mix": 8,
-            "mixLarge": 9.5
-          },
-          "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt",
-            "souvlaki": "wolt",
-            "souvlakiLarge": "wolt",
-            "chicken": "wolt",
-            "chickenLarge": "wolt",
-            "mix": "wolt",
-            "mixLarge": "wolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/21659-demetris-grill"
         },
         {
           "name": "Oraios Trellos Taverna",
@@ -2995,6 +2984,88 @@
           "foodyUrl": "https://www.foody.com.cy/delivery/lemesos/tsitsis-o-aktypitos-2000619548"
         },
         {
+          "name": "Mr. Boo",
+          "slug": "mr-boo",
+          "address": "Anikodomiseos 29,  Agios Athanasios ",
+          "lat": 34.70909011,
+          "lng": 33.05553048,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/mr-boo",
+          "prices": {
+            "porkchop": 14.5,
+            "chicken": 8,
+            "chickenLarge": 10,
+            "souvlaki": 8,
+            "souvlakiLarge": 10,
+            "mix": 8,
+            "mixLarge": 10
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Souvlakia Xristakis",
+          "slug": "souvlakia-xristakis",
+          "address": "Boriou Ipirou 25, Mesa Geitonia 4005, Cyprus",
+          "lat": 34.69759143,
+          "lng": 33.05304164,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-xristakis",
+          "prices": {
+            "porkchop": 17,
+            "mix": 8,
+            "mixLarge": 9,
+            "souvlaki": 8,
+            "souvlakiLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "mix": "wolt",
+            "mixLarge": "wolt",
+            "souvlaki": "wolt",
+            "souvlakiLarge": "wolt",
+            "chicken": "wolt",
+            "chickenLarge": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/7672-souvlakia-xristakis"
+        },
+        {
+          "name": "Demetris Grill",
+          "slug": "dimitris-grill",
+          "address": "69, Arxiepiskopou Makariou, Mesa Gitonia ",
+          "lat": 34.69924198,
+          "lng": 33.04574826,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/dimitris-grill",
+          "prices": {
+            "porkchop": 16,
+            "souvlaki": 8,
+            "souvlakiLarge": 9.5,
+            "chicken": 8,
+            "chickenLarge": 9.5,
+            "mix": 8,
+            "mixLarge": 9.5
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "wolt",
+            "souvlakiLarge": "wolt",
+            "chicken": "wolt",
+            "chickenLarge": "wolt",
+            "mix": "wolt",
+            "mixLarge": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/21659-demetris-grill"
+        },
+        {
           "name": "Souvlakia Havouzas",
           "slug": "15810-souvlakia-havouzas",
           "provider_id": 15810,
@@ -3010,28 +3081,6 @@
             "chickenLarge": 11,
             "mix": 8,
             "mixLarge": 10
-          },
-          "source": "bolt",
-          "platforms": [
-            "bolt"
-          ]
-        },
-        {
-          "name": "Gyrokalamaki",
-          "slug": "64388-gyrokalamaki",
-          "provider_id": 64388,
-          "address": "Archiepiskopou Makariou III 44, 4184 Ypsonas",
-          "lat": 34.68744,
-          "lng": 32.96224,
-          "url": "https://food.bolt.eu/en/442-limassol/p/64388-gyrokalamaki",
-          "prices": {
-            "porkchop": 14.5,
-            "souvlaki": 8,
-            "souvlakiLarge": 9.5,
-            "chicken": 8,
-            "chickenLarge": 9.5,
-            "mix": 8,
-            "mixLarge": 9.5
           },
           "source": "bolt",
           "platforms": [
@@ -3061,20 +3110,25 @@
           ]
         },
         {
-          "name": "Souvlakia Maria",
-          "slug": "souvlakia-maria-2000265298",
-          "url": "https://www.foody.com.cy/delivery/lemesos/souvlakia-maria-2000265298",
-          "lat": 34.690048,
-          "lng": 32.997308,
+          "name": "Gyrokalamaki",
+          "slug": "64388-gyrokalamaki",
+          "provider_id": 64388,
+          "address": "Archiepiskopou Makariou III 44, 4184 Ypsonas",
+          "lat": 34.68744,
+          "lng": 32.96224,
+          "url": "https://food.bolt.eu/en/442-limassol/p/64388-gyrokalamaki",
           "prices": {
             "porkchop": 14.5,
             "souvlaki": 8,
-            "chicken": 7.5,
-            "mix": 8
+            "souvlakiLarge": 9.5,
+            "chicken": 8,
+            "chickenLarge": 9.5,
+            "mix": 8,
+            "mixLarge": 9.5
           },
-          "source": "foody",
+          "source": "bolt",
           "platforms": [
-            "foody"
+            "bolt"
           ]
         },
         {
@@ -3125,7 +3179,37 @@
             "mixLarge": 10
           },
           "platforms": [
-            "wolt"
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "chicken": "wolt",
+            "chickenLarge": "wolt",
+            "souvlaki": "wolt",
+            "souvlakiLarge": "wolt",
+            "mix": "wolt",
+            "mixLarge": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/1192550-jimmys-kebab"
+        },
+        {
+          "name": "Gyros Stavros O Salonikios Enaerios",
+          "slug": "71191-gyros-stavros-o-salonikios-enaerios",
+          "provider_id": 71191,
+          "address": "Leoforos Makariou III 235H, Kanika Enaerios, Limassol",
+          "lat": 34.68568,
+          "lng": 33.05923,
+          "url": "https://food.bolt.eu/en/442-limassol/p/71191-gyros-stavros-o-salonikios-enaerios",
+          "prices": {
+            "chickenLarge": 11,
+            "chicken": 9,
+            "souvlakiLarge": 9.9,
+            "souvlaki": 8.3
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt"
           ]
         },
         {
@@ -3160,26 +3244,6 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/5213-lefteris-meet-eat"
         },
         {
-          "name": "Vasos Souvlakia",
-          "slug": "vasos-souvlakia",
-          "address": "33E, Archiepiskopou Makariou III & 1hs Apriliou",
-          "lat": 34.69552911,
-          "lng": 33.04535602,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/vasos-souvlakia",
-          "prices": {
-            "porkchop": 18,
-            "souvlaki": 8.5,
-            "souvlakiLarge": 10,
-            "mix": 8.5,
-            "mixLarge": 10,
-            "chicken": 8.5,
-            "chickenLarge": 10
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "To Pafitiko Souvlaki Grill House",
           "slug": "to-pafitiko-souvlaki-grill-house",
           "address": "Georgiou Neofytou 51, Mesa Geitonia",
@@ -3198,6 +3262,37 @@
           "platforms": [
             "wolt"
           ]
+        },
+        {
+          "name": "Vasos Souvlakia",
+          "slug": "vasos-souvlakia",
+          "address": "33E, Archiepiskopou Makariou III & 1hs Apriliou",
+          "lat": 34.69552911,
+          "lng": 33.04535602,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/vasos-souvlakia",
+          "prices": {
+            "porkchop": 18,
+            "souvlaki": 8.5,
+            "souvlakiLarge": 10,
+            "mix": 8.5,
+            "mixLarge": 10,
+            "chicken": 8.5,
+            "chickenLarge": 10
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "wolt",
+            "souvlakiLarge": "wolt",
+            "mix": "wolt",
+            "mixLarge": "wolt",
+            "chicken": "wolt",
+            "chickenLarge": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/62020-vasos-souvlaki"
         },
         {
           "name": "To Outzaki Grill House",
@@ -3237,6 +3332,28 @@
             "souvlaki": 8.5,
             "chicken": 9,
             "mix": 9
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
+          "name": "Mpampis Souvlakia",
+          "slug": "47974-mpampis-souvlakia",
+          "provider_id": 47974,
+          "address": "Agias Paraskevis 44, Germasogeia, 4043",
+          "lat": 34.715541,
+          "lng": 33.086172,
+          "url": "https://food.bolt.eu/en/442-limassol/p/47974-mpampis-souvlakia",
+          "prices": {
+            "porkchop": 17,
+            "souvlaki": 8.5,
+            "souvlakiLarge": 10,
+            "chicken": 8.5,
+            "chickenLarge": 10,
+            "mix": 8.5,
+            "mixLarge": 10
           },
           "source": "bolt",
           "platforms": [
@@ -3344,6 +3461,24 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/46893-karvounoepiloges"
         },
         {
+          "name": "Aristos & Kiki Kebab House",
+          "slug": "6814-aristos-kiki-kebab-house",
+          "provider_id": 6814,
+          "address": "Aristos & Kiki Kebab House, Ariadnis 10, Mouttagiaka",
+          "lat": 34.703081,
+          "lng": 33.106387,
+          "url": "https://food.bolt.eu/en/442-limassol/p/6814-aristos-kiki-kebab-house",
+          "prices": {
+            "souvlaki": 9,
+            "chicken": 10,
+            "mix": 9
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
           "name": "To Xeiropoiito",
           "slug": "to-xeiropoiito",
           "address": "Archiepiskopou Makariou III 56'A",
@@ -3353,26 +3488,35 @@
           "prices": {
             "porkchop": 17.95,
             "mix": 9.3,
-            "mixLarge": 12.1,
+            "mixLarge": 12.100000000000001,
             "souvlaki": 9.3,
             "souvlakiLarge": 12.100000000000001,
             "chicken": 9.3,
             "chickenLarge": 12.100000000000001
           },
           "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt",
-            "mix": "wolt",
-            "mixLarge": "bolt",
-            "souvlaki": "wolt",
-            "souvlakiLarge": "wolt",
-            "chicken": "wolt",
-            "chickenLarge": "wolt"
+            "wolt"
+          ]
+        },
+        {
+          "name": "O Gyros Tou Cosmou",
+          "slug": "o-gyros-tou-kosmou-pafou",
+          "address": "28, Pafou Street",
+          "lat": 34.67457597,
+          "lng": 33.01432396,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/o-gyros-tou-kosmou-pafou",
+          "prices": {
+            "porkchop": 14.5,
+            "chicken": 9.5,
+            "chickenLarge": 11,
+            "souvlaki": 9.5,
+            "souvlakiLarge": 11,
+            "mix": 9.5,
+            "mixLarge": 11
           },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/112167-to-xeiropoiito"
+          "platforms": [
+            "wolt"
+          ]
         },
         {
           "name": "Food Place",
@@ -3405,26 +3549,6 @@
             "souvlaki": 9.5,
             "chicken": 9.5,
             "mix": 9.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "O Gyros Tou Cosmou",
-          "slug": "o-gyros-tou-kosmou-pafou",
-          "address": "28, Pafou Street",
-          "lat": 34.67457597,
-          "lng": 33.01432396,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/o-gyros-tou-kosmou-pafou",
-          "prices": {
-            "porkchop": 14.5,
-            "chicken": 9.5,
-            "chickenLarge": 11,
-            "souvlaki": 9.5,
-            "souvlakiLarge": 11,
-            "mix": 9.5,
-            "mixLarge": 11
           },
           "platforms": [
             "wolt"
@@ -3472,133 +3596,6 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/30098-gyro-goodies"
         },
         {
-          "name": "Kilikia Armenian Cuisine",
-          "slug": "kilikia-armenian-cuisine",
-          "address": "Makariou avenue 233G",
-          "lat": 34.685996437475595,
-          "lng": 33.05864778867331,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/kilikia-armenian-cuisine",
-          "prices": {
-            "porkchop": 18.5
-          },
-          "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/188395-kilikia"
-        },
-        {
-          "name": "Draught Microbrewery Restaurant",
-          "slug": "draught-microbrewery-restaurant",
-          "address": "Vasilisis Street ",
-          "lat": 34.67178091,
-          "lng": 33.04171144,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/draught-microbrewery-restaurant",
-          "prices": {
-            "porkchop": 23.5
-          },
-          "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/4493-draught-microbrewery"
-        },
-        {
-          "name": "Confuzio Cafe Snack Bar",
-          "slug": "confuzio-cafe",
-          "address": "Leoforos Archiepiskopou Makariou 136Α",
-          "lat": 34.68610155,
-          "lng": 33.03457736,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/confuzio-cafe",
-          "prices": {
-            "porkchop": 18.5
-          },
-          "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "bolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/8640-confuzio-cafe"
-        },
-        {
-          "name": "Megusta Cafe Restaurant",
-          "slug": "megusta-lim",
-          "address": "Leoforos Omonoias 123",
-          "lat": 34.66276632,
-          "lng": 33.01748641,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/megusta-lim",
-          "prices": {
-            "porkchop": 17.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "4grill",
-          "slug": "4grill",
-          "address": "Miltwnos 89A",
-          "lat": 34.66593547,
-          "lng": 33.0039494,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/4grill",
-          "prices": {
-            "porkchop": 15
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Souvlakia Despo",
-          "slug": "souvlakia-despo-lim",
-          "address": "Archiepiskopou Leontiou A, 175",
-          "lat": 34.68146963,
-          "lng": 33.0331618,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-despo-lim",
-          "prices": {
-            "porkchop": 18.9
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Aletri Tavern",
-          "slug": "aletri-tavern",
-          "address": "Agias Paraskevis 35, Germasogeia  ",
-          "lat": 34.71975338,
-          "lng": 33.0848836,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/aletri-tavern",
-          "prices": {
-            "porkchop": 16
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "To Anammeno Karvouno",
-          "slug": "to-anammeno-karvouno",
-          "address": "47 Konstantinou kai Evripidou Avenue ",
-          "lat": 34.6567768,
-          "lng": 32.9662689,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/to-anammeno-karvouno",
-          "prices": {
-            "porkchop": 13.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "Mpourlotto Sti Sxara",
           "slug": "mpourlotto-sti-shara",
           "address": "Evas 3",
@@ -3611,29 +3608,6 @@
           "platforms": [
             "wolt"
           ]
-        },
-        {
-          "name": "To Tsigkeli",
-          "slug": "to-tsigkeli",
-          "address": "Stavraetou Machaira 44, Agios Athanasios",
-          "lat": 34.70933654,
-          "lng": 33.05056625,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/to-tsigkeli",
-          "prices": {
-            "porkchop": 15.5,
-            "mix": 8,
-            "mixLarge": 10
-          },
-          "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "wolt",
-            "mix": "bolt",
-            "mixLarge": "bolt"
-          },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/117173-to-tsigkeli"
         },
         {
           "name": "Tylichto Limassol Agora",
@@ -3655,18 +3629,65 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/8727-tylichto-limassol-agora"
         },
         {
-          "name": "Katsarola Mageirio",
-          "slug": "katsarola-mageirio",
-          "address": "Franklin Roosevelt 106,",
-          "lat": 34.6656573,
-          "lng": 33.0221147,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/katsarola-mageirio",
+          "name": "I Gonia Tis Gefsis",
+          "slug": "i-gwnia-tis-geusis",
+          "address": "Lamprou Porfira 2a, Agios Nikolaos",
+          "lat": 34.69006765,
+          "lng": 33.05814362,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/i-gwnia-tis-geusis",
           "prices": {
-            "porkchop": 10
+            "porkchop": 13
           },
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/200465-i-gonia-tis-gefsis"
+        },
+        {
+          "name": "Megusta Cafe Restaurant",
+          "slug": "megusta-lim",
+          "address": "Leoforos Omonoias 123",
+          "lat": 34.66276632,
+          "lng": 33.01748641,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/megusta-lim",
+          "prices": {
+            "porkchop": 17.5,
+            "chicken": 15,
+            "mix": 33.7
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "chicken": "bolt",
+            "mix": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/125056-megusta-cafe-restaurant"
+        },
+        {
+          "name": "Confuzio Cafe Snack Bar",
+          "slug": "confuzio-cafe",
+          "address": "Leoforos Archiepiskopou Makariou 136Α",
+          "lat": 34.68610155,
+          "lng": 33.03457736,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/confuzio-cafe",
+          "prices": {
+            "porkchop": 18.5
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/8640-confuzio-cafe"
         },
         {
           "name": "I Gefsi Restaurant & Park",
@@ -3683,27 +3704,56 @@
           ]
         },
         {
-          "name": "Souvlakia Theodosis",
-          "slug": "souvlakia-theodosis",
-          "address": "Dikaiosinis 10A",
-          "lat": 34.67330313,
-          "lng": 33.0106269,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-theodosis",
+          "name": "Draught Microbrewery Restaurant",
+          "slug": "draught-microbrewery-restaurant",
+          "address": "Vasilisis Street ",
+          "lat": 34.67178091,
+          "lng": 33.04171144,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/draught-microbrewery-restaurant",
           "prices": {
-            "porkchop": 17.5,
-            "mix": 9,
-            "mixLarge": 11
+            "porkchop": 23.5
           },
           "platforms": [
             "wolt",
             "bolt"
           ],
           "priceSources": {
-            "porkchop": "wolt",
-            "mix": "bolt",
-            "mixLarge": "bolt"
+            "porkchop": "wolt"
           },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/12066-souvlakia-theodosis"
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/4493-draught-microbrewery"
+        },
+        {
+          "name": "4grill",
+          "slug": "4grill",
+          "address": "Miltwnos 89A",
+          "lat": 34.66593547,
+          "lng": 33.0039494,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/4grill",
+          "prices": {
+            "porkchop": 15
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Katsarola Mageirio",
+          "slug": "katsarola-mageirio",
+          "address": "Franklin Roosevelt 106,",
+          "lat": 34.6656573,
+          "lng": 33.0221147,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/katsarola-mageirio",
+          "prices": {
+            "porkchop": 10
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/170356-katsarola-mageireio"
         },
         {
           "name": "Bambis Kebap",
@@ -3720,23 +3770,46 @@
           ]
         },
         {
-          "name": "Souvlakia Xasteria",
-          "slug": "souvlakia-xasteria",
-          "address": "Vasileos Konstantinou 133",
-          "lat": 34.6982812,
-          "lng": 33.0211439,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-xasteria",
+          "name": "Chris Grill House",
+          "slug": "chris-grill-house",
+          "address": "Agias Paraskevis 39, Germasogia",
+          "lat": 34.72039875,
+          "lng": 33.08487517,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/chris-grill-house",
           "prices": {
-            "porkchop": 17
+            "porkchop": 13
           },
           "platforms": [
-            "wolt",
-            "bolt"
-          ],
-          "priceSources": {
-            "porkchop": "bolt"
+            "wolt"
+          ]
+        },
+        {
+          "name": "Souvlakia Despo",
+          "slug": "souvlakia-despo-lim",
+          "address": "Archiepiskopou Leontiou A, 175",
+          "lat": 34.68146963,
+          "lng": 33.0331618,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-despo-lim",
+          "prices": {
+            "porkchop": 18.9
           },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/186610-souvlakia-xasteria"
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "To Anammeno Karvouno",
+          "slug": "to-anammeno-karvouno",
+          "address": "47 Konstantinou kai Evripidou Avenue ",
+          "lat": 34.6567768,
+          "lng": 32.9662689,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/to-anammeno-karvouno",
+          "prices": {
+            "porkchop": 13.5
+          },
+          "platforms": [
+            "wolt"
+          ]
         },
         {
           "name": "Proastio Taverna",
@@ -3762,14 +3835,14 @@
           "boltUrl": "https://food.bolt.eu/en/442-limassol/p/68993-taverna-proastio"
         },
         {
-          "name": "I Gonia Tis Gefsis",
-          "slug": "i-gwnia-tis-geusis",
-          "address": "Lamprou Porfira 2a, Agios Nikolaos",
-          "lat": 34.69006765,
-          "lng": 33.05814362,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/i-gwnia-tis-geusis",
+          "name": "Aletri Tavern",
+          "slug": "aletri-tavern",
+          "address": "Agias Paraskevis 35, Germasogeia  ",
+          "lat": 34.71975338,
+          "lng": 33.0848836,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/aletri-tavern",
           "prices": {
-            "porkchop": 13
+            "porkchop": 16
           },
           "platforms": [
             "wolt",
@@ -3778,7 +3851,7 @@
           "priceSources": {
             "porkchop": "wolt"
           },
-          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/200465-i-gonia-tis-gefsis"
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/131807-aletri-tavern"
         },
         {
           "name": "Megaro Tavern",
@@ -3795,6 +3868,90 @@
           ]
         },
         {
+          "name": "Kilikia Armenian Cuisine",
+          "slug": "kilikia-armenian-cuisine",
+          "address": "Makariou avenue 233G",
+          "lat": 34.685996437475595,
+          "lng": 33.05864778867331,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/kilikia-armenian-cuisine",
+          "prices": {
+            "porkchop": 18.5
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/188395-kilikia"
+        },
+        {
+          "name": "To Tsigkeli",
+          "slug": "to-tsigkeli",
+          "address": "Stavraetou Machaira 44, Agios Athanasios",
+          "lat": 34.70933654,
+          "lng": 33.05056625,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/to-tsigkeli",
+          "prices": {
+            "porkchop": 15.5,
+            "mix": 8,
+            "mixLarge": 10
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "mix": "bolt",
+            "mixLarge": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/117173-to-tsigkeli"
+        },
+        {
+          "name": "Souvlakia Theodosis",
+          "slug": "souvlakia-theodosis",
+          "address": "Dikaiosinis 10A",
+          "lat": 34.67330313,
+          "lng": 33.0106269,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-theodosis",
+          "prices": {
+            "porkchop": 17.5,
+            "mix": 9,
+            "mixLarge": 11
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "mix": "bolt",
+            "mixLarge": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/12066-souvlakia-theodosis"
+        },
+        {
+          "name": "Souvlakia Xasteria",
+          "slug": "souvlakia-xasteria",
+          "address": "Vasileos Konstantinou 133",
+          "lat": 34.6982812,
+          "lng": 33.0211439,
+          "url": "https://wolt.com/en/cyp/limassol/restaurant/souvlakia-xasteria",
+          "prices": {
+            "porkchop": 17
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/442-limassol/p/186610-souvlakia-xasteria"
+        },
+        {
           "name": "Estiatorio Pantelis",
           "slug": "estiatorio-pantelis",
           "address": "Spyrou Kyprianou 56, Kato Polemidia ",
@@ -3806,36 +3963,6 @@
           },
           "platforms": [
             "wolt"
-          ]
-        },
-        {
-          "name": "Chris Grill House",
-          "slug": "chris-grill-house",
-          "address": "Agias Paraskevis 39, Germasogia",
-          "lat": 34.72039875,
-          "lng": 33.08487517,
-          "url": "https://wolt.com/en/cyp/limassol/restaurant/chris-grill-house",
-          "prices": {
-            "porkchop": 13
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Gyro Gyro Oloi",
-          "slug": "173679-gyro-gyro-oloi",
-          "provider_id": 173679,
-          "address": "Arch. Makarios III Avenue 187 3030 Limassol Cyprus",
-          "lat": 34.6877,
-          "lng": 33.04779,
-          "url": "https://food.bolt.eu/en/442-limassol/p/173679-gyro-gyro-oloi",
-          "prices": {
-            "porkchop": 13.5
-          },
-          "source": "bolt",
-          "platforms": [
-            "bolt"
           ]
         },
         {
@@ -3857,31 +3984,15 @@
           ]
         },
         {
-          "name": "Toronto Burgers and Grill",
-          "slug": "10221-toronto-burgers-and-grill",
-          "provider_id": 10221,
-          "address": "Omonoias 66, Limassol  3052 Limassol",
-          "lat": 34.668396,
-          "lng": 33.01305,
-          "url": "https://food.bolt.eu/en/442-limassol/p/10221-toronto-burgers-and-grill",
+          "name": "Gyro Gyro Oloi",
+          "slug": "173679-gyro-gyro-oloi",
+          "provider_id": 173679,
+          "address": "Arch. Makarios III Avenue 187 3030 Limassol Cyprus",
+          "lat": 34.6877,
+          "lng": 33.04779,
+          "url": "https://food.bolt.eu/en/442-limassol/p/173679-gyro-gyro-oloi",
           "prices": {
-            "porkchop": 15
-          },
-          "source": "bolt",
-          "platforms": [
-            "bolt"
-          ]
-        },
-        {
-          "name": "Psistaria Souzi Tros",
-          "slug": "57257-psistaria-souzi-tros",
-          "provider_id": 57257,
-          "address": "Agias filaxeos 112, 3110 Limassol",
-          "lat": 34.689349,
-          "lng": 33.036583,
-          "url": "https://food.bolt.eu/en/442-limassol/p/57257-psistaria-souzi-tros",
-          "prices": {
-            "porkchop": 14
+            "porkchop": 13.5
           },
           "source": "bolt",
           "platforms": [
@@ -3898,6 +4009,38 @@
           "url": "https://food.bolt.eu/en/442-limassol/p/55755-psistaria-droushiotis",
           "prices": {
             "porkchop": 9
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
+          "name": "Sub X Grill & Burger House",
+          "slug": "18723-sub-x-grill-burger-house",
+          "provider_id": 18723,
+          "address": "37 Omonoias, 3052 Limassol",
+          "lat": 34.67157,
+          "lng": 33.01198,
+          "url": "https://food.bolt.eu/en/442-limassol/p/18723-sub-x-grill-burger-house",
+          "prices": {
+            "porkchop": 19
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
+          "name": "Toronto Burgers and Grill",
+          "slug": "10221-toronto-burgers-and-grill",
+          "provider_id": 10221,
+          "address": "Omonoias 66, Limassol  3052 Limassol",
+          "lat": 34.668396,
+          "lng": 33.01305,
+          "url": "https://food.bolt.eu/en/442-limassol/p/10221-toronto-burgers-and-grill",
+          "prices": {
+            "porkchop": 15
           },
           "source": "bolt",
           "platforms": [
@@ -4015,8 +4158,16 @@
             "mix": 7.2
           },
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "wolt",
+            "chicken": "wolt",
+            "mix": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/472527-valtou-rigani"
         },
         {
           "name": "Takis Kebab House",
@@ -4033,78 +4184,6 @@
             "chickenLarge": 8.7,
             "mix": 7.6,
             "mixLarge": 9.299999999999999
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Quick Stop Grill",
-          "slug": "quick-stop-grill",
-          "address": "Pavlou Valsamaki STR 1. Shop 1-2",
-          "lat": 34.91126492,
-          "lng": 33.63665734,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/quick-stop-grill",
-          "prices": {
-            "chicken": 1,
-            "souvlaki": 7.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Grill Chef",
-          "slug": "grill-chef",
-          "address": "Pavlou Valsamaki",
-          "lat": 34.91130172,
-          "lng": 33.63654388,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/grill-chef",
-          "prices": {
-            "porkchop": 16,
-            "souvlaki": 7.5,
-            "chicken": 7.8,
-            "mix": 7.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Taverna Zenon",
-          "slug": "taverna-zenon",
-          "address": "Makedonias 8",
-          "lat": 34.91193965,
-          "lng": 33.62054921,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/taverna-zenon",
-          "prices": {
-            "porkchop": 13,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 8.5,
-            "chicken": 7.5,
-            "chickenLarge": 8.5,
-            "mix": 7.5,
-            "mixLarge": 8.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "To Parko Souvlaki & Grill",
-          "slug": "to-parko-souvlaki-grill",
-          "address": "70 Archbishop Makariou, Livadia",
-          "lat": 34.95636511,
-          "lng": 33.62635374,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/to-parko-souvlaki-grill",
-          "prices": {
-            "porkchop": 14,
-            "chicken": 7.5,
-            "chickenLarge": 8.5,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 8.5,
-            "mix": 8,
-            "mixLarge": 9
           },
           "platforms": [
             "wolt"
@@ -4131,6 +4210,23 @@
           ]
         },
         {
+          "name": "Grill Chef",
+          "slug": "grill-chef",
+          "address": "Pavlou Valsamaki",
+          "lat": 34.91130172,
+          "lng": 33.63654388,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/grill-chef",
+          "prices": {
+            "porkchop": 16,
+            "souvlaki": 7.5,
+            "chicken": 7.8,
+            "mix": 7.5
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "name": "Souvlakia Yiannis",
           "slug": "souvlakia-yiannis",
           "address": "Kotza Tepe 32",
@@ -4151,6 +4247,37 @@
           ]
         },
         {
+          "name": "Taverna Zenon",
+          "slug": "taverna-zenon",
+          "address": "Makedonias 8",
+          "lat": 34.91193965,
+          "lng": 33.62054921,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/taverna-zenon",
+          "prices": {
+            "porkchop": 13,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 8.5,
+            "chicken": 7.5,
+            "chickenLarge": 8.5,
+            "mix": 7.5,
+            "mixLarge": 8.5
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "wolt",
+            "souvlakiLarge": "wolt",
+            "chicken": "wolt",
+            "chickenLarge": "wolt",
+            "mix": "wolt",
+            "mixLarge": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/25376-taverna-zenon"
+        },
+        {
           "name": "Gyrevontas Ellada",
           "slug": "gyrevontas-ellada",
           "address": "Gregori Auxentiou 8 ",
@@ -4158,13 +4285,63 @@
           "lng": 33.6356516,
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/gyrevontas-ellada",
           "prices": {
-            "porkchop": 12.8,
+            "porkchop": 11.5,
             "souvlaki": 7.5,
             "chicken": 7.5
           },
           "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "bolt",
+            "souvlaki": "wolt",
+            "chicken": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/802537-gyrevontas-ellada"
+        },
+        {
+          "name": "To Parko Souvlaki & Grill",
+          "slug": "to-parko-souvlaki-grill",
+          "address": "70 Archbishop Makariou, Livadia",
+          "lat": 34.95636511,
+          "lng": 33.62635374,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/to-parko-souvlaki-grill",
+          "prices": {
+            "porkchop": 14,
+            "chicken": 7.5,
+            "chickenLarge": 8.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 8.5,
+            "mix": 8,
+            "mixLarge": 9
+          },
+          "platforms": [
             "wolt"
           ]
+        },
+        {
+          "name": "Quick Stop Grill",
+          "slug": "quick-stop-grill",
+          "address": "Pavlou Valsamaki STR 1. Shop 1-2",
+          "lat": 34.91126492,
+          "lng": 33.63665734,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/quick-stop-grill",
+          "prices": {
+            "chicken": 1,
+            "souvlaki": 7.5,
+            "mix": 17.5
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "chicken": "wolt",
+            "souvlaki": "wolt",
+            "mix": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/140449-quick-stop-grill"
         },
         {
           "name": "Amfitheatro Grill & More",
@@ -4201,6 +4378,25 @@
           ]
         },
         {
+          "name": "Green Corner Kebab House",
+          "slug": "geen-corner-kebab-house",
+          "address": "Faneromenis 212",
+          "lat": 34.91213702,
+          "lng": 33.60767102,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/geen-corner-kebab-house",
+          "prices": {
+            "chicken": 8,
+            "chickenLarge": 10,
+            "mix": 8,
+            "mixLarge": 10,
+            "souvlaki": 8,
+            "souvlakiLarge": 10
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "name": "To Edesma Tou Paradeisou",
           "slug": "to-edesma-tou-paradeisou",
           "address": "Lordou Vironos 50",
@@ -4215,25 +4411,6 @@
             "souvlakiLarge": 10,
             "chickenLarge": 10,
             "chicken": 8
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Green Corner Kebab House",
-          "slug": "geen-corner-kebab-house",
-          "address": "Faneromenis 212",
-          "lat": 34.91213702,
-          "lng": 33.60767102,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/geen-corner-kebab-house",
-          "prices": {
-            "chicken": 8,
-            "chickenLarge": 10,
-            "mix": 8,
-            "mixLarge": 10,
-            "souvlaki": 8,
-            "souvlakiLarge": 10
           },
           "platforms": [
             "wolt"
@@ -4288,6 +4465,34 @@
             "souvlaki": 8
           },
           "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "mix": "wolt",
+            "chicken": "wolt",
+            "souvlaki": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/142541-kettiros-tavernaki"
+        },
+        {
+          "name": "AD Souvlaki",
+          "slug": "ad-souvlaki",
+          "address": "Sahit Mehmet aga 11",
+          "lat": 34.9098094,
+          "lng": 33.637296,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/ad-souvlaki",
+          "prices": {
+            "porkchop": 14,
+            "souvlaki": 8,
+            "souvlakiLarge": 11,
+            "chicken": 9,
+            "chickenLarge": 12,
+            "mix": 8,
+            "mixLarge": 11
+          },
+          "platforms": [
             "wolt"
           ]
         },
@@ -4331,26 +4536,6 @@
             "souvlakiLarge": 9.5,
             "chicken": 8,
             "chickenLarge": 9.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "AD Souvlaki",
-          "slug": "ad-souvlaki",
-          "address": "Sahit Mehmet aga 11",
-          "lat": 34.9098094,
-          "lng": 33.637296,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/ad-souvlaki",
-          "prices": {
-            "porkchop": 14,
-            "souvlaki": 8,
-            "souvlakiLarge": 11,
-            "chicken": 9,
-            "chickenLarge": 12,
-            "mix": 8,
-            "mixLarge": 11
           },
           "platforms": [
             "wolt"
@@ -4481,26 +4666,6 @@
           ]
         },
         {
-          "name": "Gyrogefstiko",
-          "slug": "gyrogefstiko",
-          "address": "21A Larisis",
-          "lat": 34.91134999,
-          "lng": 33.59508186,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/gyrogefstiko",
-          "prices": {
-            "porkchop": 15,
-            "souvlaki": 8.5,
-            "souvlakiLarge": 10,
-            "mix": 9.5,
-            "mixLarge": 11,
-            "chicken": 8.5,
-            "chickenLarge": 10
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "Souvlakia Katsios",
           "slug": "souvlakia-katsios",
           "address": " Adamou Adamou 33A, Dromolaxia",
@@ -4521,16 +4686,20 @@
           ]
         },
         {
-          "name": "Madame Foukou | Tennis Club Larnaca",
-          "slug": "madame-foukou-tennis-club-larnaca",
-          "address": "Adonidos 21",
-          "lat": 34.912802526860744,
-          "lng": 33.631013419177975,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/madame-foukou-tennis-club-larnaca",
+          "name": "Gyrogefstiko",
+          "slug": "gyrogefstiko",
+          "address": "21A Larisis",
+          "lat": 34.91134999,
+          "lng": 33.59508186,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/gyrogefstiko",
           "prices": {
+            "porkchop": 15,
+            "souvlaki": 8.5,
+            "souvlakiLarge": 10,
+            "mix": 9.5,
+            "mixLarge": 11,
             "chicken": 8.5,
-            "mix": 8.5,
-            "souvlaki": 8.5
+            "chickenLarge": 10
           },
           "platforms": [
             "wolt"
@@ -4557,6 +4726,42 @@
           ]
         },
         {
+          "name": "I Xrisi Smila",
+          "slug": "i-xrisi-smila",
+          "address": "120A Efxeinou Pontou ",
+          "lat": 34.94506652123863,
+          "lng": 33.62834563438895,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/i-xrisi-smila",
+          "prices": {
+            "porkchop": 15,
+            "mix": 7,
+            "souvlakiLarge": 9.5,
+            "mixLarge": 8,
+            "souvlaki": 8.5,
+            "chickenLarge": 10,
+            "chicken": 9
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Madame Foukou | Tennis Club Larnaca",
+          "slug": "madame-foukou-tennis-club-larnaca",
+          "address": "Adonidos 21",
+          "lat": 34.912802526860744,
+          "lng": 33.631013419177975,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/madame-foukou-tennis-club-larnaca",
+          "prices": {
+            "chicken": 8.5,
+            "mix": 8.5,
+            "souvlaki": 8.5
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "name": "To Xoiropiasto",
           "slug": "to-xoiropiasto5",
           "address": "1hs Apriliou 44",
@@ -4573,8 +4778,19 @@
             "mixLarge": 10
           },
           "platforms": [
-            "wolt"
-          ]
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "wolt",
+            "souvlakiLarge": "wolt",
+            "chicken": "wolt",
+            "chickenLarge": "wolt",
+            "mix": "wolt",
+            "mixLarge": "wolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/120123-to-xoiropiasto"
         },
         {
           "name": "Pesto & Efages",
@@ -4589,26 +4805,6 @@
             "chicken": 9,
             "souvlaki": 8.5,
             "chickenLarge": 9.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "I Xrisi Smila",
-          "slug": "i-xrisi-smila",
-          "address": "120A Efxeinou Pontou ",
-          "lat": 34.94506652123863,
-          "lng": 33.62834563438895,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/i-xrisi-smila",
-          "prices": {
-            "porkchop": 15,
-            "mix": 7,
-            "souvlakiLarge": 9.5,
-            "mixLarge": 8,
-            "souvlaki": 8.5,
-            "chickenLarge": 10,
-            "chicken": 9
           },
           "platforms": [
             "wolt"
@@ -4777,6 +4973,49 @@
           ]
         },
         {
+          "name": "Special Kebab House ",
+          "slug": "special-kebab-house",
+          "address": "31 Pavlou Valsamaki",
+          "lat": 34.91134837,
+          "lng": 33.63619859,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/special-kebab-house",
+          "prices": {
+            "porkchop": 15,
+            "souvlaki": 9,
+            "chicken": 10,
+            "mix": 10
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "wolt",
+            "souvlaki": "bolt",
+            "chicken": "bolt",
+            "mix": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/108643-special-kebab-house"
+        },
+        {
+          "name": "Souvlakia Mythos",
+          "slug": "194899-souvlakia-mythos",
+          "provider_id": 194899,
+          "address": "Zakynthou 17 6018 Larnaca Cyprus",
+          "lat": 34.925417,
+          "lng": 33.633019,
+          "url": "https://food.bolt.eu/en/443-larnaca/p/194899-souvlakia-mythos",
+          "prices": {
+            "souvlaki": 9,
+            "chicken": 9,
+            "mix": 9
+          },
+          "source": "bolt",
+          "platforms": [
+            "bolt"
+          ]
+        },
+        {
           "name": "Grill Lovers",
           "slug": "grill-lovers",
           "url": "https://www.foody.com.cy/delivery/larnaka/grill-lovers",
@@ -4870,6 +5109,20 @@
           ]
         },
         {
+          "name": "Anergoi Ptixiouxoi Fastfood",
+          "slug": "anergoi-ptixiouxi-fastfood",
+          "address": "Grigori Afxentiou 15, Livadia",
+          "lat": 34.94909791,
+          "lng": 33.62295328,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/anergoi-ptixiouxi-fastfood",
+          "prices": {
+            "porkchop": 13.5
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "name": "Panos Steakhouse",
           "slug": "panos-steakhouse",
           "address": "7 Agkyras, Seafront Phinikoudes",
@@ -4891,35 +5144,70 @@
           "lng": 33.61816743,
           "url": "https://wolt.com/en/cyp/larnaca/restaurant/delicious-kebab",
           "prices": {
-            "porkchop": 12
+            "porkchop": 10
+          },
+          "platforms": [
+            "wolt",
+            "bolt"
+          ],
+          "priceSources": {
+            "porkchop": "bolt"
+          },
+          "boltUrl": "https://food.bolt.eu/en/443-larnaca/p/4423-delicious-kebab"
+        },
+        {
+          "name": "Souvlakia I PrigkiPetsa",
+          "slug": "souvlakia-i-prigkipetsa",
+          "address": "Agiou Vasileiou 45A, Kamares",
+          "lat": 34.90735212,
+          "lng": 33.5975896,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/souvlakia-i-prigkipetsa",
+          "prices": {
+            "porkchop": 14
           },
           "platforms": [
             "wolt"
           ]
         },
         {
-          "name": "Special Kebab House ",
-          "slug": "special-kebab-house",
-          "address": "31 Pavlou Valsamaki",
-          "lat": 34.91134837,
-          "lng": 33.63619859,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/special-kebab-house",
+          "name": "Bellelene",
+          "slug": "bellelene",
+          "address": "Spartis 1 Pyla",
+          "lat": 34.97748709,
+          "lng": 33.68575925,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/bellelene",
           "prices": {
-            "porkchop": 15
+            "porkchop": 14
           },
           "platforms": [
             "wolt"
           ]
         },
         {
-          "name": "Epilogi - N.Topakas",
-          "slug": "epilogi",
-          "address": "Sittika Hanoum 9-11",
-          "lat": 34.9229618264483,
-          "lng": 33.621744224729184,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/epilogi",
+          "name": "To Xitroulo",
+          "slug": "to-xitroulo",
+          "address": "Odysseos 5",
+          "lat": 34.9161644,
+          "lng": 33.62204342,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/to-xitroulo",
           "prices": {
-            "porkchop": 12
+            "porkchop": 17,
+            "mix": 9.5,
+            "mixLarge": 11.5
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "I Gonia Mas",
+          "slug": "herculess-grill",
+          "address": "Ioanni Marsellou 2 ",
+          "lat": 34.92670101,
+          "lng": 33.6360946,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/herculess-grill",
+          "prices": {
+            "porkchop": 17
           },
           "platforms": [
             "wolt"
@@ -4968,44 +5256,14 @@
           ]
         },
         {
-          "name": "Souvlakia I PrigkiPetsa",
-          "slug": "souvlakia-i-prigkipetsa",
-          "address": "Agiou Vasileiou 45A, Kamares",
-          "lat": 34.90735212,
-          "lng": 33.5975896,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/souvlakia-i-prigkipetsa",
+          "name": "Epilogi - N.Topakas",
+          "slug": "epilogi",
+          "address": "Sittika Hanoum 9-11",
+          "lat": 34.9229618264483,
+          "lng": 33.621744224729184,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/epilogi",
           "prices": {
-            "porkchop": 14
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Bellelene",
-          "slug": "bellelene",
-          "address": "Spartis 1 Pyla",
-          "lat": 34.97748709,
-          "lng": 33.68575925,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/bellelene",
-          "prices": {
-            "porkchop": 14
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "To Xitroulo",
-          "slug": "to-xitroulo",
-          "address": "Odysseos 5",
-          "lat": 34.9161644,
-          "lng": 33.62204342,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/to-xitroulo",
-          "prices": {
-            "porkchop": 17,
-            "mix": 9.5,
-            "mixLarge": 11.5
+            "porkchop": 12
           },
           "platforms": [
             "wolt"
@@ -5022,34 +5280,6 @@
             "porkchop": 12,
             "mix": 7,
             "mixLarge": 8
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "I Gonia Mas",
-          "slug": "herculess-grill",
-          "address": "Ioanni Marsellou 2 ",
-          "lat": 34.92670101,
-          "lng": 33.6360946,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/herculess-grill",
-          "prices": {
-            "porkchop": 17
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Anergoi Ptixiouxoi Fastfood",
-          "slug": "anergoi-ptixiouxi-fastfood",
-          "address": "Grigori Afxentiou 15, Livadia",
-          "lat": 34.94909791,
-          "lng": 33.62295328,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/anergoi-ptixiouxi-fastfood",
-          "prices": {
-            "porkchop": 13.5
           },
           "platforms": [
             "wolt"
@@ -5297,13 +5527,14 @@
           ]
         },
         {
-          "name": "Greek Bites",
-          "slug": "greek-bites",
-          "address": "5, Kleious",
-          "lat": 34.7525467,
-          "lng": 32.42245346,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/greek-bites",
+          "name": "To Kalamaki Tis Polis",
+          "slug": "to-kalamaki-tis-polis",
+          "address": "Paphou Chrysanthou 20",
+          "lat": 34.77894574,
+          "lng": 32.42055088,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/to-kalamaki-tis-polis",
           "prices": {
+            "porkchop": 16.75,
             "souvlaki": 8,
             "chicken": 8,
             "mix": 8
@@ -5313,14 +5544,13 @@
           ]
         },
         {
-          "name": "To Kalamaki Tis Polis",
-          "slug": "to-kalamaki-tis-polis",
-          "address": "Paphou Chrysanthou 20",
-          "lat": 34.77894574,
-          "lng": 32.42055088,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/to-kalamaki-tis-polis",
+          "name": "Greek Bites",
+          "slug": "greek-bites",
+          "address": "5, Kleious",
+          "lat": 34.7525467,
+          "lng": 32.42245346,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/greek-bites",
           "prices": {
-            "porkchop": 16.75,
             "souvlaki": 8,
             "chicken": 8,
             "mix": 8
@@ -5419,6 +5649,21 @@
           ]
         },
         {
+          "name": "Pitta Express",
+          "slug": "pitta-express",
+          "address": "Neofytou Nikolaidi 43",
+          "lat": 34.77311999,
+          "lng": 32.42979078,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/pitta-express",
+          "prices": {
+            "porkchop": 18.5,
+            "mix": 7.8
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "name": "Mr. Gyros & Souvlaki",
           "slug": "mr-gyros-geroskipou",
           "address": "Archiepiskopou Makariou iii , 21, Geroskipou",
@@ -5433,20 +5678,6 @@
           ]
         },
         {
-          "name": "Stelios O Souvlakis",
-          "slug": "stelios-o-souvlakis",
-          "address": "Alexandrou Papagou 74",
-          "lat": 34.77631319,
-          "lng": 32.43849959,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/stelios-o-souvlakis",
-          "prices": {
-            "porkchop": 19.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "Oregano Greek Grill",
           "slug": "oregano-cy",
           "address": "Taxiarchon Avenue 35",
@@ -5455,22 +5686,6 @@
           "url": "https://wolt.com/en/cyp/paphos/restaurant/oregano-cy",
           "prices": {
             "porkchop": 16.95
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "The Three Little Pigs",
-          "slug": "the-three-little-pigs",
-          "address": "Tafoi ton Vasileon 14, 8046, Paphos Cyprus",
-          "lat": 34.76621742,
-          "lng": 32.41084842,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/the-three-little-pigs",
-          "prices": {
-            "porkchop": 18,
-            "mix": 7.95,
-            "mixLarge": 9.95
           },
           "platforms": [
             "wolt"
@@ -5499,21 +5714,6 @@
           "url": "https://wolt.com/en/cyp/paphos/restaurant/o-gyros-tou-vasila",
           "prices": {
             "porkchop": 16
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Pitta Express",
-          "slug": "pitta-express",
-          "address": "Neofytou Nikolaidi 43",
-          "lat": 34.77311999,
-          "lng": 32.42979078,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/pitta-express",
-          "prices": {
-            "porkchop": 18.5,
-            "mix": 7.8
           },
           "platforms": [
             "wolt"
@@ -5578,15 +5778,30 @@
           ]
         },
         {
-          "name": "Food Time",
-          "slug": "food-time-1",
-          "address": "Agias Napas & Theoskepastis Shop 4",
-          "lat": 34.75759173521165,
-          "lng": 32.41613789511078,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/food-time-1",
+          "name": "Asado Express",
+          "slug": "asado-express",
+          "address": "Asado Nice To Meat Express, Alkminis 29",
+          "lat": 34.75630717440299,
+          "lng": 32.414589793218056,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/asado-express",
           "prices": {
-            "porkchop": 14,
-            "mix": 7
+            "mix": 17
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "The Three Little Pigs",
+          "slug": "the-three-little-pigs",
+          "address": "Tafoi ton Vasileon 14, 8046, Paphos Cyprus",
+          "lat": 34.76621742,
+          "lng": 32.41084842,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/the-three-little-pigs",
+          "prices": {
+            "porkchop": 18,
+            "mix": 7.95,
+            "mixLarge": 9.95
           },
           "platforms": [
             "wolt"
@@ -5607,20 +5822,6 @@
           ]
         },
         {
-          "name": "Asado Express",
-          "slug": "asado-express",
-          "address": "Asado Nice To Meat Express, Alkminis 29",
-          "lat": 34.75630717440299,
-          "lng": 32.414589793218056,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/asado-express",
-          "prices": {
-            "mix": 17
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "Lazy Bull",
           "slug": "lazy-bull",
           "address": "Danaes Avenue 20, Olympia Complex 101",
@@ -5635,14 +5836,29 @@
           ]
         },
         {
-          "name": "Clusters Bar & Grill",
-          "slug": "clusters-bar-grill",
-          "address": "Chloraka avenue, shop 6, Chloraka",
-          "lat": 34.80632456,
-          "lng": 32.39640413,
-          "url": "https://wolt.com/en/cyp/paphos/restaurant/clusters-bar-grill",
+          "name": "Food Time",
+          "slug": "food-time-1",
+          "address": "Agias Napas & Theoskepastis Shop 4",
+          "lat": 34.75759173521165,
+          "lng": 32.41613789511078,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/food-time-1",
           "prices": {
-            "porkchop": 16
+            "porkchop": 14,
+            "mix": 7
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Stelios O Souvlakis",
+          "slug": "stelios-o-souvlakis",
+          "address": "Alexandrou Papagou 74",
+          "lat": 34.77631319,
+          "lng": 32.43849959,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/stelios-o-souvlakis",
+          "prices": {
+            "porkchop": 19.5
           },
           "platforms": [
             "wolt"
@@ -5657,6 +5873,20 @@
           "url": "https://wolt.com/en/cyp/paphos/restaurant/fiesta-cocktail-bar-grill",
           "prices": {
             "porkchop": 17.95
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Clusters Bar & Grill",
+          "slug": "clusters-bar-grill",
+          "address": "Chloraka avenue, shop 6, Chloraka",
+          "lat": 34.80632456,
+          "lng": 32.39640413,
+          "url": "https://wolt.com/en/cyp/paphos/restaurant/clusters-bar-grill",
+          "prices": {
+            "porkchop": 16
           },
           "platforms": [
             "wolt"
@@ -5692,26 +5922,6 @@
           ]
         },
         {
-          "name": "Sesoula Kalamaki Kappari",
-          "slug": "sesoula-kalamaki-kappari",
-          "address": "Leoforos Kappari 64",
-          "lat": 35.0550803,
-          "lng": 34.0077933,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/sesoula-kalamaki-kappari",
-          "prices": {
-            "porkchop": 16,
-            "chicken": 8,
-            "chickenLarge": 9,
-            "souvlaki": 8,
-            "souvlakiLarge": 9,
-            "mix": 9,
-            "mixLarge": 10
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "To Steki Tou \"Boss''",
           "slug": "tavernakiboss",
           "address": "Nikou Psara 21",
@@ -5732,17 +5942,20 @@
           ]
         },
         {
-          "name": "Hollywood Bar & Grill",
-          "slug": "hollywood-bar-grill",
-          "address": "Protaras Avenue 265, Paralimni",
-          "lat": 35.04881697,
-          "lng": 34.01153506,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/hollywood-bar-grill",
+          "name": "Sesoula Kalamaki Kappari",
+          "slug": "sesoula-kalamaki-kappari",
+          "address": "Leoforos Kappari 64",
+          "lat": 35.0550803,
+          "lng": 34.0077933,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/sesoula-kalamaki-kappari",
           "prices": {
             "porkchop": 16,
-            "souvlaki": 9,
-            "chicken": 9,
-            "mix": 10
+            "chicken": 8,
+            "chickenLarge": 9,
+            "souvlaki": 8,
+            "souvlakiLarge": 9,
+            "mix": 9,
+            "mixLarge": 10
           },
           "platforms": [
             "wolt"
@@ -5778,11 +5991,64 @@
           "prices": {
             "porkchop": 14.5,
             "mix": 10,
-            "mixLarge": 11.5,
+            "mixLarge": 12,
             "souvlaki": 9,
-            "souvlakiLarge": 10.5,
+            "souvlakiLarge": 11,
             "chicken": 10,
-            "chickenLarge": 11.5
+            "chickenLarge": 12
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Hollywood Bar & Grill",
+          "slug": "hollywood-bar-grill",
+          "address": "Protaras Avenue 265, Paralimni",
+          "lat": 35.04881697,
+          "lng": 34.01153506,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/hollywood-bar-grill",
+          "prices": {
+            "porkchop": 16,
+            "souvlaki": 9,
+            "chicken": 9,
+            "mix": 10
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Gyradiko & Grill By Vangelis Protaras",
+          "slug": "gyradiko-grill-by-vangelis-protaras1",
+          "address": "Leoforos Protara-Kavo Gkreko 338",
+          "lat": 35.0188582,
+          "lng": 34.0442537,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/gyradiko-grill-by-vangelis-protaras1",
+          "prices": {
+            "porkchop": 18,
+            "chicken": 10,
+            "mix": 10,
+            "souvlaki": 10,
+            "souvlakiLarge": 9.2,
+            "chickenLarge": 9.2
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Soukris Souvlakia Protaras",
+          "slug": "soukris-souvlakia-protaras",
+          "address": "Protara 58",
+          "lat": 35.01138366,
+          "lng": 34.0567229,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/soukris-souvlakia-protaras",
+          "prices": {
+            "chicken": 10,
+            "chickenLarge": 12,
+            "souvlaki": 10,
+            "souvlakiLarge": 12
           },
           "platforms": [
             "wolt"
@@ -5814,42 +6080,6 @@
           "prices": {
             "souvlaki": 10,
             "chicken": 10
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Soukris Souvlakia Protaras",
-          "slug": "soukris-souvlakia-protaras",
-          "address": "Protara 58",
-          "lat": 35.01138366,
-          "lng": 34.0567229,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/soukris-souvlakia-protaras",
-          "prices": {
-            "chicken": 10,
-            "chickenLarge": 12,
-            "souvlaki": 10,
-            "souvlakiLarge": 12
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Gyradiko & Grill By Vangelis Protaras",
-          "slug": "gyradiko-grill-by-vangelis-protaras1",
-          "address": "Leoforos Protara-Kavo Gkreko 338",
-          "lat": 35.0188582,
-          "lng": 34.0442537,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/gyradiko-grill-by-vangelis-protaras1",
-          "prices": {
-            "porkchop": 18,
-            "chicken": 10,
-            "mix": 10,
-            "souvlaki": 10,
-            "souvlakiLarge": 9.2,
-            "chickenLarge": 9.2
           },
           "platforms": [
             "wolt"
@@ -5903,54 +6133,26 @@
           ]
         },
         {
-          "name": "Agios Dimitrios Snack & Grill",
-          "slug": "agios-dimitrios-snack-grill",
-          "address": "Adamantiou Korai 36, Paralimni",
-          "lat": 35.0524832,
-          "lng": 33.9795087,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/agios-dimitrios-snack-grill",
-          "prices": {
-            "porkchop": 12
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Dia Xoiros Gefseis Deryneia",
-          "slug": "dia-xoiros-gevseis",
-          "address": "Eleftherias 19",
-          "lat": 35.06228956,
-          "lng": 33.96240401,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/dia-xoiros-gevseis",
-          "prices": {
-            "porkchop": 16
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
-          "name": "Andama Tavern",
-          "slug": "andama-tavern",
-          "address": "26 Protaras Avenue, Paralimni",
-          "lat": 35.0158687,
-          "lng": 34.0511782,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/andama-tavern",
-          "prices": {
-            "porkchop": 17.5
-          },
-          "platforms": [
-            "wolt"
-          ]
-        },
-        {
           "name": "Yiasemi Ayia Napa",
           "slug": "yiasemi-agia-napa",
           "address": "Nissi Ave 70, Ayia Napa 5330, Cyprus",
           "lat": 34.98934009,
           "lng": 33.97998891,
           "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/yiasemi-agia-napa",
+          "prices": {
+            "porkchop": 17.9
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Yiasemi Protaras",
+          "slug": "yiasemi-protaras",
+          "address": "Protaras Ave 66",
+          "lat": 35.01164032,
+          "lng": 34.05650251,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/yiasemi-protaras",
           "prices": {
             "porkchop": 17.9
           },
@@ -5974,6 +6176,20 @@
           ]
         },
         {
+          "name": "Dia Xoiros Gefseis Deryneia",
+          "slug": "dia-xoiros-gevseis",
+          "address": "Eleftherias 19",
+          "lat": 35.06228956,
+          "lng": 33.96240401,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/dia-xoiros-gevseis",
+          "prices": {
+            "porkchop": 16
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
           "name": "Ploumin Tavern",
           "slug": "ploumin-tavern",
           "address": "28 Oltovriou",
@@ -5982,6 +6198,20 @@
           "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/ploumin-tavern",
           "prices": {
             "porkchop": 14
+          },
+          "platforms": [
+            "wolt"
+          ]
+        },
+        {
+          "name": "Agios Dimitrios Snack & Grill",
+          "slug": "agios-dimitrios-snack-grill",
+          "address": "Adamantiou Korai 36, Paralimni",
+          "lat": 35.0524832,
+          "lng": 33.9795087,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/agios-dimitrios-snack-grill",
+          "prices": {
+            "porkchop": 12
           },
           "platforms": [
             "wolt"
@@ -6002,14 +6232,14 @@
           ]
         },
         {
-          "name": "Yiasemi Protaras",
-          "slug": "yiasemi-protaras",
-          "address": "Protaras Ave 66",
-          "lat": 35.01164032,
-          "lng": 34.05650251,
-          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/yiasemi-protaras",
+          "name": "Andama Tavern",
+          "slug": "andama-tavern",
+          "address": "26 Protaras Avenue, Paralimni",
+          "lat": 35.0158687,
+          "lng": 34.0511782,
+          "url": "https://wolt.com/en/cyp/ayia-napa/restaurant/andama-tavern",
           "prices": {
-            "porkchop": 17.9
+            "porkchop": 17.5
           },
           "platforms": [
             "wolt"
