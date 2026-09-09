@@ -1,16 +1,10 @@
 {
-  "fetchedAt": "2026-09-08T09:36:53.584Z",
-  "count": 105,
+  "fetchedAt": "2026-09-09T09:40:23.262Z",
+  "count": 107,
   "sources": [
     {
       "id": "cpa",
       "name": "Αρχή Λιμένων Κύπρου",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "psc",
-      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
       "count": 1,
       "error": null
     },
@@ -21,22 +15,21 @@
       "error": null
     },
     {
-      "id": "hio",
-      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "id": "psc",
+      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
       "count": 1,
       "error": null
-    },
-    {
-      "id": "ocecpr",
-      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
-      "count": 5,
-      "error": null,
-      "via": "site→browser"
     },
     {
       "id": "eey",
       "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "hio",
+      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "count": 1,
       "error": null
     },
     {
@@ -52,6 +45,13 @@
       "error": null
     },
     {
+      "id": "cera",
+      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
+      "count": 0,
+      "error": null,
+      "via": "site→browser"
+    },
+    {
       "id": "crta",
       "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
       "count": 1,
@@ -64,20 +64,14 @@
       "error": null
     },
     {
-      "id": "cyada",
-      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "cysec",
       "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
       "count": 1,
       "error": null
     },
     {
-      "id": "centralbank",
-      "name": "Κεντρική Τράπεζα της Κύπρου",
+      "id": "cyada",
+      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
       "count": 0,
       "error": null
     },
@@ -88,16 +82,15 @@
       "error": "HTTP 521"
     },
     {
-      "id": "cera",
-      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
+      "id": "centralbank",
+      "name": "Κεντρική Τράπεζα της Κύπρου",
       "count": 0,
-      "error": null,
-      "via": "site→browser"
+      "error": null
     },
     {
-      "id": "kodap",
-      "name": "ΚΟΔΑΠ",
-      "count": 0,
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 2,
       "error": null
     },
     {
@@ -113,20 +106,20 @@
       "error": null
     },
     {
-      "id": "anad",
-      "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
+      "id": "kodap",
+      "name": "ΚΟΔΑΠ",
       "count": 0,
-      "error": null
-    },
-    {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 2,
       "error": null
     },
     {
       "id": "onek",
       "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "anad",
+      "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
       "count": 0,
       "error": null
     },
@@ -149,12 +142,6 @@
       "error": null
     },
     {
-      "id": "ucm",
-      "name": "Ένωση Δήμων Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "research",
       "name": "ΙδΕΚ (Ίδρυμα Έρευνας και Καινοτομίας)",
       "count": 0,
@@ -167,9 +154,21 @@
       "error": null
     },
     {
+      "id": "ucm",
+      "name": "Ένωση Δήμων Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "cut",
       "name": "ΤΕΠΑΚ",
       "count": 5,
+      "error": null
+    },
+    {
+      "id": "ouc",
+      "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
+      "count": 1,
       "error": null
     },
     {
@@ -179,9 +178,9 @@
       "error": null
     },
     {
-      "id": "ouc",
-      "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
-      "count": 0,
+      "id": "cyi",
+      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "count": 7,
       "error": null
     },
     {
@@ -191,14 +190,8 @@
       "error": null
     },
     {
-      "id": "cyi",
-      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "count": 6,
-      "error": null
-    },
-    {
-      "id": "cmmi",
-      "name": "Cyprus Marine and Maritime Institute",
+      "id": "ucy",
+      "name": "Πανεπιστήμιο Κύπρου",
       "count": 0,
       "error": null
     },
@@ -209,20 +202,8 @@
       "error": null
     },
     {
-      "id": "eoa-lemesou",
-      "name": "ΕΟΑ Λεμεσού",
-      "count": 7,
-      "error": null
-    },
-    {
-      "id": "eoa-lefkosias",
-      "name": "ΕΟΑ Λευκωσίας",
-      "count": 2,
-      "error": null
-    },
-    {
-      "id": "ucy",
-      "name": "Πανεπιστήμιο Κύπρου",
+      "id": "cmmi",
+      "name": "Cyprus Marine and Maritime Institute",
       "count": 0,
       "error": null
     },
@@ -231,6 +212,19 @@
       "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
       "count": 0,
       "error": null
+    },
+    {
+      "id": "eoa-lemesou",
+      "name": "ΕΟΑ Λεμεσού",
+      "count": 7,
+      "error": null
+    },
+    {
+      "id": "ocecpr",
+      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
+      "count": 5,
+      "error": null,
+      "via": "site→browser"
     },
     {
       "id": "eoa-larnakas",
@@ -242,6 +236,12 @@
       "id": "dimos-lefkosias",
       "name": "Δήμος Λευκωσίας",
       "count": 8,
+      "error": null
+    },
+    {
+      "id": "eoa-lefkosias",
+      "name": "ΕΟΑ Λευκωσίας",
+      "count": 2,
       "error": null
     },
     {
@@ -263,9 +263,9 @@
       "error": null
     },
     {
-      "id": "dimos-latsion-geriou",
-      "name": "Δήμος Λατσιών-Γερίου",
-      "count": 2,
+      "id": "dimos-lakatamias",
+      "name": "Δήμος Λακατάμειας",
+      "count": 0,
       "error": null
     },
     {
@@ -275,8 +275,8 @@
       "error": null
     },
     {
-      "id": "dimos-lakatamias",
-      "name": "Δήμος Λακατάμειας",
+      "id": "eoa-pafou",
+      "name": "ΕΟΑ Πάφου",
       "count": 0,
       "error": null
     },
@@ -287,9 +287,9 @@
       "error": null
     },
     {
-      "id": "dimos-dytikis-lemesou",
-      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
-      "count": 5,
+      "id": "dimos-latsion-geriou",
+      "name": "Δήμος Λατσιών-Γερίου",
+      "count": 2,
       "error": null
     },
     {
@@ -299,14 +299,14 @@
       "error": null
     },
     {
-      "id": "dimos-lefkaron",
-      "name": "Δήμος Λευκάρων",
-      "count": 0,
+      "id": "dimos-dytikis-lemesou",
+      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
+      "count": 5,
       "error": null
     },
     {
-      "id": "eoa-pafou",
-      "name": "ΕΟΑ Πάφου",
+      "id": "dimos-lefkaron",
+      "name": "Δήμος Λευκάρων",
       "count": 0,
       "error": null
     },
@@ -323,9 +323,9 @@
       "error": null
     },
     {
-      "id": "dimos-pafou",
-      "name": "Δήμος Πάφου",
-      "count": 4,
+      "id": "dimos-larnakas",
+      "name": "Δήμος Λάρνακας",
+      "count": 2,
       "error": null
     },
     {
@@ -335,15 +335,15 @@
       "error": null
     },
     {
-      "id": "dimos-larnakas",
-      "name": "Δήμος Λάρνακας",
-      "count": 2,
+      "id": "dimos-pafou",
+      "name": "Δήμος Πάφου",
+      "count": 4,
       "error": null
     },
     {
-      "id": "dimos-agias-napas",
-      "name": "Δήμος Αγίας Νάπας",
-      "count": 0,
+      "id": "dimos-athienou",
+      "name": "Δήμος Αθηένου",
+      "count": 2,
       "error": null
     },
     {
@@ -353,9 +353,9 @@
       "error": null
     },
     {
-      "id": "dimos-athienou",
-      "name": "Δήμος Αθηένου",
-      "count": 2,
+      "id": "dimos-agias-napas",
+      "name": "Δήμος Αγίας Νάπας",
+      "count": 0,
       "error": null
     },
     {
@@ -378,6 +378,28 @@
     }
   ],
   "jobs": [
+    {
+      "id": "f0c6e88cbf0a",
+      "sourceId": "ouc",
+      "employer": "Ανοικτό Πανεπιστήμιο Κύπρου",
+      "sector": "university",
+      "district": "nicosia",
+      "title": "Προκήρυξη έως 4 θέσεων ερευνητικού προσωπικού",
+      "url": "https://www.ouc.ac.cy/index.php/el/news-events-menu-2/nea/5794-theseis-erev-21-9-2027",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district"
+    },
     {
       "id": "c6f9c181f315",
       "sourceId": "cpa",
@@ -930,7 +952,7 @@
       "employer": "Δήμος Λάρνακας",
       "sector": "municipality",
       "district": "larnaca",
-      "title": "Προκήρυξη θέσης Μάγειρα / Μαγείρισσας για το Δημοτικό Μέλαθρο Ευανθίας Πιερίδου",
+      "title": "Προκήρυξη θέσης Μάγειρα/Μαγείρισσας για το Δημοτικό Μέλαθρο Ευανθίας Πιερίδου",
       "url": "https://www.larnaka.org.cy/prokiryksi-thesis-mageira-mageirissas-gia-to-dimotiko-melathro-evanthias-pieridou/",
       "published": "2026-09-02",
       "deadline": null,
@@ -1889,6 +1911,28 @@
       "url": "https://www.thoc.org.cy/el/news/?nid=38694",
       "published": null,
       "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district"
+    },
+    {
+      "id": "17665a5296b0",
+      "sourceId": "cyi",
+      "employer": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "sector": "research",
+      "district": "nicosia",
+      "title": "Associate Research Scientist in Machine Learning and AI-Driven Environmental Modelling (ref. no. CARE-C_ARS_26_06)",
+      "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0422",
+      "published": null,
+      "deadline": "2026-09-30",
       "reference": null,
       "locations": [
         {
