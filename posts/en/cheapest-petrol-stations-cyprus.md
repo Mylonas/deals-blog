@@ -15,13 +15,13 @@ pinned: true
 
 | Brand | Address | Area | Price |
 |-------|---------|------|-------|
-| EKO | [Λεωφ. Δημοσθένη Σεβέρη 49 Τ.Κ 1080](https://www.google.com/maps?q=35.15764,33.352016) | Λευκωσία | €1.569 |
-| EKO | [Μελίνας Μερκούρη 22 Τ.Κ 2311](https://www.google.com/maps?q=35.110876,33.309251) | Λακατάμεια | €1.582 |
 | SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.585 |
 | PETROLINA | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.92598333,33.54103333) | Καλό Χωριό Λάρνακας | €1.585 |
-| ESSO | [Λεωφ. Νίκης 37 Τ.Κ 1087](https://www.google.com/maps?q=35.1565679511699,33.3580602362457) | Ακρόπολη | €1.587 |
-| PETROLINA | [Λεωφ. Κυριάκου Μάτση 28, Αγ.Ομολογητές Τ.Κ 1082](https://www.google.com/maps?q=35.1591,33.35478333) | Λευκωσία | €1.587 |
 | PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.589 |
+| PETROLINA | [Λεωφ. Νίκης 1 Τ.Κ 1086](https://www.google.com/maps?q=35.162387,33.35887) | Λευκωσία | €1.589 |
+| PETROLINA | [Λεωφ. Αμμοχώστου 67 Τ.Κ 1048](https://www.google.com/maps?q=35.168195,33.39786) | Παλλουριώτισσα | €1.589 |
+| PETROLINA | [Λεωφ. Καντάρας 78 Τ.Κ 1027](https://www.google.com/maps?q=35.185485,33.39097) | Καϊμακλί | €1.589 |
+| EKO | [Λεωφ. Δημοσθένη Σεβέρη 49 Τ.Κ 1080](https://www.google.com/maps?q=35.15764,33.352016) | Λευκωσία | €1.589 |
 
 ## 7 Cheapest Stations Right Now — Unleaded 98
 
@@ -29,11 +29,11 @@ pinned: true
 |-------|---------|------|-------|
 | PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.629 |
 | PETROLINA | [Λεωφ. Νίκης 1 Τ.Κ 1086](https://www.google.com/maps?q=35.162387,33.35887) | Λευκωσία | €1.629 |
-| EKO | [Μελίνας Μερκούρη 22 Τ.Κ 2311](https://www.google.com/maps?q=35.110876,33.309251) | Λακατάμεια | €1.639 |
 | EKO | [Κυριάκου Μάτση 100 Τ.Κ 7102](https://www.google.com/maps?q=34.939014,33.601698) | Αραδίππου | €1.648 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.649 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.649 |
 | PETROLINA | [Λεωφ. Κυριάκου Μάτση 28, Αγ.Ομολογητές Τ.Κ 1082](https://www.google.com/maps?q=35.1591,33.35478333) | Λευκωσία | €1.649 |
+| PETROLINA | [Μισιαούλη & Καβάζογλου 73 Τ.Κ 3016](https://www.google.com/maps?q=34.673561,33.02208) | Λεμεσός | €1.665 |
 
 ## 7 Cheapest Stations Right Now — Diesel
 
@@ -45,7 +45,7 @@ pinned: true
 | SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.819 |
 | PETROLINA | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.92598333,33.54103333) | Καλό Χωριό Λάρνακας | €1.829 |
 | PETROLINA | [Λεωφ. Ελλάδος 65 Τ.Κ 7101](https://www.google.com/maps?q=34.92766666666667,33.58225) | Αραδίππου | €1.839 |
-| EKO | [Μελίνας Μερκούρη 22 Τ.Κ 2311](https://www.google.com/maps?q=35.110876,33.309251) | Λακατάμεια | €1.839 |
+| SHELL | [Λεωφ. Αμμοχώστου 57 Τ.Κ 1016](https://www.google.com/maps?q=35.170154,33.397329) | Παλλουριώτισσα | €1.847 |
 
 ## 7 Cheapest Stations Right Now — Heating Oil
 
@@ -56,8 +56,8 @@ pinned: true
 | PETROLINA | [Λεωφ. Αθαλάσσας 113 Τ.Κ 2024](https://www.google.com/maps?q=35.14405,33.36443) | Δασούπολη | €1.400 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.449 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.449 |
-| PETROLINA | [Λεωφ. Αρχ. Μακαρίου Γ΄ 89 Τ.Κ 1071](https://www.google.com/maps?q=35.1609,33.3711) | Λευκωσία | €1.449 |
 | EKO | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.927671,33.536158) | Καλό Χωριό Λάρνακας | €1.449 |
+| EKO | [Λεωφ. Αρχ. Μακαρίου Γ' 204 Τ.Κ 3030](https://www.google.com/maps?q=34.68753,33.045896) | Λεμεσός | €1.459 |
 
 > Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 10 September 2026
 
