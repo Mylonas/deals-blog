@@ -23,7 +23,7 @@ Live prices for the 10 most-bought household staples in Cyprus, sourced from the
 | Water 1.5L ×6 | **[€2.00](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
 | Yogurt 450g | **[€3.74](https://www.e-kalathi.gov.cy/product-information/301)** | Charalambides Christis |
 | Rice 1kg | **[€1.90](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
-| Orange Juice 1L | **[€2.29](https://www.e-kalathi.gov.cy/product-information/2120)** | Delta |
+| Orange Juice 1L | **[€1.75](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
 | Coca-Cola 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
 
 <!-- PRICES_END -->
