@@ -1,7 +1,7 @@
 ---
 title: "Cheapest Petrol Stations in Cyprus — Live Tracker"
 date: "2026-06-28"
-updated: "2026-09-12"
+updated: "2026-09-13"
 category: "Fuel"
 summary: "Live prices for Unleaded 95, Unleaded 98, and Diesel across petrol stations in Cyprus. Updated hourly from the official Cyprus government fuel observatory."
 pinned: true
@@ -59,6 +59,6 @@ pinned: true
 | ESSO | [Λεωφ. Γρηγόρη Αυξεντίου 29, Πάνω Δευτερά Τ.Κ 2460](https://www.google.com/maps?q=35.081014,33.273498) | Δευτερά | €1.487 |
 | ESSO | [Αγίας Ζώνης 14 Τ.Κ 3027](https://www.google.com/maps?q=34.6829771920967,33.0441996858444) | Λεμεσός | €1.489 |
 
-> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 12 September 2026
+> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 13 September 2026
 
 <!-- FUEL_PRICES_END -->
