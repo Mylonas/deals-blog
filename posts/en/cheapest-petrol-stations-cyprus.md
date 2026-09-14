@@ -51,13 +51,13 @@ pinned: true
 
 | Brand | Address | Area | Price |
 |-------|---------|------|-------|
-| EKO | [Κάτω Πύργος Τ.Κ 2940](https://www.google.com/maps?q=35.184195,32.681915) | Κάτω Πύργος | €1.100 |
 | ENI | [Αγίας Φυλάξεως 23-25 Τ.Κ 3025](https://www.google.com/maps?q=34.681279,33.038879) | Λεμεσός | €1.395 |
 | PETROLINA | [Λεωφ. Αθαλάσσας 113 Τ.Κ 2024](https://www.google.com/maps?q=35.14405,33.36443) | Δασούπολη | €1.400 |
-| ESSO | [Θεόκριτου 67 Τ.Κ 7600](https://www.google.com/maps?q=35.0552526086954,33.5329100466271) | Αθιένου | €1.485 |
 | SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.485 |
-| ESSO | [Αγίας Ζώνης 14 Τ.Κ 3027](https://www.google.com/maps?q=34.6829771920967,33.0441996858444) | Λεμεσός | €1.489 |
 | FILL N GO | [Λεωφ. Λάρνακος 1 Τ.Κ 7648](https://www.google.com/maps?q=34.92639,33.44032) | Πυργά | €1.489 |
+| FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.489 |
+| PETROLINA | [Λεωφ. Ελλάδος 65 Τ.Κ 7101](https://www.google.com/maps?q=34.92766666666667,33.58225) | Αραδίππου | €1.489 |
+| FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.489 |
 
 > Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 14 September 2026
 
