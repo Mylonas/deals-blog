@@ -1,7 +1,13 @@
 {
-  "fetchedAt": "2026-09-07T10:15:36.262Z",
-  "count": 110,
+  "fetchedAt": "2026-09-15T14:38:32.130Z",
+  "count": 112,
   "sources": [
+    {
+      "id": "cyta",
+      "name": "Cyta (ΑΤΗΚ)",
+      "count": 3,
+      "error": null
+    },
     {
       "id": "cpa",
       "name": "Αρχή Λιμένων Κύπρου",
@@ -9,9 +15,39 @@
       "error": null
     },
     {
+      "id": "psc",
+      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
+      "count": 2,
+      "error": null
+    },
+    {
       "id": "eey",
       "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "hio",
+      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "competition",
+      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "cso",
+      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
+      "count": 1,
       "error": null
     },
     {
@@ -22,48 +58,15 @@
       "via": "site→browser"
     },
     {
-      "id": "ocecpr",
-      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
-      "count": 7,
-      "error": null,
-      "via": "site→browser"
-    },
-    {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 2,
-      "error": null
-    },
-    {
-      "id": "psc",
-      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
-      "count": 1,
-      "error": "fetch failed; browser fallback: page.goto: url: expected string, got undefined",
-      "blocked": true,
-      "carriedForward": true
-    },
-    {
-      "id": "crta",
-      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "cyada",
-      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "onek",
-      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "thoc",
       "name": "ΘΟΚ (Θεατρικός Οργανισμός Κύπρου)",
       "count": 1,
+      "error": null
+    },
+    {
+      "id": "eac",
+      "name": "ΑΗΚ / Electricity Authority of Cyprus",
+      "count": 0,
       "error": null
     },
     {
@@ -73,48 +76,26 @@
       "error": null
     },
     {
-      "id": "cybc",
-      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
-      "count": 0,
-      "error": "HTTP 521"
-    },
-    {
       "id": "centralbank",
       "name": "Κεντρική Τράπεζα της Κύπρου",
       "count": 0,
       "error": null
     },
     {
-      "id": "hfc",
-      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
+      "id": "cyada",
+      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
       "count": 0,
       "error": null
+    },
+    {
+      "id": "cybc",
+      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
+      "count": 0,
+      "error": "HTTP 523"
     },
     {
       "id": "kedipes",
       "name": "ΚΕΔΙΠΕΣ",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "cyta",
-      "name": "Cyta (ΑΤΗΚ)",
-      "count": 3,
-      "error": "fetch failed; browser fallback: page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.cyta.com.cy/careers/el\", waiting until \"commit\"\n",
-      "blocked": true,
-      "carriedForward": true
-    },
-    {
-      "id": "hio",
-      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
-      "count": 1,
-      "error": "fetch failed; browser fallback: page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.gesy.org.cy/el-gr/hiovacancies\", waiting until \"commit\"\n",
-      "blocked": true,
-      "carriedForward": true
-    },
-    {
-      "id": "kodap",
-      "name": "ΚΟΔΑΠ",
       "count": 0,
       "error": null
     },
@@ -125,20 +106,44 @@
       "error": null
     },
     {
+      "id": "kodap",
+      "name": "ΚΟΔΑΠ",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "ocecpr",
+      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "anad",
       "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
       "count": 0,
       "error": null
     },
     {
-      "id": "eac",
-      "name": "ΑΗΚ / Electricity Authority of Cyprus",
-      "count": 0,
-      "error": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\nCall log:\n  - navigating to \"https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\", waiting until \"commit\"\n"
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 4,
+      "error": null
     },
     {
       "id": "cys",
       "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "hfc",
+      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "onek",
+      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
       "count": 0,
       "error": null
     },
@@ -149,15 +154,9 @@
       "error": null
     },
     {
-      "id": "ucm",
-      "name": "Ένωση Δήμων Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "ekk",
-      "name": "Ένωση Κοινοτήτων Κύπρου",
-      "count": 0,
+      "id": "cut",
+      "name": "ΤΕΠΑΚ",
+      "count": 5,
       "error": null
     },
     {
@@ -167,9 +166,9 @@
       "error": null
     },
     {
-      "id": "cut",
-      "name": "ΤΕΠΑΚ",
-      "count": 5,
+      "id": "ekk",
+      "name": "Ένωση Κοινοτήτων Κύπρου",
+      "count": 0,
       "error": null
     },
     {
@@ -181,79 +180,78 @@
     {
       "id": "cing",
       "name": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
-      "count": 4,
+      "count": 2,
       "error": null
-    },
-    {
-      "id": "cyi",
-      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "count": 6,
-      "error": null
-    },
-    {
-      "id": "competition",
-      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
-      "count": 0,
-      "error": "fetch failed; browser fallback: page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.competition.gov.cy/competition/competition.nsf/page34_gr/page34_gr?OpenDocument\", waiting until \"commit\"\n",
-      "blocked": true
     },
     {
       "id": "ucy",
       "name": "Πανεπιστήμιο Κύπρου",
-      "count": 0,
+      "count": 1,
       "error": null
     },
     {
-      "id": "eratosthenes",
-      "name": "ERATOSTHENES Centre of Excellence",
+      "id": "ucm",
+      "name": "Ένωση Δήμων Κύπρου",
       "count": 0,
-      "error": null
-    },
-    {
-      "id": "eoa-lemesou",
-      "name": "ΕΟΑ Λεμεσού",
-      "count": 7,
       "error": null
     },
     {
       "id": "ucy-academic",
       "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
-      "count": 0,
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "eoa-lemesou",
+      "name": "ΕΟΑ Λεμεσού",
+      "count": 9,
       "error": null
     },
     {
       "id": "cyens",
       "name": "CYENS Centre of Excellence",
-      "count": 18,
+      "count": 13,
+      "error": null
+    },
+    {
+      "id": "cyi",
+      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "count": 9,
       "error": null
     },
     {
       "id": "eoa-lefkosias",
       "name": "ΕΟΑ Λευκωσίας",
-      "count": 2,
+      "count": 4,
       "error": null
     },
     {
-      "id": "cso",
-      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
-      "count": 1,
+      "id": "cmmi",
+      "name": "Cyprus Marine and Maritime Institute",
+      "count": 0,
       "error": null
     },
     {
       "id": "dimos-lefkosias",
       "name": "Δήμος Λευκωσίας",
-      "count": 8,
-      "error": null
-    },
-    {
-      "id": "eoa-larnakas",
-      "name": "ΕΟΑ Λάρνακας",
-      "count": 4,
+      "count": 10,
       "error": null
     },
     {
       "id": "eoa-ammochostou",
       "name": "ΕΟΑ Αμμοχώστου",
+      "count": 4,
+      "error": null
+    },
+    {
+      "id": "eratosthenes",
+      "name": "ERATOSTHENES Centre of Excellence",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "eoa-larnakas",
+      "name": "ΕΟΑ Λάρνακας",
       "count": 2,
       "error": null
     },
@@ -264,50 +262,14 @@
       "error": null
     },
     {
-      "id": "dimos-latsion-geriou",
-      "name": "Δήμος Λατσιών-Γερίου",
-      "count": 2,
-      "error": null
-    },
-    {
-      "id": "dimos-lakatamias",
-      "name": "Δήμος Λακατάμειας",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "dimos-lemesou",
       "name": "Δήμος Λεμεσού",
-      "count": 4,
+      "count": 6,
       "error": null
     },
     {
       "id": "dimos-polemidion",
       "name": "Δήμος Πολεμιδιών",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "eoa-pafou",
-      "name": "ΕΟΑ Πάφου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-anatolikis-lemesou",
-      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-strovolou",
-      "name": "Δήμος Στροβόλου",
-      "count": 3,
-      "error": null
-    },
-    {
-      "id": "dimos-lefkaron",
-      "name": "Δήμος Λευκάρων",
       "count": 0,
       "error": null
     },
@@ -318,27 +280,39 @@
       "error": null
     },
     {
+      "id": "eoa-pafou",
+      "name": "ΕΟΑ Πάφου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-latsion-geriou",
+      "name": "Δήμος Λατσιών-Γερίου",
+      "count": 2,
+      "error": null
+    },
+    {
+      "id": "dimos-anatolikis-lemesou",
+      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-lakatamias",
+      "name": "Δήμος Λακατάμειας",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-lefkaron",
+      "name": "Δήμος Λευκάρων",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "dimos-aradippou",
       "name": "Δήμος Αραδίππου",
       "count": 1,
-      "error": null
-    },
-    {
-      "id": "dimos-dromolaxias-meneou",
-      "name": "Δήμος Δρομολαξιάς-Μενεού",
-      "count": 3,
-      "error": null
-    },
-    {
-      "id": "dimos-larnakas",
-      "name": "Δήμος Λάρνακας",
-      "count": 2,
-      "error": null
-    },
-    {
-      "id": "dimos-athienou",
-      "name": "Δήμος Αθηένου",
-      "count": 2,
       "error": null
     },
     {
@@ -348,15 +322,39 @@
       "error": null
     },
     {
+      "id": "dimos-strovolou",
+      "name": "Δήμος Στροβόλου",
+      "count": 3,
+      "error": null
+    },
+    {
+      "id": "dimos-dromolaxias-meneou",
+      "name": "Δήμος Δρομολαξιάς-Μενεού",
+      "count": 3,
+      "error": null
+    },
+    {
+      "id": "dimos-athienou",
+      "name": "Δήμος Αθηένου",
+      "count": 2,
+      "error": null
+    },
+    {
       "id": "dimos-polis-chrysochous",
       "name": "Δήμος Πόλης Χρυσοχούς",
       "count": 0,
       "error": null
     },
     {
+      "id": "dimos-agias-napas",
+      "name": "Δήμος Αγίας Νάπας",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "dimos-akama",
       "name": "Δήμος Ακάμα (Πέγεια)",
-      "count": 1,
+      "count": 0,
       "error": null
     },
     {
@@ -366,22 +364,15 @@
       "error": null
     },
     {
-      "id": "dimos-agias-napas",
-      "name": "Δήμος Αγίας Νάπας",
-      "count": 0,
-      "error": "fetch failed; browser fallback: page.goto: net::ERR_CONNECTION_REFUSED at https://www.ayianapa.org.cy/el/enimerosi/nea-anakoinoseis\nCall log:\n  - navigating to \"https://www.ayianapa.org.cy/el/enimerosi/nea-anakoinoseis\", waiting until \"domcontentloaded\"\n",
-      "blocked": true
-    },
-    {
-      "id": "cmmi",
-      "name": "Cyprus Marine and Maritime Institute",
-      "count": 0,
+      "id": "dimos-larnakas",
+      "name": "Δήμος Λάρνακας",
+      "count": 4,
       "error": null
     },
     {
       "id": "dimos-anatolikis-pafou",
       "name": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
-      "count": 6,
+      "count": 5,
       "error": null
     }
   ],
@@ -421,167 +412,6 @@
         }
       ],
       "locationFrom": "district"
-    },
-    {
-      "id": "3938c00da447",
-      "sourceId": "ocecpr",
-      "employer": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
-      "sector": "semi-government",
-      "district": "nicosia",
-      "title": "ΚΕΝΕΣ ΘΕΣΕΙΣ ΜΗΧΑΝΙΚΟΥ ΨΗΦΙΑΚΗΣ ΑΣΦΑΛΕΙΑΣ",
-      "url": "https://www.ocecpr.org.cy/images/files_uploads/kenes-thesis/prokirixi-12-theseis-mixanikou-psifiakis-asfaleias.pdf",
-      "published": null,
-      "deadline": "2026-09-07",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district",
-      "deadlineFrom": "pdf"
-    },
-    {
-      "id": "5d224a99742c",
-      "sourceId": "ocecpr",
-      "employer": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
-      "sector": "semi-government",
-      "district": "nicosia",
-      "title": "ΚΕΝΗ ΘΕΣΗ ΑΝΩΤΕΡΟΥ ΜΗΧΑΝΙΚΟΥ ΨΗΦΙΑΚΗΣ ΑΣΦΑΛΕΙΑΣ",
-      "url": "https://www.ocecpr.org.cy/images/files_uploads/kenes-thesis/prokirixi-kenis-thesis-anoterou-mixanikou-psifiakis-asfalias.pdf",
-      "published": null,
-      "deadline": "2026-09-07",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district",
-      "deadlineFrom": "pdf"
-    },
-    {
-      "id": "38c7a2b91563",
-      "sourceId": "ocecpr",
-      "employer": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
-      "sector": "semi-government",
-      "district": "nicosia",
-      "title": "ΚΕΝΗ ΘΕΣΗ ΛΟΓΙΣΤΙΚΟΥ ΛΕΙΤΟΥΡΓΟΥ ΣΤΟ ΓΡΑΦΕΙΟ ΤΟΥ ΕΠΙΤΡΟΠΟΥ ΓΙΑ ΤΗ ΡΥΘΜΙΣΗ ΗΛΕΚΤΡΟΝΙΚΩΝ ΕΠΙΚΟΙΝΩΝΙΩΝ ΚΑΙ ΤΑΧΥΔΡΟΜΕΙΩΝ",
-      "url": "https://www.ocecpr.org.cy/images/files_uploads/kenes-thesis/prokirixi-thesis-logistikou-leitourgou-14082026.pdf",
-      "published": null,
-      "deadline": "2026-09-14",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district",
-      "deadlineFrom": "pdf"
-    },
-    {
-      "id": "7ae7de250619",
-      "sourceId": "ocecpr",
-      "employer": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
-      "sector": "semi-government",
-      "district": "nicosia",
-      "title": "ΠΡΟΚΗΡΥΞΗ ΔΥΟ ΘΕΣΕΩΝ ΔΙΟΙΚΗΤΙΚΟΥ ΛΕΙΤΟΥΡΓΟΥ (ΛΕΙΤΟΥΡΓΟΣ ΔΙΟΙΚΗΣΗΣ ΚΑΙ ΛΕΙΤΟΥΡΓΟΣ ΔΙΑΧΕΙΡΙΣΗΣ ΕΥΡΩΠΑΪΚΩΝ ΚΑΙ ΔΙΕΘΝΩΝ ΣΧΕΣΕΩΝ) ΣΤΟ ΓΕΡΗΕΤ",
-      "url": "https://www.ocecpr.org.cy/images/files_uploads/kenes-thesis/prokirixi-theseon-doiikitikon-leitourgon-14082026.pdf",
-      "published": null,
-      "deadline": "2026-09-14",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district",
-      "deadlineFrom": "pdf"
-    },
-    {
-      "id": "4fe78d1bc8bf",
-      "sourceId": "ocecpr",
-      "employer": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
-      "sector": "semi-government",
-      "district": "nicosia",
-      "title": "ΠΡΟΚΗΡΥΞΗ ΘΕΣΕΩΝ ΓΡΑΦΕΑ ΣΤΟ ΓΕΡΗΕΤ",
-      "url": "https://www.ocecpr.org.cy/images/files_uploads/kenes-thesis/prokirixi-thesi-grafea-14082026.pdf",
-      "published": null,
-      "deadline": "2026-09-14",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district",
-      "deadlineFrom": "pdf"
-    },
-    {
-      "id": "df9b37e3550e",
-      "sourceId": "ocecpr",
-      "employer": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
-      "sector": "semi-government",
-      "district": "nicosia",
-      "title": "ΠΡΟΚΗΡΥΞΗ ΘΕΣΗΣ ΔΙΟΙΚΗΤΙΚΟΥ ΛΕΙΤΟΥΡΓΟΥ (ΛΕΙΤΟΥΡΓΟΣ ΕΠΙΚΟΙΝΩΝΙΑΣ ΔΙΑΧΕΙΡΙΣΗΣ ΚΡΙΣΕΩΝ) ΣΤΟ ΓΕΡΗΕΤ",
-      "url": "https://www.ocecpr.org.cy/images/files_uploads/kenes-thesis/prokirixi-thesis-leitourgou-leitourgos-epikinonias-diaxirisis-kriseon-14082026.pdf",
-      "published": null,
-      "deadline": "2026-09-14",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district",
-      "deadlineFrom": "pdf"
-    },
-    {
-      "id": "c1d0da5a95a0",
-      "sourceId": "ocecpr",
-      "employer": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
-      "sector": "semi-government",
-      "district": "nicosia",
-      "title": "ΠΡΟΚΗΡΥΞΗ ΜΙΑΣ ΘΕΣΗΣ ΛΕΙΤΟΥΡΓΟΥ ΟΙΚΟΝΟΜΙΚΩΝ ΘΕΜΑΤΩΝ ΣΤΟ ΓΕΡΗΕΤ",
-      "url": "https://www.ocecpr.org.cy/images/files_uploads/kenes-thesis/Prokirixi-thesis-leitourgou-oikonomikon-thematon-14082026.pdf",
-      "published": null,
-      "deadline": "2026-09-14",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district",
-      "deadlineFrom": "pdf"
     },
     {
       "id": "8aa0b6a1aee3",
@@ -628,28 +458,6 @@
       "locationFrom": "title"
     },
     {
-      "id": "4ad4acd41230",
-      "sourceId": "dimos-akama",
-      "employer": "Δήμος Ακάμα (Πέγεια)",
-      "sector": "municipality",
-      "district": "paphos",
-      "title": "Υποβολή αιτήσεων για πρόσληψη τριών εισπρακτόρων στην Παραλία Κόλπου Κοραλλίων Δημοτικού Διαμερίσματος Πέγειας",
-      "url": "https://akamasmunicipality.org.cy/2026/04/17/%cf%85%cf%80%ce%bf%ce%b2%ce%bf%ce%bb%ce%ae-%ce%b1%ce%b9%cf%84%ce%ae%cf%83%ce%b5%cf%89%ce%bd-%ce%b3%ce%b9%ce%b1-%cf%80%cf%81%cf%8c%cf%83%ce%bb%ce%b7%cf%88%ce%b7-%cf%84%cf%81%ce%b9%cf%8e%ce%bd-%ce%b5/",
-      "published": "2026-04-17",
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Πέγεια",
-          "district": "paphos",
-          "districtName": "Πάφος",
-          "lat": 34.8833,
-          "lon": 32.3833
-        }
-      ],
-      "locationFrom": "title"
-    },
-    {
       "id": "4422397938ce",
       "sourceId": "dimos-anatolikis-pafou",
       "employer": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
@@ -672,14 +480,14 @@
       "locationFrom": "employer"
     },
     {
-      "id": "5048d87bf6ba",
+      "id": "b270ff93c348",
       "sourceId": "dimos-anatolikis-pafou",
       "employer": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
       "sector": "municipality",
       "district": "paphos",
       "title": "ΠΡΟΚΗΡΥΞΗ ΓΙΑ ΤΗΝ ΠΛΗΡΩΣΗ ΔΥΟ (2) ΚΕΝΩΝ ΘΕΣΕΩΝ ΕΡΓΑΤΩΝ ΠΕΡΙΣΥΛΛΟΓΗΣ ΣΚΥΒΑΛΩΝ",
-      "url": "https://ierokipia.org.cy/%cf%80%cf%81%ce%bf%ce%ba%ce%b7%cf%81%cf%85%ce%be%ce%b7-%ce%b3%ce%b9%ce%b1-%cf%84%ce%b7%ce%bd-%cf%80%ce%bb%ce%b7%cf%81%cf%89%cf%83%ce%b7-%ce%b4%cf%85%ce%bf-2-%ce%ba%ce%b5%ce%bd%cf%89%ce%bd-%ce%b8/",
-      "published": "2026-09-01",
+      "url": "https://ierokipia.org.cy/%cf%80%cf%81%ce%bf%ce%ba%ce%b7%cf%81%cf%85%ce%be%ce%b7-%ce%b3%ce%b9%ce%b1-%cf%84%ce%b7%ce%bd-%cf%80%ce%bb%ce%b7%cf%81%cf%89%cf%83%ce%b7-%ce%b4%cf%85%ce%bf-2-%ce%ba%ce%b5%ce%bd%cf%89%ce%bd-%ce%b8-2/",
+      "published": "2026-09-14",
       "deadline": null,
       "reference": null,
       "locations": [
@@ -725,28 +533,6 @@
       "url": "https://ierokipia.org.cy/%cf%80%cf%81%ce%bf%ce%ba%ce%b7%cf%81%cf%85%ce%be%ce%b7-%ce%b3%ce%b9%ce%b1-%cf%84%ce%b7%ce%bd-%cf%80%ce%bb%ce%b7%cf%81%cf%89%cf%83%ce%b7-%ce%bc%ce%b9%ce%b1%cf%82-1-%ce%ba%ce%b5%ce%bd%ce%b7%cf%82-6/",
       "published": "2026-06-30",
       "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Γεροσκήπου",
-          "district": "paphos",
-          "districtName": "Πάφος",
-          "lat": 34.7581,
-          "lon": 32.455
-        }
-      ],
-      "locationFrom": "employer"
-    },
-    {
-      "id": "0386e145b416",
-      "sourceId": "dimos-anatolikis-pafou",
-      "employer": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
-      "sector": "municipality",
-      "district": "paphos",
-      "title": "ΠΡΟΚΗΡΥΞΗ-ΓΙΑ-ΔΥΟ-ΘΕΣΕΙΣ-ΕΡΓΑΤΩΝ-ΠΕΡΙΣΥΛΛΟΓΗΣ-ΣΚΥΒΑΛΩΝ-01-07.09.2026.pdf",
-      "url": "https://ierokipia.org.cy/wp-content/uploads/2026/09/%CE%A0%CE%A1%CE%9F%CE%9A%CE%97%CE%A1%CE%A5%CE%9E%CE%97-%CE%93%CE%99%CE%91-%CE%94%CE%A5%CE%9F-%CE%98%CE%95%CE%A3%CE%95%CE%99%CE%A3-%CE%95%CE%A1%CE%93%CE%91%CE%A4%CE%A9%CE%9D-%CE%A0%CE%95%CE%A1%CE%99%CE%A3%CE%A5%CE%9B%CE%9B%CE%9F%CE%93%CE%97%CE%A3-%CE%A3%CE%9A%CE%A5%CE%92%CE%91%CE%9B%CE%A9%CE%9D-01-07.09.2026.pdf",
-      "published": "2026-09-01",
-      "deadline": "2026-09-07",
       "reference": null,
       "locations": [
         {
@@ -1001,12 +787,56 @@
       "locationFrom": "employer"
     },
     {
+      "id": "15ee4fffdcbd",
+      "sourceId": "dimos-larnakas",
+      "employer": "Δήμος Λάρνακας",
+      "sector": "municipality",
+      "district": "larnaca",
+      "title": "Βρείτε τα πάντα σχετικά με τις Προκυρήξεις εδώ",
+      "url": "https://www.larnaka.org.cy/enimerosi/prokyrikseis#",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λάρνακα",
+          "district": "larnaca",
+          "districtName": "Λάρνακα",
+          "lat": 34.9182,
+          "lon": 33.6201
+        }
+      ],
+      "locationFrom": "employer"
+    },
+    {
+      "id": "f6abfd26690e",
+      "sourceId": "dimos-larnakas",
+      "employer": "Δήμος Λάρνακας",
+      "sector": "municipality",
+      "district": "larnaca",
+      "title": "Προηγούμενες Κενές Θέσεις",
+      "url": "https://www.larnaka.org.cy/enimerosi/prokyrikseis/kenes-theseis/",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λάρνακα",
+          "district": "larnaca",
+          "districtName": "Λάρνακα",
+          "lat": 34.9182,
+          "lon": 33.6201
+        }
+      ],
+      "locationFrom": "employer"
+    },
+    {
       "id": "586f592b8e1d",
       "sourceId": "dimos-larnakas",
       "employer": "Δήμος Λάρνακας",
       "sector": "municipality",
       "district": "larnaca",
-      "title": "Προκήρυξη θέσης Μάγειρα / Μαγείρισσας για το Δημοτικό Μέλαθρο Ευανθίας Πιερίδου",
+      "title": "Προκήρυξη θέσης Μάγειρα/Μαγείρισσας για το Δημοτικό Μέλαθρο Ευανθίας Πιερίδου",
       "url": "https://www.larnaka.org.cy/prokiryksi-thesis-mageira-mageirissas-gia-to-dimotiko-melathro-evanthias-pieridou/",
       "published": "2026-09-02",
       "deadline": null,
@@ -1147,6 +977,28 @@
       "locationFrom": "employer"
     },
     {
+      "id": "d03239fe3a20",
+      "sourceId": "dimos-lemesou",
+      "employer": "Δήμος Λεμεσού",
+      "sector": "municipality",
+      "district": "limassol",
+      "title": "Προκήρυξη Κενής Θέσης Ειδικού Ψυχολόγου στον Συμβουλευτικό Σταθμό Οδυσσέας Λτδ",
+      "url": "https://www.limassol.org.cy/el/news/%CF%80%CF%81%CE%BF%CE%BA%CE%AE%CF%81%CF%85%CE%BE%CE%B7-%CE%BA%CE%B5%CE%BD%CE%AE%CF%82-%CE%B8%CE%AD%CF%83%CE%B7%CF%82-%CE%B5%CE%B9%CE%B4%CE%B9%CE%BA%CE%BF%CF%8D-%CF%88%CF%85%CF%87%CE%BF%CE%BB%CF%8C%CE%B3%CE%BF%CF%85-%CF%83%CF%84%CE%BF%CE%BD-%CF%83%CF%85%CE%BC%CE%B2%CE%BF%CF%85%CE%BB%CE%B5%CF%85%CF%84%CE%B9%CE%BA%CF%8C-%CF%83%CF%84%CE%B1%CE%B8%CE%BC%CF%8C-%CE%BF%CE%B4%CF%85%CF%83%CF%83%CE%AD%CE%B1%CF%82-%CE%BB%CF%84%CE%B4-1",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λεμεσός",
+          "district": "limassol",
+          "districtName": "Λεμεσός",
+          "lat": 34.7071,
+          "lon": 33.0226
+        }
+      ],
+      "locationFrom": "employer"
+    },
+    {
       "id": "ed08790bbd4c",
       "sourceId": "dimos-lemesou",
       "employer": "Δήμος Λεμεσού",
@@ -1189,6 +1041,28 @@
         }
       ],
       "locationFrom": "employer"
+    },
+    {
+      "id": "df0237443601",
+      "sourceId": "dimos-lemesou",
+      "employer": "Δήμος Λεμεσού",
+      "sector": "municipality",
+      "district": "limassol",
+      "title": "Πρόσληψη Εργοδοτούμενων Ορισμένου Χρόνου στον Δήμο Λεμεσού (Κοινωνικά Προγράμματα και Ευρωπαϊκά Θέματα)",
+      "url": "https://www.limassol.org.cy/el/news/%CF%80%CF%81%CF%8C%CF%83%CE%BB%CE%B7%CF%88%CE%B7-%CE%B5%CF%81%CE%B3%CE%BF%CE%B4%CE%BF%CF%84%CE%BF%CF%8D%CE%BC%CE%B5%CE%BD%CF%89%CE%BD-%CE%BF%CF%81%CE%B9%CF%83%CE%BC%CE%AD%CE%BD%CE%BF%CF%85-%CF%87%CF%81%CF%8C%CE%BD%CE%BF%CF%85-%CF%83%CF%84%CE%BF%CE%BD-%CE%B4%CE%AE%CE%BC%CE%BF-%CE%BB%CE%B5%CE%BC%CE%B5%CF%83%CE%BF%CF%8D-%CE%BA%CE%BF%CE%B9%CE%BD%CF%89%CE%BD%CE%B9%CE%BA%CE%AC-%CF%80%CF%81%CE%BF%CE%B3%CF%81%CE%AC%CE%BC%CE%BC%CE%B1%CF%84%CE%B1-%CE%BA%CE%B1%CE%B9-%CE%B5%CF%85%CF%81%CF%89%CF%80%CE%B1%CF%8A%CE%BA%CE%AC-%CE%B8%CE%AD%CE%BC%CE%B1%CF%84%CE%B1",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λεμεσός",
+          "district": "limassol",
+          "districtName": "Λεμεσός",
+          "lat": 34.7071,
+          "lon": 33.0226
+        }
+      ],
+      "locationFrom": "title"
     },
     {
       "id": "134182599b0d",
@@ -1352,6 +1226,57 @@
       "locationFrom": "title"
     },
     {
+      "id": "3c321122084f",
+      "sourceId": "dimos-lefkosias",
+      "employer": "Δήμος Λευκωσίας",
+      "sector": "municipality",
+      "district": "nicosia",
+      "title": "Κενή θέση στο «Κέντρο Παροχής Κοινωνικών Υπηρεσιών Αγίου Δομετίου και Έγκωμης - Πολυδύναμο Κέντρο...",
+      "url": "https://www.nicosia.org.cy/el-GR/news/careers/22754/",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Έγκωμη",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1611,
+          "lon": 33.3339
+        },
+        {
+          "name": "Άγιος Δομέτιος",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1697,
+          "lon": 33.3308
+        }
+      ],
+      "locationFrom": "title"
+    },
+    {
+      "id": "d83ee57d3e19",
+      "sourceId": "dimos-lefkosias",
+      "employer": "Δήμος Λευκωσίας",
+      "sector": "municipality",
+      "district": "nicosia",
+      "title": "Κενή θέση Φροντιστή/στριας Κτηρίου - Εργάτη/τριας στο Πολυδύναμο Δημοτικό Κέντρο Λευκωσίας",
+      "url": "https://www.nicosia.org.cy/el-GR/news/careers/22752/",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "title"
+    },
+    {
       "id": "c7f3f655c314",
       "sourceId": "dimos-lefkosias",
       "employer": "Δήμος Λευκωσίας",
@@ -1432,6 +1357,50 @@
       "locationFrom": "employer"
     },
     {
+      "id": "114459846249",
+      "sourceId": "dimos-pafou",
+      "employer": "Δήμος Πάφου",
+      "sector": "municipality",
+      "district": "paphos",
+      "title": "ΠΑΡΑΤΑΣΗ ΓΙΑ ΤΗΝ ΠΡΟΣΛΗΨΗ ΕΡΓΟΔΟΤΟΥΜΕΝΩΝ ΟΡΙΣΜΕΝΟΥ ΧΡΟΝΟΥΣΤΟ ΠΟΛΥΔΥΝΑΜΟ ΚΕΝΤΡΟ ΚΟΙΝΩΝΙΚΗΣ ΜΕΡΙΜΝΑΣ ΔΗΜΟΥ ΠΑΦΟΥ",
+      "url": "https://pafos.org.cy/%cf%80%cf%81%ce%bf%cf%83%ce%bb%ce%b7%cf%88%ce%b7-%ce%b5%cf%81%ce%b3%ce%bf%ce%b4%ce%bf%cf%84%ce%bf%cf%85%ce%bc%ce%b5%ce%bd%cf%89%ce%bd-%ce%bf%cf%81%ce%b9%cf%83%ce%bc%ce%b5%ce%bd%ce%bf%cf%85-%cf%87/",
+      "published": "2026-08-11",
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Πάφος",
+          "district": "paphos",
+          "districtName": "Πάφος",
+          "lat": 34.7754,
+          "lon": 32.4245
+        }
+      ],
+      "locationFrom": "title"
+    },
+    {
+      "id": "95e753d9625c",
+      "sourceId": "dimos-pafou",
+      "employer": "Δήμος Πάφου",
+      "sector": "municipality",
+      "district": "paphos",
+      "title": "ΠΑΡΑΤΑΣΗ ΓΙΑ ΤΗΝ ΠΡΟΣΛΗΨΗ ΚΑΘΑΡΙΣΤΡΙΑΣ / ΒΟΗΘΟΣ ΚΟΥΖΙΝΑΣ ΣΤΟ ΠΟΛΥΔΥΝΑΜΟ ΚΕΝΤΡΟ ΚΟΙΝΩΝΙΚΗΣ ΜΕΡΙΜΝΑΣ «ΖΕΤΑ ΑΙΜΙΛΙΑΝΙΔΟΥ»ΤΟΥ ΔΗΜΟΥ ΠΑΦΟΥ",
+      "url": "https://pafos.org.cy/%cf%80%cf%81%ce%bf%cf%83%ce%bb%ce%b7%cf%88%ce%b7-%ce%ba%ce%b1%ce%b8%ce%b1%cf%81%ce%b9%cf%83%cf%84%cf%81%ce%b9%ce%b1%cf%83-%ce%b2%ce%bf%ce%b7%ce%b8%ce%bf%cf%83-%ce%ba%ce%bf%cf%85%ce%b6%ce%b9%ce%bd/",
+      "published": "2026-08-11",
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Πάφος",
+          "district": "paphos",
+          "districtName": "Πάφος",
+          "lat": 34.7754,
+          "lon": 32.4245
+        }
+      ],
+      "locationFrom": "title"
+    },
+    {
       "id": "6460a12531fe",
       "sourceId": "dimos-pafou",
       "employer": "Δήμος Πάφου",
@@ -1462,50 +1431,6 @@
       "title": "Προκήρυξη θέσης Διευθύνων πρόσωπο Κέντρο Ενηλίκων Κ. Πάφου",
       "url": "https://pafos.org.cy/prokiryxi-thesis-diefthynon-prosopo-ke/",
       "published": "2026-09-01",
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Πάφος",
-          "district": "paphos",
-          "districtName": "Πάφος",
-          "lat": 34.7754,
-          "lon": 32.4245
-        }
-      ],
-      "locationFrom": "title"
-    },
-    {
-      "id": "01a4d93e3e6e",
-      "sourceId": "dimos-pafou",
-      "employer": "Δήμος Πάφου",
-      "sector": "municipality",
-      "district": "paphos",
-      "title": "ΠΡΟΣΛΗΨΗ ΕΡΓΟΔΟΤΟΥΜΕΝΩΝ ΟΡΙΣΜΕΝΟΥ ΧΡΟΝΟΥΣΤΟ ΠΟΛΥΔΥΝΑΜΟ ΚΕΝΤΡΟ ΚΟΙΝΩΝΙΚΗΣ ΜΕΡΙΜΝΑΣ ΔΗΜΟΥ ΠΑΦΟΥ",
-      "url": "https://pafos.org.cy/%cf%80%cf%81%ce%bf%cf%83%ce%bb%ce%b7%cf%88%ce%b7-%ce%b5%cf%81%ce%b3%ce%bf%ce%b4%ce%bf%cf%84%ce%bf%cf%85%ce%bc%ce%b5%ce%bd%cf%89%ce%bd-%ce%bf%cf%81%ce%b9%cf%83%ce%bc%ce%b5%ce%bd%ce%bf%cf%85-4/",
-      "published": "2026-04-21",
-      "deadline": "2026-09-11",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Πάφος",
-          "district": "paphos",
-          "districtName": "Πάφος",
-          "lat": 34.7754,
-          "lon": 32.4245
-        }
-      ],
-      "locationFrom": "title"
-    },
-    {
-      "id": "95e753d9625c",
-      "sourceId": "dimos-pafou",
-      "employer": "Δήμος Πάφου",
-      "sector": "municipality",
-      "district": "paphos",
-      "title": "ΠΡΟΣΛΗΨΗ ΚΑΘΑΡΙΣΤΡΙΑΣ / ΒΟΗΘΟΣ ΚΟΥΖΙΝΑΣ ΣΤΟ ΠΟΛΥΔΥΝΑΜΟ ΚΕΝΤΡΟ ΚΟΙΝΩΝΙΚΗΣ ΜΕΡΙΜΝΑΣ «ΖΕΤΑ ΑΙΜΙΛΙΑΝΙΔΟΥ»ΤΟΥ ΔΗΜΟΥ ΠΑΦΟΥ",
-      "url": "https://pafos.org.cy/%cf%80%cf%81%ce%bf%cf%83%ce%bb%ce%b7%cf%88%ce%b7-%ce%ba%ce%b1%ce%b8%ce%b1%cf%81%ce%b9%cf%83%cf%84%cf%81%ce%b9%ce%b1%cf%83-%ce%b2%ce%bf%ce%b7%ce%b8%ce%bf%cf%83-%ce%ba%ce%bf%cf%85%ce%b6%ce%b9%ce%bd/",
-      "published": "2026-08-11",
       "deadline": null,
       "reference": null,
       "locations": [
@@ -1608,6 +1533,28 @@
       "locationFrom": "employer"
     },
     {
+      "id": "b018b6a00a2d",
+      "sourceId": "eoa-ammochostou",
+      "employer": "ΕΟΑ Αμμοχώστου",
+      "sector": "district-organisation",
+      "district": "famagusta",
+      "title": "ΔΤ – Θέσεις Εργασίας στον Επαρχιακό Οργανισμό Αυτοδιοίκησης Αμμοχώστου",
+      "url": "https://eoaa.org.cy/%ce%b4%cf%84-%ce%b8%ce%ad%cf%83%ce%b5%ce%b9%cf%82-%ce%b5%cf%81%ce%b3%ce%b1%cf%83%ce%af%ce%b1%cf%82-%cf%83%cf%84%ce%bf%ce%bd-%ce%b5%cf%80%ce%b1%cf%81%cf%87%ce%b9%ce%b1%ce%ba%cf%8c-%ce%bf%cf%81%ce%b3/",
+      "published": "2026-09-15",
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Αμμόχωστος (ελεύθερη επαρχία)",
+          "district": "famagusta",
+          "districtName": "Αμμόχωστος",
+          "lat": 35.0353,
+          "lon": 33.9614
+        }
+      ],
+      "locationFrom": "title"
+    },
+    {
       "id": "38f5e80d5cb1",
       "sourceId": "eoa-ammochostou",
       "employer": "ΕΟΑ Αμμοχώστου",
@@ -1630,50 +1577,26 @@
       "locationFrom": "employer"
     },
     {
-      "id": "b408afc97dcf",
-      "sourceId": "eoa-larnakas",
-      "employer": "ΕΟΑ Λάρνακας",
+      "id": "02aebb7c0f26",
+      "sourceId": "eoa-ammochostou",
+      "employer": "ΕΟΑ Αμμοχώστου",
       "sector": "district-organisation",
-      "district": "larnaca",
-      "title": "ΠΡΟΚΗΡΥΞΗ ΚΕΝΩΝ ΘΕΣΕΩΝ ΩΡΟΜΙΣΘΙΟΥ ΠΡΟΣΩΠΙΚΟΥ (ΓΕΝΙΚΟΣ ΕΡΓΑΤΗΣ)",
-      "url": "https://eoal.org.cy/wp-content/uploads/2026/08/PROKHRYXH-KENON-THESEON-OROMISTHIOY-PROSOPIKOY-GENIKOS-ERGATHS.pdf",
-      "published": "2026-08-01",
-      "deadline": "2026-09-11",
+      "district": "famagusta",
+      "title": "Θέση Διοικητικού Λειτουργού Α8 – A10 – A11 (Συνδυασμένες Κλίμακες) - Πρώτου Διορισμού",
+      "url": "https://eoaa.org.cy/wp-content/uploads/2026/09/%CE%A0%CF%81%CE%BF%CE%BA%CE%AE%CF%81%CF%85%CE%BE%CE%B7-%CE%A0%CE%BB%CE%AE%CF%81%CF%89%CF%83%CE%B7-1-%CE%9A%CE%B5%CE%BD%CE%AE%CF%82-%CE%98%CE%AD%CF%83%CE%B7%CF%82-%CE%94%CE%99%CE%9F%CE%99%CE%9A%CE%97%CE%A4%CE%99%CE%9A%CE%9F%CE%A5-%CE%9B%CE%95%CE%99%CE%A4%CE%9F%CE%A5%CE%A1%CE%93%CE%9F%CE%A5-%CE%98%CE%AD%CF%83%CE%B7-%CE%A0%CF%81%CF%8E%CF%84%CE%BF%CF%85-%CE%94%CE%B9%CE%BF%CF%81%CE%B9%CF%83%CE%BC%CE%BF%CF%8D-%CE%91%CF%85%CE%B3%CE%BF%CF%85%CF%83%CF%84%CE%BF%CF%82-2026.pdf",
+      "published": "2026-09-01",
+      "deadline": null,
       "reference": null,
       "locations": [
         {
-          "name": "Λάρνακα",
-          "district": "larnaca",
-          "districtName": "Λάρνακα",
-          "lat": 34.9182,
-          "lon": 33.6201
+          "name": "Αμμόχωστος (ελεύθερη επαρχία)",
+          "district": "famagusta",
+          "districtName": "Αμμόχωστος",
+          "lat": 35.0353,
+          "lon": 33.9614
         }
       ],
-      "locationFrom": "employer",
-      "deadlineFrom": "pdf"
-    },
-    {
-      "id": "0ec2001f51ec",
-      "sourceId": "eoa-larnakas",
-      "employer": "ΕΟΑ Λάρνακας",
-      "sector": "district-organisation",
-      "district": "larnaca",
-      "title": "ΠΡΟΚΗΡΥΞΗ ΚΕΝΩΝ ΘΕΣΕΩΝ ΩΡΟΜΙΣΘΙΟΥ ΠΡΟΣΩΠΙΚΟΥ (ΦΡΟΝΤΙΣΤΗ ΠΡΑΣΙΝΩΝ ΣΗΜΕΙΩΝ)",
-      "url": "https://eoal.org.cy/wp-content/uploads/2026/08/PROKHRYXH-KENON-THESEON-OROMISTHIOY-PROSOPIKOY-FRONTISTH-PRASINON-SHMEION.pdf",
-      "published": "2026-08-01",
-      "deadline": "2026-09-11",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λάρνακα",
-          "district": "larnaca",
-          "districtName": "Λάρνακα",
-          "lat": 34.9182,
-          "lon": 33.6201
-        }
-      ],
-      "locationFrom": "employer",
-      "deadlineFrom": "pdf"
+      "locationFrom": "employer"
     },
     {
       "id": "17a895857311",
@@ -1727,6 +1650,28 @@
       "district": "limassol",
       "title": "ανακοίνωση προκήρυξη μίας 1 κενής θέσης ανώτερου εκτελεστικού μηχανικούανώτερου λειτουργού αδειοδότησης",
       "url": "https://eoalemesos.org.cy/el/news-details/%CE%B1%CE%BD%CE%B1%CE%BA%CE%BF%CE%AF%CE%BD%CF%89%CF%83%CE%B7-%CF%80%CF%81%CE%BF%CE%BA%CE%AE%CF%81%CF%85%CE%BE%CE%B7-%CE%BC%CE%AF%CE%B1%CF%82-1-%CE%BA%CE%B5%CE%BD%CE%AE%CF%82-%CE%B8%CE%AD%CF%83%CE%B7%CF%82-%CE%B1%CE%BD%CF%8E%CF%84%CE%B5%CF%81%CE%BF%CF%85-%CE%B5%CE%BA%CF%84%CE%B5%CE%BB%CE%B5%CF%83%CF%84%CE%B9%CE%BA%CE%BF%CF%8D-%CE%BC%CE%B7%CF%87%CE%B1%CE%BD%CE%B9%CE%BA%CE%BF%CF%8D%CE%B1%CE%BD%CF%8E%CF%84%CE%B5%CF%81%CE%BF%CF%85-%CE%BB%CE%B5%CE%B9%CF%84%CE%BF%CF%85%CF%81%CE%B3%CE%BF%CF%8D-%CE%B1%CE%B4%CE%B5%CE%B9%CE%BF%CE%B4%CF%8C%CF%84%CE%B7%CF%83%CE%B7%CF%82",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λεμεσός",
+          "district": "limassol",
+          "districtName": "Λεμεσός",
+          "lat": 34.7071,
+          "lon": 33.0226
+        }
+      ],
+      "locationFrom": "employer"
+    },
+    {
+      "id": "ca9e93cac735",
+      "sourceId": "eoa-lemesou",
+      "employer": "ΕΟΑ Λεμεσού",
+      "sector": "district-organisation",
+      "district": "limassol",
+      "title": "πρόσληψη εργοδοτουμένων ορισμένου χρόνου εοχ για θέσεις τεχνικού μηχανικού",
+      "url": "https://eoalemesos.org.cy/el/news-details/%CF%80%CF%81%CF%8C%CF%83%CE%BB%CE%B7%CF%88%CE%B7-%CE%B5%CF%81%CE%B3%CE%BF%CE%B4%CE%BF%CF%84%CE%BF%CF%85%CE%BC%CE%AD%CE%BD%CF%89%CE%BD-%CE%BF%CF%81%CE%B9%CF%83%CE%BC%CE%AD%CE%BD%CE%BF%CF%85-%CF%87%CF%81%CF%8C%CE%BD%CE%BF%CF%85-%CE%B5%CE%BF%CF%87-%CE%B3%CE%B9%CE%B1-%CE%B8%CE%AD%CF%83%CE%B5%CE%B9%CF%82-%CF%84%CE%B5%CF%87%CE%BD%CE%B9%CE%BA%CE%BF%CF%8D-%CE%BC%CE%B7%CF%87%CE%B1%CE%BD%CE%B9%CE%BA%CE%BF%CF%8D",
       "published": null,
       "deadline": null,
       "reference": null,
@@ -1874,6 +1819,28 @@
       "locationFrom": "employer"
     },
     {
+      "id": "3806eb36ac30",
+      "sourceId": "eoa-lemesou",
+      "employer": "ΕΟΑ Λεμεσού",
+      "sector": "district-organisation",
+      "district": "limassol",
+      "title": "vacancies2026 eksetasis texnikoi texnikoimichanikoi",
+      "url": "https://eoalemesos.org.cy/el/news-details/vacancies2026-eksetasis-texnikoi-texnikoimichanikoi",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λεμεσός",
+          "district": "limassol",
+          "districtName": "Λεμεσός",
+          "lat": 34.7071,
+          "lon": 33.0226
+        }
+      ],
+      "locationFrom": "employer"
+    },
+    {
       "id": "3dd9db8610fd",
       "sourceId": "eoa-lefkosias",
       "employer": "ΕΟΑ Λευκωσίας",
@@ -1882,6 +1849,29 @@
       "title": "ΠΡΟΚΗΡΥΞΗ (1) ΘΕΣΗΣ ΔΙΟΙΚΗΤΙΚΟΥ ΛΕΙΤΟΥΡΓΟΥ ΔΙΑΧΕΙΡΙΣΗΣ ΕΥΡΩΠΑΙΚΩΝ ΠΡΟΓΡΑΜΜΑΤΩΝ",
       "url": "https://ndlgo.org.cy/wp-content/uploads/2026/07/Prokiriksi-dioikitikou-leitourgou-diaxirisis-evrwpaikwn-programmatwn.pdf",
       "published": "2026-07-01",
+      "deadline": "2026-09-30",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "employer",
+      "deadlineFrom": "pdf"
+    },
+    {
+      "id": "c85ccf4c07ad",
+      "sourceId": "eoa-lefkosias",
+      "employer": "ΕΟΑ Λευκωσίας",
+      "sector": "district-organisation",
+      "district": "nicosia",
+      "title": "ΠΡΟΚΗΡΥΞΗ (2) ΘΕΣΕΩΝ ΩΡΟΜΙΣΘΙΟΥ ΤΕΧΝΙΤΗ ΔΟΜΙΚΩΝ ΕΡΓΩΝ",
+      "url": "https://ndlgo.org.cy/wp-content/uploads/2026/09/prokiriksi-2-thesewn-oromisthiou-texniti-domikwn-ergwn.pdf",
+      "published": "2026-09-01",
       "deadline": "2026-09-30",
       "reference": null,
       "locations": [
@@ -1920,6 +1910,43 @@
       "deadlineFrom": "pdf"
     },
     {
+      "id": "42bb0a83ec8b",
+      "sourceId": "eoa-lefkosias",
+      "employer": "ΕΟΑ Λευκωσίας",
+      "sector": "district-organisation",
+      "district": "nicosia",
+      "title": "ΠΡΟΚΗΡΥΞΗ (9) ΘΕΣΕΩΝ ΩΡΟΜΙΣΘΙΟΥ ΤΕΧΝΙΤΗ ΗΛΕΚΤΡΟΛΟΓΙΑΣ",
+      "url": "https://ndlgo.org.cy/wp-content/uploads/2026/09/prokiriksi-9-thesewn-oromisthiou-texniti-ilektrologias.pdf",
+      "published": "2026-09-01",
+      "deadline": "2026-09-30",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "employer",
+      "deadlineFrom": "pdf"
+    },
+    {
+      "id": "becd61cd32d1",
+      "sourceId": "psc",
+      "employer": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
+      "sector": "civil-service",
+      "district": "pancyprus",
+      "title": "ΑΝΩΤΕΡΟΣ ΗΛΕΚΤΡΟΛΟΓΟΣ ΜΗΧΑΝΙΚΟΣ, ΤΜΗΜΑ ΗΛΕΚΤΡΟΜΗΧΑΝΟΛΟΓΙΚΩΝ ΥΠΗΡΕΣΙΩΝ",
+      "url": "https://www.psc.gov.cy/psc/psc.nsf/All/9C2BEF84EBC5461AC2258E6F0023891D/$file/%CE%91%CE%9D%CE%A9%CE%A4%CE%95%CE%A1%CE%9F%CE%A3%20%CE%97%CE%9B%CE%95%CE%9A%CE%A4%CE%A1%CE%9F%CE%9B%CE%9F%CE%93%CE%9F%CE%A3%20%CE%9C%CE%97%CE%A7%CE%91%CE%9D%CE%99%CE%9A%CE%9F%CE%A3.pdf?OpenElement",
+      "published": "2026-09-11",
+      "deadline": "2026-10-02",
+      "reference": "Ε.Ε. 5887 / γνωστοποίηση 1626",
+      "locations": [],
+      "locationFrom": "pancyprus"
+    },
+    {
       "id": "5ed8ab3139df",
       "sourceId": "psc",
       "employer": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
@@ -1931,8 +1958,7 @@
       "deadline": "2026-09-18",
       "reference": "Ε.Ε. 5884 / γνωστοποίηση 1576",
       "locations": [],
-      "locationFrom": "pancyprus",
-      "carriedForward": true
+      "locationFrom": "pancyprus"
     },
     {
       "id": "e2062a269e1e",
@@ -1966,6 +1992,28 @@
       "url": "https://www.thoc.org.cy/el/news/?nid=38694",
       "published": null,
       "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district"
+    },
+    {
+      "id": "17665a5296b0",
+      "sourceId": "cyi",
+      "employer": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "sector": "research",
+      "district": "nicosia",
+      "title": "Associate Research Scientist in Machine Learning and AI-Driven Environmental Modelling (ref. no. CARE-C_ARS_26_06)",
+      "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0422",
+      "published": null,
+      "deadline": "2026-09-30",
       "reference": null,
       "locations": [
         {
@@ -2045,6 +2093,28 @@
       "locationFrom": "district"
     },
     {
+      "id": "1dd23334d2a3",
+      "sourceId": "cyi",
+      "employer": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "sector": "research",
+      "district": "nicosia",
+      "title": "Faculty position on Air Pollution & Climate Change Impacts and Policy (ref. no. CYI_FP_26_18)",
+      "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0423",
+      "published": null,
+      "deadline": "2026-10-31",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district"
+    },
+    {
       "id": "e8de86675b12",
       "sourceId": "cyi",
       "employer": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
@@ -2054,6 +2124,28 @@
       "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0415",
       "published": null,
       "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district"
+    },
+    {
+      "id": "bd5ea197a6ad",
+      "sourceId": "cyi",
+      "employer": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "sector": "research",
+      "district": "nicosia",
+      "title": "Innovation Officer (ref. no. CYI_IO_26_19)",
+      "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0424",
+      "published": null,
+      "deadline": "2026-09-30",
       "reference": null,
       "locations": [
         {
@@ -2111,56 +2203,12 @@
       "locationFrom": "district"
     },
     {
-      "id": "8400472518ab",
-      "sourceId": "cing",
-      "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
-      "sector": "research",
-      "district": "nicosia",
-      "title": "VACANCY FOR ACCOUNTS CLERK",
-      "url": "https://www.cing.ac.cy/en/vacancies#collapse1",
-      "published": null,
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district"
-    },
-    {
-      "id": "c4ad560a1d27",
-      "sourceId": "cing",
-      "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
-      "sector": "research",
-      "district": "nicosia",
-      "title": "VACANCY FOR CLINICAL GENETICIST",
-      "url": "https://www.cing.ac.cy/en/vacancies#collapse4",
-      "published": null,
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district"
-    },
-    {
       "id": "03e6b37648f5",
       "sourceId": "cing",
       "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "sector": "research",
       "district": "nicosia",
-      "title": "VACANCY FOR LAB SCIENTIFIC OFFICER",
+      "title": "VACANCY FOR CLINICAL GENETICIST",
       "url": "https://www.cing.ac.cy/en/vacancies#collapse2",
       "published": null,
       "deadline": null,
@@ -2177,13 +2225,13 @@
       "locationFrom": "district"
     },
     {
-      "id": "0f52c29a08bd",
+      "id": "8400472518ab",
       "sourceId": "cing",
       "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "sector": "research",
       "district": "nicosia",
       "title": "VACANCY FOR SENIOR CLINICAL GENETICIST / DEPARTMENT HEAD",
-      "url": "https://www.cing.ac.cy/en/vacancies#collapse3",
+      "url": "https://www.cing.ac.cy/en/vacancies#collapse1",
       "published": null,
       "deadline": null,
       "reference": null,
@@ -2219,22 +2267,6 @@
         }
       ],
       "locationFrom": "district"
-    },
-    {
-      "id": "e745b4a5dcaa",
-      "sourceId": "hio",
-      "employer": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
-      "sector": "semi-government",
-      "district": "pancyprus",
-      "title": "Προκήρυξη",
-      "url": "https://www.gesy.org.cy/el-gr/announcementdef/prokiryxi-leitourgoi-082026-0.pdf",
-      "published": null,
-      "deadline": "2026-09-14",
-      "reference": null,
-      "locations": [],
-      "locationFrom": "pancyprus",
-      "deadlineFrom": "pdf",
-      "carriedForward": true
     },
     {
       "id": "67e4c6cbdddd",
@@ -2285,6 +2317,143 @@
         }
       ],
       "locationFrom": "title"
+    },
+    {
+      "id": "c6b34cc1fc8e",
+      "sourceId": "shso",
+      "employer": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "sector": "semi-government",
+      "district": "pancyprus",
+      "title": "Σεπτέμβριος 2026 ΠΡΟΚΗΡΥΞΗ ΘΕΣΕΩΝ ΝΟΣΗΛΕΥΤΙΚΩΝ ΛΕΙΤΟΥΡΓΩΝ – ΓΕΝΙΚΗΣ ΝΟΣΗΛΕΥΤΙΚΗΣ ΓΙΑ ΤΙΣ ΑΝΑΓΚΕΣ ΤΟΥ ΟΡΓΑΝΙΣΜΟΥ ΚΡΑΤΙΚΩΝ ΥΠΗΡΕΣΙΩΝ ΥΓΕΙΑΣ (2/10/2026) Αναρτήθηκε 11/09/26 Αμμόχωστος, Λάρνακα, Λεμεσός, Λευκωσία, Πάφος Γενικό Νοσοκομείο Αμμοχώστου, Γενικό Νοσοκομείο Λάρνακας, Γενικό Νοσοκομείο Λεμεσού, Γενικό Νοσοκομείο Λευκωσίας, Γενικό Νοσοκομείο Πάφου, Νοσοκομείο Αρχιεπίσκοπος Μακάριος ΙΙΙ, Νοσοκομείο Πόλις Χρυσοχούς, Νοσοκομείο Τροόδους Πλήρης Απασχόλησης",
+      "url": "https://www.shso.org.cy/job-position/prokiryxi-theseon-nosilevtikon-leitourgon-genikis-nosilevtikis-gia-tis-anagkes-tou-organismou-kratikon-ypiresion-ygeias-2-10-2026/",
+      "published": null,
+      "deadline": "2026-10-02",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        },
+        {
+          "name": "Λεμεσός",
+          "district": "limassol",
+          "districtName": "Λεμεσός",
+          "lat": 34.7071,
+          "lon": 33.0226
+        },
+        {
+          "name": "Τρόοδος",
+          "district": "limassol",
+          "districtName": "Λεμεσός",
+          "lat": 34.9236,
+          "lon": 32.8619
+        },
+        {
+          "name": "Λάρνακα",
+          "district": "larnaca",
+          "districtName": "Λάρνακα",
+          "lat": 34.9182,
+          "lon": 33.6201
+        },
+        {
+          "name": "Πάφος",
+          "district": "paphos",
+          "districtName": "Πάφος",
+          "lat": 34.7754,
+          "lon": 32.4245
+        },
+        {
+          "name": "Πόλη Χρυσοχούς",
+          "district": "paphos",
+          "districtName": "Πάφος",
+          "lat": 35.0333,
+          "lon": 32.425
+        },
+        {
+          "name": "Αμμόχωστος (ελεύθερη επαρχία)",
+          "district": "famagusta",
+          "districtName": "Αμμόχωστος",
+          "lat": 35.0353,
+          "lon": 33.9614
+        }
+      ],
+      "locationFrom": "title"
+    },
+    {
+      "id": "d92965f67623",
+      "sourceId": "shso",
+      "employer": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "sector": "semi-government",
+      "district": "pancyprus",
+      "title": "Σεπτέμβριος 2026 ΠΡΟΚΗΡΥΞΗ ΤΡΙΩΝ (3) ΚΕΝΩΝ ΘΕΣΕΩΝ ΙΑΤΡΙΚΩΝ ΛΕΙΤΟΥΡΓΩΝ (2/10/2026) Αναρτήθηκε 11/09/26 Λευκωσία, Πάφος Γενικό Νοσοκομείο Πάφου, Νοσοκομείο Αρχιεπίσκοπος Μακάριος ΙΙΙ Πλήρης Απασχόλησης",
+      "url": "https://www.shso.org.cy/job-position/prokiryxi-trion-3-kenon-theseon-iatrikon-leitouron-2-10-2026/",
+      "published": null,
+      "deadline": "2026-10-02",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        },
+        {
+          "name": "Πάφος",
+          "district": "paphos",
+          "districtName": "Πάφος",
+          "lat": 34.7754,
+          "lon": 32.4245
+        }
+      ],
+      "locationFrom": "title"
+    },
+    {
+      "id": "80f92dc533b8",
+      "sourceId": "ucy",
+      "employer": "Πανεπιστήμιο Κύπρου",
+      "sector": "university",
+      "district": "nicosia",
+      "title": "Κενές θέσεις Διοικητικού Προσωπικού",
+      "url": "https://www.ucy.ac.cy/hr/category/administrative-staff-vacancies-el/",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district"
+    },
+    {
+      "id": "bcc3ad0d3155",
+      "sourceId": "ucy-academic",
+      "employer": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
+      "sector": "university",
+      "district": "nicosia",
+      "title": "Διοικητικό και Ωρομίσθιο Προσωπικό",
+      "url": "https://www.ucy.ac.cy/hr/employment/vacancies/administrative-staff/",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district"
     },
     {
       "id": "4c601623db36",
@@ -2397,28 +2566,6 @@
       "locationFrom": "district"
     },
     {
-      "id": "75ebee7109b8",
-      "sourceId": "cyens",
-      "employer": "CYENS Centre of Excellence",
-      "sector": "research",
-      "district": "nicosia",
-      "title": "Accounting Internship",
-      "url": "https://cyens.org.cy/vacancy/accounting-internship/",
-      "published": "2026-04-17",
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district"
-    },
-    {
       "id": "3429e0b65c19",
       "sourceId": "cyens",
       "employer": "CYENS Centre of Excellence",
@@ -2427,50 +2574,6 @@
       "title": "CYENS Research Associate Positions",
       "url": "https://cyens.org.cy/vacancy/cyens-research-associate-positions/",
       "published": "2026-06-16",
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district"
-    },
-    {
-      "id": "b3cfb684a8f6",
-      "sourceId": "cyens",
-      "employer": "CYENS Centre of Excellence",
-      "sector": "research",
-      "district": "nicosia",
-      "title": "Education & Training Internship",
-      "url": "https://cyens.org.cy/vacancy/education-training-internship/",
-      "published": "2026-04-17",
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district"
-    },
-    {
-      "id": "4218229b3a1c",
-      "sourceId": "cyens",
-      "employer": "CYENS Centre of Excellence",
-      "sector": "research",
-      "district": "nicosia",
-      "title": "HR Internship",
-      "url": "https://cyens.org.cy/vacancy/hr-internship/",
-      "published": "2026-04-17",
       "deadline": null,
       "reference": null,
       "locations": [
@@ -2683,28 +2786,6 @@
       "locationFrom": "district"
     },
     {
-      "id": "cc4f56628ac0",
-      "sourceId": "cyens",
-      "employer": "CYENS Centre of Excellence",
-      "sector": "research",
-      "district": "nicosia",
-      "title": "Research Office Administrator",
-      "url": "https://cyens.org.cy/vacancy/research-office-administrator/",
-      "published": "2026-06-30",
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district"
-    },
-    {
       "id": "228e8243c45b",
       "sourceId": "cyens",
       "employer": "CYENS Centre of Excellence",
@@ -2735,28 +2816,6 @@
       "title": "Research Project Manager (Project Based)",
       "url": "https://cyens.org.cy/vacancy/research-project-manager/",
       "published": "2026-06-18",
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district"
-    },
-    {
-      "id": "a262b0854310",
-      "sourceId": "cyens",
-      "employer": "CYENS Centre of Excellence",
-      "sector": "research",
-      "district": "nicosia",
-      "title": "Thinker Maker Space Internship",
-      "url": "https://cyens.org.cy/vacancy/thinker-maker-space-internship/",
-      "published": "2026-04-17",
       "deadline": null,
       "reference": null,
       "locations": [
@@ -2804,8 +2863,7 @@
       "deadline": null,
       "reference": null,
       "locations": [],
-      "locationFrom": "pancyprus",
-      "carriedForward": true
+      "locationFrom": "pancyprus"
     },
     {
       "id": "19046e608842",
@@ -2819,8 +2877,7 @@
       "deadline": null,
       "reference": null,
       "locations": [],
-      "locationFrom": "pancyprus",
-      "carriedForward": true
+      "locationFrom": "pancyprus"
     },
     {
       "id": "ba5cb813e491",
@@ -2834,8 +2891,29 @@
       "deadline": null,
       "reference": null,
       "locations": [],
-      "locationFrom": "pancyprus",
-      "carriedForward": true
+      "locationFrom": "pancyprus"
+    },
+    {
+      "id": "dca6ec8bee10",
+      "sourceId": "eratosthenes",
+      "employer": "ERATOSTHENES Centre of Excellence",
+      "sector": "research",
+      "district": "limassol",
+      "title": "Job openings",
+      "url": "https://eratosthenes.peopleforce.io/careers",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λεμεσός",
+          "district": "limassol",
+          "districtName": "Λεμεσός",
+          "lat": 34.7071,
+          "lon": 33.0226
+        }
+      ],
+      "locationFrom": "district"
     }
   ]
 }
