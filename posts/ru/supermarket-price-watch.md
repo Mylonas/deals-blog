@@ -1,7 +1,7 @@
 ---
 title: "Мониторинг цен в супермаркетах — 10 основных продуктов"
 date: "2026-06-28"
-updated: "2026-09-07"
+updated: "2026-09-15"
 category: "Еда и напитки"
 summary: "Актуальные цены на 10 базовых товаров во всех крупных супермаркетах Кипра. Обновляется 4 раза в день с официального портала e-kalathi.gov.cy."
 pinned: false
@@ -11,19 +11,19 @@ pinned: false
 
 <!-- PRICES_START -->
 
-> Обновлено 7 September 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Обновлено 15 September 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
 | Продукт | Мин. цена | Бренд |
 |---------|---------|--------|
 | Свежее молоко 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
 | Яйца | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
-| Халлуми 200г | **[€1.90](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
-| Спагетти 500г | **[€0.93](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
+| Халлуми 200г | **[€1.99](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
+| Спагетти 500г | **[€0.89](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Оливковое масло 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
-| Вода 1.5L ×6 | **[€1.99](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
-| Йогурт 450г | **[€1.95](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
-| Рис 1кг | **[€1.90](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
-| Апельсиновый сок 1L | **[€2.29](https://www.e-kalathi.gov.cy/product-information/2120)** | Delta |
+| Вода 1.5L ×6 | **[€2.00](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
+| Йогурт 450г | **[€3.74](https://www.e-kalathi.gov.cy/product-information/301)** | Charalambides Christis |
+| Рис 1кг | **[€2.29](https://www.e-kalathi.gov.cy/product-information/1121)** | 3A |
+| Апельсиновый сок 1L | **[€1.69](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
 | Кока-Кола 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
 
 <!-- PRICES_END -->
