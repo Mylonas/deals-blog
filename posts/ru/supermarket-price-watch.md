@@ -21,7 +21,7 @@ pinned: false
 | Спагетти 500г | **[€0.89](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Оливковое масло 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
 | Вода 1.5L ×6 | **[€2.00](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
-| Йогурт 450г | **[€3.74](https://www.e-kalathi.gov.cy/product-information/301)** | Charalambides Christis |
+| Йогурт 450г | **[€1.95](https://www.e-kalathi.gov.cy/product-information/298)** | Charalambides Christis |
 | Рис 1кг | **[€2.29](https://www.e-kalathi.gov.cy/product-information/1121)** | 3A |
 | Апельсиновый сок 1L | **[€1.69](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
 | Кока-Кола 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
