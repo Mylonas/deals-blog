@@ -22,7 +22,7 @@ pinned: false
 | Ελαιόλαδο 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
 | Νερό 1.5L ×6 | **[€2.00](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
 | Γιαούρτι 450g | **[€1.95](https://www.e-kalathi.gov.cy/product-information/298)** | Charalambides Christis |
-| Ρύζι 1kg | **[€2.29](https://www.e-kalathi.gov.cy/product-information/1121)** | 3A |
+| Ρύζι 1kg | **[€1.90](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
 | Χυμός Πορτοκάλι 1L | **[€1.69](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
 | Coca-Cola 1L ×2 | **[€2.35](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
 
