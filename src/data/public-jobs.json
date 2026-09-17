@@ -1,7 +1,13 @@
 {
-  "fetchedAt": "2026-09-16T09:54:28.904Z",
+  "fetchedAt": "2026-09-17T09:59:26.817Z",
   "count": 105,
   "sources": [
+    {
+      "id": "eey",
+      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
+      "count": 0,
+      "error": null
+    },
     {
       "id": "cpa",
       "name": "Αρχή Λιμένων Κύπρου",
@@ -27,12 +33,6 @@
       "error": null
     },
     {
-      "id": "eey",
-      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "competition",
       "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
       "count": 0,
@@ -52,10 +52,11 @@
       "via": "site→browser"
     },
     {
-      "id": "crta",
-      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
-      "count": 1,
-      "error": null
+      "id": "cera",
+      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
+      "count": 0,
+      "error": null,
+      "via": "site→browser"
     },
     {
       "id": "thoc",
@@ -64,21 +65,26 @@
       "error": null
     },
     {
-      "id": "cera",
-      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
-      "count": 0,
-      "error": null,
-      "via": "site→browser"
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "count": 1,
+      "error": null
     },
     {
-      "id": "cyada",
-      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
-      "count": 0,
+      "id": "cysec",
+      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
+      "count": 1,
       "error": null
     },
     {
       "id": "centralbank",
       "name": "Κεντρική Τράπεζα της Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "cyada",
+      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
       "count": 0,
       "error": null
     },
@@ -89,26 +95,8 @@
       "error": "HTTP 523"
     },
     {
-      "id": "cysec",
-      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "kedipes",
-      "name": "ΚΕΔΙΠΕΣ",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "hfc",
       "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "kodap",
-      "name": "ΚΟΔΑΠ",
       "count": 0,
       "error": null
     },
@@ -119,9 +107,15 @@
       "error": null
     },
     {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 4,
+      "id": "kedipes",
+      "name": "ΚΕΔΙΠΕΣ",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "kodap",
+      "name": "ΚΟΔΑΠ",
+      "count": 0,
       "error": null
     },
     {
@@ -137,14 +131,14 @@
       "error": null
     },
     {
-      "id": "ekk",
-      "name": "Ένωση Κοινοτήτων Κύπρου",
-      "count": 0,
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 4,
       "error": null
     },
     {
-      "id": "ucm",
-      "name": "Ένωση Δήμων Κύπρου",
+      "id": "nba",
+      "name": "Εθνική Αρχή Στοιχημάτων",
       "count": 0,
       "error": null
     },
@@ -161,14 +155,20 @@
       "error": null
     },
     {
-      "id": "cut",
-      "name": "ΤΕΠΑΚ",
-      "count": 5,
+      "id": "ekk",
+      "name": "Ένωση Κοινοτήτων Κύπρου",
+      "count": 0,
       "error": null
     },
     {
       "id": "ouc",
       "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "ucm",
+      "name": "Ένωση Δήμων Κύπρου",
       "count": 0,
       "error": null
     },
@@ -185,9 +185,9 @@
       "error": null
     },
     {
-      "id": "nba",
-      "name": "Εθνική Αρχή Στοιχημάτων",
-      "count": 0,
+      "id": "cut",
+      "name": "ΤΕΠΑΚ",
+      "count": 5,
       "error": null
     },
     {
@@ -203,15 +203,15 @@
       "error": null
     },
     {
-      "id": "cyens",
-      "name": "CYENS Centre of Excellence",
-      "count": 13,
-      "error": null
-    },
-    {
       "id": "eoa-lemesou",
       "name": "ΕΟΑ Λεμεσού",
       "count": 9,
+      "error": null
+    },
+    {
+      "id": "cyens",
+      "name": "CYENS Centre of Excellence",
+      "count": 13,
       "error": null
     },
     {
@@ -221,14 +221,14 @@
       "error": null
     },
     {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
+      "id": "ucy",
+      "name": "Πανεπιστήμιο Κύπρου",
       "count": 0,
       "error": null
     },
     {
-      "id": "ucy",
-      "name": "Πανεπιστήμιο Κύπρου",
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
       "count": 0,
       "error": null
     },
@@ -263,6 +263,12 @@
       "error": null
     },
     {
+      "id": "dimos-latsion-geriou",
+      "name": "Δήμος Λατσιών-Γερίου",
+      "count": 2,
+      "error": null
+    },
+    {
       "id": "dimos-lemesou",
       "name": "Δήμος Λεμεσού",
       "count": 6,
@@ -275,9 +281,9 @@
       "error": null
     },
     {
-      "id": "dimos-latsion-geriou",
-      "name": "Δήμος Λατσιών-Γερίου",
-      "count": 2,
+      "id": "eoa-pafou",
+      "name": "ΕΟΑ Πάφου",
+      "count": 0,
       "error": null
     },
     {
@@ -293,15 +299,15 @@
       "error": null
     },
     {
-      "id": "dimos-dytikis-lemesou",
-      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
-      "count": 5,
-      "error": null
-    },
-    {
       "id": "dimos-lefkaron",
       "name": "Δήμος Λευκάρων",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-dytikis-lemesou",
+      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
+      "count": 5,
       "error": null
     },
     {
@@ -323,21 +329,15 @@
       "error": null
     },
     {
-      "id": "dimos-pafou",
-      "name": "Δήμος Πάφου",
-      "count": 4,
-      "error": null
-    },
-    {
-      "id": "dimos-akama",
-      "name": "Δήμος Ακάμα (Πέγεια)",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "dimos-polis-chrysochous",
       "name": "Δήμος Πόλης Χρυσοχούς",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-pafou",
+      "name": "Δήμος Πάφου",
+      "count": 4,
       "error": null
     },
     {
@@ -353,15 +353,15 @@
       "error": null
     },
     {
-      "id": "dimos-ammochostou",
-      "name": "Δήμος Παραλιμνίου-Δερύνειας",
-      "count": 2,
+      "id": "dimos-akama",
+      "name": "Δήμος Ακάμα (Πέγεια)",
+      "count": 0,
       "error": null
     },
     {
-      "id": "eoa-pafou",
-      "name": "ΕΟΑ Πάφου",
-      "count": 0,
+      "id": "dimos-ammochostou",
+      "name": "Δήμος Παραλιμνίου-Δερύνειας",
+      "count": 2,
       "error": null
     },
     {
