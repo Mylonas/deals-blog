@@ -1,7 +1,7 @@
 ---
 title: "Cheapest Petrol Stations in Cyprus — Live Tracker"
 date: "2026-06-28"
-updated: "2026-09-16"
+updated: "2026-09-17"
 category: "Fuel"
 summary: "Live prices for Unleaded 95, Unleaded 98, and Diesel across petrol stations in Cyprus. Updated hourly from the official Cyprus government fuel observatory."
 pinned: true
@@ -59,6 +59,6 @@ pinned: true
 | EKO | [Κυριάκου Μάτση 100 Τ.Κ 7102](https://www.google.com/maps?q=34.939014,33.601698) | Αραδίππου | €1.498 |
 | PETROLINA | [Λεωφ. Αρχ. Μακαρίου Γ΄ 89 Τ.Κ 1071](https://www.google.com/maps?q=35.1609,33.3711) | Λευκωσία | €1.498 |
 
-> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 16 September 2026
+> Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 17 September 2026
 
 <!-- FUEL_PRICES_END -->
