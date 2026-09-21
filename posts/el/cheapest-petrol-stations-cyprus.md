@@ -56,8 +56,8 @@ pinned: true
 | EKO | [Δεκέλεια Τ.Κ](https://www.google.com/maps?q=34.98291,33.71689) | Δεκέλεια | €1.490 |
 | ESSO | [Αγίας Φυλάξεως 205 Τ.Κ 3083](https://www.google.com/maps?q=34.702301022437,33.0279642974838) | Λεμεσός | €1.498 |
 | EKO | [Κυριάκου Μάτση 100 Τ.Κ 7102](https://www.google.com/maps?q=34.939014,33.601698) | Αραδίππου | €1.498 |
-| PETROLINA | [Λεωφ. Αρχ. Μακαρίου Γ΄ 89 Τ.Κ 1071](https://www.google.com/maps?q=35.1609,33.3711) | Λευκωσία | €1.498 |
 | PETROLINA | [Γιάννου Κρανιδιώτη 247 Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.499 |
+| FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.499 |
 
 > Πηγή: [Παρατηρητήριο Τιμών Καυσίμων Κύπρου](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — ενημέρωση 21 Σεπτεμβρίου 2026
 
