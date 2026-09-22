@@ -1,10 +1,22 @@
 {
-  "fetchedAt": "2026-09-21T10:40:18.416Z",
-  "count": 103,
+  "fetchedAt": "2026-09-22T09:55:17.182Z",
+  "count": 105,
   "sources": [
     {
       "id": "cpa",
       "name": "Αρχή Λιμένων Κύπρου",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "eey",
+      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "psc",
+      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
       "count": 1,
       "error": null
     },
@@ -15,15 +27,21 @@
       "error": null
     },
     {
-      "id": "psc",
-      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
+      "id": "hio",
+      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
       "count": 1,
       "error": null
     },
     {
-      "id": "hio",
-      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
-      "count": 1,
+      "id": "competition",
+      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "cso",
+      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
+      "count": 0,
       "error": null
     },
     {
@@ -41,32 +59,8 @@
       "via": "site→browser"
     },
     {
-      "id": "cso",
-      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "competition",
-      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "eey",
-      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "thoc",
       "name": "ΘΟΚ (Θεατρικός Οργανισμός Κύπρου)",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "cysec",
-      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
       "count": 1,
       "error": null
     },
@@ -77,8 +71,20 @@
       "error": null
     },
     {
+      "id": "cysec",
+      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
+      "count": 1,
+      "error": null
+    },
+    {
       "id": "centralbank",
       "name": "Κεντρική Τράπεζα της Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "cyada",
+      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
       "count": 0,
       "error": null
     },
@@ -95,18 +101,6 @@
       "error": null
     },
     {
-      "id": "cyada",
-      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 5,
-      "error": null
-    },
-    {
       "id": "onek",
       "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
       "count": 0,
@@ -116,6 +110,12 @@
       "id": "cse",
       "name": "Χρηματιστήριο Αξιών Κύπρου",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 5,
       "error": null
     },
     {
@@ -131,12 +131,6 @@
       "error": null
     },
     {
-      "id": "ucm",
-      "name": "Ένωση Δήμων Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "nba",
       "name": "Εθνική Αρχή Στοιχημάτων",
       "count": 0,
@@ -145,6 +139,12 @@
     {
       "id": "cys",
       "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "ucm",
+      "name": "Ένωση Δήμων Κύπρου",
       "count": 0,
       "error": null
     },
@@ -181,19 +181,7 @@
     {
       "id": "cyi",
       "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "count": 9,
-      "error": null
-    },
-    {
-      "id": "cyens",
-      "name": "CYENS Centre of Excellence",
-      "count": 12,
-      "error": null
-    },
-    {
-      "id": "cmmi",
-      "name": "Cyprus Marine and Maritime Institute",
-      "count": 0,
+      "count": 10,
       "error": null
     },
     {
@@ -209,15 +197,21 @@
       "error": null
     },
     {
+      "id": "cyens",
+      "name": "CYENS Centre of Excellence",
+      "count": 12,
+      "error": null
+    },
+    {
       "id": "eoa-lemesou",
       "name": "ΕΟΑ Λεμεσού",
       "count": 9,
       "error": null
     },
     {
-      "id": "eratosthenes",
-      "name": "ERATOSTHENES Centre of Excellence",
-      "count": 1,
+      "id": "cmmi",
+      "name": "Cyprus Marine and Maritime Institute",
+      "count": 0,
       "error": null
     },
     {
@@ -227,27 +221,33 @@
       "error": null
     },
     {
-      "id": "dimos-lefkosias",
-      "name": "Δήμος Λευκωσίας",
-      "count": 10,
-      "error": null
-    },
-    {
       "id": "eoa-larnakas",
       "name": "ΕΟΑ Λάρνακας",
       "count": 2,
       "error": null
     },
     {
-      "id": "eoa-ammochostou",
-      "name": "ΕΟΑ Αμμοχώστου",
-      "count": 4,
+      "id": "eratosthenes",
+      "name": "ERATOSTHENES Centre of Excellence",
+      "count": 1,
       "error": null
     },
     {
-      "id": "dimos-lakatamias",
-      "name": "Δήμος Λακατάμειας",
+      "id": "dimos-lefkosias",
+      "name": "Δήμος Λευκωσίας",
+      "count": 11,
+      "error": null
+    },
+    {
+      "id": "eoa-pafou",
+      "name": "ΕΟΑ Πάφου",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "eoa-ammochostou",
+      "name": "ΕΟΑ Αμμοχώστου",
+      "count": 4,
       "error": null
     },
     {
@@ -263,8 +263,14 @@
       "error": null
     },
     {
-      "id": "eoa-pafou",
-      "name": "ΕΟΑ Πάφου",
+      "id": "dimos-lakatamias",
+      "name": "Δήμος Λακατάμειας",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-polemidion",
+      "name": "Δήμος Πολεμιδιών",
       "count": 0,
       "error": null
     },
@@ -272,12 +278,6 @@
       "id": "dimos-latsion-geriou",
       "name": "Δήμος Λατσιών-Γερίου",
       "count": 2,
-      "error": null
-    },
-    {
-      "id": "dimos-polemidion",
-      "name": "Δήμος Πολεμιδιών",
-      "count": 0,
       "error": null
     },
     {
@@ -291,6 +291,12 @@
       "name": "Δήμος Λάρνακας",
       "count": 0,
       "error": null
+    },
+    {
+      "id": "cybc",
+      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
+      "count": 0,
+      "error": "HTTP 522"
     },
     {
       "id": "dimos-strovolou",
@@ -311,21 +317,9 @@
       "error": null
     },
     {
-      "id": "cybc",
-      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
-      "count": 0,
-      "error": "HTTP 522"
-    },
-    {
       "id": "dimos-aradippou",
       "name": "Δήμος Αραδίππου",
       "count": 1,
-      "error": null
-    },
-    {
-      "id": "dimos-dromolaxias-meneou",
-      "name": "Δήμος Δρομολαξιάς-Μενεού",
-      "count": 3,
       "error": null
     },
     {
@@ -335,14 +329,14 @@
       "error": null
     },
     {
-      "id": "dimos-polis-chrysochous",
-      "name": "Δήμος Πόλης Χρυσοχούς",
-      "count": 0,
+      "id": "dimos-dromolaxias-meneou",
+      "name": "Δήμος Δρομολαξιάς-Μενεού",
+      "count": 3,
       "error": null
     },
     {
-      "id": "dimos-agias-napas",
-      "name": "Δήμος Αγίας Νάπας",
+      "id": "dimos-polis-chrysochous",
+      "name": "Δήμος Πόλης Χρυσοχούς",
       "count": 0,
       "error": null
     },
@@ -350,6 +344,12 @@
       "id": "dimos-athienou",
       "name": "Δήμος Αθηένου",
       "count": 2,
+      "error": null
+    },
+    {
+      "id": "dimos-agias-napas",
+      "name": "Δήμος Αγίας Νάπας",
+      "count": 0,
       "error": null
     },
     {
@@ -1068,6 +1068,35 @@
           "districtName": "Λευκωσία",
           "lat": 35.1856,
           "lon": 33.3823
+        }
+      ],
+      "locationFrom": "title"
+    },
+    {
+      "id": "5d3e06558a93",
+      "sourceId": "dimos-lefkosias",
+      "employer": "Δήμος Λευκωσίας",
+      "sector": "municipality",
+      "district": "nicosia",
+      "title": "Κενή θέση για απασχόληση στο «Κ. Π. Κ. Υ. Αγίου Δομετίου και Έγκωμης - Πολυδύναμο Κέντρο»",
+      "url": "https://www.nicosia.org.cy/el-GR/news/careers/22765/",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Έγκωμη",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1611,
+          "lon": 33.3339
+        },
+        {
+          "name": "Άγιος Δομέτιος",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1697,
+          "lon": 33.3308
         }
       ],
       "locationFrom": "title"
@@ -2044,6 +2073,28 @@
       "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0421",
       "published": null,
       "deadline": "2026-09-24",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district"
+    },
+    {
+      "id": "634c7f6ed2a2",
+      "sourceId": "cyi",
+      "employer": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "sector": "research",
+      "district": "nicosia",
+      "title": "Senior IT Officer (ref. no. CYI_SITO_26_20)",
+      "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0425",
+      "published": null,
+      "deadline": "2026-10-07",
       "reference": null,
       "locations": [
         {
