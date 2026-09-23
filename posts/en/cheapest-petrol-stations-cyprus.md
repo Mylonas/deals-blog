@@ -51,13 +51,13 @@ pinned: true
 
 | Brand | Address | Area | Price |
 |-------|---------|------|-------|
-| ENI | [Αγίας Φυλάξεως 23-25 Τ.Κ 3025](https://www.google.com/maps?q=34.681279,33.038879) | Λεμεσός | €1.395 |
 | FILL N GO | [Λεωφ. Λάρνακος 1 Τ.Κ 7648](https://www.google.com/maps?q=34.92639,33.44032) | Πυργά | €1.489 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.499 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.499 |
 | SHELL | [Δρόμος Καλού Χωριού Λάρνακας Τ.Κ 7643](https://www.google.com/maps?q=34.91073084,33.562161) | Καλό Χωριό Λάρνακας | €1.515 |
 | EKO | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.927671,33.536158) | Καλό Χωριό Λάρνακας | €1.529 |
 | EKO | [Ελευθερίας 27 Τ.Κ 7102](https://www.google.com/maps?q=34.935446,33.59272) | Αραδίππου | €1.529 |
+| ESSO | [Λεωφόρος Λεμεσού 4 Τ.Κ 7647](https://www.google.com/maps?q=34.952087962963,33.4192546296296) | Μοσφιλωτή | €1.539 |
 
 > Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 23 September 2026
 
