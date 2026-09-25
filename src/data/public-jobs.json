@@ -1,11 +1,23 @@
 {
-  "fetchedAt": "2026-09-24T09:57:26.120Z",
-  "count": 100,
+  "fetchedAt": "2026-09-25T10:11:22.661Z",
+  "count": 104,
   "sources": [
+    {
+      "id": "eey",
+      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
+      "count": 0,
+      "error": null
+    },
     {
       "id": "cpa",
       "name": "Αρχή Λιμένων Κύπρου",
       "count": 1,
+      "error": null
+    },
+    {
+      "id": "psc",
+      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
+      "count": 3,
       "error": null
     },
     {
@@ -15,20 +27,8 @@
       "error": null
     },
     {
-      "id": "eey",
-      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "hio",
       "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "psc",
-      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
       "count": 1,
       "error": null
     },
@@ -42,6 +42,12 @@
       "id": "cso",
       "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "count": 1,
       "error": null
     },
     {
@@ -65,20 +71,20 @@
       "error": null
     },
     {
-      "id": "crta",
-      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "id": "cysec",
+      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
       "count": 1,
-      "error": null
-    },
-    {
-      "id": "cyada",
-      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
-      "count": 0,
       "error": null
     },
     {
       "id": "centralbank",
       "name": "Κεντρική Τράπεζα της Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "cyada",
+      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
       "count": 0,
       "error": null
     },
@@ -89,21 +95,8 @@
       "error": null
     },
     {
-      "id": "cysec",
-      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
-      "count": 1,
-      "error": null,
-      "via": "site→browser"
-    },
-    {
-      "id": "onek",
-      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "kodap",
-      "name": "ΚΟΔΑΠ",
+      "id": "kedipes",
+      "name": "ΚΕΔΙΠΕΣ",
       "count": 0,
       "error": null
     },
@@ -114,8 +107,14 @@
       "error": null
     },
     {
-      "id": "kedipes",
-      "name": "ΚΕΔΙΠΕΣ",
+      "id": "kodap",
+      "name": "ΚΟΔΑΠ",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "onek",
+      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
       "count": 0,
       "error": null
     },
@@ -123,13 +122,7 @@
       "id": "anad",
       "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
       "count": 0,
-      "error": null
-    },
-    {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 5,
-      "error": null
+      "error": "HTTP 503"
     },
     {
       "id": "cys",
@@ -146,6 +139,12 @@
     {
       "id": "research",
       "name": "ΙδΕΚ (Ίδρυμα Έρευνας και Καινοτομίας)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "ucm",
+      "name": "Ένωση Δήμων Κύπρου",
       "count": 0,
       "error": null
     },
@@ -168,9 +167,9 @@
       "error": null
     },
     {
-      "id": "ucm",
-      "name": "Ένωση Δήμων Κύπρου",
-      "count": 0,
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 6,
       "error": null
     },
     {
@@ -182,7 +181,7 @@
     {
       "id": "cyi",
       "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "count": 10,
+      "count": 8,
       "error": null
     },
     {
@@ -192,26 +191,20 @@
       "error": null
     },
     {
-      "id": "ucy",
-      "name": "Πανεπιστήμιο Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "cyens",
       "name": "CYENS Centre of Excellence",
       "count": 12,
       "error": null
     },
     {
-      "id": "eoa-lemesou",
-      "name": "ΕΟΑ Λεμεσού",
-      "count": 9,
+      "id": "cmmi",
+      "name": "Cyprus Marine and Maritime Institute",
+      "count": 0,
       "error": null
     },
     {
-      "id": "cmmi",
-      "name": "Cyprus Marine and Maritime Institute",
+      "id": "ucy",
+      "name": "Πανεπιστήμιο Κύπρου",
       "count": 0,
       "error": null
     },
@@ -222,9 +215,15 @@
       "error": null
     },
     {
+      "id": "eoa-lemesou",
+      "name": "ΕΟΑ Λεμεσού",
+      "count": 9,
+      "error": null
+    },
+    {
       "id": "eoa-lefkosias",
       "name": "ΕΟΑ Λευκωσίας",
-      "count": 0,
+      "count": 3,
       "error": null
     },
     {
@@ -246,14 +245,20 @@
       "error": null
     },
     {
+      "id": "eoa-pafou",
+      "name": "ΕΟΑ Πάφου",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "dimos-lakatamias",
       "name": "Δήμος Λακατάμειας",
       "count": 0,
       "error": null
     },
     {
-      "id": "eoa-pafou",
-      "name": "ΕΟΑ Πάφου",
+      "id": "dimos-notias-lefkosias",
+      "name": "Δήμος Νότιας Λευκωσίας-Ιδαλίου",
       "count": 0,
       "error": null
     },
@@ -264,21 +269,15 @@
       "error": null
     },
     {
-      "id": "dimos-latsion-geriou",
-      "name": "Δήμος Λατσιών-Γερίου",
-      "count": 2,
-      "error": null
-    },
-    {
-      "id": "dimos-notias-lefkosias",
-      "name": "Δήμος Νότιας Λευκωσίας-Ιδαλίου",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "dimos-polemidion",
       "name": "Δήμος Πολεμιδιών",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-latsion-geriou",
+      "name": "Δήμος Λατσιών-Γερίου",
+      "count": 2,
       "error": null
     },
     {
@@ -294,10 +293,10 @@
       "error": null
     },
     {
-      "id": "dimos-strovolou",
-      "name": "Δήμος Στροβόλου",
-      "count": 2,
-      "error": null
+      "id": "cybc",
+      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
+      "count": 0,
+      "error": "HTTP 522"
     },
     {
       "id": "dimos-lefkaron",
@@ -312,27 +311,21 @@
       "error": null
     },
     {
-      "id": "cybc",
-      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
-      "count": 0,
-      "error": "HTTP 522"
-    },
-    {
-      "id": "dimos-aradippou",
-      "name": "Δήμος Αραδίππου",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "dimos-pafou",
-      "name": "Δήμος Πάφου",
-      "count": 3,
+      "id": "dimos-strovolou",
+      "name": "Δήμος Στροβόλου",
+      "count": 2,
       "error": null
     },
     {
       "id": "dimos-dromolaxias-meneou",
       "name": "Δήμος Δρομολαξιάς-Μενεού",
       "count": 3,
+      "error": null
+    },
+    {
+      "id": "dimos-aradippou",
+      "name": "Δήμος Αραδίππου",
+      "count": 1,
       "error": null
     },
     {
@@ -348,20 +341,26 @@
       "error": null
     },
     {
+      "id": "dimos-athienou",
+      "name": "Δήμος Αθηένου",
+      "count": 2,
+      "error": null
+    },
+    {
       "id": "dimos-akama",
       "name": "Δήμος Ακάμα (Πέγεια)",
       "count": 0,
       "error": null
     },
     {
-      "id": "dimos-ammochostou",
-      "name": "Δήμος Παραλιμνίου-Δερύνειας",
-      "count": 2,
+      "id": "dimos-pafou",
+      "name": "Δήμος Πάφου",
+      "count": 3,
       "error": null
     },
     {
-      "id": "dimos-athienou",
-      "name": "Δήμος Αθηένου",
+      "id": "dimos-ammochostou",
+      "name": "Δήμος Παραλιμνίου-Δερύνειας",
       "count": 2,
       "error": null
     },
@@ -1564,28 +1563,6 @@
       "locationFrom": "employer"
     },
     {
-      "id": "357fc752bcd3",
-      "sourceId": "eoa-lemesou",
-      "employer": "ΕΟΑ Λεμεσού",
-      "sector": "district-organisation",
-      "district": "limassol",
-      "title": "eoa lemesos vacancies2026 eox texnikos mixanikos",
-      "url": "https://eoalemesos.org.cy/el/news-details/eoa-lemesos-vacancies2026-eox-texnikos-mixanikos",
-      "published": null,
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λεμεσός",
-          "district": "limassol",
-          "districtName": "Λεμεσός",
-          "lat": 34.7071,
-          "lon": 33.0226
-        }
-      ],
-      "locationFrom": "title"
-    },
-    {
       "id": "3d7d5837c0d1",
       "sourceId": "eoa-lemesou",
       "employer": "ΕΟΑ Λεμεσού",
@@ -1718,6 +1695,97 @@
       "locationFrom": "employer"
     },
     {
+      "id": "8fad53f1c08b",
+      "sourceId": "eoa-lemesou",
+      "employer": "ΕΟΑ Λεμεσού",
+      "sector": "district-organisation",
+      "district": "limassol",
+      "title": "vacancies2026 eox deka theseis texnikoi mixanikoi",
+      "url": "https://eoalemesos.org.cy/el/news-details/vacancies2026-eox-deka-theseis-texnikoi-mixanikoi",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λεμεσός",
+          "district": "limassol",
+          "districtName": "Λεμεσός",
+          "lat": 34.7071,
+          "lon": 33.0226
+        }
+      ],
+      "locationFrom": "employer"
+    },
+    {
+      "id": "3dd9db8610fd",
+      "sourceId": "eoa-lefkosias",
+      "employer": "ΕΟΑ Λευκωσίας",
+      "sector": "district-organisation",
+      "district": "nicosia",
+      "title": "ΠΡΟΚΗΡΥΞΗ (1) ΘΕΣΗΣ ΔΙΟΙΚΗΤΙΚΟΥ ΛΕΙΤΟΥΡΓΟΥ ΔΙΑΧΕΙΡΙΣΗΣ ΕΥΡΩΠΑΙΚΩΝ ΠΡΟΓΡΑΜΜΑΤΩΝ",
+      "url": "https://ndlgo.org.cy/wp-content/uploads/2026/07/Prokiriksi-dioikitikou-leitourgou-diaxirisis-evrwpaikwn-programmatwn.pdf",
+      "published": "2026-07-01",
+      "deadline": "2026-09-30",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "employer",
+      "deadlineFrom": "pdf"
+    },
+    {
+      "id": "c85ccf4c07ad",
+      "sourceId": "eoa-lefkosias",
+      "employer": "ΕΟΑ Λευκωσίας",
+      "sector": "district-organisation",
+      "district": "nicosia",
+      "title": "ΠΡΟΚΗΡΥΞΗ (2) ΘΕΣΕΩΝ ΩΡΟΜΙΣΘΙΟΥ ΤΕΧΝΙΤΗ ΔΟΜΙΚΩΝ ΕΡΓΩΝ",
+      "url": "https://ndlgo.org.cy/wp-content/uploads/2026/09/prokiriksi-2-thesewn-oromisthiou-texniti-domikwn-ergwn.pdf",
+      "published": "2026-09-01",
+      "deadline": "2026-09-30",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "employer",
+      "deadlineFrom": "pdf"
+    },
+    {
+      "id": "42bb0a83ec8b",
+      "sourceId": "eoa-lefkosias",
+      "employer": "ΕΟΑ Λευκωσίας",
+      "sector": "district-organisation",
+      "district": "nicosia",
+      "title": "ΠΡΟΚΗΡΥΞΗ (9) ΘΕΣΕΩΝ ΩΡΟΜΙΣΘΙΟΥ ΤΕΧΝΙΤΗ ΗΛΕΚΤΡΟΛΟΓΙΑΣ",
+      "url": "https://ndlgo.org.cy/wp-content/uploads/2026/09/prokiriksi-9-thesewn-oromisthiou-texniti-ilektrologias.pdf",
+      "published": "2026-09-01",
+      "deadline": "2026-09-30",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "employer",
+      "deadlineFrom": "pdf"
+    },
+    {
       "id": "becd61cd32d1",
       "sourceId": "psc",
       "employer": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
@@ -1728,6 +1796,34 @@
       "published": "2026-09-11",
       "deadline": "2026-10-02",
       "reference": "Ε.Ε. 5887 / γνωστοποίηση 1626",
+      "locations": [],
+      "locationFrom": "pancyprus"
+    },
+    {
+      "id": "b0b9028977a6",
+      "sourceId": "psc",
+      "employer": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
+      "sector": "civil-service",
+      "district": "pancyprus",
+      "title": "ΑΝΩΤΕΡΟΣ ΛΕΙΤΟΥΡΓΟΣ ΠΕΡΙΒΑΛΛΟΝΤΟΣ, ΤΜΗΜΑ ΠΕΡΙΒΑΛΛΟΝΤΟΣ",
+      "url": "https://www.psc.gov.cy/psc/psc.nsf/All/1CB7AAE13DDC9226C2258E7D0027273B/$file/%CE%A4.%CE%91%CE%9D%CE%A9%CE%A4%CE%95%CE%A1%CE%9F%CE%A3%20%CE%9B%CE%95%CE%99%CE%A4%CE%9F%CE%A5%CE%A1%CE%93%CE%9F%CE%A3%20%CE%A0%CE%95%CE%A1%CE%99%CE%92%CE%91%CE%9B%CE%9B%CE%9F%CE%9D%CE%A4%CE%9F%CE%A3,%20%CE%A4%CE%9C%CE%97%CE%9C%CE%91%20%CE%A0%CE%95%CE%A1%CE%99%CE%92%CE%91%CE%9B%CE%9B%CE%9F%CE%9D%CE%A4%CE%9F%CE%A3.pdf?OpenElement",
+      "published": "2026-09-25",
+      "deadline": "2026-10-16",
+      "reference": "Ε.Ε. 5890 / γνωστοποίηση 1687",
+      "locations": [],
+      "locationFrom": "pancyprus"
+    },
+    {
+      "id": "fdfde9514b8e",
+      "sourceId": "psc",
+      "employer": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
+      "sector": "civil-service",
+      "district": "pancyprus",
+      "title": "ΠΡΩΤΟΣ ΗΛΕΚΤΡΟΛΟΓΟΣ ΜΗΧΑΝΙΚΟΣ, ΤΜΗΜΑ ΗΛΕΚΤΡΟΜΗΧΑΝΟΛΟΓΙΚΩΝ ΥΠΗΡΕΣΙΩΝ",
+      "url": "https://www.psc.gov.cy/psc/psc.nsf/All/E40ACC8566B86B39C2258E7D00275DC3/$file/%CF%80%CF%81%CF%89%CF%84%CE%BF%CF%82%20%CE%B7%CE%BB%CE%B5%CE%BA%CF%84%CF%81%CE%BF%CE%BB%CE%BF%CE%B3%CE%BF%CF%82%20%CE%BC%CE%B7%CF%87%CE%B1%CE%BD%CE%B9%CE%BA%CE%BF%CF%82%20%CF%84%CE%BC%CE%AE%CE%BC%CE%B1%20%CE%B7%CE%BB%CE%B5%CE%BA%CF%84%CF%81%CE%BF%CE%BC%CE%B7%CF%87.%20%CF%85%CF%80%CE%B7%CF%81%CE%B5%CF%83%CE%B9%CF%89%CE%BD.pdf?OpenElement",
+      "published": "2026-09-25",
+      "deadline": "2026-10-16",
+      "reference": "Ε.Ε. 5890 / γνωστοποίηση 1688",
       "locations": [],
       "locationFrom": "pancyprus"
     },
@@ -1917,50 +2013,6 @@
       "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0424",
       "published": null,
       "deadline": "2026-09-30",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district"
-    },
-    {
-      "id": "fd387de8ecc3",
-      "sourceId": "cyi",
-      "employer": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "sector": "research",
-      "district": "nicosia",
-      "title": "Postdoctoral Research Fellow in Soil Erosion (ref. no. EEWRC_PDF_26_02)",
-      "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0420",
-      "published": null,
-      "deadline": "2026-09-24",
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district"
-    },
-    {
-      "id": "06eaaf98fe4f",
-      "sourceId": "cyi",
-      "employer": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "sector": "research",
-      "district": "nicosia",
-      "title": "Research Technical Assistant in Soil Erosion Monitoring (ref. no. EEWRC_RA_26_03)",
-      "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0421",
-      "published": null,
-      "deadline": "2026-09-24",
       "reference": null,
       "locations": [
         {
@@ -2172,6 +2224,42 @@
           "districtName": "Λεμεσός",
           "lat": 34.7071,
           "lon": 33.0226
+        }
+      ],
+      "locationFrom": "title"
+    },
+    {
+      "id": "d728ee1d9ddd",
+      "sourceId": "shso",
+      "employer": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "sector": "semi-government",
+      "district": "pancyprus",
+      "title": "Σεπτέμβριος 2026 ΠΡΟΚΗΡΥΞΗ ΤΡΙΩΝ (3) ΚΕΝΩΝ ΘΕΣΕΩΝ ΙΑΤΡΙΚΩΝ ΛΕΙΤΟΥΡΓΩΝ (16/10/26) Αναρτήθηκε 25/09/26 Λεμεσός, Λευκωσία Νοσοκομείο Αρχιεπίσκοπος Μακάριος ΙΙΙ, Νοσοκομείο Τροόδους",
+      "url": "https://www.shso.org.cy/job-position/prokiryxi-trion-3-kenon-theseon-iatrikon-leitourgon-16-10-26/",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        },
+        {
+          "name": "Λεμεσός",
+          "district": "limassol",
+          "districtName": "Λεμεσός",
+          "lat": 34.7071,
+          "lon": 33.0226
+        },
+        {
+          "name": "Τρόοδος",
+          "district": "limassol",
+          "districtName": "Λεμεσός",
+          "lat": 34.9236,
+          "lon": 32.8619
         }
       ],
       "locationFrom": "title"
