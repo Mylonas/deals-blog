@@ -17,14 +17,14 @@ Live prices for the 10 most-bought household staples in Cyprus, sourced from the
 |---------|---------|--------|
 | Fresh Milk 1L | **[€1.44](https://www.e-kalathi.gov.cy/product-information/34)** | Charalambides |
 | Eggs | **[€2.15](https://www.e-kalathi.gov.cy/product-information/414)** | Nikiforou |
-| Halloumi 200g | **[€1.99](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
+| Halloumi 200g | **[€2.02](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Spaghetti 500g | **[€0.93](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Olive Oil 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
 | Water 1.5L ×6 | **[€1.99](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
 | Yogurt 450g | **[€1.99](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
 | Rice 1kg | **[€2.29](https://www.e-kalathi.gov.cy/product-information/1121)** | 3A |
 | Orange Juice 1L | **[€1.69](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
-| Coca-Cola 1L ×2 | **[€2.35](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
+| Coca-Cola 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
 
 <!-- PRICES_END -->
 
