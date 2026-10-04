@@ -21,11 +21,38 @@ const FUEL_TYPES = [
   { id: "4", label95En: "Heating Oil",  label95El: "Πετρέλαιο Θέρμανσης", label95Ru: "Печное топливо" },
 ];
 
+const MAX_ATTEMPTS = 5;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Since Oct 2026 the portal redirects anonymous visitors to the CY Login
+// SSO form. Flagged separately so main() can exit cleanly and keep the
+// last good data instead of failing the workflow every hour.
+class PortalLoginRequired extends Error {}
+
+// Retry transient failures (network errors, 5xx, a page without the form)
+// with exponential backoff: 2s, 4s, 8s, 16s between the 5 attempts.
+async function withRetry(label, fn) {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await fn();
+    } catch (e) {
+      if (attempt >= MAX_ATTEMPTS) throw e;
+      const wait = 2000 * 2 ** (attempt - 1);
+      console.warn(`  ${label}: attempt ${attempt}/${MAX_ATTEMPTS} failed (${e.message}), retrying in ${wait / 1000}s...`);
+      await sleep(wait);
+    }
+  }
+}
+
 async function fetchGovPage() {
   const res = await fetch(GOV_URL, {
     headers: { "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" },
   });
   if (!res.ok) throw new Error(`GET failed: HTTP ${res.status}`);
+  const finalUrl = new URL(res.url);
+  if (finalUrl.host !== new URL(GOV_URL).host || /\/Account\/Login/i.test(finalUrl.pathname)) {
+    throw new PortalLoginRequired(`portal redirected to login (${finalUrl.host}${finalUrl.pathname})`);
+  }
   const html = await res.text();
 
   // Parse set-cookie headers into name=value pairs only (strip directives)
@@ -300,10 +327,12 @@ function updatePost(filePath, newBlock) {
 async function main() {
   const results = [];
   for (const fuel of FUEL_TYPES) {
-    console.log(`Fetching session for ${fuel.label95En}...`);
-    const { cookies, token } = await fetchGovPage();
     console.log(`Fetching prices for ${fuel.label95En}...`);
-    const html = await fetchPricesForType(fuel.id, token, cookies);
+    // session + POST retried together: a failed POST usually means a stale token
+    const html = await withRetry(fuel.label95En, async () => {
+      const { cookies, token } = await fetchGovPage();
+      return fetchPricesForType(fuel.id, token, cookies);
+    });
     const stations = extractStations(html, 7);
     // every station, untruncated — the old top-100 cap silently dropped whole
     // districts from the map: Paphos is the priciest market and its cheapest
@@ -421,4 +450,12 @@ async function main() {
   console.log(`Done — updated ${updated}/${files.length} files.`);
 }
 
-main().catch((e) => { console.error("Failed:", e.message); process.exit(1); });
+main().catch((e) => {
+  if (e instanceof PortalLoginRequired) {
+    // GitHub Actions annotation — shows on the run summary without failing it
+    console.log(`::warning::Fuel portal requires CY Login (${e.message}); keeping last saved prices.`);
+    process.exit(0);
+  }
+  console.error("Failed:", e.message);
+  process.exit(1);
+});
