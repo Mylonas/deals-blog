@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
 
 // Leaflet touches `window` at import time — load the map client-side only
@@ -111,8 +111,13 @@ function getDistrict(s: Station): string {
   return s.district;
 }
 
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleString("en-GB", {
+// Data is normally refreshed hourly; beyond this the notice is shown
+const STALE_AFTER_MS = 48 * 60 * 60 * 1000;
+
+const DATE_LOCALE = { en: "en-GB", el: "el-GR", ru: "ru-RU" } as const;
+
+function formatDate(iso: string, locale: string = "en-GB") {
+  return new Date(iso).toLocaleString(locale, {
     day: "numeric", month: "short", year: "numeric",
     hour: "2-digit", minute: "2-digit",
   });
@@ -144,6 +149,7 @@ const UI = {
     showingCheapest: (n: number, d: string) => `Showing ${n} cheapest stations${d !== "All" ? ` in ${d}` : ""}`,
     noResults: (fuel: string, district: string) => `No stations found for ${fuel} in ${district}. Try a different district.`,
     source: "Source: Cyprus Gov Petroleum Prices",
+    stale: (d: string) => `Prices last updated ${d}. The government fuel portal now requires a CY Login account, so automatic updates are paused and prices may have changed since.`,
   },
   el: {
     nearMe: "Κοντά μου", locating: "Εντοπισμός…", denied: "Άρνηση τοποθεσίας", unsupported: "Μη διαθέσιμο",
@@ -155,6 +161,7 @@ const UI = {
     showingCheapest: (n: number, d: string) => `Εμφάνιση ${n} φθηνότερων πρατηρίων${d !== "Όλες" ? ` σε ${d}` : ""}`,
     noResults: (fuel: string, district: string) => `Δεν βρέθηκαν πρατήρια για ${fuel} σε ${district}.`,
     source: "Πηγή: Παρατηρητήριο Τιμών Καυσίμων Κύπρου",
+    stale: (d: string) => `Τελευταία ενημέρωση τιμών: ${d} — η κυβερνητική πύλη τιμών καυσίμων απαιτεί πλέον λογαριασμό CY Login, οπότε οι αυτόματες ενημερώσεις έχουν ανασταλεί και οι τιμές ενδέχεται να έχουν αλλάξει.`,
   },
   ru: {
     nearMe: "Рядом", locating: "Поиск…", denied: "Геолокация отклонена", unsupported: "Недоступно",
@@ -166,6 +173,7 @@ const UI = {
     showingCheapest: (n: number, d: string) => `Показано ${n} дешевейших АЗС${d !== "Все" ? ` в ${d}` : ""}`,
     noResults: (fuel: string, district: string) => `АЗС для ${fuel} в ${district} не найдены.`,
     source: "Источник: Портал цен на топливо Кипра",
+    stale: (d: string) => `Цены обновлены ${d}. Государственный портал цен на топливо теперь требует вход через CY Login, поэтому автоматическое обновление приостановлено и цены могли измениться.`,
   },
 };
 
@@ -242,8 +250,20 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
 
   const isNearMe = geoState === "active" && userCoords !== null;
 
+  // checked client-side: the page is built statically, so a build-time
+  // check would freeze the result and mismatch on hydration
+  const [isStale, setIsStale] = useState(false);
+  useEffect(() => {
+    setIsStale(Date.now() - new Date(data.updatedAt).getTime() > STALE_AFTER_MS);
+  }, [data.updatedAt]);
+
   return (
     <div>
+      {isStale && (
+        <div role="status" className="mb-5 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-200">
+          ⚠️ {t.stale(formatDate(data.updatedAt, DATE_LOCALE[lang]))}
+        </div>
+      )}
       {/* Fuel type selector */}
       <div className="flex gap-2 mb-5 flex-wrap">
         {availableKeys.map((k) => (
