@@ -1,17 +1,11 @@
 {
-  "fetchedAt": "2026-10-05T12:15:08.550Z",
+  "fetchedAt": "2026-10-06T12:01:03.150Z",
   "count": 101,
   "sources": [
     {
-      "id": "eey",
-      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "psc",
-      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
-      "count": 6,
+      "id": "cpa",
+      "name": "Αρχή Λιμένων Κύπρου",
+      "count": 1,
       "error": null
     },
     {
@@ -21,23 +15,28 @@
       "error": null
     },
     {
+      "id": "psc",
+      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
+      "count": 6,
+      "error": null
+    },
+    {
       "id": "hio",
       "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
       "count": 2,
       "error": null
     },
     {
-      "id": "cpa",
-      "name": "Αρχή Λιμένων Κύπρου",
-      "count": 1,
+      "id": "eey",
+      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
+      "count": 0,
       "error": null
     },
     {
-      "id": "ocecpr",
-      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
+      "id": "competition",
+      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
       "count": 0,
-      "error": null,
-      "via": "site→browser"
+      "error": null
     },
     {
       "id": "cso",
@@ -46,8 +45,8 @@
       "error": null
     },
     {
-      "id": "cera",
-      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
+      "id": "ocecpr",
+      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
       "count": 0,
       "error": null,
       "via": "site→browser"
@@ -65,14 +64,15 @@
       "error": null
     },
     {
-      "id": "cysec",
-      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
-      "count": 1,
-      "error": null
+      "id": "cera",
+      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
+      "count": 0,
+      "error": null,
+      "via": "site→browser"
     },
     {
-      "id": "crta",
-      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "id": "cysec",
+      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
       "count": 1,
       "error": null
     },
@@ -80,6 +80,12 @@
       "id": "centralbank",
       "name": "Κεντρική Τράπεζα της Κύπρου",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "count": 1,
       "error": null
     },
     {
@@ -95,8 +101,8 @@
       "error": null
     },
     {
-      "id": "kedipes",
-      "name": "ΚΕΔΙΠΕΣ",
+      "id": "kodap",
+      "name": "ΚΟΔΑΠ",
       "count": 0,
       "error": null
     },
@@ -107,8 +113,8 @@
       "error": null
     },
     {
-      "id": "kodap",
-      "name": "ΚΟΔΑΠ",
+      "id": "kedipes",
+      "name": "ΚΕΔΙΠΕΣ",
       "count": 0,
       "error": null
     },
@@ -116,7 +122,7 @@
       "id": "anad",
       "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
       "count": 0,
-      "error": null
+      "error": "HTTP 503"
     },
     {
       "id": "cys",
@@ -137,9 +143,9 @@
       "error": null
     },
     {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 5,
+      "id": "ekk",
+      "name": "Ένωση Κοινοτήτων Κύπρου",
+      "count": 0,
       "error": null
     },
     {
@@ -149,9 +155,9 @@
       "error": null
     },
     {
-      "id": "ekk",
-      "name": "Ένωση Κοινοτήτων Κύπρου",
-      "count": 0,
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 5,
       "error": null
     },
     {
@@ -179,18 +185,6 @@
       "error": null
     },
     {
-      "id": "ucy",
-      "name": "Πανεπιστήμιο Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "eratosthenes",
       "name": "ERATOSTHENES Centre of Excellence",
       "count": 1,
@@ -203,9 +197,15 @@
       "error": null
     },
     {
-      "id": "eoa-lemesou",
-      "name": "ΕΟΑ Λεμεσού",
-      "count": 9,
+      "id": "ucy",
+      "name": "Πανεπιστήμιο Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
+      "count": 0,
       "error": null
     },
     {
@@ -215,16 +215,16 @@
       "error": null
     },
     {
-      "id": "eoa-lefkosias",
-      "name": "ΕΟΑ Λευκωσίας",
-      "count": 0,
+      "id": "eoa-lemesou",
+      "name": "ΕΟΑ Λεμεσού",
+      "count": 9,
       "error": null
     },
     {
-      "id": "cybc",
-      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
-      "count": 0,
-      "error": "HTTP 522"
+      "id": "eoa-lefkosias",
+      "name": "ΕΟΑ Λευκωσίας",
+      "count": 1,
+      "error": null
     },
     {
       "id": "dimos-lefkosias",
@@ -259,7 +259,7 @@
     {
       "id": "dimos-lemesou",
       "name": "Δήμος Λεμεσού",
-      "count": 5,
+      "count": 4,
       "error": null
     },
     {
@@ -275,15 +275,15 @@
       "error": null
     },
     {
+      "id": "cybc",
+      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
+      "count": 0,
+      "error": "HTTP 522"
+    },
+    {
       "id": "dimos-latsion-geriou",
       "name": "Δήμος Λατσιών-Γερίου",
       "count": 1,
-      "error": null
-    },
-    {
-      "id": "dimos-anatolikis-lemesou",
-      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
-      "count": 0,
       "error": null
     },
     {
@@ -293,9 +293,9 @@
       "error": null
     },
     {
-      "id": "dimos-dytikis-lemesou",
-      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
-      "count": 6,
+      "id": "dimos-anatolikis-lemesou",
+      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
+      "count": 0,
       "error": null
     },
     {
@@ -311,11 +311,10 @@
       "error": null
     },
     {
-      "id": "competition",
-      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
-      "count": 0,
-      "error": "fetch failed; browser fallback: page.goto: net::ERR_EMPTY_RESPONSE at https://www.competition.gov.cy/competition/competition.nsf/page34_gr/page34_gr?OpenDocument\nCall log:\n  - navigating to \"https://www.competition.gov.cy/competition/competition.nsf/page34_gr/page34_gr?OpenDocument\", waiting until \"domcontentloaded\"\n",
-      "blocked": true
+      "id": "dimos-dytikis-lemesou",
+      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
+      "count": 6,
+      "error": null
     },
     {
       "id": "dimos-dromolaxias-meneou",
@@ -330,12 +329,6 @@
       "error": null
     },
     {
-      "id": "dimos-akama",
-      "name": "Δήμος Ακάμα (Πέγεια)",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "dimos-polis-chrysochous",
       "name": "Δήμος Πόλης Χρυσοχούς",
       "count": 0,
@@ -345,6 +338,12 @@
       "id": "dimos-pafou",
       "name": "Δήμος Πάφου",
       "count": 3,
+      "error": null
+    },
+    {
+      "id": "dimos-akama",
+      "name": "Δήμος Ακάμα (Πέγεια)",
+      "count": 0,
       "error": null
     },
     {
@@ -926,28 +925,6 @@
         }
       ],
       "locationFrom": "employer"
-    },
-    {
-      "id": "df0237443601",
-      "sourceId": "dimos-lemesou",
-      "employer": "Δήμος Λεμεσού",
-      "sector": "municipality",
-      "district": "limassol",
-      "title": "Πρόσληψη Εργοδοτούμενων Ορισμένου Χρόνου στον Δήμο Λεμεσού (Κοινωνικά Προγράμματα και Ευρωπαϊκά Θέματα)",
-      "url": "https://www.limassol.org.cy/el/news/%CF%80%CF%81%CF%8C%CF%83%CE%BB%CE%B7%CF%88%CE%B7-%CE%B5%CF%81%CE%B3%CE%BF%CE%B4%CE%BF%CF%84%CE%BF%CF%8D%CE%BC%CE%B5%CE%BD%CF%89%CE%BD-%CE%BF%CF%81%CE%B9%CF%83%CE%BC%CE%AD%CE%BD%CE%BF%CF%85-%CF%87%CF%81%CF%8C%CE%BD%CE%BF%CF%85-%CF%83%CF%84%CE%BF%CE%BD-%CE%B4%CE%AE%CE%BC%CE%BF-%CE%BB%CE%B5%CE%BC%CE%B5%CF%83%CE%BF%CF%8D-%CE%BA%CE%BF%CE%B9%CE%BD%CF%89%CE%BD%CE%B9%CE%BA%CE%AC-%CF%80%CF%81%CE%BF%CE%B3%CF%81%CE%AC%CE%BC%CE%BC%CE%B1%CF%84%CE%B1-%CE%BA%CE%B1%CE%B9-%CE%B5%CF%85%CF%81%CF%89%CF%80%CE%B1%CF%8A%CE%BA%CE%AC-%CE%B8%CE%AD%CE%BC%CE%B1%CF%84%CE%B1",
-      "published": null,
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λεμεσός",
-          "district": "limassol",
-          "districtName": "Λεμεσός",
-          "lat": 34.7071,
-          "lon": 33.0226
-        }
-      ],
-      "locationFrom": "title"
     },
     {
       "id": "134182599b0d",
@@ -1687,6 +1664,29 @@
         }
       ],
       "locationFrom": "employer"
+    },
+    {
+      "id": "12d1e1d08196",
+      "sourceId": "eoa-lefkosias",
+      "employer": "ΕΟΑ Λευκωσίας",
+      "sector": "district-organisation",
+      "district": "nicosia",
+      "title": "Προκήρυξη (8) Θέσεων Ωρομίσθιου Τεχνίτη Ηλεκτρολογίας",
+      "url": "https://ndlgo.org.cy/wp-content/uploads/2026/10/prokiriksi-8-thesewn-oromisthiou-texniti-ilektrologias.pdf",
+      "published": "2026-10-01",
+      "deadline": "2026-10-23",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "employer",
+      "deadlineFrom": "pdf"
     },
     {
       "id": "5fabd65e9351",
