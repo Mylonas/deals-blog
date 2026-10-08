@@ -13,6 +13,7 @@ import { fileURLToPath } from 'node:url';
 import { matches, fold, DOCUMENT_RE, NOT_A_JOB_RE } from './lib/util.mjs';
 import { resolveLocations } from './lib/location.mjs';
 import { deadlineFromPdf, saveCache } from './lib/pdf.mjs';
+import { addScaleData } from './lib/scale.mjs';
 import * as psc from './adapters/psc.mjs';
 import * as wp from './adapters/wp.mjs';
 import * as site from './adapters/site.mjs';
@@ -182,6 +183,7 @@ async function main() {
   const results = await runPool(sources, scrapeSource).finally(() => browser.close().catch(() => {}));
   const merged = dedupe(results.flatMap((r) => r.jobs));
   const pdfStats = await addPdfDeadlines(merged, { skip: process.argv.includes('--no-pdf') });
+  const scaleStats = await addScaleData(merged);
 
   const failures = results.filter((r) => r.error);
   const fresh = merged.filter((job) => keepAll || isOpen(job, maxAgeDays));
@@ -256,6 +258,9 @@ async function main() {
   console.log(`Cyprus public-sector openings: ${jobs.length} across ${sources.length - failures.length}/${sources.length} sources`);
   if (pdfStats.checked > 0) {
     console.log(`(read ${pdfStats.found} closing dates out of ${pdfStats.checked} PDF notices)`);
+  }
+  if (scaleStats.found > 0) {
+    console.log(`(extracted ${scaleStats.found} salary scales from ${scaleStats.checked} job pages)`);
   }
   for (const { source } of results
     .filter((r) => kept.get(r.source.id) > 0)

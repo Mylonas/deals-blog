@@ -34,6 +34,7 @@ export type Job = {
   /** Absent on data scraped before the map was added — treat as unplaced. */
   locations?: JobLocation[];
   locationFrom?: "title" | "employer" | "district" | "pancyprus";
+  scale?: string;
 };
 
 export type JobsData = { fetchedAt: string; count: number; jobs: Job[] };
@@ -338,7 +339,7 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
                       )}
                     </td>
                     <td className="py-2.5 pr-3 whitespace-nowrap text-gray-500 dark:text-gray-400 tabular-nums">
-                      {parseScale(job.title) ?? "—"}
+                      {job.scale ?? parseScale(job.title) ?? "—"}
                     </td>
                     <td className={`py-2.5 whitespace-nowrap tabular-nums ${urgent ? "text-red-600 dark:text-red-400 font-semibold" : ""}`}>
                       {job.deadline ?? t.noDeadline}
