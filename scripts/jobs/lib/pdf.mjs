@@ -17,7 +17,7 @@ const CACHE_FILE = join(ROOT, 'src', 'data', 'public-jobs-pdf-cache.json');
 // Bump when the extraction logic changes: a cached "no deadline found" is a
 // verdict from a particular parser, and stale nulls silently outlive the fix.
 // (Raising this to 2 recovered every notice, after v1 read only 3 pages.)
-const PARSER_VERSION = 5;
+const PARSER_VERSION = 6;
 
 const MAX_BYTES = 12 * 1024 * 1024;
 // The closing date is usually near the end, after the duties and qualifications
@@ -126,15 +126,64 @@ export function deadlineFromText(text) {
   return { deadline: null, reason: 'no date in document' };
 }
 
-/** Closing date for one PDF, or null. Cached permanently on success. */
-export async function deadlineFromPdf(url, { timeout = 45000 } = {}) {
+/**
+ * Salary scale from the document text, e.g. "A2–A7", "A5", "E7–E8", or a
+ * monthly euro amount like "€1,578". The notices state it as
+ * «Εγκεκριμένη μισθοδοτική κλίμακα: Α2 – Α5 – Α7(ii)» or
+ * «Μισθολογική κλίμακα: Ε7-8» or «ο μισθός θα ανέρχεται στα €1.577,80».
+ */
+export function scaleFromText(text) {
+  const n = normalise(text);
+
+  // A/Δ/E-scale tokens: Α2, A5, Δ5, D6, E7, Ε8 — Greek or Latin letter.
+  // Also matches «E7-8» where the second number inherits the letter.
+  const SCALE_RE = /(?<=[^a-zα-ω0-9])([αaδdεe])\s?(\d{1,2})(?:\s*[-–]\s*(\d{1,2}))?(?=[^a-zα-ω0-9]|$)/g;
+  const scaleNear = (slice) => {
+    const hits = [];
+    for (const m of slice.matchAll(SCALE_RE)) {
+      const letter = m[1].toLowerCase();
+      const prefix = 'αa'.includes(letter) ? 'A' : 'δd'.includes(letter) ? 'D' : 'E';
+      const num = Number(m[2]);
+      if (num >= 1 && num <= 16) hits.push({ prefix, num });
+      if (m[3]) {
+        const num2 = Number(m[3]);
+        if (num2 >= 1 && num2 <= 16) hits.push({ prefix, num: num2 });
+      }
+    }
+    return hits;
+  };
+
+  // Look near «κλίμακα» or «κλίμακες» — the authoritative statement
+  const CUE_RE = /κλιμακ/g;
+  for (const cue of n.matchAll(CUE_RE)) {
+    const window = n.slice(cue.index, cue.index + 200);
+    const hits = scaleNear(window);
+    if (hits.length === 0) continue;
+    const prefix = hits[0].prefix;
+    const nums = [...new Set(hits.filter((h) => h.prefix === prefix).map((h) => h.num))].sort((a, b) => a - b);
+    if (nums.length === 1) return `${prefix}${nums[0]}`;
+    return `${prefix}${nums[0]}–${prefix}${nums[nums.length - 1]}`;
+  }
+
+  // Fallback: monthly salary in euros — «μισθός … €1.577,80»
+  const SALARY_RE = /μισθ\S{0,20}\s.*?€\s?([\d.,]+)/;
+  const sal = SALARY_RE.exec(n);
+  if (sal) {
+    const raw = sal[1].replace(/\./g, '').replace(',', '.');
+    const num = Math.round(Number(raw));
+    if (num >= 500 && num <= 15000) return `€${num.toLocaleString('en')}`;
+  }
+
+  return null;
+}
+
+/** Deadline and scale for one PDF, cached permanently on success. */
+export async function enrichFromPdf(url, { timeout = 45000 } = {}) {
   const store = await loadCache();
   const hit = store[url];
   if (hit?.version === PARSER_VERSION) {
-    // A found date is final — the PDF will not change. A miss or an error is
-    // only trusted for a while, in case the site was down or the parser improves.
-    if (hit.deadline) return hit.deadline;
-    if (!isStale(hit)) return null;
+    if (hit.deadline || hit.scale) return { deadline: hit.deadline ?? null, scale: hit.scale ?? null };
+    if (!isStale(hit)) return { deadline: null, scale: null };
   }
 
   const entry = { version: PARSER_VERSION, checkedAt: new Date().toISOString().slice(0, 10) };
@@ -148,13 +197,20 @@ export async function deadlineFromPdf(url, { timeout = 45000 } = {}) {
     const bytes = new Uint8Array(await res.arrayBuffer());
     if (bytes.length > MAX_BYTES) throw new Error(`too large (${bytes.length} bytes)`);
 
-    Object.assign(entry, deadlineFromText(await extractText(bytes)));
+    const text = await extractText(bytes);
+    Object.assign(entry, deadlineFromText(text));
+    entry.scale = scaleFromText(text) ?? undefined;
   } catch (err) {
     entry.error = err.message;
   }
 
   store[url] = entry;
-  return entry.deadline ?? null;
+  return { deadline: entry.deadline ?? null, scale: entry.scale ?? null };
+}
+
+/** Closing date for one PDF, or null. Cached permanently on success. */
+export async function deadlineFromPdf(url, opts) {
+  return (await enrichFromPdf(url, opts)).deadline;
 }
 
 function isStale(entry) {
