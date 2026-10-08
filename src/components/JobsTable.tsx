@@ -60,6 +60,14 @@ const SENIOR_RE = /ΑΝΩΤΕΡ|ΠΡΩΤΟΣ|ΠΡΩΤΗ|ΔΙΕΥΘΥΝΤ|ΕΦΟ�
 // Greek Alpha or Latin A; we take the lowest number as the entry scale.
 const SCALE_RE = /[ΑA]\s?(\d{1,2})/g;
 
+/** Extract the salary-scale range from a title, e.g. "A2–A5–A7" → "A2". */
+export function parseScale(title: string): string | null {
+  const scales = [...title.matchAll(SCALE_RE)].map((m) => Number(m[1])).filter((n) => n >= 1 && n <= 16);
+  if (scales.length === 0) return null;
+  const sorted = [...new Set(scales)].sort((a, b) => a - b);
+  return sorted.length === 1 ? `A${sorted[0]}` : `A${sorted[0]}–A${sorted[sorted.length - 1]}`;
+}
+
 export function classifyExam(job: Pick<Job, "sector" | "title">): ExamStatus {
   if (job.sector !== "civil-service") return "none";
   const title = job.title.toUpperCase();
@@ -73,7 +81,7 @@ const T: Record<Lang, Record<string, string>> = {
   en: {
     total: "open positions", search: "Search position or employer…", any: "All",
     sector: "Sector", employer: "Employer", deadline: "Deadline", position: "Position",
-    district: "District",
+    district: "District", scale: "Scale",
     sortDeadline: "Closing soonest", sortEmployer: "By employer", sortNewest: "Newest first",
     clear: "Clear filters", none: "No positions match your filters.",
     showing: "Showing", of: "of", updated: "Updated", noDeadline: "—",
@@ -87,7 +95,7 @@ const T: Record<Lang, Record<string, string>> = {
   el: {
     total: "κενές θέσεις", search: "Αναζήτηση θέσης ή εργοδότη…", any: "Όλα",
     sector: "Τομέας", employer: "Εργοδότης", deadline: "Προθεσμία", position: "Θέση",
-    district: "Επαρχία",
+    district: "Επαρχία", scale: "Κλίμακα",
     sortDeadline: "Λήγουν σύντομα", sortEmployer: "Ανά εργοδότη", sortNewest: "Νεότερες πρώτα",
     clear: "Καθαρισμός", none: "Καμία θέση με αυτά τα κριτήρια.",
     showing: "Εμφάνιση", of: "από", updated: "Ενημέρωση", noDeadline: "—",
@@ -101,7 +109,7 @@ const T: Record<Lang, Record<string, string>> = {
   ru: {
     total: "вакансий", search: "Поиск должности или работодателя…", any: "Все",
     sector: "Сектор", employer: "Работодатель", deadline: "Срок подачи", position: "Должность",
-    district: "Район",
+    district: "Район", scale: "Шкала",
     sortDeadline: "Скоро закрытие", sortEmployer: "По работодателю", sortNewest: "Сначала новые",
     clear: "Сбросить", none: "Нет вакансий по этим фильтрам.",
     showing: "Показано", of: "из", updated: "Обновлено", noDeadline: "—",
@@ -289,6 +297,7 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
               <tr className="text-left text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                 <th className="py-2 pr-3 font-semibold">{t.employer}</th>
                 <th className="py-2 pr-3 font-semibold">{t.position}</th>
+                <th className="py-2 pr-3 font-semibold whitespace-nowrap">{t.scale}</th>
                 <th className="py-2 font-semibold whitespace-nowrap">{t.deadline}</th>
               </tr>
             </thead>
@@ -327,6 +336,9 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
                           {t.checkTag}
                         </span>
                       )}
+                    </td>
+                    <td className="py-2.5 pr-3 whitespace-nowrap text-gray-500 dark:text-gray-400 tabular-nums">
+                      {parseScale(job.title) ?? "—"}
                     </td>
                     <td className={`py-2.5 whitespace-nowrap tabular-nums ${urgent ? "text-red-600 dark:text-red-400 font-semibold" : ""}`}>
                       {job.deadline ?? t.noDeadline}
