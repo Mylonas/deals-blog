@@ -17,7 +17,7 @@ const CACHE_FILE = join(ROOT, 'src', 'data', 'public-jobs-pdf-cache.json');
 // Bump when the extraction logic changes: a cached "no deadline found" is a
 // verdict from a particular parser, and stale nulls silently outlive the fix.
 // (Raising this to 2 recovered every notice, after v1 read only 3 pages.)
-const PARSER_VERSION = 6;
+const PARSER_VERSION = 8;
 
 const MAX_BYTES = 12 * 1024 * 1024;
 // The closing date is usually near the end, after the duties and qualifications
@@ -32,7 +32,7 @@ const DEADLINE_CUE_RE =
 
 let cache = null;
 
-async function loadCache() {
+export async function loadCache() {
   if (cache) return cache;
   try {
     cache = JSON.parse(await readFile(CACHE_FILE, 'utf8'));
@@ -126,18 +126,38 @@ export function deadlineFromText(text) {
   return { deadline: null, reason: 'no date in document' };
 }
 
+function parseEuro(raw) {
+  const s = raw.replace(/[.,]+$/, '');
+  const lastDot = s.lastIndexOf('.');
+  const lastComma = s.lastIndexOf(',');
+  if (lastDot > -1 && lastComma > -1) {
+    if (lastDot > lastComma) return Number(s.replace(/,/g, ''));
+    return Number(s.replace(/\./g, '').replace(',', '.'));
+  }
+  if (lastComma >= 0) {
+    const afterComma = s.slice(lastComma + 1);
+    if (afterComma.length === 3) return Number(s.replace(/,/g, ''));
+    return Number(s.replace(',', '.'));
+  }
+  return Number(s.replace(/\./g, ''));
+}
+
 /**
  * Salary scale from the document text, e.g. "A2–A7", "A5", "E7–E8", or a
- * monthly euro amount like "€1,578". The notices state it as
- * «Εγκεκριμένη μισθοδοτική κλίμακα: Α2 – Α5 – Α7(ii)» or
- * «Μισθολογική κλίμακα: Ε7-8» or «ο μισθός θα ανέρχεται στα €1.577,80».
+ * monthly euro amount like "€1,578". Patterns recognised:
+ *
+ *   Greek:  «Εγκεκριμένη μισθοδοτική κλίμακα: Α2 – Α5 – Α7(ii)»
+ *           «Μισθολογική κλίμακα: Ε7-8»
+ *           «ο μισθός θα ανέρχεται στα €1.577,80»
+ *           «ο ετήσιος μισθός είναι 32.947,42 €»
+ *   English: «payscale: A4/A7+4», «salary: €1,431.74»
  */
 export function scaleFromText(text) {
   const n = normalise(text);
 
   // A/Δ/E-scale tokens: Α2, A5, Δ5, D6, E7, Ε8 — Greek or Latin letter.
   // Also matches «E7-8» where the second number inherits the letter.
-  const SCALE_RE = /(?<=[^a-zα-ω0-9])([αaδdεe])\s?(\d{1,2})(?:\s*[-–]\s*(\d{1,2}))?(?=[^a-zα-ω0-9]|$)/g;
+  const SCALE_RE = /(?<=[^a-zα-ω0-9])([αaδdεe])\s?(\d{1,2})(?:\s*[-–/]\s*(\d{1,2}))?(?=[^a-zα-ω0-9]|$)/g;
   const scaleNear = (slice) => {
     const hits = [];
     for (const m of slice.matchAll(SCALE_RE)) {
@@ -153,10 +173,14 @@ export function scaleFromText(text) {
     return hits;
   };
 
-  // Look near «κλίμακα» or «κλίμακες» — the authoritative statement
-  const CUE_RE = /κλιμακ/g;
+  // Look near scale cue words — Greek «κλίμακα» and English «payscale»
+  // Skip boilerplate «μειωμένη κλίμακα εισδοχής» which is a generic clause.
+  const CUE_RE = /κλιμακ|payscale|pay\s*scale|salary\s*scale/g;
   for (const cue of n.matchAll(CUE_RE)) {
+    const before = n.slice(Math.max(0, cue.index - 30), cue.index);
+    if (/μειωμεν|reduced/i.test(before)) continue;
     const window = n.slice(cue.index, cue.index + 200);
+    if (/μειωμεν\S*\s+κλιμακ/.test(window.slice(0, 30))) continue;
     const hits = scaleNear(window);
     if (hits.length === 0) continue;
     const prefix = hits[0].prefix;
@@ -165,13 +189,30 @@ export function scaleFromText(text) {
     return `${prefix}${nums[0]}–${prefix}${nums[nums.length - 1]}`;
   }
 
-  // Fallback: monthly salary in euros — «μισθός … €1.577,80»
-  const SALARY_RE = /μισθ\S{0,20}\s.*?€\s?([\d.,]+)/;
-  const sal = SALARY_RE.exec(n);
-  if (sal) {
-    const raw = sal[1].replace(/\./g, '').replace(',', '.');
-    const num = Math.round(Number(raw));
+  // Euro salary — monthly or annual. Handles both «€1.577,80» and «32.947,42 €»
+  // and English-style «€1,431.74» or «salary range €18,000 – €23,000».
+  const SALARY_CUES = [
+    /μισθ\S{0,20}\s.{0,60}?€\s?([\d.,]+)/,
+    /μισθ\S{0,20}\s.{0,60}?([\d.,]+)\s*€/,
+    /(?:salary|gross|remuneration|compensation).{0,60}?(?:&euro;|€)\s?([\d.,]+)(?:\s*[-–]\s*(?:&euro;|€)\s?([\d.,]+))?/,
+  ];
+  const fmtSalary = (num) => {
     if (num >= 500 && num <= 15000) return `€${num.toLocaleString('en')}`;
+    if (num >= 15001 && num <= 200000) return `€${Math.round(num / 13).toLocaleString('en')}/μ`;
+    return null;
+  };
+  for (const re of SALARY_CUES) {
+    const sal = re.exec(n);
+    if (!sal) continue;
+    const lo = Math.round(parseEuro(sal[1]));
+    const loFmt = fmtSalary(lo);
+    if (!loFmt) continue;
+    if (sal[2]) {
+      const hi = Math.round(parseEuro(sal[2]));
+      const hiFmt = fmtSalary(hi);
+      if (hiFmt) return `${loFmt}–${hiFmt}`;
+    }
+    return loFmt;
   }
 
   return null;

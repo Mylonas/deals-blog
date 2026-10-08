@@ -3,32 +3,14 @@
 // PDF jobs are handled by pdf.mjs (enrichFromPdf). This module covers
 // HTML job pages: municipality WordPress posts, semi-government sites, etc.
 //
-// Results are cached in the same pdf-cache.json: the key is the URL, and HTML
-// pages have distinct URLs from PDFs, so they coexist without collision.
+// Results are cached in the same pdf-cache.json (shared with pdf.mjs):
+// HTML entries use a `scale:<url>` key, PDF entries sit under their URL.
 
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { get } from './util.mjs';
+import { scaleFromText, enrichFromPdf, loadCache, saveCache } from './pdf.mjs';
 
-import { get, fold } from './util.mjs';
-import { scaleFromText, enrichFromPdf, saveCache } from './pdf.mjs';
-
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
-const CACHE_FILE = join(ROOT, 'src', 'data', 'public-jobs-pdf-cache.json');
-const CACHE_VERSION = 1;
+const CACHE_VERSION = 3;
 const RETRY_AFTER_DAYS = 14;
-
-let cache = null;
-
-async function loadCache() {
-  if (cache) return cache;
-  try {
-    cache = JSON.parse(await readFile(CACHE_FILE, 'utf8'));
-  } catch {
-    cache = {};
-  }
-  return cache;
-}
 
 function isStale(entry) {
   if (!entry.checkedAt) return true;
@@ -49,7 +31,7 @@ async function scaleFromPage(url, timeout) {
   try {
     const html = await get(url, { timeout });
     const body = html.replace(/<style[\s\S]*?<\/style>/gi, '').replace(/<script[\s\S]*?<\/script>/gi, '');
-    const text = body.replace(/<[^>]+>/g, ' ');
+    const text = body.replace(/<[^>]+>/g, ' ').replace(/&euro;/gi, '€').replace(/&nbsp;/gi, ' ');
     entry.scale = scaleFromText(text) ?? undefined;
   } catch (err) {
     entry.error = err.message;

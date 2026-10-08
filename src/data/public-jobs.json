@@ -1,13 +1,7 @@
 {
-  "fetchedAt": "2026-10-08T18:34:26.083Z",
+  "fetchedAt": "2026-10-08T19:36:44.566Z",
   "count": 108,
   "sources": [
-    {
-      "id": "psc",
-      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
-      "count": 6,
-      "error": null
-    },
     {
       "id": "cyta",
       "name": "Cyta (ΑΤΗΚ)",
@@ -15,9 +9,15 @@
       "error": null
     },
     {
-      "id": "hio",
-      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
-      "count": 2,
+      "id": "psc",
+      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
+      "count": 6,
+      "error": null
+    },
+    {
+      "id": "cpa",
+      "name": "Αρχή Λιμένων Κύπρου",
+      "count": 1,
       "error": null
     },
     {
@@ -27,9 +27,9 @@
       "error": null
     },
     {
-      "id": "cpa",
-      "name": "Αρχή Λιμένων Κύπρου",
-      "count": 1,
+      "id": "hio",
+      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "count": 2,
       "error": null
     },
     {
@@ -57,6 +57,19 @@
       "error": null
     },
     {
+      "id": "thoc",
+      "name": "ΘΟΚ (Θεατρικός Οργανισμός Κύπρου)",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "cera",
+      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
+      "count": 0,
+      "error": null,
+      "via": "site→browser"
+    },
+    {
       "id": "eac",
       "name": "ΑΗΚ / Electricity Authority of Cyprus",
       "count": 0,
@@ -69,26 +82,8 @@
       "error": null
     },
     {
-      "id": "thoc",
-      "name": "ΘΟΚ (Θεατρικός Οργανισμός Κύπρου)",
-      "count": 1,
-      "error": null
-    },
-    {
       "id": "centralbank",
       "name": "Κεντρική Τράπεζα της Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "hfc",
-      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "ocecpr",
-      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
       "count": 0,
       "error": null
     },
@@ -99,14 +94,20 @@
       "error": null
     },
     {
+      "id": "hfc",
+      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "cse",
       "name": "Χρηματιστήριο Αξιών Κύπρου",
       "count": 0,
       "error": null
     },
     {
-      "id": "onek",
-      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
+      "id": "ocecpr",
+      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
       "count": 0,
       "error": null
     },
@@ -123,15 +124,15 @@
       "error": null
     },
     {
-      "id": "cys",
-      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
+      "id": "onek",
+      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
       "count": 0,
       "error": null
     },
     {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 5,
+      "id": "cys",
+      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
+      "count": 0,
       "error": null
     },
     {
@@ -141,27 +142,21 @@
       "error": null
     },
     {
-      "id": "ekk",
-      "name": "Ένωση Κοινοτήτων Κύπρου",
+      "id": "research",
+      "name": "ΙδΕΚ (Ίδρυμα Έρευνας και Καινοτομίας)",
       "count": 0,
-      "error": null
-    },
-    {
-      "id": "ucy",
-      "name": "Πανεπιστήμιο Κύπρου",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
-      "count": 1,
       "error": null
     },
     {
       "id": "ucm",
       "name": "Ένωση Δήμων Κύπρου",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 5,
       "error": null
     },
     {
@@ -177,15 +172,27 @@
       "error": null
     },
     {
+      "id": "ucy",
+      "name": "Πανεπιστήμιο Κύπρου",
+      "count": 1,
+      "error": null
+    },
+    {
       "id": "cing",
       "name": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "count": 3,
       "error": null
     },
     {
-      "id": "cyi",
-      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "count": 6,
+      "id": "ekk",
+      "name": "Ένωση Κοινοτήτων Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
+      "count": 1,
       "error": null
     },
     {
@@ -195,27 +202,21 @@
       "error": null
     },
     {
-      "id": "cmmi",
-      "name": "Cyprus Marine and Maritime Institute",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "eoa-lemesou",
       "name": "ΕΟΑ Λεμεσού",
       "count": 9,
       "error": null
     },
     {
-      "id": "eratosthenes",
-      "name": "ERATOSTHENES Centre of Excellence",
-      "count": 1,
+      "id": "cmmi",
+      "name": "Cyprus Marine and Maritime Institute",
+      "count": 0,
       "error": null
     },
     {
-      "id": "research",
-      "name": "ΙδΕΚ (Ίδρυμα Έρευνας και Καινοτομίας)",
-      "count": 0,
+      "id": "cyi",
+      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "count": 6,
       "error": null
     },
     {
@@ -225,26 +226,26 @@
       "error": null
     },
     {
-      "id": "dimos-lefkosias",
-      "name": "Δήμος Λευκωσίας",
-      "count": 11,
-      "error": null
-    },
-    {
       "id": "eoa-ammochostou",
       "name": "ΕΟΑ Αμμοχώστου",
       "count": 3,
       "error": null
     },
     {
-      "id": "eoa-larnakas",
-      "name": "ΕΟΑ Λάρνακας",
+      "id": "dimos-lefkosias",
+      "name": "Δήμος Λευκωσίας",
+      "count": 11,
+      "error": null
+    },
+    {
+      "id": "eratosthenes",
+      "name": "ERATOSTHENES Centre of Excellence",
       "count": 1,
       "error": null
     },
     {
-      "id": "eoa-pafou",
-      "name": "ΕΟΑ Πάφου",
+      "id": "dimos-lakatamias",
+      "name": "Δήμος Λακατάμειας",
       "count": 0,
       "error": null
     },
@@ -261,14 +262,44 @@
       "error": null
     },
     {
-      "id": "dimos-lakatamias",
-      "name": "Δήμος Λακατάμειας",
-      "count": 0,
+      "id": "eoa-larnakas",
+      "name": "ΕΟΑ Λάρνακας",
+      "count": 1,
       "error": null
     },
     {
       "id": "dimos-polemidion",
       "name": "Δήμος Πολεμιδιών",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-anatolikis-lemesou",
+      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "eoa-pafou",
+      "name": "ΕΟΑ Πάφου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-dytikis-lemesou",
+      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
+      "count": 6,
+      "error": null
+    },
+    {
+      "id": "dimos-aradippou",
+      "name": "Δήμος Αραδίππου",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "dimos-lefkaron",
+      "name": "Δήμος Λευκάρων",
       "count": 0,
       "error": null
     },
@@ -279,15 +310,9 @@
       "error": null
     },
     {
-      "id": "dimos-anatolikis-lemesou",
-      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-dytikis-lemesou",
-      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
-      "count": 6,
+      "id": "dimos-pafou",
+      "name": "Δήμος Πάφου",
+      "count": 3,
       "error": null
     },
     {
@@ -303,15 +328,9 @@
       "error": null
     },
     {
-      "id": "dimos-lefkaron",
-      "name": "Δήμος Λευκάρων",
+      "id": "dimos-polis-chrysochous",
+      "name": "Δήμος Πόλης Χρυσοχούς",
       "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-aradippou",
-      "name": "Δήμος Αραδίππου",
-      "count": 1,
       "error": null
     },
     {
@@ -319,24 +338,6 @@
       "name": "Δήμος Αθηένου",
       "count": 2,
       "error": null
-    },
-    {
-      "id": "dimos-pafou",
-      "name": "Δήμος Πάφου",
-      "count": 3,
-      "error": null
-    },
-    {
-      "id": "dimos-polis-chrysochous",
-      "name": "Δήμος Πόλης Χρυσοχούς",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "cybc",
-      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
-      "count": 0,
-      "error": "HTTP 522"
     },
     {
       "id": "dimos-agias-napas",
@@ -363,11 +364,10 @@
       "error": null
     },
     {
-      "id": "cera",
-      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
+      "id": "cybc",
+      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
       "count": 0,
-      "error": "HTTP 403; browser fallback: page.goto: Timeout 45000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.cera.org.cy/el-gr/raek/details/theseis-ergasias\", waiting until \"commit\"\u001b[22m\n",
-      "blocked": true
+      "error": "HTTP 522"
     },
     {
       "id": "dimos-anatolikis-pafou",
@@ -434,7 +434,8 @@
           "lon": 33.5333
         }
       ],
-      "locationFrom": "title"
+      "locationFrom": "title",
+      "scale": "€1,578"
     },
     {
       "id": "e00f977ae1db",
@@ -1454,7 +1455,8 @@
           "lon": 33.345
         }
       ],
-      "locationFrom": "employer"
+      "locationFrom": "employer",
+      "scale": "€1,404"
     },
     {
       "id": "74b743d16e2b",
@@ -1977,7 +1979,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€6,167/μ–€8,266/μ"
     },
     {
       "id": "7b2b7de7b82c",
@@ -1999,7 +2002,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€6,167/μ–€8,266/μ"
     },
     {
       "id": "2210417e74e7",
@@ -2021,7 +2025,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€6,167/μ–€8,266/μ"
     },
     {
       "id": "1dd23334d2a3",
@@ -2043,7 +2048,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€5,441/μ"
     },
     {
       "id": "e8de86675b12",
@@ -2109,7 +2115,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "A4–A7"
     },
     {
       "id": "0f52c29a08bd",
@@ -2131,7 +2138,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "A4–A7"
     },
     {
       "id": "03e6b37648f5",
@@ -2153,7 +2161,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "A4–A7"
     },
     {
       "id": "013750cee2e9",
@@ -2249,7 +2258,8 @@
           "lon": 33.9614
         }
       ],
-      "locationFrom": "title"
+      "locationFrom": "title",
+      "scale": "€4,438/μ"
     },
     {
       "id": "c5ae77dd3efa",
@@ -2271,7 +2281,8 @@
           "lon": 33.0226
         }
       ],
-      "locationFrom": "title"
+      "locationFrom": "title",
+      "scale": "€2,042/μ"
     },
     {
       "id": "42d950d536cf",
@@ -2293,7 +2304,8 @@
           "lon": 33.0226
         }
       ],
-      "locationFrom": "title"
+      "locationFrom": "title",
+      "scale": "€2,534/μ"
     },
     {
       "id": "d728ee1d9ddd",
@@ -2329,7 +2341,8 @@
           "lon": 32.8619
         }
       ],
-      "locationFrom": "title"
+      "locationFrom": "title",
+      "scale": "€4,438/μ"
     },
     {
       "id": "80f92dc533b8",
@@ -2461,7 +2474,8 @@
           "lon": 33.0226
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€2,136"
     },
     {
       "id": "19fac1066371",
@@ -2483,7 +2497,8 @@
           "lon": 33.0226
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€2,136"
     },
     {
       "id": "3429e0b65c19",
@@ -2593,7 +2608,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€1,385/μ–€1,769/μ"
     },
     {
       "id": "eee73715daef",
@@ -2615,7 +2631,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€1,385/μ–€2,308/μ"
     },
     {
       "id": "8aa740fb5103",
@@ -2637,7 +2654,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€1,385/μ–€2,462/μ"
     },
     {
       "id": "d90465f76e71",
@@ -2659,7 +2677,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€1,385/μ–€2,462/μ"
     },
     {
       "id": "8923f62c1dd5",
@@ -2681,7 +2700,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€1,385/μ–€2,462/μ"
     },
     {
       "id": "228e8243c45b",
@@ -2703,7 +2723,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€2,308/μ–€3,462/μ"
     },
     {
       "id": "05817b3e1c6f",
@@ -2725,7 +2746,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "scale": "€2,308/μ–€3,462/μ"
     },
     {
       "id": "44c2c0f531b1",
