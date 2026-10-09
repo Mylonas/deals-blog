@@ -121,20 +121,28 @@ async function fetchAllProducts() {
 async function findCheapestStore(product) {
   const minPrice = product.startPrice;
   for (const [id, name] of MAJOR_CHAINS) {
-    try {
-      const url = `${API}/fetch-product-list?page=0&size=5&productName=${encodeURIComponent(product.name)}&companyIds=${id}`;
-      const res = await fetch(url, {
-        headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" },
-        signal: AbortSignal.timeout(15000),
-      });
-      if (!res.ok) continue;
-      const json = await res.json();
-      const match = json.content?.find(
-        (p) => p.productMasterId === product.productMasterId && p.startPrice <= minPrice + 0.005
-      );
-      if (match) return name;
-    } catch {
-      // skip this chain
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        if (attempt > 0) await new Promise((r) => setTimeout(r, 3000));
+        const url = `${API}/fetch-product-list?page=0&size=5&productName=${encodeURIComponent(product.name)}&companyIds=${id}`;
+        const res = await fetch(url, {
+          headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" },
+          signal: AbortSignal.timeout(15000),
+        });
+        if (res.status === 429) {
+          await new Promise((r) => setTimeout(r, 5000));
+          continue;
+        }
+        if (!res.ok) break;
+        const json = await res.json();
+        const match = json.content?.find(
+          (p) => p.productMasterId === product.productMasterId && p.startPrice <= minPrice + 0.005
+        );
+        if (match) return name;
+        break;
+      } catch {
+        // retry once
+      }
     }
   }
   return null;
@@ -443,6 +451,7 @@ async function main() {
     const store = await findCheapestStore(p);
     if (store) dealStores.set(p.productMasterId, store);
     console.log(`  ${p.name.slice(0, 40)}: ${store ?? "unidentified"}`);
+    await new Promise((r) => setTimeout(r, 500));
   }
 
   const deals = dealsSlice.map((p) =>
@@ -472,6 +481,7 @@ async function main() {
     const store = await findCheapestStore(p);
     if (store) atlStores.set(p.productMasterId, store);
     console.log(`  ${p.name.slice(0, 40)}: ${store ?? "unidentified"}`);
+    await new Promise((r) => setTimeout(r, 500));
   }
 
   const allTimeLows = atlSlice.map(({ p, atl, history }) =>
@@ -509,6 +519,7 @@ async function main() {
     const store = await findCheapestStore(p);
     if (store) nearStores.set(p.productMasterId, store);
     console.log(`  ${p.name.slice(0, 40)}: ${store ?? "unidentified"}`);
+    await new Promise((r) => setTimeout(r, 500));
   }
 
   const nearLows = nearSlice.map(({ p, near, history }) => ({

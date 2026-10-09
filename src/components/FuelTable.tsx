@@ -140,7 +140,7 @@ type GeoState = "idle" | "loading" | "active" | "denied" | "unsupported";
 
 const UI = {
   en: {
-    nearMe: "Near Me", locating: "Locating…", denied: "Location denied", unsupported: "Location unavailable",
+    nearMe: "Near Me", locating: "Locating…", denied: "Location denied — tap to retry", unsupported: "Location unavailable",
     nearMeActive: "Near Me ✕", nearMeSubtitle: "Sorted by distance from your location",
     viewList: "☰ List", viewMap: "🗺 Map",
     mapOpen: "Open in Google Maps →", mapAria: "Petrol stations map",
@@ -152,7 +152,7 @@ const UI = {
     stale: (d: string) => `Prices last updated ${d}. The government fuel portal now requires a CY Login account, so automatic updates are paused and prices may have changed since.`,
   },
   el: {
-    nearMe: "Κοντά μου", locating: "Εντοπισμός…", denied: "Άρνηση τοποθεσίας", unsupported: "Μη διαθέσιμο",
+    nearMe: "Κοντά μου", locating: "Εντοπισμός…", denied: "Άρνηση — πατήστε ξανά", unsupported: "Μη διαθέσιμο",
     nearMeActive: "Κοντά μου ✕", nearMeSubtitle: "Ταξινόμηση κατά απόσταση",
     viewList: "☰ Λίστα", viewMap: "🗺 Χάρτης",
     mapOpen: "Άνοιγμα στο Google Maps →", mapAria: "Χάρτης πρατηρίων καυσίμων",
@@ -164,7 +164,7 @@ const UI = {
     stale: (d: string) => `Τελευταία ενημέρωση τιμών: ${d} — η κυβερνητική πύλη τιμών καυσίμων απαιτεί πλέον λογαριασμό CY Login, οπότε οι αυτόματες ενημερώσεις έχουν ανασταλεί και οι τιμές ενδέχεται να έχουν αλλάξει.`,
   },
   ru: {
-    nearMe: "Рядом", locating: "Поиск…", denied: "Геолокация отклонена", unsupported: "Недоступно",
+    nearMe: "Рядом", locating: "Поиск…", denied: "Отклонено — нажмите снова", unsupported: "Недоступно",
     nearMeActive: "Рядом ✕", nearMeSubtitle: "Сортировка по расстоянию",
     viewList: "☰ Список", viewMap: "🗺 Карта",
     mapOpen: "Открыть в Google Maps →", mapAria: "Карта АЗС",
@@ -212,9 +212,13 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
       (pos) => {
         setUserCoords({ lat: pos.coords.latitude, lng: pos.coords.longitude });
         setGeoState("active");
-        setDistrict("All"); // reset district filter — near-me handles sorting
+        setDistrict("All");
       },
-      () => setGeoState("denied")
+      () => {
+        setGeoState("denied");
+        setTimeout(() => setGeoState("idle"), 4000);
+      },
+      { timeout: 10000 }
     );
   }, []);
 
@@ -287,7 +291,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
         {!isNearMe ? (
           <button
             onClick={requestLocation}
-            disabled={geoState === "loading" || geoState === "denied" || geoState === "unsupported"}
+            disabled={geoState === "loading" || geoState === "unsupported"}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${
               geoState === "denied" || geoState === "unsupported"
                 ? "border-red-200 text-red-400 cursor-not-allowed bg-red-50 dark:bg-red-950/20 dark:border-red-900/50 dark:text-red-400"

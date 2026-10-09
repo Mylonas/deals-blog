@@ -136,7 +136,11 @@ export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: La
         setUserCoords({ lat: pos.coords.latitude, lng: pos.coords.longitude });
         setGeoState("active");
       },
-      () => setGeoState("denied")
+      () => {
+        setGeoState("denied");
+        setTimeout(() => setGeoState("idle"), 4000);
+      },
+      { timeout: 10000 }
     );
   }, []);
 

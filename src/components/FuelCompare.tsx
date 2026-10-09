@@ -44,6 +44,28 @@ const FUEL_TYPE_TO_KEY: Record<string, FuelKey[]> = {
   electric: [],
 };
 
+const GR: Record<string, string> = {
+  "α": "a", "ά": "a", "β": "v", "γ": "g", "δ": "d", "ε": "e", "έ": "e",
+  "ζ": "z", "η": "i", "ή": "i", "θ": "th", "ι": "i", "ί": "i", "ϊ": "i",
+  "κ": "k", "λ": "l", "μ": "m", "ν": "n", "ξ": "x", "ο": "o", "ό": "o",
+  "π": "p", "ρ": "r", "σ": "s", "ς": "s", "τ": "t", "υ": "y", "ύ": "y",
+  "ϋ": "y", "φ": "f", "χ": "ch", "ψ": "ps", "ω": "o", "ώ": "o",
+};
+const DI: Record<string, string> = {
+  "αι": "e", "ει": "i", "οι": "i", "ου": "ou", "αυ": "av", "ευ": "ev",
+  "μπ": "b", "ντ": "nt", "γκ": "gk", "γγ": "ng", "τσ": "ts", "τζ": "tz",
+};
+function toLatin(s: string): string {
+  const low = s.toLowerCase();
+  let out = "";
+  for (let i = 0; i < low.length; i++) {
+    const pair = low[i] + (low[i + 1] ?? "");
+    if (DI[pair]) { out += DI[pair]; i++; continue; }
+    out += GR[low[i]] ?? low[i];
+  }
+  return out;
+}
+
 const UI = {
   en: {
     title: "Compare Fuel Stations",
@@ -64,7 +86,7 @@ const UI = {
     calculate: "Calculate",
     results: "Monthly Comparison",
     costAt: "Cost at",
-    perFill: "per fill",
+    perFill: "per fill (≈85% of tank)",
     perMonth: "per month",
     saving: "You save",
     perMonthLabel: "/month",
@@ -95,7 +117,7 @@ const UI = {
     calculate: "Υπολογισμός",
     results: "Μηνιαία Σύγκριση",
     costAt: "Κόστος στο",
-    perFill: "ανά γέμισμα",
+    perFill: "ανά γέμισμα (≈85% ντεπ.)",
     perMonth: "ανά μήνα",
     saving: "Εξοικονομείτε",
     perMonthLabel: "/μήνα",
@@ -126,7 +148,7 @@ const UI = {
     calculate: "Рассчитать",
     results: "Ежемесячное сравнение",
     costAt: "Стоимость на",
-    perFill: "за заправку",
+    perFill: "за заправку (≈85% бака)",
     perMonth: "в месяц",
     saving: "Вы экономите",
     perMonthLabel: "/мес",
@@ -186,7 +208,9 @@ export default function FuelCompare({
           (s) =>
             s.brand.toLowerCase().includes(q) ||
             s.address.toLowerCase().includes(q) ||
-            s.district.toLowerCase().includes(q)
+            s.district.toLowerCase().includes(q) ||
+            toLatin(s.address).includes(q) ||
+            toLatin(s.district).includes(q)
         )
         .slice(0, 20);
     },
@@ -238,8 +262,9 @@ export default function FuelCompare({
   const results = useMemo(() => {
     if (!stationA || !stationB || tankSize <= 0 || refuelsPerMonth <= 0) return null;
 
-    const fillCostA = stationA.price * tankSize;
-    const fillCostB = stationB.price * tankSize;
+    const usableLitres = tankSize * 0.85;
+    const fillCostA = stationA.price * usableLitres;
+    const fillCostB = stationB.price * usableLitres;
     const monthlyCostA = fillCostA * refuelsPerMonth;
     const monthlyCostB = fillCostB * refuelsPerMonth;
     const diff = Math.abs(monthlyCostA - monthlyCostB);
