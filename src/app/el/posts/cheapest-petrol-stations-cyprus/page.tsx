@@ -1,5 +1,6 @@
 import FuelTable from "@/components/FuelTable";
 import FuelChart from "@/components/FuelChart";
+import FuelCompare from "@/components/FuelCompare";
 import data from "@/data/fuel-prices.json";
 import history from "@/data/fuel-price-history.json";
 import Link from "next/link";
@@ -40,6 +41,7 @@ export default function FuelPricesPageEL() {
 
       <FuelTable data={data as any} lang="el" />
       <FuelChart history={(history as any).history} lang="el" />
+      <FuelCompare data={data as any} lang="el" />
 
       <div className="mt-8">
         <Link href="/el/" className="text-sm text-blue-500 hover:underline">

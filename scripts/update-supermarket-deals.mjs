@@ -5,8 +5,9 @@
  *   - allTimeLows: products whose price just hit its lowest recorded level
  *   - nearLows:    products currently within NEAR_ATL_PCT % of their all-time low
  *
- * Note: the e-kalathi public API exposes global minimum prices only — per-chain
- * pricing requires authentication. Prices shown are the lowest available anywhere.
+ * Prices shown are the lowest available anywhere (global minimum). For the deals,
+ * all-time lows, and near-lows, findCheapestStore() queries each major chain to
+ * identify which supermarket offers the product at or near the minimum price.
  * The price-diagram history is an across-chains figure, so all-time-low detection
  * compares it against itself, never against the list price.
  *
@@ -21,6 +22,25 @@ const ROOT = path.join(__dirname, "..");
 const API = "https://www.e-kalathi.gov.cy/ekalathi-website-server/api";
 const OUT = path.join(ROOT, "src", "data", "supermarket-deals.json");
 const CACHE = path.join(ROOT, "src", "data", "product-price-history.json");
+
+// Supermarket chain IDs from e-kalathi.gov.cy /api/fetch-companies
+const MAJOR_CHAINS = [
+  [453, "LIDL"],
+  [463, "Metro"],
+  [471, "AlphaMega"],
+  [479, "Papantoniou"],
+  [480, "Sklavenitis"],
+  [541, "Kyriacos"],
+  [452, "Alpha Sigma"],
+  [477, "Lysiotis"],
+  [466, "Plus Discount"],
+  [469, "Athinaitis"],
+  [475, "Kokkinos"],
+  [465, "Philippos"],
+  [497, "MAS"],
+  [467, "Poplife"],
+  [468, "Super Discount Store"],
+];
 
 const PAGE_SIZE = 200;
 const TOP_N = 20;
@@ -96,6 +116,28 @@ async function fetchAllProducts() {
   }
 
   return all;
+}
+
+async function findCheapestStore(product) {
+  const minPrice = product.startPrice;
+  for (const [id, name] of MAJOR_CHAINS) {
+    try {
+      const url = `${API}/fetch-product-list?page=0&size=5&productName=${encodeURIComponent(product.name)}&companyIds=${id}`;
+      const res = await fetch(url, {
+        headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" },
+        signal: AbortSignal.timeout(15000),
+      });
+      if (!res.ok) continue;
+      const json = await res.json();
+      const match = json.content?.find(
+        (p) => p.productMasterId === product.productMasterId && p.startPrice <= minPrice + 0.005
+      );
+      if (match) return name;
+    } catch {
+      // skip this chain
+    }
+  }
+  return null;
 }
 
 function discountPct(curr, prev) {
@@ -304,7 +346,7 @@ function detectNearLow(history) {
   return { price: latest, low: min, pctAbove: Math.round(pctAbove * 10) / 10 };
 }
 
-function toDeal(p, { price, previousPrice, discountPct: disc, history, lowSince = undefined }) {
+function toDeal(p, { price, previousPrice, discountPct: disc, history, lowSince = undefined, store = undefined }) {
   const catLabels = CATEGORY_LABELS[p.productCategoryNameEnglish] || {
     en: p.productCategoryNameEnglish || "Other",
     el: p.productCategoryNameEnglish || "Άλλο",
@@ -324,6 +366,7 @@ function toDeal(p, { price, previousPrice, discountPct: disc, history, lowSince 
     availableAtChains: p.numberOfChains || null,
     history,
     ...(lowSince ? { lowSince } : {}),
+    ...(store ? { store } : {}),
   };
 }
 
@@ -392,12 +435,23 @@ async function main() {
   console.log(`\nProducts with discount: ${withDiscount.length}`);
   withDiscount.sort((a, b) => b._disc - a._disc);
 
-  const deals = withDiscount.slice(0, TOP_N).map((p) =>
+  const dealsSlice = withDiscount.slice(0, TOP_N);
+
+  console.log(`\nIdentifying cheapest stores for ${dealsSlice.length} top deals...`);
+  const dealStores = new Map();
+  for (const p of dealsSlice) {
+    const store = await findCheapestStore(p);
+    if (store) dealStores.set(p.productMasterId, store);
+    console.log(`  ${p.name.slice(0, 40)}: ${store ?? "unidentified"}`);
+  }
+
+  const deals = dealsSlice.map((p) =>
     toDeal(p, {
       price: p._curr,
       previousPrice: p._prev,
       discountPct: p._disc,
       history: sparklineOrPrev(p.productMasterId),
+      store: dealStores.get(p.productMasterId) ?? null,
     })
   );
 
@@ -410,13 +464,24 @@ async function main() {
   }
 
   atlCandidates.sort((a, b) => b.atl.pctBelow - a.atl.pctBelow);
-  const allTimeLows = atlCandidates.slice(0, ATL_MAX).map(({ p, atl, history }) =>
+  const atlSlice = atlCandidates.slice(0, ATL_MAX);
+
+  console.log(`\nIdentifying cheapest stores for ${atlSlice.length} all-time lows...`);
+  const atlStores = new Map();
+  for (const { p } of atlSlice) {
+    const store = await findCheapestStore(p);
+    if (store) atlStores.set(p.productMasterId, store);
+    console.log(`  ${p.name.slice(0, 40)}: ${store ?? "unidentified"}`);
+  }
+
+  const allTimeLows = atlSlice.map(({ p, atl, history }) =>
     toDeal(p, {
       price: atl.low,
       previousPrice: atl.prevLow,
       discountPct: atl.pctBelow,
       history: sparkline(history),
       lowSince: atl.lowSince,
+      store: atlStores.get(p.productMasterId) ?? null,
     })
   );
 
@@ -436,12 +501,23 @@ async function main() {
   }
 
   nearCandidates.sort((a, b) => a.near.pctAbove - b.near.pctAbove);
-  const nearLows = nearCandidates.slice(0, NEAR_ATL_MAX).map(({ p, near, history }) => ({
+  const nearSlice = nearCandidates.slice(0, NEAR_ATL_MAX);
+
+  console.log(`\nIdentifying cheapest stores for ${nearSlice.length} near-lows...`);
+  const nearStores = new Map();
+  for (const { p } of nearSlice) {
+    const store = await findCheapestStore(p);
+    if (store) nearStores.set(p.productMasterId, store);
+    console.log(`  ${p.name.slice(0, 40)}: ${store ?? "unidentified"}`);
+  }
+
+  const nearLows = nearSlice.map(({ p, near, history }) => ({
     ...toDeal(p, {
       price: near.price,
       previousPrice: null,
       discountPct: 0,
       history: sparkline(history),
+      store: nearStores.get(p.productMasterId) ?? null,
     }),
     atlPrice: near.low,
     pctAboveLow: near.pctAbove,

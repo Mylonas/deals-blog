@@ -17,9 +17,9 @@ type Lang = "en" | "el" | "ru";
 type SortKey = "label" | "price";
 
 const T = {
-  en: { staple: "Staple", price: "Cheapest Price", brand: "Brand", sortAZ: "A → Z", sortPrice: "Cheapest first", noBrand: "View on e-kalathi", na: "—" },
-  el: { staple: "Προϊόν", price: "Φθηνότερη Τιμή", brand: "Μάρκα", sortAZ: "Α → Ω", sortPrice: "Φθηνότερα πρώτα", noBrand: "Δείτε στο e-kalathi", na: "—" },
-  ru: { staple: "Продукт", price: "Мин. цена", brand: "Бренд", sortAZ: "А → Я", sortPrice: "Сначала дешевле", noBrand: "На e-kalathi", na: "—" },
+  en: { staple: "Staple", price: "Cheapest Price", brand: "Brand", store: "Store", sortAZ: "A → Z", sortPrice: "Cheapest first", noBrand: "View on e-kalathi", na: "—" },
+  el: { staple: "Προϊόν", price: "Φθηνότερη Τιμή", brand: "Μάρκα", store: "Κατάστημα", sortAZ: "Α → Ω", sortPrice: "Φθηνότερα πρώτα", noBrand: "Δείτε στο e-kalathi", na: "—" },
+  ru: { staple: "Продукт", price: "Мин. цена", brand: "Бренд", store: "Магазин", sortAZ: "А → Я", sortPrice: "Сначала дешевле", noBrand: "На e-kalathi", na: "—" },
 };
 
 export default function SupermarketTable({ items, lang, updatedAt }: { items: Item[]; lang: Lang; updatedAt: string }) {
@@ -84,6 +84,7 @@ export default function SupermarketTable({ items, lang, updatedAt }: { items: It
                 {t.price} {sort === "price" && "↑"}
               </th>
               <th className="px-4 py-3 text-left">{t.brand}</th>
+              <th className="px-4 py-3 text-left">{t.store}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
@@ -116,6 +117,15 @@ export default function SupermarketTable({ items, lang, updatedAt }: { items: It
                       <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline text-xs">
                         {t.noBrand} →
                       </a>
+                    ) : (
+                      <span className="text-gray-400 dark:text-gray-500">{t.na}</span>
+                    )}
+                  </td>
+                  <td className="px-4 py-3">
+                    {item.store ? (
+                      <span className="inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+                        {item.store}
+                      </span>
                     ) : (
                       <span className="text-gray-400 dark:text-gray-500">{t.na}</span>
                     )}
