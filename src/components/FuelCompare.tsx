@@ -64,7 +64,7 @@ const UI = {
     calculate: "Calculate",
     results: "Monthly Comparison",
     costAt: "Cost at",
-    perFill: "per fill",
+    perFill: "per fill (≈85% of tank)",
     perMonth: "per month",
     saving: "You save",
     perMonthLabel: "/month",
@@ -95,7 +95,7 @@ const UI = {
     calculate: "Υπολογισμός",
     results: "Μηνιαία Σύγκριση",
     costAt: "Κόστος στο",
-    perFill: "ανά γέμισμα",
+    perFill: "ανά γέμισμα (≈85% ντεπ.)",
     perMonth: "ανά μήνα",
     saving: "Εξοικονομείτε",
     perMonthLabel: "/μήνα",
@@ -126,7 +126,7 @@ const UI = {
     calculate: "Рассчитать",
     results: "Ежемесячное сравнение",
     costAt: "Стоимость на",
-    perFill: "за заправку",
+    perFill: "за заправку (≈85% бака)",
     perMonth: "в месяц",
     saving: "Вы экономите",
     perMonthLabel: "/мес",
@@ -238,8 +238,9 @@ export default function FuelCompare({
   const results = useMemo(() => {
     if (!stationA || !stationB || tankSize <= 0 || refuelsPerMonth <= 0) return null;
 
-    const fillCostA = stationA.price * tankSize;
-    const fillCostB = stationB.price * tankSize;
+    const usableLitres = tankSize * 0.85;
+    const fillCostA = stationA.price * usableLitres;
+    const fillCostB = stationB.price * usableLitres;
     const monthlyCostA = fillCostA * refuelsPerMonth;
     const monthlyCostB = fillCostB * refuelsPerMonth;
     const diff = Math.abs(monthlyCostA - monthlyCostB);
