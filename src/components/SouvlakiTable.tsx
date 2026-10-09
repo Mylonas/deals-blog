@@ -141,7 +141,11 @@ export default function SouvlakiTable({ data, lang }: { data: SouvlakiData; lang
         setUserCoords({ lat: pos.coords.latitude, lng: pos.coords.longitude });
         setGeoState("active");
       },
-      () => setGeoState("denied")
+      () => {
+        setGeoState("denied");
+        setTimeout(() => setGeoState("idle"), 4000);
+      },
+      { timeout: 10000 }
     );
   }, []);
 
