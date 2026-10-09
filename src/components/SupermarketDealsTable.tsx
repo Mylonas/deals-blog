@@ -16,9 +16,10 @@ type Deal = {
   eKalathiUrl: string;
   availableAtChains: number | null;
   history?: PricePoint[];
-  lowSince?: string; // present on all-time-low deals: date the low first appeared
-  atlPrice?: number; // present on near-low deals: the all-time-low price itself
-  pctAboveLow?: number; // present on near-low deals: how far above the low, in %
+  lowSince?: string;
+  atlPrice?: number;
+  pctAboveLow?: number;
+  store?: string | null;
 };
 
 type Lang = "en" | "el" | "ru";
@@ -30,7 +31,7 @@ const T = {
     product: "Product", price: "Price", discount: "Discount", category: "Category",
     sortPrice: "Cheapest first", sortDiscount: "Biggest saving", sortName: "A → Z",
     updated: "Updated", onSale: "On sale", viewAll: "Compare prices →",
-    trend: "6-month price trend",
+    trend: "6-month price trend", cheapestAt: "Cheapest at",
     tabSavings: "Biggest savings", tabLows: "All-time lows",
     lowestEver: "Lowest ever", since: "since",
     nearLow: "Near lowest ever", aboveLow: "above the record low of",
@@ -42,7 +43,7 @@ const T = {
     product: "Προϊόν", price: "Τιμή", discount: "Έκπτωση", category: "Κατηγορία",
     sortPrice: "Φθηνότερα πρώτα", sortDiscount: "Μεγαλύτερη έκπτωση", sortName: "Α → Ω",
     updated: "Ενημέρωση", onSale: "Σε προσφορά", viewAll: "Σύγκριση τιμών →",
-    trend: "Τάση τιμής 6 μηνών",
+    trend: "Τάση τιμής 6 μηνών", cheapestAt: "Φθηνότερο στο",
     tabSavings: "Μεγαλύτερες εκπτώσεις", tabLows: "Ιστορικά χαμηλά",
     lowestEver: "Χαμηλότερη τιμή ποτέ", since: "από",
     nearLow: "Κοντά στο ιστορικό χαμηλό", aboveLow: "πάνω από το ρεκόρ των",
@@ -54,7 +55,7 @@ const T = {
     product: "Продукт", price: "Цена", discount: "Скидка", category: "Категория",
     sortPrice: "Сначала дешевле", sortDiscount: "Наибольшая скидка", sortName: "А → Я",
     updated: "Обновлено", onSale: "Акция", viewAll: "Сравнить цены →",
-    trend: "Динамика цены за 6 месяцев",
+    trend: "Динамика цены за 6 месяцев", cheapestAt: "Дешевле всего в",
     tabSavings: "Лучшие скидки", tabLows: "Исторический минимум",
     lowestEver: "Минимум за всё время", since: "с",
     nearLow: "Близко к минимуму", aboveLow: "выше рекордных",
@@ -221,6 +222,12 @@ export default function SupermarketDealsTable({
                 {deal.pctAboveLow != null && deal.atlPrice != null && (
                   <span className="inline-block mt-1.5 text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
                     ≈ {t.nearLow} · +{deal.pctAboveLow}% {t.aboveLow} €{deal.atlPrice.toFixed(2)}
+                  </span>
+                )}
+                {/* Store badge */}
+                {deal.store && (
+                  <span className="inline-block mt-1.5 text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+                    🏪 {t.cheapestAt} {deal.store}
                   </span>
                 )}
                 {/* Price row */}
