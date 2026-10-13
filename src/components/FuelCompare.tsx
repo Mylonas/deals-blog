@@ -335,8 +335,17 @@ export default function FuelCompare({
     [stations, userCoords]
   );
 
-  const filteredA = useMemo(() => filterStations(searchA), [filterStations, searchA]);
-  const filteredB = useMemo(() => filterStations(searchB), [filterStations, searchB]);
+  // When the field still holds the committed selection's label, treat the
+  // query as empty so re-focusing reopens the full list (letting the user
+  // browse or change the pick) instead of filtering against the label.
+  const filteredA = useMemo(
+    () => filterStations(stationA && searchA === stationLabel(stationA) ? "" : searchA),
+    [filterStations, searchA, stationA]
+  );
+  const filteredB = useMemo(
+    () => filterStations(stationB && searchB === stationLabel(stationB) ? "" : searchB),
+    [filterStations, searchB, stationB]
+  );
 
   const brands = useMemo(
     () => vehicleDb.brands.map((b) => b.brand).sort(),
@@ -523,7 +532,13 @@ export default function FuelCompare({
               setStationA(null);
               setShowResults(false);
             }}
-            onFocus={() => setShowDropA(true)}
+            onFocus={(e) => {
+              setShowDropA(true);
+              if (stationA) e.target.select();
+            }}
+            // Re-clicking an already-focused field (e.g. after a pick, when
+            // the input keeps focus) must still reopen the dropdown.
+            onClick={() => setShowDropA(true)}
             onBlur={() => setShowDropA(false)}
             placeholder={t.searchStation}
             className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -576,7 +591,11 @@ export default function FuelCompare({
               setStationB(null);
               setShowResults(false);
             }}
-            onFocus={() => setShowDropB(true)}
+            onFocus={(e) => {
+              setShowDropB(true);
+              if (stationB) e.target.select();
+            }}
+            onClick={() => setShowDropB(true)}
             onBlur={() => setShowDropB(false)}
             placeholder={t.searchStation}
             className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
