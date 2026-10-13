@@ -231,8 +231,9 @@ function haversine(lat1: number, lng1: number, lat2: number, lng2: number): numb
 
 type GeoState = "idle" | "loading" | "active" | "denied" | "unsupported";
 
-// Number of suggestions shown in each station dropdown.
-const SUGGESTION_LIMIT = 20;
+// Number of suggestions shown in each station dropdown (also the number
+// of nearest stations surfaced once "Locate me" is active).
+const SUGGESTION_LIMIT = 30;
 
 type RankedStation = Station & { _dist?: number };
 
