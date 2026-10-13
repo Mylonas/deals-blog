@@ -48,7 +48,7 @@
         { "model": "X-Trail (2014+)", "years": [2014, 2024], "tankLitres": 55, "fuelType": "petrol" },
         { "model": "Terrano", "years": [1998, 2006], "tankLitres": 80, "fuelType": "diesel" },
         { "model": "Navara", "years": [1998, 2024], "tankLitres": 80, "fuelType": "diesel" },
-        { "model": "Patrol", "years": [1998, 2024], "tankLitres": 100, "fuelType": "petrol" },
+        { "model": "Patrol", "years": [1998, 2024], "tankLitres": 140, "fuelType": "petrol", "generations": [{ "years": [1998, 2009], "tankLitres": 95 }, { "years": [2010, 2024], "tankLitres": 140 }] },
         { "model": "350Z", "years": [2003, 2009], "tankLitres": 76, "fuelType": "petrol" },
         { "model": "370Z / Z", "years": [2009, 2024], "tankLitres": 72, "fuelType": "petrol" },
         { "model": "Leaf", "years": [2011, 2024], "tankLitres": 0, "fuelType": "electric" },
@@ -84,7 +84,7 @@
         { "model": "Getz", "years": [2002, 2011], "tankLitres": 45, "fuelType": "petrol" },
         { "model": "Coupe / Tiburon", "years": [1998, 2009], "tankLitres": 55, "fuelType": "petrol" },
         { "model": "Matrix", "years": [2002, 2010], "tankLitres": 55, "fuelType": "petrol" },
-        { "model": "Sonata", "years": [1998, 2014], "tankLitres": 67, "fuelType": "petrol" },
+        { "model": "Sonata", "years": [1998, 2014], "tankLitres": 70, "fuelType": "petrol", "generations": [{ "years": [1998, 2004], "tankLitres": 65 }, { "years": [2005, 2014], "tankLitres": 70 }] },
         { "model": "Elantra (1998–2010)", "years": [1998, 2010], "tankLitres": 50, "fuelType": "petrol" },
         { "model": "Elantra (2011+)", "years": [2011, 2024], "tankLitres": 50, "fuelType": "petrol" },
         { "model": "i10", "years": [2008, 2024], "tankLitres": 35, "fuelType": "petrol" },
@@ -115,7 +115,7 @@
         { "model": "Sportage (1998–2010)", "years": [1998, 2010], "tankLitres": 55, "fuelType": "petrol" },
         { "model": "Sportage (2011+)", "years": [2011, 2024], "tankLitres": 54, "fuelType": "petrol" },
         { "model": "Sorento", "years": [2003, 2024], "tankLitres": 67, "fuelType": "diesel" },
-        { "model": "Carnival / Sedona", "years": [1999, 2024], "tankLitres": 72, "fuelType": "petrol" },
+        { "model": "Carnival / Sedona", "years": [1999, 2024], "tankLitres": 80, "fuelType": "petrol", "generations": [{ "years": [1999, 2005], "tankLitres": 75 }, { "years": [2006, 2024], "tankLitres": 80 }] },
         { "model": "Carens", "years": [2000, 2019], "tankLitres": 58, "fuelType": "petrol" },
         { "model": "Stonic", "years": [2018, 2024], "tankLitres": 45, "fuelType": "petrol" },
         { "model": "Niro", "years": [2017, 2024], "tankLitres": 43, "fuelType": "petrol" },
@@ -305,7 +305,7 @@
         { "model": "C4 (2011–2020)", "years": [2011, 2020], "tankLitres": 55, "fuelType": "petrol" },
         { "model": "C4 (2021+)", "years": [2021, 2024], "tankLitres": 50, "fuelType": "petrol" },
         { "model": "C4 Picasso / Grand C4 Picasso", "years": [2006, 2020], "tankLitres": 55, "fuelType": "diesel" },
-        { "model": "C5", "years": [2001, 2017], "tankLitres": 66, "fuelType": "diesel" },
+        { "model": "C5", "years": [2001, 2017], "tankLitres": 71, "fuelType": "diesel", "generations": [{ "years": [2001, 2007], "tankLitres": 68 }, { "years": [2008, 2017], "tankLitres": 71 }] },
         { "model": "C5 Aircross", "years": [2019, 2024], "tankLitres": 53, "fuelType": "petrol" },
         { "model": "Berlingo", "years": [1998, 2024], "tankLitres": 50, "fuelType": "diesel" },
         { "model": "Nemo / Jumpy", "years": [2008, 2017], "tankLitres": 45, "fuelType": "diesel" },
@@ -527,7 +527,7 @@
     {
       "brand": "Land Rover",
       "models": [
-        { "model": "Freelander", "years": [1998, 2014], "tankLitres": 55, "fuelType": "petrol" },
+        { "model": "Freelander", "years": [1998, 2014], "tankLitres": 70, "fuelType": "petrol", "generations": [{ "years": [1998, 2006], "tankLitres": 60 }, { "years": [2007, 2014], "tankLitres": 70 }] },
         { "model": "Discovery Sport", "years": [2015, 2024], "tankLitres": 65, "fuelType": "diesel" },
         { "model": "Discovery (1998–2004)", "years": [1998, 2004], "tankLitres": 89, "fuelType": "diesel" },
         { "model": "Discovery (2005–2016)", "years": [2005, 2016], "tankLitres": 82, "fuelType": "diesel" },
@@ -571,7 +571,7 @@
         { "model": "XV / Crosstrek", "years": [2012, 2024], "tankLitres": 48, "fuelType": "petrol" },
         { "model": "Forester (1998–2007)", "years": [1998, 2007], "tankLitres": 60, "fuelType": "petrol" },
         { "model": "Forester (2008+)", "years": [2008, 2024], "tankLitres": 48, "fuelType": "petrol" },
-        { "model": "Outback", "years": [1998, 2024], "tankLitres": 60, "fuelType": "petrol" },
+        { "model": "Outback", "years": [1998, 2024], "tankLitres": 70, "fuelType": "petrol", "generations": [{ "years": [1998, 2008], "tankLitres": 64 }, { "years": [2009, 2024], "tankLitres": 70 }] },
         { "model": "WRX / STI", "years": [2001, 2024], "tankLitres": 60, "fuelType": "petrol" },
         { "model": "BRZ", "years": [2013, 2024], "tankLitres": 50, "fuelType": "petrol" }
       ]
