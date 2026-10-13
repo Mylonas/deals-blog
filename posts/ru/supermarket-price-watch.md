@@ -18,7 +18,7 @@ pinned: false
 | Свежее молоко 1L | **[€2.67](https://www.e-kalathi.gov.cy/product-information/31)** | Charalambides |
 | Яйца | **[€3.99](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
 | Халлуми 200г | **[€1.95](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
-| Спагетти 500г | **[€1.05](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
+| Спагетти 500г | **[€0.95](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Оливковое масло 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
 | Вода 1.5L ×6 | **[€2.12](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
 | Йогурт 450г | **[€1.95](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
