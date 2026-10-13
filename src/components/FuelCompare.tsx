@@ -103,6 +103,13 @@ const UI = {
     stationA: "Station A",
     stationB: "Station B",
     searchStation: "Search by brand or address…",
+    locateMe: "📍 Locate me",
+    locating: "⏳ Locating…",
+    locDenied: "Location denied — tap to retry",
+    locUnsupported: "Location unavailable",
+    nearYou: "Showing stations nearest you — type to search all",
+    clearLoc: "Clear",
+    away: "km away",
     vehicle: "Your Vehicle",
     brand: "Brand",
     model: "Model",
@@ -134,6 +141,13 @@ const UI = {
     stationA: "Πρατήριο Α",
     stationB: "Πρατήριο Β",
     searchStation: "Αναζήτηση κατά εταιρεία ή διεύθυνση…",
+    locateMe: "📍 Εντοπισμός",
+    locating: "⏳ Εντοπισμός…",
+    locDenied: "Άρνηση τοποθεσίας — πατήστε ξανά",
+    locUnsupported: "Μη διαθέσιμη τοποθεσία",
+    nearYou: "Πρατήρια πιο κοντά σας — πληκτρολογήστε για αναζήτηση όλων",
+    clearLoc: "Καθαρισμός",
+    away: "χλμ μακριά",
     vehicle: "Το Όχημά σας",
     brand: "Μάρκα",
     model: "Μοντέλο",
@@ -165,6 +179,13 @@ const UI = {
     stationA: "Станция A",
     stationB: "Станция B",
     searchStation: "Поиск по бренду или адресу…",
+    locateMe: "📍 Найти меня",
+    locating: "⏳ Определение…",
+    locDenied: "Доступ запрещён — нажмите снова",
+    locUnsupported: "Геолокация недоступна",
+    nearYou: "Ближайшие к вам станции — введите текст для поиска всех",
+    clearLoc: "Сбросить",
+    away: "км",
     vehicle: "Ваш автомобиль",
     brand: "Марка",
     model: "Модель",
@@ -195,6 +216,26 @@ function stationLabel(s: Station) {
   return `${s.brand} — ${s.address} (€${s.price.toFixed(3)})`;
 }
 
+// Haversine distance in km
+function haversine(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const R = 6371;
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLng = ((lng2 - lng1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLng / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+type GeoState = "idle" | "loading" | "active" | "denied" | "unsupported";
+
+// Number of suggestions shown in each station dropdown.
+const SUGGESTION_LIMIT = 20;
+
+type RankedStation = Station & { _dist?: number };
+
 export default function FuelCompare({
   data,
   lang = "en",
@@ -224,26 +265,73 @@ export default function FuelCompare({
   const [refuelsPerMonth, setRefuelsPerMonth] = useState(4);
   const [showResults, setShowResults] = useState(false);
 
+  const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
+  const [geoState, setGeoState] = useState<GeoState>("idle");
+
+  const requestLocation = useCallback(() => {
+    if (typeof navigator === "undefined" || !navigator.geolocation) {
+      setGeoState("unsupported");
+      return;
+    }
+    setGeoState("loading");
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        setUserCoords({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+        setGeoState("active");
+      },
+      () => {
+        // On iOS a denial/timeout must stay retryable (a tap later may
+        // succeed once Location Services is on), so fall back to idle
+        // rather than a permanently dead state.
+        setGeoState("denied");
+        setTimeout(() => setGeoState("idle"), 4000);
+      },
+      { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 }
+    );
+  }, []);
+
+  const clearLocation = useCallback(() => {
+    setUserCoords(null);
+    setGeoState("idle");
+  }, []);
+
   const stations = useMemo(() => {
     return data.fuels[fuel]?.stations ?? [];
   }, [fuel, data]);
 
   const filterStations = useCallback(
-    (query: string) => {
-      if (!query.trim()) return stations.slice(0, 20);
-      const q = query.toLowerCase();
-      return stations
-        .filter(
-          (s) =>
-            s.brand.toLowerCase().includes(q) ||
-            s.address.toLowerCase().includes(q) ||
-            s.district.toLowerCase().includes(q) ||
-            toLatin(s.address).includes(q) ||
-            toLatin(s.district).includes(q)
-        )
-        .slice(0, 20);
+    (query: string): RankedStation[] => {
+      const q = query.trim().toLowerCase();
+      const matched = q
+        ? stations.filter(
+            (s) =>
+              s.brand.toLowerCase().includes(q) ||
+              s.address.toLowerCase().includes(q) ||
+              s.district.toLowerCase().includes(q) ||
+              toLatin(s.address).includes(q) ||
+              toLatin(s.district).includes(q)
+          )
+        : stations.slice();
+
+      // With a location fix, rank by distance (nearest first) so the
+      // empty-field dropdown surfaces the closest stations. Typing still
+      // searches the whole list, just ordered by proximity.
+      if (userCoords) {
+        return matched
+          .map((s) => ({
+            ...s,
+            _dist:
+              s.lat != null && s.lng != null
+                ? haversine(userCoords.lat, userCoords.lng, s.lat, s.lng)
+                : Number.POSITIVE_INFINITY,
+          }))
+          .sort((a, b) => a._dist - b._dist)
+          .slice(0, SUGGESTION_LIMIT);
+      }
+
+      return matched.slice(0, SUGGESTION_LIMIT);
     },
-    [stations]
+    [stations, userCoords]
   );
 
   const filteredA = useMemo(() => filterStations(searchA), [filterStations, searchA]);
@@ -385,6 +473,39 @@ export default function FuelCompare({
         </div>
       </div>
 
+      {/* Locate me */}
+      <div className="mb-3 flex items-center gap-3 flex-wrap">
+        <button
+          type="button"
+          onClick={geoState === "active" ? clearLocation : requestLocation}
+          // Only ever disabled during the brief location lookup — never a
+          // dead button on iOS, where "unsupported"/"denied" stay tappable
+          // so the user can retry after enabling Location Services.
+          disabled={geoState === "loading"}
+          aria-busy={geoState === "loading"}
+          className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors disabled:opacity-70 ${
+            geoState === "active"
+              ? "bg-green-600 text-white hover:bg-green-700"
+              : geoState === "denied" || geoState === "unsupported"
+              ? "bg-amber-100 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 hover:bg-amber-200 dark:hover:bg-amber-900/50"
+              : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
+          }`}
+        >
+          {geoState === "loading"
+            ? t.locating
+            : geoState === "denied"
+            ? t.locDenied
+            : geoState === "unsupported"
+            ? t.locUnsupported
+            : geoState === "active"
+            ? `📍 ${t.clearLoc}`
+            : t.locateMe}
+        </button>
+        {geoState === "active" && (
+          <span className="text-xs text-green-700 dark:text-green-400">{t.nearYou}</span>
+        )}
+      </div>
+
       {/* Station selectors */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
         {/* Station A */}
@@ -421,6 +542,11 @@ export default function FuelCompare({
                     {s.brand}
                   </span>
                   <span className="text-gray-500 dark:text-gray-400"> — {s.address}</span>
+                  {s._dist != null && Number.isFinite(s._dist) && (
+                    <span className="ml-1 text-[10px] font-semibold text-blue-600 dark:text-blue-400 whitespace-nowrap">
+                      · {s._dist.toFixed(1)} {t.away}
+                    </span>
+                  )}
                   <span className="float-right font-bold text-green-700 dark:text-green-400">
                     €{s.price.toFixed(3)}
                   </span>
@@ -469,6 +595,11 @@ export default function FuelCompare({
                     {s.brand}
                   </span>
                   <span className="text-gray-500 dark:text-gray-400"> — {s.address}</span>
+                  {s._dist != null && Number.isFinite(s._dist) && (
+                    <span className="ml-1 text-[10px] font-semibold text-blue-600 dark:text-blue-400 whitespace-nowrap">
+                      · {s._dist.toFixed(1)} {t.away}
+                    </span>
+                  )}
                   <span className="float-right font-bold text-green-700 dark:text-green-400">
                     €{s.price.toFixed(3)}
                   </span>
