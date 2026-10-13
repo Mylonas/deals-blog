@@ -358,6 +358,7 @@ export default function FuelCompare({
               setShowResults(false);
             }}
             onFocus={() => setShowDropA(true)}
+            onBlur={() => setShowDropA(false)}
             placeholder={t.searchStation}
             className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -405,6 +406,7 @@ export default function FuelCompare({
               setShowResults(false);
             }}
             onFocus={() => setShowDropB(true)}
+            onBlur={() => setShowDropB(false)}
             placeholder={t.searchStation}
             className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
