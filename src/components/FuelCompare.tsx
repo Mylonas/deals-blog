@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import vehicleDb from "@/data/vehicle-tanks.json";
 
 interface Station {
@@ -23,11 +23,40 @@ interface FuelData {
   };
 }
 
+interface Generation {
+  years: [number, number];
+  tankLitres: number;
+}
+
 interface VehicleModel {
   model: string;
   years: [number, number];
   tankLitres: number;
   fuelType: string;
+  // Optional per-generation tank sizes. When present, the tank for the
+  // selected year is taken from the matching generation; otherwise the
+  // flat tankLitres above is used as a fallback.
+  generations?: Generation[];
+}
+
+// Usable fuel taken on a typical refill: you rarely run the tank to
+// bone-dry (reserve) and pumps cut off before the filler neck brims,
+// so a real fill is roughly 80% of nominal capacity.
+const USABLE_TANK_FRACTION = 0.8;
+
+// Resolve the tank size for a model at a given year, preferring a
+// matching generation over the model-level fallback.
+function tankForYear(
+  model: { tankLitres: number; generations?: { years: readonly number[]; tankLitres: number }[] },
+  year: number
+): number {
+  if (model.generations?.length) {
+    const gen = model.generations.find(
+      (g) => year >= g.years[0] && year <= g.years[1]
+    );
+    if (gen) return gen.tankLitres;
+  }
+  return model.tankLitres;
 }
 
 type FuelKey = "95" | "98" | "diesel" | "heating";
@@ -86,7 +115,7 @@ const UI = {
     calculate: "Calculate",
     results: "Monthly Comparison",
     costAt: "Cost at",
-    perFill: "per fill (≈85% of tank)",
+    perFill: "per fill (≈80% of tank)",
     perMonth: "per month",
     saving: "You save",
     perMonthLabel: "/month",
@@ -117,7 +146,7 @@ const UI = {
     calculate: "Υπολογισμός",
     results: "Μηνιαία Σύγκριση",
     costAt: "Κόστος στο",
-    perFill: "ανά γέμισμα (≈85% ντεπ.)",
+    perFill: "ανά γέμισμα (≈80% ντεπ.)",
     perMonth: "ανά μήνα",
     saving: "Εξοικονομείτε",
     perMonthLabel: "/μήνα",
@@ -148,7 +177,7 @@ const UI = {
     calculate: "Рассчитать",
     results: "Ежемесячное сравнение",
     costAt: "Стоимость на",
-    perFill: "за заправку (≈85% бака)",
+    perFill: "за заправку (≈80% бака)",
     perMonth: "в месяц",
     saving: "Вы экономите",
     perMonthLabel: "/мес",
@@ -247,12 +276,27 @@ export default function FuelCompare({
     return arr;
   }, [selectedModel]);
 
+  // Keep the selected year inside the chosen model's production range so
+  // the generation lookup always lands on a valid year.
+  useEffect(() => {
+    if (!selectedModel) return;
+    const [from, to] = selectedModel.years;
+    setVYear((y) => (y < from || y > to ? to : y));
+  }, [selectedModel]);
+
   const isElectric = selectedModel?.fuelType === "electric";
+
+  // Tank size for the selected year — a matching generation wins over
+  // the model-level fallback, and a manual override wins over both.
+  const modelTank = useMemo(() => {
+    if (!selectedModel) return 0;
+    return tankForYear(selectedModel, vYear);
+  }, [selectedModel, vYear]);
 
   const tankSize = useMemo(() => {
     if (typeof customTank === "number" && customTank > 0) return customTank;
-    return selectedModel?.tankLitres ?? 0;
-  }, [customTank, selectedModel]);
+    return modelTank;
+  }, [customTank, modelTank]);
 
   const matchingFuelKeys = useMemo(() => {
     if (!selectedModel) return availableFuels;
@@ -262,7 +306,7 @@ export default function FuelCompare({
   const results = useMemo(() => {
     if (!stationA || !stationB || tankSize <= 0 || refuelsPerMonth <= 0) return null;
 
-    const usableLitres = tankSize * 0.85;
+    const usableLitres = tankSize * USABLE_TANK_FRACTION;
     const fillCostA = stationA.price * usableLitres;
     const fillCostB = stationB.price * usableLitres;
     const monthlyCostA = fillCostA * refuelsPerMonth;
@@ -513,9 +557,9 @@ export default function FuelCompare({
             <label className="block text-[11px] text-gray-500 dark:text-gray-500 mb-1">
               {t.tankSize}
             </label>
-            {selectedModel && selectedModel.tankLitres > 0 ? (
+            {selectedModel && modelTank > 0 ? (
               <div className="px-2 py-2 rounded-lg border border-green-300 dark:border-green-700 bg-green-50 dark:bg-green-950/30 text-sm font-semibold text-green-800 dark:text-green-300">
-                {selectedModel.tankLitres} {t.litres}
+                {modelTank} {t.litres}
               </div>
             ) : (
               <input
@@ -541,7 +585,7 @@ export default function FuelCompare({
         )}
 
         {/* Custom tank override when a model is selected */}
-        {selectedModel && selectedModel.tankLitres > 0 && (
+        {selectedModel && modelTank > 0 && (
           <div className="mt-2">
             <label className="text-[11px] text-gray-400 dark:text-gray-500">
               {t.orManual}
@@ -555,7 +599,7 @@ export default function FuelCompare({
                 setCustomTank(e.target.value ? Number(e.target.value) : "");
                 setShowResults(false);
               }}
-              placeholder={`${selectedModel.tankLitres}`}
+              placeholder={`${modelTank}`}
               className="ml-2 w-20 px-2 py-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-xs text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <span className="text-[11px] text-gray-400 ml-1">{t.litres}</span>
