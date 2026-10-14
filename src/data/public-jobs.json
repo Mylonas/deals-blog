@@ -1,17 +1,11 @@
 {
-  "fetchedAt": "2026-10-13T12:40:29.524Z",
-  "count": 86,
+  "fetchedAt": "2026-10-14T10:07:30.058Z",
+  "count": 89,
   "sources": [
     {
       "id": "cpa",
       "name": "Αρχή Λιμένων Κύπρου",
       "count": 1,
-      "error": null
-    },
-    {
-      "id": "cyta",
-      "name": "Cyta (ΑΤΗΚ)",
-      "count": 3,
       "error": null
     },
     {
@@ -21,9 +15,9 @@
       "error": null
     },
     {
-      "id": "eey",
-      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
-      "count": 0,
+      "id": "cyta",
+      "name": "Cyta (ΑΤΗΚ)",
+      "count": 3,
       "error": null
     },
     {
@@ -33,14 +27,14 @@
       "error": null
     },
     {
-      "id": "competition",
-      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
+      "id": "eey",
+      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
       "count": 0,
       "error": null
     },
     {
-      "id": "cso",
-      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
+      "id": "competition",
+      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
       "count": 0,
       "error": null
     },
@@ -52,6 +46,12 @@
       "via": "site→browser"
     },
     {
+      "id": "cso",
+      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "cera",
       "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
       "count": 0,
@@ -59,14 +59,14 @@
       "via": "site→browser"
     },
     {
-      "id": "crta",
-      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "id": "thoc",
+      "name": "ΘΟΚ (Θεατρικός Οργανισμός Κύπρου)",
       "count": 1,
       "error": null
     },
     {
-      "id": "thoc",
-      "name": "ΘΟΚ (Θεατρικός Οργανισμός Κύπρου)",
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
       "count": 1,
       "error": null
     },
@@ -111,12 +111,6 @@
       "name": "ΚΟΔΑΠ",
       "count": 0,
       "error": null
-    },
-    {
-      "id": "anad",
-      "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
-      "count": 0,
-      "error": "HTTP 404"
     },
     {
       "id": "onek",
@@ -175,13 +169,19 @@
     {
       "id": "cing",
       "name": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
-      "count": 3,
+      "count": 4,
       "error": null
     },
     {
       "id": "cyi",
       "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
       "count": 7,
+      "error": null
+    },
+    {
+      "id": "ucy",
+      "name": "Πανεπιστήμιο Κύπρου",
+      "count": 0,
       "error": null
     },
     {
@@ -203,27 +203,21 @@
       "error": null
     },
     {
-      "id": "eoa-lemesou",
-      "name": "ΕΟΑ Λεμεσού",
-      "count": 9,
-      "error": null
-    },
-    {
-      "id": "ucy",
-      "name": "Πανεπιστήμιο Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "ucy-academic",
       "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
       "count": 0,
       "error": null
     },
     {
+      "id": "eoa-lemesou",
+      "name": "ΕΟΑ Λεμεσού",
+      "count": 9,
+      "error": null
+    },
+    {
       "id": "eoa-lefkosias",
       "name": "ΕΟΑ Λευκωσίας",
-      "count": 0,
+      "count": 2,
       "error": null
     },
     {
@@ -233,14 +227,14 @@
       "error": null
     },
     {
-      "id": "dimos-lefkosias",
-      "name": "Δήμος Λευκωσίας",
-      "count": 11,
-      "error": null
+      "id": "anad",
+      "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
+      "count": 0,
+      "error": "HTTP 503"
     },
     {
-      "id": "dimos-lakatamias",
-      "name": "Δήμος Λακατάμειας",
+      "id": "eoa-pafou",
+      "name": "ΕΟΑ Πάφου",
       "count": 0,
       "error": null
     },
@@ -251,8 +245,26 @@
       "error": null
     },
     {
+      "id": "dimos-lefkosias",
+      "name": "Δήμος Λευκωσίας",
+      "count": 11,
+      "error": null
+    },
+    {
+      "id": "cybc",
+      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
+      "count": 0,
+      "error": "HTTP 522"
+    },
+    {
       "id": "dimos-notias-lefkosias",
       "name": "Δήμος Νότιας Λευκωσίας-Ιδαλίου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-lakatamias",
+      "name": "Δήμος Λακατάμειας",
       "count": 0,
       "error": null
     },
@@ -263,21 +275,9 @@
       "error": null
     },
     {
-      "id": "eoa-pafou",
-      "name": "ΕΟΑ Πάφου",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "dimos-polemidion",
       "name": "Δήμος Πολεμιδιών",
       "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-latsion-geriou",
-      "name": "Δήμος Λατσιών-Γερίου",
-      "count": 1,
       "error": null
     },
     {
@@ -293,8 +293,14 @@
       "error": null
     },
     {
-      "id": "dimos-aradippou",
-      "name": "Δήμος Αραδίππου",
+      "id": "dimos-latsion-geriou",
+      "name": "Δήμος Λατσιών-Γερίου",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "dimos-lefkaron",
+      "name": "Δήμος Λευκάρων",
       "count": 0,
       "error": null
     },
@@ -305,32 +311,14 @@
       "error": null
     },
     {
-      "id": "cybc",
-      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
+      "id": "dimos-aradippou",
+      "name": "Δήμος Αραδίππου",
       "count": 0,
-      "error": "HTTP 522"
-    },
-    {
-      "id": "dimos-lefkaron",
-      "name": "Δήμος Λευκάρων",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-strovolou",
-      "name": "Δήμος Στροβόλου",
-      "count": 3,
       "error": null
     },
     {
       "id": "dimos-pafou",
       "name": "Δήμος Πάφου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-polis-chrysochous",
-      "name": "Δήμος Πόλης Χρυσοχούς",
       "count": 0,
       "error": null
     },
@@ -341,8 +329,8 @@
       "error": null
     },
     {
-      "id": "dimos-agias-napas",
-      "name": "Δήμος Αγίας Νάπας",
+      "id": "dimos-polis-chrysochous",
+      "name": "Δήμος Πόλης Χρυσοχούς",
       "count": 0,
       "error": null
     },
@@ -350,6 +338,18 @@
       "id": "dimos-akama",
       "name": "Δήμος Ακάμα (Πέγεια)",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-agias-napas",
+      "name": "Δήμος Αγίας Νάπας",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-strovolou",
+      "name": "Δήμος Στροβόλου",
+      "count": 3,
       "error": null
     },
     {
@@ -1558,6 +1558,54 @@
       "scale": "A5–A8"
     },
     {
+      "id": "da5402f1b217",
+      "sourceId": "eoa-lefkosias",
+      "employer": "ΕΟΑ Λευκωσίας",
+      "sector": "district-organisation",
+      "district": "nicosia",
+      "title": "Προκήρυξη (1) Θέσης Διοικητικού Λειτουργού για Συγχρηματοδοτούμενα Έργα και Παροχή Υπηρεσιών Πλατφόρμας Διαχείρησης Δεδομένων (ΕΟΧ)",
+      "url": "https://ndlgo.org.cy/wp-content/uploads/2026/10/prokiriksi-dioikitikou-leitourgou-gia-sygxrimatodotoumena-erga-eox.pdf",
+      "published": "2026-10-01",
+      "deadline": "2026-10-30",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "employer",
+      "deadlineFrom": "pdf",
+      "scale": "A8"
+    },
+    {
+      "id": "12d1e1d08196",
+      "sourceId": "eoa-lefkosias",
+      "employer": "ΕΟΑ Λευκωσίας",
+      "sector": "district-organisation",
+      "district": "nicosia",
+      "title": "Προκήρυξη (8) Θέσεων Ωρομίσθιου Τεχνίτη Ηλεκτρολογίας",
+      "url": "https://ndlgo.org.cy/wp-content/uploads/2026/10/prokiriksi-8-thesewn-oromisthiou-texniti-ilektrologias.pdf",
+      "published": "2026-10-01",
+      "deadline": "2026-10-23",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "employer",
+      "deadlineFrom": "pdf",
+      "scale": "€1,400"
+    },
+    {
       "id": "5fabd65e9351",
       "sourceId": "psc",
       "employer": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
@@ -1911,12 +1959,58 @@
       "locationFrom": "district"
     },
     {
-      "id": "8400472518ab",
+      "id": "03e6b37648f5",
       "sourceId": "cing",
       "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "sector": "research",
       "district": "nicosia",
       "title": "VACANCY FOR ACCOUNTS CLERK",
+      "url": "https://www.cing.ac.cy/en/vacancies#collapse2",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district",
+      "scale": "A4–A7"
+    },
+    {
+      "id": "c4ad560a1d27",
+      "sourceId": "cing",
+      "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
+      "sector": "research",
+      "district": "nicosia",
+      "title": "VACANCY FOR CLINICAL GENETICIST",
+      "url": "https://www.cing.ac.cy/en/vacancies#collapse4",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district",
+      "scale": "A4–A7"
+    },
+    {
+      "id": "8400472518ab",
+      "sourceId": "cing",
+      "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
+      "sector": "research",
+      "district": "nicosia",
+      "title": "VACANCY FOR LABORATORY SCIENTIFIC OFFICER",
       "url": "https://www.cing.ac.cy/en/vacancies#collapse1",
       "published": null,
       "deadline": null,
@@ -1939,31 +2033,8 @@
       "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "sector": "research",
       "district": "nicosia",
-      "title": "VACANCY FOR CLINICAL GENETICIST",
-      "url": "https://www.cing.ac.cy/en/vacancies#collapse3",
-      "published": null,
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district",
-      "scale": "A4–A7"
-    },
-    {
-      "id": "03e6b37648f5",
-      "sourceId": "cing",
-      "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
-      "sector": "research",
-      "district": "nicosia",
       "title": "VACANCY FOR SENIOR CLINICAL GENETICIST / DEPARTMENT HEAD",
-      "url": "https://www.cing.ac.cy/en/vacancies#collapse2",
+      "url": "https://www.cing.ac.cy/en/vacancies#collapse3",
       "published": null,
       "deadline": null,
       "reference": null,
