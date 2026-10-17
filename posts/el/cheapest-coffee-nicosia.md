@@ -10,7 +10,7 @@ pinned: true
 Παρακολουθούμε τις τιμές Freddo Espresso σε καφετέριες σε όλη την Κύπρο — Λευκωσία, Λεμεσό, Λάρνακα, Πάφο και την περιοχή Αγίας Νάπας — και δείχνουμε τα φθηνότερα μέρη σε κάθε πόλη. Οι τιμές προέρχονται από Wolt, Bolt Food και Foody — για κάθε καφετέρια εμφανίζεται η φθηνότερη πλατφόρμα — και ενημερώνονται κάθε 2 ημέρες.
 
 <!-- COFFEE_PRICES_START -->
-*Τελευταία ενημέρωση: 17 Οκτ 2026, 11:22 π.μ. (ΕΕΤ). Ενημέρωση κάθε 2 ημέρες μέσω Wolt, Bolt Food και Foody.*
+*Τελευταία ενημέρωση: 17 Οκτ 2026, 12:53 μ.μ. (ΕΕΤ). Ενημέρωση κάθε 2 ημέρες μέσω Wolt, Bolt Food και Foody.*
 
 ## Freddo Espresso — Φθηνότερα ανά Πόλη
 
@@ -19,25 +19,26 @@ pinned: true
 | Καφετέρια | Τιμή | Μέσω Delivery |
 |------|-------|--------|
 | **[Mini Cafe Mini Donuts](https://food.bolt.eu/en/261-nicosia/p/75978-mini-cafe-mini-donuts)** | €1.80 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/75978-mini-cafe-mini-donuts) |
-| **[Between the Bread Cafe](https://food.bolt.eu/en/261-nicosia/p/119786-between-the-bread-cafe)** | €1.80 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/119786-between-the-bread-cafe) |
 | **[True Heart Cafe](https://wolt.com/en/cyp/nicosia/restaurant/true-heart-cafe)** | €1.90 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/true-heart-cafe) |
-| **[Presse Cafe](https://food.bolt.eu/en/261-nicosia/p/13284-presse-cafe)** | €2.00 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/13284-presse-cafe) |
+| **[Pi Baked & Brew](https://wolt.com/en/cyp/nicosia/restaurant/pi-baked-brew)** | €1.90 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/pi-baked-brew) |
 | **[My Cookie Dough Mall of Cyprus](https://wolt.com/en/cyp/nicosia/restaurant/my-cookie-dough-mall-of-cyprus)** | €2.10 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/my-cookie-dough-mall-of-cyprus) |
 | **[Bake On Wood](https://wolt.com/en/cyp/nicosia/restaurant/bake-on-wood)** | €2.20 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/bake-on-wood) |
-| **[Old Town Yiannis Canteen](https://wolt.com/en/cyp/nicosia/restaurant/old-town-yiannis-canteen)** | €2.20 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/old-town-yiannis-canteen) |
-| **[You Coffee Latsia](https://wolt.com/en/cyp/nicosia/restaurant/you-coffee-latsia)** | €2.20 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/you-coffee-latsia) |
+| **[Caffè River](https://wolt.com/en/cyp/nicosia/restaurant/caffe-river)** | €2.20 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/caffe-river) |
 | **[Hogar All Day](https://wolt.com/en/cyp/nicosia/restaurant/hogar-coffee)** | €2.20 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/hogar-coffee) |
+| **[You Coffee Latsia](https://wolt.com/en/cyp/nicosia/restaurant/you-coffee-latsia)** | €2.20 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/you-coffee-latsia) |
+| **[The Other Way](https://food.bolt.eu/en/261-nicosia/p/50421-the-other-way)** | €2.20 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/50421-the-other-way) |
 | **[Red Coffee Seed](https://food.bolt.eu/en/261-nicosia/p/60411-red-coffee-seed)** | €2.20 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/60411-red-coffee-seed) |
 | **[Vienna Bakeries Latsia](https://wolt.com/en/cyp/nicosia/restaurant/vienna-bakeries-latsia)** | €2.30 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/vienna-bakeries-latsia) |
 | **[Caffe Milano Agios Dometios](https://wolt.com/en/cyp/nicosia/restaurant/caffe-milano-agios-dometios)** | €2.30 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/caffe-milano-agios-dometios) · [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/85447-caffe-milano-agios-dometios) |
 | **[Bakalicom](https://wolt.com/en/cyp/nicosia/restaurant/bakalicom)** | €2.30 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/bakalicom) |
+| **[Gusto Cafe](https://wolt.com/en/cyp/nicosia/restaurant/gusto-caffe)** | €2.30 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/gusto-caffe) |
 | **[Pasafreddo](https://wolt.com/en/cyp/nicosia/restaurant/dna-cafe)** | €2.30 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/dna-cafe) |
-| **[Gusto Cafe](https://wolt.com/en/cyp/nicosia/restaurant/gusto-caffe)** | €2.30 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/gusto-caffe) · [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/143523-gusto-cafe) |
-| **[Coffee Station](https://food.bolt.eu/en/261-nicosia/p/123250-coffee-station)** | €2.30 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/123250-coffee-station) |
 | **[Sandos](https://www.foody.com.cy/delivery/leykosia/sandos-2000682453)** | €2.30 | [Foody](https://www.foody.com.cy/delivery/leykosia/sandos-2000682453) |
-| **[The Other Way Espresso Bar](https://wolt.com/en/cyp/nicosia/restaurant/coffee-way1)** | €2.40 | [Wolt](https://wolt.com/en/cyp/nicosia/restaurant/coffee-way1) |
 | **[Street Coffee](https://food.bolt.eu/en/261-nicosia/p/75062-street-coffee)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/75062-street-coffee) |
 | **[Wise Coffee - Crepes and More](https://food.bolt.eu/en/261-nicosia/p/191417-wise-coffee-crepes-and-more)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/191417-wise-coffee-crepes-and-more) |
+| **[Trust Me Coffee Shop](https://food.bolt.eu/en/261-nicosia/p/292653-trust-me-coffee-shop)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/292653-trust-me-coffee-shop) |
+| **[Coffeeway](https://food.bolt.eu/en/261-nicosia/p/105215-coffeeway)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/105215-coffeeway) |
+| **[Cavello Coffee & Bagels](https://food.bolt.eu/en/261-nicosia/p/862588-cavello-coffee-bagels)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/862588-cavello-coffee-bagels) |
 | **[1957 Sports Bar & Cafe](https://food.bolt.eu/en/261-nicosia/p/42234-1957-sports-bar-cafe)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/42234-1957-sports-bar-cafe) |
 | **[Coffee Cow Strovolos](https://food.bolt.eu/en/261-nicosia/p/15307-coffee-cow-strovolos)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/15307-coffee-cow-strovolos) |
 | **[Two Chimp Coffee & Cake](https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake) |
@@ -68,48 +69,48 @@ pinned: true
 
 | Καφετέρια | Τιμή | Μέσω Delivery |
 |------|-------|--------|
+| **[Love Coffee](https://wolt.com/en/cyp/limassol/restaurant/love-coffee)** | €2.20 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/love-coffee) |
 | **[Coffee Time Cafe](https://wolt.com/en/cyp/limassol/restaurant/coffee-time-cafe)** | €2.20 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/coffee-time-cafe) |
 | **[Vendi Papafilippou Ice Cream](https://wolt.com/en/cyp/limassol/restaurant/vendi-papafilippou-ice-cream)** | €2.30 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/vendi-papafilippou-ice-cream) |
 | **[Bubble Tale Makariou](https://wolt.com/en/cyp/limassol/restaurant/bubble-tale-makariou)** | €2.30 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/bubble-tale-makariou) |
-| **[Goppion Cafe Omonoias](https://wolt.com/en/cyp/limassol/restaurant/goppion-caffe-omonoias)** | €2.30 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/goppion-caffe-omonoias) |
-| **[Snack Attack](https://wolt.com/en/cyp/limassol/restaurant/snack-attack)** | €2.40 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/snack-attack) |
+| **[1862 Coffeehouse](https://wolt.com/en/cyp/limassol/restaurant/1862-coffeehouse-showroom)** | €2.30 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/1862-coffeehouse-showroom) |
+| **[The Doctor Espresso](https://wolt.com/en/cyp/limassol/restaurant/the-doctor-espresso)** | €2.40 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/the-doctor-espresso) |
 | **[Caffe costadoro](https://www.foody.com.cy/delivery/menu/caffe-costadoro)** | €2.40 | [Foody](https://www.foody.com.cy/delivery/menu/caffe-costadoro) |
 | **[First Coffee](https://wolt.com/en/cyp/limassol/restaurant/first-coffee)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/first-coffee) |
 | **[Papantoniou Bakeries Omonoias](https://wolt.com/en/cyp/limassol/restaurant/papantoniou-bakeries-omonoias)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/papantoniou-bakeries-omonoias) |
+| **[Coffee Moment Break](https://wolt.com/en/cyp/limassol/restaurant/coffee-moment-break)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/coffee-moment-break) · [Foody](https://www.foody.com.cy/delivery/lemesos/coffee-moment-break) |
 | **[Karamella Street Food](https://wolt.com/en/cyp/limassol/restaurant/karamela-snack-bar)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/karamela-snack-bar) |
 | **[The Cake Room](https://wolt.com/en/cyp/limassol/restaurant/the-cake-room)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/the-cake-room) · [Foody](https://www.foody.com.cy/delivery/lemesos/the-cake-room-coffee-2000293787) |
-| **[Coffee Taste Polemidia](https://wolt.com/en/cyp/limassol/restaurant/coffee-taste-polemidia)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/coffee-taste-polemidia) |
-| **[Zagros Cafe](https://wolt.com/en/cyp/limassol/restaurant/zagros-coffee-shop)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/zagros-coffee-shop) · [Foody](https://www.foody.com.cy/delivery/lemesos/zagros-cafe-2000676145) |
 | **[Cafe 4 You](https://wolt.com/en/cyp/limassol/restaurant/cafe-4-you)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/cafe-4-you) · [Foody](https://www.foody.com.cy/delivery/lemesos/cafe-4-you-2000388242) |
 | **[French Toast Factory](https://www.foody.com.cy/delivery/menu/french-toast-factory)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/menu/french-toast-factory) |
 | **[Coffee Guru](https://www.foody.com.cy/delivery/lemesos/coffee-guru)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/lemesos/coffee-guru) |
-| **[Coffee Moment Break](https://www.foody.com.cy/delivery/lemesos/coffee-moment-break)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/lemesos/coffee-moment-break) |
 | **[Gymania Cafe](https://www.foody.com.cy/delivery/lemesos/gymania-cafe-2000542534)** | €2.60 | [Foody](https://www.foody.com.cy/delivery/lemesos/gymania-cafe-2000542534) |
+| **[Zagros cafe](https://www.foody.com.cy/delivery/lemesos/zagros-cafe-2000676145)** | €2.70 | [Foody](https://www.foody.com.cy/delivery/lemesos/zagros-cafe-2000676145) |
 | **[Naked Bean](https://www.foody.com.cy/delivery/lemesos/naked-bean-2000776523)** | €2.70 | [Foody](https://www.foody.com.cy/delivery/lemesos/naked-bean-2000776523) |
 | **[Drip Cartel](https://www.foody.com.cy/delivery/lemesos/Dripcartel-2000775334)** | €2.70 | [Foody](https://www.foody.com.cy/delivery/lemesos/Dripcartel-2000775334) |
 | **[Bean Around](https://www.foody.com.cy/delivery/lemesos/bean-around)** | €2.70 | [Foody](https://www.foody.com.cy/delivery/lemesos/bean-around) |
 | **[Bean Theory Coffee](https://www.foody.com.cy/delivery/lemesos/bean-theory-coffee-2000779002)** | €2.70 | [Foody](https://www.foody.com.cy/delivery/lemesos/bean-theory-coffee-2000779002) |
 
-**Φθηνότερο**: **[Coffee Time Cafe](https://wolt.com/en/cyp/limassol/restaurant/coffee-time-cafe)** — €2.20
+**Φθηνότερο**: **[Love Coffee](https://wolt.com/en/cyp/limassol/restaurant/love-coffee)** — €2.20
 
 ### Λάρνακα
 
 | Καφετέρια | Τιμή | Μέσω Delivery |
 |------|-------|--------|
+| **[Coffee AAP](https://wolt.com/en/cyp/larnaca/restaurant/coffee-aap)** | €2.00 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/coffee-aap) |
 | **[Coffeetainer](https://wolt.com/en/cyp/larnaca/restaurant/coffeetainer)** | €2.20 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/coffeetainer) |
+| **[My Coffee Cup](https://wolt.com/en/cyp/larnaca/restaurant/my-coffee-cup)** | €2.20 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/my-coffee-cup) |
 | **[Espresso Nine 9](https://www.foody.com.cy/delivery/larnaka/espresso-nine-9-2000700422)** | €2.30 | [Foody](https://www.foody.com.cy/delivery/larnaka/espresso-nine-9-2000700422) |
-| **[Coffee Berry Spyrou Kyprianou](https://wolt.com/en/cyp/larnaca/restaurant/coffee-berry-spyrou-kyprianou)** | €2.40 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/coffee-berry-spyrou-kyprianou) |
-| **[Spotaki Coffee to Go](https://wolt.com/en/cyp/larnaca/restaurant/spotaki-coffee-to-go)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/spotaki-coffee-to-go) |
 | **[Mingle Cafe](https://wolt.com/en/cyp/larnaca/restaurant/mingle-cafe)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/mingle-cafe) |
+| **[Ap' to Vorra](https://wolt.com/en/cyp/larnaca/restaurant/ap-to-vorra)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/ap-to-vorra) |
+| **[Panther Eye Coffee & More](https://wolt.com/en/cyp/larnaca/restaurant/panther-eye-coffee-more)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/panther-eye-coffee-more) · [Foody](https://www.foody.com.cy/delivery/larnaka/panther-eye-coffee-kai-more-2000630452) |
 | **[Cafe 21](https://wolt.com/en/cyp/larnaca/restaurant/cafe-21)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/cafe-21) |
-| **[Santai Lounge Larnaca](https://wolt.com/en/cyp/larnaca/restaurant/santai-lounge-larnaca)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/santai-lounge-larnaca) |
-| **[Cup. Cafe](https://wolt.com/en/cyp/larnaca/restaurant/cup-cafe-new)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/cup-cafe-new) |
+| **[Brewtopia Coffee](https://wolt.com/en/cyp/larnaca/restaurant/brewtopia-coffee)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/brewtopia-coffee) |
+| **[Hot Shot Coffee Shop](https://wolt.com/en/cyp/larnaca/restaurant/hot-shot-coffee-shop)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/hot-shot-coffee-shop) |
+| **[Kafeneion 26 Coffee House](https://wolt.com/en/cyp/larnaca/restaurant/kafeneion-26-coffee-house)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/kafeneion-26-coffee-house) |
+| **[Red Panda Specialty Coffee](https://wolt.com/en/cyp/larnaca/restaurant/red-panda-coffe-co)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/red-panda-coffe-co) |
 | **[Tiny Cup Coffeeshop](https://wolt.com/en/cyp/larnaca/restaurant/tiny-cup-coffeeshop)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/tiny-cup-coffeeshop) |
-| **[The Bean Yard Coffee House](https://wolt.com/en/cyp/larnaca/restaurant/the-bean-yard-coffee-house)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/the-bean-yard-coffee-house) · [Foody](https://www.foody.com.cy/delivery/menu/the-bean-yard) |
-| **[Fournoi Pirillos Kiti](https://wolt.com/en/cyp/larnaca/restaurant/fournoi-pirillos-kiti)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/fournoi-pirillos-kiti) |
-| **[40 Feet Coffee](https://wolt.com/en/cyp/larnaca/restaurant/40-feet-coffee)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/40-feet-coffee) |
-| **[Bakehouse By Florentia](https://wolt.com/en/cyp/larnaca/restaurant/florentia-bakehouse)** | €2.50 | [Wolt](https://wolt.com/en/cyp/larnaca/restaurant/florentia-bakehouse) |
-| **[Panther Eye Coffee & More](https://www.foody.com.cy/delivery/larnaka/panther-eye-coffee-kai-more-2000630452)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/larnaka/panther-eye-coffee-kai-more-2000630452) |
+| **[The Bean Yard](https://www.foody.com.cy/delivery/menu/the-bean-yard)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/menu/the-bean-yard) |
 | **[Cheers Coffee](https://www.foody.com.cy/delivery/larnaka/cheers-coffee-2000328894)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/larnaka/cheers-coffee-2000328894) |
 | **[Bean & Brew](https://www.foody.com.cy/delivery/larnaka/bean-kai-brew-2000297611)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/larnaka/bean-kai-brew-2000297611) |
 | **[Bean Hero Coffee](https://www.foody.com.cy/delivery/larnaka/bean-hero-coffee-2000702590)** | €2.60 | [Foody](https://www.foody.com.cy/delivery/larnaka/bean-hero-coffee-2000702590) |
@@ -118,7 +119,7 @@ pinned: true
 | **[Tigrato Café Kiti](https://www.foody.com.cy/delivery/larnaka/tigrato-cafe-kiti-2000783583)** | €2.80 | [Foody](https://www.foody.com.cy/delivery/larnaka/tigrato-cafe-kiti-2000783583) |
 | **[Albatros Pub & Cafe](https://www.foody.com.cy/delivery/larnaka/albatros-pub-kai-cafe-2000789036)** | €3.80 | [Foody](https://www.foody.com.cy/delivery/larnaka/albatros-pub-kai-cafe-2000789036) |
 
-**Φθηνότερο**: **[Coffeetainer](https://wolt.com/en/cyp/larnaca/restaurant/coffeetainer)** — €2.20
+**Φθηνότερο**: **[Coffee AAP](https://wolt.com/en/cyp/larnaca/restaurant/coffee-aap)** — €2.00
 
 ### Πάφος
 
@@ -215,7 +216,7 @@ pinned: true
 
 ## Πιο Δημοφιλή Ποτά ανά Καφετέρια (Λευκωσία)
 
-*Δημοφιλή ποτά — τελευταία συλλογή: 15 Οκτ 2026, 01:31 μ.μ..*
+*Δημοφιλή ποτά — τελευταία συλλογή: 17 Οκτ 2026, 12:53 μ.μ..*
 
 ### Coffeeway
 
@@ -291,11 +292,7 @@ pinned: true
 
 | Ποτό | Τιμή | Πηγή |
 |------|-------|--------|
-| Freddo Espresso | €2.95 | Wolt |
-| Freddo Cappuccino | €3.15 | Wolt |
-| Iced Latte | €3.35 | Wolt |
-| Iced Signature Latte | €3.35 | Wolt |
-| Iced Americano | €2.50 | Wolt |
+| Freddo Espresso 14oz | €3.00 | Wolt |
 
 ### Costa Coffee
 
@@ -354,13 +351,23 @@ pinned: true
 |------|-------|--------|
 | Freddo Espresso | €2.30 | Wolt |
 
+### [Bakalicom](https://www.google.com/maps/search/Bakalicom%20Nicosia%20Cyprus)
+
+| Ποτό | Τιμή | Πηγή |
+|------|-------|--------|
+| Freddo Espresso | €2.30 | Wolt |
+| Freddo Cappuccino | €2.80 | Wolt |
+| Iced Latte | €2.80 | Wolt |
+| Iced Americano | €2.30 | Wolt |
+| Iced Dark Mocha | €2.80 | Wolt |
+
 ### Le Gout
 
 | Ποτό | Τιμή | Πηγή |
 |------|-------|--------|
 | Freddo Espresso | €2.80 | Wolt |
 | Freddo Cappuccino | €3.30 | Wolt |
-| Iced Latte | €3.30 | Wolt |
+| Iced Latte | €3.03 | Wolt |
 | Iced Latte Macchiato | €3.30 | Wolt |
 | Iced Americano | €2.80 | Wolt |
 
@@ -422,7 +429,7 @@ pinned: true
 | Specialty Blend Coffee Beans | €10.00 | Wolt |
 | Κόκκοι καφέ μονής προέλευσης από το Περού | €10.00 | Wolt |
 | Κόκκοι καφέ μονής προέλευσης από την Ονδούρα | €10.00 | Wolt |
-| Freddo Espresso | €3.50 | Wolt |
+| Freddo Espresso | €3.60 | Wolt |
 
 ### Cafe La Mode
 
