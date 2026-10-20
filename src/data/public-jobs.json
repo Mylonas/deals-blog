@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-19T10:44:11.119Z",
+  "fetchedAt": "2026-10-20T10:01:13.567Z",
   "count": 87,
   "sources": [
     {
@@ -28,10 +28,11 @@
       "via": "site→browser"
     },
     {
-      "id": "eey",
-      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
+      "id": "ocecpr",
+      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
       "count": 0,
-      "error": null
+      "error": null,
+      "via": "site→browser"
     },
     {
       "id": "cyta",
@@ -41,45 +42,14 @@
       "carriedForward": true
     },
     {
-      "id": "ocecpr",
-      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
-      "count": 0,
-      "error": null,
-      "via": "site→browser"
-    },
-    {
       "id": "cso",
       "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
       "count": 0,
       "error": null
     },
     {
-      "id": "competition",
-      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "thoc",
-      "name": "ΘΟΚ (Θεατρικός Οργανισμός Κύπρου)",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "crta",
-      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "cysec",
-      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "centralbank",
-      "name": "Κεντρική Τράπεζα της Κύπρου",
+      "id": "eey",
+      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
       "count": 0,
       "error": null
     },
@@ -90,8 +60,26 @@
       "error": null
     },
     {
-      "id": "kedipes",
-      "name": "ΚΕΔΙΠΕΣ",
+      "id": "thoc",
+      "name": "ΘΟΚ (Θεατρικός Οργανισμός Κύπρου)",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "cysec",
+      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "centralbank",
+      "name": "Κεντρική Τράπεζα της Κύπρου",
       "count": 0,
       "error": null
     },
@@ -102,8 +90,15 @@
       "error": null
     },
     {
-      "id": "cse",
-      "name": "Χρηματιστήριο Αξιών Κύπρου",
+      "id": "competition",
+      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
+      "count": 0,
+      "error": "fetch failed; browser fallback: page.goto: net::ERR_EMPTY_RESPONSE at https://www.competition.gov.cy/competition/competition.nsf/page34_gr/page34_gr?OpenDocument\nCall log:\n  - navigating to \"https://www.competition.gov.cy/competition/competition.nsf/page34_gr/page34_gr?OpenDocument\", waiting until \"domcontentloaded\"\n",
+      "blocked": true
+    },
+    {
+      "id": "onek",
+      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
       "count": 0,
       "error": null
     },
@@ -114,14 +109,20 @@
       "error": null
     },
     {
+      "id": "cse",
+      "name": "Χρηματιστήριο Αξιών Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "anad",
       "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
       "count": 0,
       "error": "HTTP 404"
     },
     {
-      "id": "onek",
-      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
+      "id": "kedipes",
+      "name": "ΚΕΔΙΠΕΣ",
       "count": 0,
       "error": null
     },
@@ -129,6 +130,12 @@
       "id": "cys",
       "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 3,
       "error": null
     },
     {
@@ -144,9 +151,9 @@
       "error": null
     },
     {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 3,
+      "id": "ucm",
+      "name": "Ένωση Δήμων Κύπρου",
+      "count": 0,
       "error": null
     },
     {
@@ -168,21 +175,15 @@
       "error": null
     },
     {
-      "id": "ucm",
-      "name": "Ένωση Δήμων Κύπρου",
-      "count": 0,
+      "id": "cyi",
+      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "count": 8,
       "error": null
     },
     {
       "id": "cing",
       "name": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "count": 4,
-      "error": null
-    },
-    {
-      "id": "cyi",
-      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "count": 8,
       "error": null
     },
     {
@@ -198,14 +199,14 @@
       "error": null
     },
     {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
+      "id": "cmmi",
+      "name": "Cyprus Marine and Maritime Institute",
       "count": 0,
       "error": null
     },
     {
-      "id": "cmmi",
-      "name": "Cyprus Marine and Maritime Institute",
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
       "count": 0,
       "error": null
     },
@@ -300,15 +301,15 @@
       "error": null
     },
     {
-      "id": "dimos-latsion-geriou",
-      "name": "Δήμος Λατσιών-Γερίου",
-      "count": 1,
-      "error": null
-    },
-    {
       "id": "dimos-lefkaron",
       "name": "Δήμος Λευκάρων",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-latsion-geriou",
+      "name": "Δήμος Λατσιών-Γερίου",
+      "count": 1,
       "error": null
     },
     {
@@ -324,15 +325,15 @@
       "error": null
     },
     {
-      "id": "dimos-athienou",
-      "name": "Δήμος Αθηένου",
-      "count": 2,
-      "error": null
-    },
-    {
       "id": "dimos-akama",
       "name": "Δήμος Ακάμα (Πέγεια)",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-athienou",
+      "name": "Δήμος Αθηένου",
+      "count": 2,
       "error": null
     },
     {
