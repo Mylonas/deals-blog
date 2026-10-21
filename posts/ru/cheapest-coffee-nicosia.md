@@ -10,7 +10,7 @@ pinned: true
 Мы отслеживаем цены на Фреддо Эспрессо в кафе по всему Кипру — Никосия, Лимасол, Ларнака, Пафос и район Айя-Напы — и показываем самые дешёвые места в каждом городе. Цены берутся из Wolt, Bolt Food и Foody — для каждого кафе показана самая дешёвая платформа — и обновляются каждые 2 дня.
 
 <!-- COFFEE_PRICES_START -->
-*Цены последний раз проверены: 21 окт. 2026 г., 12:15 (EET). Обновляется каждые 2 дня через Wolt, Bolt Food и Foody.*
+*Цены последний раз проверены: 21 окт. 2026 г., 13:44 (EET). Обновляется каждые 2 дня через Wolt, Bolt Food и Foody.*
 
 ## Фреддо Эспрессо — Самые дешёвые по городам
 
@@ -38,9 +38,9 @@ pinned: true
 | **[Sandos](https://www.foody.com.cy/delivery/leykosia/sandos-2000682453)** | €2.30 | [Foody](https://www.foody.com.cy/delivery/leykosia/sandos-2000682453) |
 | **[CafeNeo](https://food.bolt.eu/en/261-nicosia/p/135682-cafeneo)** | €2.40 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/135682-cafeneo) |
 | **[Street Coffee](https://food.bolt.eu/en/261-nicosia/p/75062-street-coffee)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/75062-street-coffee) |
-| **[Two Chimp Coffee & Cake](https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/45411-two-chimp-coffee-cake) |
-| **[Akora All Day Cafe & Lounge](https://food.bolt.eu/en/261-nicosia/p/124245-akora-all-day-cafe-lounge)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/124245-akora-all-day-cafe-lounge) |
 | **[Wise Coffee - Crepes and More](https://food.bolt.eu/en/261-nicosia/p/191417-wise-coffee-crepes-and-more)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/191417-wise-coffee-crepes-and-more) |
+| **[Coffeeway](https://food.bolt.eu/en/261-nicosia/p/105215-coffeeway)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/105215-coffeeway) |
+| **[Cavello Coffee & Bagels](https://food.bolt.eu/en/261-nicosia/p/862588-cavello-coffee-bagels)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/261-nicosia/p/862588-cavello-coffee-bagels) |
 | **[Deli Lidas](https://www.foody.com.cy/delivery/leykosia/deli-lidas-2000704791)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/leykosia/deli-lidas-2000704791) |
 | **[French Toast Factory](https://www.foody.com.cy/delivery/menu/french-toast-factory)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/menu/french-toast-factory) |
 | **[Momento De oro](https://www.foody.com.cy/delivery/leykosia/momento-de-oro-2000501234)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/leykosia/momento-de-oro-2000501234) |
@@ -68,12 +68,12 @@ pinned: true
 
 | Кафе | Цена | Через Доставку |
 |------|-------|--------|
-| **[Love Coffee](https://wolt.com/en/cyp/limassol/restaurant/love-coffee)** | €2.20 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/love-coffee) |
+| **[Love Coffee](https://wolt.com/en/cyp/limassol/restaurant/love-coffee)** | €2.20 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/love-coffee) · [Bolt Food](https://food.bolt.eu/en/442-limassol/p/81877-love-coffee) |
 | **[1862 Coffeehouse](https://wolt.com/en/cyp/limassol/restaurant/1862-coffeehouse-showroom)** | €2.30 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/1862-coffeehouse-showroom) |
 | **[Goppion Cafe Omonoias](https://wolt.com/en/cyp/limassol/restaurant/goppion-caffe-omonoias)** | €2.30 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/goppion-caffe-omonoias) |
 | **[The Doctor Espresso](https://wolt.com/en/cyp/limassol/restaurant/the-doctor-espresso)** | €2.40 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/the-doctor-espresso) |
 | **[Snack Attack](https://wolt.com/en/cyp/limassol/restaurant/snack-attack)** | €2.40 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/snack-attack) |
-| **[Caffe costadoro](https://www.foody.com.cy/delivery/menu/caffe-costadoro)** | €2.40 | [Foody](https://www.foody.com.cy/delivery/menu/caffe-costadoro) |
+| **[Caffe Costadoro Linopetra](https://food.bolt.eu/en/442-limassol/p/59119-caffe-costadoro-linopetra)** | €2.40 | [Bolt Food](https://food.bolt.eu/en/442-limassol/p/59119-caffe-costadoro-linopetra) · [Foody](https://www.foody.com.cy/delivery/menu/caffe-costadoro) |
 | **[First Coffee](https://wolt.com/en/cyp/limassol/restaurant/first-coffee)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/first-coffee) |
 | **[Karamella Street Food](https://wolt.com/en/cyp/limassol/restaurant/karamela-snack-bar)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/karamela-snack-bar) |
 | **[Coffee Moment Break](https://wolt.com/en/cyp/limassol/restaurant/coffee-moment-break)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/coffee-moment-break) · [Foody](https://www.foody.com.cy/delivery/lemesos/coffee-moment-break) |
@@ -81,6 +81,7 @@ pinned: true
 | **[Gold Box Espresso Bar](https://wolt.com/en/cyp/limassol/restaurant/goldbox-espresso-bar)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/goldbox-espresso-bar) |
 | **[Coffee Taste Agias Zonis](https://wolt.com/en/cyp/limassol/restaurant/coffee-taste-agias-zonis)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/coffee-taste-agias-zonis) |
 | **[Welcome Cafe Kolossi](https://wolt.com/en/cyp/limassol/restaurant/welcome-cafe-kolossi)** | €2.50 | [Wolt](https://wolt.com/en/cyp/limassol/restaurant/welcome-cafe-kolossi) |
+| **[Tomazou Kiosk and Espresso Bar](https://food.bolt.eu/en/442-limassol/p/40275-tomazou-kiosk-and-espresso-bar)** | €2.50 | [Bolt Food](https://food.bolt.eu/en/442-limassol/p/40275-tomazou-kiosk-and-espresso-bar) |
 | **[French Toast Factory](https://www.foody.com.cy/delivery/menu/french-toast-factory)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/menu/french-toast-factory) |
 | **[Coffee Guru](https://www.foody.com.cy/delivery/lemesos/coffee-guru)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/lemesos/coffee-guru) |
 | **[Cafe 4 You](https://www.foody.com.cy/delivery/lemesos/cafe-4-you-2000388242)** | €2.50 | [Foody](https://www.foody.com.cy/delivery/lemesos/cafe-4-you-2000388242) |
@@ -217,7 +218,7 @@ pinned: true
 
 ## Самые Популярные Напитки по Кафе (Никосия)
 
-*Популярные напитки — последнее обновление: 19 окт. 2026 г., 14:29.*
+*Популярные напитки — последнее обновление: 21 окт. 2026 г., 13:44.*
 
 ### Coffeeway
 
@@ -293,11 +294,7 @@ pinned: true
 
 | Напиток | Цена | Источник |
 |------|-------|--------|
-| Freddo Espresso | €2.95 | Wolt |
-| Freddo Cappuccino | €3.15 | Wolt |
-| Iced Latte | €3.35 | Wolt |
-| Iced Signature Latte | €3.60 | Wolt |
-| Iced Americano | €2.50 | Wolt |
+| Freddo Espresso 14oz | €3.00 | Wolt |
 
 ### Costa Coffee
 
@@ -356,6 +353,16 @@ pinned: true
 |------|-------|--------|
 | Freddo Espresso | €2.30 | Wolt |
 
+### [Bakalicom](https://www.google.com/maps/search/Bakalicom%20Nicosia%20Cyprus)
+
+| Напиток | Цена | Источник |
+|------|-------|--------|
+| Freddo Espresso | €2.30 | Wolt |
+| Freddo Cappuccino | €2.80 | Wolt |
+| Iced Latte | €2.80 | Wolt |
+| Iced Americano | €2.30 | Wolt |
+| Iced Dark Mocha | €2.80 | Wolt |
+
 ### Le Gout
 
 | Напиток | Цена | Источник |
@@ -390,11 +397,11 @@ pinned: true
 
 | Напиток | Цена | Источник |
 |------|-------|--------|
-| Freddo Espresso | €2.70 | Wolt |
-| Freddo Cappuccino | €3.20 | Wolt |
-| Iced Americano | €2.70 | Wolt |
-| Iced Latte | €3.20 | Wolt |
-| Iced  Caramel Latte | €3.50 | Wolt |
+| Freddo Espresso | €2.50 | Wolt |
+| Freddo On The Rocks | €2.50 | Wolt |
+| Iced Americano | €2.50 | Wolt |
+| Freddo Cappuccino | €3.00 | Wolt |
+| Freddo Cappuccino Flat White | €3.00 | Wolt |
 
 ### Bruno Coffee Stores
 
