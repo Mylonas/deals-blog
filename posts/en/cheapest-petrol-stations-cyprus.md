@@ -55,9 +55,9 @@ pinned: true
 | PETROLINA | [Λεωφ. Κυριάκου Μάτση 28, Αγ.Ομολογητές Τ.Κ 1082](https://www.google.com/maps?q=35.1591,33.35478333) | Λευκωσία | €1.565 |
 | EKO | [Λεωφ. Σαριγιάννη Τ.Κ 2831](https://www.google.com/maps?q=35.070157,32.930054) | Ευρύχου | €1.571 |
 | FILL N GO | [Λεωφ. Λάρνακος 1 Τ.Κ 7648](https://www.google.com/maps?q=34.92639,33.44032) | Πυργά | €1.589 |
+| ESSO | [Ελευθερίας 28 Τ.Κ 2566](https://www.google.com/maps?q=34.9981508168812,33.4547390932541) | Λύμπια | €1.589 |
 | EKO | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.927671,33.536158) | Καλό Χωριό Λάρνακας | €1.599 |
 | EKO | [Ελευθερίας 27 Τ.Κ 7102](https://www.google.com/maps?q=34.935446,33.59272) | Αραδίππου | €1.599 |
-| PETROLINA | [Αναστάσιου Μανώλη 54 Τ.Κ 7520](https://www.google.com/maps?q=34.976892,33.84441667) | Ξυλοφάγου | €1.604 |
 
 > Source: [Cyprus Gov Petroleum Prices](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — updated 22 October 2026
 
