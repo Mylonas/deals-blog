@@ -23,7 +23,7 @@ pinned: false
 | Вода 1.5L ×6 | **[€2.12](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
 | Йогурт 450г | **[€3.85](https://www.e-kalathi.gov.cy/product-information/301)** | Charalambides Christis |
 | Рис 1кг | **[€1.95](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
-| Апельсиновый сок 1L | **[€1.75](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
+| Апельсиновый сок 1L | **[€1.65](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
 | Кока-Кола 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
 
 <!-- PRICES_END -->
