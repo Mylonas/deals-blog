@@ -15,13 +15,13 @@ pinned: false
 
 | Προϊόν | Φθηνότερη Τιμή | Μάρκα |
 |---------|---------|--------|
-| Φρέσκο Γάλα 1L | **[€1.37](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
+| Φρέσκο Γάλα 1L | **[€1.56](https://www.e-kalathi.gov.cy/product-information/27)** | Charalambides |
 | Αβγά | **[€3.89](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
 | Χαλλούμι 200g | **[€1.95](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Σπαγγέτι 500g | **[€0.75](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Ελαιόλαδο 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
 | Νερό 1.5L ×6 | **[€1.99](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
-| Γιαούρτι 450g | **[€3.85](https://www.e-kalathi.gov.cy/product-information/301)** | Charalambides Christis |
+| Γιαούρτι 450g | **[€3.15](https://www.e-kalathi.gov.cy/product-information/301)** | Charalambides Christis |
 | Ρύζι 1kg | **[€1.95](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
 | Χυμός Πορτοκάλι 1L | **[€1.65](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
 | Coca-Cola 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
