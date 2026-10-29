@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-10-28T11:19:01.360Z",
-  "count": 82,
+  "fetchedAt": "2026-10-29T11:30:38.109Z",
+  "count": 79,
   "sources": [
     {
       "id": "cpa",
@@ -21,15 +21,15 @@
       "error": null
     },
     {
-      "id": "hio",
-      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
-      "count": 2,
-      "error": null
-    },
-    {
       "id": "eey",
       "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "hio",
+      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "count": 2,
       "error": null
     },
     {
@@ -39,14 +39,15 @@
       "error": null
     },
     {
-      "id": "crta",
-      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
-      "count": 1,
-      "error": null
-    },
-    {
       "id": "cera",
       "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
+      "count": 0,
+      "error": null,
+      "via": "site→browser"
+    },
+    {
+      "id": "ocecpr",
+      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
       "count": 0,
       "error": null,
       "via": "site→browser"
@@ -70,8 +71,8 @@
       "error": null
     },
     {
-      "id": "onek",
-      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
+      "id": "cyada",
+      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
       "count": 0,
       "error": null
     },
@@ -82,27 +83,22 @@
       "error": null
     },
     {
-      "id": "ocecpr",
-      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
-      "count": 0,
-      "error": null,
-      "via": "site→browser"
-    },
-    {
       "id": "hfc",
       "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
       "count": 0,
       "error": null
     },
     {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 3,
-      "error": null
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "count": 1,
+      "error": "fetch failed; browser fallback: page.goto: net::ERR_CERT_DATE_INVALID at https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html\nCall log:\n  - navigating to \"https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html\", waiting until \"domcontentloaded\"\n",
+      "blocked": true,
+      "carriedForward": true
     },
     {
-      "id": "cse",
-      "name": "Χρηματιστήριο Αξιών Κύπρου",
+      "id": "onek",
+      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
       "count": 0,
       "error": null
     },
@@ -113,10 +109,10 @@
       "error": null
     },
     {
-      "id": "anad",
-      "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
+      "id": "cse",
+      "name": "Χρηματιστήριο Αξιών Κύπρου",
       "count": 0,
-      "error": "HTTP 404"
+      "error": null
     },
     {
       "id": "kodap",
@@ -125,14 +121,14 @@
       "error": null
     },
     {
-      "id": "nba",
-      "name": "Εθνική Αρχή Στοιχημάτων",
-      "count": 0,
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 3,
       "error": null
     },
     {
-      "id": "cyada",
-      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
+      "id": "nba",
+      "name": "Εθνική Αρχή Στοιχημάτων",
       "count": 0,
       "error": null
     },
@@ -149,26 +145,20 @@
       "error": null
     },
     {
+      "id": "ucm",
+      "name": "Ένωση Δήμων Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "cys",
+      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "ucy",
       "name": "Πανεπιστήμιο Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "cut",
-      "name": "ΤΕΠΑΚ",
-      "count": 5,
-      "error": null
-    },
-    {
-      "id": "ouc",
-      "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
       "count": 0,
       "error": null
     },
@@ -179,9 +169,27 @@
       "error": "HTTP 522"
     },
     {
+      "id": "cut",
+      "name": "ΤΕΠΑΚ",
+      "count": 5,
+      "error": null
+    },
+    {
+      "id": "anad",
+      "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
+      "count": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "id": "ouc",
+      "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "cing",
       "name": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
-      "count": 4,
+      "count": 3,
       "error": null
     },
     {
@@ -197,20 +205,20 @@
       "error": null
     },
     {
-      "id": "cmmi",
-      "name": "Cyprus Marine and Maritime Institute",
+      "id": "eratosthenes",
+      "name": "ERATOSTHENES Centre of Excellence",
       "count": 0,
       "error": null
     },
     {
       "id": "eoa-lemesou",
       "name": "ΕΟΑ Λεμεσού",
-      "count": 8,
+      "count": 7,
       "error": null
     },
     {
-      "id": "ucm",
-      "name": "Ένωση Δήμων Κύπρου",
+      "id": "cmmi",
+      "name": "Cyprus Marine and Maritime Institute",
       "count": 0,
       "error": null
     },
@@ -221,8 +229,8 @@
       "error": null
     },
     {
-      "id": "eoa-ammochostou",
-      "name": "ΕΟΑ Αμμοχώστου",
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
       "count": 0,
       "error": null
     },
@@ -233,9 +241,9 @@
       "error": null
     },
     {
-      "id": "eoa-larnakas",
-      "name": "ΕΟΑ Λάρνακας",
-      "count": 1,
+      "id": "eoa-ammochostou",
+      "name": "ΕΟΑ Αμμοχώστου",
+      "count": 0,
       "error": null
     },
     {
@@ -245,27 +253,21 @@
       "error": null
     },
     {
-      "id": "eoa-lefkosias",
-      "name": "ΕΟΑ Λευκωσίας",
-      "count": 2,
-      "error": null
-    },
-    {
       "id": "dimos-notias-lefkosias",
       "name": "Δήμος Νότιας Λευκωσίας-Ιδαλίου",
       "count": 0,
       "error": null
     },
     {
-      "id": "dimos-lemesou",
-      "name": "Δήμος Λεμεσού",
-      "count": 5,
+      "id": "eoa-larnakas",
+      "name": "ΕΟΑ Λάρνακας",
+      "count": 1,
       "error": null
     },
     {
-      "id": "cys",
-      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
-      "count": 0,
+      "id": "dimos-lemesou",
+      "name": "Δήμος Λεμεσού",
+      "count": 5,
       "error": null
     },
     {
@@ -281,20 +283,20 @@
       "error": null
     },
     {
-      "id": "dimos-strovolou",
-      "name": "Δήμος Στροβόλου",
-      "count": 4,
+      "id": "eoa-lefkosias",
+      "name": "ΕΟΑ Λευκωσίας",
+      "count": 2,
       "error": null
     },
     {
-      "id": "dimos-latsion-geriou",
-      "name": "Δήμος Λατσιών-Γερίου",
-      "count": 1,
+      "id": "dimos-dytikis-lemesou",
+      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
+      "count": 7,
       "error": null
     },
     {
-      "id": "dimos-aradippou",
-      "name": "Δήμος Αραδίππου",
+      "id": "dimos-larnakas",
+      "name": "Δήμος Λάρνακας",
       "count": 0,
       "error": null
     },
@@ -305,9 +307,15 @@
       "error": null
     },
     {
-      "id": "dimos-dromolaxias-meneou",
-      "name": "Δήμος Δρομολαξιάς-Μενεού",
-      "count": 2,
+      "id": "dimos-aradippou",
+      "name": "Δήμος Αραδίππου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-strovolou",
+      "name": "Δήμος Στροβόλου",
+      "count": 4,
       "error": null
     },
     {
@@ -317,15 +325,21 @@
       "error": null
     },
     {
-      "id": "eratosthenes",
-      "name": "ERATOSTHENES Centre of Excellence",
-      "count": 0,
+      "id": "dimos-latsion-geriou",
+      "name": "Δήμος Λατσιών-Γερίου",
+      "count": 1,
       "error": null
     },
     {
-      "id": "dimos-athienou",
-      "name": "Δήμος Αθηένου",
+      "id": "dimos-dromolaxias-meneou",
+      "name": "Δήμος Δρομολαξιάς-Μενεού",
       "count": 2,
+      "error": null
+    },
+    {
+      "id": "dimos-akama",
+      "name": "Δήμος Ακάμα (Πέγεια)",
+      "count": 0,
       "error": null
     },
     {
@@ -341,9 +355,15 @@
       "error": null
     },
     {
-      "id": "dimos-akama",
-      "name": "Δήμος Ακάμα (Πέγεια)",
-      "count": 0,
+      "id": "dimos-ammochostou",
+      "name": "Δήμος Παραλιμνίου-Δερύνειας",
+      "count": 2,
+      "error": null
+    },
+    {
+      "id": "dimos-athienou",
+      "name": "Δήμος Αθηένου",
+      "count": 2,
       "error": null
     },
     {
@@ -353,27 +373,9 @@
       "error": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\nCall log:\n  - navigating to \"https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\", waiting until \"commit\"\n"
     },
     {
-      "id": "dimos-ammochostou",
-      "name": "Δήμος Παραλιμνίου-Δερύνειας",
-      "count": 2,
-      "error": null
-    },
-    {
-      "id": "dimos-dytikis-lemesou",
-      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
-      "count": 7,
-      "error": null
-    },
-    {
       "id": "dimos-anatolikis-pafou",
       "name": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
-      "count": 5,
-      "error": null
-    },
-    {
-      "id": "dimos-larnakas",
-      "name": "Δήμος Λάρνακας",
-      "count": 0,
+      "count": 4,
       "error": null
     }
   ],
@@ -413,7 +415,8 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district"
+      "locationFrom": "district",
+      "carriedForward": true
     },
     {
       "id": "8aa0b6a1aee3",
@@ -551,28 +554,6 @@
       ],
       "locationFrom": "employer",
       "scale": "E6–E7"
-    },
-    {
-      "id": "df4b4836a12a",
-      "sourceId": "dimos-anatolikis-pafou",
-      "employer": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
-      "sector": "municipality",
-      "district": "paphos",
-      "title": "Προκήρυξη-καντίνας-αρ.-διαγων.-60-26.docx",
-      "url": "https://ierokipia.org.cy/wp-content/uploads/2026/06/%CE%A0%CF%81%CE%BF%CE%BA%CE%AE%CF%81%CF%85%CE%BE%CE%B7-%CE%BA%CE%B1%CE%BD%CF%84%CE%AF%CE%BD%CE%B1%CF%82-%CE%B1%CF%81.-%CE%B4%CE%B9%CE%B1%CE%B3%CF%89%CE%BD.-60-26.docx",
-      "published": "2026-06-01",
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Γεροσκήπου",
-          "district": "paphos",
-          "districtName": "Πάφος",
-          "lat": 34.7581,
-          "lon": 32.455
-        }
-      ],
-      "locationFrom": "employer"
     },
     {
       "id": "850fa8a3def8",
@@ -1340,29 +1321,6 @@
       "locationFrom": "employer"
     },
     {
-      "id": "207e66fb4f78",
-      "sourceId": "eoa-lemesou",
-      "employer": "ΕΟΑ Λεμεσού",
-      "sector": "district-organisation",
-      "district": "limassol",
-      "title": "ανακοίνωση προκήρυξη μίας 1 κενής θέσης ανώτερου εκτελεστικού μηχανικούανώτερου λειτουργού αδειοδότησης",
-      "url": "https://eoalemesos.org.cy/el/news-details/%CE%B1%CE%BD%CE%B1%CE%BA%CE%BF%CE%AF%CE%BD%CF%89%CF%83%CE%B7-%CF%80%CF%81%CE%BF%CE%BA%CE%AE%CF%81%CF%85%CE%BE%CE%B7-%CE%BC%CE%AF%CE%B1%CF%82-1-%CE%BA%CE%B5%CE%BD%CE%AE%CF%82-%CE%B8%CE%AD%CF%83%CE%B7%CF%82-%CE%B1%CE%BD%CF%8E%CF%84%CE%B5%CF%81%CE%BF%CF%85-%CE%B5%CE%BA%CF%84%CE%B5%CE%BB%CE%B5%CF%83%CF%84%CE%B9%CE%BA%CE%BF%CF%8D-%CE%BC%CE%B7%CF%87%CE%B1%CE%BD%CE%B9%CE%BA%CE%BF%CF%8D%CE%B1%CE%BD%CF%8E%CF%84%CE%B5%CF%81%CE%BF%CF%85-%CE%BB%CE%B5%CE%B9%CF%84%CE%BF%CF%85%CF%81%CE%B3%CE%BF%CF%8D-%CE%B1%CE%B4%CE%B5%CE%B9%CE%BF%CE%B4%CF%8C%CF%84%CE%B7%CF%83%CE%B7%CF%82",
-      "published": null,
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λεμεσός",
-          "district": "limassol",
-          "districtName": "Λεμεσός",
-          "lat": 34.7071,
-          "lon": 33.0226
-        }
-      ],
-      "locationFrom": "employer",
-      "scale": "A13"
-    },
-    {
       "id": "ca9e93cac735",
       "sourceId": "eoa-lemesou",
       "employer": "ΕΟΑ Λεμεσού",
@@ -1856,36 +1814,13 @@
       "scale": "€1,914/μ"
     },
     {
-      "id": "c4ad560a1d27",
+      "id": "0f52c29a08bd",
       "sourceId": "cing",
       "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "sector": "research",
       "district": "nicosia",
       "title": "VACANCY FOR CLINICAL GENETICIST",
-      "url": "https://www.cing.ac.cy/en/vacancies#collapse4",
-      "published": null,
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district",
-      "scale": "A4–A7"
-    },
-    {
-      "id": "03e6b37648f5",
-      "sourceId": "cing",
-      "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
-      "sector": "research",
-      "district": "nicosia",
-      "title": "VACANCY FOR LABORATORY SCIENTIFIC OFFICER",
-      "url": "https://www.cing.ac.cy/en/vacancies#collapse2",
+      "url": "https://www.cing.ac.cy/en/vacancies#collapse3",
       "published": null,
       "deadline": null,
       "reference": null,
@@ -1925,13 +1860,13 @@
       "scale": "A4–A7"
     },
     {
-      "id": "0f52c29a08bd",
+      "id": "03e6b37648f5",
       "sourceId": "cing",
       "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "sector": "research",
       "district": "nicosia",
       "title": "VACANCY FOR SENIOR CLINICAL GENETICIST / DEPARTMENT HEAD",
-      "url": "https://www.cing.ac.cy/en/vacancies#collapse3",
+      "url": "https://www.cing.ac.cy/en/vacancies#collapse2",
       "published": null,
       "deadline": null,
       "reference": null,
