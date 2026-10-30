@@ -1,7 +1,7 @@
 ---
 title: "Мониторинг цен в супермаркетах — 10 основных продуктов"
 date: "2026-06-28"
-updated: "2026-10-29"
+updated: "2026-10-30"
 category: "Еда и напитки"
 summary: "Актуальные цены на 10 базовых товаров во всех крупных супермаркетах Кипра. Обновляется 4 раза в день с официального портала e-kalathi.gov.cy."
 pinned: false
@@ -11,11 +11,11 @@ pinned: false
 
 <!-- PRICES_START -->
 
-> Обновлено 29 October 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Обновлено 30 October 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
 | Продукт | Мин. цена | Бренд |
 |---------|---------|--------|
-| Свежее молоко 1L | **[€1.56](https://www.e-kalathi.gov.cy/product-information/27)** | Charalambides |
+| Свежее молоко 1L | **[€1.37](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
 | Яйца | **[€3.89](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
 | Халлуми 200г | **[€1.95](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Спагетти 500г | **[€0.89](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |

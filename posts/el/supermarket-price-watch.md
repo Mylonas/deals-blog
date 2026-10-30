@@ -1,7 +1,7 @@
 ---
 title: "Παρακολούθηση Τιμών Σούπερ Μάρκετ — 10 Βασικά Προϊόντα"
 date: "2026-06-28"
-updated: "2026-10-29"
+updated: "2026-10-30"
 category: "Φαγητό & Ποτό"
 summary: "Ζωντανές τιμές για 10 βασικά οικιακά προϊόντα σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου. Ενημερώνεται 4 φορές την ημέρα από το επίσημο e-kalathi.gov.cy."
 pinned: false
@@ -11,11 +11,11 @@ pinned: false
 
 <!-- PRICES_START -->
 
-> Ενημέρωση 29 October 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Ενημέρωση 30 October 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
 | Προϊόν | Φθηνότερη Τιμή | Μάρκα |
 |---------|---------|--------|
-| Φρέσκο Γάλα 1L | **[€1.56](https://www.e-kalathi.gov.cy/product-information/27)** | Charalambides |
+| Φρέσκο Γάλα 1L | **[€1.37](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
 | Αβγά | **[€3.89](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
 | Χαλλούμι 200g | **[€1.95](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Σπαγγέτι 500g | **[€0.89](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
