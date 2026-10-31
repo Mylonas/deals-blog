@@ -1,7 +1,7 @@
 ---
 title: "Φθηνότερα Πρατήρια Καυσίμων στην Κύπρο — Ζωντανή Παρακολούθηση"
 date: "2026-06-28"
-updated: "2026-10-30"
+updated: "2026-10-31"
 category: "Καύσιμα"
 summary: "Ζωντανές τιμές για Αμόλυβδη 95, Αμόλυβδη 98 και Πετρέλαιο Κίνησης σε πρατήρια ανά την Κύπρο. Ενημερώνεται κάθε ώρα από το επίσημο παρατηρητήριο τιμών."
 pinned: true
@@ -35,6 +35,6 @@ pinned: true
 |----------|-----------|---------|------|
 | — | [View on government portal](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) | All | €0.000 |
 
-> Πηγή: [Παρατηρητήριο Τιμών Καυσίμων Κύπρου](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — ενημέρωση 30 Οκτωβρίου 2026
+> Πηγή: [Παρατηρητήριο Τιμών Καυσίμων Κύπρου](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — ενημέρωση 31 Οκτωβρίου 2026
 
 <!-- FUEL_PRICES_END -->
