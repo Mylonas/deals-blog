@@ -1,7 +1,7 @@
 ---
 title: "Самые дешёвые АЗС на Кипре — Живой трекер"
 date: "2026-06-28"
-updated: "2026-11-01"
+updated: "2026-11-02"
 category: "Топливо"
 summary: "Актуальные цены на АИ-95, АИ-98 и Дизель на АЗС Кипра. Обновляется каждый час из официального правительственного наблюдателя цен на топливо."
 pinned: true
@@ -35,6 +35,6 @@ pinned: true
 |-------|-------|-------|------|
 | — | [View on government portal](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) | All | €0.000 |
 
-> Источник: [Правительственный портал цен на топливо Кипра](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — обновлено 1 ноября 2026 г.
+> Источник: [Правительственный портал цен на топливо Кипра](https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) — обновлено 2 ноября 2026 г.
 
 <!-- FUEL_PRICES_END -->
