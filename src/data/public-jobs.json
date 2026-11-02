@@ -1,23 +1,11 @@
 {
-  "fetchedAt": "2026-11-01T11:50:27.510Z",
+  "fetchedAt": "2026-11-02T13:27:17.632Z",
   "count": 76,
   "sources": [
-    {
-      "id": "eey",
-      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
-      "count": 0,
-      "error": null
-    },
     {
       "id": "cpa",
       "name": "Αρχή Λιμένων Κύπρου",
       "count": 1,
-      "error": null
-    },
-    {
-      "id": "cyta",
-      "name": "Cyta (ΑΤΗΚ)",
-      "count": 3,
       "error": null
     },
     {
@@ -27,14 +15,20 @@
       "error": "ΕΔΥ table parsed as empty — check the selectors"
     },
     {
+      "id": "cyta",
+      "name": "Cyta (ΑΤΗΚ)",
+      "count": 3,
+      "error": null
+    },
+    {
       "id": "hio",
       "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
       "count": 1,
       "error": null
     },
     {
-      "id": "competition",
-      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
+      "id": "eey",
+      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
       "count": 0,
       "error": null
     },
@@ -57,6 +51,13 @@
       "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
       "count": 0,
       "error": null
+    },
+    {
+      "id": "competition",
+      "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
+      "count": 0,
+      "error": null,
+      "via": "site→browser"
     },
     {
       "id": "thoc",
@@ -83,18 +84,6 @@
       "error": null
     },
     {
-      "id": "hfc",
-      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "onek",
-      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "crta",
       "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
       "count": 1,
@@ -103,8 +92,14 @@
       "carriedForward": true
     },
     {
-      "id": "cse",
-      "name": "Χρηματιστήριο Αξιών Κύπρου",
+      "id": "hfc",
+      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "onek",
+      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
       "count": 0,
       "error": null
     },
@@ -124,13 +119,12 @@
       "id": "anad",
       "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
       "count": 0,
-      "error": null,
-      "via": "site→browser"
+      "error": "HTTP 404"
     },
     {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 3,
+      "id": "cse",
+      "name": "Χρηματιστήριο Αξιών Κύπρου",
+      "count": 0,
       "error": null
     },
     {
@@ -146,6 +140,12 @@
       "error": null
     },
     {
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 3,
+      "error": null
+    },
+    {
       "id": "ekk",
       "name": "Ένωση Κοινοτήτων Κύπρου",
       "count": 0,
@@ -154,12 +154,6 @@
     {
       "id": "ucy",
       "name": "Πανεπιστήμιο Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
       "count": 0,
       "error": null
     },
@@ -182,15 +176,21 @@
       "error": null
     },
     {
-      "id": "cyi",
-      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "count": 9,
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
+      "count": 0,
       "error": null
     },
     {
       "id": "ucm",
       "name": "Ένωση Δήμων Κύπρου",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "cyi",
+      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "count": 9,
       "error": null
     },
     {
@@ -206,15 +206,15 @@
       "error": null
     },
     {
-      "id": "cys",
-      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "eoa-lemesou",
       "name": "ΕΟΑ Λεμεσού",
       "count": 7,
+      "error": null
+    },
+    {
+      "id": "eoa-lefkosias",
+      "name": "ΕΟΑ Λευκωσίας",
+      "count": 1,
       "error": null
     },
     {
@@ -224,15 +224,15 @@
       "error": "HTTP 522"
     },
     {
-      "id": "eoa-lefkosias",
-      "name": "ΕΟΑ Λευκωσίας",
+      "id": "eoa-larnakas",
+      "name": "ΕΟΑ Λάρνακας",
       "count": 1,
       "error": null
     },
     {
-      "id": "eoa-larnakas",
-      "name": "ΕΟΑ Λάρνακας",
-      "count": 1,
+      "id": "cys",
+      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
+      "count": 0,
       "error": null
     },
     {
@@ -245,6 +245,12 @@
       "id": "dimos-strovolou",
       "name": "Δήμος Στροβόλου",
       "count": 4,
+      "error": null
+    },
+    {
+      "id": "cyens",
+      "name": "CYENS Centre of Excellence",
+      "count": 0,
       "error": null
     },
     {
@@ -266,12 +272,6 @@
       "error": null
     },
     {
-      "id": "cyens",
-      "name": "CYENS Centre of Excellence",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "dimos-polemidion",
       "name": "Δήμος Πολεμιδιών",
       "count": 0,
@@ -290,15 +290,15 @@
       "error": null
     },
     {
-      "id": "dimos-larnakas",
-      "name": "Δήμος Λάρνακας",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "dimos-dytikis-lemesou",
       "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
       "count": 7,
+      "error": null
+    },
+    {
+      "id": "dimos-larnakas",
+      "name": "Δήμος Λάρνακας",
+      "count": 0,
       "error": null
     },
     {
@@ -332,26 +332,26 @@
       "error": null
     },
     {
-      "id": "dimos-polis-chrysochous",
-      "name": "Δήμος Πόλης Χρυσοχούς",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-agias-napas",
-      "name": "Δήμος Αγίας Νάπας",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "dimos-athienou",
       "name": "Δήμος Αθηένου",
       "count": 2,
       "error": null
     },
     {
+      "id": "dimos-polis-chrysochous",
+      "name": "Δήμος Πόλης Χρυσοχούς",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "dimos-lakatamias",
       "name": "Δήμος Λακατάμειας",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-agias-napas",
+      "name": "Δήμος Αγίας Νάπας",
       "count": 0,
       "error": null
     },
@@ -450,7 +450,7 @@
       "district": "larnaca",
       "title": "ΠΡΟΚΗΡΥΞΗ ΜΙΑΣ (1) ΚΕΝΗΣ ΘΕΣΗΣ ΕΡΓΑΤΗ ΓΕΝΙΚΩΝ ΚΑΘΗΚΟΝΤΩΝ ΣΤΟΝ ΔΗΜΟ ΑΘΗΕΝΟΥ",
       "url": "https://www.athienou.org.cy/prokiryksi-mias-1-kenis-thesis-ergati-genikon-kathikonton-ston-dimo-athienou/",
-      "published": "2026-06-30",
+      "published": "2026-11-02",
       "deadline": null,
       "reference": null,
       "locations": [
