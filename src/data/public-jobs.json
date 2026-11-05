@@ -1,13 +1,7 @@
 {
-  "fetchedAt": "2026-11-04T12:57:53.111Z",
+  "fetchedAt": "2026-11-05T13:10:31.607Z",
   "count": 76,
   "sources": [
-    {
-      "id": "cpa",
-      "name": "Αρχή Λιμένων Κύπρου",
-      "count": 1,
-      "error": null
-    },
     {
       "id": "psc",
       "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
@@ -15,9 +9,21 @@
       "error": "ΕΔΥ table parsed as empty — check the selectors"
     },
     {
+      "id": "cpa",
+      "name": "Αρχή Λιμένων Κύπρου",
+      "count": 1,
+      "error": null
+    },
+    {
       "id": "cyta",
       "name": "Cyta (ΑΤΗΚ)",
       "count": 3,
+      "error": null
+    },
+    {
+      "id": "hio",
+      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "count": 0,
       "error": null
     },
     {
@@ -27,10 +33,11 @@
       "error": null
     },
     {
-      "id": "hio",
-      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "id": "ocecpr",
+      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
       "count": 0,
-      "error": null
+      "error": null,
+      "via": "site→browser"
     },
     {
       "id": "cera",
@@ -46,13 +53,6 @@
       "error": null
     },
     {
-      "id": "ocecpr",
-      "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
-      "count": 0,
-      "error": null,
-      "via": "site→browser"
-    },
-    {
       "id": "competition",
       "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
       "count": 0,
@@ -66,15 +66,15 @@
       "error": null
     },
     {
-      "id": "cyada",
-      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "cysec",
       "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
       "count": 1,
+      "error": null
+    },
+    {
+      "id": "cyada",
+      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
+      "count": 0,
       "error": null
     },
     {
@@ -158,18 +158,6 @@
       "error": null
     },
     {
-      "id": "ucm",
-      "name": "Ένωση Δήμων Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "cut",
       "name": "ΤΕΠΑΚ",
       "count": 5,
@@ -182,68 +170,20 @@
       "error": null
     },
     {
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "cing",
       "name": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "count": 3,
       "error": null
     },
     {
-      "id": "cyi",
-      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "count": 10,
-      "error": null
-    },
-    {
-      "id": "cyens",
-      "name": "CYENS Centre of Excellence",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "eratosthenes",
-      "name": "ERATOSTHENES Centre of Excellence",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "cmmi",
-      "name": "Cyprus Marine and Maritime Institute",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "eoa-lemesou",
-      "name": "ΕΟΑ Λεμεσού",
-      "count": 7,
-      "error": null
-    },
-    {
-      "id": "eoa-pafou",
-      "name": "ΕΟΑ Πάφου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "eoa-lefkosias",
-      "name": "ΕΟΑ Λευκωσίας",
-      "count": 1,
-      "error": null
-    },
-    {
-      "id": "eoa-ammochostou",
-      "name": "ΕΟΑ Αμμοχώστου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-lefkosias",
-      "name": "Δήμος Λευκωσίας",
-      "count": 11,
-      "error": null
-    },
-    {
-      "id": "dimos-lakatamias",
-      "name": "Δήμος Λακατάμειας",
+      "id": "ucm",
+      "name": "Ένωση Δήμων Κύπρου",
       "count": 0,
       "error": null
     },
@@ -254,8 +194,62 @@
       "error": null
     },
     {
+      "id": "eratosthenes",
+      "name": "ERATOSTHENES Centre of Excellence",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "cyi",
+      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "count": 10,
+      "error": null
+    },
+    {
+      "id": "eoa-lemesou",
+      "name": "ΕΟΑ Λεμεσού",
+      "count": 7,
+      "error": null
+    },
+    {
+      "id": "cmmi",
+      "name": "Cyprus Marine and Maritime Institute",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "eoa-lefkosias",
+      "name": "ΕΟΑ Λευκωσίας",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "cybc",
+      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
+      "count": 0,
+      "error": "HTTP 522"
+    },
+    {
       "id": "eoa-larnakas",
       "name": "ΕΟΑ Λάρνακας",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "dimos-lefkosias",
+      "name": "Δήμος Λευκωσίας",
+      "count": 11,
+      "error": null
+    },
+    {
+      "id": "dimos-strovolou",
+      "name": "Δήμος Στροβόλου",
+      "count": 4,
+      "error": null
+    },
+    {
+      "id": "dimos-latsion-geriou",
+      "name": "Δήμος Λατσιών-Γερίου",
       "count": 1,
       "error": null
     },
@@ -272,20 +266,26 @@
       "error": null
     },
     {
+      "id": "cyens",
+      "name": "CYENS Centre of Excellence",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "dimos-polemidion",
       "name": "Δήμος Πολεμιδιών",
       "count": 0,
       "error": null
     },
     {
-      "id": "cybc",
-      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
-      "count": 0,
-      "error": "HTTP 522"
-    },
-    {
       "id": "dimos-anatolikis-lemesou",
       "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "eoa-pafou",
+      "name": "ΕΟΑ Πάφου",
       "count": 0,
       "error": null
     },
@@ -308,21 +308,9 @@
       "error": null
     },
     {
-      "id": "dimos-aradippou",
-      "name": "Δήμος Αραδίππου",
+      "id": "eoa-ammochostou",
+      "name": "ΕΟΑ Αμμοχώστου",
       "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-pafou",
-      "name": "Δήμος Πάφου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-strovolou",
-      "name": "Δήμος Στροβόλου",
-      "count": 4,
       "error": null
     },
     {
@@ -332,16 +320,16 @@
       "error": null
     },
     {
-      "id": "dimos-akama",
-      "name": "Δήμος Ακάμα (Πέγεια)",
+      "id": "dimos-lakatamias",
+      "name": "Δήμος Λακατάμειας",
       "count": 0,
       "error": null
     },
     {
-      "id": "dimos-latsion-geriou",
-      "name": "Δήμος Λατσιών-Γερίου",
-      "count": 1,
-      "error": null
+      "id": "eac",
+      "name": "ΑΗΚ / Electricity Authority of Cyprus",
+      "count": 0,
+      "error": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\nCall log:\n  - navigating to \"https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\", waiting until \"commit\"\n"
     },
     {
       "id": "dimos-polis-chrysochous",
@@ -350,8 +338,20 @@
       "error": null
     },
     {
+      "id": "dimos-athienou",
+      "name": "Δήμος Αθηένου",
+      "count": 2,
+      "error": null
+    },
+    {
       "id": "dimos-agias-napas",
       "name": "Δήμος Αγίας Νάπας",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-akama",
+      "name": "Δήμος Ακάμα (Πέγεια)",
       "count": 0,
       "error": null
     },
@@ -362,22 +362,22 @@
       "error": null
     },
     {
-      "id": "dimos-athienou",
-      "name": "Δήμος Αθηένου",
-      "count": 2,
-      "error": null
-    },
-    {
       "id": "dimos-anatolikis-pafou",
       "name": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
       "count": 4,
       "error": null
     },
     {
-      "id": "eac",
-      "name": "ΑΗΚ / Electricity Authority of Cyprus",
+      "id": "dimos-pafou",
+      "name": "Δήμος Πάφου",
       "count": 0,
-      "error": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\nCall log:\n  - navigating to \"https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\", waiting until \"commit\"\n"
+      "error": null
+    },
+    {
+      "id": "dimos-aradippou",
+      "name": "Δήμος Αραδίππου",
+      "count": 0,
+      "error": null
     }
   ],
   "jobs": [
@@ -1824,7 +1824,7 @@
       "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "sector": "research",
       "district": "nicosia",
-      "title": "VACANCY FOR SCIENTIFIC SECRETARY",
+      "title": "VACANCY FOR EQUIPMENT TECHNICIAN",
       "url": "https://www.cing.ac.cy/en/vacancies#collapse1",
       "published": null,
       "deadline": null,
