@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-07T11:43:26.649Z",
+  "fetchedAt": "2026-11-08T11:55:29.557Z",
   "count": 76,
   "sources": [
-    {
-      "id": "cpa",
-      "name": "Αρχή Λιμένων Κύπρου",
-      "count": 1,
-      "error": null
-    },
     {
       "id": "psc",
       "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
       "count": 4,
+      "error": null
+    },
+    {
+      "id": "cpa",
+      "name": "Αρχή Λιμένων Κύπρου",
+      "count": 1,
       "error": null
     },
     {
@@ -21,14 +21,14 @@
       "error": null
     },
     {
-      "id": "hio",
-      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "id": "eey",
+      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
       "count": 0,
       "error": null
     },
     {
-      "id": "eey",
-      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
+      "id": "hio",
+      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
       "count": 0,
       "error": null
     },
@@ -40,12 +40,6 @@
       "via": "site→browser"
     },
     {
-      "id": "cso",
-      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "ocecpr",
       "name": "ΓΕΡΗΕΤ (Επίτροπος Ρυθμίσεως Ηλεκτρονικών Επικοινωνιών και Ταχυδρομείων)",
       "count": 0,
@@ -53,19 +47,17 @@
       "via": "site→browser"
     },
     {
+      "id": "cso",
+      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "competition",
       "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
       "count": 0,
       "error": "fetch failed; browser fallback: page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://www.competition.gov.cy/competition/competition.nsf/page34_gr/page34_gr?OpenDocument\nCall log:\n  - navigating to \"https://www.competition.gov.cy/competition/competition.nsf/page34_gr/page34_gr?OpenDocument\", waiting until \"domcontentloaded\"\n",
       "blocked": true
-    },
-    {
-      "id": "crta",
-      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
-      "count": 1,
-      "error": "fetch failed; browser fallback: page.goto: net::ERR_CERT_DATE_INVALID at https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html\nCall log:\n  - navigating to \"https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html\", waiting until \"domcontentloaded\"\n",
-      "blocked": true,
-      "carriedForward": true
     },
     {
       "id": "thoc",
@@ -80,6 +72,14 @@
       "error": null
     },
     {
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "count": 1,
+      "error": "fetch failed; browser fallback: page.goto: net::ERR_CERT_DATE_INVALID at https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html\nCall log:\n  - navigating to \"https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html\", waiting until \"domcontentloaded\"\n",
+      "blocked": true,
+      "carriedForward": true
+    },
+    {
       "id": "centralbank",
       "name": "Κεντρική Τράπεζα της Κύπρου",
       "count": 0,
@@ -92,26 +92,26 @@
       "error": null
     },
     {
-      "id": "hfc",
-      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
-      "count": 1,
-      "error": null
-    },
-    {
       "id": "kedipes",
       "name": "ΚΕΔΙΠΕΣ",
       "count": 0,
       "error": null
     },
     {
-      "id": "cse",
-      "name": "Χρηματιστήριο Αξιών Κύπρου",
-      "count": 0,
+      "id": "hfc",
+      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
+      "count": 1,
       "error": null
     },
     {
       "id": "kodap",
       "name": "ΚΟΔΑΠ",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "cse",
+      "name": "Χρηματιστήριο Αξιών Κύπρου",
       "count": 0,
       "error": null
     },
@@ -128,12 +128,6 @@
       "error": null
     },
     {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 5,
-      "error": null
-    },
-    {
       "id": "nba",
       "name": "Εθνική Αρχή Στοιχημάτων",
       "count": 0,
@@ -143,6 +137,12 @@
       "id": "research",
       "name": "ΙδΕΚ (Ίδρυμα Έρευνας και Καινοτομίας)",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 5,
       "error": null
     },
     {
@@ -164,20 +164,8 @@
       "error": null
     },
     {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "ouc",
       "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "ucm",
-      "name": "Ένωση Δήμων Κύπρου",
       "count": 0,
       "error": null
     },
@@ -188,26 +176,32 @@
       "error": null
     },
     {
-      "id": "cys",
-      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "cyi",
       "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
       "count": 9,
       "error": null
     },
     {
-      "id": "eratosthenes",
-      "name": "ERATOSTHENES Centre of Excellence",
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
       "count": 0,
       "error": null
     },
     {
-      "id": "cmmi",
-      "name": "Cyprus Marine and Maritime Institute",
+      "id": "ucm",
+      "name": "Ένωση Δήμων Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "cys",
+      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "eratosthenes",
+      "name": "ERATOSTHENES Centre of Excellence",
       "count": 0,
       "error": null
     },
@@ -218,16 +212,16 @@
       "error": null
     },
     {
-      "id": "eoa-lefkosias",
-      "name": "ΕΟΑ Λευκωσίας",
+      "id": "cmmi",
+      "name": "Cyprus Marine and Maritime Institute",
       "count": 0,
       "error": null
     },
     {
-      "id": "cybc",
-      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
+      "id": "eoa-lefkosias",
+      "name": "ΕΟΑ Λευκωσίας",
       "count": 0,
-      "error": "HTTP 522"
+      "error": null
     },
     {
       "id": "eoa-larnakas",
@@ -242,6 +236,12 @@
       "error": null
     },
     {
+      "id": "cybc",
+      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
+      "count": 0,
+      "error": "HTTP 522"
+    },
+    {
       "id": "dimos-strovolou",
       "name": "Δήμος Στροβόλου",
       "count": 4,
@@ -254,20 +254,14 @@
       "error": null
     },
     {
-      "id": "dimos-notias-lefkosias",
-      "name": "Δήμος Νότιας Λευκωσίας-Ιδαλίου",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "dimos-latsion-geriou",
       "name": "Δήμος Λατσιών-Γερίου",
       "count": 1,
       "error": null
     },
     {
-      "id": "eoa-pafou",
-      "name": "ΕΟΑ Πάφου",
+      "id": "dimos-notias-lefkosias",
+      "name": "Δήμος Νότιας Λευκωσίας-Ιδαλίου",
       "count": 0,
       "error": null
     },
@@ -290,14 +284,8 @@
       "error": null
     },
     {
-      "id": "dimos-larnakas",
-      "name": "Δήμος Λάρνακας",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "eoa-ammochostou",
-      "name": "ΕΟΑ Αμμοχώστου",
+      "id": "eoa-pafou",
+      "name": "ΕΟΑ Πάφου",
       "count": 0,
       "error": null
     },
@@ -308,8 +296,20 @@
       "error": null
     },
     {
+      "id": "dimos-larnakas",
+      "name": "Δήμος Λάρνακας",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "dimos-lefkaron",
       "name": "Δήμος Λευκάρων",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "eoa-ammochostou",
+      "name": "ΕΟΑ Αμμοχώστου",
       "count": 0,
       "error": null
     },
@@ -320,10 +320,16 @@
       "error": null
     },
     {
-      "id": "eac",
-      "name": "ΑΗΚ / Electricity Authority of Cyprus",
+      "id": "dimos-athienou",
+      "name": "Δήμος Αθηένου",
+      "count": 2,
+      "error": null
+    },
+    {
+      "id": "dimos-lakatamias",
+      "name": "Δήμος Λακατάμειας",
       "count": 0,
-      "error": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\nCall log:\n  - navigating to \"https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\", waiting until \"commit\"\n"
+      "error": null
     },
     {
       "id": "dimos-akama",
@@ -332,16 +338,10 @@
       "error": null
     },
     {
-      "id": "dimos-athienou",
-      "name": "Δήμος Αθηένου",
-      "count": 2,
-      "error": null
-    },
-    {
-      "id": "dimos-polis-chrysochous",
-      "name": "Δήμος Πόλης Χρυσοχούς",
+      "id": "eac",
+      "name": "ΑΗΚ / Electricity Authority of Cyprus",
       "count": 0,
-      "error": null
+      "error": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\nCall log:\n  - navigating to \"https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\", waiting until \"commit\"\n"
     },
     {
       "id": "dimos-agias-napas",
@@ -350,8 +350,8 @@
       "error": null
     },
     {
-      "id": "dimos-lakatamias",
-      "name": "Δήμος Λακατάμειας",
+      "id": "dimos-polis-chrysochous",
+      "name": "Δήμος Πόλης Χρυσοχούς",
       "count": 0,
       "error": null
     },
