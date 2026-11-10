@@ -2,8 +2,8 @@ name: Update Supermarket Prices
 
 on:
   schedule:
-    # Every hour
-    - cron: "0 * * * *"
+    # Every 6 hours — basket prices update at most daily, hourly was wasteful
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 jobs:

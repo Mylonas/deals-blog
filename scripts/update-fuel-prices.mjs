@@ -9,7 +9,9 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
-const GOV_URL = "https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices";
+// The old MCIT eforms endpoint was retired (now 404s). The live observatory
+// moved here, but it gates every price query behind a CAPTCHA — see fetchGovPage.
+const GOV_URL = "https://petroleumprices.meci.gov.cy/";
 const JSON_OUT = path.join(ROOT, "src", "data", "fuel-prices.json");
 const HISTORY_OUT = path.join(ROOT, "src", "data", "fuel-price-history.json");
 const MAX_HISTORY_DAYS = 365;
@@ -36,6 +38,7 @@ async function withRetry(label, fn) {
     try {
       return await fn();
     } catch (e) {
+      if (e instanceof PortalLoginRequired) throw e; // never recoverable by retrying
       if (attempt >= MAX_ATTEMPTS) throw e;
       const wait = 2000 * 2 ** (attempt - 1);
       console.warn(`  ${label}: attempt ${attempt}/${MAX_ATTEMPTS} failed (${e.message}), retrying in ${wait / 1000}s...`);
@@ -63,6 +66,13 @@ async function fetchGovPage() {
     .map(c => c.split(";")[0].trim())
     .filter(Boolean)
     .join("; ");
+
+  // The relocated portal (petroleumprices.meci.gov.cy) requires solving a
+  // CAPTCHA before it returns any prices, so unattended scraping cannot work.
+  // Treat it like the login case: exit cleanly and keep the last saved data.
+  if (/CaptchaInputText|DefaultCaptcha/i.test(html)) {
+    throw new PortalLoginRequired("portal now requires a CAPTCHA to query prices");
+  }
 
   const tokenMatch = html.match(/name="__RequestVerificationToken"[^>]*value="([^"]+)"/);
   if (!tokenMatch) throw new Error("CSRF token not found");
