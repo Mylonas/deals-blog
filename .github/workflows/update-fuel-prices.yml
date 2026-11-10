@@ -1,9 +1,13 @@
 name: Update Fuel Prices
 
+# NOT scheduled. The old government endpoint
+# (eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices) was retired; the
+# live data moved to https://petroleumprices.meci.gov.cy/ which gates every
+# price query behind a CAPTCHA, so unattended scraping is no longer possible.
+# The script now detects this and exits cleanly, keeping the last saved prices.
+# Left as workflow_dispatch only; re-enable a schedule if a non-CAPTCHA source
+# (e.g. the weekly "Δελτία Τιμών Καυσίμων" PDF bulletin) is wired up.
 on:
-  schedule:
-    # Every hour
-    - cron: "0 * * * *"
   workflow_dispatch: # Allow manual trigger
 
 jobs:
