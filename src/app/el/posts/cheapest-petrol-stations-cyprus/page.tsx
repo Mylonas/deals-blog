@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Φθηνότερα Πρατήρια Καυσίμων στην Κύπρο — Ζωντανές Τιμές",
   description:
-    "Ζωντανές τιμές καυσίμων σε πρατήρια της Κύπρου. Φιλτράρετε κατά επαρχία και τύπο καυσίμου (Αμόλυβδη 95, 98, Πετρέλαιο) για να βρείτε το φθηνότερο κοντά σας. Ενημέρωση κάθε ώρα.",
+    "Ζωντανές τιμές καυσίμων σε πρατήρια της Κύπρου. Φιλτράρετε κατά επαρχία και τύπο καυσίμου (Αμόλυβδη 95, 98, Πετρέλαιο) για να βρείτε το φθηνότερο κοντά σας. Τακτική ενημέρωση.",
   alternates: {"canonical":"/el/posts/cheapest-petrol-stations-cyprus/","languages":{"en":"/posts/cheapest-petrol-stations-cyprus/","el":"/el/posts/cheapest-petrol-stations-cyprus/","ru":"/ru/posts/cheapest-petrol-stations-cyprus/","x-default":"/posts/cheapest-petrol-stations-cyprus/"}},
 };
 
@@ -29,14 +29,14 @@ export default function FuelPricesPageEL() {
         Φιλτράρετε κατά τύπο καυσίμου και επαρχία για να βρείτε το φθηνότερο πρατήριο κοντά σας.
         Τιμές από το{" "}
         <a
-          href="https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices"
+          href="https://petroleumprices.meci.gov.cy/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:underline"
         >
           Παρατηρητήριο Τιμών Καυσίμων της Κυπριακής Κυβέρνησης
         </a>
-        . Ενημέρωση κάθε ώρα.
+        . Τακτική ενημέρωση.
       </p>
 
       <FuelTable data={data as any} lang="el" />
