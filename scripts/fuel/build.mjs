@@ -182,8 +182,13 @@ export async function buildFuelOutputs(results, { root }) {
     || changed(last["95"], stats95) || changed(last["98"], stats98)
     || changed(last.diesel, statsDiesel) || changed(last.heating, statsHeating);
 
+  // The spike guard rejects a single rogue station's nonsense price. On a
+  // manual refresh the gap since the last point can be weeks, so a real
+  // double-digit move trips it — set FORCE_HISTORY=1 to record the point anyway
+  // (safe here because offline/stale stations are already excluded upstream).
+  const forceHistory = process.env.FORCE_HISTORY === "1";
   let spikeDetected = false;
-  if (validData && last) {
+  if (validData && last && !forceHistory) {
     for (const k of ["95", "98", "diesel", "heating"]) {
       const cur = { "95": stats95, "98": stats98, diesel: statsDiesel, heating: statsHeating }[k];
       const prev = last[k];
@@ -195,8 +200,9 @@ export async function buildFuelOutputs(results, { root }) {
       }
     }
   }
+  if (forceHistory) console.log("History: FORCE_HISTORY=1 — bypassing spike guard.");
 
-  if (validData && pricesChanged && !spikeDetected) {
+  if (validData && (pricesChanged || forceHistory) && !spikeDetected) {
     const brent = await fetchBrentEurPerLitre();
     const entry = { ts: new Date().toISOString(), "95": stats95, "98": stats98, diesel: statsDiesel, heating: statsHeating };
     if (brent !== null) entry.brent = brent;
