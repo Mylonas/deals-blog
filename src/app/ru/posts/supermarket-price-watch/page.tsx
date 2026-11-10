@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Мониторинг цен в супермаркетах — 10 основных продуктов",
   description:
-    "Актуальные цены на 10 базовых товаров во всех крупных супермаркетах Кипра. Обновляется каждый час с e-kalathi.gov.cy.",
+    "Актуальные цены на 10 базовых товаров во всех крупных супермаркетах Кипра. Обновляется регулярно с e-kalathi.gov.cy.",
   alternates: {"canonical":"/ru/posts/supermarket-price-watch/","languages":{"en":"/posts/supermarket-price-watch/","el":"/el/posts/supermarket-price-watch/","ru":"/ru/posts/supermarket-price-watch/","x-default":"/posts/supermarket-price-watch/"}},
 };
 
@@ -27,7 +27,7 @@ export default function SupermarketPriceWatchRU() {
         <a href="https://www.e-kalathi.gov.cy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
           e-Kalathi
         </a>
-        . Цены показывают минимальную стоимость среди всех участвующих сетей. Обновляется каждый час.
+        . Цены показывают минимальную стоимость среди всех участвующих сетей. Обновляется регулярно.
       </p>
 
       <SupermarketTable items={data.items} lang="ru" updatedAt={data.updatedAt} />

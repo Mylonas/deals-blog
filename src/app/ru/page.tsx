@@ -72,7 +72,7 @@ export default function HomeRu() {
             <h2 className="text-lg font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
               Мониторинг цен в супермаркетах — 10 основных продуктов
             </h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Актуальные цены на 10 базовых товаров во всех крупных супермаркетах Кипра с платформы e-Kalathi. Обновляется каждый час.</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Актуальные цены на 10 базовых товаров во всех крупных супермаркетах Кипра с платформы e-Kalathi. Обновляется регулярно.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Читать далее →</div>
           </Link>
           <Link
