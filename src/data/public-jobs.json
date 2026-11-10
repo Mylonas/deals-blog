@@ -1,13 +1,7 @@
 {
-  "fetchedAt": "2026-11-09T13:51:29.022Z",
-  "count": 74,
+  "fetchedAt": "2026-11-10T13:29:52.203Z",
+  "count": 78,
   "sources": [
-    {
-      "id": "psc",
-      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
-      "count": 4,
-      "error": null
-    },
     {
       "id": "cpa",
       "name": "Αρχή Λιμένων Κύπρου",
@@ -15,9 +9,21 @@
       "error": null
     },
     {
+      "id": "eey",
+      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "cyta",
       "name": "Cyta (ΑΤΗΚ)",
       "count": 3,
+      "error": null
+    },
+    {
+      "id": "psc",
+      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
+      "count": 4,
       "error": null
     },
     {
@@ -47,12 +53,6 @@
       "error": null
     },
     {
-      "id": "eey",
-      "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "competition",
       "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
       "count": 0,
@@ -60,12 +60,10 @@
       "blocked": true
     },
     {
-      "id": "crta",
-      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "id": "thoc",
+      "name": "ΘΟΚ (Θεατρικός Οργανισμός Κύπρου)",
       "count": 1,
-      "error": "fetch failed; browser fallback: page.goto: net::ERR_CERT_DATE_INVALID at https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html\nCall log:\n  - navigating to \"https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html\", waiting until \"domcontentloaded\"\n",
-      "blocked": true,
-      "carriedForward": true
+      "error": null
     },
     {
       "id": "cyada",
@@ -74,8 +72,8 @@
       "error": null
     },
     {
-      "id": "thoc",
-      "name": "ΘΟΚ (Θεατρικός Οργανισμός Κύπρου)",
+      "id": "cysec",
+      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
       "count": 1,
       "error": null
     },
@@ -86,10 +84,12 @@
       "error": null
     },
     {
-      "id": "cysec",
-      "name": "Επιτροπή Κεφαλαιαγοράς (CySEC)",
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
       "count": 1,
-      "error": null
+      "error": "fetch failed; browser fallback: page.goto: net::ERR_CERT_DATE_INVALID at https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html\nCall log:\n  - navigating to \"https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html\", waiting until \"domcontentloaded\"\n",
+      "blocked": true,
+      "carriedForward": true
     },
     {
       "id": "kedipes",
@@ -104,6 +104,12 @@
       "error": null
     },
     {
+      "id": "kodap",
+      "name": "ΚΟΔΑΠ",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "cse",
       "name": "Χρηματιστήριο Αξιών Κύπρου",
       "count": 0,
@@ -114,18 +120,6 @@
       "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
       "count": 0,
       "error": null
-    },
-    {
-      "id": "kodap",
-      "name": "ΚΟΔΑΠ",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "anad",
-      "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
-      "count": 0,
-      "error": "HTTP 404"
     },
     {
       "id": "nba",
@@ -152,8 +146,8 @@
       "error": null
     },
     {
-      "id": "ucy",
-      "name": "Πανεπιστήμιο Κύπρου",
+      "id": "cys",
+      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
       "count": 0,
       "error": null
     },
@@ -170,12 +164,6 @@
       "error": null
     },
     {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "ouc",
       "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
       "count": 0,
@@ -184,19 +172,25 @@
     {
       "id": "cing",
       "name": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
-      "count": 3,
-      "error": null
-    },
-    {
-      "id": "cys",
-      "name": "CYS (Κυπριακός Οργανισμός Τυποποίησης)",
-      "count": 0,
+      "count": 5,
       "error": null
     },
     {
       "id": "cyi",
       "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "count": 8,
+      "count": 9,
+      "error": null
+    },
+    {
+      "id": "anad",
+      "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
+      "count": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "id": "ucy",
+      "name": "Πανεπιστήμιο Κύπρου",
+      "count": 0,
       "error": null
     },
     {
@@ -212,9 +206,21 @@
       "error": null
     },
     {
+      "id": "cybc",
+      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
+      "count": 0,
+      "error": "HTTP 522"
+    },
+    {
       "id": "eoa-lemesou",
       "name": "ΕΟΑ Λεμεσού",
-      "count": 7,
+      "count": 8,
+      "error": null
+    },
+    {
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
+      "count": 0,
       "error": null
     },
     {
@@ -224,21 +230,15 @@
       "error": null
     },
     {
-      "id": "cybc",
-      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
-      "count": 0,
-      "error": "HTTP 522"
+      "id": "dimos-lefkosias",
+      "name": "Δήμος Λευκωσίας",
+      "count": 11,
+      "error": null
     },
     {
       "id": "eoa-larnakas",
       "name": "ΕΟΑ Λάρνακας",
       "count": 1,
-      "error": null
-    },
-    {
-      "id": "dimos-lefkosias",
-      "name": "Δήμος Λευκωσίας",
-      "count": 11,
       "error": null
     },
     {
@@ -266,8 +266,8 @@
       "error": null
     },
     {
-      "id": "eoa-pafou",
-      "name": "ΕΟΑ Πάφου",
+      "id": "dimos-anatolikis-lemesou",
+      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
       "count": 0,
       "error": null
     },
@@ -278,15 +278,15 @@
       "error": null
     },
     {
-      "id": "dimos-anatolikis-lemesou",
-      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
+      "id": "cyens",
+      "name": "CYENS Centre of Excellence",
       "count": 0,
       "error": null
     },
     {
-      "id": "cyens",
-      "name": "CYENS Centre of Excellence",
-      "count": 0,
+      "id": "dimos-dytikis-lemesou",
+      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
+      "count": 7,
       "error": null
     },
     {
@@ -296,9 +296,9 @@
       "error": null
     },
     {
-      "id": "dimos-dytikis-lemesou",
-      "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
-      "count": 7,
+      "id": "eoa-pafou",
+      "name": "ΕΟΑ Πάφου",
+      "count": 0,
       "error": null
     },
     {
@@ -320,22 +320,16 @@
       "error": null
     },
     {
+      "id": "dimos-lakatamias",
+      "name": "Δήμος Λακατάμειας",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "eac",
       "name": "ΑΗΚ / Electricity Authority of Cyprus",
       "count": 0,
       "error": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\nCall log:\n  - navigating to \"https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\", waiting until \"commit\"\n"
-    },
-    {
-      "id": "dimos-akama",
-      "name": "Δήμος Ακάμα (Πέγεια)",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "dimos-athienou",
-      "name": "Δήμος Αθηένου",
-      "count": 2,
-      "error": null
     },
     {
       "id": "dimos-polis-chrysochous",
@@ -350,8 +344,14 @@
       "error": null
     },
     {
-      "id": "dimos-lakatamias",
-      "name": "Δήμος Λακατάμειας",
+      "id": "dimos-athienou",
+      "name": "Δήμος Αθηένου",
+      "count": 2,
+      "error": null
+    },
+    {
+      "id": "dimos-akama",
+      "name": "Δήμος Ακάμα (Πέγεια)",
       "count": 0,
       "error": null
     },
@@ -368,14 +368,14 @@
       "error": null
     },
     {
-      "id": "dimos-aradippou",
-      "name": "Δήμος Αραδίππου",
+      "id": "dimos-pafou",
+      "name": "Δήμος Πάφου",
       "count": 0,
       "error": null
     },
     {
-      "id": "dimos-pafou",
-      "name": "Δήμος Πάφου",
+      "id": "dimos-aradippou",
+      "name": "Δήμος Αραδίππου",
       "count": 0,
       "error": null
     }
@@ -1226,6 +1226,29 @@
       "locationFrom": "employer"
     },
     {
+      "id": "27ffe27a3d8c",
+      "sourceId": "eoa-lemesou",
+      "employer": "ΕΟΑ Λεμεσού",
+      "sector": "district-organisation",
+      "district": "limassol",
+      "title": "προκήρυξη μίας 1 κενής θέσης πρώτου τεχνικού μηχανικού",
+      "url": "https://eoalemesos.org.cy/el/news-details/%CF%80%CF%81%CE%BF%CE%BA%CE%AE%CF%81%CF%85%CE%BE%CE%B7-%CE%BC%CE%AF%CE%B1%CF%82-1-%CE%BA%CE%B5%CE%BD%CE%AE%CF%82-%CE%B8%CE%AD%CF%83%CE%B7%CF%82-%CF%80%CF%81%CF%8E%CF%84%CE%BF%CF%85-%CF%84%CE%B5%CF%87%CE%BD%CE%B9%CE%BA%CE%BF%CF%8D-%CE%BC%CE%B7%CF%87%CE%B1%CE%BD%CE%B9%CE%BA%CE%BF%CF%8D",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λεμεσός",
+          "district": "limassol",
+          "districtName": "Λεμεσός",
+          "lat": 34.7071,
+          "lon": 33.0226
+        }
+      ],
+      "locationFrom": "employer",
+      "scale": "A12"
+    },
+    {
       "id": "ca9e93cac735",
       "sourceId": "eoa-lemesou",
       "employer": "ΕΟΑ Λεμεσού",
@@ -1670,13 +1693,35 @@
       "locationFrom": "district"
     },
     {
-      "id": "0f52c29a08bd",
+      "id": "899fa9b8487f",
+      "sourceId": "cyi",
+      "employer": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "sector": "research",
+      "district": "nicosia",
+      "title": "Post-doctoral Research Fellow in Evidence-Based Archaeological Science Communication (ref. no. STARC_PDF_26_15)",
+      "url": "https://onlinerecruitment.exelsyslive.com/?c=6E7274A2-8EBA-4BEA-905B-06F790EEB566&v=2026%2F0434",
+      "published": null,
+      "deadline": "2026-12-10",
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district"
+    },
+    {
+      "id": "948c5871472a",
       "sourceId": "cing",
       "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "sector": "research",
       "district": "nicosia",
       "title": "VACANCY FOR CLINICAL GENETICIST",
-      "url": "https://www.cing.ac.cy/en/vacancies#collapse3",
+      "url": "https://www.cing.ac.cy/en/vacancies#collapse5",
       "published": null,
       "deadline": null,
       "reference": null,
@@ -1693,13 +1738,13 @@
       "scale": "A4–A7"
     },
     {
-      "id": "8400472518ab",
+      "id": "0f52c29a08bd",
       "sourceId": "cing",
       "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "sector": "research",
       "district": "nicosia",
       "title": "VACANCY FOR EQUIPMENT TECHNICIAN",
-      "url": "https://www.cing.ac.cy/en/vacancies#collapse1",
+      "url": "https://www.cing.ac.cy/en/vacancies#collapse3",
       "published": null,
       "deadline": null,
       "reference": null,
@@ -1721,8 +1766,54 @@
       "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
       "sector": "research",
       "district": "nicosia",
-      "title": "VACANCY FOR SENIOR CLINICAL GENETICIST / DEPARTMENT HEAD",
+      "title": "VACANCY FOR EXECUTIVE SECRETARY",
       "url": "https://www.cing.ac.cy/en/vacancies#collapse2",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district",
+      "scale": "A4–A7"
+    },
+    {
+      "id": "8400472518ab",
+      "sourceId": "cing",
+      "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
+      "sector": "research",
+      "district": "nicosia",
+      "title": "VACANCY FOR LABORATORY SCIENTIFIC OFFICER",
+      "url": "https://www.cing.ac.cy/en/vacancies#collapse1",
+      "published": null,
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Λευκωσία",
+          "district": "nicosia",
+          "districtName": "Λευκωσία",
+          "lat": 35.1856,
+          "lon": 33.3823
+        }
+      ],
+      "locationFrom": "district",
+      "scale": "A4–A7"
+    },
+    {
+      "id": "c4ad560a1d27",
+      "sourceId": "cing",
+      "employer": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
+      "sector": "research",
+      "district": "nicosia",
+      "title": "VACANCY FOR SENIOR CLINICAL GENETICIST / DEPARTMENT HEAD",
+      "url": "https://www.cing.ac.cy/en/vacancies#collapse4",
       "published": null,
       "deadline": null,
       "reference": null,
