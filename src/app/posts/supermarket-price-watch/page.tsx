@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Cyprus Supermarket Price Watch — 10 Household Staples",
   description:
-    "Live prices for 10 essential household products tracked across all major Cyprus supermarkets. Updated hourly from e-kalathi.gov.cy.",
+    "Live prices for 10 essential household products tracked across all major Cyprus supermarkets. Updated regularly from e-kalathi.gov.cy.",
   alternates: {"canonical":"/posts/supermarket-price-watch/","languages":{"en":"/posts/supermarket-price-watch/","el":"/el/posts/supermarket-price-watch/","ru":"/ru/posts/supermarket-price-watch/","x-default":"/posts/supermarket-price-watch/"}},
 };
 
@@ -28,7 +28,7 @@ export default function SupermarketPriceWatchEN() {
           e-Kalathi
         </a>{" "}
         price comparison platform. Prices shown are the cheapest available across all
-        participating supermarket chains. Updated hourly.
+        participating supermarket chains. Updated regularly.
       </p>
 
       <SupermarketTable items={data.items} lang="en" updatedAt={data.updatedAt} />

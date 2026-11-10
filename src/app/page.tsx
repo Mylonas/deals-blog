@@ -74,7 +74,7 @@ export default function Home() {
             <h2 className="text-lg font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
               Cyprus Supermarket Price Watch — 10 Household Staples
             </h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Live prices for the 10 most-bought household products in Cyprus, sourced from the government&apos;s e-Kalathi platform. Updated hourly.</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Live prices for the 10 most-bought household products in Cyprus, sourced from the government&apos;s e-Kalathi platform. Updated regularly.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Read more →</div>
           </Link>
           <Link
