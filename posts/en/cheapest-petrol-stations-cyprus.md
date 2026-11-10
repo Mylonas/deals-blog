@@ -3,7 +3,7 @@ title: "Cheapest Petrol Stations in Cyprus — Live Tracker"
 date: "2026-06-28"
 updated: "2026-11-10"
 category: "Fuel"
-summary: "Live prices for Unleaded 95, Unleaded 98, and Diesel across petrol stations in Cyprus. Updated hourly from the official Cyprus government fuel observatory."
+summary: "Live prices for Unleaded 95, Unleaded 98, and Diesel across petrol stations in Cyprus. Updated regularly from the official Cyprus government fuel observatory."
 pinned: true
 ---
 

@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Дешевейшие АЗС на Кипре — Актуальные цены",
   description:
-    "Актуальные цены на топливо на АЗС Кипра. Фильтруйте по округу и типу топлива (АИ-95, АИ-98, Дизель), чтобы найти ближайшую дешёвую заправку. Обновляется каждый час.",
+    "Актуальные цены на топливо на АЗС Кипра. Фильтруйте по округу и типу топлива (АИ-95, АИ-98, Дизель), чтобы найти ближайшую дешёвую заправку. Обновляется регулярно.",
   alternates: {"canonical":"/ru/posts/cheapest-petrol-stations-cyprus/","languages":{"en":"/posts/cheapest-petrol-stations-cyprus/","el":"/el/posts/cheapest-petrol-stations-cyprus/","ru":"/ru/posts/cheapest-petrol-stations-cyprus/","x-default":"/posts/cheapest-petrol-stations-cyprus/"}},
 };
 
@@ -29,14 +29,14 @@ export default function FuelPricesPageRU() {
         Выберите тип топлива и округ, чтобы найти ближайшую дешёвую АЗС.
         Данные из{" "}
         <a
-          href="https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices"
+          href="https://petroleumprices.meci.gov.cy/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:underline"
         >
           портала цен на топливо правительства Кипра
         </a>
-        . Обновление каждый час.
+        . Регулярное обновление.
       </p>
 
       <FuelTable data={data as any} lang="ru" />
