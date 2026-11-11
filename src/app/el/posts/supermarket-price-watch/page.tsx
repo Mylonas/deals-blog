@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Παρακολούθηση Τιμών Σούπερ Μάρκετ — 10 Βασικά Προϊόντα",
   description:
-    "Ζωντανές τιμές για 10 βασικά οικιακά προϊόντα σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου. Ενημερώνεται κάθε ώρα από e-kalathi.gov.cy.",
+    "Ζωντανές τιμές για 10 βασικά οικιακά προϊόντα σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου. Ενημερώνεται τακτικά από e-kalathi.gov.cy.",
   alternates: {"canonical":"/el/posts/supermarket-price-watch/","languages":{"en":"/posts/supermarket-price-watch/","el":"/el/posts/supermarket-price-watch/","ru":"/ru/posts/supermarket-price-watch/","x-default":"/posts/supermarket-price-watch/"}},
 };
 
@@ -27,7 +27,7 @@ export default function SupermarketPriceWatchEL() {
         <a href="https://www.e-kalathi.gov.cy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
           e-Kalathi
         </a>
-        . Οι τιμές αντιστοιχούν στη φθηνότερη διαθέσιμη τιμή σε όλες τις αλυσίδες. Ενημερώνεται κάθε ώρα.
+        . Οι τιμές αντιστοιχούν στη φθηνότερη διαθέσιμη τιμή σε όλες τις αλυσίδες. Ενημερώνεται τακτικά.
       </p>
 
       <SupermarketTable items={data.items} lang="el" updatedAt={data.updatedAt} />

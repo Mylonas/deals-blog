@@ -70,7 +70,7 @@ export default function TrendsDashboard() {
         </div>
         <p className="text-gray-500 text-sm">
           What&apos;s trending in Cyprus right now — and what posts we could write about it.
-          Updated hourly from news RSS feeds.
+          Updated regularly from news RSS feeds.
         </p>
         <div className="mt-3 flex flex-wrap gap-4 text-xs text-gray-400">
           <span>Last updated: <strong className="text-gray-600">{updated} (EET)</strong></span>

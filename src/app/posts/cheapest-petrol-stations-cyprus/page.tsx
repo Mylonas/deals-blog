@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Cheapest Petrol Stations in Cyprus — Live Prices",
   description:
-    "Live fuel prices across Cyprus. Filter by district and fuel type (Unleaded 95, 98, Diesel) to find the cheapest station near you. Updated hourly from the Cyprus government portal.",
+    "Live fuel prices across Cyprus. Filter by district and fuel type (Unleaded 95, 98, Diesel) to find the cheapest station near you. Updated regularly from the Cyprus government fuel observatory.",
   alternates: {"canonical":"/posts/cheapest-petrol-stations-cyprus/","languages":{"en":"/posts/cheapest-petrol-stations-cyprus/","el":"/el/posts/cheapest-petrol-stations-cyprus/","ru":"/ru/posts/cheapest-petrol-stations-cyprus/","x-default":"/posts/cheapest-petrol-stations-cyprus/"}},
 };
 
@@ -27,9 +27,9 @@ export default function FuelPricesPage() {
       </h1>
       <p className="text-gray-500 dark:text-gray-400 mb-8">
         Filter by fuel type and district to find the cheapest station near you.
-        Prices sourced hourly from the{" "}
+        Prices sourced from the{" "}
         <a
-          href="https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices"
+          href="https://petroleumprices.meci.gov.cy/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:underline"

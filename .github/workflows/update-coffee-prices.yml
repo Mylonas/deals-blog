@@ -2,7 +2,8 @@ name: Update Coffee Prices
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    # Every 6 hours — coffee prices change rarely, hourly was wasteful
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 jobs:

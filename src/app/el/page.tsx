@@ -72,7 +72,7 @@ export default function HomeEl() {
             <h2 className="text-lg font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
               Παρακολούθηση Τιμών Σούπερ Μάρκετ — 10 Βασικά Προϊόντα
             </h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Ζωντανές τιμές για 10 βασικά οικιακά προϊόντα στα μεγάλα σούπερ μάρκετ της Κύπρου, από το e-Kalathi. Ενημερώνεται κάθε ώρα.</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Ζωντανές τιμές για 10 βασικά οικιακά προϊόντα στα μεγάλα σούπερ μάρκετ της Κύπρου, από το e-Kalathi. Ενημερώνεται τακτικά.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Διαβάστε περισσότερα →</div>
           </Link>
           <Link
