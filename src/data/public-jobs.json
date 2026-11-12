@@ -1,17 +1,11 @@
 {
-  "fetchedAt": "2026-11-11T12:41:42.511Z",
-  "count": 81,
+  "fetchedAt": "2026-11-12T13:44:49.836Z",
+  "count": 83,
   "sources": [
     {
       "id": "cpa",
       "name": "Αρχή Λιμένων Κύπρου",
       "count": 1,
-      "error": null
-    },
-    {
-      "id": "psc",
-      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
-      "count": 4,
       "error": null
     },
     {
@@ -21,16 +15,23 @@
       "error": null
     },
     {
+      "id": "hio",
+      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "eey",
       "name": "Επιτροπή Εκπαιδευτικής Υπηρεσίας",
       "count": 0,
       "error": null
     },
     {
-      "id": "hio",
-      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "id": "cera",
+      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
       "count": 0,
-      "error": null
+      "error": null,
+      "via": "site→browser"
     },
     {
       "id": "ocecpr",
@@ -85,27 +86,20 @@
       "error": null
     },
     {
-      "id": "cera",
-      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
-      "count": 0,
-      "error": null,
-      "via": "site→browser"
-    },
-    {
-      "id": "kedipes",
-      "name": "ΚΕΔΙΠΕΣ",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "hfc",
       "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
       "count": 1,
       "error": null
     },
     {
-      "id": "kodap",
-      "name": "ΚΟΔΑΠ",
+      "id": "onek",
+      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "kedipes",
+      "name": "ΚΕΔΙΠΕΣ",
       "count": 0,
       "error": null
     },
@@ -116,32 +110,34 @@
       "error": null
     },
     {
+      "id": "kodap",
+      "name": "ΚΟΔΑΠ",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "anad",
       "name": "ΑνΑΔ (Αρχή Ανάπτυξης Ανθρώπινου Δυναμικού)",
       "count": 0,
       "error": "HTTP 404"
     },
     {
-      "id": "onek",
-      "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
-      "count": 0,
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 6,
       "error": null
+    },
+    {
+      "id": "psc",
+      "name": "Επιτροπή Δημόσιας Υπηρεσίας (ΕΔΥ)",
+      "count": 4,
+      "error": "fetch failed; browser fallback: page.goto: url: expected string, got undefined",
+      "blocked": true,
+      "carriedForward": true
     },
     {
       "id": "nba",
       "name": "Εθνική Αρχή Στοιχημάτων",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 5,
-      "error": null
-    },
-    {
-      "id": "research",
-      "name": "ΙδΕΚ (Ίδρυμα Έρευνας και Καινοτομίας)",
       "count": 0,
       "error": null
     },
@@ -152,8 +148,14 @@
       "error": null
     },
     {
-      "id": "ucy",
-      "name": "Πανεπιστήμιο Κύπρου",
+      "id": "research",
+      "name": "ΙδΕΚ (Ίδρυμα Έρευνας και Καινοτομίας)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "ucm",
+      "name": "Ένωση Δήμων Κύπρου",
       "count": 0,
       "error": null
     },
@@ -161,12 +163,6 @@
       "id": "cut",
       "name": "ΤΕΠΑΚ",
       "count": 5,
-      "error": null
-    },
-    {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
-      "count": 0,
       "error": null
     },
     {
@@ -182,14 +178,20 @@
       "error": null
     },
     {
+      "id": "ucy",
+      "name": "Πανεπιστήμιο Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "cyi",
       "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
       "count": 11,
       "error": null
     },
     {
-      "id": "ucm",
-      "name": "Ένωση Δήμων Κύπρου",
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
       "count": 0,
       "error": null
     },
@@ -224,10 +226,10 @@
       "error": null
     },
     {
-      "id": "eoa-larnakas",
-      "name": "ΕΟΑ Λάρνακας",
-      "count": 1,
-      "error": null
+      "id": "cybc",
+      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
+      "count": 0,
+      "error": "HTTP 522"
     },
     {
       "id": "dimos-lefkosias",
@@ -236,10 +238,10 @@
       "error": null
     },
     {
-      "id": "cybc",
-      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
-      "count": 0,
-      "error": "HTTP 522"
+      "id": "eoa-larnakas",
+      "name": "ΕΟΑ Λάρνακας",
+      "count": 1,
+      "error": null
     },
     {
       "id": "dimos-strovolou",
@@ -260,15 +262,15 @@
       "error": null
     },
     {
-      "id": "dimos-lemesou",
-      "name": "Δήμος Λεμεσού",
-      "count": 1,
-      "error": null
-    },
-    {
       "id": "cyens",
       "name": "CYENS Centre of Excellence",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "dimos-lemesou",
+      "name": "Δήμος Λεμεσού",
+      "count": 1,
       "error": null
     },
     {
@@ -278,14 +280,14 @@
       "error": null
     },
     {
-      "id": "dimos-anatolikis-lemesou",
-      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
+      "id": "eoa-pafou",
+      "name": "ΕΟΑ Πάφου",
       "count": 0,
       "error": null
     },
     {
-      "id": "eoa-pafou",
-      "name": "ΕΟΑ Πάφου",
+      "id": "dimos-anatolikis-lemesou",
+      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
       "count": 0,
       "error": null
     },
@@ -314,6 +316,12 @@
       "error": null
     },
     {
+      "id": "eac",
+      "name": "ΑΗΚ / Electricity Authority of Cyprus",
+      "count": 0,
+      "error": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\nCall log:\n  - navigating to \"https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\", waiting until \"commit\"\n"
+    },
+    {
       "id": "dimos-dromolaxias-meneou",
       "name": "Δήμος Δρομολαξιάς-Μενεού",
       "count": 1,
@@ -326,22 +334,10 @@
       "error": null
     },
     {
-      "id": "dimos-athienou",
-      "name": "Δήμος Αθηένου",
-      "count": 2,
-      "error": null
-    },
-    {
       "id": "dimos-polis-chrysochous",
       "name": "Δήμος Πόλης Χρυσοχούς",
       "count": 0,
       "error": null
-    },
-    {
-      "id": "eac",
-      "name": "ΑΗΚ / Electricity Authority of Cyprus",
-      "count": 0,
-      "error": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\nCall log:\n  - navigating to \"https://www.eac.com.cy/EL/EAC/JobOpportunities/Pages/NewJobOpportunities.aspx\", waiting until \"commit\"\n"
     },
     {
       "id": "dimos-akama",
@@ -362,9 +358,15 @@
       "error": null
     },
     {
+      "id": "dimos-athienou",
+      "name": "Δήμος Αθηένου",
+      "count": 2,
+      "error": null
+    },
+    {
       "id": "dimos-anatolikis-pafou",
       "name": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
-      "count": 4,
+      "count": 5,
       "error": null
     },
     {
@@ -555,6 +557,28 @@
       ],
       "locationFrom": "employer",
       "scale": "E6–E7"
+    },
+    {
+      "id": "20907a8489b6",
+      "sourceId": "dimos-anatolikis-pafou",
+      "employer": "Δήμος Ανατολικής Πάφου (Γεροσκήπου)",
+      "sector": "municipality",
+      "district": "paphos",
+      "title": "Πρόσληψη Υπεύθυνου/ης ομάδας απογευματινής απασχόλησης – ΣΚΕ Γεροσκήπου",
+      "url": "https://ierokipia.org.cy/%cf%80%cf%81%cf%8c%cf%83%ce%bb%ce%b7%cf%88%ce%b7-%cf%85%cf%80%ce%b5%cf%8d%ce%b8%cf%85%ce%bd%ce%bf%cf%85-%ce%b7%cf%82-%ce%bf%ce%bc%ce%ac%ce%b4%ce%b1%cf%82-%ce%b1%cf%80%ce%bf%ce%b3%ce%b5%cf%85%ce%bc/",
+      "published": "2026-11-12",
+      "deadline": null,
+      "reference": null,
+      "locations": [
+        {
+          "name": "Γεροσκήπου",
+          "district": "paphos",
+          "districtName": "Πάφος",
+          "lat": 34.7581,
+          "lon": 32.455
+        }
+      ],
+      "locationFrom": "title"
     },
     {
       "id": "850fa8a3def8",
@@ -1420,7 +1444,8 @@
       "reference": "Ε.Ε. 5900 / γνωστοποίηση 1938",
       "locations": [],
       "locationFrom": "pancyprus",
-      "scale": "A13"
+      "scale": "A13",
+      "carriedForward": true
     },
     {
       "id": "8157431537ef",
@@ -1435,7 +1460,8 @@
       "reference": "Ε.Ε. 5900 / γνωστοποίηση 1936",
       "locations": [],
       "locationFrom": "pancyprus",
-      "scale": "A13"
+      "scale": "A13",
+      "carriedForward": true
     },
     {
       "id": "8b4aa27c0cfa",
@@ -1450,7 +1476,8 @@
       "reference": "Ε.Ε. 5900 / γνωστοποίηση 1937",
       "locations": [],
       "locationFrom": "pancyprus",
-      "scale": "A13"
+      "scale": "A13",
+      "carriedForward": true
     },
     {
       "id": "b59a880fc7f3",
@@ -1465,7 +1492,8 @@
       "reference": "Ε.Ε. 5900 / γνωστοποίηση 1935",
       "locations": [],
       "locationFrom": "pancyprus",
-      "scale": "A8–A11"
+      "scale": "A8–A11",
+      "carriedForward": true
     },
     {
       "id": "e2062a269e1e",
@@ -1910,6 +1938,21 @@
       "reference": null,
       "locations": [],
       "locationFrom": "pancyprus"
+    },
+    {
+      "id": "edb24d74cf98",
+      "sourceId": "shso",
+      "employer": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "sector": "semi-government",
+      "district": "pancyprus",
+      "title": "ΚΕΝΕΣ ΘΕΣΕΙΣ ΩΡΟΜΙΣΘΙΟΥ ΠΡΟΣΩΠΙΚΟΥ ΣΤΟ ΤΜΗΜΑ ΕΣΩΤΕΡΙΚΗΣ ΚΑΘΑΡΙΟΤΗΤΑΣ ΣΤΟΝ ΟΡΓΑΝΙΣΜΟ ΚΡΑΤΙΚΩΝ ΥΠΗΡΕΣΙΩΝ ΥΓΕΙΑΣ (ΟΚΥπΥ)",
+      "url": "https://www.shso.org.cy/kenes-theseis-oromisthiou-prosopikou-sto-tmima-esoterikis-kathariotitas-ston-organismo-kratikon-ypiresion-ygeias-okypy/",
+      "published": "2026-11-12",
+      "deadline": null,
+      "reference": null,
+      "locations": [],
+      "locationFrom": "pancyprus",
+      "scale": "E2–E3"
     },
     {
       "id": "66e1071df99d",
