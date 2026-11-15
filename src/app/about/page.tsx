@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about DealsHub — a free website that compares prices, deals and public-sector job listings across Cyprus to help you save money.",
+    "Learn about Mouxti — a free website that compares prices, deals and public-sector job listings across Cyprus to help you save money.",
   alternates: {
     canonical: "/about/",
     languages: { en: "/about/", el: "/el/about/", ru: "/ru/about/", "x-default": "/about/" },
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 export default function AboutEn() {
   return (
     <article className="max-w-3xl prose-neutral">
-      <h1 className="text-3xl font-bold mb-2">About DealsHub</h1>
+      <h1 className="text-3xl font-bold mb-2">About Mouxti</h1>
 
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed mt-8">
         <p>
-          DealsHub is a free, independent website built to help people in Cyprus find the best
+          Mouxti is a free, independent website built to help people in Cyprus find the best
           prices and save money on everyday essentials. We compare publicly available prices from
           supermarkets, petrol stations, coffee shops and food delivery platforms — all in one place.
         </p>
@@ -57,7 +57,7 @@ export default function AboutEn() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Who runs this</h2>
           <p>
-            DealsHub is a personal project by Michalis Mylonas, a software developer based in Nicosia,
+            Mouxti is a personal project by Michalis Mylonas, a software developer based in Nicosia,
             Cyprus. It started as a simple price-comparison tool and grew into a comprehensive resource
             for everyday savings.
           </p>
@@ -73,7 +73,7 @@ export default function AboutEn() {
       </div>
 
       <div className="mt-10">
-        <Link href="/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Back to DealsHub</Link>
+        <Link href="/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Back to Mouxti</Link>
       </div>
     </article>
   );

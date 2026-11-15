@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Terms governing the use of DealsHub — a free informational website comparing prices, deals and public-sector job listings in Cyprus.",
+    "Terms governing the use of Mouxti — a free informational website comparing prices, deals and public-sector job listings in Cyprus.",
   alternates: {
     canonical: "/terms/",
     languages: { en: "/terms/", el: "/el/terms/", ru: "/ru/terms/", "x-default": "/terms/" },
@@ -19,14 +19,14 @@ export default function TermsEn() {
 
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
-          Welcome to DealsHub. By accessing or using the website you agree to the following terms.
+          Welcome to Mouxti. By accessing or using the website you agree to the following terms.
           If you do not agree, please do not use the site.
         </p>
 
         <section>
           <h2 className="text-xl font-semibold mb-2">What we provide</h2>
           <p>
-            DealsHub is a free informational website that aggregates and compares publicly available
+            Mouxti is a free informational website that aggregates and compares publicly available
             prices, deals and public-sector job listings in Cyprus. All content is provided
             &ldquo;as is&rdquo; for general informational purposes only.
           </p>
@@ -53,7 +53,7 @@ export default function TermsEn() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Intellectual property</h2>
           <p>
-            Original content, design and code on DealsHub are the property of the site owner. Product
+            Original content, design and code on Mouxti are the property of the site owner. Product
             names, logos and trademarks mentioned on the site belong to their respective owners.
           </p>
         </section>
@@ -61,7 +61,7 @@ export default function TermsEn() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Limitation of liability</h2>
           <p>
-            DealsHub and its operator are not liable for any direct, indirect or consequential damages
+            Mouxti and its operator are not liable for any direct, indirect or consequential damages
             arising from your use of the site or reliance on its content. Use the information at your
             own risk.
           </p>
@@ -95,7 +95,7 @@ export default function TermsEn() {
       </div>
 
       <div className="mt-10">
-        <Link href="/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Back to DealsHub</Link>
+        <Link href="/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Back to Mouxti</Link>
       </div>
     </article>
   );

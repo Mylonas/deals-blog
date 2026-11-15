@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Σχετικά",
   description:
-    "Μάθετε για το DealsHub — δωρεάν ιστότοπο σύγκρισης τιμών, προσφορών και θέσεων δημόσιου τομέα στην Κύπρο.",
+    "Μάθετε για το Mouxti — δωρεάν ιστότοπο σύγκρισης τιμών, προσφορών και θέσεων δημόσιου τομέα στην Κύπρο.",
   alternates: {
     canonical: "/el/about/",
     languages: { en: "/about/", el: "/el/about/", ru: "/ru/about/", "x-default": "/about/" },
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 export default function AboutEl() {
   return (
     <article className="max-w-3xl">
-      <h1 className="text-3xl font-bold mb-2">Σχετικά με το DealsHub</h1>
+      <h1 className="text-3xl font-bold mb-2">Σχετικά με το Mouxti</h1>
 
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed mt-8">
         <p>
-          Το DealsHub είναι ένας δωρεάν, ανεξάρτητος ιστότοπος που βοηθά τους κατοίκους της Κύπρου
+          Το Mouxti είναι ένας δωρεάν, ανεξάρτητος ιστότοπος που βοηθά τους κατοίκους της Κύπρου
           να βρίσκουν τις καλύτερες τιμές και να εξοικονομούν χρήματα στα καθημερινά τους έξοδα.
           Συγκρίνουμε δημόσια διαθέσιμες τιμές από σούπερ μάρκετ, πρατήρια καυσίμων, καφετέριες
           και πλατφόρμες παράδοσης φαγητού — όλα σε ένα μέρος.
@@ -58,7 +58,7 @@ export default function AboutEl() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Ποιος το διαχειρίζεται</h2>
           <p>
-            Το DealsHub είναι ένα προσωπικό έργο του Μιχάλη Μυλωνά, προγραμματιστή λογισμικού
+            Το Mouxti είναι ένα προσωπικό έργο του Μιχάλη Μυλωνά, προγραμματιστή λογισμικού
             με έδρα τη Λευκωσία, Κύπρο. Ξεκίνησε ως ένα απλό εργαλείο σύγκρισης τιμών και
             εξελίχθηκε σε μια ολοκληρωμένη πηγή καθημερινής εξοικονόμησης.
           </p>
@@ -74,7 +74,7 @@ export default function AboutEl() {
       </div>
 
       <div className="mt-10">
-        <Link href="/el/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Πίσω στο DealsHub</Link>
+        <Link href="/el/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Πίσω στο Mouxti</Link>
       </div>
     </article>
   );

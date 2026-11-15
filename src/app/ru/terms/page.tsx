@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Условия использования",
   description:
-    "Условия использования DealsHub — бесплатного информационного сайта для сравнения цен, предложений и вакансий государственного сектора на Кипре.",
+    "Условия использования Mouxti — бесплатного информационного сайта для сравнения цен, предложений и вакансий государственного сектора на Кипре.",
   alternates: {
     canonical: "/ru/terms/",
     languages: { en: "/terms/", el: "/el/terms/", ru: "/ru/terms/", "x-default": "/terms/" },
@@ -19,14 +19,14 @@ export default function TermsRu() {
 
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
-          Добро пожаловать на DealsHub. Используя сайт, вы соглашаетесь со следующими условиями.
+          Добро пожаловать на Mouxti. Используя сайт, вы соглашаетесь со следующими условиями.
           Если вы не согласны, пожалуйста, не пользуйтесь сайтом.
         </p>
 
         <section>
           <h2 className="text-xl font-semibold mb-2">Что мы предоставляем</h2>
           <p>
-            DealsHub — бесплатный информационный сайт, который собирает и сравнивает общедоступные
+            Mouxti — бесплатный информационный сайт, который собирает и сравнивает общедоступные
             цены, предложения и вакансии государственного сектора на Кипре. Весь контент
             предоставляется «как есть» исключительно в информационных целях.
           </p>
@@ -53,7 +53,7 @@ export default function TermsRu() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Интеллектуальная собственность</h2>
           <p>
-            Оригинальный контент, дизайн и код DealsHub являются собственностью владельца сайта.
+            Оригинальный контент, дизайн и код Mouxti являются собственностью владельца сайта.
             Названия продуктов, логотипы и товарные знаки принадлежат их соответствующим владельцам.
           </p>
         </section>
@@ -61,7 +61,7 @@ export default function TermsRu() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Ограничение ответственности</h2>
           <p>
-            DealsHub и его оператор не несут ответственности за любой прямой, косвенный или
+            Mouxti и его оператор не несут ответственности за любой прямой, косвенный или
             сопутствующий ущерб, возникший в результате использования сайта или доверия к его
             содержимому. Вы используете информацию на свой страх и риск.
           </p>
@@ -94,7 +94,7 @@ export default function TermsRu() {
       </div>
 
       <div className="mt-10">
-        <Link href="/ru/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Назад на DealsHub</Link>
+        <Link href="/ru/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Назад на Mouxti</Link>
       </div>
     </article>
   );

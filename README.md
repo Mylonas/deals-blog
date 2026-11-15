@@ -1,4 +1,4 @@
-# 🏷️ DealsHub Cyprus
+# 🏷️ Mouxti Cyprus
 
 > **Live at [mouxti.com](https://mouxti.com)**
 

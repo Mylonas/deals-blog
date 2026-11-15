@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Όροι Χρήσης",
   description:
-    "Όροι που διέπουν τη χρήση του DealsHub — δωρεάν ενημερωτικός ιστότοπος σύγκρισης τιμών, προσφορών και θέσεων δημόσιου τομέα στην Κύπρο.",
+    "Όροι που διέπουν τη χρήση του Mouxti — δωρεάν ενημερωτικός ιστότοπος σύγκρισης τιμών, προσφορών και θέσεων δημόσιου τομέα στην Κύπρο.",
   alternates: {
     canonical: "/el/terms/",
     languages: { en: "/terms/", el: "/el/terms/", ru: "/ru/terms/", "x-default": "/terms/" },
@@ -19,14 +19,14 @@ export default function TermsEl() {
 
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
-          Καλώς ήρθατε στο DealsHub. Χρησιμοποιώντας τον ιστότοπο αποδέχεστε τους παρακάτω όρους.
+          Καλώς ήρθατε στο Mouxti. Χρησιμοποιώντας τον ιστότοπο αποδέχεστε τους παρακάτω όρους.
           Αν δεν συμφωνείτε, παρακαλούμε μην χρησιμοποιείτε τον ιστότοπο.
         </p>
 
         <section>
           <h2 className="text-xl font-semibold mb-2">Τι παρέχουμε</h2>
           <p>
-            Το DealsHub είναι ένας δωρεάν ενημερωτικός ιστότοπος που συγκεντρώνει και συγκρίνει
+            Το Mouxti είναι ένας δωρεάν ενημερωτικός ιστότοπος που συγκεντρώνει και συγκρίνει
             δημόσια διαθέσιμες τιμές, προσφορές και θέσεις εργασίας δημόσιου τομέα στην Κύπρο.
             Όλο το περιεχόμενο παρέχεται «ως έχει» για γενική ενημέρωση.
           </p>
@@ -54,7 +54,7 @@ export default function TermsEl() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Πνευματική ιδιοκτησία</h2>
           <p>
-            Το πρωτότυπο περιεχόμενο, ο σχεδιασμός και ο κώδικας του DealsHub ανήκουν στον ιδιοκτήτη
+            Το πρωτότυπο περιεχόμενο, ο σχεδιασμός και ο κώδικας του Mouxti ανήκουν στον ιδιοκτήτη
             του ιστότοπου. Τα ονόματα προϊόντων, τα λογότυπα και τα εμπορικά σήματα ανήκουν στους
             αντίστοιχους ιδιοκτήτες τους.
           </p>
@@ -63,7 +63,7 @@ export default function TermsEl() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Περιορισμός ευθύνης</h2>
           <p>
-            Το DealsHub και ο διαχειριστής του δεν ευθύνονται για τυχόν άμεσες, έμμεσες ή
+            Το Mouxti και ο διαχειριστής του δεν ευθύνονται για τυχόν άμεσες, έμμεσες ή
             παρεπόμενες ζημιές που προκύπτουν από τη χρήση του ιστότοπου ή την εξάρτηση από
             το περιεχόμενό του. Χρησιμοποιείτε τις πληροφορίες με δική σας ευθύνη.
           </p>
@@ -97,7 +97,7 @@ export default function TermsEl() {
       </div>
 
       <div className="mt-10">
-        <Link href="/el/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Πίσω στο DealsHub</Link>
+        <Link href="/el/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Πίσω στο Mouxti</Link>
       </div>
     </article>
   );

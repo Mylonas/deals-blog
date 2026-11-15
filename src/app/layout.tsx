@@ -5,7 +5,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import CookieConsent from "@/components/CookieConsent";
 import AdSenseLoader from "@/components/AdSenseLoader";
 
-const siteName = process.env.NEXT_PUBLIC_SITE_NAME ?? "DealsHub";
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME ?? "Mouxti";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
               <span className="text-2xl">🏷️</span>
-              <span className="text-xl font-bold tracking-tight">DealsHub</span>
+              <span className="text-xl font-bold tracking-tight">Mouxti</span>
             </a>
             <div className="flex items-center gap-4">
               <span className="text-sm text-gray-500 dark:text-gray-400 hidden sm:block">
@@ -66,7 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a href="/privacy/" className="hover:underline">Privacy Policy</a>
             <a href="/terms/" className="hover:underline">Terms</a>
           </nav>
-          © {new Date().getFullYear()} DealsHub
+          © {new Date().getFullYear()} Mouxti
         </footer>
         <CookieConsent />
         <AdSenseLoader />
