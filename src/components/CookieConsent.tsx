@@ -31,13 +31,13 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div role="region" aria-label={s.cookieLabel} className="fixed bottom-0 inset-x-0 z-50 p-2 sm:p-4">
-      <div className="max-w-4xl mx-auto bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg p-3 sm:p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-        <p className="text-xs sm:text-sm text-gray-800 dark:text-gray-200 flex-1 leading-snug">
+    <div role="region" aria-label={s.cookieLabel} className="fixed bottom-0 inset-x-0 z-50 p-1.5 sm:p-4">
+      <div className="max-w-4xl mx-auto bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg p-2 sm:p-4 flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3">
+        <p className="text-xs sm:text-sm text-gray-800 dark:text-gray-200 flex-1 leading-tight">
           {s.cookieText}{" "}
           <a href={pageHref(lang, "privacy")} className="text-blue-700 dark:text-blue-300 underline">
             {s.cookiePrivacy}
-          </a>{" "}
+          </a>
           {s.cookieEnd}
         </p>
         <div className="flex gap-2 shrink-0">
