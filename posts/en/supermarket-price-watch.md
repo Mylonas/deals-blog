@@ -1,7 +1,7 @@
 ---
 title: "Cyprus Supermarket Price Watch — 10 Household Staples"
 date: "2026-06-28"
-updated: "2026-11-10"
+updated: "2026-11-15"
 category: "Food & Drink"
 summary: "Live prices for 10 essential household products tracked across all major Cyprus supermarkets. Updated 4× daily from the official e-kalathi.gov.cy price observatory."
 pinned: false
@@ -11,17 +11,17 @@ Live prices for the 10 most-bought household staples in Cyprus, sourced from the
 
 <!-- PRICES_START -->
 
-> Updated 10 November 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Updated 15 November 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
 | Staple | Cheapest Price | Brand |
 |---------|---------|--------|
 | Fresh Milk 1L | **[€2.66](https://www.e-kalathi.gov.cy/product-information/31)** | Charalambides |
-| Eggs | **[€2.15](https://www.e-kalathi.gov.cy/product-information/414)** | Nikiforou |
+| Eggs | **[€3.89](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
 | Halloumi 200g | **[€1.95](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Spaghetti 500g | **[€0.89](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Olive Oil 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
-| Water 1.5L ×6 | **[€1.89](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
-| Yogurt 450g | **[€1.99](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
+| Water 1.5L ×6 | **[€1.99](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
+| Yogurt 450g | **[€3.85](https://www.e-kalathi.gov.cy/product-information/301)** | Charalambides Christis |
 | Rice 1kg | **[€1.95](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
 | Orange Juice 1L | **[€1.65](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
 | Coca-Cola 1L ×2 | **[€2.38](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
