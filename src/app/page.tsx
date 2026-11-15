@@ -31,6 +31,9 @@ function CategoryBadge({ category }: { category: string }) {
   );
 }
 
+// Set to true (and rename the _cheapest-supermarket-products route folder back) to show this card again.
+const SHOW_SUPERMARKET_PRODUCTS = false;
+
 export default function Home() {
   const posts = getAllPosts("en");
   const pinned = posts.filter((p) => p.pinned);
@@ -91,6 +94,7 @@ export default function Home() {
             <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Pork, chicken, pork chop and mix pita prices in every Cyprus city, always sorted cheapest first — with a near-me button. Updated weekly.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Read more →</div>
           </Link>
+          {SHOW_SUPERMARKET_PRODUCTS && (
           <Link
             href="/posts/cheapest-supermarket-products"
             className="bg-amber-50 dark:bg-amber-950/20 rounded-2xl border border-amber-200 dark:border-amber-900/40 p-5 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all group"
@@ -105,6 +109,7 @@ export default function Home() {
             <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">The 20 products with the biggest price cuts right now across all major Cyprus supermarkets, from the government&apos;s e-Kalathi price observatory. Updated daily.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Read more →</div>
           </Link>
+          )}
           {pinned.map((post) => (
               <Link
                 key={post.slug}

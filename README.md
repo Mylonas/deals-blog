@@ -97,6 +97,8 @@ deals-blog/
 | `cheapest-fried-chicken-nicosia` | Food & Drink | — |
 | `student-deals-cyprus` | Student Deals | — |
 
+> **Hidden posts (2026-11-15):** `cheapest-cars-cyprus`, `cheapest-supermarket-products`, `cheapest-cinema-tickets-cyprus`, `cheapest-gym-memberships-nicosia-limassol`, `cheapest-internet-broadband-cyprus`, `cheapest-electricity-plans-cyprus`, `best-value-meze-restaurants-cyprus`, `cheapest-fried-chicken-nicosia` and `student-deals-cyprus` are not published (404, not listed, not in the sitemap). To un-hide a markdown post, delete `hidden: true` from its three front-matter files (`posts/{en,el,ru}/<slug>.md`). For the two dedicated pages (`cheapest-cars-cyprus`, `cheapest-supermarket-products`) also rename `src/app/{,el/,ru/}posts/_<slug>` back to `<slug>`; for the supermarket one also set `SHOW_SUPERMARKET_PRODUCTS = true` in the three home pages.
+
 ---
 
 ## Live Data Sources

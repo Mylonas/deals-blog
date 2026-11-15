@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: "Cheapest Gym Memberships in Nicosia & Limassol (2026)"
 date: "2026-06-28"
 category: "Entertainment & Leisure"

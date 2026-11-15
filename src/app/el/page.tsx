@@ -29,6 +29,9 @@ function CategoryBadge({ category }: { category: string }) {
   );
 }
 
+// Set to true (and rename the _cheapest-supermarket-products route folder back) to show this card again.
+const SHOW_SUPERMARKET_PRODUCTS = false;
+
 export default function HomeEl() {
   const posts = getAllPosts("el");
   const pinned = posts.filter((p) => p.pinned);
@@ -89,6 +92,7 @@ export default function HomeEl() {
             <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Τιμές για χοιρινό, κοτόπουλο, μπριζόλα και μιχτή πίτα σε κάθε πόλη της Κύπρου, πάντα με το φθηνότερο πρώτο — με κουμπί «Κοντά μου». Εβδομαδιαία ενημέρωση.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Διαβάστε περισσότερα →</div>
           </Link>
+          {SHOW_SUPERMARKET_PRODUCTS && (
           <Link
             href="/el/posts/cheapest-supermarket-products"
             className="bg-amber-50 dark:bg-amber-950/20 rounded-2xl border border-amber-200 dark:border-amber-900/40 p-5 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all group"
@@ -103,6 +107,7 @@ export default function HomeEl() {
             <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Τα 20 προϊόντα με τις μεγαλύτερες μειώσεις τιμής αυτή τη στιγμή σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου, από το e-Kalathi. Ενημέρωση καθημερινά.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Διαβάστε περισσότερα →</div>
           </Link>
+          )}
           {pinned.map((post) => (
               <Link
                 key={post.slug}

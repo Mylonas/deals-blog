@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: "Cheapest Cars in Cyprus — Live Bazaraki Listings"
 date: "2026-07-23"
 category: "Vehicles"

@@ -35,9 +35,12 @@ const categoryColors: Record<string, string> = {
 const DEDICATED_SLUGS = ["cheapest-petrol-stations-cyprus", "supermarket-price-watch", "cheapest-supermarket-products", "cheapest-coffee-nicosia"];
 
 export async function generateStaticParams() {
-  return getAllPosts("el")
+  const slugs = getAllPosts("el")
     .filter((p) => !DEDICATED_SLUGS.includes(p.slug))
     .map((p) => ({ slug: p.slug }));
+  // Static export needs at least one param. When every markdown post is hidden or has a
+  // dedicated page, emit a placeholder that renders notFound() (no real article).
+  return slugs.length ? slugs : [{ slug: "_none" }];
 }
 
 export default async function PostPageEl({
