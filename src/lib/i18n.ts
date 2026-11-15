@@ -4,8 +4,14 @@
 export type Lang = "en" | "el" | "ru";
 export const LANGS: Lang[] = ["en", "el", "ru"];
 
-export const TOOLS = ["fuel", "supermarket", "coffee", "souvlaki", "jobs"] as const;
-export type Tool = (typeof TOOLS)[number];
+// Every tracker the code knows about, and the ones that are live. "supermarket" and
+// "jobs" are hidden for now (their routes are the private _jobs and
+// _supermarket-price-watch folders). To show one again: rename its route folders back,
+// remove `hidden: true` from the supermarket markdown, add the tool to TOOLS below,
+// restore the sitemap entry and remove it from functions/_middleware.js.
+export const ALL_TOOLS = ["fuel", "supermarket", "coffee", "souvlaki", "jobs"] as const;
+export type Tool = (typeof ALL_TOOLS)[number];
+export const TOOLS: readonly Tool[] = ["fuel", "coffee", "souvlaki"];
 
 // URL path (no leading/trailing slash) of each tool, identical in every language.
 export const TOOL_PATH: Record<Tool, string> = {
@@ -30,7 +36,7 @@ export function langFromPath(pathname: string): Lang {
 
 export function toolFromPath(pathname: string): Tool | null {
   const p = pathname.replace(/^\/(el|ru)(?=\/|$)/, "").replace(/\/+$/, "");
-  for (const t of TOOLS) if (p === `/${TOOL_PATH[t]}`) return t;
+  for (const t of ALL_TOOLS) if (p === `/${TOOL_PATH[t]}`) return t;
   return null;
 }
 
@@ -100,9 +106,9 @@ export const STR: Record<Lang, Strings> = {
     source: "Source",
     aboutData: "About this data",
     homeTitle: "Cyprus price trackers",
-    homeIntro: "Live prices and vacancies across Cyprus, refreshed automatically. Pick a tracker.",
+    homeIntro: "Live fuel, coffee and souvlaki prices across Cyprus, refreshed automatically. Pick a tracker.",
     homeDescription:
-      "Live Cyprus price trackers: cheapest petrol, supermarket prices, freddo espresso, souvlaki and public-sector jobs. Updated automatically.",
+      "Live Cyprus price trackers: cheapest petrol and diesel, freddo espresso and souvlaki prices by city. Updated automatically.",
     footerNav: "Footer",
     about: "About",
     contact: "Contact",
@@ -149,9 +155,9 @@ export const STR: Record<Lang, Strings> = {
     source: "Πηγή",
     aboutData: "Σχετικά με τα δεδομένα",
     homeTitle: "Τιμές στην Κύπρο",
-    homeIntro: "Ζωντανές τιμές και θέσεις εργασίας στην Κύπρο, με αυτόματη ενημέρωση. Διαλέξτε εργαλείο.",
+    homeIntro: "Ζωντανές τιμές καυσίμων, καφέ και σουβλακιού στην Κύπρο, με αυτόματη ενημέρωση. Διαλέξτε εργαλείο.",
     homeDescription:
-      "Ζωντανές τιμές στην Κύπρο: φθηνότερη βενζίνη, σούπερ μάρκετ, φρέντο εσπρέσο, σουβλάκι και θέσεις εργασίας στον δημόσιο τομέα. Αυτόματη ενημέρωση.",
+      "Ζωντανές τιμές στην Κύπρο: φθηνότερη βενζίνη και πετρέλαιο, φρέντο εσπρέσο και σουβλάκι ανά πόλη. Αυτόματη ενημέρωση.",
     footerNav: "Υποσέλιδο",
     about: "Σχετικά",
     contact: "Επικοινωνία",
@@ -198,9 +204,9 @@ export const STR: Record<Lang, Strings> = {
     source: "Источник",
     aboutData: "О данных",
     homeTitle: "Цены на Кипре",
-    homeIntro: "Актуальные цены и вакансии на Кипре, обновляются автоматически. Выберите трекер.",
+    homeIntro: "Актуальные цены на топливо, кофе и сувлаки на Кипре, обновляются автоматически. Выберите трекер.",
     homeDescription:
-      "Актуальные цены на Кипре: дешёвый бензин, супермаркеты, фредо эспрессо, сувлаки и вакансии госсектора. Автоматическое обновление.",
+      "Актуальные цены на Кипре: дешёвый бензин и дизель, фредо эспрессо и сувлаки по городам. Автоматическое обновление.",
     footerNav: "Нижнее меню",
     about: "О сайте",
     contact: "Контакты",

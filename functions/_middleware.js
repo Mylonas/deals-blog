@@ -20,6 +20,7 @@ const HIDDEN_SLUGS = [
   "cheapest-electricity-plans-cyprus",
   "cheapest-cinema-tickets-cyprus",
   "best-value-meze-restaurants-cyprus",
+  "supermarket-price-watch",
 ];
 
 export function onRequest(context) {
@@ -29,6 +30,12 @@ export function onRequest(context) {
   }
   const m = url.pathname.match(/^\/(?:el\/|ru\/)?posts\/([^/]+)\/?$/);
   if (m && HIDDEN_SLUGS.includes(m[1])) {
+    return new Response("Not found", {
+      status: 404,
+      headers: { "Cache-Control": "no-store", "Content-Type": "text/plain; charset=utf-8", "X-Robots-Tag": "noindex" },
+    });
+  }
+  if (/^\/(?:el\/|ru\/)?jobs\/?$/.test(url.pathname)) {
     return new Response("Not found", {
       status: 404,
       headers: { "Cache-Control": "no-store", "Content-Type": "text/plain; charset=utf-8", "X-Robots-Tag": "noindex" },
