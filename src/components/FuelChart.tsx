@@ -85,7 +85,7 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
   }, [history, days, view]);
 
   if (filtered.length < 2) {
-    return <p className="text-sm text-gray-400 dark:text-gray-500 py-4">{t.noData}</p>;
+    return <p className="text-sm text-gray-600 dark:text-gray-400 py-4">{t.noData}</p>;
   }
 
   const prices = filtered.flatMap(e => {
@@ -132,7 +132,7 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
             onClick={() => setView(v)}
             className={`px-3 py-1 text-xs rounded-full font-medium transition-colors ${
               view === v
-                ? "bg-amber-500 text-white"
+                ? "bg-amber-700 text-white"
                 : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
             }`}
           >
@@ -148,7 +148,7 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
             <XAxis
               dataKey="date"
               tick={{ fontSize: 11, fill: "currentColor" }}
-              className="text-gray-500 dark:text-gray-400"
+              className="text-gray-600 dark:text-gray-400"
               interval="preserveStartEnd"
             />
             <YAxis
@@ -156,7 +156,7 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
               domain={[minP, maxP]}
               tickFormatter={v => `€${v.toFixed(3)}`}
               tick={{ fontSize: 11, fill: "currentColor" }}
-              className="text-gray-500 dark:text-gray-400"
+              className="text-gray-600 dark:text-gray-400"
               width={60}
             />
             {hasBrent && (

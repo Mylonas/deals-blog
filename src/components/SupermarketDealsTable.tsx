@@ -92,7 +92,7 @@ function Sparkline({ history, label }: { history: PricePoint[]; label: string })
         <polygon points={area} fill="currentColor" opacity={0.12} />
         <polyline points={line} fill="none" stroke="currentColor" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
       </svg>
-      <div className="flex justify-between text-[10px] text-gray-400 dark:text-gray-500 mt-0.5">
+      <div className="flex justify-between text-[10px] text-gray-600 dark:text-gray-400 mt-0.5">
         <span>{label}</span>
         <span>€{min.toFixed(2)} – €{max.toFixed(2)}</span>
       </div>
@@ -134,7 +134,7 @@ export default function SupermarketDealsTable({
             onClick={() => setTab(k)}
             className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
               tab === k
-                ? "bg-amber-500 text-white"
+                ? "bg-amber-700 text-white"
                 : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
             }`}
           >
@@ -144,12 +144,12 @@ export default function SupermarketDealsTable({
       </div>
 
       {tab === "lows" && (
-        <p className="mb-5 text-sm text-gray-500 dark:text-gray-400">{t.lowsIntro}</p>
+        <p className="mb-5 text-sm text-gray-600 dark:text-gray-400">{t.lowsIntro}</p>
       )}
 
       {/* Sort controls */}
       <div className="flex items-center gap-2 mb-5 flex-wrap">
-        <span className="text-sm text-gray-500 dark:text-gray-400 mr-1">
+        <span className="text-sm text-gray-600 dark:text-gray-400 mr-1">
           {lang === "en" ? "Sort:" : lang === "el" ? "Ταξινόμηση:" : "Сортировка:"}
         </span>
         {(["price", "discount", "name"] as SortKey[]).map((key) => (
@@ -158,21 +158,21 @@ export default function SupermarketDealsTable({
             onClick={() => setSort(key)}
             className={`px-3 py-1 text-sm rounded-full border transition-colors ${
               sort === key
-                ? "bg-amber-500 text-white border-amber-500"
+                ? "bg-amber-700 text-white border-amber-700"
                 : "border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
             }`}
           >
             {key === "price" ? t.sortPrice : key === "discount" ? t.sortDiscount : t.sortName}
           </button>
         ))}
-        <span className="ml-auto text-xs text-gray-400 dark:text-gray-500">
+        <span className="ml-auto text-xs text-gray-600 dark:text-gray-400">
           {t.updated}: {updated}
         </span>
       </div>
 
       {/* Empty state for the lows tab */}
       {tab === "lows" && sorted.length === 0 && (
-        <p className="text-sm text-gray-400 dark:text-gray-500 py-8 text-center">{t.noLows}</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 py-8 text-center">{t.noLows}</p>
       )}
 
       {/* Product cards grid */}
@@ -185,7 +185,7 @@ export default function SupermarketDealsTable({
               href={deal.eKalathiUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-amber-400 dark:hover:border-amber-500 hover:shadow-sm transition-all group bg-white dark:bg-gray-900"
+              className="flex items-start gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-amber-400 dark:hover:border-amber-700 hover:shadow-sm transition-all group bg-white dark:bg-gray-900"
             >
               {/* Thumbnail */}
               {deal.thumbnailUrl && (
@@ -201,7 +201,7 @@ export default function SupermarketDealsTable({
 
               <div className="flex-1 min-w-0">
                 {/* Category */}
-                <span className="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide">
+                <span className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">
                   {cat}
                 </span>
                 {/* Name */}
@@ -232,12 +232,12 @@ export default function SupermarketDealsTable({
                 )}
                 {/* Price row */}
                 <div className="flex items-center gap-2 mt-2">
-                  <span className="text-lg font-bold text-amber-600 dark:text-amber-400">
+                  <span className="text-lg font-bold text-amber-800 dark:text-amber-400">
                     €{deal.price.toFixed(2)}
                   </span>
                   {deal.previousPrice && deal.discountPct > 0 && (
                     <>
-                      <span className="text-xs text-gray-400 dark:text-gray-500 line-through">
+                      <span className="text-xs text-gray-600 dark:text-gray-400 line-through">
                         €{deal.previousPrice.toFixed(2)}
                       </span>
                       <span className="text-xs font-bold px-1.5 py-0.5 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
@@ -245,7 +245,7 @@ export default function SupermarketDealsTable({
                       </span>
                     </>
                   )}
-                  <span className="ml-auto text-xs text-blue-500 dark:text-blue-400 group-hover:underline whitespace-nowrap">
+                  <span className="ml-auto text-xs text-blue-700 dark:text-blue-400 group-hover:underline whitespace-nowrap">
                     {t.viewAll}
                   </span>
                 </div>
@@ -260,7 +260,7 @@ export default function SupermarketDealsTable({
       </div>
 
       {/* Note */}
-      <p className="mt-6 text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
+      <p className="mt-6 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
         {t.note}
       </p>
     </div>

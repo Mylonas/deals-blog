@@ -197,7 +197,7 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
 
   return (
     <div>
-      <div className="mb-4 text-xs text-gray-500 dark:text-gray-400">
+      <div className="mb-4 text-xs text-gray-600 dark:text-gray-400">
         {t.updated}: {updatedLabel} · {data.count.toLocaleString()} {t.total} · {t.showing}{" "}
         {filtered.length.toLocaleString()} {t.of} {data.count.toLocaleString()}
       </div>
@@ -288,14 +288,14 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
         </select>
         <button
           type="button" onClick={clearAll}
-          className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+          className="text-sm text-blue-700 dark:text-blue-400 hover:underline"
         >
           {t.clear}
         </button>
       </div>
 
       {slice.length === 0 ? (
-        <p className="text-gray-500 dark:text-gray-400 py-10 text-center">{t.none}</p>
+        <p className="text-gray-600 dark:text-gray-400 py-10 text-center">{t.none}</p>
       ) : (
         <div className="grid gap-3 sm:grid-cols-2">
           {slice.map((c) => (
@@ -314,7 +314,7 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
                   className="w-28 h-24 object-cover rounded-md flex-shrink-0 bg-gray-100 dark:bg-gray-800"
                 />
               ) : (
-                <div className="w-28 h-24 flex items-center justify-center rounded-md bg-gray-100 dark:bg-gray-800 text-gray-400 text-xs flex-shrink-0">
+                <div className="w-28 h-24 flex items-center justify-center rounded-md bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs flex-shrink-0">
                   {t.photo}
                 </div>
               )}
@@ -322,17 +322,17 @@ export default function CarsTable({ data, lang }: { data: CarsData; lang: Lang }
                 <div className="text-sm font-semibold truncate">
                   {c.make ?? ""} {c.model ?? c.title}
                 </div>
-                <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 truncate">
+                <div className="text-xs text-gray-600 dark:text-gray-400 mt-0.5 truncate">
                   {[c.year, c.engine, c.fuel, c.gearbox].filter(Boolean).join(" · ")}
                 </div>
-                <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 truncate">
+                <div className="text-xs text-gray-600 dark:text-gray-400 mt-0.5 truncate">
                   {[c.mileage != null ? `${numFmt(c.mileage)} km` : null, c.body, c.drive, c.doors ? `${c.doors} ${t.doors.toLowerCase()}` : null].filter(Boolean).join(" · ")}
                 </div>
-                <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 truncate">
+                <div className="text-xs text-gray-600 dark:text-gray-400 mt-0.5 truncate">
                   {[c.colour, c.city].filter(Boolean).join(" · ")}
                 </div>
                 <div className="mt-1 flex items-baseline gap-2">
-                  <span className="text-base font-bold text-blue-600 dark:text-blue-400">
+                  <span className="text-base font-bold text-blue-700 dark:text-blue-400">
                     {c.currency}{numFmt(c.price)}
                   </span>
                 </div>

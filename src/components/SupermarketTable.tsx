@@ -1,4 +1,5 @@
 "use client";
+import { STR } from "@/lib/i18n";
 import { useState, useMemo } from "react";
 
 type Item = {
@@ -47,7 +48,7 @@ export default function SupermarketTable({ items, lang, updatedAt }: { items: It
   return (
     <div>
       <div className="flex items-center gap-3 mb-4 flex-wrap">
-        <span className="text-sm text-gray-500 dark:text-gray-400">
+        <span className="text-sm text-gray-600 dark:text-gray-400">
           {lang === "en" ? "Sort by:" : lang === "el" ? "Ταξινόμηση:" : "Сортировка:"}
         </span>
         <button
@@ -62,14 +63,15 @@ export default function SupermarketTable({ items, lang, updatedAt }: { items: It
         >
           {t.sortPrice}
         </button>
-        <span className="ml-auto text-xs text-gray-400 dark:text-gray-500">
+        <span className="ml-auto text-xs text-gray-600 dark:text-gray-400">
           {lang === "en" ? "Updated" : lang === "el" ? "Ενημέρωση" : "Обновлено"}: {updated}
         </span>
       </div>
 
-      <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+      <div tabIndex={0} role="region" aria-label={STR[lang].tools.supermarket} className="scroll-hint overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
         <table className="w-full text-sm">
-          <thead className="bg-gray-50 dark:bg-gray-800 text-gray-500 dark:text-gray-400 uppercase text-xs">
+<caption className="sr-only">{STR[lang].tools.supermarket}</caption>
+          <thead className="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 uppercase text-xs">
             <tr>
               <th
                 className="px-4 py-3 text-left cursor-pointer hover:text-gray-800 dark:hover:text-gray-200 select-none"
@@ -83,8 +85,8 @@ export default function SupermarketTable({ items, lang, updatedAt }: { items: It
               >
                 {t.price} {sort === "price" && "↑"}
               </th>
-              <th className="px-4 py-3 text-left">{t.brand}</th>
-              <th className="px-4 py-3 text-left">{t.store}</th>
+              <th scope="col" className="px-4 py-3 text-left">{t.brand}</th>
+              <th scope="col" className="px-4 py-3 text-left">{t.store}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
@@ -102,23 +104,23 @@ export default function SupermarketTable({ items, lang, updatedAt }: { items: It
                         href={href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-bold text-blue-600 dark:text-blue-400 hover:underline"
+                        className="font-bold text-blue-700 dark:text-blue-400 hover:underline"
                       >
                         €{item.price.toFixed(2)}
                       </a>
                     ) : (
-                      <span className="text-gray-400 dark:text-gray-500">{t.na}</span>
+                      <span className="text-gray-600 dark:text-gray-400">{t.na}</span>
                     )}
                   </td>
                   <td className="px-4 py-3 text-gray-600 dark:text-gray-400">
                     {item.brand || item.productName ? (
                       <span title={item.productName ?? undefined}>{item.brand ?? item.productName}</span>
                     ) : item.productId ? (
-                      <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline text-xs">
+                      <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-700 dark:text-blue-400 hover:underline text-xs">
                         {t.noBrand} →
                       </a>
                     ) : (
-                      <span className="text-gray-400 dark:text-gray-500">{t.na}</span>
+                      <span className="text-gray-600 dark:text-gray-400">{t.na}</span>
                     )}
                   </td>
                   <td className="px-4 py-3">
@@ -127,7 +129,7 @@ export default function SupermarketTable({ items, lang, updatedAt }: { items: It
                         {item.store}
                       </span>
                     ) : (
-                      <span className="text-gray-400 dark:text-gray-500">{t.na}</span>
+                      <span className="text-gray-600 dark:text-gray-400">{t.na}</span>
                     )}
                   </td>
                 </tr>

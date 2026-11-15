@@ -1,4 +1,5 @@
 "use client";
+import { STR } from "@/lib/i18n";
 import { useState, useMemo, useCallback } from "react";
 import dynamic from "next/dynamic";
 
@@ -186,7 +187,7 @@ export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: La
             onClick={() => setCityKey(c.key)}
             className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
               cityKey === c.key
-                ? "bg-amber-500 text-white"
+                ? "bg-amber-700 text-white"
                 : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
             }`}
           >
@@ -226,16 +227,16 @@ export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: La
       </div>
 
       {geoState === "denied" && (
-        <p className="mb-4 text-xs text-red-500 dark:text-red-400">{t.denied}</p>
+        <p className="mb-4 text-xs text-red-700 dark:text-red-400">{t.denied}</p>
       )}
       {geoState === "unsupported" && (
-        <p className="mb-4 text-xs text-red-500 dark:text-red-400">{t.unsupported}</p>
+        <p className="mb-4 text-xs text-red-700 dark:text-red-400">{t.unsupported}</p>
       )}
 
       {/* Map view — every matching café, price-pill markers */}
       {view === "map" && (
         allRows.length === 0 ? (
-          <p className="text-sm text-gray-400 dark:text-gray-500 py-8 text-center">{t.empty}</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 py-8 text-center">{t.empty}</p>
         ) : (
           <PriceMap
             venues={allRows.map((c) => ({
@@ -260,16 +261,17 @@ export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: La
 
       {/* Table */}
       {view === "list" && (rows.length === 0 ? (
-        <p className="text-sm text-gray-400 dark:text-gray-500 py-8 text-center">{t.empty}</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 py-8 text-center">{t.empty}</p>
       ) : (
-        <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+        <div tabIndex={0} role="region" aria-label={STR[lang].tools.coffee} className="scroll-hint overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
           <table className="w-full text-sm">
-            <thead className="bg-gray-50 dark:bg-gray-800 text-gray-500 dark:text-gray-400 uppercase text-xs">
+<caption className="sr-only">{STR[lang].tools.coffee}</caption>
+            <thead className="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 uppercase text-xs">
               <tr>
-                <th className="px-4 py-3 text-left">{t.venue}</th>
-                <th className="px-4 py-3 text-left">{t.price}</th>
-                {userCoords && <th className="px-4 py-3 text-left">km</th>}
-                <th className="px-4 py-3 text-left">{t.providers}</th>
+                <th scope="col" className="px-4 py-3 text-left">{t.venue}</th>
+                <th scope="col" className="px-4 py-3 text-left">{t.price}</th>
+                {userCoords && <th scope="col" className="px-4 py-3 text-left">km</th>}
+                <th scope="col" className="px-4 py-3 text-left">{t.providers}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
@@ -278,14 +280,14 @@ export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: La
                   <td className="px-4 py-3">
                     <span className="font-medium text-gray-800 dark:text-gray-200">{c.cafe}</span>
                     {c.address && (
-                      <span className="block text-xs text-gray-400 dark:text-gray-500">{c.address}</span>
+                      <span className="block text-xs text-gray-600 dark:text-gray-400">{c.address}</span>
                     )}
                   </td>
-                  <td className="px-4 py-3 font-bold text-amber-600 dark:text-amber-400 whitespace-nowrap">
+                  <td className="px-4 py-3 font-bold text-amber-800 dark:text-amber-400 whitespace-nowrap">
                     €{c.freddo.toFixed(2)}
                   </td>
                   {userCoords && (
-                    <td className="px-4 py-3 text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                    <td className="px-4 py-3 text-gray-600 dark:text-gray-400 whitespace-nowrap">
                       {c.distance != null ? c.distance.toFixed(1) : "—"}
                     </td>
                   )}
@@ -312,8 +314,8 @@ export default function FreddoTable({ data, lang }: { data: CoffeeData; lang: La
       ))}
 
       <div className="mt-4 flex justify-between items-start gap-4 flex-wrap">
-        <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed max-w-xl">{t.note}</p>
-        <span className="text-xs text-gray-400 dark:text-gray-500 whitespace-nowrap">
+        <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">{t.note}</p>
+        <span className="text-xs text-gray-600 dark:text-gray-400 whitespace-nowrap">
           {t.updated}: {updated}
         </span>
       </div>
