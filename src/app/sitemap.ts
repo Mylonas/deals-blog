@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts, type Lang } from "@/lib/posts";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://deals-blog.pages.dev";
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mouxti.com";
 const LANGS: Lang[] = ["en", "el", "ru"];
 
 // Required for output: "export" — emit as a static file at build time.

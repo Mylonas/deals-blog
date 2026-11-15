@@ -160,7 +160,7 @@ const POST_TEMPLATES = {
 async function fetchRSS(source) {
   try {
     const res = await fetch(source.url, {
-      headers: { "User-Agent": "deals-blog-trends/1.0 (https://deals-blog.pages.dev)" },
+      headers: { "User-Agent": "deals-blog-trends/1.0 (https://mouxti.com)" },
       signal: AbortSignal.timeout(12000),
     });
     if (!res.ok) return [];
@@ -274,7 +274,7 @@ async function fetchWikipediaTrending() {
     const dd = String(yesterday.getDate()).padStart(2, "0");
     const url = `https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/${yyyy}/${mm}/${dd}`;
     const res = await fetch(url, {
-      headers: { "User-Agent": "deals-blog-trends/1.0 (https://deals-blog.pages.dev)" },
+      headers: { "User-Agent": "deals-blog-trends/1.0 (https://mouxti.com)" },
       signal: AbortSignal.timeout(12000),
     });
     if (!res.ok) return [];
@@ -372,7 +372,7 @@ async function fetchRedditCyprus(clientId, clientSecret) {
 async function generateAiSuggestions(headlines, apiKey) {
   if (!apiKey) return null;
   try {
-    const prompt = `You are an editor for a Cyprus consumer deals blog (deals-blog.pages.dev).
+    const prompt = `You are an editor for a Cyprus consumer deals blog (mouxti.com).
 The blog covers: fuel prices, supermarket prices, cafe/coffee prices, utilities, rent, shopping deals, entertainment, travel.
 
 Here are today's trending news headlines from Cyprus:

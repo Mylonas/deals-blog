@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://deals-blog.pages.dev";
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mouxti.com";
 
 // Required for output: "export" — emit as a static file at build time.
 export const dynamic = "force-static";
