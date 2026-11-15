@@ -27,7 +27,7 @@ jobs:
           # Canonical origin for canonicals/sitemap/robots/OG. Set the SITE_URL
           # repo variable (gh variable set SITE_URL -b https://example.com) to
           # move the site to a custom domain; no code change needed.
-          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || 'https://deals-blog.pages.dev' }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || 'https://mouxti.com' }}
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

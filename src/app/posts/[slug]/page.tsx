@@ -3,7 +3,7 @@ import { getPost, getAllPosts } from "@/lib/posts";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://deals-blog.pages.dev";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mouxti.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;

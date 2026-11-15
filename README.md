@@ -1,6 +1,6 @@
 # 🏷️ DealsHub Cyprus
 
-> **Live at [deals-blog.pages.dev](https://deals-blog.pages.dev)**
+> **Live at [mouxti.com](https://mouxti.com)**
 
 Consumer deals blog for Cyprus — live-tracked prices for fuel, coffee, supermarkets, and more. Trilingual (EN / EL / RU), updated hourly via GitHub Actions.
 
@@ -289,7 +289,7 @@ Release procedure follows the project's [release guide](https://github.com/Mylon
 
 ## Public Sector Jobs
 
-Public pages at [`/jobs`](https://deals-blog.pages.dev/jobs/), `/el/jobs`, `/ru/jobs` — every
+Public pages at [`/jobs`](https://mouxti.com/jobs/), `/el/jobs`, `/ru/jobs` — every
 currently open public-sector vacancy in Cyprus, from 62 official sources: the ΕΔΥ
 civil-service competitions and ΕΕΥ teaching appointments, the semi-government organisations
 (Cyta, ΑΗΚ, Αρχή Λιμένων, ΟΚΥπΥ, ΟΑΥ, ΡΑΕΚ, ΓΕΡΗΕΤ, Αρχή Ραδιοτηλεόρασης, Επιτροπή
@@ -358,7 +358,7 @@ monitor, not the record.
 
 ## Trends Dashboard
 
-Internal page at [`/trends`](https://deals-blog.pages.dev/trends) (noindex — not linked from the public nav).
+Internal page at [`/trends`](https://mouxti.com/trends) (noindex — not linked from the public nav).
 
 Shows trending Cyprus news headlines categorised by deal type (fuel, food, travel, utilities, etc.) with suggested post titles. Add `ANTHROPIC_API_KEY` to GitHub secrets to enable AI-generated post ideas via Claude.
 
