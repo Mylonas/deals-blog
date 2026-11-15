@@ -65,7 +65,7 @@ export default async function PostPageRu({
     ...(post.updated ? { dateModified: post.updated } : {}),
     url: `${siteUrl}/ru/posts/${slug}/`,
     inLanguage: "ru",
-    publisher: { "@type": "Organization", name: "DealsHub", url: siteUrl },
+    publisher: { "@type": "Organization", name: "Mouxti", url: siteUrl },
   };
 
   return (

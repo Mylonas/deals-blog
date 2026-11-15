@@ -9,6 +9,7 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Changed
+- Site renamed from "DealsHub" to "Mouxti" in all three languages.
 - Site moved from `deals-blog.pages.dev` to the custom domain `mouxti.com` (canonicals, hreflang, sitemap, robots, OG); `www.mouxti.com` and `*.pages.dev` now 301-redirect to `https://mouxti.com` (the latter via `functions/_middleware.js`).
 - `AdSenseLoader` no longer injects the AdSense script until the site is approved (see the comment in the component to re-enable).
 

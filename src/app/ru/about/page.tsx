@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "О сайте",
   description:
-    "Узнайте о DealsHub — бесплатном сайте сравнения цен, предложений и вакансий государственного сектора на Кипре.",
+    "Узнайте о Mouxti — бесплатном сайте сравнения цен, предложений и вакансий государственного сектора на Кипре.",
   alternates: {
     canonical: "/ru/about/",
     languages: { en: "/about/", el: "/el/about/", ru: "/ru/about/", "x-default": "/about/" },
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 export default function AboutRu() {
   return (
     <article className="max-w-3xl">
-      <h1 className="text-3xl font-bold mb-2">О DealsHub</h1>
+      <h1 className="text-3xl font-bold mb-2">О Mouxti</h1>
 
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed mt-8">
         <p>
-          DealsHub — бесплатный, независимый сайт, созданный для того, чтобы помочь жителям Кипра
+          Mouxti — бесплатный, независимый сайт, созданный для того, чтобы помочь жителям Кипра
           находить лучшие цены и экономить на повседневных расходах. Мы сравниваем общедоступные
           цены из супермаркетов, заправок, кофеен и платформ доставки еды — всё в одном месте.
         </p>
@@ -57,7 +57,7 @@ export default function AboutRu() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Кто ведёт проект</h2>
           <p>
-            DealsHub — персональный проект Михалиса Милонаса, разработчика программного обеспечения
+            Mouxti — персональный проект Михалиса Милонаса, разработчика программного обеспечения
             из Никосии, Кипр. Начинался как простой инструмент сравнения цен и вырос в
             полноценный ресурс для повседневной экономии.
           </p>
@@ -73,7 +73,7 @@ export default function AboutRu() {
       </div>
 
       <div className="mt-10">
-        <Link href="/ru/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Назад на DealsHub</Link>
+        <Link href="/ru/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Назад на Mouxti</Link>
       </div>
     </article>
   );

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Επικοινωνία",
   description:
-    "Επικοινωνήστε με την ομάδα του DealsHub. Αναφέρετε σφάλματα, προτείνετε βελτιώσεις ή κάντε ερωτήσεις.",
+    "Επικοινωνήστε με την ομάδα του Mouxti. Αναφέρετε σφάλματα, προτείνετε βελτιώσεις ή κάντε ερωτήσεις.",
   alternates: {
     canonical: "/el/contact/",
     languages: { en: "/contact/", el: "/el/contact/", ru: "/ru/contact/", "x-default": "/contact/" },
@@ -44,14 +44,14 @@ export default function ContactEl() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Χρόνος απάντησης</h2>
           <p>
-            Το DealsHub λειτουργεί από ένα άτομο, οπότε οι απαντήσεις μπορεί να χρειαστούν μια-δύο
+            Το Mouxti λειτουργεί από ένα άτομο, οπότε οι απαντήσεις μπορεί να χρειαστούν μια-δύο
             μέρες. Διαβάζουμε κάθε email και κάνουμε ό,τι μπορούμε να απαντήσουμε γρήγορα.
           </p>
         </section>
       </div>
 
       <div className="mt-10">
-        <Link href="/el/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Πίσω στο DealsHub</Link>
+        <Link href="/el/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Πίσω στο Mouxti</Link>
       </div>
     </article>
   );

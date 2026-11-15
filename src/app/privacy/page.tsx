@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How DealsHub handles data, cookies and advertising. We collect no personal data; this policy also covers third-party ad cookies.",
+    "How Mouxti handles data, cookies and advertising. We collect no personal data; this policy also covers third-party ad cookies.",
   alternates: {
     canonical: "/privacy/",
     languages: { en: "/privacy/", el: "/el/privacy/", ru: "/ru/privacy/", "x-default": "/privacy/" },
@@ -19,7 +19,7 @@ export default function PrivacyEn() {
 
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
-          DealsHub (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is an informational website that compares publicly
+          Mouxti (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is an informational website that compares publicly
           available prices, deals and public-sector job listings in Cyprus. This policy explains what
           information is involved when you visit the site.
         </p>
@@ -100,7 +100,7 @@ export default function PrivacyEn() {
       </div>
 
       <div className="mt-10">
-        <Link href="/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">← Back to DealsHub</Link>
+        <Link href="/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">← Back to Mouxti</Link>
       </div>
     </article>
   );
