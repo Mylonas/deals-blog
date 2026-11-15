@@ -19,6 +19,7 @@ export type PostMeta = {
   summary: string;
   image?: string;
   pinned?: boolean;
+  hidden?: boolean; // true = not listed, not in the sitemap, no page built (reversible: remove the line)
 };
 
 export type Post = PostMeta & { content: string };
@@ -34,6 +35,7 @@ export function getAllPosts(lang: Lang = "en"): PostMeta[] {
       const { data } = matter(raw);
       return { slug, ...(data as Omit<PostMeta, "slug">) };
     })
+    .filter((p) => !p.hidden)
     .sort((a, b) => {
       if (a.pinned && !b.pinned) return -1;
       if (!a.pinned && b.pinned) return 1;
