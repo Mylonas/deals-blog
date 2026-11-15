@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: "Cheapest Fried Chicken Per Piece in Nicosia (2026)"
 date: "2026-06-28"
 category: "Food"

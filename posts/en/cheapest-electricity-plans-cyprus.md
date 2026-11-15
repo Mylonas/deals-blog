@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: "Cheapest Electricity Plans in Cyprus (2026)"
 date: "2026-06-28"
 category: "Utilities & Services"

@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: "Best Value Traditional Meze Restaurants by City in Cyprus (2026)"
 date: "2026-06-28"
 category: "Food & Drink"

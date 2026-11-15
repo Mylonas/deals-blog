@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: "Cheapest Cinema Tickets in Cyprus (2026)"
 date: "2026-06-28"
 category: "Entertainment & Leisure"

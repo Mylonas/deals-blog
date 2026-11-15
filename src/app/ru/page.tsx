@@ -29,6 +29,9 @@ function CategoryBadge({ category }: { category: string }) {
   );
 }
 
+// Set to true (and rename the _cheapest-supermarket-products route folder back) to show this card again.
+const SHOW_SUPERMARKET_PRODUCTS = false;
+
 export default function HomeRu() {
   const posts = getAllPosts("ru");
   const pinned = posts.filter((p) => p.pinned);
@@ -89,6 +92,7 @@ export default function HomeRu() {
             <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">Цены на питу со свининой, курицей, отбивной и микс в каждом городе Кипра, всегда от самой дешёвой — с кнопкой «Рядом со мной». Еженедельное обновление.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Читать далее →</div>
           </Link>
+          {SHOW_SUPERMARKET_PRODUCTS && (
           <Link
             href="/ru/posts/cheapest-supermarket-products"
             className="bg-amber-50 dark:bg-amber-950/20 rounded-2xl border border-amber-200 dark:border-amber-900/40 p-5 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all group"
@@ -103,6 +107,7 @@ export default function HomeRu() {
             <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">20 товаров с наибольшим снижением цены во всех крупных супермаркетах Кипра, по данным государственного ценового мониторинга e-Kalathi. Обновляется ежедневно.</p>
             <div className="mt-4 text-xs font-medium text-blue-500 dark:text-blue-400 group-hover:underline">Читать далее →</div>
           </Link>
+          )}
           {pinned.map((post) => (
               <Link
                 key={post.slug}
