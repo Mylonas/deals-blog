@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: "Cyprus Supermarket Price Watch — 10 Household Staples"
 date: "2026-06-28"
 updated: "2026-11-15"

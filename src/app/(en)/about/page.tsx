@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Mouxti — a free website that compares prices, deals and public-sector job listings across Cyprus to help you save money.",
+    "Learn about Mouxti — a free website that compares fuel, coffee and souvlaki prices across Cyprus to help you save money.",
   alternates: {
     canonical: "/about/",
     languages: { en: "/about/", el: "/el/about/", ru: "/ru/about/", "x-default": "/about/" },
@@ -20,17 +20,15 @@ export default function AboutEn() {
         <p>
           Mouxti is a free, independent website built to help people in Cyprus find the best
           prices and save money on everyday essentials. We compare publicly available prices from
-          supermarkets, petrol stations, coffee shops and food delivery platforms — all in one place.
+          petrol stations, coffee shops and food delivery platforms — all in one place.
         </p>
 
         <section>
           <h2 className="text-xl font-semibold mb-2">What we cover</h2>
           <ul className="list-disc ml-6 space-y-1">
-            <li>Supermarket product prices across major chains</li>
             <li>Fuel prices from petrol stations island-wide</li>
             <li>Coffee prices from cafés across Cyprus</li>
             <li>Souvlaki prices from restaurants and delivery platforms</li>
-            <li>Public-sector job listings from government portals</li>
             <li>Price trends and historical comparisons</li>
           </ul>
         </section>

@@ -30,12 +30,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Pages that exist in every language (plus trends, English-only).
   const shared: { path: string; langs: Lang[]; priority: number }[] = [
     { path: "", langs: LANGS, priority: 1 },
-    { path: "jobs", langs: LANGS, priority: 0.9 },
+    // Hidden for now: { path: "jobs", langs: LANGS, priority: 0.9 },
     { path: "about", langs: LANGS, priority: 0.4 },
     { path: "contact", langs: LANGS, priority: 0.3 },
     { path: "privacy", langs: LANGS, priority: 0.3 },
     { path: "terms", langs: LANGS, priority: 0.3 },
     { path: "trends", langs: ["en"], priority: 0.5 },
+    // Souvlaki is a dedicated page (not a markdown post), so list it here.
+    { path: "posts/cheapest-souvlaki-cyprus", langs: LANGS, priority: 0.7 },
   ];
   for (const { path, langs, priority } of shared) {
     for (const lang of langs) {

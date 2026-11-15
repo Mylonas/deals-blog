@@ -9,6 +9,7 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Changed
+- Public Sector Jobs and Supermarket Price Watch hidden in EN/EL/RU (404, no links, not in the sitemap); the site now shows three trackers (fuel, coffee, souvlaki). Nav, home hub, 404 page, footer, descriptions and about/privacy/terms wording updated. Sitemap now also lists the souvlaki page in all languages. Reversible, see README; the data workflows for the hidden pages still run.
 - Site reorganised as a tools hub and made accessible (WCAG 2.2 AA target): permanent topic navigation (mobile menu), home page cards with live headline figures, one tracker-page template (breadcrumb, summary, updated/source, other trackers), language-aware footer, correct `<html lang>` on `/el/*` and `/ru/*` (route groups with a root layout per language), skip link, focus rings, contrast fixes, labelled filters, table captions and `scope`, compact cookie banner, 404 page with links to the trackers. No URL, canonical, hreflang, sitemap or robots change.
 - `functions/_middleware.js` also answers 404 for the nine hidden post slugs, because Pages kept serving a cached copy of a few of the old URLs.
 - Nine posts hidden from the live site in EN/EL/RU (cheapest cars, supermarket savings top 20, cinema, gym, internet, electricity, meze, fried chicken, student deals): `hidden: true` front-matter filtered in `getAllPosts`, dedicated routes renamed to private `_` folders, home card behind a flag. Reversible, nothing deleted; see README. Data-refresh workflows for them still run.
