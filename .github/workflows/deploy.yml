@@ -23,7 +23,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NEXT_PUBLIC_SITE_NAME: DealsHub
+          NEXT_PUBLIC_SITE_NAME: Mouxti
           # Canonical origin for canonicals/sitemap/robots/OG. Set the SITE_URL
           # repo variable (gh variable set SITE_URL -b https://example.com) to
           # move the site to a custom domain; no code change needed.

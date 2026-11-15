@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with the DealsHub team. Report errors, suggest improvements or ask questions.",
+    "Get in touch with the Mouxti team. Report errors, suggest improvements or ask questions.",
   alternates: {
     canonical: "/contact/",
     languages: { en: "/contact/", el: "/el/contact/", ru: "/ru/contact/", "x-default": "/contact/" },
@@ -44,14 +44,14 @@ export default function ContactEn() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Response time</h2>
           <p>
-            DealsHub is run by one person, so replies may take a day or two. We read every email and
+            Mouxti is run by one person, so replies may take a day or two. We read every email and
             do our best to respond promptly.
           </p>
         </section>
       </div>
 
       <div className="mt-10">
-        <Link href="/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Back to DealsHub</Link>
+        <Link href="/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">&larr; Back to Mouxti</Link>
       </div>
     </article>
   );

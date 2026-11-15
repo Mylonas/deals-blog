@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/posts";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "DealsHub — Лучшие предложения на Кипре",
+  title: "Mouxti — Лучшие предложения на Кипре",
   description: "Сравнение цен на топливо, продукты, доставку еды и другое на Кипре. Обновление ежедневно.",
   alternates: {
     canonical: "/ru/",
