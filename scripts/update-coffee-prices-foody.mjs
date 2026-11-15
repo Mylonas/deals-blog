@@ -99,7 +99,12 @@ function existingCafes(cityKey) {
   for (const f of files) {
     const data = JSON.parse(fs.readFileSync(f, "utf8"));
     const city = (data.cities || []).find((c) => c.key === cityKey);
-    for (const v of city?.cafes || []) out.push({ cafe: v.cafe, lat: v.lat, lng: v.lng });
+    for (const v of city?.cafes || []) {
+      // The merged file also carries the PREVIOUS Foody scan; only Wolt/Bolt
+      // coverage should make a café "already covered" (see the souvlaki script).
+      if (f === MERGED_OUT && (v.source === "foody" || (v.platforms?.length && v.platforms.every((p) => p === "foody")))) continue;
+      out.push({ cafe: v.cafe, lat: v.lat, lng: v.lng });
+    }
   }
   return out;
 }
@@ -120,8 +125,13 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   const page = await context.newPage();
 
   const data = { updatedAt: null, cities: [] };
+  // When sitemap discovery fails (GitHub's runners get HTTP 403 from Foody) the output
+  // is only the previous scan carried forward. Keep its ORIGINAL timestamp instead of
+  // stamping "now", otherwise the page and the stale-alert would show carried-over
+  // prices as fresh.
+  let carriedForward = false;
   const checkpoint = () => {
-    data.updatedAt = new Date().toISOString();
+    data.updatedAt = carriedForward ? (prev.updatedAt ?? null) : new Date().toISOString();
     fs.writeFileSync(FOODY_OUT, JSON.stringify(data, null, 2) + "\n");
   };
 
@@ -138,6 +148,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       // merge still sees a valid (if stale) Foody source
       console.log(`✗ sitemap discovery failed (${e.message}) — keeping previous scan`);
       process.exitCode = 1;
+      carriedForward = true;
       for (const city of CITIES) {
         const kept = prevByCity.get(city.key);
         if (kept?.length) data.cities.push({ key: city.key, label: city.label, cafes: kept });
