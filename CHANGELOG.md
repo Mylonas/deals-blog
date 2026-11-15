@@ -9,6 +9,7 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Changed
+- `functions/_middleware.js` also answers 404 for the nine hidden post slugs, because Pages kept serving a cached copy of a few of the old URLs.
 - Nine posts hidden from the live site in EN/EL/RU (cheapest cars, supermarket savings top 20, cinema, gym, internet, electricity, meze, fried chicken, student deals): `hidden: true` front-matter filtered in `getAllPosts`, dedicated routes renamed to private `_` folders, home card behind a flag. Reversible, nothing deleted; see README. Data-refresh workflows for them still run.
 - `public/_routes.json` keeps `/_next/*` and a few static files out of the redirect Function so it only runs for pages (and for robots.txt/sitemap.xml, so the old host still redirects them).
 - Site renamed from "DealsHub" to "Mouxti" in all three languages.
