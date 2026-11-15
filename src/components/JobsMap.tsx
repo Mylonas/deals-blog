@@ -127,7 +127,7 @@ export default function JobsMap({
         // Log scale, not linear or area: Λευκωσία has fifty-odd openings and its
         // suburbs one or two, and anything steeper turns the capital into a blob
         // covering Στρόβολος, Έγκωμη and Αγλαντζιά at every useful zoom.
-        const size = Math.round(Math.min(20 + Math.log2(pin.jobs.length + 1) * 7, 60));
+        const size = Math.round(Math.min(24 + Math.log2(pin.jobs.length + 1) * 7, 60));
         const marker = L.marker([pin.lat, pin.lon], {
           icon: L.divIcon({
             // Inline styles like PriceMap's pills — the pin has to render inside
@@ -233,7 +233,7 @@ export default function JobsMap({
         aria-label={t.aria}
         className="h-[280px] sm:h-[400px] w-full rounded-xl border border-gray-200 dark:border-gray-700 z-0 bg-[#e8edf2] dark:bg-gray-900"
       />
-      <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+      <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
         <span>{t.hint}</span>
         {unplaced > 0 && (
           <button
@@ -251,7 +251,7 @@ export default function JobsMap({
             <span className="font-medium text-gray-700 dark:text-gray-300">
               {place === PANCYPRUS_PLACE ? t.islandWide : `${t.area}: ${place}`}
             </span>
-            <button type="button" onClick={() => onSelect(null)} className="text-blue-600 dark:text-blue-400 hover:underline">
+            <button type="button" onClick={() => onSelect(null)} className="text-blue-700 dark:text-blue-400 hover:underline">
               {t.clear}
             </button>
           </>

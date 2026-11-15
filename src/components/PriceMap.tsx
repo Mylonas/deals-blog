@@ -265,12 +265,12 @@ export default function PriceMap({
         aria-label={ariaLabel}
       />
       {unmapped.length > 0 && (
-        <div className="mt-3 text-xs text-gray-500 dark:text-gray-400">
+        <div className="mt-3 text-xs text-gray-600 dark:text-gray-400">
           <span className="font-semibold">{t.unmapped}</span>{" "}
           {unmapped.map((v, i) => (
             <span key={v.url + v.name}>
               {i > 0 && " · "}
-              <a href={v.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline">
+              <a href={v.url} target="_blank" rel="noopener noreferrer" className="text-blue-700 dark:text-blue-400 hover:underline">
                 {v.name}
               </a>{" "}
               ({fmt(v.price)})

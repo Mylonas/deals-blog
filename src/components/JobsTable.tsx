@@ -1,4 +1,5 @@
 "use client";
+import { STR } from "@/lib/i18n";
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 
@@ -222,40 +223,44 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
     <div>
       <div className="flex flex-wrap items-center gap-2 mb-3 text-sm">
         <span className="font-semibold">{filtered.length} {t.total}</span>
-        <span className="text-gray-500 dark:text-gray-400">· {t.updated} {data.fetchedAt.slice(0, 10)}</span>
+        <span className="text-gray-600 dark:text-gray-400">· {t.updated} {data.fetchedAt.slice(0, 10)}</span>
       </div>
 
       {/* Every job, not `filtered` — the pins are the overview, so they must not
           shrink as the table filters or clicking one would erase the rest. */}
       <JobsMap jobs={data.jobs} place={place} onSelect={selectPlace} lang={lang} />
 
-      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4 mb-4">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4 mb-4">
         <input
+          aria-label={t.search}
           value={q}
           onChange={(e) => { setQ(e.target.value); setPage(1); }}
           placeholder={t.search}
-          className="border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700 sm:col-span-2 lg:col-span-4"
+          className="w-full min-w-0 min-h-[44px] border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700 sm:col-span-2 lg:col-span-4"
         />
         <select
+          aria-label={t.district}
           value={district}
           onChange={(e) => { setDistrict(e.target.value); setPage(1); }}
-          className="border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700"
+          className="w-full min-w-0 min-h-[44px] border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700"
         >
           <option value="">{t.district}: {t.any}</option>
           {districts.map((d) => <option key={d} value={d}>{DISTRICTS[d][lang]}</option>)}
         </select>
         <select
+          aria-label={t.sector}
           value={sector}
           onChange={(e) => { setSector(e.target.value); setPage(1); }}
-          className="border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700"
+          className="w-full min-w-0 min-h-[44px] border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700"
         >
           <option value="">{t.sector}: {t.any}</option>
           {sectors.map((s) => <option key={s} value={s}>{SECTORS[s]?.[lang] ?? s}</option>)}
         </select>
         <select
+          aria-label={t.exam}
           value={exam}
           onChange={(e) => { setExam(e.target.value as "" | ExamStatus); setPage(1); }}
-          className="border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700"
+          className="w-full min-w-0 min-h-[44px] border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700"
         >
           <option value="">{t.exam}: {t.any}</option>
           <option value="required">{t.examRequired}</option>
@@ -263,9 +268,10 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
           <option value="unknown">{t.examUnknown}</option>
         </select>
         <select
+          aria-label={t.employer}
           value={employer}
           onChange={(e) => { setEmployer(e.target.value); setPage(1); }}
-          className="border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700"
+          className="w-full min-w-0 min-h-[44px] border rounded-lg px-3 py-2 bg-white dark:bg-gray-900 dark:border-gray-700"
         >
           <option value="">{t.employer}: {t.any}</option>
           {employers.map((e) => <option key={e} value={e}>{e}</option>)}
@@ -274,9 +280,10 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
 
       <div className="flex flex-wrap items-center gap-3 mb-4 text-sm">
         <select
+          aria-label={{ en: "Sort by", el: "Ταξινόμηση", ru: "Сортировка" }[lang]}
           value={sort}
           onChange={(e) => setSort(e.target.value as typeof sort)}
-          className="border rounded-lg px-3 py-1.5 bg-white dark:bg-gray-900 dark:border-gray-700"
+          className="min-h-[44px] border rounded-lg px-3 py-1.5 bg-white dark:bg-gray-900 dark:border-gray-700"
         >
           <option value="deadline">{t.sortDeadline}</option>
           <option value="employer">{t.sortEmployer}</option>
@@ -286,20 +293,21 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
           <input type="checkbox" checked={datedOnly} onChange={(e) => { setDatedOnly(e.target.checked); setPage(1); }} />
           {t.withDeadline}
         </label>
-        <button onClick={reset} className="text-blue-600 dark:text-blue-400 hover:underline">{t.clear}</button>
+        <button onClick={reset} className="inline-flex items-center min-h-[44px] px-2 text-blue-700 dark:text-blue-400 underline">{t.clear}</button>
       </div>
 
       {visible.length === 0 ? (
-        <p className="text-gray-500 dark:text-gray-400 py-8 text-center">{t.none}</p>
+        <p className="text-gray-600 dark:text-gray-400 py-8 text-center">{t.none}</p>
       ) : (
-        <div className="overflow-x-auto">
+        <div tabIndex={0} role="region" aria-label={STR[lang].tools.jobs} className="scroll-hint overflow-x-auto">
           <table className="w-full text-sm border-collapse">
+<caption className="sr-only">{STR[lang].tools.jobs}</caption>
             <thead>
-              <tr className="text-left text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                <th className="py-2 pr-3 font-semibold">{t.employer}</th>
-                <th className="py-2 pr-3 font-semibold">{t.position}</th>
-                <th className="py-2 pr-3 font-semibold whitespace-nowrap">{t.scale}</th>
-                <th className="py-2 font-semibold whitespace-nowrap">{t.deadline}</th>
+              <tr className="text-left text-xs uppercase tracking-wide text-gray-600 dark:text-gray-400">
+                <th scope="col" className="py-2 pr-3 font-semibold">{t.employer}</th>
+                <th scope="col" className="py-2 pr-3 font-semibold">{t.position}</th>
+                <th scope="col" className="py-2 pr-3 font-semibold whitespace-nowrap">{t.scale}</th>
+                <th scope="col" className="py-2 font-semibold whitespace-nowrap">{t.deadline}</th>
               </tr>
             </thead>
             <tbody>
@@ -309,10 +317,10 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
                 const ex = classifyExam(job);
                 return (
                   <tr key={job.id} className="border-t border-gray-200 dark:border-gray-800 align-top">
-                    <td className="py-2.5 pr-3 text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                    <td className="py-2.5 pr-3 text-gray-600 dark:text-gray-400 whitespace-nowrap">
                       {job.employer}
                       {job.district && DISTRICTS[job.district] && (
-                        <span className="block text-xs text-gray-400">{DISTRICTS[job.district][lang]}</span>
+                        <span className="block text-xs text-gray-600 dark:text-gray-400">{DISTRICTS[job.district][lang]}</span>
                       )}
                     </td>
                     <td className="py-2.5 pr-3">
@@ -320,12 +328,12 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
                         href={job.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 dark:text-blue-400 hover:underline"
+                        className="text-blue-700 dark:text-blue-400 hover:underline"
                       >
                         {job.title}
                       </a>
                       {job.reference && (
-                        <span className="block text-xs text-gray-400">{job.reference}</span>
+                        <span className="block text-xs text-gray-600 dark:text-gray-400">{job.reference}</span>
                       )}
                       {ex === "required" && (
                         <span className="inline-block mt-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
@@ -333,12 +341,12 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
                         </span>
                       )}
                       {ex === "unknown" && (
-                        <span className="inline-block mt-1 text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400">
+                        <span className="inline-block mt-1 text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400">
                           {t.checkTag}
                         </span>
                       )}
                     </td>
-                    <td className="py-2.5 pr-3 whitespace-nowrap text-gray-500 dark:text-gray-400 tabular-nums">
+                    <td className="py-2.5 pr-3 whitespace-nowrap text-gray-600 dark:text-gray-400 tabular-nums">
                       {job.scale ?? parseScale(job.title) ?? "—"}
                     </td>
                     <td className={`py-2.5 whitespace-nowrap tabular-nums ${urgent ? "text-red-600 dark:text-red-400 font-semibold" : ""}`}>
@@ -368,8 +376,8 @@ export default function JobsTable({ data, lang }: { data: JobsData; lang: Lang }
         </div>
       )}
 
-      <p className="text-xs text-gray-400 mt-6">{t.note}</p>
-      <p className="text-xs text-gray-400 mt-2">{t.examNote}</p>
+      <p className="text-xs text-gray-600 dark:text-gray-400 mt-6">{t.note}</p>
+      <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">{t.examNote}</p>
     </div>
   );
 }

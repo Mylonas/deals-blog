@@ -444,7 +444,7 @@ export default function FuelCompare({
       <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-1">
         {t.title}
       </h2>
-      <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+      <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
         {t.subtitle}
       </p>
 
@@ -472,7 +472,7 @@ export default function FuelCompare({
                   fuel === k
                     ? "bg-blue-600 text-white"
                     : disabled
-                    ? "bg-gray-100 dark:bg-gray-800 text-gray-300 dark:text-gray-600 cursor-not-allowed"
+                    ? "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 cursor-not-allowed"
                     : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                 }`}
               >
@@ -523,7 +523,7 @@ export default function FuelCompare({
           <label className="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1.5">
             {t.stationA}
           </label>
-          <input
+          <input aria-label={t.stationA}
             type="text"
             value={searchA}
             onChange={(e) => {
@@ -557,9 +557,9 @@ export default function FuelCompare({
                   <span className="font-semibold text-gray-800 dark:text-gray-200">
                     {s.brand}
                   </span>
-                  <span className="text-gray-500 dark:text-gray-400"> — {s.address}</span>
+                  <span className="text-gray-600 dark:text-gray-400"> — {s.address}</span>
                   {s._dist != null && Number.isFinite(s._dist) && (
-                    <span className="ml-1 text-[10px] font-semibold text-blue-600 dark:text-blue-400 whitespace-nowrap">
+                    <span className="ml-1 text-[10px] font-semibold text-blue-700 dark:text-blue-400 whitespace-nowrap">
                       · {s._dist.toFixed(1)} {t.away}
                     </span>
                   )}
@@ -582,7 +582,7 @@ export default function FuelCompare({
           <label className="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1.5">
             {t.stationB}
           </label>
-          <input
+          <input aria-label={t.stationB}
             type="text"
             value={searchB}
             onChange={(e) => {
@@ -614,9 +614,9 @@ export default function FuelCompare({
                   <span className="font-semibold text-gray-800 dark:text-gray-200">
                     {s.brand}
                   </span>
-                  <span className="text-gray-500 dark:text-gray-400"> — {s.address}</span>
+                  <span className="text-gray-600 dark:text-gray-400"> — {s.address}</span>
                   {s._dist != null && Number.isFinite(s._dist) && (
-                    <span className="ml-1 text-[10px] font-semibold text-blue-600 dark:text-blue-400 whitespace-nowrap">
+                    <span className="ml-1 text-[10px] font-semibold text-blue-700 dark:text-blue-400 whitespace-nowrap">
                       · {s._dist.toFixed(1)} {t.away}
                     </span>
                   )}
@@ -643,8 +643,8 @@ export default function FuelCompare({
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {/* Brand */}
           <div>
-            <label className="block text-[11px] text-gray-500 dark:text-gray-500 mb-1">{t.brand}</label>
-            <select
+            <label className="block text-[11px] text-gray-600 dark:text-gray-400 mb-1">{t.brand}</label>
+            <select aria-label={t.brand}
               value={vBrand}
               onChange={(e) => {
                 setVBrand(e.target.value);
@@ -663,8 +663,8 @@ export default function FuelCompare({
 
           {/* Model */}
           <div>
-            <label className="block text-[11px] text-gray-500 dark:text-gray-500 mb-1">{t.model}</label>
-            <select
+            <label className="block text-[11px] text-gray-600 dark:text-gray-400 mb-1">{t.model}</label>
+            <select aria-label={t.model}
               value={vModel}
               onChange={(e) => {
                 setVModel(e.target.value);
@@ -683,8 +683,8 @@ export default function FuelCompare({
 
           {/* Year */}
           <div>
-            <label className="block text-[11px] text-gray-500 dark:text-gray-500 mb-1">{t.year}</label>
-            <select
+            <label className="block text-[11px] text-gray-600 dark:text-gray-400 mb-1">{t.year}</label>
+            <select aria-label={t.year}
               value={vYear}
               onChange={(e) => {
                 setVYear(Number(e.target.value));
@@ -705,7 +705,7 @@ export default function FuelCompare({
 
           {/* Tank size display + custom override */}
           <div>
-            <label className="block text-[11px] text-gray-500 dark:text-gray-500 mb-1">
+            <label className="block text-[11px] text-gray-600 dark:text-gray-400 mb-1">
               {t.tankSize}
             </label>
             {selectedModel && modelTank > 0 ? (
@@ -714,6 +714,7 @@ export default function FuelCompare({
               </div>
             ) : (
               <input
+                aria-label={t.orManual}
                 type="number"
                 min={1}
                 max={200}
@@ -730,7 +731,7 @@ export default function FuelCompare({
         </div>
 
         {isElectric && (
-          <p className="mt-2 text-xs text-amber-600 dark:text-amber-400 font-medium">
+          <p className="mt-2 text-xs text-amber-800 dark:text-amber-400 font-medium">
             {t.electricWarning}
           </p>
         )}
@@ -738,10 +739,10 @@ export default function FuelCompare({
         {/* Custom tank override when a model is selected */}
         {selectedModel && modelTank > 0 && (
           <div className="mt-2">
-            <label className="text-[11px] text-gray-400 dark:text-gray-500">
+            <label className="text-[11px] text-gray-600 dark:text-gray-400">
               {t.orManual}
             </label>
-            <input
+            <input aria-label={t.orManual}
               type="number"
               min={1}
               max={200}
@@ -753,7 +754,7 @@ export default function FuelCompare({
               placeholder={`${modelTank}`}
               className="ml-2 w-20 px-2 py-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-xs text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <span className="text-[11px] text-gray-400 ml-1">{t.litres}</span>
+            <span className="text-[11px] text-gray-600 dark:text-gray-400 ml-1">{t.litres}</span>
           </div>
         )}
       </div>
@@ -763,7 +764,7 @@ export default function FuelCompare({
         <label className="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">
           {t.refuels}
         </label>
-        <p className="text-[11px] text-gray-400 dark:text-gray-500 mb-2">{t.refuelsHelp}</p>
+        <p className="text-[11px] text-gray-600 dark:text-gray-400 mb-2">{t.refuelsHelp}</p>
         <div className="flex items-center gap-3">
           {[1, 2, 3, 4, 5, 6, 8].map((n) => (
             <button
@@ -772,7 +773,7 @@ export default function FuelCompare({
                 setRefuelsPerMonth(n);
                 setShowResults(false);
               }}
-              className={`w-9 h-9 rounded-full text-xs font-semibold transition-colors ${
+              className={`w-11 h-11 rounded-full text-xs font-semibold transition-colors ${
                 refuelsPerMonth === n
                   ? "bg-blue-600 text-white"
                   : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -782,6 +783,7 @@ export default function FuelCompare({
             </button>
           ))}
           <input
+            aria-label={t.refuels}
             type="number"
             min={1}
             max={60}
@@ -816,7 +818,7 @@ export default function FuelCompare({
             <div className={`rounded-lg p-3 ${results.cheaper === "A" ? "bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800" : "bg-gray-50 dark:bg-gray-800/30"}`}>
               <div className="flex justify-between items-start">
                 <div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">{t.costAt}</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">{t.costAt}</p>
                   <p className="font-semibold text-sm text-gray-900 dark:text-gray-100">
                     {stationA.brand} — {stationA.address}
                   </p>
@@ -829,11 +831,11 @@ export default function FuelCompare({
               </div>
               <div className="mt-2 grid grid-cols-2 gap-2">
                 <div>
-                  <p className="text-[11px] text-gray-400">{t.perFill}</p>
+                  <p className="text-[11px] text-gray-600 dark:text-gray-400">{t.perFill}</p>
                   <p className="text-lg font-bold text-gray-900 dark:text-gray-100">€{results.fillCostA.toFixed(2)}</p>
                 </div>
                 <div>
-                  <p className="text-[11px] text-gray-400">{t.perMonth}</p>
+                  <p className="text-[11px] text-gray-600 dark:text-gray-400">{t.perMonth}</p>
                   <p className="text-lg font-bold text-gray-900 dark:text-gray-100">€{results.monthlyCostA.toFixed(2)}</p>
                 </div>
               </div>
@@ -843,7 +845,7 @@ export default function FuelCompare({
             <div className={`rounded-lg p-3 ${results.cheaper === "B" ? "bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800" : "bg-gray-50 dark:bg-gray-800/30"}`}>
               <div className="flex justify-between items-start">
                 <div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">{t.costAt}</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">{t.costAt}</p>
                   <p className="font-semibold text-sm text-gray-900 dark:text-gray-100">
                     {stationB.brand} — {stationB.address}
                   </p>
@@ -856,11 +858,11 @@ export default function FuelCompare({
               </div>
               <div className="mt-2 grid grid-cols-2 gap-2">
                 <div>
-                  <p className="text-[11px] text-gray-400">{t.perFill}</p>
+                  <p className="text-[11px] text-gray-600 dark:text-gray-400">{t.perFill}</p>
                   <p className="text-lg font-bold text-gray-900 dark:text-gray-100">€{results.fillCostB.toFixed(2)}</p>
                 </div>
                 <div>
-                  <p className="text-[11px] text-gray-400">{t.perMonth}</p>
+                  <p className="text-[11px] text-gray-600 dark:text-gray-400">{t.perMonth}</p>
                   <p className="text-lg font-bold text-gray-900 dark:text-gray-100">€{results.monthlyCostB.toFixed(2)}</p>
                 </div>
               </div>
@@ -869,15 +871,15 @@ export default function FuelCompare({
             {/* Savings summary */}
             {results.diff > 0 && (
               <div className="rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 p-4 text-center">
-                <p className="text-xs text-blue-600 dark:text-blue-400 mb-1">{t.saving}</p>
+                <p className="text-xs text-blue-700 dark:text-blue-400 mb-1">{t.saving}</p>
                 <p className="text-2xl font-black text-blue-700 dark:text-blue-300">
                   €{results.diff.toFixed(2)}
                   <span className="text-sm font-semibold">{t.perMonthLabel}</span>
                 </p>
-                <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-0.5">
+                <p className="text-sm font-semibold text-blue-700 dark:text-blue-400 mt-0.5">
                   €{results.annualDiff.toFixed(2)}{t.perYear}
                 </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
                   {t.byChoosing}{" "}
                   <strong>
                     {results.cheaper === "A" ? stationA.brand : stationB.brand}
@@ -894,7 +896,7 @@ export default function FuelCompare({
       )}
 
       {showResults && !results && (
-        <p className="mt-4 text-xs text-amber-600 dark:text-amber-400 text-center">
+        <p className="mt-4 text-xs text-amber-800 dark:text-amber-400 text-center">
           {t.selectBoth}
         </p>
       )}

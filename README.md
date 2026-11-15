@@ -48,15 +48,21 @@ deals-blog/
 │   └── fetch-trending-topics.mjs       # Scrapes Cyprus news RSS feeds (every 3h)
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx                    # EN home page
-│   │   ├── el/page.tsx                 # EL home page
-│   │   ├── ru/page.tsx                 # RU home page
-│   │   ├── posts/[slug]/page.tsx       # Dynamic post renderer
-│   │   ├── posts/supermarket-price-watch/page.tsx  # Dedicated live page (EN)
-│   │   ├── el/posts/supermarket-price-watch/       # Dedicated live page (EL)
-│   │   ├── ru/posts/supermarket-price-watch/       # Dedicated live page (RU)
-│   │   └── trends/page.tsx             # Internal trends dashboard (noindex)
+│   │   ├── (en)/  (el)/el/  (ru)/ru/   # One route group + root layout per language, so <html lang> is right
+│   │   │   ├── page.tsx                # Home: tools hub (HomeHub component)
+│   │   │   ├── jobs/page.tsx           # Jobs tracker
+│   │   │   ├── posts/<tool>/page.tsx   # Fuel, supermarket, coffee, souvlaki trackers (ToolPage template)
+│   │   │   └── about, contact, privacy, terms
+│   │   ├── (en)/trends/page.tsx        # Internal trends dashboard (noindex)
+│   │   └── global-not-found.tsx        # /404.html (links to the five trackers)
+│   ├── lib/
+│   │   ├── i18n.ts                     # Shell strings (nav, footer, home, template), tool paths, date/euro formatting
+│   │   └── headlines.ts                # Home-card headline figures, computed at build time from src/data
 │   ├── components/
+│   │   ├── RootShell.tsx               # <html>, skip link, header, footer (shared by the 3 language layouts)
+│   │   ├── SiteNav.tsx                 # Topic menu (aria-current, mobile disclosure menu)
+│   │   ├── ToolPage.tsx                # Tracker page template: breadcrumb, h1, summary, updated/source, other trackers
+│   │   ├── HomeHub.tsx                 # Home page cards
 │   │   ├── LangSwitcher.tsx            # EN / EL / RU switcher (stays on same page)
 │   │   ├── ThemeToggle.tsx             # Dark/light mode toggle (localStorage + prefers-color-scheme)
 │   │   ├── FuelTable.tsx               # Interactive fuel table (district/Near Me filters, i18n)
@@ -97,7 +103,7 @@ deals-blog/
 | `cheapest-fried-chicken-nicosia` | Food & Drink | — |
 | `student-deals-cyprus` | Student Deals | — |
 
-> **Hidden posts (2026-11-15):** `cheapest-cars-cyprus`, `cheapest-supermarket-products`, `cheapest-cinema-tickets-cyprus`, `cheapest-gym-memberships-nicosia-limassol`, `cheapest-internet-broadband-cyprus`, `cheapest-electricity-plans-cyprus`, `best-value-meze-restaurants-cyprus`, `cheapest-fried-chicken-nicosia` and `student-deals-cyprus` are not published (404, not listed, not in the sitemap). To un-hide a markdown post, delete `hidden: true` from its three front-matter files (`posts/{en,el,ru}/<slug>.md`). For the two dedicated pages (`cheapest-cars-cyprus`, `cheapest-supermarket-products`) also rename `src/app/{,el/,ru/}posts/_<slug>` back to `<slug>`; for the supermarket one also set `SHOW_SUPERMARKET_PRODUCTS = true` in the three home pages.
+> **Hidden posts (2026-11-15):** `cheapest-cars-cyprus`, `cheapest-supermarket-products`, `cheapest-cinema-tickets-cyprus`, `cheapest-gym-memberships-nicosia-limassol`, `cheapest-internet-broadband-cyprus`, `cheapest-electricity-plans-cyprus`, `best-value-meze-restaurants-cyprus`, `cheapest-fried-chicken-nicosia` and `student-deals-cyprus` are not published (404, not listed, not in the sitemap). To un-hide a markdown post, delete `hidden: true` from its three front-matter files (`posts/{en,el,ru}/<slug>.md`). For the two dedicated pages (`cheapest-cars-cyprus`, `cheapest-supermarket-products`) also rename `src/app/{,el/,ru/}posts/_<slug>` back to `<slug>`. The home page is now a tools hub, so there is no card to restore for it.
 
 ---
 

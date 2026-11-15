@@ -1,5 +1,6 @@
 "use client";
 
+import { STR } from "@/lib/i18n";
 import { useState, useMemo, useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
 
@@ -158,7 +159,7 @@ const UI = {
     mapOpen: "Άνοιγμα στο Google Maps →", mapAria: "Χάρτης πρατηρίων καυσίμων",
     all: "Όλες", brand: "Εταιρεία", address: "Διεύθυνση", area: "Περιοχή", dist: "Απόσταση", price: "Τιμή",
     showingNearest: (n: number) => `Εμφάνιση ${n} κοντινότερων πρατηρίων`,
-    showingCheapest: (n: number, d: string) => `Εμφάνιση ${n} φθηνότερων πρατηρίων${d !== "Όλες" ? ` σε ${d}` : ""}`,
+    showingCheapest: (n: number, d: string) => `Εμφάνιση ${n} φθηνότερων πρατηρίων${d !== "Όλες" && d !== "All" ? ` σε ${d}` : ""}`,
     noResults: (fuel: string, district: string) => `Δεν βρέθηκαν πρατήρια για ${fuel} σε ${district}.`,
     source: "Πηγή: Παρατηρητήριο Τιμών Καυσίμων Κύπρου",
     stale: (d: string) => `Τελευταία ενημέρωση τιμών: ${d} — η κυβερνητική πύλη τιμών καυσίμων απαιτεί πλέον λογαριασμό CY Login, οπότε οι αυτόματες ενημερώσεις έχουν ανασταλεί και οι τιμές ενδέχεται να έχουν αλλάξει.`,
@@ -170,7 +171,7 @@ const UI = {
     mapOpen: "Открыть в Google Maps →", mapAria: "Карта АЗС",
     all: "Все", brand: "Бренд", address: "Адрес", area: "Район", dist: "Расст.", price: "Цена",
     showingNearest: (n: number) => `Показано ${n} ближайших АЗС`,
-    showingCheapest: (n: number, d: string) => `Показано ${n} дешевейших АЗС${d !== "Все" ? ` в ${d}` : ""}`,
+    showingCheapest: (n: number, d: string) => `Показано ${n} дешевейших АЗС${d !== "Все" && d !== "All" ? ` в ${d}` : ""}`,
     noResults: (fuel: string, district: string) => `АЗС для ${fuel} в ${district} не найдены.`,
     source: "Источник: Портал цен на топливо Кипра",
     stale: (d: string) => `Цены обновлены ${d}. Государственный портал цен на топливо теперь требует вход через CY Login, поэтому автоматическое обновление приостановлено и цены могли измениться.`,
@@ -297,7 +298,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
                 ? "border-red-200 text-red-400 cursor-not-allowed bg-red-50 dark:bg-red-950/20 dark:border-red-900/50 dark:text-red-400"
                 : geoState === "loading"
                 ? "border-blue-200 text-blue-400 bg-blue-50 dark:bg-blue-950/20 dark:border-blue-900/50 cursor-wait"
-                : "border-blue-300 dark:border-blue-700 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/20"
+                : "border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/20"
             }`}
           >
             <span>{geoState === "loading" ? "⏳" : "📍"}</span>
@@ -313,7 +314,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
         )}
 
         {/* Divider */}
-        {!isNearMe && <span className="text-gray-300 dark:text-gray-600 text-xs">|</span>}
+        {!isNearMe && <span className="text-gray-600 dark:text-gray-400 text-xs">|</span>}
 
         {/* District buttons — hidden when Near Me is active */}
         {!isNearMe &&
@@ -335,7 +336,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
           })}
 
         {isNearMe && (
-          <span className="text-xs text-blue-600 dark:text-blue-400">{t.nearMeSubtitle}</span>
+          <span className="text-xs text-blue-700 dark:text-blue-400">{t.nearMeSubtitle}</span>
         )}
 
         {/* List / Map view toggle */}
@@ -360,7 +361,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
       {/* Map view — every matching station, price-pill markers */}
       {view === "map" && (
         allStations.length === 0 ? (
-          <p className="text-gray-500 dark:text-gray-400 text-sm py-4">
+          <p className="text-gray-600 dark:text-gray-400 text-sm py-4">
             {t.noResults(fuelLabels[fuel], district)}
           </p>
         ) : (
@@ -385,26 +386,27 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
 
       {/* Results */}
       {view === "list" && (stations.length === 0 ? (
-        <p className="text-gray-500 dark:text-gray-400 text-sm py-4">
+        <p className="text-gray-600 dark:text-gray-400 text-sm py-4">
           {t.noResults(fuelLabels[fuel], district)}
         </p>
       ) : (
         <>
-          <p className="text-xs text-gray-400 dark:text-gray-500 mb-3">
-            {isNearMe ? t.showingNearest(stations.length) : t.showingCheapest(stations.length, district)}
+          <p className="text-xs text-gray-600 dark:text-gray-400 mb-3">
+            {isNearMe ? t.showingNearest(stations.length) : t.showingCheapest(stations.length, (districtLabels as Record<string, string>)[district] ?? district)}
           </p>
-          <div className="overflow-x-auto">
+          <div tabIndex={0} role="region" aria-label={STR[lang].tools.fuel} className="scroll-hint overflow-x-auto">
             <table className="w-full text-sm">
+<caption className="sr-only">{STR[lang].tools.fuel}</caption>
               <thead>
                 <tr className="border-b border-gray-200 dark:border-gray-700 text-left">
-                  <th className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">#</th>
-                  <th className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">{t.brand}</th>
-                  <th className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">{t.address}</th>
-                  <th className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">{t.area}</th>
+                  <th scope="col" className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">#</th>
+                  <th scope="col" className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">{t.brand}</th>
+                  <th scope="col" className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">{t.address}</th>
+                  <th scope="col" className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">{t.area}</th>
                   {isNearMe && (
-                    <th className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">{t.dist}</th>
+                    <th scope="col" className="pb-2 pr-3 font-semibold text-gray-700 dark:text-gray-300">{t.dist}</th>
                   )}
-                  <th className="pb-2 font-semibold text-gray-700 dark:text-gray-300 text-right">{t.price}</th>
+                  <th scope="col" className="pb-2 font-semibold text-gray-700 dark:text-gray-300 text-right">{t.price}</th>
                 </tr>
               </thead>
               <tbody>
@@ -414,21 +416,21 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
                     : null;
                   return (
                     <tr key={i} className="border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                      <td className="py-3 pr-3 text-gray-400 dark:text-gray-500 text-xs">{i + 1}</td>
+                      <td className="py-3 pr-3 text-gray-600 dark:text-gray-400 text-xs">{i + 1}</td>
                       <td className="py-3 pr-3 font-medium text-gray-800 dark:text-gray-200 whitespace-nowrap">{s.brand}</td>
                       <td className="py-3 pr-3">
                         <a
                           href={s.mapsUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-600 dark:text-blue-400 hover:underline"
+                          className="text-blue-700 dark:text-blue-400 hover:underline"
                         >
                           {s.address}
                         </a>
                       </td>
-                      <td className="py-3 pr-3 text-gray-500 dark:text-gray-400 text-xs whitespace-nowrap">{s.district}</td>
+                      <td className="py-3 pr-3 text-gray-600 dark:text-gray-400 text-xs whitespace-nowrap">{s.district}</td>
                       {isNearMe && (
-                        <td className="py-3 pr-3 text-gray-500 dark:text-gray-400 text-xs whitespace-nowrap">
+                        <td className="py-3 pr-3 text-gray-600 dark:text-gray-400 text-xs whitespace-nowrap">
                           {dist != null ? `${dist.toFixed(1)} km` : "—"}
                         </td>
                       )}
@@ -444,7 +446,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
         </>
       ))}
 
-      <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
+      <p className="mt-4 text-xs text-gray-600 dark:text-gray-400">
         {formatDate(data.updatedAt)} ·{" "}
         <a
           href="https://eforms.eservices.cyprus.gov.cy/MCIT/MCIT/PetroleumPrices"
