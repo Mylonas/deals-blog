@@ -49,7 +49,7 @@ function normalize(s) {
 // "Ενισχυμένη" (also sold as "large pitta") is its own format with its own cuts.
 const PITA_RE = /pita|πιτα/;
 const GREEK_RE = /ελληνικ|greek|ellinik|αραβικ|arabic|\bgr\b|τυλιχτ|t[iy]li(?:cht|xt|ht)/;
-const MINI_RE = /μινι|mini|μικρ|mikr|μιση|misi|half|παιδικ|paidik|kids|child/;
+const MINI_RE = /μινι|mini|μικρ|mikr|μιση|misi|half|small|παιδικ|paidik|kids|child/;
 // Explicitly Cypriot pitta (name or category). When a venue sells the same cut
 // both as Cypriot pitta and as another pitta type (e.g. Thymari: "Premium
 // Πίτα" €6.50 vs "Κυπριακή Πίτα" €8.60), the Cypriot price is the comparable one.
