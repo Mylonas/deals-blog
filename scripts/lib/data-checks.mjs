@@ -34,6 +34,13 @@ export const CHECKS = [
     workflow: "update-fuel-prices.yml",
     label: "Fuel Prices",
     maxAgeHours: 2,
+    // The government portal now gates every query behind a CAPTCHA, so
+    // update-fuel-prices.yml is workflow_dispatch-only and fails against the retired
+    // endpoint. Re-dispatching it every 6 hours only produced failing runs. Fuel is
+    // refreshed by the manual CAPTCHA-assisted local refresh. Remove this line (or set
+    // it to true) once the workflow can succeed unattended again; the stale check and
+    // stale-alert.yml still report the file's age.
+    retrigger: false,
   },
   {
     file: "src/data/supermarket-prices.json",

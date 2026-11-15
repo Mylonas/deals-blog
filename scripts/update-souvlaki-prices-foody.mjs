@@ -100,9 +100,21 @@ export function extractFoodyCuts(menu) {
     if (eur != null && (map[key] == null || eur < map[key])) map[key] = eur;
   };
 
+  // Foody repeats a venue's best sellers under a "Popular" section with no size/type
+  // marker of their own. An item that appears in a Greek-pita or mini/half/small
+  // category at the same price is that Greek/mini item, not a Cypriot one, so it must
+  // not count when it is met again under "Popular" (e.g. Tylixto, a Greek-pita shop).
+  const nonComparable = new Set();
+  for (const { category, items } of menu) {
+    const cat = normalize(category);
+    if (!GREEK_RE.test(cat) && !MINI_RE.test(cat)) continue;
+    for (const { name, price } of items) nonComparable.add(`${normalize(name)}|${price}`);
+  }
+
   for (const { category, items } of menu) {
     const cat = normalize(category);
     for (const { name, price } of items) {
+      if (nonComparable.has(`${normalize(name)}|${price}`) && !GREEK_RE.test(cat) && !MINI_RE.test(cat)) continue;
       // Foody's English menus render σουβλάκι as "skewer"; map it back so the
       // shared souvlaki matchers fire. The pita requirement below still blocks
       // non-pita skewer platters and mixed-grill portions.
@@ -155,7 +167,13 @@ function existingVenues(cityKey) {
   for (const f of files) {
     const data = JSON.parse(fs.readFileSync(f, "utf8"));
     const city = (data.cities || []).find((c) => c.key === cityKey);
-    for (const v of city?.venues || []) out.push({ name: v.name, lat: v.lat, lng: v.lng });
+    for (const v of city?.venues || []) {
+      // The merged file also carries the PREVIOUS Foody scan. Counting those as
+      // "already covered" made every run skip the venues the last run found, so the
+      // Foody set shrank and re-grew on alternate runs. Only Wolt/Bolt coverage counts.
+      if (f === MERGED_OUT && (v.source === "foody" || (v.platforms?.length && v.platforms.every((p) => p === "foody")))) continue;
+      out.push({ name: v.name, lat: v.lat, lng: v.lng });
+    }
   }
   return out;
 }
@@ -176,8 +194,13 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   const page = await context.newPage();
 
   const data = { updatedAt: null, cities: [] };
+  // When sitemap discovery fails (GitHub's runners get HTTP 403 from Foody) the output
+  // is only the previous scan carried forward. Keep its ORIGINAL timestamp instead of
+  // stamping "now", otherwise the page and the stale-alert would show carried-over
+  // prices as fresh.
+  let carriedForward = false;
   const checkpoint = () => {
-    data.updatedAt = new Date().toISOString();
+    data.updatedAt = carriedForward ? (prev.updatedAt ?? null) : new Date().toISOString();
     fs.writeFileSync(FOODY_OUT, JSON.stringify(data, null, 2) + "\n");
   };
 
@@ -194,6 +217,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       // merge still sees a valid (if stale) Foody source
       console.log(`✗ sitemap discovery failed (${e.message}) — keeping previous scan`);
       process.exitCode = 1;
+      carriedForward = true;
       for (const city of CITIES) {
         const kept = prevByCity.get(city.key);
         if (kept?.length) data.cities.push({ key: city.key, label: city.label, venues: kept });
