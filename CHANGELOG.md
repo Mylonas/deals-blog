@@ -9,6 +9,7 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Changed
+- `public/_routes.json` keeps `/_next/*` and a few static files out of the redirect Function so it only runs for pages (and for robots.txt/sitemap.xml, so the old host still redirects them).
 - Site renamed from "DealsHub" to "Mouxti" in all three languages.
 - Site moved from `deals-blog.pages.dev` to the custom domain `mouxti.com` (canonicals, hreflang, sitemap, robots, OG); `www.mouxti.com` and `*.pages.dev` now 301-redirect to `https://mouxti.com` (the latter via `functions/_middleware.js`).
 - `AdSenseLoader` no longer injects the AdSense script until the site is approved (see the comment in the component to re-enable).
