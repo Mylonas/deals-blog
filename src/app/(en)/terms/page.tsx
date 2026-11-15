@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Terms governing the use of Mouxti — a free informational website comparing prices, deals and public-sector job listings in Cyprus.",
+    "Terms governing the use of Mouxti — a free informational website comparing fuel, coffee and souvlaki prices in Cyprus.",
   alternates: {
     canonical: "/terms/",
     languages: { en: "/terms/", el: "/el/terms/", ru: "/ru/terms/", "x-default": "/terms/" },
@@ -27,7 +27,7 @@ export default function TermsEn() {
           <h2 className="text-xl font-semibold mb-2">What we provide</h2>
           <p>
             Mouxti is a free informational website that aggregates and compares publicly available
-            prices, deals and public-sector job listings in Cyprus. All content is provided
+            fuel, coffee and souvlaki prices in Cyprus. All content is provided
             &ldquo;as is&rdquo; for general informational purposes only.
           </p>
         </section>

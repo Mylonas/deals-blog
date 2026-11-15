@@ -20,7 +20,7 @@ export default function PrivacyEn() {
       <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
           Mouxti (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is an informational website that compares publicly
-          available prices, deals and public-sector job listings in Cyprus. This policy explains what
+          available fuel, coffee and souvlaki prices in Cyprus. This policy explains what
           information is involved when you visit the site.
         </p>
 
@@ -60,7 +60,7 @@ export default function PrivacyEn() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Links to other websites</h2>
           <p>
-            Deal and job listings link to external sites (retailers, delivery apps, government pages).
+            Price listings link to external sites (retailers, delivery apps, government pages).
             Those sites have their own privacy policies, which we do not control.
           </p>
         </section>
