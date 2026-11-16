@@ -1,5 +1,5 @@
 /**
- * One-command manual fuel refresh:   npm run fuel:refresh
+ * One-command manual fuel refresh:   node scripts/fuel-refresh.mjs
  *
  * The government portal puts a CAPTCHA on every query, so a human must solve it - nothing here
  * tries to get past it. Everything else is automated:

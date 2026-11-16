@@ -47,7 +47,7 @@ if (stale.length === 0) {
 }
 
 const lines = [
-  `${stale.length} data file(s) are past their stale limit (${STALE_DAYS} days; fuel prices 3 days, they are refreshed by hand with npm run fuel:refresh).`,
+  `${stale.length} data file(s) are past their stale limit (${STALE_DAYS} days; fuel prices 3 days, they are refreshed by hand with node scripts/fuel-refresh.mjs).`,
   "",
   "| Data | Age | Last updated | Workflow |",
   "|---|---|---|---|",

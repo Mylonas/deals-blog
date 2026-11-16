@@ -8,8 +8,10 @@ now a manual, human-in-the-loop step.
 ## Quick way: one command
 
 ```bash
-npm run fuel:refresh
+node scripts/fuel-refresh.mjs
 ```
+
+(Use `node` directly: `npm run` is blocked by PowerShell execution policy on the laptop.)
 
 Per fuel (4 of them, about 2 minutes each, ~8-10 min total): the portal opens, you pick the fuel and
 `Όλες`, solve the CAPTCHA, press Αναζήτηση, press F12 > Console, Ctrl+V, Enter (it prints
