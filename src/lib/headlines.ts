@@ -33,7 +33,7 @@ export function headline(tool: Tool, lang: Lang): Headline {
           .filter((d: any) => typeof d.discountPct === "number" && d.discountPct > 0 && d.discountPct <= 90 && d.name)
           .sort((a: any, b: any) => b.discountPct - a.discountPct)[0];
         return top
-          ? { figure: "−" + top.discountPct + "%", label: s.figureLabel.supermarket + ": " + top.name, updatedAt: (deals as any).updatedAt }
+          ? { figure: "−" + top.discountPct + "%", label: s.figureLabel.supermarket + ": " + top.name + " (" + formatEuro(top.price, lang, 2) + ", " + s.wasWord + " " + formatEuro(top.previousPrice, lang, 2) + ")", updatedAt: (deals as any).updatedAt }
           : null;
       }
       case "coffee": {

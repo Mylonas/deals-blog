@@ -77,7 +77,7 @@ async function main() {
 
       console.log(`  ${staple.key}: ${product.name} €${product.startPrice}`);
       const store = await findCheapestStore(product);
-      console.log(`    cheapest store: ${store ?? "unidentified"}`);
+      console.log(`    cheapest store: ${store?.store ?? "unidentified"}`);
 
       results.push({ staple, product, store });
     } catch (err) {
@@ -103,7 +103,8 @@ async function main() {
       productCode: product ? product.code : null,
       productName: product ? product.name : null,
       brand: product ? extractBrand(product.name) : null,
-      store: store,
+      store: store?.store ?? null,
+      storeIds: store?.storeIds ?? null,
     })),
   };
   fs.writeFileSync(path.join(dataDir, "supermarket-prices.json"), JSON.stringify(json, null, 2), "utf8");

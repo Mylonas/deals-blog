@@ -330,7 +330,7 @@ function toDeal(p, { price, previousPrice, discountPct: disc, history, lowSince 
     availableAtChains: p.numberOfChains || null,
     history,
     ...(lowSince ? { lowSince } : {}),
-    ...(store ? { store } : {}),
+    ...(store ? { store: store.store, storeIds: store.storeIds } : {}),
   };
 }
 
@@ -406,7 +406,7 @@ async function main() {
   for (const p of dealsSlice) {
     const store = await findCheapestStore(p);
     if (store) dealStores.set(p.productMasterId, store);
-    console.log(`  ${p.name.slice(0, 40)}: ${store ?? "unidentified"}`);
+    console.log(`  ${p.name.slice(0, 40)}: ${store?.store ?? "unidentified"}`);
     await new Promise((r) => setTimeout(r, 500));
   }
 
@@ -436,7 +436,7 @@ async function main() {
   for (const { p } of atlSlice) {
     const store = await findCheapestStore(p, p.startPrice);
     if (store) atlStores.set(p.productMasterId, store);
-    console.log(`  ${p.name.slice(0, 40)}: ${store ?? "unidentified"}`);
+    console.log(`  ${p.name.slice(0, 40)}: ${store?.store ?? "unidentified"}`);
     await new Promise((r) => setTimeout(r, 500));
   }
 
@@ -474,7 +474,7 @@ async function main() {
   for (const { p } of nearSlice) {
     const store = await findCheapestStore(p);
     if (store) nearStores.set(p.productMasterId, store);
-    console.log(`  ${p.name.slice(0, 40)}: ${store ?? "unidentified"}`);
+    console.log(`  ${p.name.slice(0, 40)}: ${store?.store ?? "unidentified"}`);
     await new Promise((r) => setTimeout(r, 500));
   }
 

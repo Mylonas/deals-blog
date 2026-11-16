@@ -1,0 +1,30 @@
+{
+  "_doc": "Single source of truth for supermarket chain display names. `match` = regexes tested against the e-kalathi companyName after upper-casing and stripping accents. `delivery: true` = not a shop (excluded from 'Cheapest at').",
+  "chains": [
+    { "id": "lidl", "match": ["^LIDL"], "en": "LIDL", "el": "LIDL", "ru": "Лидл" },
+    { "id": "metro", "match": ["^METRO"], "en": "Metro", "el": "Metro", "ru": "Метро" },
+    { "id": "alphamega", "match": ["^(ΑΛΦΑΜΕΓΑ|ALPHAMEGA)"], "en": "AlphaMega", "el": "ΑλφαΜέγα", "ru": "АльфаМега" },
+    { "id": "papantoniou", "match": ["^(ΠΑΠΑΝΤΩΝΙΟΥ|PAPANTONIOU)"], "en": "Papantoniou", "el": "Παπαντωνίου", "ru": "Папантониу" },
+    { "id": "sklavenitis", "match": ["^(ΣΚΛΑΒΕΝΙΤΗΣ|SKLAVENITIS)"], "en": "Sklavenitis", "el": "Σκλαβενίτης", "ru": "Склавенитис" },
+    { "id": "kyriakos-papagiannis", "match": ["^(ΚΥΡΙΑΚΟΣ|KYRIAKOS|KYRIACOS)"], "en": "Kyriakos Papagiannis", "el": "Κυριάκος Παπαγιάννης", "ru": "Кириакос Папаяннис" },
+    { "id": "alpha-sigma", "match": ["^ALPHA SIGMA"], "en": "Alpha Sigma", "el": "Άλφα Σίγμα", "ru": "Альфа Сигма" },
+    { "id": "lysiotis", "match": ["^(LYSIOTIS|ΛΥΣΙΩΤΗΣ)"], "en": "Lysiotis", "el": "Λυσιώτης", "ru": "Лисиотис" },
+    { "id": "plus-discount", "match": ["^PLUS DISCOUNT"], "en": "Plus Discount Market", "el": "Plus Discount Market", "ru": "Плюс Дискаунт Маркет" },
+    { "id": "athienitis", "match": ["^(ΑΘΗΑΙΝΙΤΗΣ|ΑΘΗΕΝΙΤΗΣ|ATHIENITIS)"], "en": "Athienitis", "el": "Αθηαίνιτης", "ru": "Атиенитис" },
+    { "id": "kokkinos", "match": ["^(ΚΟΚΚΙΝΟΣ|KOKKINOS)"], "en": "Kokkinos", "el": "Κόκκινος", "ru": "Коккинос" },
+    { "id": "philippos", "match": ["^(PHILIPPOS|ΦΙΛΙΠΠΟΣ)"], "en": "Philippos", "el": "Φίλιππος", "ru": "Филиппос" },
+    { "id": "mas", "match": ["^MAS( |$)"], "en": "MAS", "el": "MAS", "ru": "МАС" },
+    { "id": "poplife", "match": ["^POPLIFE"], "en": "Poplife", "el": "Poplife", "ru": "Поплайф" },
+    { "id": "super-discount", "match": ["^SUPER DISCOUNT"], "en": "Super Discount Store", "el": "Super Discount Store", "ru": "Супер Дискаунт Стор" },
+    { "id": "smart-discount", "match": ["^SMART DISCOUNT"], "en": "Smart Discount Shop", "el": "Smart Discount Shop", "ru": "Смарт Дискаунт Шоп" },
+    { "id": "sypal", "match": ["^(ΣΥΠΑΛ|SYPAL)"], "en": "SYPAL", "el": "ΣΥΠΑΛ", "ru": "СИПАЛ" },
+    { "id": "andreas-avgoustis", "match": ["^ΑΝΔΡΕΑΣ"], "en": "Andreas & Avgoustis", "el": "Ανδρέας & Αύγουστης", "ru": "Андреас и Августис" },
+    { "id": "ioannidis", "match": ["^ΙΩΑΝΝΙΔΗΣ"], "en": "Ioannidis", "el": "Ιωαννίδης", "ru": "Иоаннидис" },
+    { "id": "kolias", "match": ["^ΚΚΟΛΙΑΣ"], "en": "Kolias", "el": "Κόλιας", "ru": "Колиас" },
+    { "id": "kipos-edem", "match": ["^Ο ΚΗΠΟΣ ΤΗΣ ΕΔΕΜ"], "en": "O Kipos tis Edem", "el": "Ο Κήπος της Εδέμ", "ru": "О Кипос тис Эдем" },
+    { "id": "papas", "match": ["^ΠΑΠΑΣ"], "en": "Papas", "el": "Παπάς", "ru": "Папас" },
+    { "id": "stelios", "match": ["^ΣΤΕΛΙΟΣ"], "en": "Stelios", "el": "Στέλιος", "ru": "Стелиос" },
+    { "id": "aletri", "match": ["^ΤΟ ΑΛΕΤΡΙ"], "en": "To Aletri", "el": "Το Αλέτρι", "ru": "То Алетри" },
+    { "id": "wolt-market", "match": ["^WOLT MARKET"], "en": "Wolt Market", "el": "Wolt Market", "ru": "Wolt Market", "delivery": true }
+  ]
+}
