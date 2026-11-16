@@ -119,11 +119,16 @@ function finalize(v) {
   const priceSources = {};
   const items = {}; // which menu item produced each displayed price (for audits)
   // re-applied here so rule fixes also reach stored data whose menu item is recorded (see "items")
+  const OVERSIZE = /jumbo|giant|\bxl\b|\blarge\b|\bbig\b|μεγάλ|τζάμπο|\b(?:7[5-9]\d|[89]\d\d)\s?(?:g|gr|γρ)|\b1\s?kg/i;
   const NON_MEAT = /veget|λαχανικ|lebanese|λιβανεζ|falafel|φαλαφελ/i;
   for (const [platform, o] of pool) {
     for (const [cut, price] of Object.entries(o.prices || {})) {
       if (price == null) continue;
       if (cut.startsWith("mix") && NON_MEAT.test(o.items?.[cut]?.name || "")) continue;
+      // a mix with one skewer and only ONE sheftalia is smaller than the standard 1 skewer + 2 sheftalia
+      if (cut.startsWith("mix") && /\b1\s*(?:souvlaki\s*)?skewer\s*(?:and|&|\+)\s*1\s*(?:sheftalia|sheftalies|shieftalia)\b/i.test(o.items?.[cut]?.desc || "")) continue;
+      // an oversized pork chop (jumbo / giant / XL / large, or 750g+) is not the standard portion the ranking compares
+      if (cut === "porkchop" && OVERSIZE.test(`${o.items?.[cut]?.name || ""} ${o.items?.[cut]?.desc || ""}`)) continue;
       if (prices[cut] == null || price < prices[cut]) {
         prices[cut] = price;
         priceSources[cut] = platform;
