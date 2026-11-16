@@ -95,8 +95,10 @@ const FILLING_RE = /halloum|χαλουμ|bacon|μπεικον|cheese|τυρι|mu
 const PORK_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /pork|χοιριν/.test(n) && !/chicken|κοτοπουλ/.test(n) && !SHEFTALIA_RE.test(n) && !MIX_WORD_RE.test(n) && !FILLING_RE.test(n);
 const CHICKEN_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /chicken|κοτοπουλ/.test(n) && !/pork|χοιριν/.test(n) && !SHEFTALIA_RE.test(n) && !MIX_WORD_RE.test(n) && !FILLING_RE.test(n);
 const BURGER_RE = /burger|μπιφτεκ|μπουργκερ/;
+// a mix is a MEAT mix: vegetable / falafel / Lebanese-pita items never count
+const NON_MEAT_RE = /veget|λαχανικ|lebanese|λιβανεζ|falafel|φαλαφελ|mushroom|μανιταρ/;
 const MIX = (n, cat = "") =>
-  !GYRO_RE.test(n) && !GYRO_RE.test(cat) && !FILLING_RE.test(n) && !BURGER_RE.test(n) &&
+  !GYRO_RE.test(n) && !GYRO_RE.test(cat) && !FILLING_RE.test(n) && !BURGER_RE.test(n) && !NON_MEAT_RE.test(n) &&
   (/\bmix|μιχτ|μιξ|μιγμα|mikti/.test(n) ||
     (/souvlak|σουβλακ|χοιριν|pork/.test(n) && SHEFTALIA_RE.test(n)));
 
