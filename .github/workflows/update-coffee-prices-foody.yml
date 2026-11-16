@@ -64,6 +64,7 @@ jobs:
           bash scripts/ci/commit-data.sh "chore: update coffee prices from Foody $(date +'%Y-%m-%d')" \
             src/data/coffee-prices-foody.json \
             src/data/coffee-prices.json \
+            src/data/history/coffee \
             posts/en/cheapest-coffee-nicosia.md \
             posts/el/cheapest-coffee-nicosia.md \
             posts/ru/cheapest-coffee-nicosia.md

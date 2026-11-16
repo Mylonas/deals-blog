@@ -50,6 +50,7 @@ jobs:
         run: |
           bash scripts/ci/commit-data.sh "chore: update coffee prices via Wolt API $(date +'%Y-%m-%d')" \
             src/data/coffee-prices.json \
+            src/data/history/coffee \
             src/data/coffee-prices-wolt.json \
             posts/en/cheapest-coffee-nicosia.md \
             posts/el/cheapest-coffee-nicosia.md \

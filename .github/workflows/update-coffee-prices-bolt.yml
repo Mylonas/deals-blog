@@ -63,6 +63,7 @@ jobs:
           bash scripts/ci/commit-data.sh "chore: update coffee prices from Bolt $(date +'%Y-%m-%d')" \
             src/data/coffee-prices-bolt.json \
             src/data/coffee-prices.json \
+            src/data/history/coffee \
             posts/en/cheapest-coffee-nicosia.md \
             posts/el/cheapest-coffee-nicosia.md \
             posts/ru/cheapest-coffee-nicosia.md

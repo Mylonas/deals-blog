@@ -22,6 +22,7 @@
  */
 import fs from "fs";
 import { openFromCompact, eveningReference } from "./lib/foody-extra.mjs";
+import { recordHistory } from "./lib/tracker-history.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -222,6 +223,7 @@ export function mergeAndWrite() {
   }));
   const merged = mergeSouvlaki(wolt, extras);
   fs.writeFileSync(MERGED_OUT, JSON.stringify(merged, null, 2) + "\n");
+  recordHistory("souvlaki", merged.cities);
   const total = merged.cities.reduce((s, c) => s + c.venues.length, 0);
   const counts = EXTRA_SOURCES.map((s) => {
     const n = merged.cities.reduce((sum, c) => sum + c.venues.filter((v) => v.platforms?.includes(s.platform)).length, 0);
