@@ -112,8 +112,9 @@ function finalize(v) {
   const offers = Object.entries(v._offers || {});
   delete v._offers;
   if (!offers.length) return v;
-  const eligible = offers.filter(([, o]) => o.open !== false);
-  const pool = eligible.length ? eligible : offers;
+  // Opening hours / online flags no longer exclude a venue (decision 2026-11-16): a venue outside its
+  // usual hours is ranked like any other. Only items marked unavailable are dropped, at scan time.
+  const pool = offers;
   const prices = {};
   const priceSources = {};
   const items = {}; // which menu item produced each displayed price (for audits)
@@ -131,10 +132,9 @@ function finalize(v) {
       }
     }
   }
-  const known = offers.filter(([, o]) => o.open != null);
-  let open = null; // no platform reports availability
-  if (known.length) open = eligible.some(([, o]) => o.open === true) ? true : eligible.length ? null : false;
-  return { ...v, prices, priceSources, items, open };
+  const out = { ...v, prices, priceSources, items };
+  delete out.open; // no open/closed indication is published (a single snapshot would go stale)
+  return out;
 }
 
 /** Fold a source venue's prices/link into an existing merged venue. */
@@ -194,7 +194,7 @@ export function mergeSouvlaki(wolt, extras) {
       let merged = (woltByKey.get(key) || []).map((v) => ({ ...v, platforms: ["wolt"], _offers: { wolt: offerOf(v) } }));
       for (const { platform, map } of byCity) merged = foldCity(merged, map.get(key), platform);
       merged = merged.map(finalize);
-      merged.sort((a, b) => (a.open === false) - (b.open === false) || (a.prices.souvlaki ?? 99) - (b.prices.souvlaki ?? 99));
+      merged.sort((a, b) => (a.prices.souvlaki ?? 99) - (b.prices.souvlaki ?? 99));
       return { key, label, venues: merged };
     }),
   };

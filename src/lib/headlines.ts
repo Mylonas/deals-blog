@@ -39,7 +39,6 @@ export function headline(tool: Tool, lang: Lang): Headline {
       case "coffee": {
         const prices = ((coffee as any).cities ?? [])
           .flatMap((c: any) => c.cafes ?? [])
-          .filter((x: any) => x.open !== false) // closed / scheduled-only venues never headline
           .map((x: any) => x.freddo)
           .filter((p: any) => typeof p === "number" && p >= 0.8 && p < 10);
         const m = min(prices);
@@ -50,7 +49,6 @@ export function headline(tool: Tool, lang: Lang): Headline {
       case "souvlaki": {
         const prices = ((souvlaki as any).cities ?? [])
           .flatMap((c: any) => c.venues ?? [])
-          .filter((v: any) => v.open !== false) // closed / scheduled-only venues never headline
           // a Bolt price with no recorded source item has not been audited under the current rules
           .filter((v: any) => !(v.priceSources?.souvlaki === "bolt" && !v.items?.souvlaki))
           .map((v: any) => v.prices?.souvlaki)
