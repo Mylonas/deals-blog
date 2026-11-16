@@ -3,7 +3,7 @@ import SouvlakiTable from "@/components/SouvlakiTable";
 import data from "@/data/souvlaki-prices.json";
 
 export const metadata = {
-  title: "Φθηνότερο Σουβλάκι στην Κύπρο — Ζωντανές Τιμές ανά Πόλη",
+  title: "Φθηνότερο Σουβλάκι στην Κύπρο — Τιμές ανά Πόλη",
   description:
     "Τιμές σουβλακιού σε πίτα σε Λευκωσία, Λεμεσό, Λάρνακα, Πάφο και Αγία Νάπα — χοιρινό, κοτόπουλο, μπριζόλα και μιχτή, πάντα με το φθηνότερο πρώτο. Ενημέρωση κάθε δύο ημέρες μέσω Wolt, Bolt και Foody.",
   alternates: {"canonical":"/el/posts/cheapest-souvlaki-cyprus/","languages":{"en":"/posts/cheapest-souvlaki-cyprus/","el":"/el/posts/cheapest-souvlaki-cyprus/","ru":"/ru/posts/cheapest-souvlaki-cyprus/","x-default":"/posts/cheapest-souvlaki-cyprus/"}},

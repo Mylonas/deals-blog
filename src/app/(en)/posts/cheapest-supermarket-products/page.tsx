@@ -5,7 +5,7 @@ import data from "@/data/supermarket-deals.json";
 export const metadata = {
   title: "Top 20 Biggest Supermarket Savings in Cyprus",
   description:
-    "The 20 products with the biggest price cuts right now across all major Cyprus supermarkets, sourced from the government's e-Kalathi price observatory. Updated daily.",
+    "The 20 products with the biggest price cuts currently across all major Cyprus supermarkets, sourced from the government's e-Kalathi price observatory. Refreshed daily.",
   alternates: {"canonical":"/posts/cheapest-supermarket-products/","languages":{"en":"/posts/cheapest-supermarket-products/","el":"/el/posts/cheapest-supermarket-products/","ru":"/ru/posts/cheapest-supermarket-products/","x-default":"/posts/cheapest-supermarket-products/"}},
 };
 

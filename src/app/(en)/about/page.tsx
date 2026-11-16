@@ -36,7 +36,7 @@ export default function AboutEn() {
         <section>
           <h2 className="text-xl font-semibold mb-2">How it works</h2>
           <p>
-            We automatically collect pricing data from publicly available sources on a daily basis.
+            We automatically collect pricing data from publicly available sources regularly: from every few hours to every couple of days depending on the source (fuel prices are refreshed by hand), and every price shows its own date.
             This data is compared, ranked and presented in easy-to-read tables and charts so you can
             quickly find the cheapest option near you.
           </p>
@@ -47,7 +47,7 @@ export default function AboutEn() {
           <ul className="list-disc ml-6 space-y-1">
             <li><strong>Free forever</strong> — no subscriptions, no paywalls</li>
             <li><strong>Independent</strong> — we are not affiliated with any retailer or brand</li>
-            <li><strong>Transparent</strong> — prices come from public sources, updated daily</li>
+            <li><strong>Transparent</strong> — prices come from public sources, each price carries its own date</li>
             <li><strong>Multilingual</strong> — available in English, Greek and Russian</li>
           </ul>
         </section>
