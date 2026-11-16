@@ -21,7 +21,7 @@
  *   node scripts/merge-souvlaki-sources.mjs
  */
 import fs from "fs";
-import { openFromCompact } from "./lib/foody-extra.mjs";
+import { openFromCompact, eveningReference } from "./lib/foody-extra.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -98,8 +98,8 @@ export function sameVenue(a, b) {
   return overlap >= MATCH_TOKEN_OVERLAP_NAMEONLY;
 }
 
-// Foody records carry their weekly hours, so "open now" is recomputed at merge time
-const openOf = (v) => (v.hours ? openFromCompact(v.hours) : v.open ?? null);
+// Foody records carry their weekly hours: "normally open" is evaluated at 19:00 Cyprus time on the day of the merge
+const openOf = (v) => (v.hours ? openFromCompact(v.hours, eveningReference()) : v.open ?? null);
 const offerOf = (v) => ({ prices: v.prices || {}, items: v.items || {}, open: openOf(v) });
 
 /**

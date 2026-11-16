@@ -5,8 +5,8 @@ on:
     # 06:00 UTC every 2 days — Wolt API scrape is cheap, no browser needed.
     # The souvlaki Wolt scan is offset to 06:30 so the two do not hit Wolt at
     # the same instant.
-    # Moved to midday on purpose: the scan records whether each venue is open at scan time and rankings skip closed venues, so scanning before shops open would empty the tracker.
-    - cron: "0 10 */2 * *" # 13:00 Cyprus time (was 06:00 UTC)
+    # Moved to the evening on purpose: the scan records whether each venue is open at scan time and rankings skip closed venues, so scanning before shops open would empty the tracker.
+    - cron: "0 14 */2 * *" # 17:00 Cyprus time, when most cafes are open (was 06:00 UTC)
   workflow_dispatch:
 
 jobs:
