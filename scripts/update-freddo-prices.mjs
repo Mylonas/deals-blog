@@ -173,6 +173,7 @@ async function listCafes(lat, lon) {
         // Wolt location is [lon, lat]
         lng: v.location?.[0] ?? null,
         lat: v.location?.[1] ?? null,
+        open: v.online == null ? null : v.online === true,
       });
     }
   }
@@ -209,8 +210,13 @@ async function scanCity(city) {
           if (res.status === 404 || res.status === 410) { ok = true; break; } // venue gone — don't retry
           if (!res.ok) continue;
           const assortment = await res.json();
-          const freddo = findFreddo(assortment.items || [], FREDDO_MIN_CENTS);
-          if (freddo) found.push({ ...v, freddo: freddo.price / 100 });
+          // skip "Not available" items; rank on the regular (list) price, keep any promo price
+          const live = (assortment.items || []).filter((i) => !i.disabled_info);
+          const freddo = findFreddo(live, FREDDO_MIN_CENTS);
+          if (freddo) {
+            const list = freddo.original_price != null && freddo.original_price > freddo.price ? freddo.original_price : freddo.price;
+            found.push({ ...v, freddo: list / 100, freddoPromo: list > freddo.price ? freddo.price / 100 : null });
+          }
           ok = true;
         } catch {}
       }
@@ -220,7 +226,8 @@ async function scanCity(city) {
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
   if (failed) console.log(`  ⚠ ${failed}/${venues.length} menu fetches failed after retries`);
 
-  found.sort((a, b) => a.freddo - b.freddo);
+  // open venues first, so a closed branch never hides an open one of the same brand
+  found.sort((a, b) => (a.open === false) - (b.open === false) || a.freddo - b.freddo);
   const byBrand = new Map();
   for (const f of found) {
     const key = brandKey(f.name);
@@ -230,6 +237,8 @@ async function scanCity(city) {
   const top = [...byBrand.values()].slice(0, TOP_PER_CITY).map((f) => ({
     cafe: f.name,
     freddo: f.freddo,
+    ...(f.freddoPromo != null ? { freddoPromo: f.freddoPromo } : {}),
+    open: f.open ?? null,
     address: f.address,
     lat: f.lat,
     lng: f.lng,

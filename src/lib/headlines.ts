@@ -36,6 +36,7 @@ export function headline(tool: Tool, lang: Lang): Headline {
       case "coffee": {
         const prices = ((coffee as any).cities ?? [])
           .flatMap((c: any) => c.cafes ?? [])
+          .filter((x: any) => x.open !== false) // closed / scheduled-only venues never headline
           .map((x: any) => x.freddo)
           .filter((p: any) => typeof p === "number" && p >= 0.8 && p < 10);
         const m = min(prices);
@@ -46,6 +47,7 @@ export function headline(tool: Tool, lang: Lang): Headline {
       case "souvlaki": {
         const prices = ((souvlaki as any).cities ?? [])
           .flatMap((c: any) => c.venues ?? [])
+          .filter((v: any) => v.open !== false) // closed / scheduled-only venues never headline
           .map((v: any) => v.prices?.souvlaki)
           .filter((p: any) => typeof p === "number" && p >= 1.5 && p < 15);
         const m = min(prices);

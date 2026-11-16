@@ -22,6 +22,7 @@
  *   node scripts/merge-coffee-sources.mjs
  */
 import fs from "fs";
+import { openFromCompact } from "./lib/foody-extra.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -101,6 +102,34 @@ export function sameCafe(a, b) {
   return overlap >= MATCH_TOKEN_OVERLAP_NAMEONLY;
 }
 
+// Foody records carry their weekly hours, so "open now" is recomputed at merge time
+const openOf = (v) => (v.hours ? openFromCompact(v.hours) : v.open ?? null);
+const offerOf = (v) => ({ freddo: v.freddo ?? null, promo: v.freddoPromo ?? null, open: openOf(v) });
+
+/**
+ * Pick the displayed price once every platform has been folded in. Only platforms
+ * that are open right now (open !== false) compete; a platform whose snapshot says
+ * closed / "scheduled only" can never set the headline price. If EVERY platform with
+ * a price is closed the café keeps its cheapest price but is marked open:false, and
+ * the rankings and home cards skip it.
+ */
+function finalize(v) {
+  const offers = Object.entries(v._offers || {}).filter(([, o]) => o.freddo != null);
+  delete v._offers;
+  if (!offers.length) return v;
+  const eligible = offers.filter(([, o]) => o.open !== false);
+  const pool = eligible.length ? eligible : offers;
+  const [src, best] = pool.reduce((a, b) => (b[1].freddo < a[1].freddo ? b : a));
+  v.freddo = best.freddo;
+  v.freddoSource = src;
+  if (best.promo != null) v.freddoPromo = best.promo;
+  else delete v.freddoPromo;
+  const known = offers.filter(([, o]) => o.open != null);
+  v.open = null; // no platform reports availability
+  if (known.length) v.open = eligible.some(([, o]) => o.open === true) ? true : eligible.length ? null : false;
+  return v;
+}
+
 /** Fold a source café's price/link into an existing merged café. */
 function foldInto(base, incoming, platform) {
   const basePlatform = base.platforms?.[0] ?? "wolt";
@@ -109,6 +138,7 @@ function foldInto(base, incoming, platform) {
     freddoSource: base.freddoSource ?? basePlatform,
     [`${platform}Url`]: incoming.url,
     platforms: [...new Set([...(base.platforms || [basePlatform]), platform])],
+    _offers: { ...(base._offers || {}), [platform]: offerOf(incoming) },
   };
   if (incoming.freddo != null && (merged.freddo == null || incoming.freddo < merged.freddo)) {
     merged.freddo = incoming.freddo;
@@ -138,7 +168,7 @@ function foldCity(merged, sourceCafes, platform) {
     }
   }
   source.forEach((sc, j) => {
-    if (!used.has(j)) merged.push({ ...sc, freddoSource: platform, platforms: [platform] });
+    if (!used.has(j)) merged.push({ ...sc, freddoSource: platform, platforms: [platform], _offers: { [platform]: offerOf(sc) } });
   });
   return merged;
 }
@@ -165,9 +195,10 @@ export function mergeCoffee(wolt, extras) {
       ...Object.fromEntries(present.map((e) => [e.platform, e.data.updatedAt])),
     },
     cities: cityDefs.map(({ key, label }) => {
-      let merged = (woltByKey.get(key) || []).map((v) => ({ ...v, freddoSource: "wolt", platforms: ["wolt"] }));
+      let merged = (woltByKey.get(key) || []).map((v) => ({ ...v, freddoSource: "wolt", platforms: ["wolt"], _offers: { wolt: offerOf(v) } }));
       for (const { platform, map } of byCity) merged = foldCity(merged, map.get(key), platform);
-      merged.sort((a, b) => (a.freddo ?? 99) - (b.freddo ?? 99));
+      merged = merged.map(finalize);
+      merged.sort((a, b) => (a.open === false) - (b.open === false) || (a.freddo ?? 99) - (b.freddo ?? 99));
       return { key, label, cafes: merged };
     }),
   };

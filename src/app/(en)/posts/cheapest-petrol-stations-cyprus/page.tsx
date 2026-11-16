@@ -6,9 +6,9 @@ import data from "@/data/fuel-prices.json";
 import history from "@/data/fuel-price-history.json";
 
 export const metadata = {
-  title: "Cheapest Petrol Stations in Cyprus — Live Prices",
+  title: "Cheapest Petrol Stations in Cyprus",
   description:
-    "Live fuel prices across Cyprus. Filter by district and fuel type (Unleaded 95, 98, Diesel) to find the cheapest station near you. Updated regularly from the Cyprus government fuel observatory.",
+    "Fuel prices across Cyprus. Filter by district and fuel type (Unleaded 95, 98, Diesel) to find the cheapest station near you. Updated regularly from the Cyprus government fuel observatory.",
   alternates: {"canonical":"/posts/cheapest-petrol-stations-cyprus/","languages":{"en":"/posts/cheapest-petrol-stations-cyprus/","el":"/el/posts/cheapest-petrol-stations-cyprus/","ru":"/ru/posts/cheapest-petrol-stations-cyprus/","x-default":"/posts/cheapest-petrol-stations-cyprus/"}},
 };
 
@@ -17,7 +17,7 @@ export default function FuelPricesPage() {
     <ToolPage
       lang="en"
       tool="fuel"
-      title="Cheapest Petrol Stations in Cyprus — Live Prices"
+      title="Cheapest Petrol Stations in Cyprus"
       updatedAt={(data as any).updatedAt ?? (data as any).fetchedAt}
       source={{ label: "Cyprus Government Petroleum Prices portal", href: "https://petroleumprices.meci.gov.cy/" }}
       details={<p>

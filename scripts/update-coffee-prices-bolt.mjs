@@ -137,6 +137,8 @@ async function findProviders(city) {
     lat: p.lat ?? null,
     lng: p.lng ?? null,
     slug: p.slug,
+    // false = "scheduled only" / closed right now (snapshot at scan time)
+    open: p.is_available_for_delivery == null ? null : p.is_available_for_delivery === true,
   }));
 }
 
@@ -222,6 +224,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
             lng: p.lng,
             url: `https://food.bolt.eu/en/${CITY_PATHS[city.key]}/p/${p.slug}`,
             source: "bolt",
+            open: p.open ?? null,
           });
           console.log(`  ✓ ${p.name}: €${freddo.toFixed(2)}`);
         }

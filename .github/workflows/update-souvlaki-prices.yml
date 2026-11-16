@@ -6,7 +6,8 @@ on:
     # Offset half an hour from the coffee Wolt scan at 06:00 so the two do not
     # hit Wolt at the same instant; both finish in minutes, so 30 minutes is
     # clear separation.
-    - cron: "30 6 */2 * *"
+    # Moved to midday on purpose: the scan records whether each venue is open at scan time and rankings skip closed venues, so scanning before shops open would empty the tracker.
+    - cron: "30 10 */2 * *" # 13:30 Cyprus time (was 06:30 UTC)
   workflow_dispatch:
 
 jobs:

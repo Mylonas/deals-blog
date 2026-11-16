@@ -22,6 +22,7 @@
 import fs from "fs";
 import { chromium } from "playwright";
 import { CITIES, findFreddo, FREDDO_MIN_EUR } from "./update-freddo-prices.mjs";
+import { enrichFoodyItems, foodyOpenNow, compactHours } from "./lib/foody-extra.mjs";
 import { FOODY_OUT, MERGED_OUT, WOLT_OUT, BOLT_OUT, mergeAndWrite, sameCafe } from "./merge-coffee-sources.mjs";
 import { discoverFoodyVenues, geoInCity } from "./foody-discovery.mjs";
 
@@ -61,7 +62,7 @@ async function extractMenu(page) {
       if (node?.hasMenu || node?.["@type"] === "Restaurant") restaurant = node;
     }
   }
-  if (!restaurant) return { geo: null, items: [] };
+  if (!restaurant) return { geo: null, items: [], open: null };
 
   const geo = restaurant.geo?.latitude != null
     ? { lat: Number(restaurant.geo.latitude), lng: Number(restaurant.geo.longitude) }
@@ -74,20 +75,24 @@ async function extractMenu(page) {
       if (it.name && price != null && price > 0) items.push({ name: it.name, price });
     }
   }
-  return { geo, items };
+  // list (pre-promo) prices and per-item availability come from the rendered cards
+  await enrichFoodyItems(page, items);
+  return { geo, items, open: foodyOpenNow(restaurant), hours: compactHours(restaurant) };
 }
 
 async function scrapeVenue(page, venue) {
   await page.goto(venue.url, { waitUntil: "domcontentloaded", timeout: NAV_TIMEOUT });
   // the menu JSON-LD is injected after the client render — poll briefly for it
-  let data = { geo: null, items: [] };
-  for (let i = 0; i < 6 && !data.items.length; i++) {
+  let data = { geo: null, items: [], open: null };
+  // also keep polling while NO card has rendered yet (all items look unavailable)
+  for (let i = 0; i < 8 && (!data.items.length || data.items.every((x) => x.available === false)); i++) {
     await sleep(1200);
     data = await extractMenu(page);
   }
   if (DEBUG) await page.screenshot({ path: `${DEBUG_DIR}/${venue.slug}-menu.png`, fullPage: true }).catch(() => {});
-  const freddo = findFreddo(data.items, FREDDO_MIN_EUR);
-  return { freddo: freddo ? freddo.price : null, geo: data.geo };
+  // never rank an item that is not orderable; rank on the list price, keep the promo price
+  const freddo = findFreddo(data.items.filter((i) => i.available !== false), FREDDO_MIN_EUR);
+  return { freddo: freddo ? freddo.price : null, freddoPromo: freddo?.promo ?? null, geo: data.geo, open: data.open, hours: data.hours ?? null };
 }
 
 // ── gap detection ─────────────────────────────────────────────────────────────
@@ -179,12 +184,12 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
         if (scanned >= MAX_VENUES) break;
         scanned++;
         try {
-          const { freddo, geo } = await scrapeVenue(page, g);
+          const { freddo, freddoPromo, geo, open, hours } = await scrapeVenue(page, g);
           if (freddo != null) {
             // chain brand pages carry one branch's coords — only trust them
             // for the city they're actually in
             const geoOk = geoInCity(geo, city);
-            cafes.push({ cafe: g.name, freddo, slug: g.slug, url: g.url, address: null, lat: geoOk ? geo.lat : null, lng: geoOk ? geo.lng : null, source: "foody" });
+            cafes.push({ cafe: g.name, freddo, slug: g.slug, url: g.url, address: null, lat: geoOk ? geo.lat : null, lng: geoOk ? geo.lng : null, source: "foody", open, hours, ...(freddoPromo != null ? { freddoPromo } : {}) });
             console.log(`  ✓ ${g.name}: €${freddo.toFixed(2)}`);
           } else {
             console.log(`  – ${g.name}: no Freddo Espresso on the menu`);
@@ -192,7 +197,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
         } catch (e) {
           console.log(`  ⚠ ${g.name}: ${e.message}`);
         }
-        checkpoint();
+        if (scanned % 10 === 0) checkpoint(); // not every venue: the sync client can lock the file
         await sleep(1500);
       }
       cafes.sort((a, b) => a.freddo - b.freddo);

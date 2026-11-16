@@ -21,6 +21,7 @@
  *   node scripts/merge-souvlaki-sources.mjs
  */
 import fs from "fs";
+import { openFromCompact } from "./lib/foody-extra.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -97,28 +98,50 @@ export function sameVenue(a, b) {
   return overlap >= MATCH_TOKEN_OVERLAP_NAMEONLY;
 }
 
-/** Fold a source venue's prices/link into an existing merged venue. */
-function foldInto(base, incoming, platform) {
-  const prices = { ...base.prices };
-  const priceSources = { ...(base.priceSources || {}) };
-  // seed priceSources for cuts that only had the base platform so far
-  const basePlatform = base.platforms?.[0] ?? "wolt";
-  for (const cut of Object.keys(base.prices || {})) {
-    if (priceSources[cut] == null) priceSources[cut] = basePlatform;
-  }
-  for (const [cut, price] of Object.entries(incoming.prices || {})) {
-    if (price == null) continue;
-    if (prices[cut] == null || price < prices[cut]) {
-      prices[cut] = price;
-      priceSources[cut] = platform;
+// Foody records carry their weekly hours, so "open now" is recomputed at merge time
+const openOf = (v) => (v.hours ? openFromCompact(v.hours) : v.open ?? null);
+const offerOf = (v) => ({ prices: v.prices || {}, items: v.items || {}, open: openOf(v) });
+
+/**
+ * Pick each cut's displayed price once every platform has been folded in. Only
+ * platforms that are open right now (open !== false) compete. If every platform is
+ * closed the venue keeps its cheapest prices but is marked open:false, and the
+ * rankings and home cards skip it.
+ */
+function finalize(v) {
+  const offers = Object.entries(v._offers || {});
+  delete v._offers;
+  if (!offers.length) return v;
+  const eligible = offers.filter(([, o]) => o.open !== false);
+  const pool = eligible.length ? eligible : offers;
+  const prices = {};
+  const priceSources = {};
+  const items = {}; // which menu item produced each displayed price (for audits)
+  for (const [platform, o] of pool) {
+    for (const [cut, price] of Object.entries(o.prices || {})) {
+      if (price == null) continue;
+      if (prices[cut] == null || price < prices[cut]) {
+        prices[cut] = price;
+        priceSources[cut] = platform;
+        if (o.items?.[cut]) items[cut] = { ...o.items[cut], source: platform };
+        else delete items[cut];
+      }
     }
   }
+  const known = offers.filter(([, o]) => o.open != null);
+  let open = null; // no platform reports availability
+  if (known.length) open = eligible.some(([, o]) => o.open === true) ? true : eligible.length ? null : false;
+  return { ...v, prices, priceSources, items, open };
+}
+
+/** Fold a source venue's prices/link into an existing merged venue. */
+function foldInto(base, incoming, platform) {
+  const basePlatform = base.platforms?.[0] ?? "wolt";
   return {
     ...base,
-    prices,
-    priceSources,
     [`${platform}Url`]: incoming.url,
     platforms: [...new Set([...(base.platforms || [basePlatform]), platform])],
+    _offers: { ...(base._offers || {}), [platform]: offerOf(incoming) },
   };
 }
 
@@ -138,7 +161,7 @@ function foldCity(merged, sourceVenues, platform) {
     }
   }
   source.forEach((sv, j) => {
-    if (!used.has(j)) merged.push({ ...sv, platforms: [platform] });
+    if (!used.has(j)) merged.push({ ...sv, platforms: [platform], _offers: { [platform]: offerOf(sv) } });
   });
   return merged;
 }
@@ -165,9 +188,10 @@ export function mergeSouvlaki(wolt, extras) {
       ...Object.fromEntries(present.map((e) => [e.platform, e.data.updatedAt])),
     },
     cities: cityDefs.map(({ key, label }) => {
-      let merged = (woltByKey.get(key) || []).map((v) => ({ ...v, platforms: ["wolt"] }));
+      let merged = (woltByKey.get(key) || []).map((v) => ({ ...v, platforms: ["wolt"], _offers: { wolt: offerOf(v) } }));
       for (const { platform, map } of byCity) merged = foldCity(merged, map.get(key), platform);
-      merged.sort((a, b) => (a.prices.souvlaki ?? 99) - (b.prices.souvlaki ?? 99));
+      merged = merged.map(finalize);
+      merged.sort((a, b) => (a.open === false) - (b.open === false) || (a.prices.souvlaki ?? 99) - (b.prices.souvlaki ?? 99));
       return { key, label, venues: merged };
     }),
   };

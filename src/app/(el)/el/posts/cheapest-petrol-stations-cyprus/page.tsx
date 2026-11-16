@@ -6,9 +6,9 @@ import data from "@/data/fuel-prices.json";
 import history from "@/data/fuel-price-history.json";
 
 export const metadata = {
-  title: "Φθηνότερα Πρατήρια Καυσίμων στην Κύπρο — Ζωντανές Τιμές",
+  title: "Φθηνότερα Πρατήρια Καυσίμων στην Κύπρο",
   description:
-    "Ζωντανές τιμές καυσίμων σε πρατήρια της Κύπρου. Φιλτράρετε κατά επαρχία και τύπο καυσίμου (Αμόλυβδη 95, 98, Πετρέλαιο) για να βρείτε το φθηνότερο κοντά σας. Τακτική ενημέρωση.",
+    "Τιμές καυσίμων σε πρατήρια της Κύπρου. Φιλτράρετε κατά επαρχία και τύπο καυσίμου (Αμόλυβδη 95, 98, Πετρέλαιο) για να βρείτε το φθηνότερο κοντά σας. Τακτική ενημέρωση.",
   alternates: {"canonical":"/el/posts/cheapest-petrol-stations-cyprus/","languages":{"en":"/posts/cheapest-petrol-stations-cyprus/","el":"/el/posts/cheapest-petrol-stations-cyprus/","ru":"/ru/posts/cheapest-petrol-stations-cyprus/","x-default":"/posts/cheapest-petrol-stations-cyprus/"}},
 };
 
@@ -17,7 +17,7 @@ export default function FuelPricesPageEL() {
     <ToolPage
       lang="el"
       tool="fuel"
-      title="Φθηνότερα Πρατήρια Καυσίμων στην Κύπρο — Ζωντανές Τιμές"
+      title="Φθηνότερα Πρατήρια Καυσίμων στην Κύπρο"
       updatedAt={(data as any).updatedAt ?? (data as any).fetchedAt}
       source={{ label: "Πύλη Τιμών Πετρελαιοειδών της Κυπριακής Κυβέρνησης", href: "https://petroleumprices.meci.gov.cy/" }}
       details={<p>
