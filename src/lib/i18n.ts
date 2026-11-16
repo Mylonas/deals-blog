@@ -57,6 +57,17 @@ type Strings = {
   aboutData: string;
   homeTitle: string;
   homeIntro: string;
+  cardLabel: Record<Tool, string>;
+  todayTitle: string;
+  seeAll: string;
+  topThreeTitle: string;
+  trust: [string, string, string];
+  trustLink: string;
+  down: string;
+  up: string;
+  changeVs: (dir: string, amount: string, since: string) => string;
+  changeSame: (since: string) => string;
+  changeFrom: (amount: string, prev: string) => string;
   homeDescription: string;
   footerNav: string;
   about: string;
@@ -108,6 +119,17 @@ export const STR: Record<Lang, Strings> = {
     aboutData: "About this data",
     homeTitle: "Cyprus price trackers",
     homeIntro: "Fuel, supermarket, coffee and souvlaki prices across Cyprus, refreshed regularly. Pick a tracker.",
+    cardLabel: { fuel: "Unleaded 95", supermarket: "Biggest price drop", coffee: "Freddo espresso", souvlaki: "Souvlaki pita", jobs: "Public jobs" },
+    todayTitle: "Today's cheapest in Cyprus",
+    seeAll: "See all prices",
+    topThreeTitle: "Cheapest right now",
+    trust: ["Official and delivery-platform data", "Refreshed regularly, every price is dated", "Independent, no paid placement"],
+    trustLink: "How it works",
+    down: "down",
+    up: "up",
+    changeVs: (dir: string, amount: string, since: string) => `${dir} ${amount} vs ${since}`,
+    changeSame: (since: string) => `unchanged vs ${since}`,
+    changeFrom: (amount: string, prev: string) => `down ${amount}, from ${prev}`,
     homeDescription:
       "Cyprus price trackers: cheapest petrol and diesel, supermarket price cuts, freddo espresso and souvlaki prices by city. Updated automatically.",
     footerNav: "Footer",
@@ -115,7 +137,7 @@ export const STR: Record<Lang, Strings> = {
     contact: "Contact",
     privacy: "Privacy Policy",
     terms: "Terms",
-    cookieText: "Essential cookies, and possibly third-party ad cookies (Google AdSense). See our",
+    cookieText: "Essential cookies, maybe ad cookies. See",
     cookiePrivacy: "Privacy Policy",
     cookieEnd: ".",
     accept: "Accept",
@@ -158,6 +180,17 @@ export const STR: Record<Lang, Strings> = {
     aboutData: "Σχετικά με τα δεδομένα",
     homeTitle: "Τιμές στην Κύπρο",
     homeIntro: "Τιμές καυσίμων, σούπερ μάρκετ, καφέ και σουβλακιού στην Κύπρο, με τακτική ενημέρωση. Διαλέξτε εργαλείο.",
+    cardLabel: { fuel: "Αμόλυβδη 95", supermarket: "Μεγαλύτερη πτώση", coffee: "Φρέντο εσπρέσο", souvlaki: "Πίτα σουβλάκι", jobs: "Δημόσιες θέσεις" },
+    todayTitle: "Τα φθηνότερα σήμερα στην Κύπρο",
+    seeAll: "Όλες οι τιμές",
+    topThreeTitle: "Φθηνότερα τώρα",
+    trust: ["Επίσημα δεδομένα και πλατφόρμες delivery", "Τακτική ενημέρωση, κάθε τιμή έχει ημερομηνία", "Ανεξάρτητο, χωρίς πληρωμένες προβολές"],
+    trustLink: "Πώς λειτουργεί",
+    down: "πτώση",
+    up: "αύξηση",
+    changeVs: (dir: string, amount: string, since: string) => `${dir} ${amount} έναντι ${since}`,
+    changeSame: (since: string) => `αμετάβλητη έναντι ${since}`,
+    changeFrom: (amount: string, prev: string) => `πτώση ${amount}, από ${prev}`,
     homeDescription:
       "Τιμές στην Κύπρο: φθηνότερη βενζίνη και πετρέλαιο, εκπτώσεις σούπερ μάρκετ, φρέντο εσπρέσο και σουβλάκι ανά πόλη. Αυτόματη ενημέρωση.",
     footerNav: "Υποσέλιδο",
@@ -165,7 +198,7 @@ export const STR: Record<Lang, Strings> = {
     contact: "Επικοινωνία",
     privacy: "Πολιτική Απορρήτου",
     terms: "Όροι",
-    cookieText: "Απαραίτητα cookies και ενδεχομένως cookies διαφήμισης τρίτων (Google AdSense). Δείτε την",
+    cookieText: "Απαραίτητα cookies, ίσως και διαφημιστικά. Δείτε",
     cookiePrivacy: "Πολιτική Απορρήτου",
     cookieEnd: ".",
     accept: "Αποδοχή",
@@ -208,6 +241,17 @@ export const STR: Record<Lang, Strings> = {
     aboutData: "О данных",
     homeTitle: "Цены на Кипре",
     homeIntro: "Цены на топливо, супермаркеты, кофе и сувлаки на Кипре, обновляются регулярно. Выберите трекер.",
+    cardLabel: { fuel: "Бензин 95", supermarket: "Самое большое снижение", coffee: "Фрэддо эспрессо", souvlaki: "Сувлаки в пите", jobs: "Госвакансии" },
+    todayTitle: "Самое дешёвое сегодня на Кипре",
+    seeAll: "Все цены",
+    topThreeTitle: "Дешевле всего сейчас",
+    trust: ["Официальные данные и платформы доставки", "Регулярное обновление, у каждой цены есть дата", "Независимо, без платного размещения"],
+    trustLink: "Как это работает",
+    down: "снижение",
+    up: "рост",
+    changeVs: (dir: string, amount: string, since: string) => `${dir} ${amount} к ${since}`,
+    changeSame: (since: string) => `без изменений к ${since}`,
+    changeFrom: (amount: string, prev: string) => `снижение ${amount}, было ${prev}`,
     homeDescription:
       "Цены на Кипре: дешёвый бензин и дизель, скидки в супермаркетах, фредо эспрессо и сувлаки по городам. Автоматическое обновление.",
     footerNav: "Нижнее меню",
@@ -215,7 +259,7 @@ export const STR: Record<Lang, Strings> = {
     contact: "Контакты",
     privacy: "Политика конфиденциальности",
     terms: "Условия",
-    cookieText: "Необходимые cookie и, возможно, рекламные cookie третьих сторон (Google AdSense). Подробнее в",
+    cookieText: "Необходимые cookie, возможно рекламные. См.",
     cookiePrivacy: "Политике конфиденциальности",
     cookieEnd: ".",
     accept: "Принять",
