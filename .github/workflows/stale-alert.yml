@@ -46,7 +46,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          TITLE="Stale data: something has not updated in over 7 days"
+          TITLE="Stale data: something has not updated in over 7 days (fuel: 3 days)"
           # One issue, reused. A fresh issue every day would be its own spam.
           EXISTING=$(gh issue list --label=stale-data --state=open --json number,title \
             --jq ".[] | select(.title == \"$TITLE\") | .number" | head -1)
