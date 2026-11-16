@@ -6,8 +6,8 @@
  *   - nearLows:    products currently within NEAR_ATL_PCT % of their all-time low
  *
  * Prices shown are the lowest available anywhere (global minimum). For the deals,
- * all-time lows, and near-lows, findCheapestStore() queries each major chain to
- * identify which supermarket offers the product at or near the minimum price.
+ * all-time lows, and near-lows, findCheapestStore() reads the product's branch list to
+ * identify which supermarket sells the product at the minimum price (argmin of the per-branch prices).
  * The price-diagram history is an across-chains figure, so all-time-low detection
  * compares it against itself, never against the list price.
  *
@@ -16,31 +16,13 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { findCheapestChain } from "./lib/supermarket-stores.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const API = "https://www.e-kalathi.gov.cy/ekalathi-website-server/api";
 const OUT = path.join(ROOT, "src", "data", "supermarket-deals.json");
 const CACHE = path.join(ROOT, "src", "data", "product-price-history.json");
-
-// Supermarket chain IDs from e-kalathi.gov.cy /api/fetch-companies
-const MAJOR_CHAINS = [
-  [453, "LIDL"],
-  [463, "Metro"],
-  [471, "AlphaMega"],
-  [479, "Papantoniou"],
-  [480, "Sklavenitis"],
-  [541, "Kyriacos"],
-  [452, "Alpha Sigma"],
-  [477, "Lysiotis"],
-  [466, "Plus Discount"],
-  [469, "Athinaitis"],
-  [475, "Kokkinos"],
-  [465, "Philippos"],
-  [497, "MAS"],
-  [467, "Poplife"],
-  [468, "Super Discount Store"],
-];
 
 const PAGE_SIZE = 200;
 const TOP_N = 20;
@@ -118,35 +100,9 @@ async function fetchAllProducts() {
   return all;
 }
 
-async function findCheapestStore(product) {
-  const minPrice = product.startPrice;
-  for (const [id, name] of MAJOR_CHAINS) {
-    for (let attempt = 0; attempt < 2; attempt++) {
-      try {
-        if (attempt > 0) await new Promise((r) => setTimeout(r, 3000));
-        const url = `${API}/fetch-product-list?page=0&size=5&productName=${encodeURIComponent(product.name)}&companyIds=${id}`;
-        const res = await fetch(url, {
-          headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" },
-          signal: AbortSignal.timeout(15000),
-        });
-        if (res.status === 429) {
-          await new Promise((r) => setTimeout(r, 5000));
-          continue;
-        }
-        if (!res.ok) break;
-        const json = await res.json();
-        const match = json.content?.find(
-          (p) => p.productMasterId === product.productMasterId && p.startPrice <= minPrice + 0.005
-        );
-        if (match) return name;
-        break;
-      } catch {
-        // retry once
-      }
-    }
-  }
-  return null;
-}
+// Cheapest chain comes from the per-branch prices (see scripts/lib/supermarket-stores.mjs).
+// The old per-chain product-list query ignored companyIds and always answered "LIDL".
+const findCheapestStore = (p, price = p.startPrice) => findCheapestChain(p.productMasterId, price);
 
 function discountPct(curr, prev) {
   if (prev > 0 && curr < prev) return Math.round((1 - curr / prev) * 100);
@@ -478,7 +434,7 @@ async function main() {
   console.log(`\nIdentifying cheapest stores for ${atlSlice.length} all-time lows...`);
   const atlStores = new Map();
   for (const { p } of atlSlice) {
-    const store = await findCheapestStore(p);
+    const store = await findCheapestStore(p, p.startPrice);
     if (store) atlStores.set(p.productMasterId, store);
     console.log(`  ${p.name.slice(0, 40)}: ${store ?? "unidentified"}`);
     await new Promise((r) => setTimeout(r, 500));

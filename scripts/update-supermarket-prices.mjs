@@ -7,33 +7,11 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { findCheapestChain } from "./lib/supermarket-stores.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const API = "https://www.e-kalathi.gov.cy/ekalathi-website-server/api";
-
-// Supermarket chain IDs from e-kalathi.gov.cy /api/fetch-companies
-// Verified against the live API response — do not guess IDs.
-// Use an array of [id, name] pairs — plain objects with integer keys iterate in
-// ascending numeric order, not insertion order, so Alpha Sigma (452) would always
-// win over LIDL (453), Metro (463), etc. when prices tie.
-const MAJOR_CHAINS = [
-  [453, "LIDL"],
-  [463, "Metro"],
-  [471, "AlphaMega"],
-  [479, "Papantoniou"],
-  [480, "Sklavenitis"],
-  [541, "Kyriacos"],
-  [452, "Alpha Sigma"],
-  [477, "Lysiotis"],
-  [466, "Plus Discount"],
-  [469, "Athinaitis"],
-  [475, "Kokkinos"],
-  [465, "Philippos"],
-  [497, "MAS"],
-  [467, "Poplife"],
-  [468, "Super Discount Store"],
-];
 
 const STAPLES = [
   { key: "milk",      search: "fresh milk",       label: "Fresh Milk 1L",        labelEl: "Φρέσκο Γάλα 1L",       labelRu: "Свежее молоко 1L" },
@@ -86,23 +64,7 @@ async function fetchBestProduct(searchTerm) {
   return priced.sort((a, b) => b.numberOfChains - a.numberOfChains)[0];
 }
 
-async function findCheapestStore(product) {
-  const minPrice = product.startPrice;
-  for (const [id, name] of MAJOR_CHAINS) {
-    try {
-      const json = await get(
-        `${API}/fetch-product-list?page=0&size=5&productName=${encodeURIComponent(product.name)}&companyIds=${id}`
-      );
-      const match = json.content?.find(
-        (p) => p.productMasterId === product.productMasterId && p.startPrice <= minPrice + 0.005
-      );
-      if (match) return name;
-    } catch {
-      // skip this chain
-    }
-  }
-  return null; // couldn't identify — user clicks link to see on e-kalathi
-}
+const findCheapestStore = (product) => findCheapestChain(product.productMasterId, product.startPrice);
 
 async function main() {
   console.log("Fetching supermarket prices from e-kalathi.gov.cy...");
