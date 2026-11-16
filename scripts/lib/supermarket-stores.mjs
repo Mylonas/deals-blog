@@ -85,7 +85,12 @@ export async function fetchBranches(productId) {
  */
 export async function findCheapestChain(productId, listPrice) {
   try {
-    const res = cheapestChains(await fetchBranches(productId));
+    const branches = await fetchBranches(productId);
+    const res = cheapestChains(branches);
+    const priced = branches.some((x) => typeof x?.retailerProductPrice === "number" && x.retailerProductPrice > 0);
+    // priced somewhere, but not at any retail chain at the listed price => the listed price is set by a
+    // delivery-only service (Wolt Market): it must not count as "the lowest price"
+    if (priced && (!res || (typeof listPrice === "number" && res.price > listPrice + 0.05))) return { notRetail: true, retailPrice: res?.price ?? null };
     if (!res) return null;
     if (typeof listPrice === "number" && Math.abs(res.price - listPrice) > 0.05) return null;
     return { store: storeLabel(res), storeIds: res.ids };
