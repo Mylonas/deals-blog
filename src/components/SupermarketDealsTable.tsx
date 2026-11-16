@@ -210,7 +210,7 @@ export default function SupermarketDealsTable({
       )}
 
       {/* Product cards grid */}
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {sorted.map((deal) => {
           const cat = lang === "en" ? deal.category : lang === "el" ? deal.categoryEl : deal.categoryRu;
           return (
@@ -219,7 +219,7 @@ export default function SupermarketDealsTable({
               href={deal.eKalathiUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-amber-400 dark:hover:border-amber-700 hover:shadow-sm transition-all group bg-white dark:bg-gray-900"
+              className="flex min-w-0 items-start gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-amber-400 dark:hover:border-amber-700 hover:shadow-sm transition-all group bg-white dark:bg-gray-900"
             >
               {/* Thumbnail */}
               {deal.thumbnailUrl && (
@@ -265,7 +265,7 @@ export default function SupermarketDealsTable({
                   </span>
                 )}
                 {/* Price row */}
-                <div className="flex items-center gap-2 mt-2">
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mt-2 min-w-0">
                   <span className="text-lg font-bold text-amber-800 dark:text-amber-400">
                     €{deal.price.toFixed(2)}
                   </span>

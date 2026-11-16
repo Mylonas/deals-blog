@@ -300,7 +300,7 @@ export default function SouvlakiTable({ data, lang }: { data: SouvlakiData; lang
                     <div className="flex gap-1.5 flex-wrap">
                       {PROVIDERS.filter((p) => (v.platforms?.length ? v.platforms : ["wolt"]).includes(p)).map((p) => {
                         const href = platformUrl(v, p);
-                        const cls = `text-xs font-semibold px-2 py-0.5 rounded-full transition-colors ${PROVIDER_CLASS[p]}`;
+                        const cls = `inline-flex items-center justify-center min-h-[44px] min-w-[44px] sm:min-h-[28px] sm:min-w-0 text-xs font-semibold px-3 sm:px-2.5 rounded-full transition-colors ${PROVIDER_CLASS[p]}`;
                         return href ? (
                           <a key={p} href={href} target="_blank" rel="noopener noreferrer" className={cls}>
                             {PROVIDER_LABEL[p]}
