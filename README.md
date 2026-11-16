@@ -79,6 +79,7 @@ deals-blog/
 └── .github/workflows/
     ├── deploy.yml                      # Build & deploy to Cloudflare Pages on push to master
     ├── update-fuel-prices.yml          # Cron: every hour
+    ├── update-brent.yml                # Cron: daily 06:20 UTC - Brent crude (own file src/data/brent.json, own date on the fuel page)
     ├── update-supermarket-prices.yml   # Cron: every hour
     ├── update-coffee-prices.yml        # Cron: every hour
     ├── fetch-trending-topics.yml       # Cron: every 3 hours

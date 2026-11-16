@@ -46,6 +46,15 @@ export const CHECKS = [
     retrigger: false,
   },
   {
+    // Brent has its own daily workflow (it no longer rides on the CAPTCHA-gated fuel refresh).
+    // updatedAt is the fetch time; update-brent.mjs refuses to write a price older than 6 days,
+    // so a fresh updatedAt always means a genuinely recent market price.
+    file: "src/data/brent.json",
+    workflow: "update-brent.yml",
+    label: "Brent Crude",
+    maxAgeHours: DAILY_MAX_AGE,
+  },
+  {
     file: "src/data/supermarket-prices.json",
     workflow: "update-supermarket-prices.yml",
     label: "Supermarket Prices",
