@@ -98,6 +98,17 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
       }));
   }, [history, days, view]);
 
+  // Brent has its own daily feed: extend the line past the last pump-price entry up to today,
+  // with NO pump-price values on those rows (pump prices are never invented).
+  const chartRows = useMemo(() => {
+    if (!filtered.length || !history.length) return filtered;
+    const lastTs = history[history.length - 1].ts;
+    const lastDay = new Date(lastTs).toISOString().slice(0, 10);
+    const extra = BRENT_SERIES.filter(p => p.d > lastDay && new Date(p.d + "T12:00:00Z").getTime() >= Date.now() - days * 86400000)
+      .map(p => ({ date: formatDate(p.d + "T12:00:00Z"), "95": null, "98": null, diesel: null, heating: null, brent: p.eurPerLitre as number | null }));
+    return [...filtered, ...extra] as typeof filtered;
+  }, [filtered, history, days]);
+
   if (filtered.length < 2) {
     return <p className="text-sm text-gray-600 dark:text-gray-400 py-4">{t.noData}</p>;
   }
@@ -111,7 +122,7 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
   const maxP = Math.ceil((Math.max(...prices) + 0.05) * 100) / 100;
 
   // Brent lives on its own right-hand axis so it doesn't squash the pump lines
-  const brentVals = filtered.map(e => e.brent).filter((v): v is number => v !== null);
+  const brentVals = chartRows.map(e => e.brent).filter((v): v is number => v !== null);
   const hasBrent = brentVals.length > 0;
   const brentMin = hasBrent ? Math.floor((Math.min(...brentVals) - 0.02) * 100) / 100 : 0;
   const brentMax = hasBrent ? Math.ceil((Math.max(...brentVals) + 0.02) * 100) / 100 : 1;
@@ -157,7 +168,7 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
 
       <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4">
         <ResponsiveContainer width="100%" height={260}>
-          <LineChart data={filtered} margin={{ top: 4, right: 8, left: -8, bottom: 4 }}>
+          <LineChart data={chartRows} margin={{ top: 4, right: 8, left: -8, bottom: 4 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="currentColor" className="text-gray-200 dark:text-gray-700" />
             <XAxis
               dataKey="date"
