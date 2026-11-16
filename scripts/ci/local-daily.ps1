@@ -146,14 +146,14 @@ Step 'foody-souvlaki' {
   # Foody blocks GitHub's runners (HTTP 403 on its sitemap), so this is the only path that
   # produces real Foody data. The script exits non-zero when discovery is blocked, in
   # which case nothing is committed.
-  $files = @('src/data/souvlaki-prices-foody.json', 'src/data/souvlaki-prices.json')
+  $files = @('src/data/souvlaki-prices-foody.json', 'src/data/souvlaki-prices.json', 'src/data/history/souvlaki')
   if (ScrapeNode 'Foody souvlaki' 'scripts/update-souvlaki-prices-foody.mjs') {
     CommitIf $files "chore: update souvlaki prices from Foody (local) $today"
   } else { Restore $files }
 }
 
 Step 'foody-coffee' {
-  $files = @('src/data/coffee-prices-foody.json', 'src/data/coffee-prices.json')
+  $files = @('src/data/coffee-prices-foody.json', 'src/data/coffee-prices.json', 'src/data/history/coffee')
   if (ScrapeNode 'Foody coffee' 'scripts/update-coffee-prices-foody.mjs') {
     CommitIf $files "chore: update coffee prices from Foody (local) $today"
   } else { Restore $files }

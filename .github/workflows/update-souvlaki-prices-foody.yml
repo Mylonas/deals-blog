@@ -64,7 +64,8 @@ jobs:
         run: |
           bash scripts/ci/commit-data.sh "chore: update souvlaki prices from Foody $(date +'%Y-%m-%d')" \
             src/data/souvlaki-prices-foody.json \
-            src/data/souvlaki-prices.json
+            src/data/souvlaki-prices.json \
+            src/data/history/souvlaki
       - name: Trigger Cloudflare redeploy
         if: steps.changes.outputs.changed == 'true'
         env:

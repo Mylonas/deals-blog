@@ -23,6 +23,7 @@
  */
 import fs from "fs";
 import { openFromCompact, eveningReference } from "./lib/foody-extra.mjs";
+import { recordHistory } from "./lib/tracker-history.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -227,6 +228,7 @@ export function mergeAndWrite() {
   const merged = mergeCoffee(wolt, extras);
   const out = { ...full, updatedAt: merged.updatedAt, sources: merged.sources, cities: merged.cities };
   fs.writeFileSync(MERGED_OUT, JSON.stringify(out, null, 2) + "\n");
+  recordHistory("coffee", merged.cities);
   const total = merged.cities.reduce((s, c) => s + c.cafes.length, 0);
   const counts = EXTRA_SOURCES.map((s) => {
     const n = merged.cities.reduce((sum, c) => sum + c.cafes.filter((v) => v.platforms?.includes(s.platform)).length, 0);

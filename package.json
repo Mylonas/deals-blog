@@ -8,7 +8,7 @@
     "start": "next start",
     "cars:local": "node scripts/update-bazaraki-cars.mjs",
     "jobs": "node scripts/jobs/scrape-jobs.mjs",
-    "test": "node --test scripts/lib/supermarket-stores.test.mjs scripts/update-brent.test.mjs scripts/fuel-refresh.test.mjs scripts/lib/places.test.mjs",
+    "test": "node --test scripts/lib/supermarket-stores.test.mjs scripts/update-brent.test.mjs scripts/fuel-refresh.test.mjs scripts/lib/places.test.mjs scripts/lib/tracker-history.test.mjs",
     "fuel:refresh": "node scripts/fuel-refresh.mjs"
   },
   "dependencies": {

@@ -28,6 +28,7 @@ jobs:
           COMMIT_EMAIL="github-actions[bot]@users.noreply.github.com" \
           bash scripts/ci/commit-data.sh "chore: update coffee prices" \
             src/data/coffee-prices.json \
+            src/data/history/coffee \
             posts/en/cheapest-coffee-nicosia.md \
             posts/el/cheapest-coffee-nicosia.md \
             posts/ru/cheapest-coffee-nicosia.md

@@ -1,6 +1,8 @@
 // Answer-first data for the home cards and the "cheapest right now" block on each tracker page,
 // computed at build time from src/data. Every function returns null / [] when a figure cannot be
 // derived reliably (nothing is ever invented; the change indicator exists only with real history).
+import fs from "fs";
+import path from "path";
 import fuel from "@/data/fuel-prices.json";
 import fuelHistory from "@/data/fuel-price-history.json";
 import coffee from "@/data/coffee-prices.json";
@@ -45,6 +47,33 @@ function fuelChange(lang: Lang): Change {
   const amount = formatEuro(Math.abs(d), lang, 3);
   if (d === 0) return { dir: "same", text: s.changeSame(since) };
   return { dir: d < 0 ? "down" : "up", text: s.changeVs(d < 0 ? s.down : s.up, amount, since) };
+}
+
+/** Real history records (one file per Cyprus date) written by the merge scripts; [] when none exist. */
+function trackerRecords(kind: "coffee" | "souvlaki"): any[] {
+  try {
+    const dir = path.join(process.cwd(), "src", "data", "history", kind);
+    return fs
+      .readdirSync(dir)
+      .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+      .sort()
+      .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")));
+  } catch {
+    return [];
+  }
+}
+const cyDate = (iso: string) => new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Nicosia" }).format(new Date(iso));
+
+/** Change vs the latest record from an EARLIER date than the data (needs two genuine data points; else null). */
+function trackerChange(kind: "coffee" | "souvlaki", price: number, updatedAt: string, lang: Lang): Change {
+  const dataDate = cyDate(updatedAt);
+  const prev = [...trackerRecords(kind)].reverse().find((r) => r.d < dataDate && typeof r.home?.price === "number");
+  if (!prev) return null;
+  const s = STR[lang];
+  const d = Math.round((price - prev.home.price) * 100) / 100;
+  const since = fmtShort(prev.d + "T12:00:00Z", lang);
+  if (d === 0) return { dir: "same", text: s.changeSame(since) };
+  return { dir: d < 0 ? "down" : "up", text: s.changeVs(d < 0 ? s.down : s.up, formatEuro(Math.abs(d), lang, 2), since) };
 }
 
 function fuelStations(): any[] {
@@ -99,11 +128,11 @@ export function answer(tool: Tool, lang: Lang): Answer | null {
       }
       case "coffee": {
         const c = coffeeRows()[0];
-        return c ? { figure: formatEuro(c.freddo, lang), place: `${c.cafe}, ${cityName(c.city, lang)}`, label: s.cardLabel.coffee, updatedAt: (coffee as any).updatedAt, change: null } : null;
+        return c ? { figure: formatEuro(c.freddo, lang), place: `${c.cafe}, ${cityName(c.city, lang)}`, label: s.cardLabel.coffee, updatedAt: (coffee as any).updatedAt, change: trackerChange("coffee", c.freddo, (coffee as any).updatedAt, lang) } : null;
       }
       case "souvlaki": {
         const v = souvlakiRows()[0];
-        return v ? { figure: formatEuro(v.prices.souvlaki, lang), place: `${v.name}, ${cityName(v.city, lang)}`, label: s.cardLabel.souvlaki, updatedAt: (souvlaki as any).updatedAt, change: null } : null;
+        return v ? { figure: formatEuro(v.prices.souvlaki, lang), place: `${v.name}, ${cityName(v.city, lang)}`, label: s.cardLabel.souvlaki, updatedAt: (souvlaki as any).updatedAt, change: trackerChange("souvlaki", v.prices.souvlaki, (souvlaki as any).updatedAt, lang) } : null;
       }
       default:
         return null;
