@@ -57,6 +57,9 @@ const COMBO_RE = /\bcombo\b|\bmeal\b|\bmenu\b|\bdeal\b|\+|μενου|μενού|
 // a description that names a small size, or a single skewer, with no regular size on offer
 const SMALL_DESC_RE = /\b(half|small|mini)\b|μισ[ήη]|μιση|μικρ[ήηοό]|(?:^|[^\d.,])(?:1|one)\s+(?:souvlaki\s+)?(?:skewer|souvlaki|σουβλακ|ξυλακ)/;
 const REGULAR_DESC_RE = /regular|large|κανονικ|μεγαλ|(?:2|3|4)\s+(?:souvlaki\s+)?(?:skewer|souvlaki|σουβλακ|ξυλακ)/;
+// gyros-style filling: a pita that comes with fries AND tzatziki is the Greek-style pita, unless the
+// item itself says Cypriot (checked by the callers)
+const GYROS_FILLING_DESC_RE = /(?:fries|chips|fried potato|french fries|πατατ)[\s\S]*tzatziki|tzatziki[\s\S]*(?:fries|chips|fried potato|french fries|πατατ)|τζατζικι[\s\S]*πατατ|πατατ[\s\S]*τζατζικι/;
 const MINI_RE = /μινι|mini|μικρ|mikr|μιση|misi|half|small|παιδικ|paidik|kids|child/;
 // Explicitly Cypriot pitta (name or category). When a venue sells the same cut
 // both as Cypriot pitta and as another pitta type (e.g. Thymari: "Premium
@@ -235,6 +238,7 @@ function extractCuts(assortment) {
       continue;
     }
     // the description can reveal a Greek-style / wrapped pita the name does not
+    if (GYROS_FILLING_DESC_RE.test(desc) && !CYPRIOT_RE.test(n) && !CYPRIOT_RE.test(cat)) { sawGreek = true; continue; }
     if (GREEK_DESC_RE.test(desc)) {
       sawGreek = true;
       // a description that offers BOTH kinds cannot be told apart: excluded, and listed
@@ -339,7 +343,7 @@ async function scanCity(city, prevVenues) {
 // update-souvlaki-prices-bolt.mjs (shared cut matchers so both platforms
 // classify menu items identically)
 export { extractCuts, ASSORTMENT_API, HEADERS, OUT, CITIES, normalize };
-export { GREEK_DESC_RE, COMBO_RE, SMALL_DESC_RE, REGULAR_DESC_RE };
+export { GREEK_DESC_RE, COMBO_RE, SMALL_DESC_RE, REGULAR_DESC_RE, GYROS_FILLING_DESC_RE };
 export { PITA_RE, GREEK_RE, MINI_RE, CYPRIOT_RE, LARGE_RE, SIZE_GROUP_RE, NOT_SIZE_VALUE_RE, SMALL_VALUE_RE, REGULAR_VALUE_RE };
 export { SHEFTALIA_RE, GYRO_RE, PORK_SOUVLAKI, CHICKEN_SOUVLAKI, MIX, CUTS, PORKCHOP, PORKCHOP_MIN_CENTS };
 
