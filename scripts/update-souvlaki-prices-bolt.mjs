@@ -31,7 +31,7 @@ import fs from "fs";
 import {
   CITIES, normalize,
   PITA_RE, GREEK_RE, MINI_RE, CYPRIOT_RE, LARGE_RE, SIZE_GROUP_RE, NOT_SIZE_VALUE_RE,
-  SMALL_VALUE_RE, REGULAR_VALUE_RE, CUTS, PORKCHOP, PORKCHOP_MIN_CENTS,
+  SMALL_VALUE_RE, REGULAR_VALUE_RE, CUTS, PORKCHOP, PORKCHOP_MIN_CENTS, GREEK_DESC_RE, COMBO_RE, SMALL_DESC_RE, REGULAR_DESC_RE,
 } from "./update-souvlaki-prices.mjs";
 import { WOLT_OUT, BOLT_OUT, MERGED_OUT, mergeAndWrite, sameVenue } from "./merge-souvlaki-sources.mjs";
 
@@ -193,8 +193,14 @@ export function extractBoltCuts(categoryFetches) {
   const cypriot = {};
   const generic = {};
   const prices = {};
+  const traces = new Map([[cypriot, {}], [generic, {}], [prices, {}]]);
+  let cur = null;
+  let sawGreek = false; // the menu sells a Greek-style / wrapped / mini pita
   const takeInto = (map, key, eur) => {
-    if (eur != null && (map[key] == null || eur < map[key])) map[key] = eur;
+    if (eur != null && (map[key] == null || eur < map[key])) {
+      map[key] = eur;
+      if (cur) traces.get(map)[key] = { name: cur.name, cat: cur.cat, desc: cur.desc, price: eur };
+    }
   };
 
   for (const { items, categoryName } of categoryFetches) {
@@ -204,14 +210,24 @@ export function extractBoltCuts(categoryFetches) {
       const n = normalize(it.name?.value);
       const base = it.price?.value;
       if (typeof base !== "number") continue;
+      cur = { name: it.name?.value || "", cat: categoryName, desc: (it.description?.value || "").slice(0, 140) };
 
       if (PORKCHOP(n) && base * 100 >= PORKCHOP_MIN_CENTS) takeInto(prices, "porkchop", base);
 
+      // Greek-style / wrapped / small / kids items and meal deals never count, whether the
+      // signal is in the name, the menu section or the description
+      if (GREEK_RE.test(n) || GREEK_RE.test(catName) || MINI_RE.test(n) || MINI_RE.test(catName) || COMBO_RE.test(n)) {
+        if (GREEK_RE.test(n) || GREEK_RE.test(catName)) sawGreek = true;
+        continue;
+      }
+      if (GREEK_DESC_RE.test(normalize(it.description?.value || ""))) { sawGreek = true; continue; }
       const pitta = pittaPrices(it, catName, items);
       if (!pitta) continue;
       const tier = pitta.cypriot ? cypriot : generic;
+      const descSmall = SMALL_DESC_RE.test(normalize(it.description?.value || "")) && !REGULAR_DESC_RE.test(normalize(it.description?.value || ""));
       for (const cut of CUTS) {
         if (!cut.test(n, catName)) continue;
+        if (descSmall && !cut.key.startsWith("mix")) continue; // a one-skewer / small pita is not the full-size cut
         if (cut.size === "large") takeInto(tier, cut.key, pitta.large ?? null);
         else {
           takeInto(tier, cut.key, pitta.regular);
@@ -220,9 +236,15 @@ export function extractBoltCuts(categoryFetches) {
       }
     }
   }
+  // a menu that ALSO sells Greek-style pitas: an item with no explicit "Cypriot" marker could be either, so it is excluded
+  if (sawGreek) for (const key of Object.keys(generic)) if (cypriot[key] == null) delete generic[key];
+  const trace = {};
+  if (traces.get(prices).porkchop) trace.porkchop = traces.get(prices).porkchop;
   for (const key of new Set([...Object.keys(cypriot), ...Object.keys(generic)])) {
     prices[key] = cypriot[key] ?? generic[key];
+    trace[key] = { ...(cypriot[key] != null ? traces.get(cypriot)[key] : traces.get(generic)[key]), tier: cypriot[key] != null ? "cypriot" : "generic" };
   }
+  Object.defineProperty(prices, "__trace", { value: trace, enumerable: false });
   return prices;
 }
 
@@ -240,6 +262,8 @@ async function findProviders(city) {
     lat: p.lat ?? null,
     lng: p.lng ?? null,
     slug: p.slug,
+    // false = "scheduled only" / closed right now (snapshot at scan time)
+    open: p.is_available_for_delivery == null ? null : p.is_available_for_delivery === true,
   }));
 }
 
@@ -299,6 +323,12 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
         const pn = normalize(p.name);
         return SOUVLAKIISH_RE.test(pn) || woltVenues.some((wv) => sameVenue(wv, p));
       });
+      // BOLT_KNOWN_ONLY=1: re-scan only venues this file already lists (no discovery). Used to
+      // re-derive the stored Bolt data after a rule change without a five-hour full scan.
+      if (process.env.BOLT_KNOWN_ONLY === "1") {
+        const known = new Set((prevByCity.get(city.key) || []).map((v) => v.provider_id));
+        candidates = providers.filter((p) => known.has(p.provider_id));
+      }
       console.log(`  ${providers.length} providers, ${candidates.length} souvlaki candidates`);
     } catch (err) {
       const kept = prevByCity.get(city.key) || [];
@@ -325,7 +355,9 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
             lng: p.lng,
             url: `https://food.bolt.eu/en/${CITY_PATHS[city.key]}/p/${p.slug}`,
             prices,
+            items: prices.__trace,
             source: "bolt",
+            open: p.open ?? null,
           });
           console.log(`  ✓ ${p.name}: ${JSON.stringify(prices)}`);
         }

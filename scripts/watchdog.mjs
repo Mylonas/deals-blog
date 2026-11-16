@@ -17,6 +17,10 @@ const stale = [];
 const healthy = [];
 
 for (const check of CHECKS) {
+  if (check.paused) {
+    console.error(`PAUSED [${check.label}] — page hidden, schedule off; not checked`);
+    continue;
+  }
   const filePath = path.join(ROOT, check.file);
   try {
     const raw = JSON.parse(fs.readFileSync(filePath, "utf8"));

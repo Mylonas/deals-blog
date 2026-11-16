@@ -1,5 +1,5 @@
 ---
-title: "Cheapest Petrol Stations in Cyprus — Live Tracker"
+title: "Cheapest Petrol Stations in Cyprus"
 date: "2026-06-28"
 updated: "2026-11-15"
 category: "Fuel"
