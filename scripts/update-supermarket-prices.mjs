@@ -77,8 +77,13 @@ async function get(url) {
 
 async function fetchBestProduct(searchTerm) {
   const json = await get(`${API}/fetch-product-list?page=0&size=20&productName=${encodeURIComponent(searchTerm)}`);
-  if (!json.content?.length) return null;
-  return json.content.sort((a, b) => b.numberOfChains - a.numberOfChains)[0];
+  // Only products that actually carry a price can be a staple's price: e-kalathi sometimes
+  // returns a best-selling match with no startPrice (out of stock), which used to crash the
+  // post-writer with "Cannot read properties of undefined (reading 'toFixed')" after the data
+  // file had been written, so every scheduled run failed and nothing was committed.
+  const priced = (json.content || []).filter((p) => typeof p.startPrice === "number" && p.startPrice > 0);
+  if (!priced.length) return null;
+  return priced.sort((a, b) => b.numberOfChains - a.numberOfChains)[0];
 }
 
 async function findCheapestStore(product) {
@@ -165,7 +170,7 @@ function buildMarkdownBlock(results, lang) {
 
   const rows = results.map(({ staple, product }) => {
     const label = lang === "en" ? staple.label : lang === "el" ? staple.labelEl : staple.labelRu;
-    if (!product) return `| ${label} | — | — |`;
+    if (!product || typeof product.startPrice !== "number") return `| ${label} | — | — |`;
     const link = `https://www.e-kalathi.gov.cy/product-information/${product.productMasterId}`;
     const price = `[€${product.startPrice.toFixed(2)}](${link})`;
     return `| ${label} | **${price}** | ${extractBrand(product.name) ?? "—"} |`;

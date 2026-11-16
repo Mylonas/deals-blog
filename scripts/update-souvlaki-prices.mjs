@@ -48,7 +48,15 @@ function normalize(s) {
 // €4.50 mini next to the €8.00 regular; Souvlaki.gr sells Greek pitta only.)
 // "Ενισχυμένη" (also sold as "large pitta") is its own format with its own cuts.
 const PITA_RE = /pita|πιτα/;
-const GREEK_RE = /ελληνικ|greek|ellinik|αραβικ|arabic|\bgr\b|τυλιχτ|t[iy]li(?:cht|xt|ht)/;
+const GREEK_RE = /ελληνικ|greek|ellinik|αραβικ|arabic|\bgr\b|τυλιχτ|t[iy]li(?:cht|xt|ht)|\bwraps?\b/; // wraps are not Cypriot pitas and never count
+// Greek-style / wrapped pita signals that only show up in an item's DESCRIPTION
+// ("served in a Greek pita", "τυλιχτό", "wrap"). A bare "Greek yogurt" must not count.
+const GREEK_DESC_RE = /(?:greek|ελληνικ\w*|arabic|αραβικ\w*)[\s-]*(?:style\s*)?(?:pit|πιτ)|τυλιχτ|\bwraps?\b|pita\s*gyros|γυρο\s*πιτα/;
+// combos / meal deals bundle sides or drinks, so their price is not a pita price
+const COMBO_RE = /\bcombo\b|\bmeal\b|\bmenu\b|\bdeal\b|\+|μενου|μενού|συνδυασμ|προσφορα/;
+// a description that names a small size, or a single skewer, with no regular size on offer
+const SMALL_DESC_RE = /\b(half|small|mini)\b|μισ[ήη]|μιση|μικρ[ήηοό]|(?:^|[^\d.,])(?:1|one)\s+(?:souvlaki\s+)?(?:skewer|souvlaki|σουβλακ|ξυλακ)/;
+const REGULAR_DESC_RE = /regular|large|κανονικ|μεγαλ|(?:2|3|4)\s+(?:souvlaki\s+)?(?:skewer|souvlaki|σουβλακ|ξυλακ)/;
 const MINI_RE = /μινι|mini|μικρ|mikr|μιση|misi|half|small|παιδικ|paidik|kids|child/;
 // Explicitly Cypriot pitta (name or category). When a venue sells the same cut
 // both as Cypriot pitta and as another pitta type (e.g. Thymari: "Premium
@@ -77,10 +85,15 @@ const REGULAR_VALUE_RE = /κανονικ|kanonik|regular|normal|κυπριακ|k
 const SHEFTALIA_RE = /s(?:hi|h|ie|i)?eftal|σι?εφταλ/;
 const GYRO_RE = /γυρ|gyro|doner|ντονερ|shawarma|σαουαρμα/;
 // combo items ("σουβλάκι & σιεφταλιά") are mix, not pork/chicken souvlaki
-const PORK_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /pork|χοιριν/.test(n) && !/chicken|κοτοπουλ/.test(n) && !SHEFTALIA_RE.test(n);
-const CHICKEN_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /chicken|κοτοπουλ/.test(n) && !SHEFTALIA_RE.test(n);
+// plain cuts only: a "Pork Mix Souvlaki" or "Pork and Chicken Souvlaki" is a mix, and an item
+// with an extra filling (halloumi, bacon, cheese, mushrooms...) is a different product
+const MIX_WORD_RE = /\bmix|μιχτ|μιξ|μιγμα|mikti/;
+const FILLING_RE = /halloum|χαλουμ|bacon|μπεικον|cheese|τυρι|mushroom|μανιταρ|pastourm|παστουρμ|sausage|λουκανικ|kebab|κεμπαπ/;
+const PORK_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /pork|χοιριν/.test(n) && !/chicken|κοτοπουλ/.test(n) && !SHEFTALIA_RE.test(n) && !MIX_WORD_RE.test(n) && !FILLING_RE.test(n);
+const CHICKEN_SOUVLAKI = (n) => /souvlaki|σουβλακ/.test(n) && /chicken|κοτοπουλ/.test(n) && !/pork|χοιριν/.test(n) && !SHEFTALIA_RE.test(n) && !MIX_WORD_RE.test(n) && !FILLING_RE.test(n);
+const BURGER_RE = /burger|μπιφτεκ|μπουργκερ/;
 const MIX = (n, cat = "") =>
-  !GYRO_RE.test(n) && !GYRO_RE.test(cat) &&
+  !GYRO_RE.test(n) && !GYRO_RE.test(cat) && !FILLING_RE.test(n) && !BURGER_RE.test(n) &&
   (/\bmix|μιχτ|μιξ|μιγμα|mikti/.test(n) ||
     (/souvlak|σουβλακ|χοιριν|pork/.test(n) && SHEFTALIA_RE.test(n)));
 
@@ -124,6 +137,8 @@ async function listSouvlakiVenues(lat, lon) {
         lng: v.location?.[0] ?? null,
         lat: v.location?.[1] ?? null,
         rating: v.rating?.score ?? null,
+        // Wolt's own "venue is taking orders now" flag (snapshot at scan time)
+        open: v.online == null ? null : v.online === true,
       });
     }
   }
@@ -183,31 +198,57 @@ function extractCuts(assortment) {
   // so a venue's "Premium"/house pitta never undercuts its real Cypriot one.
   const cypriot = {};
   const generic = {};
-  const takeInto = (map, key, eur) => {
-    if (map[key] == null || eur < map[key]) map[key] = eur;
-  };
   const prices = {};
+  // which menu item produced each price (kept for audits: see the `items` field)
+  const traces = new Map([[cypriot, {}], [generic, {}], [prices, {}]]);
+  let cur = null;
+  const takeInto = (map, key, eur) => {
+    if (map[key] == null || eur < map[key]) {
+      map[key] = eur;
+      if (cur) traces.get(map)[key] = { name: cur.name, cat: cur.cat, desc: cur.desc, price: eur };
+    }
+  };
   const take = (key, eur) => takeInto(prices, key, eur); // porkchop & non-tiered
+  const ambiguous = [];
+  let sawGreek = false; // the menu sells a Greek-style / wrapped / mini pita
 
   for (const item of items) {
     // items priced 0 are "configure options" placeholders — not a real price
     if (item.price == null || item.price < 100) continue;
+    // "Not available" on the Wolt page = disabled_info is set: never rank it
+    if (item.disabled_info) continue;
     const n = normalize(item.name);
     const cat = categoryOf.get(item.id) || "";
-    const eur = item.price / 100;
+    const desc = normalize(item.description || "");
+    cur = { name: item.name, cat: categoryOf.get(item.id) || "", desc: (item.description || "").slice(0, 140) };
+    // rankings use the regular (list) price, not a temporary promo price
+    const listCents = item.original_price != null && item.original_price > item.price ? item.original_price : item.price;
+    const eur = listCents / 100;
 
     // pork chop: portion dish, no pitta in the name
     if (PORKCHOP(n) && item.price >= PORKCHOP_MIN_CENTS) take("porkchop", eur);
 
     if (!PITA_RE.test(n) && !PITA_RE.test(cat)) continue;
     // smaller portions — never counted, whether flagged in the name or the category
-    if (GREEK_RE.test(n) || MINI_RE.test(n) || GREEK_RE.test(cat) || MINI_RE.test(cat)) continue;
+    if (GREEK_RE.test(n) || MINI_RE.test(n) || GREEK_RE.test(cat) || MINI_RE.test(cat) || COMBO_RE.test(n)) {
+      if (GREEK_RE.test(n) || GREEK_RE.test(cat)) sawGreek = true;
+      continue;
+    }
+    // the description can reveal a Greek-style / wrapped pita the name does not
+    if (GREEK_DESC_RE.test(desc)) {
+      sawGreek = true;
+      // a description that offers BOTH kinds cannot be told apart: excluded, and listed
+      if (CYPRIOT_RE.test(desc)) ambiguous.push(item.name);
+      continue;
+    }
     const isLarge = LARGE_RE.test(n);
+    const descSmall = SMALL_DESC_RE.test(desc) && !REGULAR_DESC_RE.test(desc);
 
     const tier = CYPRIOT_RE.test(n) || CYPRIOT_RE.test(cat) ? cypriot : generic;
     for (const cut of CUTS) {
       if ((cut.size === "large") !== isLarge) continue;
       if (!cut.test(n, cat)) continue;
+      if (descSmall && !cut.key.startsWith("mix")) continue; // a one-skewer / small pita is not the full-size cut
       const { large, regular } = sizeDeltas(item, optionsById);
       // when the size group defaults to a free small/Greek pitta, base price
       // is that variant — the regular cut costs base + regular delta
@@ -217,9 +258,18 @@ function extractCuts(assortment) {
     }
   }
   // explicit Cypriot beats generic per cut; porkchop already sits in `prices`
+  // A menu that ALSO sells Greek-style pitas gives no way to tell whether an item with no
+  // explicit "Cypriot" marker is the Cypriot or the Greek one: excluded rather than guessed.
+  if (sawGreek) for (const key of Object.keys(generic)) if (cypriot[key] == null) { ambiguous.push(traces.get(generic)[key]?.name || key); delete generic[key]; }
+  const trace = {};
+  if (traces.get(prices).porkchop) trace.porkchop = traces.get(prices).porkchop;
   for (const key of new Set([...Object.keys(cypriot), ...Object.keys(generic)])) {
     prices[key] = cypriot[key] ?? generic[key];
+    trace[key] = { ...(cypriot[key] != null ? traces.get(cypriot)[key] : traces.get(generic)[key]), tier: cypriot[key] != null ? "cypriot" : "generic" };
   }
+  // non-enumerable, so JSON.stringify(prices) and every existing caller are unaffected
+  Object.defineProperty(prices, "__trace", { value: trace, enumerable: false });
+  Object.defineProperty(prices, "__ambiguous", { value: ambiguous, enumerable: false });
   return prices;
 }
 
@@ -254,6 +304,8 @@ async function scanCity(city, prevVenues) {
               lng: v.lng,
               url: `https://wolt.com/en/cyp/${city.citySlug}/restaurant/${v.slug}`,
               prices,
+              items: prices.__trace,
+              open: v.open ?? null,
             });
           }
           ok = true;
@@ -287,6 +339,7 @@ async function scanCity(city, prevVenues) {
 // update-souvlaki-prices-bolt.mjs (shared cut matchers so both platforms
 // classify menu items identically)
 export { extractCuts, ASSORTMENT_API, HEADERS, OUT, CITIES, normalize };
+export { GREEK_DESC_RE, COMBO_RE, SMALL_DESC_RE, REGULAR_DESC_RE };
 export { PITA_RE, GREEK_RE, MINI_RE, CYPRIOT_RE, LARGE_RE, SIZE_GROUP_RE, NOT_SIZE_VALUE_RE, SMALL_VALUE_RE, REGULAR_VALUE_RE };
 export { SHEFTALIA_RE, GYRO_RE, PORK_SOUVLAKI, CHICKEN_SOUVLAKI, MIX, CUTS, PORKCHOP, PORKCHOP_MIN_CENTS };
 

@@ -25,6 +25,7 @@ const now = Date.now();
 const stale = [];
 
 for (const check of CHECKS) {
+  if (check.paused) continue; // page hidden, schedule off: never alert
   const filePath = path.join(ROOT, check.file);
   try {
     const raw = JSON.parse(fs.readFileSync(filePath, "utf8"));

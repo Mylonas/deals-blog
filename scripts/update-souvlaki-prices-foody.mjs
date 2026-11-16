@@ -29,11 +29,12 @@ import fs from "fs";
 import { chromium } from "playwright";
 import {
   CITIES, normalize,
-  PITA_RE, GREEK_RE, MINI_RE, CYPRIOT_RE, LARGE_RE,
+  PITA_RE, GREEK_RE, MINI_RE, CYPRIOT_RE, LARGE_RE, GREEK_DESC_RE, COMBO_RE,
   CUTS, PORKCHOP, PORKCHOP_MIN_CENTS,
 } from "./update-souvlaki-prices.mjs";
 import { FOODY_OUT, MERGED_OUT, WOLT_OUT, BOLT_OUT, mergeAndWrite, sameVenue } from "./merge-souvlaki-sources.mjs";
 import { discoverFoodyVenues, geoInCity } from "./foody-discovery.mjs";
+import { enrichFoodyItems, isHalfFrom, foodyOpenNow, compactHours } from "./lib/foody-extra.mjs";
 
 const DEBUG = process.env.DEBUG === "1";
 const DEBUG_DIR = "/tmp/foody-souvlaki-debug";
@@ -73,7 +74,7 @@ async function extractMenu(page) {
       if (node?.hasMenu || node?.["@type"] === "Restaurant") restaurant = node;
     }
   }
-  if (!restaurant) return { geo: null, menu: [] };
+  if (!restaurant) return { geo: null, menu: [], open: null };
 
   const geo = restaurant.geo?.latitude != null
     ? { lat: Number(restaurant.geo.latitude), lng: Number(restaurant.geo.longitude) }
@@ -84,11 +85,13 @@ async function extractMenu(page) {
     for (const it of section.hasMenuItem || []) {
       const offer = it.offers?.price ?? (Array.isArray(it.offers) ? it.offers[0]?.price : null);
       const price = parsePrice(offer);
-      if (it.name && price != null) items.push({ name: it.name, price });
+      if (it.name && price != null) items.push({ name: it.name, price, half: isHalfFrom(it.description, /\bmix|sheft|sieft|σιεφταλ|μιχτ/i.test(it.name)), description: it.description || "" });
     }
     if (items.length) menu.push({ category: section.name || "", items });
   }
-  return { geo, menu };
+  // list (pre-promo) prices and per-item availability come from the rendered cards
+  await enrichFoodyItems(page, menu.flatMap((s) => s.items));
+  return { geo, menu, open: foodyOpenNow(restaurant), hours: compactHours(restaurant) };
 }
 
 /** Two-tier cheapest-per-cut fold over Foody DOM items (no option deltas). */
@@ -96,8 +99,14 @@ export function extractFoodyCuts(menu) {
   const cypriot = {};
   const generic = {};
   const prices = {};
+  const traces = new Map([[cypriot, {}], [generic, {}], [prices, {}]]);
+  let cur = null;
+  let sawGreek = false; // the menu sells a Greek-style / wrapped / mini pita
   const takeInto = (map, key, eur) => {
-    if (eur != null && (map[key] == null || eur < map[key])) map[key] = eur;
+    if (eur != null && (map[key] == null || eur < map[key])) {
+      map[key] = eur;
+      if (cur) traces.get(map)[key] = { name: cur.name, cat: cur.cat, desc: cur.desc, price: eur };
+    }
   };
 
   // Foody repeats a venue's best sellers under a "Popular" section with no size/type
@@ -113,18 +122,28 @@ export function extractFoodyCuts(menu) {
 
   for (const { category, items } of menu) {
     const cat = normalize(category);
-    for (const { name, price } of items) {
+    for (const item of items) {
+      const { name, price } = item;
       if (nonComparable.has(`${normalize(name)}|${price}`) && !GREEK_RE.test(cat) && !MINI_RE.test(cat)) continue;
       // Foody's English menus render σουβλάκι as "skewer"; map it back so the
       // shared souvlaki matchers fire. The pita requirement below still blocks
       // non-pita skewer platters and mixed-grill portions.
       const n = normalize(name).replace(/\bskewers?\b/g, "souvlaki");
       if (typeof price !== "number") continue;
+      cur = { name, cat: category, desc: (item.description || "").slice(0, 140) };
+      // not orderable right now (collapsed "not available products" group), or a "From"
+      // price that is really the HALF portion: never ranked
+      if (item.available === false || item.half) continue;
 
       if (PORKCHOP(n) && price * 100 >= PORKCHOP_MIN_CENTS) takeInto(prices, "porkchop", price);
 
       if (!PITA_RE.test(n) && !PITA_RE.test(cat)) continue;
-      if (GREEK_RE.test(n) || MINI_RE.test(n) || GREEK_RE.test(cat) || MINI_RE.test(cat)) continue;
+      if (GREEK_RE.test(n) || MINI_RE.test(n) || GREEK_RE.test(cat) || MINI_RE.test(cat) || COMBO_RE.test(n)) {
+        if (GREEK_RE.test(n) || GREEK_RE.test(cat)) sawGreek = true;
+        continue;
+      }
+      // the description can reveal a Greek-style / wrapped pita the name does not
+      if (GREEK_DESC_RE.test(normalize(item.description || ""))) { sawGreek = true; continue; }
       const isLarge = LARGE_RE.test(n);
       const tier = CYPRIOT_RE.test(n) || CYPRIOT_RE.test(cat) ? cypriot : generic;
       for (const cut of CUTS) {
@@ -134,9 +153,15 @@ export function extractFoodyCuts(menu) {
       }
     }
   }
+  // a menu that ALSO sells Greek-style pitas: an item with no explicit "Cypriot" marker could be either, so it is excluded
+  if (sawGreek) for (const key of Object.keys(generic)) if (cypriot[key] == null) delete generic[key];
+  const trace = {};
+  if (traces.get(prices).porkchop) trace.porkchop = traces.get(prices).porkchop;
   for (const key of new Set([...Object.keys(cypriot), ...Object.keys(generic)])) {
     prices[key] = cypriot[key] ?? generic[key];
+    trace[key] = { ...(cypriot[key] != null ? traces.get(cypriot)[key] : traces.get(generic)[key]), tier: cypriot[key] != null ? "cypriot" : "generic" };
   }
+  Object.defineProperty(prices, "__trace", { value: trace, enumerable: false });
   return prices;
 }
 
@@ -149,13 +174,16 @@ export const hasPitaCut = (prices) => PITA_CUT_KEYS.some((k) => prices[k] != nul
 async function scrapeVenue(page, venue) {
   await page.goto(venue.url, { waitUntil: "domcontentloaded", timeout: NAV_TIMEOUT });
   // the menu JSON-LD is injected after the client render — poll briefly for it
-  let data = { geo: null, menu: [] };
-  for (let i = 0; i < 6 && !data.menu.length; i++) {
+  let data = { geo: null, menu: [], open: null };
+  // also keep polling while NO card has rendered yet (all items look unavailable)
+  const allGone = (d) => d.menu.length && d.menu.flatMap((m) => m.items).every((x) => x.available === false);
+  for (let i = 0; i < 8 && (!data.menu.length || allGone(data)); i++) {
     await sleep(1200);
     data = await extractMenu(page);
   }
   if (DEBUG) await page.screenshot({ path: `${DEBUG_DIR}/${venue.slug}-menu.png`, fullPage: true }).catch(() => {});
-  return { prices: extractFoodyCuts(data.menu), geo: data.geo };
+  const prices = extractFoodyCuts(data.menu);
+  return { prices, items: prices.__trace, geo: data.geo, open: data.open, hours: data.hours ?? null };
 }
 
 // ── gap detection ─────────────────────────────────────────────────────────────
@@ -248,12 +276,12 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
         if (scanned >= MAX_VENUES) break;
         scanned++;
         try {
-          const { prices, geo } = await scrapeVenue(page, g);
+          const { prices, items, geo, open, hours } = await scrapeVenue(page, g);
           if (hasPitaCut(prices)) {
             // chain brand pages carry one branch's coords — only trust them
             // for the city they're actually in
             const geoOk = geoInCity(geo, city);
-            venues.push({ name: g.name, slug: g.slug, url: g.url, lat: geoOk ? geo.lat : null, lng: geoOk ? geo.lng : null, prices, source: "foody" });
+            venues.push({ name: g.name, slug: g.slug, url: g.url, lat: geoOk ? geo.lat : null, lng: geoOk ? geo.lng : null, prices, source: "foody", open, hours, items });
             console.log(`  ✓ ${g.name}: ${JSON.stringify(prices)}`);
           } else {
             console.log(`  – ${g.name}: no souvlaki-in-pita cuts`);
@@ -261,7 +289,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
         } catch (e) {
           console.log(`  ⚠ ${g.name}: ${e.message}`);
         }
-        checkpoint();
+        if (scanned % 10 === 0) checkpoint(); // not every venue: the sync client can lock the file
         await sleep(1500);
       }
       venues.sort((a, b) => (a.prices.souvlaki ?? 99) - (b.prices.souvlaki ?? 99));

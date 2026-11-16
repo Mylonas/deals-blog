@@ -1,12 +1,13 @@
 name: Update Cyprus public-sector jobs
 
 on:
-  schedule:
+  # schedule:
     # 05:10 UTC daily. The ΕΔΥ competitions only change when the Gazette is
     # published (most Fridays), but the municipalities and semi-government
     # bodies post on their own schedule, so a daily pass keeps deadlines honest
     # without hammering 62 small government sites.
-    - cron: "10 5 * * *"
+    # PAUSED 2026-11-16: the page this feeds is hidden, so the schedule is off (workflow_dispatch still works). To re-enable, uncomment the cron line below and remove `paused: true` from its entry in scripts/lib/data-checks.mjs.
+    # - cron: "10 5 * * *"
   workflow_dispatch:
 
 concurrency:

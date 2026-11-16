@@ -13,6 +13,9 @@
 //
 // Optional per-check fields:
 //   freshness  - derive the timestamp when the file has no `updatedAt`
+//   paused     - true while the page the file feeds is hidden and its schedule is
+//                off: skipped entirely (no re-dispatch, no stale alert). Remove it
+//                when the workflow's cron is re-enabled.
 //   retrigger  - false for files whose workflow cannot self-heal; they are
 //                reported but never re-dispatched, so the issue-after-3-failures
 //                path is not spammed with runs that are expected to fail
@@ -66,6 +69,7 @@ export const CHECKS = [
   // nothing at all before, despite being a daily user-facing dataset.
   {
     file: "src/data/public-jobs.json",
+    paused: true, // hidden page; workflow schedule off (see README)
     workflow: "update-public-jobs.yml",
     label: "Public-sector Jobs",
     maxAgeHours: DAILY_MAX_AGE,
@@ -150,6 +154,7 @@ export const CHECKS = [
   // email is the whole point of the entry.
   {
     file: "src/data/bazaraki-cars.json",
+    paused: true, // hidden page; workflow schedule off (see README)
     workflow: "update-bazaraki-cars.yml",
     label: "Bazaraki Cars (manual — run `npm run cars:local`)",
     maxAgeHours: WEEKLY_MAX_AGE,

@@ -3,6 +3,7 @@ name: Update Supermarket Prices
 on:
   schedule:
     # Every 6 hours — basket prices update at most daily, hourly was wasteful
+    # Every 6 hours (the restored supermarket tracker needs fresh data)
     - cron: "0 */6 * * *"
   workflow_dispatch:
 
