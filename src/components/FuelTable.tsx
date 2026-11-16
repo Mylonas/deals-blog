@@ -113,7 +113,7 @@ function getDistrict(s: Station): string {
 }
 
 // Data is normally refreshed hourly; beyond this the notice is shown
-const STALE_AFTER_MS = 48 * 60 * 60 * 1000;
+const STALE_AFTER_MS = 72 * 60 * 60 * 1000; // matches the 3-day alert (alertDays in data-checks.mjs)
 
 const DATE_LOCALE = { en: "en-GB", el: "el-GR", ru: "ru-RU" } as const;
 
@@ -150,7 +150,7 @@ const UI = {
     showingCheapest: (n: number, d: string) => `Showing ${n} cheapest stations${d !== "All" ? ` in ${d}` : ""}`,
     noResults: (fuel: string, district: string) => `No stations found for ${fuel} in ${district}. Try a different district.`,
     source: "Source: Cyprus Gov Petroleum Prices",
-    stale: (d: string) => `Prices last updated ${d}. The government fuel portal now requires a CY Login account, so automatic updates are paused and prices may have changed since.`,
+    stale: (d: string) => `Prices last updated ${d}. The government fuel portal now requires a CAPTCHA, so prices are refreshed by hand and may have changed since.`,
   },
   el: {
     nearMe: "Κοντά μου", locating: "Εντοπισμός…", denied: "Άρνηση — πατήστε ξανά", unsupported: "Μη διαθέσιμο",
@@ -174,7 +174,7 @@ const UI = {
     showingCheapest: (n: number, d: string) => `Показано ${n} дешевейших АЗС${d !== "Все" && d !== "All" ? ` в ${d}` : ""}`,
     noResults: (fuel: string, district: string) => `АЗС для ${fuel} в ${district} не найдены.`,
     source: "Источник: Портал цен на топливо Кипра",
-    stale: (d: string) => `Цены обновлены ${d}. Государственный портал цен на топливо теперь требует вход через CY Login, поэтому автоматическое обновление приостановлено и цены могли измениться.`,
+    stale: (d: string) => `Цены обновлены ${d}. Государственный портал цен на топливо теперь требует CAPTCHA, поэтому цены обновляются вручную и могли измениться.`,
   },
 };
 

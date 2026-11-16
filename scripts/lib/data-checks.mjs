@@ -44,6 +44,8 @@ export const CHECKS = [
     // it to true) once the workflow can succeed unattended again; the stale check and
     // stale-alert.yml still report the file's age.
     retrigger: false,
+    // Refreshed by hand (`npm run fuel:refresh`), so the 7-day alert is far too slow: flag it after 3 days.
+    alertDays: 3,
   },
   {
     // Brent has its own daily workflow (it no longer rides on the CAPTCHA-gated fuel refresh).

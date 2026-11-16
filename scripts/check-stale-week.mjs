@@ -19,7 +19,6 @@ import { CHECKS } from "./lib/data-checks.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const STALE_DAYS = 7;
-const STALE_MS = STALE_DAYS * 86400000;
 
 const now = Date.now();
 const stale = [];
@@ -33,7 +32,7 @@ for (const check of CHECKS) {
     if (!updatedAt) throw new Error("no updatedAt field");
 
     const ageMs = now - new Date(updatedAt).getTime();
-    if (ageMs > STALE_MS) {
+    if (ageMs > (check.alertDays ?? STALE_DAYS) * 86400000) {
       stale.push({ ...check, days: (ageMs / 86400000).toFixed(1), updatedAt });
     }
   } catch (e) {
@@ -48,7 +47,7 @@ if (stale.length === 0) {
 }
 
 const lines = [
-  `${stale.length} data file(s) have not updated in over ${STALE_DAYS} days.`,
+  `${stale.length} data file(s) are past their stale limit (${STALE_DAYS} days; fuel prices 3 days, they are refreshed by hand with npm run fuel:refresh).`,
   "",
   "| Data | Age | Last updated | Workflow |",
   "|---|---|---|---|",

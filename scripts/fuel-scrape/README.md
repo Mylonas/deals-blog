@@ -5,7 +5,20 @@ on **every** price query, so the old unattended scraper
 (`scripts/update-fuel-prices.mjs`) can no longer work. Refreshing fuel prices is
 now a manual, human-in-the-loop step.
 
-## How to refresh
+## Quick way: one command
+
+```bash
+npm run fuel:refresh
+```
+
+Per fuel (4 of them, about 2 minutes each, ~8-10 min total): the portal opens, you pick the fuel and
+`Όλες`, solve the CAPTCHA, press Αναζήτηση, press F12 > Console, Ctrl+V, Enter (it prints
+`captured N`), then press Enter in the terminal. The script validates each capture, rebuilds the data,
+validates the result and publishes (branch > master > dev > deploy). `--no-publish` stops before committing;
+`--only=95,98` refreshes just those fuels. The site shows the data's real date and a warning after 3 days;
+the stale alert flags fuel after 3 days (other data: 7).
+
+## Manual steps (what the command automates)
 
 For each fuel type you want to update:
 
