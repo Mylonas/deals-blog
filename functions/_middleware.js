@@ -14,7 +14,6 @@ const HIDDEN_SLUGS = [
   "cheapest-cars-cyprus",
   "student-deals-cyprus",
   "cheapest-internet-broadband-cyprus",
-  "cheapest-supermarket-products",
   "cheapest-gym-memberships-nicosia-limassol",
   "cheapest-fried-chicken-nicosia",
   "cheapest-electricity-plans-cyprus",

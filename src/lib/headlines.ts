@@ -6,6 +6,7 @@ import coffee from "@/data/coffee-prices.json";
 import souvlaki from "@/data/souvlaki-prices.json";
 import supermarket from "@/data/supermarket-prices.json";
 import jobs from "@/data/public-jobs.json";
+import deals from "@/data/supermarket-deals.json";
 import { formatEuro, STR, type Lang, type Tool } from "./i18n";
 
 export type Headline = { figure: string; label: string; updatedAt: string } | null;
@@ -27,11 +28,13 @@ export function headline(tool: Tool, lang: Lang): Headline {
           : { figure: formatEuro(m, lang, 3) + s.perLitre, label: s.figureLabel.fuel, updatedAt: (fuel as any).updatedAt };
       }
       case "supermarket": {
-        const items = (supermarket as any).items ?? [];
-        const prices = items.map((i: any) => i.price);
-        if (items.length < 10 || prices.some((p: any) => typeof p !== "number" || p <= 0)) return null;
-        const total = prices.reduce((a: number, b: number) => a + b, 0);
-        return { figure: formatEuro(total, lang), label: s.figureLabel.supermarket, updatedAt: (supermarket as any).updatedAt };
+        // the biggest current price cut on e-Kalathi (price vs the previous price), with the product
+        const top = ((deals as any).deals ?? [])
+          .filter((d: any) => typeof d.discountPct === "number" && d.discountPct > 0 && d.discountPct <= 90 && d.name)
+          .sort((a: any, b: any) => b.discountPct - a.discountPct)[0];
+        return top
+          ? { figure: "−" + top.discountPct + "%", label: s.figureLabel.supermarket + ": " + top.name, updatedAt: (deals as any).updatedAt }
+          : null;
       }
       case "coffee": {
         const prices = ((coffee as any).cities ?? [])

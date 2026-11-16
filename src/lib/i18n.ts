@@ -11,12 +11,12 @@ export const LANGS: Lang[] = ["en", "el", "ru"];
 // restore the sitemap entry and remove it from functions/_middleware.js.
 export const ALL_TOOLS = ["fuel", "supermarket", "coffee", "souvlaki", "jobs"] as const;
 export type Tool = (typeof ALL_TOOLS)[number];
-export const TOOLS: readonly Tool[] = ["fuel", "coffee", "souvlaki"];
+export const TOOLS: readonly Tool[] = ["fuel", "supermarket", "coffee", "souvlaki"];
 
 // URL path (no leading/trailing slash) of each tool, identical in every language.
 export const TOOL_PATH: Record<Tool, string> = {
   fuel: "posts/cheapest-petrol-stations-cyprus",
-  supermarket: "posts/supermarket-price-watch",
+  supermarket: "posts/cheapest-supermarket-products",
   coffee: "posts/cheapest-coffee-nicosia",
   souvlaki: "posts/cheapest-souvlaki-cyprus",
   jobs: "jobs",
@@ -87,14 +87,14 @@ export const STR: Record<Lang, Strings> = {
     tools: { fuel: "Fuel", supermarket: "Supermarket", coffee: "Coffee", souvlaki: "Souvlaki", jobs: "Jobs" },
     toolSummary: {
       fuel: "Petrol and diesel prices at every station in Cyprus, cheapest first.",
-      supermarket: "What ten everyday groceries cost at the cheapest Cyprus supermarket.",
+      supermarket: "The products with the biggest price cuts at Cyprus supermarkets.",
       coffee: "The cheapest freddo espresso in each city.",
       souvlaki: "Souvlaki pita prices by city, cheapest first.",
       jobs: "Every open public-sector vacancy in Cyprus in one list.",
     },
     figureLabel: {
       fuel: "Cheapest Unleaded 95",
-      supermarket: "Basket of 10 staples from",
+      supermarket: "Biggest price cut",
       coffee: "Cheapest freddo espresso",
       souvlaki: "Cheapest pork souvlaki pita",
       jobs: "Open vacancies",
@@ -106,9 +106,9 @@ export const STR: Record<Lang, Strings> = {
     source: "Source",
     aboutData: "About this data",
     homeTitle: "Cyprus price trackers",
-    homeIntro: "Fuel, coffee and souvlaki prices across Cyprus, refreshed regularly. Pick a tracker.",
+    homeIntro: "Fuel, supermarket, coffee and souvlaki prices across Cyprus, refreshed regularly. Pick a tracker.",
     homeDescription:
-      "Cyprus price trackers: cheapest petrol and diesel, freddo espresso and souvlaki prices by city. Updated automatically.",
+      "Cyprus price trackers: cheapest petrol and diesel, supermarket price cuts, freddo espresso and souvlaki prices by city. Updated automatically.",
     footerNav: "Footer",
     about: "About",
     contact: "Contact",
@@ -136,14 +136,14 @@ export const STR: Record<Lang, Strings> = {
     tools: { fuel: "Καύσιμα", supermarket: "Σούπερ μάρκετ", coffee: "Καφές", souvlaki: "Σουβλάκι", jobs: "Θέσεις εργασίας" },
     toolSummary: {
       fuel: "Τιμές βενζίνης και πετρελαίου σε κάθε πρατήριο της Κύπρου, με το φθηνότερο πρώτο.",
-      supermarket: "Πόσο κοστίζουν δέκα καθημερινά προϊόντα στο φθηνότερο σούπερ μάρκετ.",
+      supermarket: "Τα προϊόντα με τις μεγαλύτερες μειώσεις τιμής στα σούπερ μάρκετ της Κύπρου.",
       coffee: "Ο φθηνότερος φρέντο εσπρέσο σε κάθε πόλη.",
       souvlaki: "Τιμές σουβλακιού σε πίτα ανά πόλη, με το φθηνότερο πρώτο.",
       jobs: "Όλες οι ανοιχτές θέσεις του δημόσιου τομέα στην Κύπρο σε μία λίστα.",
     },
     figureLabel: {
       fuel: "Φθηνότερη Αμόλυβδη 95",
-      supermarket: "Καλάθι 10 προϊόντων από",
+      supermarket: "Μεγαλύτερη μείωση τιμής",
       coffee: "Φθηνότερος φρέντο εσπρέσο",
       souvlaki: "Φθηνότερο σουβλάκι χοιρινό σε πίτα",
       jobs: "Ανοιχτές θέσεις",
@@ -155,9 +155,9 @@ export const STR: Record<Lang, Strings> = {
     source: "Πηγή",
     aboutData: "Σχετικά με τα δεδομένα",
     homeTitle: "Τιμές στην Κύπρο",
-    homeIntro: "Τιμές καυσίμων, καφέ και σουβλακιού στην Κύπρο, με τακτική ενημέρωση. Διαλέξτε εργαλείο.",
+    homeIntro: "Τιμές καυσίμων, σούπερ μάρκετ, καφέ και σουβλακιού στην Κύπρο, με τακτική ενημέρωση. Διαλέξτε εργαλείο.",
     homeDescription:
-      "Τιμές στην Κύπρο: φθηνότερη βενζίνη και πετρέλαιο, φρέντο εσπρέσο και σουβλάκι ανά πόλη. Αυτόματη ενημέρωση.",
+      "Τιμές στην Κύπρο: φθηνότερη βενζίνη και πετρέλαιο, εκπτώσεις σούπερ μάρκετ, φρέντο εσπρέσο και σουβλάκι ανά πόλη. Αυτόματη ενημέρωση.",
     footerNav: "Υποσέλιδο",
     about: "Σχετικά",
     contact: "Επικοινωνία",
@@ -185,14 +185,14 @@ export const STR: Record<Lang, Strings> = {
     tools: { fuel: "Топливо", supermarket: "Супермаркет", coffee: "Кофе", souvlaki: "Сувлаки", jobs: "Вакансии" },
     toolSummary: {
       fuel: "Цены на бензин и дизель на каждой заправке Кипра, сначала самые дешёвые.",
-      supermarket: "Сколько стоят десять повседневных продуктов в самом дешёвом супермаркете.",
+      supermarket: "Товары с самым большим снижением цены в супермаркетах Кипра.",
       coffee: "Самый дешёвый фредо эспрессо в каждом городе.",
       souvlaki: "Цены на сувлаки в пите по городам, сначала самые дешёвые.",
       jobs: "Все открытые вакансии государственного сектора Кипра в одном списке.",
     },
     figureLabel: {
       fuel: "Самый дешёвый Unleaded 95",
-      supermarket: "Корзина из 10 продуктов от",
+      supermarket: "Крупнейшее снижение цены",
       coffee: "Самый дешёвый фредо эспрессо",
       souvlaki: "Самый дешёвый сувлаки из свинины в пите",
       jobs: "Открытые вакансии",
@@ -204,9 +204,9 @@ export const STR: Record<Lang, Strings> = {
     source: "Источник",
     aboutData: "О данных",
     homeTitle: "Цены на Кипре",
-    homeIntro: "Цены на топливо, кофе и сувлаки на Кипре, обновляются регулярно. Выберите трекер.",
+    homeIntro: "Цены на топливо, супермаркеты, кофе и сувлаки на Кипре, обновляются регулярно. Выберите трекер.",
     homeDescription:
-      "Цены на Кипре: дешёвый бензин и дизель, фредо эспрессо и сувлаки по городам. Автоматическое обновление.",
+      "Цены на Кипре: дешёвый бензин и дизель, скидки в супермаркетах, фредо эспрессо и сувлаки по городам. Автоматическое обновление.",
     footerNav: "Нижнее меню",
     about: "О сайте",
     contact: "Контакты",
