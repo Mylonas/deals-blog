@@ -1,5 +1,6 @@
 "use client";
 
+import { placeName } from "@/lib/places";
 import { STR } from "@/lib/i18n";
 import { useState, useMemo, useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
@@ -428,7 +429,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
                           {s.address}
                         </a>
                       </td>
-                      <td className="py-3 pr-3 text-gray-600 dark:text-gray-400 text-xs whitespace-nowrap">{s.district}</td>
+                      <td className="py-3 pr-3 text-gray-600 dark:text-gray-400 text-xs whitespace-nowrap">{placeName(s.district, lang)}</td>
                       {isNearMe && (
                         <td className="py-3 pr-3 text-gray-600 dark:text-gray-400 text-xs whitespace-nowrap">
                           {dist != null ? `${dist.toFixed(1)} km` : "—"}
