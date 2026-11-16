@@ -29,7 +29,7 @@ import fs from "fs";
 import { chromium } from "playwright";
 import {
   CITIES, normalize,
-  PITA_RE, GREEK_RE, MINI_RE, CYPRIOT_RE, LARGE_RE, GREEK_DESC_RE, COMBO_RE,
+  PITA_RE, GREEK_RE, MINI_RE, CYPRIOT_RE, LARGE_RE, GREEK_DESC_RE, COMBO_RE, GYROS_FILLING_DESC_RE,
   CUTS, PORKCHOP, PORKCHOP_MIN_CENTS,
 } from "./update-souvlaki-prices.mjs";
 import { FOODY_OUT, MERGED_OUT, WOLT_OUT, BOLT_OUT, mergeAndWrite, sameVenue } from "./merge-souvlaki-sources.mjs";
@@ -143,6 +143,7 @@ export function extractFoodyCuts(menu) {
         continue;
       }
       // the description can reveal a Greek-style / wrapped pita the name does not
+      if (GYROS_FILLING_DESC_RE.test(normalize(item.description || "")) && !CYPRIOT_RE.test(n) && !CYPRIOT_RE.test(cat)) { sawGreek = true; continue; }
       if (GREEK_DESC_RE.test(normalize(item.description || ""))) { sawGreek = true; continue; }
       const isLarge = LARGE_RE.test(n);
       const tier = CYPRIOT_RE.test(n) || CYPRIOT_RE.test(cat) ? cypriot : generic;
