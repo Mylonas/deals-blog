@@ -1,4 +1,6 @@
 import { STR, TOOLS, formatDate, homeHref, toolHref, type Lang, type Tool } from "@/lib/i18n";
+import { topThree } from "@/lib/summary";
+import { ACCENT, ToolIcon } from "@/lib/toolTheme";
 
 type Source = { label: string; href?: string };
 
@@ -26,6 +28,8 @@ export default function ToolPage({
 }) {
   const s = STR[lang];
   const date = formatDate(updatedAt, lang);
+  const ac = ACCENT[tool];
+  const top = topThree(tool, lang);
   return (
     <div className={wide ? "max-w-3xl" : "max-w-2xl"}>
       <nav aria-label={s.breadcrumb} className="mb-4 text-sm">
@@ -40,8 +44,12 @@ export default function ToolPage({
         </ol>
       </nav>
 
-      <h1 className="text-2xl sm:text-3xl font-bold mb-2 leading-tight">{title}</h1>
-      <p className="text-gray-700 dark:text-gray-300 mb-2">{s.toolSummary[tool]}</p>
+      <h1 className="flex items-start gap-3 text-2xl sm:text-3xl font-bold mb-2 leading-tight">
+        <span className={`mt-0.5 inline-flex shrink-0 items-center justify-center rounded-xl p-2 ${ac.chip}`}>
+          <ToolIcon tool={tool} className="w-6 h-6" />
+        </span>
+        <span>{title}</span>
+      </h1>
       <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
         {date && (
           <>
@@ -62,14 +70,35 @@ export default function ToolPage({
           </>
         )}
       </p>
-      {details && (
-        <details className="mb-6 text-sm text-gray-700 dark:text-gray-300">
-          <summary className="cursor-pointer min-h-[24px] py-1 font-medium">{s.aboutData}</summary>
-          <div className="mt-2 space-y-3">{details}</div>
-        </details>
+      {top.length > 0 && (
+        <section aria-labelledby="top-now" className={`mb-6 rounded-2xl border p-3 sm:p-4 ${ac.card.split(" ").filter((c) => !c.includes("hover:")).join(" ")}`}>
+          <h2 id="top-now" className={`text-sm font-semibold mb-2 ${ac.text}`}>
+            {s.topThreeTitle}
+          </h2>
+          <ol className="space-y-1.5">
+            {top.map((r, i) => (
+              <li key={r.name + i} className="flex items-baseline gap-2 text-sm">
+                <span aria-hidden="true" className={`w-5 shrink-0 font-bold ${ac.text}`}>{i + 1}</span>
+                <span className="min-w-0 flex-1 text-gray-900 dark:text-gray-100">
+                  <span className="font-medium">{r.name}</span>
+                  {r.place && <span className="text-gray-700 dark:text-gray-300"> · {r.place}</span>}
+                </span>
+                <span className={`shrink-0 text-base font-extrabold ${ac.text}`}>{r.price}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
       )}
 
       {children}
+
+      <details className="mt-10 text-sm text-gray-700 dark:text-gray-300">
+        <summary className="cursor-pointer min-h-[44px] py-2 font-medium text-gray-900 dark:text-gray-100">{s.aboutData}</summary>
+        <div className="mt-2 space-y-3">
+          <p>{s.toolSummary[tool]}</p>
+          {details}
+        </div>
+      </details>
 
       <nav aria-labelledby="other-trackers" className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800">
         <h2 id="other-trackers" className="text-lg font-semibold mb-3">

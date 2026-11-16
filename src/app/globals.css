@@ -106,10 +106,10 @@ html {
   scroll-padding-top: 5rem;
 }
 body.cookie-open {
-  padding-bottom: 7rem;
+  padding-bottom: 4.5rem;
 }
 body.cookie-open :focus-visible {
-  scroll-margin-bottom: 7rem;
+  scroll-margin-bottom: 4.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -150,7 +150,7 @@ body.cookie-open :focus-visible {
 main p a,
 main details a,
 main .prose a,
-main li a:not(.block):not([class*="min-h"]) {
+main li a:not(.block):not(.no-underline):not([class*="min-h"]) {
   text-decoration: underline;
   text-underline-offset: 2px;
 }

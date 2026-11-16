@@ -1,41 +1,81 @@
-import { STR, TOOLS, formatDate, toolHref, type Lang } from "@/lib/i18n";
-import { headline } from "@/lib/headlines";
+import { STR, TOOLS, formatDate, pageHref, toolHref, type Lang } from "@/lib/i18n";
+import { answer } from "@/lib/summary";
+import { ACCENT, ToolIcon } from "@/lib/toolTheme";
 
-// Tools hub shown on /, /el/ and /ru/: one card per tracker, each a single link
-// with the headline figure and last-updated date computed at build time.
+// Home (/, /el/, /ru/): the answer first. Four cards, each ONE link: icon + label, the big
+// number, the place, a change indicator (only where real history exists), the data date and a
+// "see all prices" cue. Then one light trust strip that links to About. Nothing else.
 export default function HomeHub({ lang }: { lang: Lang }) {
   const s = STR[lang];
+  const cards = TOOLS.map((t) => ({ t, a: answer(t, lang) }));
+  const newest = cards
+    .map((c) => c.a?.updatedAt)
+    .filter((d): d is string => !!d)
+    .sort()
+    .pop();
   return (
     <div>
-      <h1 className="text-2xl sm:text-3xl font-bold mb-2">{s.homeTitle}</h1>
-      <p className="text-gray-700 dark:text-gray-300 mb-8">{s.homeIntro}</p>
-      <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
-        {TOOLS.map((t) => {
-          const h = headline(t, lang);
+      <header className="mb-4 sm:mb-6">
+        <h1 className="text-2xl sm:text-3xl font-bold leading-tight">{s.todayTitle}</h1>
+        {newest && (
+          <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
+            {s.updated}: <time dateTime={newest}>{formatDate(newest, lang)}</time>
+          </p>
+        )}
+      </header>
+
+      <ul className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        {cards.map(({ t, a }) => {
+          const ac = ACCENT[t];
           return (
-            <li key={t}>
+            <li key={t} className="min-w-0">
               <a
                 href={toolHref(lang, t)}
-                className="block h-full bg-white dark:bg-gray-900 rounded-2xl border border-gray-300 dark:border-gray-700 p-5 hover:border-blue-600 hover:shadow-md"
+                className={`flex h-full flex-col no-underline rounded-2xl border p-3 sm:p-4 transition-shadow motion-reduce:transition-none hover:shadow-md focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 ${ac.card} ${ac.ring}`}
               >
-                <h2 className="text-lg font-bold mb-1">{s.tools[t]}</h2>
-                <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">{s.toolSummary[t]}</p>
-                {h && (
-                  <p className="mb-2">
-                    <span className="block text-sm text-gray-700 dark:text-gray-300">{h.label}</span>
-                    <span className="block text-2xl font-bold text-blue-800 dark:text-blue-300">{h.figure}</span>
-                  </p>
-                )}
-                {h && h.updatedAt && (
-                  <p className="text-xs text-gray-700 dark:text-gray-300">
-                    {s.updated}: {formatDate(h.updatedAt, lang)}
-                  </p>
-                )}
+                <span className={`flex items-center gap-2 text-sm font-semibold ${ac.text}`}>
+                  <ToolIcon tool={t} className="w-5 h-5 shrink-0" />
+                  <span className="min-w-0">{a?.label ?? s.tools[t]}</span>
+                </span>
+                {a ? (
+                  <>
+                    <span className={`mt-2 block text-3xl sm:text-4xl font-extrabold tracking-tight leading-none ${ac.text}`}>{a.figure}</span>
+                    <span className="mt-1.5 block text-sm font-medium text-gray-900 dark:text-gray-100 leading-snug break-words">{a.place}</span>
+                    {a.change && (
+                      <span className="mt-1.5 flex items-start gap-1 text-xs font-medium text-gray-800 dark:text-gray-200">
+                        <span aria-hidden="true">{a.change.dir === "down" ? "↓" : a.change.dir === "up" ? "↑" : "→"}</span>
+                        <span>{a.change.text}</span>
+                      </span>
+                    )}
+                    <span className="mt-auto pt-2 block text-xs text-gray-700 dark:text-gray-300">
+                      <time dateTime={a.updatedAt}>{formatDate(a.updatedAt, lang)}</time>
+                    </span>
+                  </>
+                ) : null}
+                <span className={`mt-1.5 inline-flex items-center gap-1 text-xs font-semibold ${ac.text}`}>
+                  {s.seeAll} <span aria-hidden="true">→</span>
+                </span>
               </a>
             </li>
           );
         })}
       </ul>
+
+      <section aria-label={s.trustLink} className="mt-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-3">
+        <ul className="grid gap-1.5 sm:grid-cols-3 text-sm text-gray-800 dark:text-gray-200">
+          {s.trust.map((p) => (
+            <li key={p} className="flex gap-2">
+              <span aria-hidden="true" className="text-emerald-700 dark:text-emerald-400">✓</span>
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-2 text-sm">
+          <a href={pageHref(lang, "about")} className="inline-flex items-center min-h-[24px] text-blue-700 dark:text-blue-300 underline">
+            {s.trustLink} →
+          </a>
+        </p>
+      </section>
     </div>
   );
 }

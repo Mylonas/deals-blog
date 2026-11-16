@@ -51,20 +51,20 @@ export default function RootShell({ lang, children }: { lang: Lang; children: Re
         <a href="#main" className="skip-link">
           {s.skip}
         </a>
-        <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-10">
-          <div className="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+        <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sm:sticky sm:top-0 z-10">
+          <div className="max-w-4xl mx-auto px-4 pt-1 pb-1 flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
             <a href={homeHref(lang)} className="flex items-center gap-2 min-h-[44px] rounded-md">
               <span aria-hidden="true" className="text-2xl">🏷️</span>
               <span className="text-xl font-bold tracking-tight">{siteName}</span>
             </a>
-            <div className="flex items-center gap-2 ml-auto md:order-3">
+            <div className="flex items-center gap-2 ml-auto">
               <ThemeToggle />
               <LangSwitcher />
             </div>
             <SiteNav lang={lang} />
           </div>
         </header>
-        <main id="main" tabIndex={-1} className="max-w-4xl mx-auto px-4 py-8 sm:py-10">
+        <main id="main" tabIndex={-1} className="max-w-4xl mx-auto px-4 py-5 sm:py-10">
           {children}
         </main>
         <footer className="border-t border-gray-200 dark:border-gray-800 mt-16 py-8 text-center text-sm text-gray-700 dark:text-gray-300">
