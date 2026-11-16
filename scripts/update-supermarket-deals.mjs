@@ -399,15 +399,19 @@ async function main() {
   console.log(`\nProducts with discount: ${withDiscount.length}`);
   withDiscount.sort((a, b) => b._disc - a._disc);
 
-  const dealsSlice = withDiscount.slice(0, TOP_N);
-
-  console.log(`\nIdentifying cheapest stores for ${dealsSlice.length} top deals...`);
+  // Only retail chains may set "the lowest price": a product whose listed price exists only at a
+  // delivery-only service (Wolt Market) is skipped and the next candidate takes its place.
+  console.log(`\nVerifying retail chains for the top ${TOP_N} deals...`);
+  const dealsSlice = [];
   const dealStores = new Map();
-  for (const p of dealsSlice) {
+  for (const p of withDiscount) {
+    if (dealsSlice.length >= TOP_N) break;
     const store = await findCheapestStore(p);
+    await new Promise((r) => setTimeout(r, 500));
+    if (store?.notRetail) { console.log(`  skipped (price set by a delivery-only service): ${p.name.slice(0, 40)}`); continue; }
+    dealsSlice.push(p);
     if (store) dealStores.set(p.productMasterId, store);
     console.log(`  ${p.name.slice(0, 40)}: ${store?.store ?? "unidentified"}`);
-    await new Promise((r) => setTimeout(r, 500));
   }
 
   const deals = dealsSlice.map((p) =>
@@ -429,15 +433,17 @@ async function main() {
   }
 
   atlCandidates.sort((a, b) => b.atl.pctBelow - a.atl.pctBelow);
-  const atlSlice = atlCandidates.slice(0, ATL_MAX);
-
-  console.log(`\nIdentifying cheapest stores for ${atlSlice.length} all-time lows...`);
+  console.log(`\nVerifying retail chains for all-time lows...`);
+  const atlSlice = [];
   const atlStores = new Map();
-  for (const { p } of atlSlice) {
-    const store = await findCheapestStore(p, p.startPrice);
-    if (store) atlStores.set(p.productMasterId, store);
-    console.log(`  ${p.name.slice(0, 40)}: ${store?.store ?? "unidentified"}`);
+  for (const c of atlCandidates) {
+    if (atlSlice.length >= ATL_MAX) break;
+    const store = await findCheapestStore(c.p, c.p.startPrice);
     await new Promise((r) => setTimeout(r, 500));
+    if (store?.notRetail) { console.log(`  skipped (delivery-only price): ${c.p.name.slice(0, 40)}`); continue; }
+    atlSlice.push(c);
+    if (store) atlStores.set(c.p.productMasterId, store);
+    console.log(`  ${c.p.name.slice(0, 40)}: ${store?.store ?? "unidentified"}`);
   }
 
   const allTimeLows = atlSlice.map(({ p, atl, history }) =>
@@ -467,15 +473,17 @@ async function main() {
   }
 
   nearCandidates.sort((a, b) => a.near.pctAbove - b.near.pctAbove);
-  const nearSlice = nearCandidates.slice(0, NEAR_ATL_MAX);
-
-  console.log(`\nIdentifying cheapest stores for ${nearSlice.length} near-lows...`);
+  console.log(`\nVerifying retail chains for near-lows...`);
+  const nearSlice = [];
   const nearStores = new Map();
-  for (const { p } of nearSlice) {
-    const store = await findCheapestStore(p);
-    if (store) nearStores.set(p.productMasterId, store);
-    console.log(`  ${p.name.slice(0, 40)}: ${store?.store ?? "unidentified"}`);
+  for (const c of nearCandidates) {
+    if (nearSlice.length >= NEAR_ATL_MAX) break;
+    const store = await findCheapestStore(c.p);
     await new Promise((r) => setTimeout(r, 500));
+    if (store?.notRetail) { console.log(`  skipped (delivery-only price): ${c.p.name.slice(0, 40)}`); continue; }
+    nearSlice.push(c);
+    if (store) nearStores.set(c.p.productMasterId, store);
+    console.log(`  ${c.p.name.slice(0, 40)}: ${store?.store ?? "unidentified"}`);
   }
 
   const nearLows = nearSlice.map(({ p, near, history }) => ({
