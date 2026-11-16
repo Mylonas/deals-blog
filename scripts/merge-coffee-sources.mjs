@@ -117,16 +117,15 @@ function finalize(v) {
   const offers = Object.entries(v._offers || {}).filter(([, o]) => o.freddo != null);
   delete v._offers;
   if (!offers.length) return v;
-  const eligible = offers.filter(([, o]) => o.open !== false);
-  const pool = eligible.length ? eligible : offers;
+  // Opening hours / online flags no longer exclude a venue (decision 2026-11-16): a venue outside its
+  // usual hours is ranked like any other. Only items marked unavailable are dropped, at scan time.
+  const pool = offers;
   const [src, best] = pool.reduce((a, b) => (b[1].freddo < a[1].freddo ? b : a));
   v.freddo = best.freddo;
   v.freddoSource = src;
   if (best.promo != null) v.freddoPromo = best.promo;
   else delete v.freddoPromo;
-  const known = offers.filter(([, o]) => o.open != null);
-  v.open = null; // no platform reports availability
-  if (known.length) v.open = eligible.some(([, o]) => o.open === true) ? true : eligible.length ? null : false;
+  delete v.open; // no open/closed indication is published (a single snapshot would go stale)
   return v;
 }
 
@@ -198,7 +197,7 @@ export function mergeCoffee(wolt, extras) {
       let merged = (woltByKey.get(key) || []).map((v) => ({ ...v, freddoSource: "wolt", platforms: ["wolt"], _offers: { wolt: offerOf(v) } }));
       for (const { platform, map } of byCity) merged = foldCity(merged, map.get(key), platform);
       merged = merged.map(finalize);
-      merged.sort((a, b) => (a.open === false) - (b.open === false) || (a.freddo ?? 99) - (b.freddo ?? 99));
+      merged.sort((a, b) => (a.freddo ?? 99) - (b.freddo ?? 99));
       return { key, label, cafes: merged };
     }),
   };
