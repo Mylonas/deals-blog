@@ -74,6 +74,7 @@ type Strings = {
   notFoundTitle: string;
   notFoundText: string;
   perLitre: string;
+  wasWord: string; // "was" before the previous price in the supermarket home card
   vacancies: (n: number) => string;
 };
 
@@ -94,7 +95,7 @@ export const STR: Record<Lang, Strings> = {
     },
     figureLabel: {
       fuel: "Cheapest Unleaded 95",
-      supermarket: "Biggest price cut",
+      supermarket: "Biggest drop in lowest price",
       coffee: "Cheapest freddo espresso",
       souvlaki: "Cheapest pork souvlaki pita",
       jobs: "Open vacancies",
@@ -125,6 +126,7 @@ export const STR: Record<Lang, Strings> = {
     notFoundTitle: "Page not found",
     notFoundText: "That page does not exist. Try one of the trackers:",
     perLitre: "/L",
+    wasWord: "down from",
     vacancies: (n) => `${n} open ${n === 1 ? "vacancy" : "vacancies"}`,
   },
   el: {
@@ -143,7 +145,7 @@ export const STR: Record<Lang, Strings> = {
     },
     figureLabel: {
       fuel: "Φθηνότερη Αμόλυβδη 95",
-      supermarket: "Μεγαλύτερη μείωση τιμής",
+      supermarket: "Μεγαλύτερη πτώση χαμηλότερης τιμής",
       coffee: "Φθηνότερος φρέντο εσπρέσο",
       souvlaki: "Φθηνότερο σουβλάκι χοιρινό σε πίτα",
       jobs: "Ανοιχτές θέσεις",
@@ -174,6 +176,7 @@ export const STR: Record<Lang, Strings> = {
     notFoundTitle: "Η σελίδα δεν βρέθηκε",
     notFoundText: "Αυτή η σελίδα δεν υπάρχει. Δοκιμάστε ένα από τα εργαλεία:",
     perLitre: "/L",
+    wasWord: "από",
     vacancies: (n) => `${n} ${n === 1 ? "ανοιχτή θέση" : "ανοιχτές θέσεις"}`,
   },
   ru: {
@@ -192,7 +195,7 @@ export const STR: Record<Lang, Strings> = {
     },
     figureLabel: {
       fuel: "Самый дешёвый Unleaded 95",
-      supermarket: "Крупнейшее снижение цены",
+      supermarket: "Крупнейшее падение минимальной цены",
       coffee: "Самый дешёвый фредо эспрессо",
       souvlaki: "Самый дешёвый сувлаки из свинины в пите",
       jobs: "Открытые вакансии",
@@ -223,6 +226,7 @@ export const STR: Record<Lang, Strings> = {
     notFoundTitle: "Страница не найдена",
     notFoundText: "Такой страницы нет. Попробуйте один из трекеров:",
     perLitre: "/л",
+    wasWord: "было",
     vacancies: (n) => {
       const m10 = n % 10;
       const m100 = n % 100;

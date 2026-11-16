@@ -8,52 +8,53 @@
 //
 // The product page itself uses `retail/fetch-retail-branch-list?productId=<id>`, which
 // returns one row per branch with that branch's own price (`retailerProductPrice`).
-// The cheapest chain is the argmin of those prices, grouped by chain.
+// The cheapest chain is the argmin of those prices, grouped by chain. Display names live in
+// src/data/chains.json (EN/EL/RU); delivery-only Wolt Market is excluded.
 const API = "https://www.e-kalathi.gov.cy/ekalathi-website-server/api";
 const HEADERS = { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; DealsHubBot/1.0)" };
 
-// e-kalathi's companyName (Greek/Latin, upper case) -> display name. Unlisted names fall
-// back to a tidied version of the source name, so a new chain is shown, never dropped.
-const DISPLAY = [
-  [/^lidl/i, "LIDL"], [/^metro/i, "Metro"], [/αλφαμεγα|alphamega/i, "AlphaMega"],
-  [/παπαντωνιου|papantoniou/i, "Papantoniou"], [/σκλαβενιτ|sklavenitis/i, "Sklavenitis"],
-  [/κυριακο[υς]|kyriacos/i, "Kyriacos"], [/alpha\s*sigma/i, "Alpha Sigma"], [/lysiotis|λυσιωτ/i, "Lysiotis"],
-  [/plus\s*discount/i, "Plus Discount"], [/αθηαινιτ|αθηναιτ|athinaitis|athienitis/i, "Athinaitis"],
-  [/κοκκινος|kokkinos/i, "Kokkinos"], [/philippos|φιλιππος/i, "Philippos"], [/^mas\b/i, "MAS"],
-  [/poplife/i, "Poplife"], [/super\s*discount/i, "Super Discount Store"], [/smart\s*discount/i, "Smart Discount Shop"],
-  [/wolt/i, "Wolt Market"], [/συπαλ|sypal/i, "SYPAL"],
-];
-export function displayChain(companyName) {
-  const raw = String(companyName ?? "").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
-  for (const [re, name] of DISPLAY) if (re.test(raw)) return name;
-  return raw.toLowerCase().replace(/(^|\s)\S/g, (c) => c.toUpperCase());
+import fs from "node:fs";
+const CHAINS = JSON.parse(fs.readFileSync(new URL("../../src/data/chains.json", import.meta.url), "utf8")).chains;
+const COMPILED = CHAINS.map((c) => ({ ...c, res: c.match.map((m) => new RegExp(m)) }));
+
+/** e-kalathi companyName -> normalised form: HTML entities, accents stripped, upper case. */
+const norm = (name) => String(name ?? "").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim().normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase();
+
+/** Chain id for a source company name (src/data/chains.json is the single mapping), or null if unmapped. */
+export function chainId(companyName) {
+  const n = norm(companyName);
+  for (const c of COMPILED) if (c.res.some((r) => r.test(n))) return c.id;
+  return null;
 }
+export const isDelivery = (id) => !!CHAINS.find((c) => c.id === id)?.delivery;
+export const chainEn = (id) => CHAINS.find((c) => c.id === id)?.en ?? id;
 
 /**
- * Pure: the chain(s) with the lowest branch price. `branches` = [{ companyName, retailerProductPrice }].
- * Missing / non-positive / non-numeric prices are ignored (never treated as 0). Returns
- * { price, chains: [display names, cheapest tie first alphabetical] } or null.
+ * Pure: the chain(s) with the lowest branch price among real shops. Delivery-only services (Wolt
+ * Market) are skipped. Missing / non-positive / non-numeric prices are ignored (never treated as 0).
+ * Unmapped chains get id "?<normalised name>" so they still count (and the test fails loudly).
+ * Returns { price, ids: [sorted chain ids] } or null.
  */
 export function cheapestChains(branches) {
-  let min = Infinity;
+  const rows = [];
   for (const b of branches || []) {
     const p = b?.retailerProductPrice;
-    if (typeof p === "number" && Number.isFinite(p) && p > 0 && p < min) min = p;
+    if (!(typeof p === "number" && Number.isFinite(p) && p > 0)) continue;
+    const id = chainId(b.companyName) ?? "?" + norm(b.companyName);
+    if (isDelivery(id)) continue;
+    rows.push([id, p]);
   }
-  if (!Number.isFinite(min)) return null;
-  const chains = new Set();
-  for (const b of branches) {
-    const p = b?.retailerProductPrice;
-    if (typeof p === "number" && Math.abs(p - min) < 0.005) chains.add(displayChain(b.companyName));
-  }
-  return { price: min, chains: [...chains].sort() };
+  if (!rows.length) return null;
+  const min = Math.min(...rows.map((r) => r[1]));
+  const ids = [...new Set(rows.filter((r) => Math.abs(r[1] - min) < 0.005).map((r) => r[0]))].sort();
+  return { price: min, ids };
 }
 
-/** Label for the page: one chain, or the tied chains (max 3, then "+N"). */
+/** English label for the legacy "store" field: one chain, or the tied chains (max 3, then "+N"). */
 export function storeLabel(result) {
   if (!result) return null;
-  const c = result.chains;
-  return c.length <= 3 ? c.join(" / ") : `${c.slice(0, 3).join(" / ")} +${c.length - 3}`;
+  const n = result.ids.map(chainEn);
+  return n.length <= 3 ? n.join(" / ") : n.slice(0, 3).join(" / ") + " +" + (n.length - 3);
 }
 
 export async function fetchBranches(productId) {
@@ -87,7 +88,7 @@ export async function findCheapestChain(productId, listPrice) {
     const res = cheapestChains(await fetchBranches(productId));
     if (!res) return null;
     if (typeof listPrice === "number" && Math.abs(res.price - listPrice) > 0.05) return null;
-    return storeLabel(res);
+    return { store: storeLabel(res), storeIds: res.ids };
   } catch {
     return null;
   }

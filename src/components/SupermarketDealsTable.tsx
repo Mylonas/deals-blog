@@ -1,4 +1,5 @@
 "use client";
+import { chainLabel } from "@/lib/chains";
 import { useState, useMemo } from "react";
 
 type PricePoint = { d: string; p: number };
@@ -20,6 +21,7 @@ type Deal = {
   atlPrice?: number;
   pctAboveLow?: number;
   store?: string | null;
+  storeIds?: string[] | null;
 };
 
 type Lang = "en" | "el" | "ru";
@@ -33,12 +35,13 @@ const T = {
     search: "Search products", noResults: "No products match your search.", results: (n: number) => `${n} products`,
     updated: "Last updated", onSale: "On sale", viewAll: "Compare prices →",
     trend: "6-month price trend", cheapestAt: "Cheapest at",
+    vsPrev: "vs previous lowest price",
     tabSavings: "Biggest savings", tabLows: "All-time lows",
     lowestEver: "Lowest ever", since: "since",
     nearLow: "Near lowest ever", aboveLow: "above the record low of",
     noLows: "No products are at or near an all-time low right now — check back soon.",
     lowsIntro: "Products whose price just dropped to the lowest level ever recorded on e-Kalathi (tracked since September 2025), plus products currently within 2% of their all-time low. The green % badge shows how far below the previous record a new low is; the amber badge shows how close a price is to its record.",
-    note: "Prices from e-kalathi.gov.cy — the Cyprus government's official price observatory. Click any product to compare prices across all supermarket chains. The trend line shows the typical shelf price across chains, which may sit above the lowest price shown.",
+    note: "Prices from e-kalathi.gov.cy — the Cyprus government's official price observatory. Click any product to compare prices across all supermarket chains. The trend line shows the typical shelf price across chains, which may sit above the lowest price shown. The % compares today's lowest price with the previous lowest price e-Kalathi recorded for that product (not with a typical shelf price), so a one-off cheap branch can show a large cut.",
   },
   el: {
     product: "Προϊόν", price: "Τιμή", discount: "Έκπτωση", category: "Κατηγορία",
@@ -46,12 +49,13 @@ const T = {
     search: "Αναζήτηση προϊόντων", noResults: "Κανένα προϊόν δεν ταιριάζει με την αναζήτηση.", results: (n: number) => `${n} προϊόντα`,
     updated: "Τελευταία ενημέρωση", onSale: "Σε προσφορά", viewAll: "Σύγκριση τιμών →",
     trend: "Τάση τιμής 6 μηνών", cheapestAt: "Φθηνότερο στο",
+    vsPrev: "έναντι προηγούμενης χαμηλότερης τιμής",
     tabSavings: "Μεγαλύτερες εκπτώσεις", tabLows: "Ιστορικά χαμηλά",
     lowestEver: "Χαμηλότερη τιμή ποτέ", since: "από",
     nearLow: "Κοντά στο ιστορικό χαμηλό", aboveLow: "πάνω από το ρεκόρ των",
     noLows: "Κανένα προϊόν δεν βρίσκεται σε ή κοντά σε ιστορικό χαμηλό αυτή τη στιγμή — ελέγξτε ξανά σύντομα.",
     lowsIntro: "Προϊόντα των οποίων η τιμή μόλις έπεσε στο χαμηλότερο επίπεδο που έχει καταγραφεί ποτέ στο e-Kalathi (παρακολούθηση από Σεπτέμβριο 2025), μαζί με προϊόντα που βρίσκονται αυτή τη στιγμή έως 2% πάνω από το ιστορικό τους χαμηλό. Το πράσινο ποσοστό δείχνει πόσο κάτω από το προηγούμενο ρεκόρ είναι ένα νέο χαμηλό· το πορτοκαλί σήμα δείχνει πόσο κοντά στο ρεκόρ είναι η τιμή.",
-    note: "Τιμές από το e-kalathi.gov.cy — το επίσημο παρατηρητήριο τιμών της Κυπριακής Κυβέρνησης. Κάντε κλικ σε κάθε προϊόν για να συγκρίνετε τιμές σε όλες τις αλυσίδες. Η γραμμή τάσης δείχνει την τυπική τιμή ραφιού μεταξύ αλυσίδων, που μπορεί να είναι πάνω από τη χαμηλότερη τιμή.",
+    note: "Τιμές από το e-kalathi.gov.cy — το επίσημο παρατηρητήριο τιμών της Κυπριακής Κυβέρνησης. Κάντε κλικ σε κάθε προϊόν για να συγκρίνετε τιμές σε όλες τις αλυσίδες. Η γραμμή τάσης δείχνει την τυπική τιμή ραφιού μεταξύ αλυσίδων, που μπορεί να είναι πάνω από τη χαμηλότερη τιμή. Το % συγκρίνει τη σημερινή χαμηλότερη τιμή με την προηγούμενη χαμηλότερη τιμή που κατέγραψε το e-Kalathi για το προϊόν (όχι με μια τυπική τιμή ραφιού), οπότε ένα μεμονωμένο φθηνό κατάστημα μπορεί να δείξει μεγάλη μείωση.",
   },
   ru: {
     product: "Продукт", price: "Цена", discount: "Скидка", category: "Категория",
@@ -59,12 +63,13 @@ const T = {
     search: "Поиск товаров", noResults: "Нет товаров, подходящих под запрос.", results: (n: number) => `${n} товаров`,
     updated: "Последнее обновление", onSale: "Акция", viewAll: "Сравнить цены →",
     trend: "Динамика цены за 6 месяцев", cheapestAt: "Дешевле всего в",
+    vsPrev: "к прежней минимальной цене",
     tabSavings: "Лучшие скидки", tabLows: "Исторический минимум",
     lowestEver: "Минимум за всё время", since: "с",
     nearLow: "Близко к минимуму", aboveLow: "выше рекордных",
     noLows: "Сейчас ни один товар не находится на историческом минимуме или рядом с ним — загляните позже.",
     lowsIntro: "Товары, цена которых только что опустилась до самого низкого уровня за всю историю наблюдений e-Kalathi (с сентября 2025), а также товары, которые сейчас находятся в пределах 2% от своего исторического минимума. Зелёный процент показывает, насколько новая цена ниже предыдущего рекорда; янтарный значок — насколько цена близка к рекорду.",
-    note: "Цены с e-kalathi.gov.cy — официального государственного ценового мониторинга Кипра. Нажмите на продукт, чтобы сравнить цены во всех супермаркетах. Линия тренда показывает типичную цену на полке по сетям, которая может быть выше минимальной.",
+    note: "Цены с e-kalathi.gov.cy — официального государственного ценового мониторинга Кипра. Нажмите на продукт, чтобы сравнить цены во всех супермаркетах. Линия тренда показывает типичную цену на полке по сетям, которая может быть выше минимальной. Процент сравнивает сегодняшнюю минимальную цену с прежней минимальной ценой, зафиксированной в e-Kalathi для этого товара (а не с обычной ценой на полке), поэтому один дешёвый магазин может дать большое снижение.",
   },
 };
 
@@ -254,9 +259,9 @@ export default function SupermarketDealsTable({
                   </span>
                 )}
                 {/* Store badge */}
-                {deal.store && (
+                {(deal.storeIds?.length || deal.store) && (
                   <span className="inline-block mt-1.5 text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
-                    🏪 {t.cheapestAt} {deal.store}
+                    🏪 {t.cheapestAt} {chainLabel(deal.storeIds, lang) ?? deal.store}
                   </span>
                 )}
                 {/* Price row */}
@@ -272,6 +277,7 @@ export default function SupermarketDealsTable({
                       <span className="text-xs font-bold px-1.5 py-0.5 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
                         -{deal.discountPct}%
                       </span>
+                      <span className="text-[10px] text-gray-600 dark:text-gray-400">{t.vsPrev}</span>
                     </>
                   )}
                   <span className="ml-auto text-xs text-blue-700 dark:text-blue-400 group-hover:underline whitespace-nowrap">

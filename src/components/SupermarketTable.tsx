@@ -1,4 +1,5 @@
 "use client";
+import { chainLabel } from "@/lib/chains";
 import { STR } from "@/lib/i18n";
 import { useState, useMemo } from "react";
 
@@ -12,6 +13,7 @@ type Item = {
   productName: string | null;
   brand?: string | null;
   store: string | null;
+  storeIds?: string[] | null;
 };
 
 type Lang = "en" | "el" | "ru";
@@ -124,9 +126,9 @@ export default function SupermarketTable({ items, lang, updatedAt }: { items: It
                     )}
                   </td>
                   <td className="px-4 py-3">
-                    {item.store ? (
+                    {(item.storeIds?.length || item.store) ? (
                       <span className="inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
-                        {item.store}
+                        {chainLabel(item.storeIds, lang) ?? item.store}
                       </span>
                     ) : (
                       <span className="text-gray-600 dark:text-gray-400">{t.na}</span>
