@@ -1,4 +1,5 @@
-import { STR, TOOLS, formatDate, pageHref, toolHref, type Lang } from "@/lib/i18n";
+import { STR, TOOLS, pageHref, toolHref, type Lang } from "@/lib/i18n";
+import FreshDate, { STALE_HOURS } from "@/components/FreshDate";
 import { answer } from "@/lib/summary";
 import { ACCENT, ToolIcon } from "@/lib/toolTheme";
 
@@ -8,20 +9,10 @@ import { ACCENT, ToolIcon } from "@/lib/toolTheme";
 export default function HomeHub({ lang }: { lang: Lang }) {
   const s = STR[lang];
   const cards = TOOLS.map((t) => ({ t, a: answer(t, lang) }));
-  const newest = cards
-    .map((c) => c.a?.updatedAt)
-    .filter((d): d is string => !!d)
-    .sort()
-    .pop();
   return (
     <div>
       <header className="mb-4 sm:mb-6">
         <h1 className="text-2xl sm:text-3xl font-bold leading-tight">{s.todayTitle}</h1>
-        {newest && (
-          <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
-            {s.updated}: <time dateTime={newest}>{formatDate(newest, lang)}</time>
-          </p>
-        )}
       </header>
 
       <ul className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
@@ -48,7 +39,7 @@ export default function HomeHub({ lang }: { lang: Lang }) {
                       </span>
                     )}
                     <span className="mt-auto pt-2 block text-xs text-gray-700 dark:text-gray-300">
-                      <time dateTime={a.updatedAt}>{formatDate(a.updatedAt, lang)}</time>
+                      <FreshDate updatedAt={a.updatedAt} lang={lang} tool={t} builtStale={Date.now() - new Date(a.updatedAt).getTime() > STALE_HOURS[t] * 3600 * 1000} />
                     </span>
                   </>
                 ) : null}

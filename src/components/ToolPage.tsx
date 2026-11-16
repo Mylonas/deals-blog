@@ -1,5 +1,6 @@
 import { STR, TOOLS, formatDate, homeHref, toolHref, type Lang, type Tool } from "@/lib/i18n";
 import { topThree } from "@/lib/summary";
+import FreshDate, { STALE_HOURS } from "@/components/FreshDate";
 import { ACCENT, ToolIcon } from "@/lib/toolTheme";
 
 type Source = { label: string; href?: string };
@@ -53,7 +54,7 @@ export default function ToolPage({
       <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
         {date && (
           <>
-            {s.updated}: <time dateTime={updatedAt}>{date}</time>
+            <FreshDate updatedAt={updatedAt!} lang={lang} tool={tool} prefix={s.updated + ": "} builtStale={Date.now() - new Date(updatedAt!).getTime() > STALE_HOURS[tool] * 3600 * 1000} />
           </>
         )}
         {date && source && " · "}
