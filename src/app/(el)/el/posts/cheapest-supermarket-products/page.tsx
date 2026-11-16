@@ -5,7 +5,7 @@ import data from "@/data/supermarket-deals.json";
 export const metadata = {
   title: "Top 20 Μεγαλύτερες Εκπτώσεις σε Σούπερ Μάρκετ Κύπρου",
   description:
-    "Τα 20 προϊόντα με τις μεγαλύτερες μειώσεις τιμής αυτή τη στιγμή σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου, από το επίσημο παρατηρητήριο τιμών e-Kalathi. Ενημέρωση καθημερινά.",
+    "Τα 20 προϊόντα με τις μεγαλύτερες μειώσεις τιμής επί του παρόντος σε όλα τα μεγάλα σούπερ μάρκετ της Κύπρου, από το επίσημο παρατηρητήριο τιμών e-Kalathi. Ενημέρωση καθημερινά.",
   alternates: {"canonical":"/el/posts/cheapest-supermarket-products/","languages":{"en":"/posts/cheapest-supermarket-products/","el":"/el/posts/cheapest-supermarket-products/","ru":"/ru/posts/cheapest-supermarket-products/","x-default":"/posts/cheapest-supermarket-products/"}},
 };
 

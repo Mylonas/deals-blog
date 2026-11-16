@@ -61,7 +61,7 @@ const T = {
     denied: "Location access denied — showing cheapest first.",
     unsupported: "Geolocation is not supported by this browser.",
     empty: "No café data for this city yet — check back soon.",
-    note: "Each price is the cheapest across Wolt, Bolt and Foody for that café; the badges link to each platform and prices may include a platform markup over the counter price. Cheapest branch shown per café brand. Updated every two days. Venues are listed even if they are outside their usual opening hours right now, so check the hours before ordering; items marked unavailable are left out; prices are regular (not promo) prices.",
+    note: "Each price is the cheapest across Wolt, Bolt and Foody for that café; the badges link to each platform and prices may include a platform markup over the counter price. Cheapest branch shown per café brand. Updated every two days. Venues are listed even if they are outside their usual opening hours, so check the hours before ordering; items marked unavailable are left out; prices are regular (not promo) prices.",
   },
   el: {
     venue: "Καφετέρια", price: "Freddo Espresso", updated: "Ενημέρωση", order: "Παραγγελία →", providers: "Παραγγελία από",
@@ -71,7 +71,7 @@ const T = {
     denied: "Δεν δόθηκε πρόσβαση τοποθεσίας — εμφανίζονται τα φθηνότερα πρώτα.",
     unsupported: "Ο περιηγητής δεν υποστηρίζει γεωεντοπισμό.",
     empty: "Δεν υπάρχουν ακόμα δεδομένα για αυτή την πόλη — ελέγξτε ξανά σύντομα.",
-    note: "Κάθε τιμή είναι η φθηνότερη ανά καφετέρια μεταξύ Wolt, Bolt και Foody· τα σήματα συνδέουν στην κάθε πλατφόρμα και ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Εμφανίζεται το φθηνότερο υποκατάστημα ανά αλυσίδα. Ενημέρωση κάθε δύο ημέρες. Τα καταστήματα εμφανίζονται ακόμα κι αν είναι εκτός ωραρίου αυτή τη στιγμή (ελέγξτε το ωράριο πριν παραγγείλετε)· τα προϊόντα που σημειώνονται ως μη διαθέσιμα εξαιρούνται· οι τιμές είναι οι κανονικές (όχι προσφοράς).",
+    note: "Κάθε τιμή είναι η φθηνότερη ανά καφετέρια μεταξύ Wolt, Bolt και Foody· τα σήματα συνδέουν στην κάθε πλατφόρμα και ενδέχεται να περιλαμβάνουν προσαύξηση πλατφόρμας. Εμφανίζεται το φθηνότερο υποκατάστημα ανά αλυσίδα. Ενημέρωση κάθε δύο ημέρες. Τα καταστήματα εμφανίζονται ακόμα κι αν είναι εκτός ωραρίου (ελέγξτε το ωράριο πριν παραγγείλετε)· τα προϊόντα που σημειώνονται ως μη διαθέσιμα εξαιρούνται· οι τιμές είναι οι κανονικές (όχι προσφοράς).",
   },
   ru: {
     venue: "Кафе", price: "Фреддо Эспрессо", updated: "Обновлено", order: "Заказать →", providers: "Заказать в",
@@ -81,7 +81,7 @@ const T = {
     denied: "Доступ к геолокации не разрешён — показаны самые дешёвые.",
     unsupported: "Браузер не поддерживает геолокацию.",
     empty: "Для этого города пока нет данных — загляните позже.",
-    note: "Каждая цена — самая низкая по кафе среди Wolt, Bolt и Foody; значки ведут на каждую платформу, возможна наценка платформы. Для каждой сети показан самый дешёвый филиал. Обновляется раз в два дня. Заведения показаны, даже если сейчас они вне часов работы (проверьте часы работы перед заказом); позиции, отмеченные как недоступные, не учитываются; указаны обычные цены (не акционные).",
+    note: "Каждая цена — самая низкая по кафе среди Wolt, Bolt и Foody; значки ведут на каждую платформу, возможна наценка платформы. Для каждой сети показан самый дешёвый филиал. Обновляется раз в два дня. Заведения показаны, даже если они вне часов работы (проверьте часы работы перед заказом); позиции, отмеченные как недоступные, не учитываются; указаны обычные цены (не акционные).",
   },
 };
 

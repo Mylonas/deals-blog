@@ -3,7 +3,7 @@ import SouvlakiTable from "@/components/SouvlakiTable";
 import data from "@/data/souvlaki-prices.json";
 
 export const metadata = {
-  title: "Самый дешёвый сувлаки на Кипре — Актуальные цены по городам",
+  title: "Самый дешёвый сувлаки на Кипре — Цены по городам",
   description:
     "Цены на сувлаки в пите в Никосии, Лимасоле, Ларнаке, Пафосе и Айя-Напе — свинина, курица, отбивная и микс, всегда от самого дешёвого. Обновление раз в два дня через Wolt, Bolt и Foody.",
   alternates: {"canonical":"/ru/posts/cheapest-souvlaki-cyprus/","languages":{"en":"/posts/cheapest-souvlaki-cyprus/","el":"/el/posts/cheapest-souvlaki-cyprus/","ru":"/ru/posts/cheapest-souvlaki-cyprus/","x-default":"/posts/cheapest-souvlaki-cyprus/"}},
