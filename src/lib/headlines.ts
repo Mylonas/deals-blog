@@ -48,6 +48,8 @@ export function headline(tool: Tool, lang: Lang): Headline {
         const prices = ((souvlaki as any).cities ?? [])
           .flatMap((c: any) => c.venues ?? [])
           .filter((v: any) => v.open !== false) // closed / scheduled-only venues never headline
+          // a Bolt price with no recorded source item has not been audited under the current rules
+          .filter((v: any) => !(v.priceSources?.souvlaki === "bolt" && !v.items?.souvlaki))
           .map((v: any) => v.prices?.souvlaki)
           .filter((p: any) => typeof p === "number" && p >= 1.5 && p < 15);
         const m = min(prices);

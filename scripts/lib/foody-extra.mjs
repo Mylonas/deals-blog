@@ -133,11 +133,11 @@ export function openFromCompact(hours, now = new Date()) {
  * result does not depend on when the merge happens to run (the laptop task runs at 06:30,
  * when almost everything is still closed).
  */
-export function eveningReference(now = new Date()) {
+export function eveningReference(now = new Date(), hour = 19) {
   const ymd = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Nicosia" }).format(now); // YYYY-MM-DD
   const off = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Nicosia", timeZoneName: "shortOffset" })
     .formatToParts(now).find((p) => p.type === "timeZoneName")?.value || "GMT+2"; // e.g. GMT+2
   const m = /GMT([+-])(\d{1,2})/.exec(off);
   const hh = String(m ? m[2] : "2").padStart(2, "0");
-  return new Date(`${ymd}T19:00:00${m ? m[1] : "+"}${hh}:00`);
+  return new Date(`${ymd}T${String(hour).padStart(2, "0")}:00:00${m ? m[1] : "+"}${hh}:00`);
 }
