@@ -423,7 +423,7 @@ export default function FuelTable({ data, lang = "en" }: { data: FuelData; lang?
                           href={s.mapsUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-700 dark:text-blue-400 hover:underline"
+                          className="inline-block py-1 text-blue-700 dark:text-blue-400 hover:underline"
                         >
                           {s.address}
                         </a>
