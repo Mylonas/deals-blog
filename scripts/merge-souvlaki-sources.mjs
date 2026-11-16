@@ -117,9 +117,12 @@ function finalize(v) {
   const prices = {};
   const priceSources = {};
   const items = {}; // which menu item produced each displayed price (for audits)
+  // re-applied here so rule fixes also reach stored data whose menu item is recorded (see "items")
+  const NON_MEAT = /veget|λαχανικ|lebanese|λιβανεζ|falafel|φαλαφελ/i;
   for (const [platform, o] of pool) {
     for (const [cut, price] of Object.entries(o.prices || {})) {
       if (price == null) continue;
+      if (cut.startsWith("mix") && NON_MEAT.test(o.items?.[cut]?.name || "")) continue;
       if (prices[cut] == null || price < prices[cut]) {
         prices[cut] = price;
         priceSources[cut] = platform;
