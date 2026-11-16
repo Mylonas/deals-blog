@@ -2,6 +2,7 @@ import ToolPage from "@/components/ToolPage";
 import FuelTable from "@/components/FuelTable";
 import FuelChart from "@/components/FuelChart";
 import FuelCompare from "@/components/FuelCompare";
+import { SHOW_FUEL_COMPARE } from "@/lib/features";
 import data from "@/data/fuel-prices.json";
 import history from "@/data/fuel-price-history.json";
 
@@ -36,7 +37,7 @@ export default function FuelPricesPage() {
     >
       <FuelTable data={data as any} />
       <FuelChart history={(history as any).history} />
-      <FuelCompare data={data as any} />
+      {SHOW_FUEL_COMPARE && <FuelCompare data={data as any} />}
 
       
     </ToolPage>

@@ -107,6 +107,8 @@ deals-blog/
 >
 > **Paused workflows (2026-11-16):** only `update-public-jobs.yml` is paused (it feeds the hidden jobs page); its `schedule` is commented out and it can still be started by hand with workflow_dispatch. To re-enable it: uncomment its `schedule:`/`cron:` lines and remove `paused: true` from its entry in `scripts/lib/data-checks.mjs` (`paused` entries are skipped by the watchdog and by the 7-day stale alert). The supermarket price and price-history workflows keep running because the supermarket tracker uses their data. The cars data is refreshed by the laptop task and its freshness check is paused while the page is hidden. `update-fuel-prices.yml` is manual-only (the source is CAPTCHA-gated) and the watchdog does not re-dispatch it (`retrigger: false`).
 >
+> **Hidden feature (2026-11-16):** the fuel-station comparison tool (`FuelCompare`, shown under the fuel table) is switched off by `SHOW_FUEL_COMPARE = false` in `src/lib/features.ts`; set it to `true` to show it again in EN, EL and RU. Nothing was deleted.
+>
 > **Data rules (2026-11-16):** rankings and home cards only use venues that are open and items that are orderable, regular (list) prices rather than promo prices, no half portions and no wraps. Each scan records `open` per venue (Wolt `online`, Bolt `is_available_for_delivery`, Foody opening hours) at scan time, `freddoPromo` where a promo price exists, and the merge only lets open platforms set a price. `node scripts/refresh-open-flags.mjs` refreshes just the `open` flags for the stored Wolt/Bolt data (one call per city and platform) and re-merges. Foody must be scanned from a residential IP (GitHub runners get HTTP 403): `node scripts/update-souvlaki-prices-foody.mjs` and `node scripts/update-coffee-prices-foody.mjs`.
 
 ---

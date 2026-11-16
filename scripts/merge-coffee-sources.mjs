@@ -22,7 +22,7 @@
  *   node scripts/merge-coffee-sources.mjs
  */
 import fs from "fs";
-import { openFromCompact } from "./lib/foody-extra.mjs";
+import { openFromCompact, eveningReference } from "./lib/foody-extra.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -102,8 +102,8 @@ export function sameCafe(a, b) {
   return overlap >= MATCH_TOKEN_OVERLAP_NAMEONLY;
 }
 
-// Foody records carry their weekly hours, so "open now" is recomputed at merge time
-const openOf = (v) => (v.hours ? openFromCompact(v.hours) : v.open ?? null);
+// Foody records carry their weekly hours: "normally open" is evaluated at 14:00 Cyprus time (cafes close early) on the day of the merge
+const openOf = (v) => (v.hours ? openFromCompact(v.hours, eveningReference(new Date(), 14)) : v.open ?? null);
 const offerOf = (v) => ({ freddo: v.freddo ?? null, promo: v.freddoPromo ?? null, open: openOf(v) });
 
 /**

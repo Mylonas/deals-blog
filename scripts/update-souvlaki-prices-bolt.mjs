@@ -31,7 +31,7 @@ import fs from "fs";
 import {
   CITIES, normalize,
   PITA_RE, GREEK_RE, MINI_RE, CYPRIOT_RE, LARGE_RE, SIZE_GROUP_RE, NOT_SIZE_VALUE_RE,
-  SMALL_VALUE_RE, REGULAR_VALUE_RE, CUTS, PORKCHOP, PORKCHOP_MIN_CENTS, GREEK_DESC_RE, COMBO_RE, SMALL_DESC_RE, REGULAR_DESC_RE,
+  SMALL_VALUE_RE, REGULAR_VALUE_RE, CUTS, PORKCHOP, PORKCHOP_MIN_CENTS, GREEK_DESC_RE, COMBO_RE, SMALL_DESC_RE, REGULAR_DESC_RE, GYROS_FILLING_DESC_RE,
 } from "./update-souvlaki-prices.mjs";
 import { WOLT_OUT, BOLT_OUT, MERGED_OUT, mergeAndWrite, sameVenue } from "./merge-souvlaki-sources.mjs";
 
@@ -155,6 +155,8 @@ function pittaPrices(dish, catName, items) {
   const pittaGroups = new Set(all.filter((v) => PITA_RE.test(v.name)).map((v) => v.groupName));
   const options = all.filter((v) => SIZE_GROUP_RE.test(v.groupName) || /quantity|ποσοτητ|επιλογ|choose|διαλεξ/.test(v.groupName) || pittaGroups.has(v.groupName));
   const pittaVals = options.filter((v) => PITA_RE.test(v.name) && !GREEK_RE.test(v.name) && !MINI_RE.test(v.name));
+  // a portion / platter is not a pita, even when "pita" is offered as a side option
+  if (/portion|μεριδα|platter|πιατο|plate/.test(n) && !PITA_RE.test(n)) return null;
   const namedPitta = PITA_RE.test(n) || PITA_RE.test(catName);
   if (!namedPitta && !pittaVals.length) return null; // portion-only dish
 
@@ -220,6 +222,7 @@ export function extractBoltCuts(categoryFetches) {
         if (GREEK_RE.test(n) || GREEK_RE.test(catName)) sawGreek = true;
         continue;
       }
+      if (GYROS_FILLING_DESC_RE.test(normalize(it.description?.value || "")) && !CYPRIOT_RE.test(n) && !CYPRIOT_RE.test(catName)) { sawGreek = true; continue; }
       if (GREEK_DESC_RE.test(normalize(it.description?.value || ""))) { sawGreek = true; continue; }
       const pitta = pittaPrices(it, catName, items);
       if (!pitta) continue;
@@ -250,7 +253,7 @@ export function extractBoltCuts(categoryFetches) {
 
 // ── scan ──────────────────────────────────────────────────────────────────────
 
-async function findProviders(city) {
+export async function findProviders(city) {
   const data = await boltFetch("/deliveryClient/public/findProviders", {
     method: "POST",
     body: { filters: [], lat: city.lat, lng: city.lon },
@@ -267,7 +270,7 @@ async function findProviders(city) {
   }));
 }
 
-async function scanVenueMenu(provider, city) {
+export async function scanVenueMenu(provider, city) {
   const gps = { gps_lat: String(city.lat), gps_lng: String(city.lon) };
   const cats = await boltFetch("/deliveryClient/public/getMenuCategories", {
     params: { provider_id: String(provider.provider_id), ...gps },
