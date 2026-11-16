@@ -7,6 +7,7 @@ import coffee from "@/data/coffee-prices.json";
 import souvlaki from "@/data/souvlaki-prices.json";
 import deals from "@/data/supermarket-deals.json";
 import { chainLabel } from "./chains";
+import { placeName } from "./places";
 import { formatEuro, STR, type Lang, type Tool } from "./i18n";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -82,7 +83,7 @@ export function answer(tool: Tool, lang: Lang): Answer | null {
     switch (tool) {
       case "fuel": {
         const st = fuelStations()[0];
-        return st ? { figure: formatEuro(st.price, lang, 3) + s.perLitre, place: `${st.brand}, ${st.district}`, label: s.cardLabel.fuel, updatedAt: (fuel as any).updatedAt, change: fuelChange(lang) } : null;
+        return st ? { figure: formatEuro(st.price, lang, 3) + s.perLitre, place: `${st.brand}, ${placeName(st.district, lang)}`, label: s.cardLabel.fuel, updatedAt: (fuel as any).updatedAt, change: fuelChange(lang) } : null;
       }
       case "supermarket": {
         const d = dealRows()[0];
@@ -117,7 +118,7 @@ export function topThree(tool: Tool, lang: Lang): TopRow[] {
   try {
     switch (tool) {
       case "fuel":
-        return fuelStations().slice(0, 3).map((x: any) => ({ name: x.brand, place: x.district, price: formatEuro(x.price, lang, 3) + STR[lang].perLitre }));
+        return fuelStations().slice(0, 3).map((x: any) => ({ name: x.brand, place: placeName(x.district, lang), price: formatEuro(x.price, lang, 3) + STR[lang].perLitre }));
       case "supermarket":
         return dealRows().slice(0, 3).map((d: any) => ({ name: d.name, place: chainLabel(d.storeIds, lang) ?? "", price: formatEuro(d.price, lang, 2) }));
       case "coffee":
