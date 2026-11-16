@@ -59,6 +59,7 @@ type Strings = {
   homeIntro: string;
   cardLabel: Record<Tool, string>;
   todayTitle: string;
+  mayBeOld: string;
   seeAll: string;
   topThreeTitle: string;
   trust: [string, string, string];
@@ -120,7 +121,8 @@ export const STR: Record<Lang, Strings> = {
     homeTitle: "Cyprus price trackers",
     homeIntro: "Fuel, supermarket, coffee and souvlaki prices across Cyprus, refreshed regularly. Pick a tracker.",
     cardLabel: { fuel: "Unleaded 95", supermarket: "Biggest price drop", coffee: "Freddo espresso", souvlaki: "Souvlaki pita", jobs: "Public jobs" },
-    todayTitle: "Today's cheapest in Cyprus",
+    todayTitle: "Cheapest in Cyprus",
+    mayBeOld: "may be out of date",
     seeAll: "See all prices",
     topThreeTitle: "Cheapest in the latest data",
     trust: ["Official and delivery-platform data", "Refreshed regularly, every price is dated", "Independent, no paid placement"],
@@ -181,7 +183,8 @@ export const STR: Record<Lang, Strings> = {
     homeTitle: "Τιμές στην Κύπρο",
     homeIntro: "Τιμές καυσίμων, σούπερ μάρκετ, καφέ και σουβλακιού στην Κύπρο, με τακτική ενημέρωση. Διαλέξτε εργαλείο.",
     cardLabel: { fuel: "Αμόλυβδη 95", supermarket: "Μεγαλύτερη πτώση", coffee: "Φρέντο εσπρέσο", souvlaki: "Πίτα σουβλάκι", jobs: "Δημόσιες θέσεις" },
-    todayTitle: "Τα φθηνότερα σήμερα στην Κύπρο",
+    todayTitle: "Τα φθηνότερα στην Κύπρο",
+    mayBeOld: "ενδέχεται να είναι παλιά",
     seeAll: "Όλες οι τιμές",
     topThreeTitle: "Φθηνότερα στα τελευταία δεδομένα",
     trust: ["Επίσημα δεδομένα και πλατφόρμες delivery", "Τακτική ενημέρωση, κάθε τιμή έχει ημερομηνία", "Ανεξάρτητο, χωρίς πληρωμένες προβολές"],
@@ -242,7 +245,8 @@ export const STR: Record<Lang, Strings> = {
     homeTitle: "Цены на Кипре",
     homeIntro: "Цены на топливо, супермаркеты, кофе и сувлаки на Кипре, обновляются регулярно. Выберите трекер.",
     cardLabel: { fuel: "Бензин 95", supermarket: "Самое большое снижение", coffee: "Фрэддо эспрессо", souvlaki: "Сувлаки в пите", jobs: "Госвакансии" },
-    todayTitle: "Самое дешёвое сегодня на Кипре",
+    todayTitle: "Самое дешёвое на Кипре",
+    mayBeOld: "может быть устаревшим",
     seeAll: "Все цены",
     topThreeTitle: "Дешевле всего по последним данным",
     trust: ["Официальные данные и платформы доставки", "Регулярное обновление, у каждой цены есть дата", "Независимо, без платного размещения"],
