@@ -125,6 +125,10 @@ function finalize(v) {
   for (const [platform, o] of pool) {
     for (const [cut, price] of Object.entries(o.prices || {})) {
       if (price == null) continue;
+      // a price with no recorded source menu item has not been audited under the current rules
+      if (!o.items?.[cut]) continue;
+      // a generic item whose price hangs on an unreadable "choose size" selector (live page shows a different base price)
+      if (o.items[cut].tier === "generic" && /επίλεξε μέγεθος|choose (?:a )?size|select size/i.test(o.items[cut].desc || "")) continue;
       if (cut.startsWith("mix") && NON_MEAT.test(o.items?.[cut]?.name || "")) continue;
       // a mix with one skewer and only ONE sheftalia is smaller than the standard 1 skewer + 2 sheftalia
       if (cut.startsWith("mix") && /\b1\s*(?:souvlaki\s*)?skewer\s*(?:and|&|\+)\s*1\s*(?:sheftalia|sheftalies|shieftalia)\b/i.test(o.items?.[cut]?.desc || "")) continue;
