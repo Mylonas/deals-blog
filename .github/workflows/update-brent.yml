@@ -1,0 +1,39 @@
+name: Update Brent Crude
+
+# Brent refreshes on its own, daily, from free public sources (Yahoo Finance + ECB rates via
+# frankfurter) - independent of the CAPTCHA-gated pump-price refresh. On any failure the
+# previous src/data/brent.json is kept untouched (see scripts/update-brent.mjs).
+on:
+  schedule:
+    - cron: "20 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write   # needed to dispatch deploy.yml after data update
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Fetch Brent crude
+        run: node scripts/update-brent.mjs
+
+      - name: Commit and push
+        run: |
+          bash scripts/ci/commit-data.sh "chore: update Brent crude $(date +'%Y-%m-%d %H:%M UTC')" \
+            src/data/brent.json
+
+      - name: Trigger Cloudflare redeploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref master

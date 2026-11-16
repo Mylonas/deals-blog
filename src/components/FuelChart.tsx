@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import brentData from "@/data/brent.json";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   Legend, ResponsiveContainer,
@@ -27,6 +28,7 @@ const LABELS = {
     diesel: "Diesel",
     heating: "Heating Oil",
     brent: "Brent Crude (per litre)",
+    brentNow: "Brent crude", brentAsOf: "as of", brentNote: "Daily market price, converted to € per litre. It has its own date and updates separately from the pump prices.",
     viewMin: "Lowest", viewAvg: "Average", viewMax: "Highest",
   },
   el: {
@@ -36,6 +38,7 @@ const LABELS = {
     diesel: "Πετρέλαιο",
     heating: "Πετρέλαιο Θέρμανσης",
     brent: "Αργό Brent (ανά λίτρο)",
+    brentNow: "Αργό Brent", brentAsOf: "στις", brentNote: "Ημερήσια τιμή αγοράς, μετατρεμμένη σε € ανά λίτρο. Έχει δική της ημερομηνία και ενημερώνεται ξεχωριστά από τις τιμές αντλίας.",
     viewMin: "Χαμηλότερη", viewAvg: "Μέση", viewMax: "Υψηλότερη",
   },
   ru: {
@@ -45,6 +48,7 @@ const LABELS = {
     diesel: "Дизель",
     heating: "Печное топливо",
     brent: "Нефть Brent (за литр)",
+    brentNow: "Нефть Brent", brentAsOf: "на", brentNote: "Ежедневная рыночная цена в € за литр. У неё своя дата, и она обновляется отдельно от цен на заправках.",
     viewMin: "Мин.", viewAvg: "Средняя", viewMax: "Макс.",
   },
 };
@@ -57,6 +61,16 @@ const RANGES: { key: string; days: number }[] = [
 ];
 
 const VIEWS: View[] = ["min", "avg", "max"];
+
+// Brent daily series (own daily workflow): value on or before a given day.
+const BRENT_SERIES: { d: string; eurPerLitre: number }[] = brentData.series;
+function brentOn(ts: string): number | null {
+  const day = new Date(ts).toISOString().slice(0, 10);
+  if (!BRENT_SERIES.length || day < BRENT_SERIES[0].d) return null;
+  let v: number | null = null;
+  for (const p of BRENT_SERIES) { if (p.d <= day) v = p.eurPerLitre; else break; }
+  return v;
+}
 
 function formatDate(ts: string) {
   return new Date(ts).toLocaleDateString("en-GB", { day: "numeric", month: "short" });
@@ -80,7 +94,7 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
         diesel:   e.diesel[view],
         heating:  e.heating?.[view] ?? null,
         // crude has no min/avg/max — same value in every view
-        brent:    e.brent ?? null,
+        brent:    brentOn(e.ts) ?? e.brent ?? null,
       }));
   }, [history, days, view]);
 
@@ -189,6 +203,11 @@ export default function FuelChart({ history, lang = "en" }: { history: HistoryEn
           </LineChart>
         </ResponsiveContainer>
       </div>
+      <p className="mt-3 text-sm text-gray-700 dark:text-gray-300" data-testid="brent-line">
+        <strong>{t.brentNow}:</strong> €{brentData.eurPerLitre.toFixed(3)}/L (${brentData.usdPerBarrel.toFixed(2)}/bbl) — {t.brentAsOf}{" "}
+        <time dateTime={brentData.asOf}>{new Date(brentData.asOf + "T12:00:00Z").toLocaleDateString(lang === "el" ? "el-GR" : lang === "ru" ? "ru-RU" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</time>
+      </p>
+      <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">{t.brentNote}</p>
     </div>
   );
 }
