@@ -9,7 +9,7 @@ export default function HomeHub({ lang }: { lang: Lang }) {
     <div>
       <h1 className="text-2xl sm:text-3xl font-bold mb-2">{s.homeTitle}</h1>
       <p className="text-gray-700 dark:text-gray-300 mb-8">{s.homeIntro}</p>
-      <ul className="grid gap-4 grid-cols-1 md:grid-cols-3">
+      <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
         {TOOLS.map((t) => {
           const h = headline(t, lang);
           return (

@@ -38,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // /trends/ is an internal page marked noindex,nofollow; it must not be in the sitemap.
     // Souvlaki is a dedicated page (not a markdown post), so list it here.
     { path: "posts/cheapest-souvlaki-cyprus", langs: LANGS, priority: 0.7 },
+    { path: "posts/cheapest-supermarket-products", langs: LANGS, priority: 0.7 },
   ];
   for (const { path, langs, priority } of shared) {
     for (const lang of langs) {

@@ -3,7 +3,7 @@ import HomeHub from "@/components/HomeHub";
 import { STR } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: { absolute: "Mouxti — Цены на Кипре: топливо, кофе, сувлаки" },
+  title: { absolute: "Mouxti — Цены на Кипре: топливо, супермаркеты, кофе, сувлаки" },
   description: STR.ru.homeDescription,
   alternates: {
     canonical: "/ru/",

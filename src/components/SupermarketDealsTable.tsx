@@ -30,7 +30,8 @@ const T = {
   en: {
     product: "Product", price: "Price", discount: "Discount", category: "Category",
     sortPrice: "Cheapest first", sortDiscount: "Biggest saving", sortName: "A → Z",
-    updated: "Updated", onSale: "On sale", viewAll: "Compare prices →",
+    search: "Search products", noResults: "No products match your search.", results: (n: number) => `${n} products`,
+    updated: "Last updated", onSale: "On sale", viewAll: "Compare prices →",
     trend: "6-month price trend", cheapestAt: "Cheapest at",
     tabSavings: "Biggest savings", tabLows: "All-time lows",
     lowestEver: "Lowest ever", since: "since",
@@ -42,7 +43,8 @@ const T = {
   el: {
     product: "Προϊόν", price: "Τιμή", discount: "Έκπτωση", category: "Κατηγορία",
     sortPrice: "Φθηνότερα πρώτα", sortDiscount: "Μεγαλύτερη έκπτωση", sortName: "Α → Ω",
-    updated: "Ενημέρωση", onSale: "Σε προσφορά", viewAll: "Σύγκριση τιμών →",
+    search: "Αναζήτηση προϊόντων", noResults: "Κανένα προϊόν δεν ταιριάζει με την αναζήτηση.", results: (n: number) => `${n} προϊόντα`,
+    updated: "Τελευταία ενημέρωση", onSale: "Σε προσφορά", viewAll: "Σύγκριση τιμών →",
     trend: "Τάση τιμής 6 μηνών", cheapestAt: "Φθηνότερο στο",
     tabSavings: "Μεγαλύτερες εκπτώσεις", tabLows: "Ιστορικά χαμηλά",
     lowestEver: "Χαμηλότερη τιμή ποτέ", since: "από",
@@ -54,7 +56,8 @@ const T = {
   ru: {
     product: "Продукт", price: "Цена", discount: "Скидка", category: "Категория",
     sortPrice: "Сначала дешевле", sortDiscount: "Наибольшая скидка", sortName: "А → Я",
-    updated: "Обновлено", onSale: "Акция", viewAll: "Сравнить цены →",
+    search: "Поиск товаров", noResults: "Нет товаров, подходящих под запрос.", results: (n: number) => `${n} товаров`,
+    updated: "Последнее обновление", onSale: "Акция", viewAll: "Сравнить цены →",
     trend: "Динамика цены за 6 месяцев", cheapestAt: "Дешевле всего в",
     tabSavings: "Лучшие скидки", tabLows: "Исторический минимум",
     lowestEver: "Минимум за всё время", since: "с",
@@ -105,6 +108,7 @@ export default function SupermarketDealsTable({
 }: { deals: Deal[]; allTimeLows?: Deal[]; nearLows?: Deal[]; lang: Lang; updatedAt: string }) {
   const [tab, setTab] = useState<Tab>("savings");
   const [sort, setSort] = useState<SortKey>("discount");
+  const [q, setQ] = useState("");
   const t = T[lang];
 
   // Fresh ATLs first, then near-lows (which carry discountPct 0, so the
@@ -112,12 +116,16 @@ export default function SupermarketDealsTable({
   const active = tab === "savings" ? deals : [...allTimeLows, ...nearLows];
 
   const sorted = useMemo(() => {
-    return [...active].sort((a, b) => {
+    const needle = q.trim().toLowerCase();
+    const list = needle
+      ? active.filter((d) => (d.name + " " + d.category + " " + d.categoryEl + " " + d.categoryRu).toLowerCase().includes(needle))
+      : active;
+    return [...list].sort((a, b) => {
       if (sort === "price") return a.price - b.price;
       if (sort === "discount") return b.discountPct - a.discountPct;
       return a.name.localeCompare(b.name);
     });
-  }, [active, sort]);
+  }, [active, sort, q]);
 
   const updated = new Date(updatedAt).toLocaleString(
     lang === "en" ? "en-GB" : lang === "el" ? "el-GR" : "ru-RU",
@@ -131,8 +139,10 @@ export default function SupermarketDealsTable({
         {(["savings", "lows"] as Tab[]).map((k) => (
           <button
             key={k}
+            type="button"
+            aria-pressed={tab === k}
             onClick={() => setTab(k)}
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
+            className={`min-h-[44px] px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
               tab === k
                 ? "bg-amber-700 text-white"
                 : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -147,6 +157,19 @@ export default function SupermarketDealsTable({
         <p className="mb-5 text-sm text-gray-600 dark:text-gray-400">{t.lowsIntro}</p>
       )}
 
+      {/* Search */}
+      <div className="mb-4">
+        <label htmlFor="sm-search" className="block text-sm font-medium mb-1">{t.search}</label>
+        <input
+          id="sm-search"
+          type="search"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          className="w-full min-h-[44px] rounded-lg border border-gray-400 dark:border-gray-500 bg-white dark:bg-gray-900 px-3"
+        />
+        <p className="mt-1 text-xs text-gray-600 dark:text-gray-400" aria-live="polite">{t.results(sorted.length)}</p>
+      </div>
+
       {/* Sort controls */}
       <div className="flex items-center gap-2 mb-5 flex-wrap">
         <span className="text-sm text-gray-600 dark:text-gray-400 mr-1">
@@ -155,8 +178,10 @@ export default function SupermarketDealsTable({
         {(["price", "discount", "name"] as SortKey[]).map((key) => (
           <button
             key={key}
+            type="button"
+            aria-pressed={sort === key}
             onClick={() => setSort(key)}
-            className={`px-3 py-1 text-sm rounded-full border transition-colors ${
+            className={`min-h-[44px] px-3 py-1 text-sm rounded-full border transition-colors ${
               sort === key
                 ? "bg-amber-700 text-white border-amber-700"
                 : "border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
@@ -169,6 +194,10 @@ export default function SupermarketDealsTable({
           {t.updated}: {updated}
         </span>
       </div>
+
+      {sorted.length === 0 && q && (
+        <p className="text-sm text-gray-600 dark:text-gray-400 py-8 text-center">{t.noResults}</p>
+      )}
 
       {/* Empty state for the lows tab */}
       {tab === "lows" && sorted.length === 0 && (
@@ -191,7 +220,7 @@ export default function SupermarketDealsTable({
               {deal.thumbnailUrl && (
                 <img
                   src={deal.thumbnailUrl}
-                  alt={deal.name}
+                  alt=""
                   width={48}
                   height={48}
                   className="rounded-lg object-contain flex-shrink-0 bg-gray-50 dark:bg-gray-800"
