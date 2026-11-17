@@ -36,7 +36,13 @@ $repo = if ($env:DEALS_BLOG_REPO) { $env:DEALS_BLOG_REPO } else { 'C:\Users\mikm
 Set-Location $repo
 
 $log = Join-Path $repo 'scripts\ci\local-daily.log'
-function Log($m) { "$(Get-Date -Format o)  $m" | Tee-Object -FilePath $log -Append | Out-Null }
+# The log is UTF-8. (Tee-Object / Out-File in Windows PowerShell 5.1 default to UTF-16, which reads as
+# spaced-out characters in most tools.) An old UTF-16 log is moved aside once so the file never mixes encodings.
+if (Test-Path $log) {
+  $head = [System.IO.File]::ReadAllBytes($log) | Select-Object -First 2
+  if ($head.Count -ge 2 -and $head[0] -eq 0xFF -and $head[1] -eq 0xFE) { Move-Item -Force $log ($log + '.utf16.old') }
+}
+function Log($m) { Add-Content -Path $log -Value "$(Get-Date -Format o)  $m" -Encoding UTF8 }
 
 $script:changed = $false
 $script:failures = @()
@@ -142,7 +148,25 @@ Step 'cars' {
   } else { Restore $files }
 }
 
+# The Foody scans drive a headless Chromium. Playwright expects one exact browser build for the installed
+# version; if it is missing (a dependency bump, or the cache was cleaned) every Foody scan dies with
+# "Executable doesn't exist" (that happened on 2026-11-17). Check first, install if needed, and say so in the log.
+function EnsurePlaywright {
+  & node scripts/ci/check-playwright.mjs 2>&1 | ForEach-Object { Log "  pw: $_" }
+  if ($LASTEXITCODE -eq 0) { return $true }
+  Log 'Playwright browser missing or unusable - installing chromium (node node_modules/playwright/cli.js install chromium)'
+  & node node_modules/playwright/cli.js install chromium 2>&1 | ForEach-Object { Log "  pw-install: $_" }
+  & node scripts/ci/check-playwright.mjs 2>&1 | ForEach-Object { Log "  pw: $_" }
+  if ($LASTEXITCODE -eq 0) { Log 'Playwright browser installed and verified'; return $true }
+  Log 'ERROR: Playwright browser still unusable after install'
+  $script:failures += 'playwright browser'
+  return $false
+}
+$script:pwOk = $null
+
 Step 'foody-souvlaki' {
+  if ($null -eq $script:pwOk) { $script:pwOk = EnsurePlaywright }
+  if (-not $script:pwOk) { throw 'Playwright browser unavailable - skipping the Foody scans' }
   # Foody blocks GitHub's runners (HTTP 403 on its sitemap), so this is the only path that
   # produces real Foody data. The script exits non-zero when discovery is blocked, in
   # which case nothing is committed.
@@ -153,6 +177,7 @@ Step 'foody-souvlaki' {
 }
 
 Step 'foody-coffee' {
+  if (-not $script:pwOk) { throw 'Playwright browser unavailable - skipping the Foody scans' }
   $files = @('src/data/coffee-prices-foody.json', 'src/data/coffee-prices.json', 'src/data/history/coffee')
   if (ScrapeNode 'Foody coffee' 'scripts/update-coffee-prices-foody.mjs') {
     CommitIf $files "chore: update coffee prices from Foody (local) $today"
