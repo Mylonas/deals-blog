@@ -15,7 +15,7 @@ export const TOOLS: readonly Tool[] = ["fuel", "supermarket", "coffee", "souvlak
 
 // URL path (no leading/trailing slash) of each tool, identical in every language.
 export const TOOL_PATH: Record<Tool, string> = {
-  fuel: "posts/cheapest-petrol-stations-cyprus",
+  fuel: "fuel-prices-cyprus",
   supermarket: "posts/cheapest-supermarket-products",
   coffee: "posts/cheapest-coffee-nicosia",
   souvlaki: "posts/cheapest-souvlaki-cyprus",

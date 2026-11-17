@@ -36,7 +36,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "privacy", langs: LANGS, priority: 0.3 },
     { path: "terms", langs: LANGS, priority: 0.3 },
     // /trends/ is an internal page marked noindex,nofollow; it must not be in the sitemap.
-    // Souvlaki is a dedicated page (not a markdown post), so list it here.
+    // Dedicated tool pages (not markdown posts).
+    { path: "fuel-prices-cyprus", langs: LANGS, priority: 0.9 },
     { path: "posts/cheapest-souvlaki-cyprus", langs: LANGS, priority: 0.7 },
     { path: "posts/cheapest-supermarket-products", langs: LANGS, priority: 0.7 },
   ];
@@ -45,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: pageUrl(lang, path),
         lastModified: now,
-        changeFrequency: path === "" || path === "jobs" ? "daily" : "monthly",
+        changeFrequency: path === "" || path === "jobs" || path === "fuel-prices-cyprus" ? "daily" : "monthly",
         priority,
         alternates: alternates(langs, path),
       });

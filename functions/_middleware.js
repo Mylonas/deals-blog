@@ -34,6 +34,12 @@ export function onRequest(context) {
       headers: { "Cache-Control": "no-store", "Content-Type": "text/plain; charset=utf-8", "X-Robots-Tag": "noindex" },
     });
   }
+  // Old fuel-page URL → new canonical URL (301).
+  const fuelRe = /^(\/(?:el\/|ru\/)?)posts\/cheapest-petrol-stations-cyprus\/?$/;
+  const fm = url.pathname.match(fuelRe);
+  if (fm) {
+    return Response.redirect("https://mouxti.com" + fm[1] + "fuel-prices-cyprus/" + url.search, 301);
+  }
   if (/^\/(?:el\/|ru\/)?jobs\/?$/.test(url.pathname)) {
     return new Response("Not found", {
       status: 404,
