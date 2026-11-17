@@ -10,7 +10,7 @@ pinned: true
 Мы отслеживаем цены на Фреддо Эспрессо в кафе по всему Кипру — Никосия, Лимасол, Ларнака, Пафос и район Айя-Напы — и показываем самые дешёвые места в каждом городе. Цены берутся из Wolt, Bolt Food и Foody — для каждого кафе показана самая дешёвая платформа — и обновляются каждые 2 дня.
 
 <!-- COFFEE_PRICES_START -->
-*Цены последний раз проверены: 17 нояб. 2026 г., 03:16 (EET). Обновляется каждые 2 дня через Wolt, Bolt Food и Foody.*
+*Цены последний раз проверены: 17 нояб. 2026 г., 10:05 (EET). Обновляется каждые 2 дня через Wolt, Bolt Food и Foody.*
 
 ## Фреддо Эспрессо — Самые дешёвые по городам
 
@@ -754,7 +754,7 @@ pinned: true
 
 ## Самые Популярные Напитки по Кафе (Никосия)
 
-*Популярные напитки — последнее обновление: 15 нояб. 2026 г., 15:05.*
+*Популярные напитки — последнее обновление: 17 нояб. 2026 г., 10:05.*
 
 ### Coffeeway
 
@@ -830,11 +830,7 @@ pinned: true
 
 | Напиток | Цена | Источник |
 |------|-------|--------|
-| Freddo Espresso | €2.95 | Wolt |
-| Freddo Cappuccino | €3.15 | Wolt |
-| Iced Latte | €3.35 | Wolt |
-| Iced Signature Latte | €3.60 | Wolt |
-| Iced Americano | €2.50 | Wolt |
+| Freddo Espresso 14oz | €3.00 | Wolt |
 
 ### Costa Coffee
 
@@ -903,7 +899,7 @@ pinned: true
 |------|-------|--------|
 | Freddo Espresso | €2.80 | Wolt |
 | Freddo Cappuccino | €3.30 | Wolt |
-| Iced Latte | €3.30 | Wolt |
+| Iced Latte | €3.03 | Wolt |
 | Iced Latte Macchiato | €3.30 | Wolt |
 | Iced Americano | €2.80 | Wolt |
 
@@ -971,10 +967,9 @@ pinned: true
 
 | Напиток | Цена | Источник |
 |------|-------|--------|
-| Local Water | €1.70 | Wolt |
-| Perrier Sparkling Water | €3.80 | Wolt |
-| Ice Tea Peach | €3.80 | Wolt |
-| Ice Tea Lemon | €3.80 | Wolt |
-| Coca Cola | €3.20 | Wolt |
-| Freddo Espresso | €4.20 | Wolt |
+| Freddo Espresso | €3.30 | Wolt |
+| Freddo Cappuccino | €3.50 | Wolt |
+| Iced Americano | €3.20 | Wolt |
+| Frappé | €3.00 | Wolt |
+| Iced Latte | €3.50 | Wolt |
 <!-- COFFEE_PRICES_END -->

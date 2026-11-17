@@ -10,7 +10,7 @@ pinned: true
 Παρακολουθούμε τις τιμές Freddo Espresso σε καφετέριες σε όλη την Κύπρο — Λευκωσία, Λεμεσό, Λάρνακα, Πάφο και την περιοχή Αγίας Νάπας — και δείχνουμε τα φθηνότερα μέρη σε κάθε πόλη. Οι τιμές προέρχονται από Wolt, Bolt Food και Foody — για κάθε καφετέρια εμφανίζεται η φθηνότερη πλατφόρμα — και ενημερώνονται κάθε 2 ημέρες.
 
 <!-- COFFEE_PRICES_START -->
-*Τελευταία ενημέρωση: 17 Νοε 2026, 03:16 π.μ. (ΕΕΤ). Ενημέρωση κάθε 2 ημέρες μέσω Wolt, Bolt Food και Foody.*
+*Τελευταία ενημέρωση: 17 Νοε 2026, 10:05 π.μ. (ΕΕΤ). Ενημέρωση κάθε 2 ημέρες μέσω Wolt, Bolt Food και Foody.*
 
 ## Freddo Espresso — Φθηνότερα ανά Πόλη
 
@@ -754,7 +754,7 @@ pinned: true
 
 ## Πιο Δημοφιλή Ποτά ανά Καφετέρια (Λευκωσία)
 
-*Δημοφιλή ποτά — τελευταία συλλογή: 15 Νοε 2026, 03:05 μ.μ..*
+*Δημοφιλή ποτά — τελευταία συλλογή: 17 Νοε 2026, 10:05 π.μ..*
 
 ### Coffeeway
 
@@ -830,11 +830,7 @@ pinned: true
 
 | Ποτό | Τιμή | Πηγή |
 |------|-------|--------|
-| Freddo Espresso | €2.95 | Wolt |
-| Freddo Cappuccino | €3.15 | Wolt |
-| Iced Latte | €3.35 | Wolt |
-| Iced Signature Latte | €3.60 | Wolt |
-| Iced Americano | €2.50 | Wolt |
+| Freddo Espresso 14oz | €3.00 | Wolt |
 
 ### Costa Coffee
 
@@ -903,7 +899,7 @@ pinned: true
 |------|-------|--------|
 | Freddo Espresso | €2.80 | Wolt |
 | Freddo Cappuccino | €3.30 | Wolt |
-| Iced Latte | €3.30 | Wolt |
+| Iced Latte | €3.03 | Wolt |
 | Iced Latte Macchiato | €3.30 | Wolt |
 | Iced Americano | €2.80 | Wolt |
 
@@ -971,10 +967,9 @@ pinned: true
 
 | Ποτό | Τιμή | Πηγή |
 |------|-------|--------|
-| Local Water | €1.70 | Wolt |
-| Perrier Sparkling Water | €3.80 | Wolt |
-| Ice Tea Peach | €3.80 | Wolt |
-| Ice Tea Lemon | €3.80 | Wolt |
-| Coca Cola | €3.20 | Wolt |
-| Freddo Espresso | €4.20 | Wolt |
+| Freddo Espresso | €3.30 | Wolt |
+| Freddo Cappuccino | €3.50 | Wolt |
+| Iced Americano | €3.20 | Wolt |
+| Frappé | €3.00 | Wolt |
+| Iced Latte | €3.50 | Wolt |
 <!-- COFFEE_PRICES_END -->
