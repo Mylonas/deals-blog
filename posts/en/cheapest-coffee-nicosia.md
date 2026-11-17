@@ -10,7 +10,7 @@ pinned: true
 We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Limassol, Larnaca, Paphos and the Ayia Napa area — and show the cheapest places in each city. Prices come from Wolt, Bolt Food and Foody listings — each café shows its cheapest platform — and are updated every 2 days.
 
 <!-- COFFEE_PRICES_START -->
-*Prices last checked: 17 Nov 2026, 03:16 (EET). Updated every 2 days via Wolt, Bolt Food and Foody.*
+*Prices last checked: 17 Nov 2026, 10:05 (EET). Updated every 2 days via Wolt, Bolt Food and Foody.*
 
 ## Freddo Espresso — Cheapest by City
 
@@ -754,7 +754,7 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 
 ## Most Popular Drinks by Café (Nicosia)
 
-*Top drinks last scraped: 15 Nov 2026, 15:05.*
+*Top drinks last scraped: 17 Nov 2026, 10:05.*
 
 ### Coffeeway
 
@@ -830,11 +830,7 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 
 | Drink | Price | Source |
 |------|-------|--------|
-| Freddo Espresso | €2.95 | Wolt |
-| Freddo Cappuccino | €3.15 | Wolt |
-| Iced Latte | €3.35 | Wolt |
-| Iced Signature Latte | €3.60 | Wolt |
-| Iced Americano | €2.50 | Wolt |
+| Freddo Espresso 14oz | €3.00 | Wolt |
 
 ### Costa Coffee
 
@@ -903,7 +899,7 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 |------|-------|--------|
 | Freddo Espresso | €2.80 | Wolt |
 | Freddo Cappuccino | €3.30 | Wolt |
-| Iced Latte | €3.30 | Wolt |
+| Iced Latte | €3.03 | Wolt |
 | Iced Latte Macchiato | €3.30 | Wolt |
 | Iced Americano | €2.80 | Wolt |
 
@@ -971,10 +967,9 @@ We track Freddo Espresso prices at cafés across all of Cyprus — Nicosia, Lima
 
 | Drink | Price | Source |
 |------|-------|--------|
-| Local Water | €1.70 | Wolt |
-| Perrier Sparkling Water | €3.80 | Wolt |
-| Ice Tea Peach | €3.80 | Wolt |
-| Ice Tea Lemon | €3.80 | Wolt |
-| Coca Cola | €3.20 | Wolt |
-| Freddo Espresso | €4.20 | Wolt |
+| Freddo Espresso | €3.30 | Wolt |
+| Freddo Cappuccino | €3.50 | Wolt |
+| Iced Americano | €3.20 | Wolt |
+| Frappé | €3.00 | Wolt |
+| Iced Latte | €3.50 | Wolt |
 <!-- COFFEE_PRICES_END -->
