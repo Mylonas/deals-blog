@@ -303,5 +303,14 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
 
   checkpoint();
   console.log(`\nWrote ${data.cities.reduce((n, c) => n + c.venues.length, 0)} Foody gap venues → ${FOODY_OUT}`);
+  // Shrink guard: a stall or rate limit mid-run must not silently shrink the published set. Under 85% of the
+  // previous run's count means the scan is incomplete: fail the step (the laptop task then restores the files and
+  // commits nothing, so the last complete scan stays live) and log the shortfall.
+  const nowCount = data.cities.reduce((n, c) => n + c.venues.length, 0);
+  const prevCount = (prev.cities || []).reduce((n, c) => n + (c.venues?.length ?? 0), 0);
+  if (!carriedForward && prevCount >= 20 && nowCount < prevCount * 0.85) {
+    console.log(`✗ SHORTFALL: ${nowCount} Foody venues vs ${prevCount} in the previous run (${Math.round((nowCount / prevCount) * 100)}% < 85%) - not merging; set FOODY_ALLOW_SHRINK=1 to accept`);
+    if (process.env.FOODY_ALLOW_SHRINK !== "1") { process.exitCode = 1; process.exit(1); }
+  }
   mergeAndWrite();
 }
