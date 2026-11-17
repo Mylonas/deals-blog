@@ -16,10 +16,10 @@ pinned: false
 
 | Προϊόν | Φθηνότερη Τιμή | Μάρκα |
 |---------|---------|--------|
-| Φρέσκο Γάλα 1L | **[€1.37](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
+| Φρέσκο Γάλα 1L | **[€2.66](https://www.e-kalathi.gov.cy/product-information/31)** | Charalambides |
 | Αβγά | **[€3.89](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
 | Χαλλούμι 200g | **[€1.99](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
-| Σπαγγέτι 500g | **[€0.89](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
+| Σπαγγέτι 500g | **[€0.95](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Ελαιόλαδο 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
 | Νερό 1.5L ×6 | **[€1.99](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
 | Γιαούρτι 450g | **[€1.95](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
