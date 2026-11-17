@@ -97,6 +97,7 @@ export async function discoverFoodyVenues(request, { cuisineRe, onlyCities = nul
   const byCity = new Map();
   const seen = new Set(); // canonical URL per city, to drop chain duplicates
   let done = 0;
+  const failed = []; // brand pages that failed both attempts (outage window / rate limit) - retried below, never silently dropped
 
   const fetchOne = async ({ url, cityKey }) => {
     let body = null;
@@ -107,7 +108,7 @@ export async function discoverFoodyVenues(request, { cuisineRe, onlyCities = nul
       } catch {}
     }
     if (++done % 250 === 0) console.log(`  … ${done}/${jobs.length} brand pages checked`);
-    if (body == null) return;
+    if (body == null) { failed.push({ url, cityKey }); return; }
 
     const title = body.match(/<title>([^<]*)<\/title>/)?.[1];
     const parsed = title && parseBrandTitle(title);
@@ -131,6 +132,18 @@ export async function discoverFoodyVenues(request, { cuisineRe, onlyCities = nul
     while (next < jobs.length) await fetchOne(jobs[next++]);
   };
   await Promise.all(Array.from({ length: concurrency }, worker));
+
+  // a stall mid-run (seen 17 Nov: ~250 pages lost in a 7-minute window = 59 souvlaki venues) used to drop those
+  // pages silently; retry them in slow passes until none are left or a pass makes no progress
+  for (let pass = 1; pass <= 3 && failed.length; pass++) {
+    const retry = failed.splice(0);
+    console.log(`  retrying ${retry.length} failed brand pages (pass ${pass})`);
+    await new Promise((r) => setTimeout(r, 15000 * pass));
+    let i = 0;
+    await Promise.all(Array.from({ length: 3 }, async () => { while (i < retry.length) await fetchOne(retry[i++]); }));
+    if (failed.length >= retry.length) break;
+  }
+  if (failed.length) console.log(`  WARNING: ${failed.length} brand pages still unreachable after retries`);
 
   for (const [city, venues] of byCity) console.log(`  ${city}: ${venues.length} ${cuisineRe} venues on Foody`);
   return byCity;
