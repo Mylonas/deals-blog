@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T08:56:58.109Z",
+  "updatedAt": "2026-11-17T10:09:34.472Z",
   "cities": [
     {
       "key": "nicosia",
@@ -9,6 +9,59 @@
         "ru": "Никосия"
       },
       "venues": [
+        {
+          "name": "Souvlakia Antonis",
+          "slug": "souvlakia-antonis-2000451116",
+          "url": "https://www.foody.com.cy/delivery/leykosia/souvlakia-antonis-2000451116",
+          "lat": 35.148832,
+          "lng": 33.201866,
+          "prices": {
+            "porkchop": 13,
+            "souvlaki": 5.5,
+            "mix": 5.5,
+            "chicken": 5.5
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "closed",
+            "Saturday": "closed"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Jumbo Pork Chop Portion",
+              "cat": "Portion",
+              "desc": "Served with fried potatoes, tomato, cucumber, crab, onion, parsley and lemon",
+              "price": 13
+            },
+            "souvlaki": {
+              "name": "Pork souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 5.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix Cypriot Pork",
+              "cat": "Cypriot pita",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 5.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 5.5,
+              "tier": "cypriot"
+            }
+          }
+        },
         {
           "name": "Taverna To Odofragma",
           "slug": "taverna-to-odofragma",
@@ -51,6 +104,68 @@
               "cat": "Cypriot Pitta",
               "desc": "Regular pita includes 3 skewers and large pita 4 skewers",
               "price": 6.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "To Stenorymi",
+          "slug": "to-stenorymi",
+          "url": "https://www.foody.com.cy/delivery/leykosia/to-stenorymi",
+          "lat": 35.153434,
+          "lng": 33.396676,
+          "prices": {
+            "souvlaki": 6.9,
+            "chicken": 8,
+            "chickenLarge": 9,
+            "mix": 6.9,
+            "mixLarge": 7.9
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "18:30-23:00",
+            "Tuesday": "18:30-23:00",
+            "Wednesday": "18:30-23:00",
+            "Thursday": "18:30-23:00",
+            "Friday": "18:30-23:00",
+            "Saturday": "18:30-23:00"
+          },
+          "items": {
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Grill Meals",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 6.9,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Grill Meals",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Grill Meals",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Grill Meals",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 6.9,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Grill Meals",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 7.9,
               "tier": "cypriot"
             }
           }
@@ -263,6 +378,287 @@
               "cat": "Popular",
               "desc": "The regular includes 3 skewers and the large includes 4",
               "price": 7.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Taverna Mavrikios",
+          "slug": "taverna-mayrikios",
+          "url": "https://www.foody.com.cy/delivery/leykosia/taverna-mayrikios",
+          "lat": 35.155385,
+          "lng": 33.389871,
+          "prices": {
+            "porkchop": 11,
+            "souvlaki": 7,
+            "mix": 7,
+            "chicken": 8
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "19:00-23:00",
+            "Tuesday": "19:00-23:00",
+            "Wednesday": "19:00-23:00",
+            "Thursday": "19:00-23:00",
+            "Friday": "19:00-23:00",
+            "Saturday": "19:00-23:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "850g",
+              "price": 11
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Cypriot pita with pork souvlaki & Mom's sheftalies. 100% Cypriot, 100% yummy",
+              "price": 7,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "I Gefsi",
+          "slug": "i-geysi",
+          "url": "https://www.foody.com.cy/delivery/leykosia/i-geysi",
+          "lat": 35.150452,
+          "lng": 33.398014,
+          "prices": {
+            "porkchop": 11,
+            "mix": 7,
+            "souvlaki": 7,
+            "souvlakiLarge": 8,
+            "chicken": 7.5,
+            "chickenLarge": 8.5,
+            "mixLarge": 8
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "18:30-22:30",
+            "Tuesday": "18:30-22:30",
+            "Wednesday": "18:30-22:30",
+            "Thursday": "18:30-22:30",
+            "Friday": "18:30-22:30",
+            "Saturday": "18:30-22:30"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Portion",
+              "desc": "Served with French fries, salad and Cypriot pita",
+              "price": 11
+            },
+            "mix": {
+              "name": "Pork Souvlaki and Sheftalia Regular Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 7,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Regular Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Large Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Regular Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Large Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Large Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Stou Manoli",
+          "slug": "stoy-manoli",
+          "url": "https://www.foody.com.cy/delivery/leykosia/stoy-manoli",
+          "lat": 35.132679,
+          "lng": 33.359276,
+          "prices": {
+            "porkchop": 12,
+            "mix": 7,
+            "souvlaki": 7,
+            "chicken": 7.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "17:30-22:30",
+            "Monday": "17:30-22:30",
+            "Tuesday": "17:30-22:30",
+            "Wednesday": "17:30-22:30",
+            "Thursday": "17:30-22:30",
+            "Friday": "17:30-22:30",
+            "Saturday": "17:30-22:30"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Portion",
+              "desc": "Served with French fries and salad",
+              "price": 12
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Tomato, cucumber, onion, parsley",
+              "price": 7,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Tomato, cucumber, onion, parsley",
+              "price": 7,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Tomato, cucumber, onion, parsley",
+              "price": 7.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "OVELIX PALLOURIOTISSA",
+          "slug": "oveliks-palloyriotissa",
+          "url": "https://www.foody.com.cy/delivery/leykosia/oveliks-palloyriotissa",
+          "lat": 35.178455,
+          "lng": 33.375801,
+          "prices": {
+            "porkchop": 14,
+            "souvlaki": 7.2,
+            "chicken": 7.2
+          },
+          "source": "foody",
+          "open": true,
+          "hours": {
+            "Sunday": "11:30-22:30",
+            "Monday": "11:30-22:30",
+            "Tuesday": "11:30-22:30",
+            "Wednesday": "11:30-22:30",
+            "Thursday": "11:30-22:30",
+            "Friday": "11:30-22:30",
+            "Saturday": "11:30-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Portion",
+              "desc": "Tzatziki, potatoes, salad, Cypriot pita",
+              "price": 14
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Tomato, onion, lettuce, cucumber, cabbage",
+              "price": 7.2,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Tomato, onion, lettuce, cucumber, cabbage",
+              "price": 7.2,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Taverna I Plateia Mas",
+          "slug": "taverna-i-plateia-mas-2000828326",
+          "url": "https://www.foody.com.cy/delivery/leykosia/taverna-i-plateia-mas-2000828326",
+          "lat": 35.173989,
+          "lng": 33.203816,
+          "prices": {
+            "porkchop": 14,
+            "souvlaki": 7.3,
+            "chicken": 7.4,
+            "mix": 7.3
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "17:30-22:30",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "17:30-22:30",
+            "Thursday": "17:30-22:30",
+            "Friday": "17:30-22:30",
+            "Saturday": "17:30-22:30"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork chop portion",
+              "cat": "Portion",
+              "desc": "Accompanied by cabbage, tomato, cucumber, onion, parsley, French fries & pita",
+              "price": 14
+            },
+            "souvlaki": {
+              "name": "Pork skewer in Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Pork souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 7.3,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki in Cypriot Pita",
+              "cat": "Cypriot pita",
+              "desc": "Chicken souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 7.4,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix pork in Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Cypriot Pita Mix - Pork with Ingredients of Your Choice",
+              "price": 7.3,
               "tier": "cypriot"
             }
           }
@@ -528,6 +924,105 @@
           }
         },
         {
+          "name": "To Mikro Lottoudi",
+          "slug": "to-mikro-lottoydi-2000508979",
+          "url": "https://www.foody.com.cy/delivery/leykosia/to-mikro-lottoydi-2000508979",
+          "lat": 35.129475,
+          "lng": 33.349823,
+          "prices": {
+            "porkchop": 13,
+            "souvlaki": 7.5,
+            "mix": 7.5,
+            "chicken": 8.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "17:45-22:30",
+            "Tuesday": "17:45-22:30",
+            "Wednesday": "17:45-22:30",
+            "Thursday": "17:45-22:30",
+            "Friday": "17:45-22:30",
+            "Saturday": "17:45-22:30"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "",
+              "price": 13
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Taverna Marigo",
+          "slug": "taverna-marigo-2000474590",
+          "url": "https://www.foody.com.cy/delivery/leykosia/taverna-marigo-2000474590",
+          "lat": 35.14856,
+          "lng": 33.376905,
+          "prices": {
+            "souvlaki": 7.5,
+            "chicken": 8.5,
+            "mix": 8
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "19:00-22:30",
+            "Tuesday": "19:00-22:30",
+            "Wednesday": "19:00-22:30",
+            "Thursday": "19:00-22:30",
+            "Friday": "19:00-22:25",
+            "Saturday": "19:00-22:30"
+          },
+          "items": {
+            "souvlaki": {
+              "name": "Pork souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Pork souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Chicken souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix Cypriot Pork",
+              "cat": "Cypriot pita",
+              "desc": "Cypriot Pita Mix - Pork with Ingredients of Your Choice",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "I gonia tis Aretousas",
           "slug": "i-gonia-tis-aretoysas-2000299928",
           "url": "https://www.foody.com.cy/delivery/leykosia/i-gonia-tis-aretoysas-2000299928",
@@ -711,6 +1206,490 @@
           }
         },
         {
+          "name": "Filias 70 - To parko",
+          "slug": "filias-70-to-parko",
+          "url": "https://www.foody.com.cy/delivery/leykosia/filias-70-to-parko",
+          "lat": 35.072174,
+          "lng": 33.332825,
+          "prices": {
+            "porkchop": 11.5,
+            "souvlaki": 7.5,
+            "mix": 7.5,
+            "chicken": 8
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "17:30-22:30",
+            "Tuesday": "17:30-22:30",
+            "Wednesday": "17:30-22:30",
+            "Thursday": "17:30-22:30",
+            "Friday": "17:30-22:30",
+            "Saturday": "17:30-22:30"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "",
+              "price": 11.5
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Sygchrono Magkali",
+          "slug": "sygchrono-magkali",
+          "url": "https://www.foody.com.cy/delivery/leykosia/sygchrono-magkali",
+          "lat": 35.066074,
+          "lng": 33.387512,
+          "prices": {
+            "porkchop": 12,
+            "souvlaki": 7.5,
+            "mix": 7.5,
+            "souvlakiLarge": 8.5,
+            "chicken": 7.5,
+            "mixLarge": 8.5,
+            "chickenLarge": 8.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "10:40-22:00",
+            "Tuesday": "17:30-22:00",
+            "Wednesday": "17:30-22:00",
+            "Thursday": "17:30-22:00",
+            "Friday": "17:30-22:00",
+            "Saturday": "17:30-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "",
+              "price": 12
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "I Gonia tou Anastasi",
+          "slug": "i-gonia-toy-anastasi",
+          "url": "https://www.foody.com.cy/delivery/leykosia/i-gonia-toy-anastasi",
+          "lat": 35.071953,
+          "lng": 33.322952,
+          "prices": {
+            "porkchop": 12.5,
+            "mix": 7.5,
+            "souvlaki": 7.5,
+            "chicken": 8,
+            "mixLarge": 9,
+            "souvlakiLarge": 9,
+            "chickenLarge": 9.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "18:00-22:00",
+            "Monday": "closed",
+            "Tuesday": "18:00-22:00",
+            "Wednesday": "18:00-22:00",
+            "Thursday": "18:00-22:00",
+            "Friday": "18:00-22:20",
+            "Saturday": "18:00-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop",
+              "cat": "Popular",
+              "desc": "With fries & salad",
+              "price": 12.5
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Tomato, cucumber, cabbage, parsley",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Tomato, cucumber, cabbage, parsley",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Tomato, cucumber, cabbage, parsley",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Tomato, cucumber, cabbage, parsley",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Tomato, cucumber, cabbage, parsley",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Tomato, cucumber, cabbage, parsley",
+              "price": 9.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Psitopoleio Geriou",
+          "slug": "psitopoleio-gerioy",
+          "url": "https://www.foody.com.cy/delivery/leykosia/psitopoleio-gerioy",
+          "lat": 35.104802,
+          "lng": 33.413555,
+          "prices": {
+            "porkchop": 13,
+            "souvlaki": 7.5,
+            "chicken": 8.5,
+            "mix": 7.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "18:00-22:00",
+            "Tuesday": "18:00-22:00",
+            "Wednesday": "18:00-22:00",
+            "Thursday": "18:00-22:00",
+            "Friday": "18:00-22:00",
+            "Saturday": "18:00-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Portion",
+              "desc": "850g",
+              "price": 13
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 7.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Souvlaki House",
+          "slug": "souvlaki-house",
+          "url": "https://www.foody.com.cy/delivery/leykosia/souvlaki-house",
+          "lat": 35.131486,
+          "lng": 33.326903,
+          "prices": {
+            "porkchop": 13,
+            "souvlaki": 7.5,
+            "mix": 7.5,
+            "chicken": 7.5,
+            "souvlakiLarge": 8.5,
+            "mixLarge": 8.5,
+            "chickenLarge": 8.5
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "closed",
+            "Saturday": "closed"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Grilled Pork Chop 500g Portion",
+              "cat": "Popular",
+              "desc": "",
+              "price": 13
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Parsley, cabbage, tomato, cucumber, onion",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Parsley, cabbage, tomato, cucumber, onion",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Parsley, cabbage, tomato, cucumber, onion",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Parsley, cabbage, tomato, cucumber, onion",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Parsley, cabbage, tomato, cucumber, onion",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Grill Meals",
+              "desc": "Parsley, cabbage, tomato, cucumber, onion",
+              "price": 8.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "To Souvlaki tou Poupa",
+          "slug": "to-soyvlaki-toy-poypa",
+          "url": "https://www.foody.com.cy/delivery/leykosia/to-soyvlaki-toy-poypa",
+          "lat": 35.142899,
+          "lng": 33.342888,
+          "prices": {
+            "porkchop": 13.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 8.5,
+            "chicken": 8.5,
+            "mix": 7.5,
+            "mixLarge": 8.5,
+            "chickenLarge": 9.5
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "closed",
+            "Saturday": "11:30-14:15"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "Approximately 750gr. With french fries, salad & pita",
+              "price": 13.5
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Parsley, tomato, cucumber, onion, pickles, lemon",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Parsley, tomato, cucumber, onion, pickles, lemon",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Parsley, tomato, cucumber, onion, pickles, lemon",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Parsley, tomato, cucumber, onion, pickles, lemon",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Parsley, tomato, cucumber, onion, pickles, lemon",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Parsley, tomato, cucumber, onion, pickles, lemon",
+              "price": 9.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Taverna I Foinitzia",
+          "slug": "taverna-i-foinitzia",
+          "url": "https://www.foody.com.cy/delivery/leykosia/taverna-i-foinitzia",
+          "lat": 35.177185,
+          "lng": 33.371082,
+          "prices": {
+            "mix": 7.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "chicken": 7.5,
+            "chickenLarge": 8.5,
+            "mixLarge": 8.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "17:30-22:00",
+            "Tuesday": "17:30-22:00",
+            "Wednesday": "17:30-22:00",
+            "Thursday": "17:30-22:00",
+            "Friday": "17:30-22:00",
+            "Saturday": "17:30-22:00"
+          },
+          "items": {
+            "mix": {
+              "name": "Chicken Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι κοτόπουλο και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Chicken Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Kυπριακή πίτα με σουβλάκι κοτόπουλο και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 8.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Nostimies N&P Anthoupoli",
           "slug": "nostimies-nkaip-anthoupoli-2000266031",
           "url": "https://www.foody.com.cy/delivery/leykosia/nostimies-nkaip-anthoupoli-2000266031",
@@ -723,7 +1702,7 @@
             "chicken": 8.25
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "17:00-21:15",
             "Monday": "closed",
@@ -759,6 +1738,136 @@
               "cat": "Popular",
               "desc": "Regular pita includes 2 skewers and large 3 skewers",
               "price": 8.25,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Souvlakia Lampros",
+          "slug": "soyvlakia-lampros",
+          "url": "https://www.foody.com.cy/delivery/leykosia/soyvlakia-lampros",
+          "lat": 35.174633,
+          "lng": 33.348129,
+          "prices": {
+            "porkchop": 13,
+            "souvlaki": 7.8,
+            "chicken": 8,
+            "mix": 7.9
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "11:45-14:45",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "closed",
+            "Saturday": "closed"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork chop portion",
+              "cat": "Popular",
+              "desc": "700g. Served with potatoes, salad and pita bread",
+              "price": 13
+            },
+            "souvlaki": {
+              "name": "Pork skewer regular",
+              "cat": "Cypriot pita",
+              "desc": "The Cypriot Pita contains 16 pieces of souvlaki and the Large Cypriot Pita includes 20 pieces of souvlaki",
+              "price": 7.8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki regular",
+              "cat": "Cypriot pita",
+              "desc": "Fresh chicken thigh without marinade. The Cypriot Pita contains 9 pieces of souvlaki and the Large one contains 12 pieces of souvlaki",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Regular pork mix",
+              "cat": "Cypriot pita",
+              "desc": "The Cypriot Pita contains 8 pieces of souvlaki and 4 skewers and the Large Cypriot Pita contains 12 pieces of souvlaki and 4 skewers",
+              "price": 7.9,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "OBELISCOS (OVELIX LAKATAMIA)",
+          "slug": "obeliscos-oveliks-lakatamia",
+          "url": "https://www.foody.com.cy/delivery/leykosia/obeliscos-oveliks-lakatamia",
+          "lat": 35.09689,
+          "lng": 33.295223,
+          "prices": {
+            "porkchop": 12,
+            "mix": 8,
+            "chicken": 8,
+            "souvlaki": 7.8,
+            "souvlakiLarge": 9,
+            "chickenLarge": 9.5,
+            "mixLarge": 9
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "12:30-21:50",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "12:30-21:50",
+            "Thursday": "12:30-21:50",
+            "Friday": "12:30-21:50",
+            "Saturday": "12:30-21:50"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "(800g.-1 kg)",
+              "price": 12
+            },
+            "mix": {
+              "name": "Souvlaki Mix Cypriot Pita",
+              "cat": "Popular",
+              "desc": "2 pork souvlaki and 3 sheftalia",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.8,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Mix Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Kυπριακή πίτα με σουβλάκι κοτόπουλο και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 9,
               "tier": "cypriot"
             }
           }
@@ -829,7 +1938,7 @@
             "chicken": 8.5
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "closed",
             "Monday": "11:30-15:00",
@@ -1376,7 +2485,7 @@
             "mix": 8
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:30-22:20",
             "Monday": "closed",
@@ -1677,6 +2786,493 @@
           }
         },
         {
+          "name": "Taverna i Mastorka",
+          "slug": "taverna-i-mastorka",
+          "url": "https://www.foody.com.cy/delivery/leykosia/taverna-i-mastorka",
+          "lat": 35.114464,
+          "lng": 33.288586,
+          "prices": {
+            "porkchop": 15,
+            "mix": 8,
+            "souvlaki": 8,
+            "chicken": 8.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "closed",
+            "Tuesday": "18:00-22:30",
+            "Wednesday": "18:00-22:30",
+            "Thursday": "18:00-22:30",
+            "Friday": "18:00-22:30",
+            "Saturday": "18:00-22:30"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "800-850g",
+              "price": 15
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Cypriot pita includes 2 skewers and 3 sheftalies and large pita includes 3 skewers and 3 sheftalies",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Regular pita includes 3 skewers, large includes 4",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Regular includes 2 skewers, large includes 3",
+              "price": 8.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Taverna Fragkolina",
+          "slug": "taverna-fragkolina-1492",
+          "url": "https://www.foody.com.cy/delivery/leykosia/taverna-fragkolina-1492",
+          "lat": 35.181435,
+          "lng": 33.386112,
+          "prices": {
+            "porkchop": 12,
+            "souvlaki": 8,
+            "chicken": 8,
+            "mix": 8
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "17:45-23:00",
+            "Tuesday": "18:15-23:00",
+            "Wednesday": "18:15-23:00",
+            "Thursday": "18:15-23:00",
+            "Friday": "18:00-23:00",
+            "Saturday": "18:15-23:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Jumbo Enhanced Portion",
+              "cat": "Portion",
+              "desc": "",
+              "price": 12
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Regular pita includes 3 skewers souvlaki and large pita includes 4 skewers souvlaki",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Regular pita includes 2 double skewers and large pita includes 3 double skewers",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Regular pita includes 2 skewers and 3 sheftalia and large pita includes 3 skewers and 3 sheftalia",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Alexis to Paradosiako Souvlaki",
+          "slug": "aleksis-to-paradosiako-soyvlaki",
+          "url": "https://www.foody.com.cy/delivery/leykosia/aleksis-to-paradosiako-soyvlaki",
+          "lat": 35.110306,
+          "lng": 33.423256,
+          "prices": {
+            "porkchop": 12,
+            "souvlaki": 8,
+            "souvlakiLarge": 9,
+            "chicken": 9,
+            "mix": 8,
+            "mixLarge": 9,
+            "chickenLarge": 10
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "18:00-22:00",
+            "Monday": "closed",
+            "Tuesday": "18:00-22:00",
+            "Wednesday": "18:00-22:00",
+            "Thursday": "18:00-22:00",
+            "Friday": "18:00-22:00",
+            "Saturday": "18:00-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Giant Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "",
+              "price": 12
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "3 pork souvlaki skewers",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "4 pork souvlaki skewers",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Alexis Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "3 chicken souvlaki skewers",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Cypriot pita includes 2 skewers of pork souvlaki and 3 sheftalia and the large includes 3 skewers and 3 sheftalia",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "3 pork souvlaki skewers and 3 sheftalia",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Alexis Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "4 chicken souvlaki skewers",
+              "price": 10,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Tavernaki Filippos",
+          "slug": "tavernaki-filippos",
+          "url": "https://www.foody.com.cy/delivery/leykosia/tavernaki-filippos",
+          "lat": 35.149776,
+          "lng": 33.339268,
+          "prices": {
+            "porkchop": 15,
+            "souvlakiLarge": 9,
+            "souvlaki": 8,
+            "chicken": 9,
+            "mixLarge": 9,
+            "chickenLarge": 10,
+            "mix": 8
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "18:30-22:00",
+            "Tuesday": "18:30-22:00",
+            "Wednesday": "18:30-22:00",
+            "Thursday": "18:30-22:00",
+            "Friday": "18:30-22:00",
+            "Saturday": "18:30-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "Served with French fries and salad",
+              "price": 15
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Grill Meals",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Grill Meals",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Lysiotiki Souvla Pais",
+          "slug": "lysiotiki-soyvla-pais",
+          "url": "https://www.foody.com.cy/delivery/leykosia/lysiotiki-soyvla-pais",
+          "lat": 35.155994,
+          "lng": 33.355244,
+          "prices": {
+            "souvlaki": 8,
+            "mix": 8
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "11:00-15:00",
+            "Monday": "closed",
+            "Tuesday": "18:00-22:30",
+            "Wednesday": "18:00-22:30",
+            "Thursday": "18:00-22:30",
+            "Friday": "18:00-22:30",
+            "Saturday": "18:00-22:30"
+          },
+          "items": {
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Grill Meals",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Grill Meals",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Chasapotaverna Fae-Pkie",
+          "slug": "chasapotaverna-fae-pkie",
+          "url": "https://www.foody.com.cy/delivery/leykosia/chasapotaverna-fae-pkie",
+          "lat": 35.105522,
+          "lng": 33.41301,
+          "prices": {
+            "porkchop": 12.5,
+            "souvlaki": 8
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "17:15-22:15",
+            "Tuesday": "17:15-22:15",
+            "Wednesday": "17:15-22:15",
+            "Thursday": "17:15-22:15",
+            "Friday": "17:15-22:15",
+            "Saturday": "17:15-22:15"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop 900g Portion",
+              "cat": "Popular",
+              "desc": "Accompanied by Cypriot pita, fried potatoes and salad",
+              "price": 12.5
+            },
+            "souvlaki": {
+              "name": "Pork souvlaki Cypriot pita",
+              "cat": "Popular",
+              "desc": "Cypriot pita includes 3 skewers and large pita includes 4 skewers",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Souvlaki Brothers",
+          "slug": "souvlaki-brothers",
+          "url": "https://www.foody.com.cy/delivery/leykosia/souvlaki-brothers",
+          "lat": 35.017492,
+          "lng": 33.409436,
+          "prices": {
+            "porkchop": 13.5,
+            "souvlaki": 8,
+            "mix": 8.5,
+            "chicken": 8.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "18:00-22:00",
+            "Tuesday": "18:00-22:00",
+            "Wednesday": "18:00-22:00",
+            "Thursday": "18:00-22:00",
+            "Friday": "closed",
+            "Saturday": "closed"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "Jumbo steak, potatoes, rice, salad",
+              "price": 13.5
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Narkissos",
+          "slug": "narkissos-618",
+          "url": "https://www.foody.com.cy/delivery/leykosia/narkissos-618",
+          "lat": 35.145486,
+          "lng": 33.342266,
+          "prices": {
+            "souvlaki": 8,
+            "chicken": 9,
+            "mix": 8
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "closed",
+            "Tuesday": "17:30-22:00",
+            "Wednesday": "17:30-22:00",
+            "Thursday": "17:30-22:00",
+            "Friday": "17:30-22:00",
+            "Saturday": "17:30-22:00"
+          },
+          "items": {
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "O Xylofournos",
+          "slug": "o-ksylofoyrnos",
+          "url": "https://www.foody.com.cy/delivery/leykosia/o-ksylofoyrnos",
+          "lat": 35.179924,
+          "lng": 33.384094,
+          "prices": {
+            "porkchop": 12,
+            "souvlaki": 8,
+            "chicken": 8,
+            "mix": 8
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "17:30-22:00",
+            "Tuesday": "17:30-22:00",
+            "Wednesday": "17:30-22:00",
+            "Thursday": "17:30-22:00",
+            "Friday": "17:30-22:00",
+            "Saturday": "17:30-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Portion",
+              "desc": "French fries, pita, tomato, cucumber, onion, parsley, lemon",
+              "price": 12
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Onion, tomato, cucumber, parsley, lemon",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Onion, tomato, cucumber, parsley, lemon",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Chicken Mix Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Onion, tomato, cucumber, parsley, lemon",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Mixgrill Dinos (Onisilos Lakatamia)",
           "slug": "mix-grill-dinos",
           "url": "https://www.foody.com.cy/delivery/leykosia/mix-grill-dinos",
@@ -1734,7 +3330,7 @@
             "chicken": 8.5
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:30-23:15",
             "Monday": "11:30-23:15",
@@ -1912,6 +3508,105 @@
           }
         },
         {
+          "name": "To Stavrodromi tis Lizas",
+          "slug": "to-stayrodromi-tis-lizas-2000513846",
+          "url": "https://www.foody.com.cy/delivery/leykosia/to-stayrodromi-tis-lizas-2000513846",
+          "lat": 35.014675,
+          "lng": 33.395256,
+          "prices": {
+            "porkchop": 14,
+            "souvlaki": 8.5,
+            "chicken": 9,
+            "mix": 10.5
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "closed",
+            "Saturday": "closed"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork chops",
+              "cat": "Popular",
+              "desc": "Served with garnish of your choice",
+              "price": 14
+            },
+            "souvlaki": {
+              "name": "Pork skewer Cypriot pita",
+              "cat": "Popular",
+              "desc": "Cypriot pita pork souvlaki with the ingredients of your choice",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pita",
+              "cat": "Popular",
+              "desc": "Cypriot pita chicken souvlaki with the ingredients of your choice",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix Chicken Cypriot Pita",
+              "cat": "Cypriot pita",
+              "desc": "Cypriot Pita Mix with Chicken and Your Choice of Ingredients",
+              "price": 10.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Souvlakia Leoforos",
+          "slug": "souvlakia-leoforos-2000505506",
+          "url": "https://www.foody.com.cy/delivery/leykosia/souvlakia-leoforos-2000505506",
+          "lat": 35.01887,
+          "lng": 33.41743,
+          "prices": {
+            "souvlaki": 8.5,
+            "chicken": 9,
+            "mix": 8.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "19:00-22:00",
+            "Monday": "18:00-22:00",
+            "Tuesday": "18:00-22:00",
+            "Wednesday": "18:00-22:00",
+            "Thursday": "18:00-22:00",
+            "Friday": "18:00-22:00",
+            "Saturday": "18:00-22:00"
+          },
+          "items": {
+            "souvlaki": {
+              "name": "Pork souvlaki in Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki in Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix pork in Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "",
+              "price": 8.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Silas Grill House",
           "slug": "silas-grilled-house",
           "url": "https://www.foody.com.cy/delivery/leykosia/silas-grilled-house",
@@ -1960,6 +3655,59 @@
               "cat": "Popular",
               "desc": "The pie contains 3 pcs",
               "price": 9,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "MEGAS ALEXANDROS",
+          "slug": "megas-aleksandros",
+          "url": "https://www.foody.com.cy/delivery/leykosia/megas-aleksandros",
+          "lat": 35.168358,
+          "lng": 33.328888,
+          "prices": {
+            "porkchop": 17,
+            "souvlaki": 8.6,
+            "chicken": 8.6,
+            "mix": 8.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "12:00-23:00",
+            "Monday": "12:00-23:00",
+            "Tuesday": "12:00-23:00",
+            "Wednesday": "12:00-23:00",
+            "Thursday": "11:30-23:00",
+            "Friday": "12:00-23:00",
+            "Saturday": "12:00-23:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Grill Meals",
+              "desc": "",
+              "price": 17
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.6,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Grill Meals",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.6,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Grill Meals",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 8.5,
               "tier": "cypriot"
             }
           }
@@ -2071,6 +3819,136 @@
           }
         },
         {
+          "name": "Choices",
+          "slug": "choices",
+          "url": "https://www.foody.com.cy/delivery/leykosia/choices",
+          "lat": 35.161594,
+          "lng": 33.317692,
+          "prices": {
+            "porkchop": 14,
+            "souvlaki": 9,
+            "souvlakiLarge": 10.5,
+            "chicken": 9.5,
+            "mix": 9,
+            "mixLarge": 10.5,
+            "chickenLarge": 11
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "12:00-22:30",
+            "Tuesday": "12:00-22:30",
+            "Wednesday": "12:00-22:30",
+            "Thursday": "12:00-22:30",
+            "Friday": "12:00-22:30",
+            "Saturday": "12:00-22:30"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "Served with garnish of your choice and salad",
+              "price": 14
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Served with cabbage, tomato, cucumber, onion and parsley",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Served with cabbage, tomato, cucumber, onion and parsley",
+              "price": 10.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Served with cabbage, tomato, cucumber, onion and parsley",
+              "price": 9.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Served with cabbage, tomato, cucumber, onion and parsley",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Served with cabbage, tomato, cucumber, onion and parsley",
+              "price": 10.5,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pita",
+              "desc": "Served with cabbage, tomato, cucumber, onion and parsley",
+              "price": 11,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Foul tou Meze",
+          "slug": "foyl-toy-meze",
+          "url": "https://www.foody.com.cy/delivery/leykosia/foyl-toy-meze",
+          "lat": 35.177746,
+          "lng": 33.334641,
+          "prices": {
+            "porkchop": 14.5,
+            "souvlaki": 9,
+            "mix": 9,
+            "chicken": 9.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "18:30-22:30",
+            "Tuesday": "18:30-22:30",
+            "Wednesday": "18:30-22:30",
+            "Thursday": "18:30-22:30",
+            "Friday": "18:30-22:30",
+            "Saturday": "18:30-22:30"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "",
+              "price": 14.5
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Lihoudis Grill House",
           "slug": "lihoudis-grill-house-2000739572",
           "url": "https://www.foody.com.cy/delivery/leykosia/lihoudis-grill-house-2000739572",
@@ -2087,7 +3965,7 @@
           "hours": {
             "Sunday": "12:00-22:30",
             "Monday": "closed",
-            "Tuesday": "12:00-22:30",
+            "Tuesday": "16:00-22:30",
             "Wednesday": "16:00-22:30",
             "Thursday": "16:00-22:30",
             "Friday": "16:00-22:30",
@@ -2177,6 +4055,83 @@
           }
         },
         {
+          "name": "To Steki tis Scharas",
+          "slug": "to-steki-tis-scharas",
+          "url": "https://www.foody.com.cy/delivery/leykosia/to-steki-tis-scharas",
+          "lat": 35.1666,
+          "lng": 33.35905,
+          "prices": {
+            "porkchop": 16.8,
+            "souvlaki": 9.6,
+            "mix": 10.8,
+            "mixLarge": 12,
+            "souvlakiLarge": 12,
+            "chicken": 10.2,
+            "chickenLarge": 13.2
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "12:00-16:00",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "closed",
+            "Saturday": "closed"
+          },
+          "items": {
+            "porkchop": {
+              "name": "38. Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "",
+              "price": 16.8
+            },
+            "souvlaki": {
+              "name": "50. Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "",
+              "price": 9.6,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "53. Pork Souvlaki and Sheftalia Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 10.8,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "53. Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Pork souvlaki and sheftalia in a delicious serving that will fill you up before the first bite!",
+              "price": 12,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "50. Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "",
+              "price": 12,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "51. Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 10.2,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "51. Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Grill Meals",
+              "desc": "",
+              "price": 13.2,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "The Big Bad Wolf",
           "slug": "the-big-bad-wolf",
           "url": "https://www.foody.com.cy/delivery/menu/the-big-bad-wolf",
@@ -2232,7 +4187,7 @@
             "mix": 7.9
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:30-22:30",
             "Monday": "11:30-22:30",
@@ -2254,6 +4209,36 @@
               "cat": "Popular",
               "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
               "price": 7.9,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Alektor",
+          "slug": "alektor-2000442901",
+          "url": "https://www.foody.com.cy/delivery/leykosia/alektor-2000442901",
+          "lat": 35.136324,
+          "lng": 33.352613,
+          "prices": {
+            "chicken": 9.99
+          },
+          "source": "foody",
+          "open": true,
+          "hours": {
+            "Sunday": "11:00-23:00",
+            "Monday": "11:00-23:00",
+            "Tuesday": "11:00-23:00",
+            "Wednesday": "11:00-23:00",
+            "Thursday": "11:00-23:00",
+            "Friday": "11:00-23:00",
+            "Saturday": "11:00-23:00"
+          },
+          "items": {
+            "chicken": {
+              "name": "Alektor Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Marinated for 18 hours in yogurt with lemon juice and garlic",
+              "price": 9.99,
               "tier": "cypriot"
             }
           }
@@ -2284,6 +4269,43 @@
               "cat": "Chicken",
               "desc": "Our secret marinated Thai chicken on a skewer with vegetables, pita, cucumber, chopped cabbage, onion, parsley, lemon",
               "price": 8.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "To Moschato",
+          "slug": "to-moschato",
+          "url": "https://www.foody.com.cy/delivery/leykosia/to-moschato",
+          "lat": 35.169258,
+          "lng": 33.373306,
+          "prices": {
+            "porkchop": 17.5,
+            "mix": 8.15
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "closed",
+            "Saturday": "closed"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop 800g Portion",
+              "cat": "Popular",
+              "desc": "Gigas",
+              "price": 17.5
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Choice of 1 skewer of pork souvlaki - 2 sheftalies or 2 skewers of pork souvlaki with 3 sheftalies",
+              "price": 8.15,
               "tier": "cypriot"
             }
           }
@@ -2364,7 +4386,7 @@
             "mix": 5.5
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:00-17:00",
             "Monday": "11:00-15:00",
@@ -2584,7 +4606,7 @@
             "mix": 6.5
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:00-22:30",
             "Monday": "11:00-22:30",
@@ -2619,6 +4641,52 @@
               "name": "Pork Mix Souvlaki Cypriot Pita",
               "cat": "Cypriot Pitta",
               "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 6.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Tandoori Kebab House",
+          "slug": "tandoori-kebab-house",
+          "url": "https://www.foody.com.cy/delivery/lemesos/tandoori-kebab-house",
+          "lat": 34.693672,
+          "lng": 33.06514,
+          "prices": {
+            "souvlaki": 6.5,
+            "mix": 6.5,
+            "chicken": 6.5
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "closed",
+            "Saturday": "closed"
+          },
+          "items": {
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 6.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 6.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
               "price": 6.5,
               "tier": "cypriot"
             }
@@ -2672,6 +4740,83 @@
               "name": "Mix pork in Cypriot pita",
               "cat": "Cypriot pita",
               "desc": "Cypriot pita mix pork (1 pork souvlaki & 1 sheftalia) with your choice of ingredients",
+              "price": 7,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Pit Stop",
+          "slug": "pit-stop-by-katerina",
+          "url": "https://www.foody.com.cy/delivery/lemesos/pit-stop-by-katerina",
+          "lat": 34.709934,
+          "lng": 33.075962,
+          "prices": {
+            "porkchop": 15.5,
+            "souvlaki": 7,
+            "mix": 7,
+            "souvlakiLarge": 9,
+            "mixLarge": 9,
+            "chickenLarge": 9,
+            "chicken": 7
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "closed",
+            "Saturday": "closed"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "",
+              "price": 15.5
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita Regular",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Regular",
+              "cat": "Popular",
+              "desc": "Pork souvlaki and sheftalia in a delicious serving that will fill you up before the first bite!",
+              "price": 7,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita Regular",
+              "cat": "Grill Meals",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
               "price": 7,
               "tier": "cypriot"
             }
@@ -2777,6 +4922,59 @@
           }
         },
         {
+          "name": "Food Parking",
+          "slug": "food-parking-2000505967",
+          "url": "https://www.foody.com.cy/delivery/lemesos/food-parking-2000505967",
+          "lat": 34.668323,
+          "lng": 32.909641,
+          "prices": {
+            "porkchop": 15.5,
+            "souvlaki": 7.5,
+            "chicken": 7.5,
+            "mix": 8
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "17:00-22:00",
+            "Tuesday": "17:00-22:00",
+            "Wednesday": "17:00-22:00",
+            "Thursday": "17:00-22:00",
+            "Friday": "17:00-22:00",
+            "Saturday": "17:00-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork chop portion",
+              "cat": "Portion",
+              "desc": "800g. Served with fries, salad, and sauce of your choice",
+              "price": 15.5
+            },
+            "souvlaki": {
+              "name": "Pork souvlaki Cypriot pita",
+              "cat": "Popular",
+              "desc": "Pork souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Chicken souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Souvlaki Mix",
+              "cat": "Cypriot pita",
+              "desc": "Pork souvlaki with sheftalia",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "To souvlaki tis Lofou",
           "slug": "to-soyvlaki-tis-lofoy",
           "url": "https://www.foody.com.cy/delivery/lemesos/to-soyvlaki-tis-lofoy",
@@ -2854,6 +5052,314 @@
           }
         },
         {
+          "name": "To souvlaki tis Myroforas",
+          "slug": "to-soyvlaki-tis-myroforas",
+          "url": "https://www.foody.com.cy/delivery/lemesos/to-soyvlaki-tis-myroforas",
+          "lat": 34.687901,
+          "lng": 32.961419,
+          "prices": {
+            "porkchop": 16,
+            "souvlaki": 7.5,
+            "mix": 7.5,
+            "chicken": 8,
+            "mixLarge": 10,
+            "souvlakiLarge": 10,
+            "chickenLarge": 10
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "17:30-22:30",
+            "Tuesday": "17:30-22:30",
+            "Wednesday": "17:30-22:30",
+            "Thursday": "13:35-22:30",
+            "Friday": "17:30-22:30",
+            "Saturday": "17:30-22:30"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "750g - Comes with French fries, salad, and 1 Cypriot pita",
+              "price": 16
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 10,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "4 Grill",
+          "slug": "4-grill",
+          "url": "https://www.foody.com.cy/delivery/lemesos/4-grill",
+          "lat": 34.666096,
+          "lng": 33.004051,
+          "prices": {
+            "porkchop": 15.5,
+            "chicken": 8.5,
+            "souvlaki": 7.5,
+            "mixLarge": 9,
+            "souvlakiLarge": 9,
+            "chickenLarge": 10,
+            "mix": 7.5
+          },
+          "source": "foody",
+          "open": true,
+          "hours": {
+            "Sunday": "12:00-22:30",
+            "Monday": "closed",
+            "Tuesday": "12:00-22:30",
+            "Wednesday": "12:00-22:30",
+            "Thursday": "12:00-22:30",
+            "Friday": "12:00-22:30",
+            "Saturday": "12:00-22:30"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Grill Meals",
+              "desc": "",
+              "price": 15.5
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Grill Meals",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Grill Meals",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Grill Meals",
+              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
+              "price": 7.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Souvlakia To Aftomato",
+          "slug": "soyvlakia-to-aytomato",
+          "url": "https://www.foody.com.cy/delivery/lemesos/soyvlakia-to-aytomato",
+          "lat": 34.700935,
+          "lng": 33.038834,
+          "prices": {
+            "porkchop": 15,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "chicken": 8,
+            "mix": 7.5,
+            "mixLarge": 9,
+            "chickenLarge": 9.5
+          },
+          "source": "foody",
+          "open": true,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "11:30-22:20",
+            "Tuesday": "11:30-22:20",
+            "Wednesday": "11:30-22:20",
+            "Thursday": "11:30-22:20",
+            "Friday": "11:30-22:20",
+            "Saturday": "17:00-22:20"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "",
+              "price": 15
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita Regular",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita Regular",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Regular",
+              "cat": "Popular",
+              "desc": "Pork souvlaki and sheftalia in a delicious serving that will fill you up before the first bite!",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Peri tis Ousias Mezedakia",
+          "slug": "peri-tis-oysias-mezedakia",
+          "url": "https://www.foody.com.cy/delivery/lemesos/peri-tis-oysias-mezedakia",
+          "lat": 34.69297,
+          "lng": 32.998348,
+          "prices": {
+            "porkchop": 14,
+            "chicken": 7.5,
+            "mix": 7.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 10,
+            "chickenLarge": 10,
+            "mixLarge": 10
+          },
+          "source": "foody",
+          "open": true,
+          "hours": {
+            "Sunday": "11:00-22:00",
+            "Monday": "11:00-22:00",
+            "Tuesday": "11:00-22:00",
+            "Wednesday": "11:00-22:00",
+            "Thursday": "11:00-22:00",
+            "Friday": "11:00-22:00",
+            "Saturday": "11:00-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "",
+              "price": 14
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita Regular",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Regular",
+              "cat": "Popular",
+              "desc": "Pork souvlaki and sheftalia in a delicious serving that will fill you up before the first bite!",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita Regular",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Pork souvlaki and sheftalia in a delicious serving that will fill you up before the first bite!",
+              "price": 10,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Caesar Souvlaki",
           "slug": "caesar-souvlaki-2000825622",
           "url": "https://www.foody.com.cy/delivery/lemesos/caesar-souvlaki-2000825622",
@@ -2866,7 +5372,7 @@
             "mix": 8
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:00-23:00",
             "Monday": "closed",
@@ -3286,7 +5792,7 @@
             "chickenLarge": 11
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:00-22:45",
             "Monday": "11:00-22:45",
@@ -3348,6 +5854,59 @@
           }
         },
         {
+          "name": "Dimitris Grill",
+          "slug": "dimitris-grill",
+          "url": "https://www.foody.com.cy/delivery/lemesos/dimitris-grill",
+          "lat": 34.699087,
+          "lng": 33.045806,
+          "prices": {
+            "porkchop": 17,
+            "souvlaki": 8,
+            "mix": 8,
+            "chicken": 8
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "closed",
+            "Saturday": "closed"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "Served with pita, salad and French fries",
+              "price": 17
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Kanata Tavern",
           "slug": "kanata-tavern-2000677379",
           "url": "https://www.foody.com.cy/delivery/lemesos/kanata-tavern-2000677379",
@@ -3396,6 +5955,141 @@
               "cat": "Cypriot pita",
               "desc": "Cypriot pita chicken souvlaki with the ingredients of your choice",
               "price": 9,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "To Kypriakon",
+          "slug": "to-kypriakon",
+          "url": "https://www.foody.com.cy/delivery/lemesos/to-kypriakon",
+          "lat": 34.67063,
+          "lng": 33.042473,
+          "prices": {
+            "porkchop": 15.9,
+            "souvlaki": 8.4
+          },
+          "source": "foody",
+          "open": true,
+          "hours": {
+            "Sunday": "12:00-22:00",
+            "Monday": "12:00-22:00",
+            "Tuesday": "12:00-22:00",
+            "Wednesday": "12:00-22:00",
+            "Thursday": "12:00-22:00",
+            "Friday": "12:00-22:00",
+            "Saturday": "12:00-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "Pork chop cooked on the wood grill. Served with salad, Greek pita, fresh French fries and sauce",
+              "price": 15.9
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Pork kebab, tomato, cucumber, onion and fresh French fries",
+              "price": 8.4,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Sxaratos",
+          "slug": "sxaratos-2000492911",
+          "url": "https://www.foody.com.cy/delivery/lemesos/sxaratos-2000492911",
+          "lat": 34.674519,
+          "lng": 33.014627,
+          "prices": {
+            "porkchop": 14.5,
+            "chicken": 8.5,
+            "souvlaki": 8.5,
+            "mix": 8.5
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "18:00-24:00",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "12:00-01:00",
+            "Friday": "18:00-24:00",
+            "Saturday": "12:00-24:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork chop portion",
+              "cat": "Portion",
+              "desc": "Served with onion-tomato salad, french fries & Cypriot pie",
+              "price": 14.5
+            },
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pie",
+              "cat": "Cypriot pitas",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Cypriot pitas",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix pork Cypriot pie",
+              "cat": "Cypriot pitas",
+              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
+              "price": 8.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "I ThRAKA (gefseis Ellados)",
+          "slug": "i-thraka-geyseis-ellados",
+          "url": "https://www.foody.com.cy/delivery/menu/i-thraka-geyseis-ellados",
+          "lat": 34.676109,
+          "lng": 33.046277,
+          "prices": {
+            "porkchop": 14.5,
+            "souvlaki": 8.5,
+            "chicken": 8.5
+          },
+          "source": "foody",
+          "open": true,
+          "hours": {
+            "Sunday": "11:30-23:15",
+            "Monday": "11:30-23:15",
+            "Tuesday": "11:30-23:15",
+            "Wednesday": "11:30-23:15",
+            "Thursday": "11:30-23:15",
+            "Friday": "11:30-23:15",
+            "Saturday": "11:30-23:15"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork chops portion",
+              "cat": "Portion",
+              "desc": "2 Pieces. Served with fries and salad (tomato, cucumber, and onion)",
+              "price": 14.5
+            },
+            "souvlaki": {
+              "name": "Grilled pork souvlaki Cypriot",
+              "cat": "Cypriot pita",
+              "desc": "Cypriot Pita Pork Souvlaki (2 pcs x 120g) with your choice of ingredients",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Grilled chicken souvlaki Cypriot",
+              "cat": "Cypriot pita",
+              "desc": "Cypriot Pita Souvlaki Chicken (2 pcs x 120g) with your choice of ingredients",
+              "price": 8.5,
               "tier": "cypriot"
             }
           }
@@ -3606,6 +6300,52 @@
           }
         },
         {
+          "name": "To Cheiropoiito",
+          "slug": "to-cheiropoiito-2000505684",
+          "url": "https://www.foody.com.cy/delivery/lemesos/to-cheiropoiito-2000505684",
+          "lat": 34.688203,
+          "lng": 32.96148,
+          "prices": {
+            "chicken": 8.95,
+            "souvlaki": 8.95,
+            "mix": 8.95
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "12:00-22:10",
+            "Monday": "12:00-22:10",
+            "Tuesday": "closed",
+            "Wednesday": "12:00-22:10",
+            "Thursday": "12:00-22:10",
+            "Friday": "12:00-22:10",
+            "Saturday": "12:00-22:10"
+          },
+          "items": {
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pita",
+              "cat": "Popular",
+              "desc": "Chicken souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 8.95,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork souvlaki Cypriot pita",
+              "cat": "Popular",
+              "desc": "Pork souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 8.95,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Kontosouvli Mix Cypriot",
+              "cat": "Cypriot pita",
+              "desc": "Cypriot Pita Kontosouvli Mix with Your Choice of Ingredients",
+              "price": 8.95,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "TSITSIS O AKTYPITOS",
           "slug": "tsitsis-o-aktypitos-2000619548",
           "url": "https://www.foody.com.cy/delivery/lemesos/tsitsis-o-aktypitos-2000619548",
@@ -3743,36 +6483,6 @@
           }
         },
         {
-          "name": "Mpaxes Taverna ( Mpaxes Taverna )",
-          "slug": "mpaxes-taverna-2000558302",
-          "url": "https://www.foody.com.cy/delivery/lemesos/mpaxes-taverna-2000558302",
-          "lat": 34.711491,
-          "lng": 33.023766,
-          "prices": {
-            "mix": 7.5
-          },
-          "source": "foody",
-          "open": null,
-          "hours": {
-            "Sunday": "closed",
-            "Monday": "closed",
-            "Tuesday": "closed",
-            "Wednesday": "closed",
-            "Thursday": "closed",
-            "Friday": "closed",
-            "Saturday": "closed"
-          },
-          "items": {
-            "mix": {
-              "name": "Mix Cypriot Pork",
-              "cat": "Cypriot Paphitiki Pita",
-              "desc": "Cypriot Paphitiki pita, pork souvlaki and sieftalia with the ingredients of your choice",
-              "price": 7.5,
-              "tier": "cypriot"
-            }
-          }
-        },
-        {
           "name": "Kati Psinetai \"Dame\"",
           "slug": "kati-psinete-dame-2000531576",
           "url": "https://www.foody.com.cy/delivery/lemesos/kati-psinete-dame-2000531576",
@@ -3873,6 +6583,59 @@
       },
       "venues": [
         {
+          "name": "Miss Skepasti",
+          "slug": "miss-skepasti-2000473610",
+          "url": "https://www.foody.com.cy/delivery/larnaka/miss-skepasti-2000473610",
+          "lat": 34.973314,
+          "lng": 33.848549,
+          "prices": {
+            "porkchop": 12,
+            "souvlaki": 7,
+            "chicken": 7.5,
+            "mix": 7
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "17:00-21:00",
+            "Tuesday": "17:00-21:00",
+            "Wednesday": "17:00-21:00",
+            "Thursday": "17:00-21:00",
+            "Friday": "17:00-22:00",
+            "Saturday": "17:00-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork chop jumbo",
+              "cat": "Portion",
+              "desc": "Accompanied by fried potatoes or rice, salad (tomato, onion, cucumber, lettuce, crab) and pita",
+              "price": 12
+            },
+            "souvlaki": {
+              "name": "Pork souvlaki Cypriot pita",
+              "cat": "Popular",
+              "desc": "Pork souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 7,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Chicken souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix Cypriot Pork",
+              "cat": "Cypriot pita",
+              "desc": "Cypriot sieftalies pie and pork souvlaki with the ingredients of your choice",
+              "price": 7,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Psistaria Mavris",
           "slug": "psistaria-mayris",
           "url": "https://www.foody.com.cy/delivery/larnaka/psistaria-mayris",
@@ -3886,7 +6649,7 @@
             "chickenLarge": 8
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "closed",
             "Monday": "11:00-15:00",
@@ -4032,6 +6795,59 @@
           }
         },
         {
+          "name": "Amfitheatro Grill & More",
+          "slug": "amfitheatro-grill-kai-more-2000476721",
+          "url": "https://www.foody.com.cy/delivery/larnaka/amfitheatro-grill-kai-more-2000476721",
+          "lat": 34.875195,
+          "lng": 33.589824,
+          "prices": {
+            "porkchop": 12,
+            "souvlaki": 7.5,
+            "chicken": 7.5,
+            "mix": 7.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "12:00-22:00",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "16:00-22:00",
+            "Saturday": "12:00-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork chop jumbo",
+              "cat": "Grill Meals",
+              "desc": "Served with pita bread, french fries, salad",
+              "price": 12
+            },
+            "souvlaki": {
+              "name": "Pork souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Pork souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Chicken souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix Cypriot Pork",
+              "cat": "Cypriot pita",
+              "desc": "Cypriot pita with pork skewers and siftalies with the ingredients of your choice",
+              "price": 7.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Estiatorio AEK Larnakas",
           "slug": "estiatorio-aek-larnakas",
           "url": "https://www.foody.com.cy/delivery/larnaka/estiatorio-aek-larnakas",
@@ -4090,7 +6906,7 @@
             "mix": 8
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "12:00-16:00",
             "Monday": "12:00-22:00",
@@ -4184,59 +7000,6 @@
           }
         },
         {
-          "name": "Farias Kitchen",
-          "slug": "farias-kitchen-2000700916",
-          "url": "https://www.foody.com.cy/delivery/larnaka/farias-kitchen-2000700916",
-          "lat": 34.97706,
-          "lng": 33.841511,
-          "prices": {
-            "porkchop": 14,
-            "souvlaki": 8,
-            "chicken": 8.5,
-            "mix": 8
-          },
-          "source": "foody",
-          "open": false,
-          "hours": {
-            "Sunday": "12:00-22:00",
-            "Monday": "12:00-22:00",
-            "Tuesday": "12:00-22:00",
-            "Wednesday": "12:00-22:00",
-            "Thursday": "12:00-22:00",
-            "Friday": "12:00-22:00",
-            "Saturday": "12:00-22:00"
-          },
-          "items": {
-            "porkchop": {
-              "name": "Pork chop jumbo",
-              "cat": "Popular",
-              "desc": "With fries & salad",
-              "price": 14
-            },
-            "souvlaki": {
-              "name": "Pork souvlaki Cypriot pita",
-              "cat": "Popular",
-              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Chicken souvlaki Cypriot pita",
-              "cat": "Popular",
-              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
-              "price": 8.5,
-              "tier": "cypriot"
-            },
-            "mix": {
-              "name": "Mix Cypriot Pork",
-              "cat": "Cypriot pita",
-              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
-              "price": 8,
-              "tier": "cypriot"
-            }
-          }
-        },
-        {
           "name": "Taverna To Koutouki tou Komiti O Afxentis sas",
           "slug": "taverna-to-koytoyki-toy-komiti-o-ayxentis-sas-2000702305",
           "url": "https://www.foody.com.cy/delivery/larnaka/taverna-to-koytoyki-toy-komiti-o-ayxentis-sas-2000702305",
@@ -4249,7 +7012,7 @@
             "mix": 8
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "closed",
             "Monday": "11:30-22:00",
@@ -4278,6 +7041,59 @@
               "cat": "Cypriot pita",
               "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
               "price": 10,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix Cypriot Pork",
+              "cat": "Cypriot pita",
+              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Farias Kitchen",
+          "slug": "farias-kitchen-2000700916",
+          "url": "https://www.foody.com.cy/delivery/larnaka/farias-kitchen-2000700916",
+          "lat": 34.97706,
+          "lng": 33.841511,
+          "prices": {
+            "porkchop": 14,
+            "souvlaki": 8,
+            "chicken": 8.5,
+            "mix": 8
+          },
+          "source": "foody",
+          "open": true,
+          "hours": {
+            "Sunday": "12:00-22:00",
+            "Monday": "12:00-22:00",
+            "Tuesday": "12:00-22:00",
+            "Wednesday": "12:00-22:00",
+            "Thursday": "12:00-22:00",
+            "Friday": "12:00-22:00",
+            "Saturday": "12:00-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork chop jumbo",
+              "cat": "Popular",
+              "desc": "With fries & salad",
+              "price": 14
+            },
+            "souvlaki": {
+              "name": "Pork souvlaki Cypriot pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
               "tier": "cypriot"
             },
             "mix": {
@@ -4343,6 +7159,52 @@
           }
         },
         {
+          "name": "Alonia Tavern",
+          "slug": "alonia-tavern-2000479768",
+          "url": "https://www.foody.com.cy/delivery/larnaka/alonia-tavern-2000479768",
+          "lat": 34.954293,
+          "lng": 33.629641,
+          "prices": {
+            "souvlaki": 8,
+            "chicken": 8,
+            "mix": 9
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "11:30-14:00",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "closed",
+            "Saturday": "closed"
+          },
+          "items": {
+            "souvlaki": {
+              "name": "Pork souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Pork souvlaki in Cypriot pita with the ingredients of your choice. Regular pita contains 2 skewers, large pita contains 3 skewers",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Chicken souvlaki in Cypriot pita with the ingredients of your choice. Regular pita contains 2 skewers, large pita contains 3 skewers",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix Cypriot Pork",
+              "cat": "Cypriot pita",
+              "desc": "Regular pita contains 1 souvlaki skewer and 2 sheftalia, and large pita contains 2 souvlaki skewers and 2 sheftalia",
+              "price": 9,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Tatsia Mezedotechneio",
           "slug": "tatsia-mezedotechneio-2000420300",
           "url": "https://www.foody.com.cy/delivery/larnaka/tatsia-mezedotechneio-2000420300",
@@ -4399,7 +7261,7 @@
             "chicken": 8
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:00-23:30",
             "Monday": "11:00-23:30",
@@ -4437,7 +7299,7 @@
             "chicken": 8
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:00-22:30",
             "Monday": "closed",
@@ -4475,7 +7337,7 @@
             "souvlaki": 8
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "closed",
             "Monday": "11:00-15:00",
@@ -4650,6 +7512,129 @@
           }
         },
         {
+          "name": "Taverna to deilino",
+          "slug": "taverna-to-deilino",
+          "url": "https://www.foody.com.cy/delivery/larnaka/taverna-to-deilino",
+          "lat": 34.911941,
+          "lng": 33.636774,
+          "prices": {
+            "porkchop": 17,
+            "souvlaki": 8,
+            "chicken": 9,
+            "mix": 8.5
+          },
+          "source": "foody",
+          "open": null,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "closed",
+            "Tuesday": "closed",
+            "Wednesday": "closed",
+            "Thursday": "closed",
+            "Friday": "closed",
+            "Saturday": "closed"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Jumbo",
+              "cat": "Popular",
+              "desc": "",
+              "price": 17
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix Pork Souvlaki and Cypriot Meatballs",
+              "cat": "Cypriot Pita",
+              "desc": "",
+              "price": 8.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Souvlakia Peroutsios",
+          "slug": "soyvlakia-peroytsios",
+          "url": "https://www.foody.com.cy/delivery/larnaka/soyvlakia-peroytsios",
+          "lat": 34.918179,
+          "lng": 33.631371,
+          "prices": {
+            "souvlaki": 8,
+            "mixLarge": 9,
+            "souvlakiLarge": 9,
+            "mix": 8,
+            "chicken": 9,
+            "chickenLarge": 10
+          },
+          "source": "foody",
+          "open": true,
+          "hours": {
+            "Sunday": "10:30-14:30",
+            "Monday": "10:30-21:00",
+            "Tuesday": "10:30-21:00",
+            "Wednesday": "10:30-21:00",
+            "Thursday": "10:30-21:00",
+            "Friday": "10:30-21:00",
+            "Saturday": "10:30-21:00"
+          },
+          "items": {
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Grill Meals",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 10,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Tou Christou to Souvlaki",
           "slug": "toy-christoy-to-soyvlaki-2000680511",
           "url": "https://www.foody.com.cy/delivery/larnaka/toy-christoy-to-soyvlaki-2000680511",
@@ -4742,6 +7727,76 @@
           }
         },
         {
+          "name": "To Xitroullo",
+          "slug": "to-ksitroyllo",
+          "url": "https://www.foody.com.cy/delivery/larnaka/to-ksitroyllo",
+          "lat": 34.91631,
+          "lng": 33.622128,
+          "prices": {
+            "souvlakiLarge": 10.5,
+            "souvlaki": 8.5,
+            "mix": 9,
+            "chicken": 9,
+            "chickenLarge": 11,
+            "mixLarge": 11
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "17:00-22:00",
+            "Monday": "closed",
+            "Tuesday": "17:00-22:00",
+            "Wednesday": "17:00-22:00",
+            "Thursday": "17:00-22:00",
+            "Friday": "13:00-20:00",
+            "Saturday": "17:00-22:00"
+          },
+          "items": {
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 10.5,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 11,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 11,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Opa Souvlaki",
           "slug": "opa-souvlaki-2000777578",
           "url": "https://www.foody.com.cy/delivery/larnaka/opa-souvlaki-2000777578",
@@ -4819,6 +7874,182 @@
           }
         },
         {
+          "name": "La Veranda",
+          "slug": "la-veranda",
+          "url": "https://www.foody.com.cy/delivery/larnaka/la-veranda",
+          "lat": 34.978844,
+          "lng": 33.692844,
+          "prices": {
+            "porkchop": 14.9,
+            "souvlaki": 8.9,
+            "chicken": 9.9,
+            "mix": 9.9
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "13:00-22:00",
+            "Monday": "13:00-22:00",
+            "Tuesday": "13:00-22:00",
+            "Wednesday": "13:00-22:00",
+            "Thursday": "13:00-22:00",
+            "Friday": "13:00-22:00",
+            "Saturday": "13:00-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Popular",
+              "desc": "Pork chop with barbecue sauce and french fries",
+              "price": 14.9
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "On the Grill",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.9,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "On the Grill",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9.9,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita",
+              "cat": "On the Grill",
+              "desc": "Cypriot pita with pork souvlaki and sheftalies. 100% Cypriot, 100% yummy.",
+              "price": 9.9,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "MatFood Kebab",
+          "slug": "matfood-kebab-2000471277",
+          "url": "https://www.foody.com.cy/delivery/larnaka/matfood-kebab-2000471277",
+          "lat": 34.869688,
+          "lng": 33.593188,
+          "prices": {
+            "porkchop": 18,
+            "souvlaki": 9,
+            "mix": 10,
+            "chicken": 10
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "12:00-22:00",
+            "Monday": "15:30-22:00",
+            "Tuesday": "15:30-22:00",
+            "Wednesday": "closed",
+            "Thursday": "15:30-22:00",
+            "Friday": "15:30-22:00",
+            "Saturday": "12:00-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork chop jumbo",
+              "cat": "Popular",
+              "desc": "Served with French potatoes and salad (tomato, cucumber, lettuce)",
+              "price": 18
+            },
+            "souvlaki": {
+              "name": "Pork souvlaki Cypriot pita",
+              "cat": "Popular",
+              "desc": "Pork souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork souvlaki and sheftalia Cypriot pita",
+              "cat": "Popular",
+              "desc": "Pork souvlaki and sheftalia in Cypriot pita with the ingredients of your choice",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pita",
+              "cat": "Popular",
+              "desc": "Chicken souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 10,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Souvlakia El Milagro",
+          "slug": "soyvlakia-el-milagro",
+          "url": "https://www.foody.com.cy/delivery/larnaka/soyvlakia-el-milagro",
+          "lat": 34.907543,
+          "lng": 33.593403,
+          "prices": {
+            "souvlakiLarge": 10,
+            "souvlaki": 9,
+            "mixLarge": 10,
+            "chicken": 9,
+            "chickenLarge": 10,
+            "mix": 9
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "17:30-22:00",
+            "Tuesday": "17:30-22:00",
+            "Wednesday": "17:30-22:00",
+            "Thursday": "17:30-22:00",
+            "Friday": "17:30-22:00",
+            "Saturday": "17:30-22:00"
+          },
+          "items": {
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Includes 4 skewers of pork souvlaki",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Includes 3 skewers of pork souvlaki",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Popular",
+              "desc": "Includes 3 skewers of pork souvlaki and 2 sheftalia",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Includes 2 skewers of chicken souvlaki",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita Large",
+              "cat": "Cypriot Pitta",
+              "desc": "Includes 3 skewers of chicken souvlaki",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pitta",
+              "desc": "Includes 2 skewers of pork souvlaki and 2 sheftalia",
+              "price": 9,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Alati Piperaki",
           "slug": "alati-piperaki",
           "url": "https://www.foody.com.cy/delivery/menu/alati-piperaki",
@@ -4830,7 +8061,7 @@
             "mix": 10.6
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:00-22:00",
             "Monday": "11:00-22:00",
@@ -5070,6 +8301,43 @@
           }
         },
         {
+          "name": "Star Snack",
+          "slug": "star-snack-2000512723",
+          "url": "https://www.foody.com.cy/delivery/larnaka/star-snack-2000512723",
+          "lat": 34.930075,
+          "lng": 33.638096,
+          "prices": {
+            "porkchop": 12,
+            "chicken": 11
+          },
+          "source": "foody",
+          "open": true,
+          "hours": {
+            "Sunday": "closed",
+            "Monday": "10:00-22:00",
+            "Tuesday": "10:00-22:00",
+            "Wednesday": "10:00-22:00",
+            "Thursday": "10:00-22:00",
+            "Friday": "10:00-24:00",
+            "Saturday": "10:00-24:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork chop",
+              "cat": "Portions",
+              "desc": "Served with salad (tomato, cucumber, onion, parsley, lettuce, cabbage) and fries",
+              "price": 12
+            },
+            "chicken": {
+              "name": "Chicken souvlaki in Cypriot pita",
+              "cat": "Mix pork and souvlaki in Cypriot pita",
+              "desc": "Chicken souvlaki in Cypriot pita with the ingredients of your choice",
+              "price": 11,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "The Big Bad Wolf",
           "slug": "the-big-bad-wolf",
           "url": "https://www.foody.com.cy/delivery/menu/the-big-bad-wolf",
@@ -5081,7 +8349,7 @@
             "chickenLarge": 8.9
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "closed",
             "Monday": "12:00-23:45",
@@ -5127,7 +8395,7 @@
             "chickenLarge": 9.5
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:30-22:00",
             "Monday": "closed",
@@ -5253,6 +8521,51 @@
           }
         },
         {
+          "name": "Gyradiko Ai Giorgis",
+          "slug": "gyradiko-ai-giorgis-2000483025",
+          "url": "https://www.foody.com.cy/delivery/pafos/gyradiko-ai-giorgis-2000483025",
+          "lat": null,
+          "lng": null,
+          "prices": {
+            "porkchop": 14,
+            "souvlaki": 7,
+            "chicken": 8
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "11:30-22:30",
+            "Monday": "11:30-22:00",
+            "Tuesday": "closed",
+            "Wednesday": "11:30-22:30",
+            "Thursday": "11:30-22:30",
+            "Friday": "11:30-22:30",
+            "Saturday": "11:30-22:30"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Jumbo Portion",
+              "cat": "Portion",
+              "desc": "700g - 1kg. Served with fries, salad, pita, and sauce",
+              "price": 14
+            },
+            "souvlaki": {
+              "name": "Pork souvlaki Cypriot pita",
+              "cat": "Popular",
+              "desc": "Cypriot Pita with Pork Souvlaki - 100% Cypriot, 100% Yummy.",
+              "price": 7,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Cypriot Pita with Chicken Souvlaki. 100% Cypriot, 100% yummy.",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "Alati & lemoni",
           "slug": "alati-kai-lemoni-2000613280",
           "url": "https://www.foody.com.cy/delivery/pafos/alati-kai-lemoni-2000613280",
@@ -5317,7 +8630,7 @@
             "chicken": 7.9
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:30-23:00",
             "Monday": "11:30-23:00",
@@ -5440,7 +8753,7 @@
             "mix": 8.5
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "closed",
             "Monday": "11:30-20:50",
@@ -5491,7 +8804,7 @@
             "chicken": 8.5
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "11:00-21:30",
             "Monday": "11:00-21:30",
@@ -5596,7 +8909,7 @@
             "mix": 8.5
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "closed",
             "Monday": "12:00-22:00",
@@ -5641,7 +8954,7 @@
             "mixLarge": 8.5
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "12:00-22:45",
             "Monday": "12:00-22:45",
@@ -5708,7 +9021,7 @@
             "mix": 8
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "12:00-22:30",
             "Monday": "12:00-22:30",
@@ -5743,6 +9056,59 @@
           }
         },
         {
+          "name": "ESTIATORIO ENP NIKOS KANNAS",
+          "slug": "estiatorio-enp-nikos-kannas-2000483064",
+          "url": "https://www.foody.com.cy/delivery/ammochostos/estiatorio-enp-nikos-kannas-2000483064",
+          "lat": 35.040691,
+          "lng": 33.984365,
+          "prices": {
+            "porkchop": 14,
+            "souvlaki": 8,
+            "mix": 9,
+            "chicken": 8.5
+          },
+          "source": "foody",
+          "open": false,
+          "hours": {
+            "Sunday": "17:07-22:00",
+            "Monday": "17:00-22:00",
+            "Tuesday": "17:00-22:00",
+            "Wednesday": "17:00-22:00",
+            "Thursday": "17:00-22:00",
+            "Friday": "17:00-22:00",
+            "Saturday": "17:00-22:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Jumbo",
+              "cat": "Portion",
+              "desc": "Served with French fries and salad",
+              "price": 14
+            },
+            "souvlaki": {
+              "name": "Pork souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork skewer and Cypriot sheftalia",
+              "cat": "Cypriot pita",
+              "desc": "",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki Cypriot pita",
+              "cat": "Cypriot pita",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
           "name": "To nissiotiko",
           "slug": "to-nissiotiko-2000305854",
           "url": "https://www.foody.com.cy/delivery/ammochostos/to-nissiotiko-2000305854",
@@ -5755,7 +9121,7 @@
             "mix": 8
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "12:00-22:00",
             "Monday": "12:00-22:00",
@@ -5902,6 +9268,112 @@
           }
         },
         {
+          "name": "Dia Choiros gefseis",
+          "slug": "dia-choiros-geyseis",
+          "url": "https://www.foody.com.cy/delivery/paralimni/dia-choiros-geyseis",
+          "lat": 35.062471,
+          "lng": 33.962564,
+          "prices": {
+            "porkchop": 16,
+            "souvlaki": 8.5,
+            "mix": 9.5,
+            "chicken": 9.5
+          },
+          "source": "foody",
+          "open": true,
+          "hours": {
+            "Sunday": "12:00-23:00",
+            "Monday": "12:30-23:15",
+            "Tuesday": "12:00-23:00",
+            "Wednesday": "12:00-23:00",
+            "Thursday": "12:00-23:00",
+            "Friday": "12:00-23:00",
+            "Saturday": "12:00-23:00"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion 500g",
+              "cat": "Popular",
+              "desc": "Served with salad and pita",
+              "price": 16
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both pork and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Mix Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Kυπριακή πίτα με σουβλάκι χοιρινό και σεφταλιές. 100% κυπριακό, 100% yummy. ",
+              "price": 9.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Popular",
+              "desc": "Both chicken and souvlaki and Cypriot, in the same sentence. What are you waiting for? Order it.",
+              "price": 9.5,
+              "tier": "cypriot"
+            }
+          }
+        },
+        {
+          "name": "Magazaki",
+          "slug": "magazaki",
+          "url": "https://www.foody.com.cy/delivery/paralimni/magazaki",
+          "lat": 35.053673,
+          "lng": 34.010696,
+          "prices": {
+            "porkchop": 14.9,
+            "souvlaki": 8.9,
+            "chicken": 8.9,
+            "mix": 8.9
+          },
+          "source": "foody",
+          "open": true,
+          "hours": {
+            "Sunday": "12:00-22:30",
+            "Monday": "12:00-22:30",
+            "Tuesday": "12:00-22:30",
+            "Wednesday": "12:00-22:30",
+            "Thursday": "12:00-22:30",
+            "Friday": "12:00-22:30",
+            "Saturday": "12:00-22:30"
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion 500g",
+              "cat": "Popular",
+              "desc": "",
+              "price": 14.9
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki",
+              "cat": "In the Pita",
+              "desc": "With 2 chisels the regular, 3 chisels the enhanced",
+              "price": 8.9,
+              "tier": "generic"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki",
+              "cat": "In the Pita",
+              "desc": "With 2 chisels the regular, 3 chisels the enhanced",
+              "price": 8.9,
+              "tier": "generic"
+            },
+            "mix": {
+              "name": "Mix Chicken",
+              "cat": "In the Pita",
+              "desc": "2 skewers and 2 sheftalia",
+              "price": 8.9,
+              "tier": "generic"
+            }
+          }
+        },
+        {
           "name": "Ladokolla Ellinikos Gyros",
           "slug": "ladokolla-ellinikos-gyros",
           "url": "https://www.foody.com.cy/delivery/ammochostos/ladokolla-ellinikos-gyros",
@@ -5965,7 +9437,7 @@
             "chicken": 9.5
           },
           "source": "foody",
-          "open": false,
+          "open": true,
           "hours": {
             "Sunday": "12:00-01:30",
             "Monday": "12:00-01:30",
