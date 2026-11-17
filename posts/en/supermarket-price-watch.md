@@ -2,7 +2,7 @@
 hidden: true
 title: "Cyprus Supermarket Price Watch — 10 Household Staples"
 date: "2026-06-28"
-updated: "2026-11-16"
+updated: "2026-11-17"
 category: "Food & Drink"
 summary: "Live prices for 10 essential household products tracked across all major Cyprus supermarkets. Updated 4× daily from the official e-kalathi.gov.cy price observatory."
 pinned: false
@@ -12,11 +12,11 @@ Live prices for the 10 most-bought household staples in Cyprus, sourced from the
 
 <!-- PRICES_START -->
 
-> Updated 16 November 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Updated 17 November 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
 | Staple | Cheapest Price | Brand |
 |---------|---------|--------|
-| Fresh Milk 1L | **[€2.66](https://www.e-kalathi.gov.cy/product-information/31)** | Charalambides |
+| Fresh Milk 1L | **[€1.37](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
 | Eggs | **[€3.89](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
 | Halloumi 200g | **[€1.99](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Spaghetti 500g | **[€0.89](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
