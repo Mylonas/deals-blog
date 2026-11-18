@@ -151,7 +151,9 @@ function pittaPrices(dish, catName, items) {
   // size info only comes from size-type groups (Choose Quantity / Μέγεθος /
   // Πίτα...) or groups that themselves contain pitta values — never from
   // topping/extra groups where "double meat +2" would fake a large price
-  const all = dishOptionValues(dish, items).filter((v) => !NOT_SIZE_VALUE_RE.test(v.name));
+  // option groups that add something to the pita (Extras / Add / Remove / Spread) never set its size: Romios' "Extra Pita +0.50" was read as the regular size
+  const EXTRA_GROUP_RE = /extra|add |add$|remove|spread|sauce|ingredient/;
+  const all = dishOptionValues(dish, items).filter((v) => !NOT_SIZE_VALUE_RE.test(v.name) && !EXTRA_GROUP_RE.test(v.groupName));
   const pittaGroups = new Set(all.filter((v) => PITA_RE.test(v.name)).map((v) => v.groupName));
   const options = all.filter((v) => SIZE_GROUP_RE.test(v.groupName) || /quantity|ποσοτητ|επιλογ|choose|διαλεξ/.test(v.groupName) || pittaGroups.has(v.groupName));
   const pittaVals = options.filter((v) => PITA_RE.test(v.name) && !GREEK_RE.test(v.name) && !MINI_RE.test(v.name));
