@@ -143,7 +143,7 @@ export async function discoverFoodyVenues(request, { cuisineRe, onlyCities = nul
     await Promise.all(Array.from({ length: 3 }, async () => { while (i < retry.length) await fetchOne(retry[i++]); }));
     if (failed.length >= retry.length) break;
   }
-  if (failed.length) console.log(`  WARNING: ${failed.length} brand pages still unreachable after retries`);
+  if (failed.length) console.log(`  WARNING: ${failed.length} brand pages still unreachable after retries: ${failed.map((x) => x.url).join(", ")}`);
 
   for (const [city, venues] of byCity) console.log(`  ${city}: ${venues.length} ${cuisineRe} venues on Foody`);
   return byCity;

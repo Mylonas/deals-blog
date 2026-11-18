@@ -109,9 +109,13 @@ async function boltFetch(path, { method = "GET", params = {}, body } = {}) {
  * the same variant-scoring as the Wolt scan (findFreddo). Bolt dish prices
  * are already in euros; findFreddo expects `price != null` only.
  */
+// a "1+1" / "2 for" / combo category prices a bundle, not one drink (Gloria Jean's Makariou: 8.20 for two)
+const PROMO_CAT_RE = /1\s*\+\s*1|2\s*for\b|two for|combo|bundle|προσφορ|offer|deal/i;
+
 export function extractBoltFreddo(categoryFetches) {
   const items = [];
-  for (const { items: dishes } of categoryFetches) {
+  for (const { items: dishes, category } of categoryFetches) {
+    if (category && PROMO_CAT_RE.test(category)) continue;
     for (const it of Object.values(dishes)) {
       if (it.type !== "dish" || it.availability === "not_available") continue;
       const price = it.price?.value;
@@ -160,7 +164,7 @@ async function scanVenueMenu(provider, city) {
     const dishes = await boltFetch("/deliveryClient/public/getMenuDishes", {
       params: { provider_id: String(provider.provider_id), category_id: String(cat.id), ...gps },
     });
-    fetches.push({ items: dishes.items || {} });
+    fetches.push({ items: dishes.items || {}, category: cat.name?.value || "" });
   }
   return extractBoltFreddo(fetches);
 }

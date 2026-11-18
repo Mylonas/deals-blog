@@ -101,7 +101,25 @@ export function sameVenue(a, b) {
 
 // Foody records carry their weekly hours: "normally open" is evaluated at 19:00 Cyprus time on the day of the merge
 const openOf = (v) => (v.hours ? openFromCompact(v.hours, eveningReference()) : v.open ?? null);
-const offerOf = (v) => ({ prices: v.prices || {}, items: v.items || {}, open: openOf(v) });
+// hand-verified live-page prices that the platform API gets wrong (see src/data/souvlaki-live-overrides.json)
+const LIVE_OVERRIDES = (() => {
+  try {
+    return JSON.parse(fs.readFileSync(path.join(ROOT, "src", "data", "souvlaki-live-overrides.json"), "utf8").replace(/^﻿/, "")).overrides || [];
+  } catch {
+    return [];
+  }
+})();
+function offerOf(v, platform) {
+  const o = platform && v.slug ? LIVE_OVERRIDES.find((x) => x.platform === platform && x.slug === v.slug) : null;
+  if (!o) return { prices: v.prices || {}, items: v.items || {}, open: openOf(v) };
+  const prices = { ...(v.prices || {}) };
+  const items = { ...(v.items || {}) };
+  for (const [cut, price] of Object.entries(o.prices)) {
+    prices[cut] = price;
+    items[cut] = { ...(items[cut] || { name: cut }), price, desc: "", tier: "live-checked" };
+  }
+  return { prices, items, open: openOf(v) };
+}
 
 /**
  * Pick each cut's displayed price once every platform has been folded in. Only
@@ -154,7 +172,7 @@ function foldInto(base, incoming, platform) {
     ...base,
     [`${platform}Url`]: incoming.url,
     platforms: [...new Set([...(base.platforms || [basePlatform]), platform])],
-    _offers: { ...(base._offers || {}), [platform]: offerOf(incoming) },
+    _offers: { ...(base._offers || {}), [platform]: offerOf(incoming, platform) },
   };
 }
 
@@ -174,7 +192,7 @@ function foldCity(merged, sourceVenues, platform) {
     }
   }
   source.forEach((sv, j) => {
-    if (!used.has(j)) merged.push({ ...sv, platforms: [platform], _offers: { [platform]: offerOf(sv) } });
+    if (!used.has(j)) merged.push({ ...sv, platforms: [platform], _offers: { [platform]: offerOf(sv, platform) } });
   });
   return merged;
 }
@@ -201,7 +219,7 @@ export function mergeSouvlaki(wolt, extras) {
       ...Object.fromEntries(present.map((e) => [e.platform, e.data.updatedAt])),
     },
     cities: cityDefs.map(({ key, label }) => {
-      let merged = (woltByKey.get(key) || []).map((v) => ({ ...v, platforms: ["wolt"], _offers: { wolt: offerOf(v) } }));
+      let merged = (woltByKey.get(key) || []).map((v) => ({ ...v, platforms: ["wolt"], _offers: { wolt: offerOf(v, "wolt") } }));
       for (const { platform, map } of byCity) merged = foldCity(merged, map.get(key), platform);
       merged = merged.map(finalize);
       merged.sort((a, b) => (a.prices.souvlaki ?? 99) - (b.prices.souvlaki ?? 99));
