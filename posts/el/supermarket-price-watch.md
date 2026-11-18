@@ -24,7 +24,7 @@ pinned: false
 | Νερό 1.5L ×6 | **[€1.99](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
 | Γιαούρτι 450g | **[€1.95](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
 | Ρύζι 1kg | **[€1.95](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
-| Χυμός Πορτοκάλι 1L | **[€1.65](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
+| Χυμός Πορτοκάλι 1L | **[€1.88](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
 | Coca-Cola 1L ×2 | **[€2.42](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
 
 <!-- PRICES_END -->
