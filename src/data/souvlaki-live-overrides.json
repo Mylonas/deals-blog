@@ -2,6 +2,8 @@
   "_doc": "Hand-verified prices where the Wolt menu API disagrees with the price the live wolt.com page shows. Applied to that venue's Wolt offer at merge time (scripts/merge-souvlaki-sources.mjs), and cleared of the 'choose size' flag so the venue ranks. Re-check against the live page before extending; delete an entry once the API matches the page.",
   "overrides": [
     { "platform": "wolt", "slug": "finitzia-taverna", "checked": "2026-11-17", "prices": { "souvlaki": 8, "mix": 8, "chicken": 8.5 }, "note": "live wolt.com page: pork souvlaki 8.00, mix 8.00, chicken 8.50 (menu API lists 7.50/7.50/8.00); Bolt lists 8.00 for the same pork souvlaki" },
+    { "platform": "wolt", "slug": "dasoupolitiko-souvlaki", "checked": "2026-11-18", "prices": { "souvlaki": 9, "mix": 9.5, "chicken": 9.5 }, "note": "menu: base 7.50/8.00/8.00 plus a REQUIRED size choice (κανονική +1.50 / ενισχυμένη +1.50); live page shows the regular-size price 9.00/9.50/9.50. Large (ενισχυμένη) costs the same +1.50 so it is left unchanged." },
+    { "platform": "bolt", "slug": "21460-romios-kebab", "checked": "2026-11-18", "prices": { "souvlaki": 7.95, "mix": 7.95, "chicken": 8 }, "note": "Bolt menu: Half (free) / Regular +2.25 (mix +1.95, chicken +2.00) / Large; the scan read the 'Extra Pita +0.50' extra as the size (6.20). Wolt lists the same regular price 7.95. Extractor fixed too; delete once a fresh Bolt scan shows these values." },
     { "platform": "wolt", "slug": "taverna-orfeas", "checked": "2026-11-17", "prices": { "souvlaki": 8, "mix": 8, "chicken": 8.5 }, "note": "same kitchen and menu as Finitzia Taverna (Athinas 23); live page 8.00/8.00/8.50 vs API 7.50/7.50/8.00; Bolt lists 8.00" }
   ]
 }

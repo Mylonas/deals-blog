@@ -139,7 +139,7 @@ function finalize(v) {
   const items = {}; // which menu item produced each displayed price (for audits)
   // re-applied here so rule fixes also reach stored data whose menu item is recorded (see "items")
   const OVERSIZE = /jumbo|giant|\bxl\b|\blarge\b|\bbig\b|μεγάλ|τζάμπο|\b(?:7[5-9]\d|[89]\d\d)\s?(?:g|gr|γρ)|\b1\s?kg/i;
-  const NON_MEAT = /veget|λαχανικ|lebanese|λιβανεζ|falafel|φαλαφελ/i;
+  const NON_MEAT = /veget|vegan|λαχανικ|lebanese|λιβανεζ|falafel|φαλαφελ/i;
   for (const [platform, o] of pool) {
     for (const [cut, price] of Object.entries(o.prices || {})) {
       if (price == null) continue;
