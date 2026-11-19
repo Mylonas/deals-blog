@@ -1,13 +1,7 @@
 {
-  "fetchedAt": "2026-11-18T04:32:26.186Z",
-  "count": 100,
+  "fetchedAt": "2026-11-19T04:34:00.584Z",
+  "count": 98,
   "sources": [
-    {
-      "id": "eac",
-      "name": "ΑΗΚ / Electricity Authority of Cyprus",
-      "count": 0,
-      "error": "browserType.launch: Executable doesn't exist at C:\\Users\\mikmy\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
-    },
     {
       "id": "cyta",
       "name": "Cyta (ΑΤΗΚ)",
@@ -21,22 +15,9 @@
       "error": null
     },
     {
-      "id": "cera",
-      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
-      "count": 0,
-      "error": "HTTP 403; browser fallback: browserType.launch: Executable doesn't exist at C:\\Users\\mikmy\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
-      "blocked": true
-    },
-    {
       "id": "cpa",
       "name": "Αρχή Λιμένων Κύπρου",
       "count": 1,
-      "error": null
-    },
-    {
-      "id": "hio",
-      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
-      "count": 0,
       "error": null
     },
     {
@@ -46,25 +27,38 @@
       "error": null
     },
     {
-      "id": "crta",
-      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
-      "count": 1,
-      "error": "fetch failed; browser fallback: browserType.launch: Executable doesn't exist at C:\\Users\\mikmy\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
-      "blocked": true,
-      "carriedForward": true
+      "id": "hio",
+      "name": "ΟΑΥ (Οργανισμός Ασφάλισης Υγείας)",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "cera",
+      "name": "ΡΑΕΚ (Ρυθμιστική Αρχή Ενέργειας)",
+      "count": 0,
+      "error": null,
+      "via": "site→browser"
     },
     {
       "id": "competition",
       "name": "Επιτροπή Προστασίας του Ανταγωνισμού",
       "count": 0,
-      "error": "fetch failed; browser fallback: browserType.launch: Executable doesn't exist at C:\\Users\\mikmy\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+      "error": "fetch failed; browser fallback: page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://www.competition.gov.cy/competition/competition.nsf/page34_gr/page34_gr?OpenDocument\nCall log:\n\u001b[2m  - navigating to \"https://www.competition.gov.cy/competition/competition.nsf/page34_gr/page34_gr?OpenDocument\", waiting until \"domcontentloaded\"\u001b[22m\n",
       "blocked": true
     },
     {
-      "id": "cso",
-      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
+      "id": "eac",
+      "name": "ΑΗΚ / Electricity Authority of Cyprus",
       "count": 0,
       "error": null
+    },
+    {
+      "id": "crta",
+      "name": "Αρχή Ραδιοτηλεόρασης Κύπρου",
+      "count": 1,
+      "error": "fetch failed; browser fallback: page.goto: net::ERR_CERT_DATE_INVALID at https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html\nCall log:\n\u001b[2m  - navigating to \"https://www.crta.org.cy/index.php/el/%CF%80%CF%81%CE%BF%CE%BA%CE%B7%CF%81%CF%8D%CE%BE%CE%B5%CE%B9%CF%82-%CE%B8%CE%B5%CF%83%CE%B5%CF%89%CE%BD.html\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "blocked": true,
+      "carriedForward": true
     },
     {
       "id": "thoc",
@@ -79,8 +73,20 @@
       "error": null
     },
     {
+      "id": "cso",
+      "name": "ΚΟΑ (Κυπριακός Οργανισμός Αθλητισμού)",
+      "count": 0,
+      "error": null
+    },
+    {
       "id": "centralbank",
       "name": "Κεντρική Τράπεζα της Κύπρου",
+      "count": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "id": "cyada",
+      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
       "count": 0,
       "error": null
     },
@@ -91,15 +97,9 @@
       "error": null
     },
     {
-      "id": "cyada",
-      "name": "Κυπριακός Οργανισμός Αντι-Ντόπινγκ",
-      "count": 0,
-      "error": null
-    },
-    {
-      "id": "kedipes",
-      "name": "ΚΕΔΙΠΕΣ",
-      "count": 0,
+      "id": "hfc",
+      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
+      "count": 1,
       "error": null
     },
     {
@@ -109,9 +109,9 @@
       "error": null
     },
     {
-      "id": "hfc",
-      "name": "Οργανισμός Χρηματοδοτήσεως Στέγης",
-      "count": 1,
+      "id": "kedipes",
+      "name": "ΚΕΔΙΠΕΣ",
+      "count": 0,
       "error": null
     },
     {
@@ -127,59 +127,15 @@
       "error": null
     },
     {
-      "id": "nba",
-      "name": "Εθνική Αρχή Στοιχημάτων",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "onek",
       "name": "ΟΝΕΚ (Οργανισμός Νεολαίας Κύπρου)",
       "count": 1,
       "error": null
     },
     {
-      "id": "ekk",
-      "name": "Ένωση Κοινοτήτων Κύπρου",
+      "id": "nba",
+      "name": "Εθνική Αρχή Στοιχημάτων",
       "count": 0,
-      "error": null
-    },
-    {
-      "id": "ucy",
-      "name": "Πανεπιστήμιο Κύπρου",
-      "count": 4,
-      "error": "browserType.launch: Executable doesn't exist at C:\\Users\\mikmy\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
-      "carriedForward": true
-    },
-    {
-      "id": "ucy-academic",
-      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
-      "count": 1,
-      "error": "browserType.launch: Executable doesn't exist at C:\\Users\\mikmy\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
-      "carriedForward": true
-    },
-    {
-      "id": "cut",
-      "name": "ΤΕΠΑΚ",
-      "count": 5,
-      "error": null
-    },
-    {
-      "id": "shso",
-      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
-      "count": 6,
-      "error": null
-    },
-    {
-      "id": "ouc",
-      "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
-      "count": 2,
-      "error": null
-    },
-    {
-      "id": "cing",
-      "name": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
-      "count": 7,
       "error": null
     },
     {
@@ -189,15 +145,51 @@
       "error": null
     },
     {
-      "id": "cyi",
-      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
-      "count": 10,
+      "id": "ucy",
+      "name": "Πανεπιστήμιο Κύπρου",
+      "count": 4,
       "error": null
     },
     {
-      "id": "eratosthenes",
-      "name": "ERATOSTHENES Centre of Excellence",
+      "id": "ekk",
+      "name": "Ένωση Κοινοτήτων Κύπρου",
       "count": 0,
+      "error": null
+    },
+    {
+      "id": "cut",
+      "name": "ΤΕΠΑΚ",
+      "count": 5,
+      "error": null
+    },
+    {
+      "id": "ouc",
+      "name": "Ανοικτό Πανεπιστήμιο Κύπρου",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "shso",
+      "name": "ΟΚΥπΥ (Οργανισμός Κρατικών Υπηρεσιών Υγείας)",
+      "count": 6,
+      "error": null
+    },
+    {
+      "id": "cing",
+      "name": "Ινστιτούτο Νευρολογίας και Γενετικής Κύπρου",
+      "count": 7,
+      "error": null
+    },
+    {
+      "id": "ucy-academic",
+      "name": "Πανεπιστήμιο Κύπρου (ακαδημαϊκό προσωπικό)",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "cyi",
+      "name": "Ινστιτούτο Κύπρου (The Cyprus Institute)",
+      "count": 10,
       "error": null
     },
     {
@@ -207,8 +199,8 @@
       "error": null
     },
     {
-      "id": "eoa-lefkosias",
-      "name": "ΕΟΑ Λευκωσίας",
+      "id": "eratosthenes",
+      "name": "ERATOSTHENES Centre of Excellence",
       "count": 0,
       "error": null
     },
@@ -216,6 +208,12 @@
       "id": "eoa-lemesou",
       "name": "ΕΟΑ Λεμεσού",
       "count": 8,
+      "error": null
+    },
+    {
+      "id": "eoa-lefkosias",
+      "name": "ΕΟΑ Λευκωσίας",
+      "count": 0,
       "error": null
     },
     {
@@ -243,16 +241,16 @@
       "error": null
     },
     {
-      "id": "cybc",
-      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
-      "count": 0,
-      "error": "HTTP 522"
-    },
-    {
       "id": "dimos-strovolou",
       "name": "Δήμος Στροβόλου",
       "count": 3,
       "error": null
+    },
+    {
+      "id": "cybc",
+      "name": "ΡΙΚ (Ραδιοφωνικό Ίδρυμα Κύπρου)",
+      "count": 0,
+      "error": "HTTP 522"
     },
     {
       "id": "dimos-notias-lefkosias",
@@ -267,8 +265,8 @@
       "error": null
     },
     {
-      "id": "cyens",
-      "name": "CYENS Centre of Excellence",
+      "id": "dimos-anatolikis-lemesou",
+      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
       "count": 0,
       "error": null
     },
@@ -279,15 +277,15 @@
       "error": null
     },
     {
-      "id": "dimos-anatolikis-lemesou",
-      "name": "Δήμος Ανατολικής Λεμεσού (Αμαθούντα)",
-      "count": 0,
-      "error": null
-    },
-    {
       "id": "dimos-dytikis-lemesou",
       "name": "Δήμος Δυτικής Λεμεσού (Κουρίου)",
       "count": 7,
+      "error": null
+    },
+    {
+      "id": "cyens",
+      "name": "CYENS Centre of Excellence",
+      "count": 0,
       "error": null
     },
     {
@@ -297,9 +295,9 @@
       "error": null
     },
     {
-      "id": "dimos-dromolaxias-meneou",
-      "name": "Δήμος Δρομολαξιάς-Μενεού",
-      "count": 1,
+      "id": "eoa-ammochostou",
+      "name": "ΕΟΑ Αμμοχώστου",
+      "count": 0,
       "error": null
     },
     {
@@ -309,9 +307,9 @@
       "error": null
     },
     {
-      "id": "eoa-ammochostou",
-      "name": "ΕΟΑ Αμμοχώστου",
-      "count": 0,
+      "id": "dimos-dromolaxias-meneou",
+      "name": "Δήμος Δρομολαξιάς-Μενεού",
+      "count": 1,
       "error": null
     },
     {
@@ -351,15 +349,15 @@
       "error": null
     },
     {
-      "id": "dimos-larnakas",
-      "name": "Δήμος Λάρνακας",
-      "count": 5,
-      "error": null
-    },
-    {
       "id": "dimos-ammochostou",
       "name": "Δήμος Παραλιμνίου-Δερύνειας",
       "count": 2,
+      "error": null
+    },
+    {
+      "id": "dimos-larnakas",
+      "name": "Δήμος Λάρνακας",
+      "count": 5,
       "error": null
     },
     {
@@ -382,50 +380,6 @@
     }
   ],
   "jobs": [
-    {
-      "id": "274ad0c492b1",
-      "sourceId": "ouc",
-      "employer": "Ανοικτό Πανεπιστήμιο Κύπρου",
-      "sector": "university",
-      "district": "nicosia",
-      "title": "Προκήρυξη μίας (1) θέσης ερευνητικού προσωπικού",
-      "url": "https://www.ouc.ac.cy/index.php/el/news-events-menu-2/nea/5928-prokhryxh-erevn-synerg-30-11-2027",
-      "published": null,
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district"
-    },
-    {
-      "id": "0690abb422c4",
-      "sourceId": "ouc",
-      "employer": "Ανοικτό Πανεπιστήμιο Κύπρου",
-      "sector": "university",
-      "district": "nicosia",
-      "title": "Προκήρυξη μίας (1) κενής θέσης Λειτουργού Πανεπιστημίου",
-      "url": "https://www.ouc.ac.cy/index.php/el/news-events-menu-2/nea/5929-prok-dioikpr-14-12-2026",
-      "published": null,
-      "deadline": null,
-      "reference": null,
-      "locations": [
-        {
-          "name": "Λευκωσία",
-          "district": "nicosia",
-          "districtName": "Λευκωσία",
-          "lat": 35.1856,
-          "lon": 33.3823
-        }
-      ],
-      "locationFrom": "district"
-    },
     {
       "id": "c6f9c181f315",
       "sourceId": "cpa",
@@ -2341,8 +2295,7 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district",
-      "carriedForward": true
+      "locationFrom": "district"
     },
     {
       "id": "50f5a73abcfe",
@@ -2364,8 +2317,7 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district",
-      "carriedForward": true
+      "locationFrom": "district"
     },
     {
       "id": "80f92dc533b8",
@@ -2387,8 +2339,7 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district",
-      "carriedForward": true
+      "locationFrom": "district"
     },
     {
       "id": "852a0959a6bc",
@@ -2410,8 +2361,7 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district",
-      "carriedForward": true
+      "locationFrom": "district"
     },
     {
       "id": "bcc3ad0d3155",
@@ -2433,8 +2383,7 @@
           "lon": 33.3823
         }
       ],
-      "locationFrom": "district",
-      "carriedForward": true
+      "locationFrom": "district"
     },
     {
       "id": "4c601623db36",
