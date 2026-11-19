@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts, type Lang } from "@/lib/posts";
+import { BF_PATH, cyprusToday, isSectionLive } from "@/lib/blackFriday";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mouxti.com";
 const LANGS: Lang[] = ["en", "el", "ru"];
@@ -41,6 +42,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "posts/cheapest-souvlaki-cyprus", langs: LANGS, priority: 0.7 },
     { path: "posts/cheapest-supermarket-products", langs: LANGS, priority: 0.7 },
   ];
+  // Black Friday section: only while it is live (hidden after the last end date).
+  if (isSectionLive(cyprusToday())) shared.push({ path: BF_PATH, langs: LANGS, priority: 0.6 });
   for (const { path, langs, priority } of shared) {
     for (const lang of langs) {
       entries.push({

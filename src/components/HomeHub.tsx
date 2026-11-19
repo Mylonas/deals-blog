@@ -2,6 +2,8 @@ import { STR, TOOLS, pageHref, toolHref, type Lang } from "@/lib/i18n";
 import FreshDate, { STALE_HOURS } from "@/components/FreshDate";
 import { answer } from "@/lib/summary";
 import { ACCENT, ToolIcon } from "@/lib/toolTheme";
+import BlackFridayStrip from "@/components/BlackFridayStrip";
+import { cyprusToday } from "@/lib/blackFriday";
 
 // Home (/, /el/, /ru/): the answer first. Four cards, each ONE link: icon + label, the big
 // number, the place, a change indicator (only where real history exists), the data date and a
@@ -51,6 +53,8 @@ export default function HomeHub({ lang }: { lang: Lang }) {
           );
         })}
       </ul>
+
+      <BlackFridayStrip lang={lang} buildDay={cyprusToday()} />
 
       <section aria-label={s.trustLink} className="mt-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-3">
         <ul className="grid gap-1.5 sm:grid-cols-3 text-sm text-gray-800 dark:text-gray-200">
