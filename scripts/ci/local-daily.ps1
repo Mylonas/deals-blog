@@ -189,20 +189,28 @@ Step 'push' {
     # Automated data commits land on master constantly, so by push time origin has
     # usually moved on. Rebase onto it and retry rather than logging "Done" over a
     # rejected push (which once stranded a commit locally for a day).
-    Log 'Pushing (rebase-on-reject, up to 3 tries)'
+    # git's own output is logged so a failure says why; waits grow between tries
+    # so a burst of CI data commits (or another local push) can settle.
+    Log 'Pushing (rebase-on-reject, up to 5 tries)'
     $pushed = $false
-    for ($i = 1; $i -le 3 -and -not $pushed; $i++) {
-      git push origin master
+    $waits = @(0, 15, 45, 90, 180)
+    for ($i = 1; $i -le 5 -and -not $pushed; $i++) {
+      if ($waits[$i - 1] -gt 0) { Log "  waiting $($waits[$i - 1])s before attempt $i"; Start-Sleep -Seconds $waits[$i - 1] }
+      git push origin master 2>&1 | ForEach-Object { Log "  git push: $_" }
       if ($LASTEXITCODE -eq 0) { $pushed = $true; break }
       Log "Push rejected (attempt $i); rebasing on origin/master"
-      git fetch origin master
-      git rebase --autostash origin/master
+      git fetch origin master 2>&1 | ForEach-Object { Log "  git fetch: $_" }
+      git rebase --autostash origin/master 2>&1 | ForEach-Object { Log "  git rebase: $_" }
+      if ($LASTEXITCODE -ne 0) {
+        Log '  rebase failed; aborting it so the next try starts clean'
+        git rebase --abort 2>&1 | ForEach-Object { Log "  git rebase --abort: $_" }
+      }
     }
     if ($pushed) {
       gh workflow run deploy.yml --ref master
       Log 'Pushed and triggered redeploy.'
     } else {
-      Log 'ERROR: push still failing after 3 attempts - commits are local only.'
+      Log 'ERROR: push still failing after 5 attempts - commits are local only.'
       $script:failures += 'push'
     }
   } else {
