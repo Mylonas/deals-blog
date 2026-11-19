@@ -1,7 +1,7 @@
 ---
 title: "Cheapest Petrol Stations in Cyprus"
 date: "2026-06-28"
-updated: "2026-11-17"
+updated: "2026-11-19"
 category: "Fuel"
 summary: "Live prices for Unleaded 95, Unleaded 98, and Diesel across petrol stations in Cyprus. Updated regularly from the official Cyprus government fuel observatory."
 pinned: true
@@ -19,22 +19,22 @@ hidden: true
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.555 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.555 |
 | PETROLINA | [Γιάννου Κρανιδιώτη 247  Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.563 |
+| PETROLINA | [Λεωφ. Λεμεσού, Νήσου Τ.Κ 2571](https://www.google.com/maps?q=35.0424,33.387107) | Πέρα Χωριό Νήσου | €1.563 |
 | EKO | [Λεωφόρος Λεμεσού 341, Πέρα Χωριό (Βιομηχανική Περιοχή Νήσου) Τ.Κ 2571](https://www.google.com/maps?q=35.052276,33.387661) | Πέρα Χωριό Νήσου | €1.563 |
 | SHELL | [Tσερίου 36 Νήσου (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.059124999999995,33.36853611111111) | Πέρα Χωριό Νήσου | €1.569 |
-| EKO | [Λεωφ. Λευκωσίας 108 Τ.Κ 2540](https://www.google.com/maps?q=35.0342474332179,33.4088325048936) | Δάλι | €1.583 |
-| EKO | [Λεωφ. Γερίου Τ.Κ 2200](https://www.google.com/maps?q=35.1061438772506,33.3969139903519) | Γέρι | €1.583 |
+| ENI | [Λεωφ. Λάρνακος 125 Τ.Κ 1048](https://www.google.com/maps?q=35.1658,33.3822) | Παλλουριώτισσα | €1.569 |
 
 ## 7 Cheapest Stations Right Now — Unleaded 98
 
 | Brand | Address | Area | Price |
 |---|---|---|---|
+| PETROLINA | [Λεωφ. Γιώργου Χριστοδουλίδη (Νέο ΓΣΖ) Τ.Κ 6043](https://www.google.com/maps?q=34.92536667,33.60203333) | Λάρνακα | €1.623 |
 | PETROLINA | [Γιάννου Κρανιδιώτη 247  Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.625 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.625 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.625 |
-| EKO | [Λεωφ. Λευκωσίας 108 Τ.Κ 2540](https://www.google.com/maps?q=35.0342474332179,33.4088325048936) | Δάλι | €1.635 |
-| EKO | [Λεωφ. Γερίου Τ.Κ 2200](https://www.google.com/maps?q=35.1061438772506,33.3969139903519) | Γέρι | €1.635 |
-| PETROLINA | [Λεωφ. Γιώργου Χριστοδουλίδη (Νέο ΓΣΖ) Τ.Κ 6043](https://www.google.com/maps?q=34.92536667,33.60203333) | Λάρνακα | €1.638 |
-| ENI | [Λεωφ. Λάρνακος 125 Τ.Κ 1048](https://www.google.com/maps?q=35.1658,33.3822) | Παλλουριώτισσα | €1.649 |
+| ENI | [Λεωφ. Λάρνακος 125 Τ.Κ 1048](https://www.google.com/maps?q=35.1658,33.3822) | Παλλουριώτισσα | €1.633 |
+| PETROLINA | [Λεωφ. Νίκης 1 Τ.Κ 1086](https://www.google.com/maps?q=35.162387,33.35887) | Λευκωσία | €1.633 |
+| PETROLINA | [Λεωφ. Κυριάκου Μάτση 28, Αγ.Ομολογητές Τ.Κ 1082](https://www.google.com/maps?q=35.1591,33.35478333) | Λευκωσία | €1.633 |
 
 ## 7 Cheapest Stations Right Now — Diesel
 
@@ -46,20 +46,20 @@ hidden: true
 | SHELL | [Λεωφ. Ελλάδος 76 Τ.Κ 7101](https://www.google.com/maps?q=34.927460394756885,33.58150402848419) | Αραδίππου | €1.919 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.929 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.929 |
-| EKO | [Λεωφόρος Λεμεσού 341, Πέρα Χωριό (Βιομηχανική Περιοχή Νήσου) Τ.Κ 2571](https://www.google.com/maps?q=35.052276,33.387661) | Πέρα Χωριό Νήσου | €1.933 |
+| PETROLINA | [Γιάννου Κρανιδιώτη 247  Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.933 |
 
 ## 7 Cheapest Stations Right Now — Heating Oil
 
 | Brand | Address | Area | Price |
 |---|---|---|---|
+| PETROLINA | [Γιάννου Κρανιδιώτη 247  Τ.Κ 2233](https://www.google.com/maps?q=35.078424,33.381658) | Λατσιά | €1.499 |
 | ENI | [Λεωφ. Λάρνακος 125 Τ.Κ 1048](https://www.google.com/maps?q=35.1658,33.3822) | Παλλουριώτισσα | €1.499 |
 | FILL N GO | [Λεωφ. Λάρνακος 184 Τ.Κ 2103](https://www.google.com/maps?q=35.146412,33.418324) | Αγλαντζιά | €1.499 |
 | FILL N GO | [Σταδίου 9 (Χαλεπιανές) Τ.Κ 2571](https://www.google.com/maps?q=35.0533941,33.3820345) | Πέρα Χωριό Νήσου | €1.499 |
 | PETROLINA | [Λεωφ. Κυριάκου Μάτση 28, Αγ.Ομολογητές Τ.Κ 1082](https://www.google.com/maps?q=35.1591,33.35478333) | Λευκωσία | €1.499 |
 | PETROLINA | [Λεωφ. Λάρνακος 5 Τ.Κ 1035](https://www.google.com/maps?q=35.1727,33.3726) | Λευκωσία | €1.499 |
-| EKO | [Ελευθερίας 27 Τ.Κ 7102](https://www.google.com/maps?q=34.935446,33.59272) | Αραδίππου | €1.499 |
 | EKO | [Λεωφ. Αμμοχώστου Τ.Κ 7643](https://www.google.com/maps?q=34.927671,33.536158) | Καλό Χωριό Λάρνακας | €1.499 |
 
-> Source: [Cyprus Gov Petroleum Prices](https://petroleumprices.meci.gov.cy/) — updated — 17 November 2026
+> Source: [Cyprus Gov Petroleum Prices](https://petroleumprices.meci.gov.cy/) — updated — 19 November 2026
 
 <!-- FUEL_PRICES_END -->
