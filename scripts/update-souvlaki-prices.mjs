@@ -65,7 +65,7 @@ const MINI_RE = /μινι|mini|μικρ|mikr|μιση|misi|half|small|παιδι
 // both as Cypriot pitta and as another pitta type (e.g. Thymari: "Premium
 // Πίτα" €6.50 vs "Κυπριακή Πίτα" €8.60), the Cypriot price is the comparable one.
 const CYPRIOT_RE = /κυπριακ|kypriak|cypriot/;
-const LARGE_RE = /ενισχυμεν|enisximen|enishimen|large|μεγαλ|διπλ|double|\bxl\b/;
+const LARGE_RE = /ενισχυμεν|enhanced|enisximen|enishimen|large|μεγαλ|διπλ|double|\bxl\b/;
 // Most venues sell large as a size option on the base item, not a separate
 // item — resolve option groups that are clearly about size and price the
 // upgrade as base + delta.
