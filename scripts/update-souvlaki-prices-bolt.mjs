@@ -182,7 +182,7 @@ function pittaPrices(dish, catName, items) {
   if (large == null) {
     if (isLargeName) large = base;
     else {
-      const lrgDeltas = options.filter((v) => LARGE_RE.test(v.name)).map((v) => v.delta);
+      const lrgDeltas = options.filter((v) => LARGE_RE.test(v.name) && !GREEK_RE.test(v.name)).map((v) => v.delta);
       if (lrgDeltas.length && (namedPitta || pittaVals.length)) large = base + Math.min(...lrgDeltas);
     }
   }

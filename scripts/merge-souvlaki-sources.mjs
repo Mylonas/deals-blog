@@ -114,10 +114,11 @@ function offerOf(v, platform) {
   if (!o) return { prices: v.prices || {}, items: v.items || {}, open: openOf(v) };
   const prices = { ...(v.prices || {}) };
   const items = { ...(v.items || {}) };
-  for (const [cut, price] of Object.entries(o.prices)) {
+  for (const [cut, price] of Object.entries(o.prices || {})) {
     prices[cut] = price;
     items[cut] = { ...(items[cut] || { name: cut }), price, desc: "", tier: "live-checked" };
   }
+  for (const cut of o.remove || []) { delete prices[cut]; delete items[cut]; }
   return { prices, items, open: openOf(v) };
 }
 

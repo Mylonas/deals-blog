@@ -33,6 +33,38 @@
         "chicken": 8.5
       },
       "note": "same kitchen and menu as Finitzia Taverna (Athinas 23); live page 8.00/8.00/8.50 vs API 7.50/7.50/8.00; Bolt lists 8.00"
+    },
+    {
+      "platform": "wolt",
+      "slug": "dasoupolitiko-souvlaki",
+      "checked": "2026-11-19",
+      "prices": {
+        "souvlaki": 9,
+        "mix": 9.5,
+        "chicken": 9.5
+      },
+      "note": "user decision 19 Nov: Wolt stores its own regular price (live page 9.00/9.50/9.50, required +1.50 size choice); Bolt keeps its own 7.50/8.00/8.00; ranking takes the cheaper"
+    },
+    {
+      "platform": "bolt",
+      "slug": "81910-gyros-stavros-o-salonikios-aglantzia",
+      "checked": "2026-11-19",
+      "remove": [
+        "souvlakiLarge",
+        "chickenLarge"
+      ],
+      "note": "user decision 19 Nov: the Bolt Large values were a GREEK pita large; no Cypriot large exists. Extractor fixed; delete once a fresh Bolt scan agrees"
+    },
+    {
+      "platform": "bolt",
+      "slug": "21659-demetris-grill",
+      "checked": "2026-11-19",
+      "prices": {
+        "souvlakiLarge": 9.5,
+        "mixLarge": 9.5,
+        "chickenLarge": 9.5
+      },
+      "note": "user confirmed 19 Nov: Enhanced Pita (+3.50 over the 6.00 base) is the big pita. Extractor: enhanced = large. Delete once a fresh Bolt scan agrees"
     }
   ]
 }
