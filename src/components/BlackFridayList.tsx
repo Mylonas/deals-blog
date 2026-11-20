@@ -39,7 +39,20 @@ export default function BlackFridayList({ lang, buildDay }: { lang: Lang; buildD
                     </p>
                     {o.compare && (
                       <p className="mt-1 text-xs text-gray-800 dark:text-gray-200">
-                        {s.lowest} {o.compare.stores.map((c) => `${c.store} €${c.price}`).join(", ")} · {s.compared} {formatDate(o.compare.date, lang)}
+                        {s.lowest}{" "}
+                        {o.compare.stores.map((c, i) => (
+                          <span key={c.store}>
+                            {i > 0 ? ", " : ""}
+                            {c.url ? (
+                              <a href={c.url} target="_blank" rel="noopener noreferrer" className="underline text-blue-700 dark:text-blue-300">
+                                {c.store} €{c.price}
+                              </a>
+                            ) : (
+                              `${c.store} €${c.price}`
+                            )}
+                          </span>
+                        ))}{" "}
+                        · {s.compared} {formatDate(o.compare.date, lang)}
                       </p>
                     )}
                   </>
