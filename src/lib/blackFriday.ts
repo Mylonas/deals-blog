@@ -10,6 +10,11 @@ export type BfOffer = {
   checked: string;
   url: string;
   deal: Record<Lang, string>;
+  kind: "product" | "storewide";
+  product?: string;
+  price?: number;
+  was?: number;
+  compare?: { date: string; stores: { store: string; price: number }[] };
 };
 
 export const BF_OFFERS = (data as { offers: BfOffer[] }).offers;
@@ -54,6 +59,11 @@ export const BF_STR: Record<
     note: string;
     expired: string;
     count: (n: number) => string;
+    productsTitle: string;
+    storewideTitle: string;
+    was: string;
+    lowest: string;
+    compared: string;
   }
 > = {
   en: {
@@ -71,6 +81,11 @@ export const BF_STR: Record<
     note: "Independent, no paid placement, no affiliate links. Offers can change or sell out; confirm on the source page.",
     expired: "These offers have ended.",
     count: (n) => `${n} checked offers`,
+    productsTitle: "Products at their lowest price",
+    storewideTitle: "Store-wide offers",
+    was: "was",
+    lowest: "Lowest of the stores we compared; also at",
+    compared: "compared",
   },
   el: {
     title: "Black Friday 2026 στην Κύπρο: ελεγμένες προσφορές",
@@ -87,6 +102,11 @@ export const BF_STR: Record<
     note: "Ανεξάρτητο, χωρίς πληρωμένες προβολές, χωρίς affiliate συνδέσμους. Οι προσφορές μπορεί να αλλάξουν ή να εξαντληθούν· επιβεβαιώστε στη σελίδα της πηγής.",
     expired: "Αυτές οι προσφορές έχουν λήξει.",
     count: (n) => `${n} ελεγμένες προσφορές`,
+    productsTitle: "Προϊόντα στη χαμηλότερη τιμή",
+    storewideTitle: "Προσφορές καταστημάτων",
+    was: "από",
+    lowest: "Η χαμηλότερη από τα καταστήματα που συγκρίναμε· επίσης στο",
+    compared: "σύγκριση",
   },
   ru: {
     title: "Black Friday 2026 на Кипре: проверенные предложения",
@@ -103,5 +123,10 @@ export const BF_STR: Record<
     note: "Независимо, без платного размещения и партнёрских ссылок. Предложения могут измениться или закончиться: проверяйте на странице источника.",
     expired: "Эти предложения закончились.",
     count: (n) => `${n} проверенных предложений`,
+    productsTitle: "Товары по самой низкой цене",
+    storewideTitle: "Предложения магазинов",
+    was: "было",
+    lowest: "Самая низкая среди сравнённых магазинов; также в",
+    compared: "сравнение",
   },
 };

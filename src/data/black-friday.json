@@ -1,44 +1,59 @@
 {
-  "_doc": "Hand-checked Black Friday 2026 offers, each seen on its source page on the 'checked' date. ends = last valid day (YYYY-MM-DD, Cyprus time) or null when the source states no end date (then it is hidden after Cyber Monday, 2026-11-30). Offers hide automatically after their end date; the whole section hides after the latest end date (never earlier than Cyber Monday).",
+  "_doc": "Hand-checked Black Friday 2026 offers. kind=product: shown only when its price is the lowest found for the exact same model (compare = stores and prices checked, with date); kind=storewide: non-product deals. ends = last valid day (Cyprus time) or null (then hidden after Cyber Monday 2026-11-30). Offers hide after their end date; the section hides after the latest end date.",
   "cyberMonday": "2026-11-30",
   "offers": [
     {
-      "id": "electroline-tv",
+      "id": "electroline-edge70fusion",
+      "kind": "product",
       "store": "Electroline",
       "channel": "both",
       "ends": "2026-12-06",
-      "checked": "2026-11-19",
-      "url": "https://electroline.cy/campaigns/black-friday-2026-tvs-and-projectors/",
-      "deal": {
-        "en": "TVs: Xiaomi A Pro QLED 32\" €139 (was €169), LG 32LQ631C 32\" €189 (was €219)",
-        "el": "Τηλεοράσεις: Xiaomi A Pro QLED 32\" €139 (από €169), LG 32LQ631C 32\" €189 (από €219)",
-        "ru": "Телевизоры: Xiaomi A Pro QLED 32\" €139 (было €169), LG 32LQ631C 32\" €189 (было €219)"
-      }
-    },
-    {
-      "id": "electroline-phones",
-      "store": "Electroline",
-      "channel": "both",
-      "ends": "2026-12-06",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "url": "https://electroline.cy/campaigns/black-friday-2026-smartphones-and-tablets/",
+      "product": "Motorola edge 70 fusion 256GB 5G",
+      "price": 390,
+      "was": 599,
       "deal": {
-        "en": "Phones: Motorola edge 70 fusion 256GB €390 (was €599), edge 70 pro €590 (was €899), Moto g77 5G €299 (was €349)",
-        "el": "Κινητά: Motorola edge 70 fusion 256GB €390 (από €599), edge 70 pro €590 (από €899), Moto g77 5G €299 (από €349)",
-        "ru": "Смартфоны: Motorola edge 70 fusion 256GB €390 (было €599), edge 70 pro €590 (было €899), Moto g77 5G €299 (было €349)"
+        "en": "Motorola edge 70 fusion 256GB 5G",
+        "el": "Motorola edge 70 fusion 256GB 5G",
+        "ru": "Motorola edge 70 fusion 256GB 5G"
+      },
+      "compare": {
+        "date": "2026-11-20",
+        "stores": [
+          {
+            "store": "Stephanis",
+            "price": 439
+          }
+        ],
+        "note": "Same model and storage (256GB) searched at Stephanis and Electroline only; other stores could not be checked."
       }
     },
     {
-      "id": "electroline-washers",
+      "id": "electroline-g77",
+      "kind": "product",
       "store": "Electroline",
       "channel": "both",
       "ends": "2026-12-06",
-      "checked": "2026-11-19",
-      "url": "https://electroline.cy/campaigns/black-friday-2026-home-appliances/",
+      "checked": "2026-11-20",
+      "url": "https://electroline.cy/campaigns/black-friday-2026-smartphones-and-tablets/",
+      "product": "Motorola Moto g77 5G 256GB",
+      "price": 299,
+      "was": 349,
       "deal": {
-        "en": "Washing machines: Hisense 7kg €279 (was €379), Whirlpool 8kg steam €349 (was €485), Bosch WGE03400GR 8kg €399 (was €550)",
-        "el": "Πλυντήρια ρούχων: Hisense 7kg €279 (από €379), Whirlpool 8kg ατμού €349 (από €485), Bosch WGE03400GR 8kg €399 (από €550)",
-        "ru": "Стиральные машины: Hisense 7 кг €279 (было €379), Whirlpool 8 кг с паром €349 (было €485), Bosch WGE03400GR 8 кг €399 (было €550)"
+        "en": "Motorola Moto g77 5G 256GB",
+        "el": "Motorola Moto g77 5G 256GB",
+        "ru": "Motorola Moto g77 5G 256GB"
+      },
+      "compare": {
+        "date": "2026-11-20",
+        "stores": [
+          {
+            "store": "Stephanis",
+            "price": 339
+          }
+        ],
+        "note": "Same model and storage (256GB) searched at Stephanis and Electroline only; other stores could not be checked."
       }
     },
     {
@@ -53,7 +68,8 @@
         "en": "Orders 27-30 Nov earn a voucher: €20 for €100-250 spend (next order over €100), €30 for over €250 (next order over €120)",
         "el": "Παραγγελίες 27-30 Νοε δίνουν κουπόνι: €20 για αγορές €100-250 (επόμενη παραγγελία άνω των €100), €30 για άνω των €250 (επόμενη άνω των €120)",
         "ru": "Заказы 27-30 ноября дают купон: €20 при покупке на €100-250 (следующий заказ от €100), €30 при покупке свыше €250 (следующий заказ от €120)"
-      }
+      },
+      "kind": "storewide"
     },
     {
       "id": "skroutz-plus",
@@ -67,7 +83,8 @@
         "en": "Six-month Skroutz Plus for €36 instead of €48",
         "el": "Εξάμηνο Skroutz Plus €36 αντί €48",
         "ru": "Шесть месяцев Skroutz Plus за €36 вместо €48"
-      }
+      },
+      "kind": "storewide"
     },
     {
       "id": "cyta-phones",
@@ -80,20 +97,8 @@
         "en": "Gift worth €399 with Galaxy S26 Ultra 256GB, €249 with Galaxy S26 / S26 Plus 512GB, €179 with Galaxy A57 / A37",
         "el": "Δώρο αξίας €399 με Galaxy S26 Ultra 256GB, €249 με Galaxy S26 / S26 Plus 512GB, €179 με Galaxy A57 / A37",
         "ru": "Подарок на €399 к Galaxy S26 Ultra 256GB, на €249 к Galaxy S26 / S26 Plus 512GB, на €179 к Galaxy A57 / A37"
-      }
-    },
-    {
-      "id": "stephanis-tvs",
-      "store": "Stephanis",
-      "channel": "both",
-      "ends": "2026-11-30",
-      "checked": "2026-11-20",
-      "url": "https://www.stephanis.com.cy/search?q=blackfriday&sortBy=newest",
-      "deal": {
-        "en": "Samsung TVs: 55\" R85H Micro RGB €999 (was €1,799), 65\" R95H Micro RGB €1,999 (was €3,799), 75\" R85H €1,699 (was €2,799); listed until 29-30 Nov",
-        "el": "Τηλεοράσεις Samsung: 55\" R85H Micro RGB €999 (από €1.799), 65\" R95H Micro RGB €1.999 (από €3.799), 75\" R85H €1.699 (από €2.799)· έως 29-30 Νοε",
-        "ru": "Телевизоры Samsung: 55\" R85H Micro RGB €999 (было €1 799), 65\" R95H Micro RGB €1 999 (было €3 799), 75\" R85H €1 699 (было €2 799); до 29-30 ноября"
-      }
+      },
+      "kind": "storewide"
     }
   ]
 }
