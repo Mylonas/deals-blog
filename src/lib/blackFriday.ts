@@ -14,7 +14,7 @@ export type BfOffer = {
   product?: string;
   price?: number;
   was?: number;
-  compare?: { date: string; stores: { store: string; price: number }[] };
+  compare?: { date: string; stores: { store: string; price: number; url?: string }[] };
 };
 
 export const BF_OFFERS = (data as { offers: BfOffer[] }).offers;
