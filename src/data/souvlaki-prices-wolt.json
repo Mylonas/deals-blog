@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T23:11:48.645Z",
+  "updatedAt": "2026-11-21T21:48:57.009Z",
   "cities": [
     {
       "key": "nicosia",
@@ -326,6 +326,51 @@
           "open": false
         },
         {
+          "name": "Armenaki",
+          "slug": "armenaki",
+          "address": "Sans Souci 15, Strovolos",
+          "lat": 35.15424455,
+          "lng": 33.3727212,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/armenaki",
+          "prices": {
+            "mix": 7.5,
+            "mixLarge": 8,
+            "souvlaki": 7,
+            "souvlakiLarge": 7.5
+          },
+          "items": {
+            "mix": {
+              "name": "Pork Souvlaki And Sieftalies In Cypriot Pita Bread",
+              "cat": "served in pita",
+              "desc": "Served in Cypriot pita with onion, tomato and cucumber",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki And Sieftalies In Cypriot Pita Bread",
+              "cat": "served in pita",
+              "desc": "Served in Cypriot pita with onion, tomato and cucumber",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki",
+              "cat": "served in pita",
+              "desc": "Armenaki specialty of pork kebab grilled on charcoal and served in Cypriot pita bread",
+              "price": 7,
+              "tier": "generic"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki",
+              "cat": "served in pita",
+              "desc": "Armenaki specialty of pork kebab grilled on charcoal and served in Cypriot pita bread",
+              "price": 7.5,
+              "tier": "generic"
+            }
+          },
+          "open": false
+        },
+        {
           "name": "Souvlakia o Tsolias",
           "slug": "souvlakia-o-tsolias",
           "address": "This is a virtual venue",
@@ -389,51 +434,6 @@
               "desc": "",
               "price": 8,
               "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Armenaki",
-          "slug": "armenaki",
-          "address": "Sans Souci 15, Strovolos",
-          "lat": 35.15424455,
-          "lng": 33.3727212,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/armenaki",
-          "prices": {
-            "mix": 7.5,
-            "mixLarge": 8,
-            "souvlaki": 7,
-            "souvlakiLarge": 7.5
-          },
-          "items": {
-            "mix": {
-              "name": "Pork Souvlaki And Sieftalies In Cypriot Pita Bread",
-              "cat": "served in pita",
-              "desc": "Served in Cypriot pita with onion, tomato and cucumber",
-              "price": 7.5,
-              "tier": "cypriot"
-            },
-            "mixLarge": {
-              "name": "Pork Souvlaki And Sieftalies In Cypriot Pita Bread",
-              "cat": "served in pita",
-              "desc": "Served in Cypriot pita with onion, tomato and cucumber",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "souvlaki": {
-              "name": "Pork Souvlaki",
-              "cat": "served in pita",
-              "desc": "Armenaki specialty of pork kebab grilled on charcoal and served in Cypriot pita bread",
-              "price": 7,
-              "tier": "generic"
-            },
-            "souvlakiLarge": {
-              "name": "Pork Souvlaki",
-              "cat": "served in pita",
-              "desc": "Armenaki specialty of pork kebab grilled on charcoal and served in Cypriot pita bread",
-              "price": 7.5,
-              "tier": "generic"
             }
           },
           "open": false
@@ -621,51 +621,7 @@
               "tier": "cypriot"
             }
           },
-          "open": false
-        },
-        {
-          "name": "Zerah's Grill Romanian Cuisine",
-          "slug": "zerahs-grill-romanian-cuisine",
-          "address": "Filokyprou 12",
-          "lat": 35.16987234,
-          "lng": 33.3616123,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/zerahs-grill-romanian-cuisine",
-          "prices": {
-            "porkchop": 14,
-            "mix": 8.5,
-            "souvlaki": 7.5,
-            "chicken": 7.5
-          },
-          "items": {
-            "porkchop": {
-              "name": "Pork Chop",
-              "cat": "portions",
-              "desc": "Served with french fries, salad, bread and sauce",
-              "price": 14
-            },
-            "mix": {
-              "name": "Mix Pork Souvlaki in Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "",
-              "price": 8.5,
-              "tier": "cypriot"
-            },
-            "souvlaki": {
-              "name": "Pork Souvlaki in Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "",
-              "price": 7.5,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Chicken Souvlaki in Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "",
-              "price": 7.5,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
+          "open": true
         },
         {
           "name": "To Souvlaki tou Dimitri stin AEK Kythraias",
@@ -730,6 +686,118 @@
               "cat": "κυπριακη πιτα",
               "desc": "Ντομάτα, αγγουράκι, μαϊντανό, λεμόνι,κρεμμύδι",
               "price": 8.5,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Karvounostimies",
+          "slug": "karvounostimies",
+          "address": "Tombazi & Pireos 69",
+          "lat": 35.16368182,
+          "lng": 33.37505405,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/karvounostimies",
+          "prices": {
+            "porkchop": 14,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "mix": 7.5,
+            "mixLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 10
+          },
+          "items": {
+            "porkchop": {
+              "name": "Χοιρινή Μπριζόλα Μερίδα",
+              "cat": "μεριδες",
+              "desc": "",
+              "price": 14
+            },
+            "souvlaki": {
+              "name": "Σουβλάκι Χοιρινό Κυπριακή Πίτα",
+              "cat": "κυπριακες πιτες",
+              "desc": "",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Σουβλάκι Χοιρινό Κυπριακή Πίτα",
+              "cat": "κυπριακες πιτες",
+              "desc": "",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Χοιρινό Μίξ Κυπριακή Πίτα",
+              "cat": "κυπριακες πιτες",
+              "desc": "",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Χοιρινό Μίξ Κυπριακή Πίτα",
+              "cat": "κυπριακες πιτες",
+              "desc": "",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Σουβλάκι Κοτόπουλο Κυπριακή Πίτα",
+              "cat": "κυπριακες πιτες",
+              "desc": "",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Σουβλάκι Κοτόπουλο Κυπριακή Πίτα",
+              "cat": "κυπριακες πιτες",
+              "desc": "",
+              "price": 10,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Zerah's Grill Romanian Cuisine",
+          "slug": "zerahs-grill-romanian-cuisine",
+          "address": "Filokyprou 12",
+          "lat": 35.16987234,
+          "lng": 33.3616123,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/zerahs-grill-romanian-cuisine",
+          "prices": {
+            "porkchop": 14,
+            "mix": 8.5,
+            "souvlaki": 7.5,
+            "chicken": 7.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop",
+              "cat": "portions",
+              "desc": "Served with french fries, salad, bread and sauce",
+              "price": 14
+            },
+            "mix": {
+              "name": "Mix Pork Souvlaki in Cypriot Pita",
+              "cat": "cypriot pita",
+              "desc": "",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki in Cypriot Pita",
+              "cat": "cypriot pita",
+              "desc": "",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki in Cypriot Pita",
+              "cat": "cypriot pita",
+              "desc": "",
+              "price": 7.5,
               "tier": "cypriot"
             }
           },
@@ -804,136 +872,174 @@
           "open": false
         },
         {
-          "name": "Finitzia Taverna",
-          "slug": "finitzia-taverna",
-          "address": "Athinas 23",
-          "lat": 35.17637929990336,
-          "lng": 33.371159362468575,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/finitzia-taverna",
+          "name": "Pita Pita Psitogefseis",
+          "slug": "pita-pita-psitogefseis",
+          "address": " 28th October 71, 2414engomi",
+          "lat": 35.15697736281591,
+          "lng": 33.314747401103375,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/pita-pita-psitogefseis",
           "prices": {
-            "porkchop": 10.5,
+            "mix": 8,
+            "mixLarge": 9.5,
             "souvlaki": 7.5,
             "souvlakiLarge": 9,
-            "mix": 7.5,
-            "mixLarge": 9,
             "chicken": 8,
-            "chickenLarge": 9
+            "chickenLarge": 9.5
           },
           "items": {
-            "porkchop": {
-              "name": "Μπριζόλα Μερίδα Τζιάμπο 700γρ.",
-              "cat": "της σχαρας στο δισκακι",
-              "desc": "Σερβίρεται με σαλάτα, πατάτες, πίτα και λεμόνι",
-              "price": 10.5
-            },
-            "souvlaki": {
-              "name": "Σουβλάκια Χοιρινό σε Πίτα",
-              "cat": "της σχαρας στην πιτα",
-              "desc": "Επίλεξε μέγεθος",
-              "price": 7.5,
-              "tier": "generic"
-            },
-            "souvlakiLarge": {
-              "name": "Σουβλάκια Χοιρινό σε Πίτα",
-              "cat": "της σχαρας στην πιτα",
-              "desc": "Επίλεξε μέγεθος",
-              "price": 9,
-              "tier": "generic"
-            },
             "mix": {
-              "name": "Mix Σουβλάκι και Σιεφταλιές σε Πίτα",
-              "cat": "της σχαρας στην πιτα",
-              "desc": "",
-              "price": 7.5,
-              "tier": "generic"
+              "name": "Mix Cypriot Pita",
+              "cat": "cypriot pita",
+              "desc": "Cypriot pita mix with ingredients of your choice",
+              "price": 8,
+              "tier": "cypriot"
             },
             "mixLarge": {
-              "name": "Mix Σουβλάκι και Σιεφταλιές σε Πίτα",
-              "cat": "της σχαρας στην πιτα",
-              "desc": "",
+              "name": "Mix Cypriot Pita",
+              "cat": "cypriot pita",
+              "desc": "Cypriot pita mix with ingredients of your choice",
+              "price": 9.5,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "cypriot pita",
+              "desc": "Pork from neck cypriot pita with pork souvlaki and toppings of your choice",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "cypriot pita",
+              "desc": "Pork from neck cypriot pita with pork souvlaki and toppings of your choice",
               "price": 9,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "cypriot pita",
+              "desc": "Cypriot pita souvlaki chicken breast with your choice of toppings",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "cypriot pita",
+              "desc": "Cypriot pita souvlaki chicken breast with your choice of toppings",
+              "price": 9.5,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Stelian Souvlakia",
+          "slug": "stelian-souvlakia",
+          "address": "Grigori Afxentiou 76",
+          "lat": 35.17158582684277,
+          "lng": 33.333192490926905,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/stelian-souvlakia",
+          "prices": {
+            "chickenLarge": 9.5,
+            "chicken": 8.5,
+            "souvlakiLarge": 8.5,
+            "souvlaki": 7.5
+          },
+          "items": {
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Large",
+              "cat": "pita",
+              "desc": "served with pita and salad (cucumber, tomato, parsley, onion, lemon).",
+              "price": 9.5,
               "tier": "generic"
             },
             "chicken": {
-              "name": "Κοτόπουλο Σουβλάκι σε Πίτα",
-              "cat": "της σχαρας στην πιτα",
-              "desc": "",
-              "price": 8,
+              "name": "Chicken Souvlaki Regular",
+              "cat": "pita",
+              "desc": "served with pita and salad (cucumber, tomato, parsley, onion, lemon).",
+              "price": 8.5,
               "tier": "generic"
             },
-            "chickenLarge": {
-              "name": "Κοτόπουλο Σουβλάκι σε Πίτα",
-              "cat": "της σχαρας στην πιτα",
-              "desc": "",
-              "price": 9,
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Large",
+              "cat": "pita",
+              "desc": "served with pita and salad (cucumber, tomato, parsley, onion, lemon).",
+              "price": 8.5,
+              "tier": "generic"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Regular",
+              "cat": "pita",
+              "desc": "served with pita and salad (cucumber, tomato, parsley, onion, lemon).",
+              "price": 7.5,
               "tier": "generic"
             }
           },
           "open": false
         },
         {
-          "name": "Karvounostimies",
-          "slug": "karvounostimies",
-          "address": "Tombazi & Pireos 69",
-          "lat": 35.16368182,
-          "lng": 33.37505405,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/karvounostimies",
+          "name": "Karvounolichoudies Tis Gianoullas & Tou Ovelix",
+          "slug": "karvounolixoudies-tis-gianoullas-kai-tou-ovelix",
+          "address": "Dimokratias 64, Strovolos",
+          "lat": 35.13264762,
+          "lng": 33.35908333,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/karvounolixoudies-tis-gianoullas-kai-tou-ovelix",
           "prices": {
-            "porkchop": 14,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 9,
+            "porkchop": 11,
             "mix": 7.5,
-            "mixLarge": 9,
             "chicken": 8,
-            "chickenLarge": 10
+            "mixLarge": 9,
+            "chickenLarge": 9.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9
           },
           "items": {
             "porkchop": {
               "name": "Χοιρινή Μπριζόλα Μερίδα",
               "cat": "μεριδες",
               "desc": "",
-              "price": 14
+              "price": 11
+            },
+            "mix": {
+              "name": "Μιξ Χοιρινό Κυπριακή Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "περιλαμβανει 2 σμηλες σουβλακι, 3 σιεφταλιες, ντοματα, αγγουρι, μαιντανο, κραμπι, κρεμμυδι",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Κοτόπουλο Σουβλάκι Κυπριακή Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "2 σμηλες σουβλακι ,   ντοματα, αγγουρι, Μαιντανο, κρεμμυδι, κραμπι.",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Μιξ Χοιρινό Ενισχυμένη Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "περιλαμβανει 3 σμηλες σουβλακι, 3 σιεφταλιες, ντοματα, αγγουρι, μαιντανο,κραμπι, κρεμμυδι.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Κοτόπουλο Σουβλάκι Ενισχυμένη Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "3 σμηλες σουβλακι κοτοπουλο , ντοματα, αγγουρι, κραμπι, μαιντανο, κρεμμυδι.",
+              "price": 9.5,
+              "tier": "cypriot"
             },
             "souvlaki": {
-              "name": "Σουβλάκι Χοιρινό Κυπριακή Πίτα",
-              "cat": "κυπριακες πιτες",
-              "desc": "",
+              "name": "Χοιρινό Σουβλάκι Κυπριακή Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "περιλαμβανει 3 σμηλες σουβλακι, ντοματα,αγγουρι,μαιντανο,κρεμμυδι,κραμπι.",
               "price": 7.5,
               "tier": "cypriot"
             },
             "souvlakiLarge": {
-              "name": "Σουβλάκι Χοιρινό Κυπριακή Πίτα",
-              "cat": "κυπριακες πιτες",
-              "desc": "",
+              "name": "Χοιρινό Σουβλάκι Ενισχυμένη Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "4 σμηλες σουβλακι, ντοματα, αγγουρι, μαιντανο, κρεμμυδι,  κραμπι.",
               "price": 9,
-              "tier": "cypriot"
-            },
-            "mix": {
-              "name": "Χοιρινό Μίξ Κυπριακή Πίτα",
-              "cat": "κυπριακες πιτες",
-              "desc": "",
-              "price": 7.5,
-              "tier": "cypriot"
-            },
-            "mixLarge": {
-              "name": "Χοιρινό Μίξ Κυπριακή Πίτα",
-              "cat": "κυπριακες πιτες",
-              "desc": "",
-              "price": 9,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Σουβλάκι Κοτόπουλο Κυπριακή Πίτα",
-              "cat": "κυπριακες πιτες",
-              "desc": "",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "chickenLarge": {
-              "name": "Σουβλάκι Κοτόπουλο Κυπριακή Πίτα",
-              "cat": "κυπριακες πιτες",
-              "desc": "",
-              "price": 10,
               "tier": "cypriot"
             }
           },
@@ -1002,248 +1108,6 @@
               "cat": "στη πιτα",
               "desc": "Κραμπί, μαϊντανός, ντομάτα, αγγουράκι, κρεμμύδι, λεμόνι",
               "price": 8.5,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Souvlakia Marios",
-          "slug": "souvlakia-marios",
-          "address": "Aristofanous 115 Θ, Strovolos",
-          "lat": 35.12582707,
-          "lng": 33.34901507,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-marios",
-          "prices": {
-            "porkchop": 11,
-            "mix": 7.5,
-            "mixLarge": 8.5,
-            "chicken": 8,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 8.5,
-            "chickenLarge": 11
-          },
-          "items": {
-            "porkchop": {
-              "name": "Μπριζολα Μερίδα",
-              "cat": "στη σχαρα",
-              "desc": "",
-              "price": 11
-            },
-            "mix": {
-              "name": "Χοιρινο Mix  Σουβλάκι στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "2 ξυλάκια σουβλάκι (10τμχ), 3τμχ σιεφταλιές και σαλάτα",
-              "price": 7.5,
-              "tier": "generic"
-            },
-            "mixLarge": {
-              "name": "Χοιρινο Μιξ Ενισχυμένο στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "",
-              "price": 8.5,
-              "tier": "generic"
-            },
-            "chicken": {
-              "name": "Κοτόπουλο Σουβλακι στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "2 ξυλάκια (16τμχ) σουβλάκι και σαλάτα",
-              "price": 8,
-              "tier": "generic"
-            },
-            "souvlaki": {
-              "name": "Χοιρινό Σουβλάκι στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "4 ξυλάκια σουβλάκι (20τμχ) και σαλάτα",
-              "price": 7.5,
-              "tier": "generic"
-            },
-            "souvlakiLarge": {
-              "name": "Χοιρινό Σουβλάκι Ενισχυμένο στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "5 ξυλάκια σουβλάκι (25τμχ) και σαλάτα",
-              "price": 8.5,
-              "tier": "generic"
-            },
-            "chickenLarge": {
-              "name": "Κοτόπουλο Σουβλακι Ενισχυμένο στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "",
-              "price": 11,
-              "tier": "generic"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Stelian Souvlakia",
-          "slug": "stelian-souvlakia",
-          "address": "Grigori Afxentiou 76",
-          "lat": 35.17158582684277,
-          "lng": 33.333192490926905,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/stelian-souvlakia",
-          "prices": {
-            "chickenLarge": 9.5,
-            "chicken": 8.5,
-            "souvlakiLarge": 8.5,
-            "souvlaki": 7.5
-          },
-          "items": {
-            "chickenLarge": {
-              "name": "Chicken Souvlaki Large",
-              "cat": "pita",
-              "desc": "served with pita and salad (cucumber, tomato, parsley, onion, lemon).",
-              "price": 9.5,
-              "tier": "generic"
-            },
-            "chicken": {
-              "name": "Chicken Souvlaki Regular",
-              "cat": "pita",
-              "desc": "served with pita and salad (cucumber, tomato, parsley, onion, lemon).",
-              "price": 8.5,
-              "tier": "generic"
-            },
-            "souvlakiLarge": {
-              "name": "Pork Souvlaki Large",
-              "cat": "pita",
-              "desc": "served with pita and salad (cucumber, tomato, parsley, onion, lemon).",
-              "price": 8.5,
-              "tier": "generic"
-            },
-            "souvlaki": {
-              "name": "Pork Souvlaki Regular",
-              "cat": "pita",
-              "desc": "served with pita and salad (cucumber, tomato, parsley, onion, lemon).",
-              "price": 7.5,
-              "tier": "generic"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Pita Pita Psitogefseis",
-          "slug": "pita-pita-psitogefseis",
-          "address": " 28th October 71, 2414engomi",
-          "lat": 35.15697736281591,
-          "lng": 33.314747401103375,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/pita-pita-psitogefseis",
-          "prices": {
-            "mix": 8,
-            "mixLarge": 9.5,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 9,
-            "chicken": 8,
-            "chickenLarge": 9.5
-          },
-          "items": {
-            "mix": {
-              "name": "Mix Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "Cypriot pita mix with ingredients of your choice",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "mixLarge": {
-              "name": "Mix Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "Cypriot pita mix with ingredients of your choice",
-              "price": 9.5,
-              "tier": "cypriot"
-            },
-            "souvlaki": {
-              "name": "Pork Souvlaki Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "Pork from neck cypriot pita with pork souvlaki and toppings of your choice",
-              "price": 7.5,
-              "tier": "cypriot"
-            },
-            "souvlakiLarge": {
-              "name": "Pork Souvlaki Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "Pork from neck cypriot pita with pork souvlaki and toppings of your choice",
-              "price": 9,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Chicken Souvlaki Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "Cypriot pita souvlaki chicken breast with your choice of toppings",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "chickenLarge": {
-              "name": "Chicken Souvlaki Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "Cypriot pita souvlaki chicken breast with your choice of toppings",
-              "price": 9.5,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Karvounolichoudies Tis Gianoullas & Tou Ovelix",
-          "slug": "karvounolixoudies-tis-gianoullas-kai-tou-ovelix",
-          "address": "Dimokratias 64, Strovolos",
-          "lat": 35.13264762,
-          "lng": 33.35908333,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/karvounolixoudies-tis-gianoullas-kai-tou-ovelix",
-          "prices": {
-            "porkchop": 11,
-            "mix": 7.5,
-            "chicken": 8,
-            "mixLarge": 9,
-            "chickenLarge": 9.5,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 9
-          },
-          "items": {
-            "porkchop": {
-              "name": "Χοιρινή Μπριζόλα Μερίδα",
-              "cat": "μεριδες",
-              "desc": "",
-              "price": 11
-            },
-            "mix": {
-              "name": "Μιξ Χοιρινό Κυπριακή Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "περιλαμβανει 2 σμηλες σουβλακι, 3 σιεφταλιες, ντοματα, αγγουρι, μαιντανο, κραμπι, κρεμμυδι",
-              "price": 7.5,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Κοτόπουλο Σουβλάκι Κυπριακή Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "2 σμηλες σουβλακι ,   ντοματα, αγγουρι, Μαιντανο, κρεμμυδι, κραμπι.",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "mixLarge": {
-              "name": "Μιξ Χοιρινό Ενισχυμένη Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "περιλαμβανει 3 σμηλες σουβλακι, 3 σιεφταλιες, ντοματα, αγγουρι, μαιντανο,κραμπι, κρεμμυδι.",
-              "price": 9,
-              "tier": "cypriot"
-            },
-            "chickenLarge": {
-              "name": "Κοτόπουλο Σουβλάκι Ενισχυμένη Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "3 σμηλες σουβλακι κοτοπουλο , ντοματα, αγγουρι, κραμπι, μαιντανο, κρεμμυδι.",
-              "price": 9.5,
-              "tier": "cypriot"
-            },
-            "souvlaki": {
-              "name": "Χοιρινό Σουβλάκι Κυπριακή Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "περιλαμβανει 3 σμηλες σουβλακι, ντοματα,αγγουρι,μαιντανο,κρεμμυδι,κραμπι.",
-              "price": 7.5,
-              "tier": "cypriot"
-            },
-            "souvlakiLarge": {
-              "name": "Χοιρινό Σουβλάκι Ενισχυμένη Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "4 σμηλες σουβλακι, ντοματα, αγγουρι, μαιντανο, κρεμμυδι,  κραμπι.",
-              "price": 9,
               "tier": "cypriot"
             }
           },
@@ -1447,6 +1311,142 @@
           "open": false
         },
         {
+          "name": "Finitzia Taverna",
+          "slug": "finitzia-taverna",
+          "address": "Athinas 23",
+          "lat": 35.17637929990336,
+          "lng": 33.371159362468575,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/finitzia-taverna",
+          "prices": {
+            "porkchop": 10.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "mix": 7.5,
+            "mixLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9
+          },
+          "items": {
+            "porkchop": {
+              "name": "Μπριζόλα Μερίδα Τζιάμπο 700γρ.",
+              "cat": "της σχαρας στο δισκακι",
+              "desc": "Σερβίρεται με σαλάτα, πατάτες, πίτα και λεμόνι",
+              "price": 10.5
+            },
+            "souvlaki": {
+              "name": "Σουβλάκια Χοιρινό σε Πίτα",
+              "cat": "της σχαρας στην πιτα",
+              "desc": "Επίλεξε μέγεθος",
+              "price": 7.5,
+              "tier": "generic"
+            },
+            "souvlakiLarge": {
+              "name": "Σουβλάκια Χοιρινό σε Πίτα",
+              "cat": "της σχαρας στην πιτα",
+              "desc": "Επίλεξε μέγεθος",
+              "price": 9,
+              "tier": "generic"
+            },
+            "mix": {
+              "name": "Mix Σουβλάκι και Σιεφταλιές σε Πίτα",
+              "cat": "της σχαρας στην πιτα",
+              "desc": "",
+              "price": 7.5,
+              "tier": "generic"
+            },
+            "mixLarge": {
+              "name": "Mix Σουβλάκι και Σιεφταλιές σε Πίτα",
+              "cat": "της σχαρας στην πιτα",
+              "desc": "",
+              "price": 9,
+              "tier": "generic"
+            },
+            "chicken": {
+              "name": "Κοτόπουλο Σουβλάκι σε Πίτα",
+              "cat": "της σχαρας στην πιτα",
+              "desc": "",
+              "price": 8,
+              "tier": "generic"
+            },
+            "chickenLarge": {
+              "name": "Κοτόπουλο Σουβλάκι σε Πίτα",
+              "cat": "της σχαρας στην πιτα",
+              "desc": "",
+              "price": 9,
+              "tier": "generic"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Souvlakia Marios",
+          "slug": "souvlakia-marios",
+          "address": "Aristofanous 115 Θ, Strovolos",
+          "lat": 35.12582707,
+          "lng": 33.34901507,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-marios",
+          "prices": {
+            "porkchop": 11,
+            "mix": 7.5,
+            "mixLarge": 8.5,
+            "chicken": 8,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 8.5,
+            "chickenLarge": 11
+          },
+          "items": {
+            "porkchop": {
+              "name": "Μπριζολα Μερίδα",
+              "cat": "στη σχαρα",
+              "desc": "",
+              "price": 11
+            },
+            "mix": {
+              "name": "Χοιρινο Mix  Σουβλάκι στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "2 ξυλάκια σουβλάκι (10τμχ), 3τμχ σιεφταλιές και σαλάτα",
+              "price": 7.5,
+              "tier": "generic"
+            },
+            "mixLarge": {
+              "name": "Χοιρινο Μιξ Ενισχυμένο στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "",
+              "price": 8.5,
+              "tier": "generic"
+            },
+            "chicken": {
+              "name": "Κοτόπουλο Σουβλακι στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "2 ξυλάκια (16τμχ) σουβλάκι και σαλάτα",
+              "price": 8,
+              "tier": "generic"
+            },
+            "souvlaki": {
+              "name": "Χοιρινό Σουβλάκι στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "4 ξυλάκια σουβλάκι (20τμχ) και σαλάτα",
+              "price": 7.5,
+              "tier": "generic"
+            },
+            "souvlakiLarge": {
+              "name": "Χοιρινό Σουβλάκι Ενισχυμένο στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "5 ξυλάκια σουβλάκι (25τμχ) και σαλάτα",
+              "price": 8.5,
+              "tier": "generic"
+            },
+            "chickenLarge": {
+              "name": "Κοτόπουλο Σουβλακι Ενισχυμένο στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "",
+              "price": 11,
+              "tier": "generic"
+            }
+          },
+          "open": false
+        },
+        {
           "name": "Taverna 4307",
           "slug": "taverna-4307",
           "address": "Neas Egkomis 6, Viomixaniki Perioxi Egkomi ",
@@ -1568,6 +1568,50 @@
           "open": false
         },
         {
+          "name": "Butcher Man",
+          "slug": "butcher-man",
+          "address": "Larnakos 110 Aglantzia, Cyprus",
+          "lat": 35.15492539,
+          "lng": 33.39894876,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/butcher-man",
+          "prices": {
+            "porkchop": 14.5,
+            "souvlaki": 7.5,
+            "chicken": 8.5,
+            "mix": 7.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Grilled Giant Pork Chop",
+              "cat": "portions",
+              "desc": "",
+              "price": 14.5
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki in Cypriot Pita",
+              "cat": "in pitta",
+              "desc": "",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki in Cypriot Pita",
+              "cat": "in pitta",
+              "desc": "",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix Pork in Cypriot Pita",
+              "cat": "in pitta",
+              "desc": "",
+              "price": 7.5,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
           "name": "Taverna Orfeas Nicosia",
           "slug": "taverna-orfeas",
           "address": "Athinas 23",
@@ -1631,50 +1675,6 @@
               "desc": "Επίλεξε μέγεθος",
               "price": 9,
               "tier": "generic"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Butcher Man",
-          "slug": "butcher-man",
-          "address": "Larnakos 110 Aglantzia, Cyprus",
-          "lat": 35.15492539,
-          "lng": 33.39894876,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/butcher-man",
-          "prices": {
-            "porkchop": 14.5,
-            "souvlaki": 7.5,
-            "chicken": 8.5,
-            "mix": 7.5
-          },
-          "items": {
-            "porkchop": {
-              "name": "Grilled Giant Pork Chop",
-              "cat": "portions",
-              "desc": "",
-              "price": 14.5
-            },
-            "souvlaki": {
-              "name": "Pork Souvlaki in Cypriot Pita",
-              "cat": "in pitta",
-              "desc": "",
-              "price": 7.5,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Chicken Souvlaki in Cypriot Pita",
-              "cat": "in pitta",
-              "desc": "",
-              "price": 8.5,
-              "tier": "cypriot"
-            },
-            "mix": {
-              "name": "Mix Pork in Cypriot Pita",
-              "cat": "in pitta",
-              "desc": "",
-              "price": 7.5,
-              "tier": "cypriot"
             }
           },
           "open": false
@@ -1748,66 +1748,6 @@
           "open": false
         },
         {
-          "name": "To Meraklitikon Souvlaki Tis Athinon",
-          "slug": "to-meraklitikon",
-          "address": "Athinon 54B, Strovolos",
-          "lat": 35.1386652,
-          "lng": 33.3467826,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-meraklitikon",
-          "prices": {
-            "porkchop": 13.5,
-            "souvlaki": 7.7,
-            "souvlakiLarge": 9.3,
-            "chicken": 7.9,
-            "chickenLarge": 9.4,
-            "mix": 10
-          },
-          "items": {
-            "porkchop": {
-              "name": "Χοιρινή Μπριζόλα Μερίδα 750 gr",
-              "cat": "μεριδες",
-              "desc": "Με σαλάτα και τηγανιτές πατάτες και λεμόνι",
-              "price": 13.5
-            },
-            "souvlaki": {
-              "name": "Χοιρινό Σουβλάκι Σε Κυπριακή Πίτα",
-              "cat": "kebab",
-              "desc": "",
-              "price": 7.7,
-              "tier": "cypriot"
-            },
-            "souvlakiLarge": {
-              "name": "Χοιρινό Σουβλάκι Σε Κυπριακή Πίτα",
-              "cat": "kebab",
-              "desc": "",
-              "price": 9.3,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Κοτόπουλο Σουβλάκι Σε Κυπριακή Πίτα",
-              "cat": "kebab",
-              "desc": "",
-              "price": 7.9,
-              "tier": "cypriot"
-            },
-            "chickenLarge": {
-              "name": "Κοτόπουλο Σουβλάκι Σε Κυπριακή Πίτα",
-              "cat": "kebab",
-              "desc": "",
-              "price": 9.4,
-              "tier": "cypriot"
-            },
-            "mix": {
-              "name": "Χοιρινό, Κοτόπουλο Σουβλάκι & Σιεφταλιές  Σε Κυπριακή Πίτα",
-              "cat": "kebab",
-              "desc": "Ενισχυμένη μερακλίτικη πίττα",
-              "price": 10,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
           "name": "I Drosia Grill House",
           "slug": "i-drosia-grill-house",
           "address": "68A Ippokratous ",
@@ -1870,6 +1810,66 @@
               "cat": "cypriot pitas",
               "desc": "Served with cabbage, tomato, cucumber, parsley, onion, lemon",
               "price": 9.2,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "To Meraklitikon Souvlaki Tis Athinon",
+          "slug": "to-meraklitikon",
+          "address": "Athinon 54B, Strovolos",
+          "lat": 35.1386652,
+          "lng": 33.3467826,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-meraklitikon",
+          "prices": {
+            "porkchop": 13.5,
+            "souvlaki": 7.7,
+            "souvlakiLarge": 9.3,
+            "chicken": 7.9,
+            "chickenLarge": 9.4,
+            "mix": 10
+          },
+          "items": {
+            "porkchop": {
+              "name": "Χοιρινή Μπριζόλα Μερίδα 750 gr",
+              "cat": "μεριδες",
+              "desc": "Με σαλάτα και τηγανιτές πατάτες και λεμόνι",
+              "price": 13.5
+            },
+            "souvlaki": {
+              "name": "Χοιρινό Σουβλάκι Σε Κυπριακή Πίτα",
+              "cat": "kebab",
+              "desc": "",
+              "price": 7.7,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Χοιρινό Σουβλάκι Σε Κυπριακή Πίτα",
+              "cat": "kebab",
+              "desc": "",
+              "price": 9.3,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Κοτόπουλο Σουβλάκι Σε Κυπριακή Πίτα",
+              "cat": "kebab",
+              "desc": "",
+              "price": 7.9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Κοτόπουλο Σουβλάκι Σε Κυπριακή Πίτα",
+              "cat": "kebab",
+              "desc": "",
+              "price": 9.4,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Χοιρινό, Κοτόπουλο Σουβλάκι & Σιεφταλιές  Σε Κυπριακή Πίτα",
+              "cat": "kebab",
+              "desc": "Ενισχυμένη μερακλίτικη πίττα",
+              "price": 10,
               "tier": "cypriot"
             }
           },
@@ -2021,7 +2021,7 @@
               "tier": "cypriot"
             }
           },
-          "open": false
+          "open": true
         },
         {
           "name": "Souvlakia Orfeas",
@@ -2092,51 +2092,6 @@
           "open": false
         },
         {
-          "name": "George's Chris Restaurant",
-          "slug": "george-chris-restaurant",
-          "address": " Grigori Karekla 13",
-          "lat": 35.14615591,
-          "lng": 33.35690937,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/george-chris-restaurant",
-          "prices": {
-            "mix": 8,
-            "mixLarge": 10,
-            "souvlaki": 8,
-            "souvlakiLarge": 10
-          },
-          "items": {
-            "mix": {
-              "name": "Μιξ Κοτόπουλο Στη Πίτα",
-              "cat": "κυπριακες πιτες",
-              "desc": "",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "mixLarge": {
-              "name": "Μιξ Κοτόπουλο Στη Πίτα",
-              "cat": "κυπριακες πιτες",
-              "desc": "",
-              "price": 10,
-              "tier": "cypriot"
-            },
-            "souvlaki": {
-              "name": "Χοιρινό Σουβλάκι Στη Πίτα",
-              "cat": "κυπριακες πιτες",
-              "desc": "",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "souvlakiLarge": {
-              "name": "Χοιρινό Σουβλάκι Στη Πίτα",
-              "cat": "κυπριακες πιτες",
-              "desc": "",
-              "price": 10,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
           "name": "Gia Souvlaki Etsi Apla",
           "slug": "gia-souvlaki-etsi-apla",
           "address": "Metoxiou 41B",
@@ -2184,6 +2139,139 @@
               "desc": "Η κλασσική παραδοσιακή κυπριακή συνταγή όπου το γευστικό χοιρινό σουβλάκι μας συναντά τη μυρωδάτη σεφταλιά και έρχονται σΟ συνδυασμός που σπ",
               "price": 9,
               "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Delish Grill",
+          "slug": "delish-grill",
+          "address": "Tseriou 268, Strovolos",
+          "lat": 35.11479558,
+          "lng": 33.3322407,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/delish-grill",
+          "prices": {
+            "porkchop": 14.5,
+            "mix": 9,
+            "souvlaki": 8,
+            "souvlakiLarge": 8
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop 750gr. Portion",
+              "cat": "on the grill",
+              "desc": "With salad, french fries and choice of cypriot pita or arabic pita with pepper sauce, parsley and onion",
+              "price": 14.5
+            },
+            "mix": {
+              "name": "Pork Souvlaki & Sheftalia Cypriot Pita",
+              "cat": "on the grill",
+              "desc": "Tomato, cucumber, onion, parsley, cabbage",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Marinated Pork Souvlaki Cypriot Pita",
+              "cat": "on the grill",
+              "desc": "Tomato, cucumber, onion, parsley, cabbage",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita XL",
+              "cat": "on the grill",
+              "desc": "3 skewers pork souvlaki, tomato, cucumber, onion, parsley, cabbage",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "George's Chris Restaurant",
+          "slug": "george-chris-restaurant",
+          "address": " Grigori Karekla 13",
+          "lat": 35.14615591,
+          "lng": 33.35690937,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/george-chris-restaurant",
+          "prices": {
+            "mix": 8,
+            "mixLarge": 10,
+            "souvlaki": 8,
+            "souvlakiLarge": 10
+          },
+          "items": {
+            "mix": {
+              "name": "Μιξ Κοτόπουλο Στη Πίτα",
+              "cat": "κυπριακες πιτες",
+              "desc": "",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Μιξ Κοτόπουλο Στη Πίτα",
+              "cat": "κυπριακες πιτες",
+              "desc": "",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Χοιρινό Σουβλάκι Στη Πίτα",
+              "cat": "κυπριακες πιτες",
+              "desc": "",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Χοιρινό Σουβλάκι Στη Πίτα",
+              "cat": "κυπριακες πιτες",
+              "desc": "",
+              "price": 10,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Taverna Eirini Platy",
+          "slug": "taverna-eirini",
+          "address": "28 Assias, Aglantzia",
+          "lat": 35.1486906,
+          "lng": 33.4016369,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-eirini",
+          "prices": {
+            "porkchop": 15,
+            "souvlaki": 8,
+            "mix": 8,
+            "chicken": 9
+          },
+          "items": {
+            "porkchop": {
+              "name": "Μπριζόλα Μερίδα",
+              "cat": "μεριδες",
+              "desc": "",
+              "price": 15
+            },
+            "souvlaki": {
+              "name": "Σουβλάκι Χοιρινό στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "(Στην φωτογραφία απεικονίζεται η ενισχυμένη πίτα)",
+              "price": 8,
+              "tier": "generic"
+            },
+            "mix": {
+              "name": "Σουβλάκι Μίξ στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "(Στην φωτογραφία απεικονίζεται η ενισχυμένη πίτα)",
+              "price": 8,
+              "tier": "generic"
+            },
+            "chicken": {
+              "name": "Σουβλάκι Κοτόπουλο στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "(Στην φωτογραφία απεικονίζεται η ενισχυμένη πίτα)",
+              "price": 9,
+              "tier": "generic"
             }
           },
           "open": false
@@ -2257,138 +2345,6 @@
           "open": false
         },
         {
-          "name": "Delish Grill",
-          "slug": "delish-grill",
-          "address": "Tseriou 268, Strovolos",
-          "lat": 35.11479558,
-          "lng": 33.3322407,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/delish-grill",
-          "prices": {
-            "porkchop": 14.5,
-            "mix": 9,
-            "souvlaki": 8,
-            "souvlakiLarge": 8
-          },
-          "items": {
-            "porkchop": {
-              "name": "Pork Chop 750gr. Portion",
-              "cat": "on the grill",
-              "desc": "With salad, french fries and choice of cypriot pita or arabic pita with pepper sauce, parsley and onion",
-              "price": 14.5
-            },
-            "mix": {
-              "name": "Pork Souvlaki & Sheftalia Cypriot Pita",
-              "cat": "on the grill",
-              "desc": "Tomato, cucumber, onion, parsley, cabbage",
-              "price": 9,
-              "tier": "cypriot"
-            },
-            "souvlaki": {
-              "name": "Marinated Pork Souvlaki Cypriot Pita",
-              "cat": "on the grill",
-              "desc": "Tomato, cucumber, onion, parsley, cabbage",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "souvlakiLarge": {
-              "name": "Pork Souvlaki Cypriot Pita XL",
-              "cat": "on the grill",
-              "desc": "3 skewers pork souvlaki, tomato, cucumber, onion, parsley, cabbage",
-              "price": 8,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "To Anamma",
-          "slug": "anamma",
-          "address": "Ledra Street 89 , Ledras, Nicosia,",
-          "lat": 35.17306369,
-          "lng": 33.36142125,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/anamma",
-          "prices": {
-            "porkchop": 14.8,
-            "souvlaki": 8,
-            "mix": 8,
-            "chicken": 8
-          },
-          "items": {
-            "porkchop": {
-              "name": "Μπριζόλα Χοιρινή στη Σχάρα",
-              "cat": "στη σχαρα",
-              "desc": "με ντομάτα, αγγουράκι, τουρσί, τζατζίκι και τηγανητές πατάτες",
-              "price": 14.8
-            },
-            "souvlaki": {
-              "name": "Σουβλάκι Χοιρινό Κυπριακή",
-              "cat": "κυπριακη πιτα",
-              "desc": "3 ξύλ. (270γρ. φιλέτο και μπέικον)",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "mix": {
-              "name": "Mix Σουβάκι Χοιρινό Κυπριακή",
-              "cat": "κυπριακη πιτα",
-              "desc": "2 ξυλάκια (180γρ.) + 3 σεφταλιές (120 γρ.)",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Σουβλάκι Κοτόπουλο Κυπριακή",
-              "cat": "κυπριακη πιτα",
-              "desc": "3 ξυλάκια (240γρ.)",
-              "price": 8,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Taverna Eirini Platy",
-          "slug": "taverna-eirini",
-          "address": "28 Assias, Aglantzia",
-          "lat": 35.1486906,
-          "lng": 33.4016369,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-eirini",
-          "prices": {
-            "porkchop": 15,
-            "souvlaki": 8,
-            "mix": 8,
-            "chicken": 9
-          },
-          "items": {
-            "porkchop": {
-              "name": "Μπριζόλα Μερίδα",
-              "cat": "μεριδες",
-              "desc": "",
-              "price": 15
-            },
-            "souvlaki": {
-              "name": "Σουβλάκι Χοιρινό στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "(Στην φωτογραφία απεικονίζεται η ενισχυμένη πίτα)",
-              "price": 8,
-              "tier": "generic"
-            },
-            "mix": {
-              "name": "Σουβλάκι Μίξ στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "(Στην φωτογραφία απεικονίζεται η ενισχυμένη πίτα)",
-              "price": 8,
-              "tier": "generic"
-            },
-            "chicken": {
-              "name": "Σουβλάκι Κοτόπουλο στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "(Στην φωτογραφία απεικονίζεται η ενισχυμένη πίτα)",
-              "price": 9,
-              "tier": "generic"
-            }
-          },
-          "open": false
-        },
-        {
           "name": "To Tavernaki Tou Achillea Kaimakliou",
           "slug": "to-tavernaki-tou-achillea-kaimakliou",
           "address": "Stadiou 1, Kaimakli",
@@ -2451,6 +2407,118 @@
               "cat": "κυπριακη πιτα",
               "desc": "",
               "price": 10,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "To Anamma",
+          "slug": "anamma",
+          "address": "Ledra Street 89 , Ledras, Nicosia,",
+          "lat": 35.17306369,
+          "lng": 33.36142125,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/anamma",
+          "prices": {
+            "porkchop": 14.8,
+            "souvlaki": 8,
+            "mix": 8,
+            "chicken": 8
+          },
+          "items": {
+            "porkchop": {
+              "name": "Μπριζόλα Χοιρινή στη Σχάρα",
+              "cat": "στη σχαρα",
+              "desc": "με ντομάτα, αγγουράκι, τουρσί, τζατζίκι και τηγανητές πατάτες",
+              "price": 14.8
+            },
+            "souvlaki": {
+              "name": "Σουβλάκι Χοιρινό Κυπριακή",
+              "cat": "κυπριακη πιτα",
+              "desc": "3 ξύλ. (270γρ. φιλέτο και μπέικον)",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix Σουβάκι Χοιρινό Κυπριακή",
+              "cat": "κυπριακη πιτα",
+              "desc": "2 ξυλάκια (180γρ.) + 3 σεφταλιές (120 γρ.)",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Σουβλάκι Κοτόπουλο Κυπριακή",
+              "cat": "κυπριακη πιτα",
+              "desc": "3 ξυλάκια (240γρ.)",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "The BBQ House",
+          "slug": "the-bbq-house",
+          "address": "Ifigenias 36B ",
+          "lat": 35.15249367,
+          "lng": 33.36417393,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/the-bbq-house",
+          "prices": {
+            "porkchop": 17,
+            "souvlaki": 8,
+            "souvlakiLarge": 9.5,
+            "chicken": 8.5,
+            "chickenLarge": 10,
+            "mix": 8,
+            "mixLarge": 9.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Giant Portion",
+              "cat": "portions",
+              "desc": "650-850 g",
+              "price": 17
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki in Cypriot Pita",
+              "cat": "cypriot pitas",
+              "desc": "Served with cabbage, tomato, cucumber and parsley",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki in Cypriot Pita",
+              "cat": "cypriot pitas",
+              "desc": "Served with cabbage, tomato, cucumber and parsley",
+              "price": 9.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki in Cypriot Pita",
+              "cat": "cypriot pitas",
+              "desc": "Served with cabbage, tomato, cucumber and parsley",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki in Cypriot Pita",
+              "cat": "cypriot pitas",
+              "desc": "Served with cabbage, tomato, cucumber and parsley",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix Pork Souvlaki in a Cypriot Pita",
+              "cat": "cypriot pitas",
+              "desc": "Served with cabbage, tomato, cucumber and parsley",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Mix Pork Souvlaki in a Cypriot Pita",
+              "cat": "cypriot pitas",
+              "desc": "Served with cabbage, tomato, cucumber and parsley",
+              "price": 9.5,
               "tier": "cypriot"
             }
           },
@@ -2525,69 +2593,69 @@
           "open": false
         },
         {
-          "name": "The BBQ House",
-          "slug": "the-bbq-house",
-          "address": "Ifigenias 36B ",
-          "lat": 35.15249367,
-          "lng": 33.36417393,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/the-bbq-house",
+          "name": "To Pikantiko",
+          "slug": "to-pikantiko",
+          "address": "Archiepiskopu Makariou 13, Lakatamia ",
+          "lat": 35.12164818,
+          "lng": 33.31935737,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-pikantiko",
           "prices": {
-            "porkchop": 17,
+            "porkchop": 12,
             "souvlaki": 8,
-            "souvlakiLarge": 9.5,
-            "chicken": 8.5,
-            "chickenLarge": 10,
+            "souvlakiLarge": 9,
             "mix": 8,
-            "mixLarge": 9.5
+            "mixLarge": 9,
+            "chicken": 9,
+            "chickenLarge": 10
           },
           "items": {
             "porkchop": {
-              "name": "Pork Chop Giant Portion",
-              "cat": "portions",
-              "desc": "650-850 g",
-              "price": 17
+              "name": "Χοιρινή Μπριζόλα Στη Σχάρα",
+              "cat": "ειδη σχαρας",
+              "desc": "Σερβίρεται με τηγανητές πατάτες, σαλάτα, πίτα",
+              "price": 12
             },
             "souvlaki": {
-              "name": "Pork Souvlaki in Cypriot Pita",
-              "cat": "cypriot pitas",
-              "desc": "Served with cabbage, tomato, cucumber and parsley",
+              "name": "Χοιρινό Σουβλάκι Στην Πίτα",
+              "cat": "σουβλακι στην πιτα",
+              "desc": "Η πίτα περιέχει ντομάτα, αγγούρι,  μαϊντανό, λεμόνι, και κρεμμύδι",
               "price": 8,
-              "tier": "cypriot"
+              "tier": "generic"
             },
             "souvlakiLarge": {
-              "name": "Pork Souvlaki in Cypriot Pita",
-              "cat": "cypriot pitas",
-              "desc": "Served with cabbage, tomato, cucumber and parsley",
-              "price": 9.5,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Chicken Souvlaki in Cypriot Pita",
-              "cat": "cypriot pitas",
-              "desc": "Served with cabbage, tomato, cucumber and parsley",
-              "price": 8.5,
-              "tier": "cypriot"
-            },
-            "chickenLarge": {
-              "name": "Chicken Souvlaki in Cypriot Pita",
-              "cat": "cypriot pitas",
-              "desc": "Served with cabbage, tomato, cucumber and parsley",
-              "price": 10,
-              "tier": "cypriot"
+              "name": "Χοιρινό Σουβλάκι Στην Πίτα",
+              "cat": "σουβλακι στην πιτα",
+              "desc": "Η πίτα περιέχει ντομάτα, αγγούρι,  μαϊντανό, λεμόνι, και κρεμμύδι",
+              "price": 9,
+              "tier": "generic"
             },
             "mix": {
-              "name": "Mix Pork Souvlaki in a Cypriot Pita",
-              "cat": "cypriot pitas",
-              "desc": "Served with cabbage, tomato, cucumber and parsley",
+              "name": "Μίξ Σουβλάκι Στην Πίτα",
+              "cat": "σουβλακι στην πιτα",
+              "desc": "Η πίτα περιέχει , ντομάτα, αγγούρι,  μαϊντανό, λεμόνι, και κρεμμύδι",
               "price": 8,
-              "tier": "cypriot"
+              "tier": "generic"
             },
             "mixLarge": {
-              "name": "Mix Pork Souvlaki in a Cypriot Pita",
-              "cat": "cypriot pitas",
-              "desc": "Served with cabbage, tomato, cucumber and parsley",
-              "price": 9.5,
-              "tier": "cypriot"
+              "name": "Μίξ Σουβλάκι Στην Πίτα",
+              "cat": "σουβλακι στην πιτα",
+              "desc": "Η πίτα περιέχει , ντομάτα, αγγούρι,  μαϊντανό, λεμόνι, και κρεμμύδι",
+              "price": 9,
+              "tier": "generic"
+            },
+            "chicken": {
+              "name": "Κοτόπουλο Σουβλάκι Στην Πίτα",
+              "cat": "σουβλακι στην πιτα",
+              "desc": "Η πίτα περιέχει  ντομάτα, αγγούρι,  μαϊντανό, λεμόνι, και κρεμμύδι",
+              "price": 9,
+              "tier": "generic"
+            },
+            "chickenLarge": {
+              "name": "Κοτόπουλο Σουβλάκι Στην Πίτα",
+              "cat": "σουβλακι στην πιτα",
+              "desc": "Η πίτα περιέχει  ντομάτα, αγγούρι,  μαϊντανό, λεμόνι, και κρεμμύδι",
+              "price": 10,
+              "tier": "generic"
             }
           },
           "open": false
@@ -2700,74 +2768,6 @@
               "desc": "",
               "price": 8,
               "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "To Pikantiko",
-          "slug": "to-pikantiko",
-          "address": "Archiepiskopu Makariou 13, Lakatamia ",
-          "lat": 35.12164818,
-          "lng": 33.31935737,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-pikantiko",
-          "prices": {
-            "porkchop": 12,
-            "souvlaki": 8,
-            "souvlakiLarge": 9,
-            "mix": 8,
-            "mixLarge": 9,
-            "chicken": 9,
-            "chickenLarge": 10
-          },
-          "items": {
-            "porkchop": {
-              "name": "Χοιρινή Μπριζόλα Στη Σχάρα",
-              "cat": "ειδη σχαρας",
-              "desc": "Σερβίρεται με τηγανητές πατάτες, σαλάτα, πίτα",
-              "price": 12
-            },
-            "souvlaki": {
-              "name": "Χοιρινό Σουβλάκι Στην Πίτα",
-              "cat": "σουβλακι στην πιτα",
-              "desc": "Η πίτα περιέχει ντομάτα, αγγούρι,  μαϊντανό, λεμόνι, και κρεμμύδι",
-              "price": 8,
-              "tier": "generic"
-            },
-            "souvlakiLarge": {
-              "name": "Χοιρινό Σουβλάκι Στην Πίτα",
-              "cat": "σουβλακι στην πιτα",
-              "desc": "Η πίτα περιέχει ντομάτα, αγγούρι,  μαϊντανό, λεμόνι, και κρεμμύδι",
-              "price": 9,
-              "tier": "generic"
-            },
-            "mix": {
-              "name": "Μίξ Σουβλάκι Στην Πίτα",
-              "cat": "σουβλακι στην πιτα",
-              "desc": "Η πίτα περιέχει , ντομάτα, αγγούρι,  μαϊντανό, λεμόνι, και κρεμμύδι",
-              "price": 8,
-              "tier": "generic"
-            },
-            "mixLarge": {
-              "name": "Μίξ Σουβλάκι Στην Πίτα",
-              "cat": "σουβλακι στην πιτα",
-              "desc": "Η πίτα περιέχει , ντομάτα, αγγούρι,  μαϊντανό, λεμόνι, και κρεμμύδι",
-              "price": 9,
-              "tier": "generic"
-            },
-            "chicken": {
-              "name": "Κοτόπουλο Σουβλάκι Στην Πίτα",
-              "cat": "σουβλακι στην πιτα",
-              "desc": "Η πίτα περιέχει  ντομάτα, αγγούρι,  μαϊντανό, λεμόνι, και κρεμμύδι",
-              "price": 9,
-              "tier": "generic"
-            },
-            "chickenLarge": {
-              "name": "Κοτόπουλο Σουβλάκι Στην Πίτα",
-              "cat": "σουβλακι στην πιτα",
-              "desc": "Η πίτα περιέχει  ντομάτα, αγγούρι,  μαϊντανό, λεμόνι, και κρεμμύδι",
-              "price": 10,
-              "tier": "generic"
             }
           },
           "open": false
@@ -3006,67 +3006,6 @@
           "open": false
         },
         {
-          "name": "Gyros Stavros o Salonikios Strovolos",
-          "slug": "gyros-stavros-o-salonikios-strovolos",
-          "address": "Stavrou 76D",
-          "lat": 35.134639898231285,
-          "lng": 33.35652452482748,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/gyros-stavros-o-salonikios-strovolos",
-          "prices": {
-            "mix": 8.6,
-            "mixLarge": 10.6,
-            "souvlaki": 8.3,
-            "souvlakiLarge": 10.100000000000001,
-            "chicken": 9,
-            "chickenLarge": 10.8
-          },
-          "items": {
-            "mix": {
-              "name": "Pork Mix Souvlaki Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "",
-              "price": 8.6,
-              "tier": "cypriot"
-            },
-            "mixLarge": {
-              "name": "Pork Mix Souvlaki Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "",
-              "price": 10.6,
-              "tier": "cypriot"
-            },
-            "souvlaki": {
-              "name": "Pork Souvlaki Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "",
-              "price": 8.3,
-              "tier": "cypriot"
-            },
-            "souvlakiLarge": {
-              "name": "Pork Souvlaki Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "",
-              "price": 10.100000000000001,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Chicken Souvlaki Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "",
-              "price": 9,
-              "tier": "cypriot"
-            },
-            "chickenLarge": {
-              "name": "Chicken Souvlaki Cypriot Pita",
-              "cat": "cypriot pita",
-              "desc": "",
-              "price": 10.8,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
           "name": "Gyro Project",
           "slug": "gyro-project",
           "address": "This is a virtual venue",
@@ -3205,7 +3144,7 @@
               "tier": "cypriot"
             }
           },
-          "open": false
+          "open": true
         },
         {
           "name": "O Gyros Tis Akropolis Strovolos",
@@ -3247,50 +3186,6 @@
               "desc": "Ντομάτα, κρεμμύδι, αγγουράκι, μαρούλι, κραμπί, πατάτες, τζατζίκι",
               "price": 8.5,
               "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Taverna Iparxo",
-          "slug": "taverna-iparxo",
-          "address": "Ayiou Georgiou, Latsia",
-          "lat": 35.10449401,
-          "lng": 33.38656454,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-iparxo",
-          "prices": {
-            "porkchop": 13.5,
-            "mix": 8.5,
-            "chicken": 9.5,
-            "souvlaki": 8.5
-          },
-          "items": {
-            "porkchop": {
-              "name": "Pork Chop Portion",
-              "cat": "portions on the grill",
-              "desc": "",
-              "price": 13.5
-            },
-            "mix": {
-              "name": "Mix Pork in Cyprus Pita",
-              "cat": "cyprus pita",
-              "desc": "",
-              "price": 8.5,
-              "tier": "generic"
-            },
-            "chicken": {
-              "name": "Chicken Souvlaki in Cyprus Pita",
-              "cat": "cyprus pita",
-              "desc": "",
-              "price": 9.5,
-              "tier": "generic"
-            },
-            "souvlaki": {
-              "name": "Pork Souvlaki in Cyprus Pita",
-              "cat": "cyprus pita",
-              "desc": "",
-              "price": 8.5,
-              "tier": "generic"
             }
           },
           "open": false
@@ -3359,6 +3254,50 @@
               "desc": "Ντομάτα, αγγουράκι, κρεμμύδι, μαϊντανός, μαρούλι, κραμπί, ξυδάτα, λεμόνι",
               "price": 10.5,
               "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Taverna Iparxo",
+          "slug": "taverna-iparxo",
+          "address": "Ayiou Georgiou, Latsia",
+          "lat": 35.10449401,
+          "lng": 33.38656454,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/taverna-iparxo",
+          "prices": {
+            "porkchop": 13.5,
+            "mix": 8.5,
+            "chicken": 9.5,
+            "souvlaki": 8.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "portions on the grill",
+              "desc": "",
+              "price": 13.5
+            },
+            "mix": {
+              "name": "Mix Pork in Cyprus Pita",
+              "cat": "cyprus pita",
+              "desc": "",
+              "price": 8.5,
+              "tier": "generic"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki in Cyprus Pita",
+              "cat": "cyprus pita",
+              "desc": "",
+              "price": 9.5,
+              "tier": "generic"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki in Cyprus Pita",
+              "cat": "cyprus pita",
+              "desc": "",
+              "price": 8.5,
+              "tier": "generic"
             }
           },
           "open": false
@@ -3568,7 +3507,7 @@
           "lng": 33.35912669,
           "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-steki-tis-scharas",
           "prices": {
-            "porkchop": 16.8,
+            "porkchop": 15.9,
             "souvlaki": 9.6,
             "souvlakiLarge": 11.6,
             "chicken": 10.2,
@@ -3581,7 +3520,7 @@
               "name": "Χοιρινή Μπριζόλα Μερίδα",
               "cat": "μεριδες",
               "desc": "",
-              "price": 16.8
+              "price": 15.9
             },
             "souvlaki": {
               "name": "Χοιρινό Σουβλάκι Κυπριακή Πίτα",
@@ -3732,26 +3671,6 @@
           "open": false
         },
         {
-          "name": "Tis Manas Sou",
-          "slug": "tis-manas-sou",
-          "address": "Fanairomenis 61",
-          "lat": 35.17320491,
-          "lng": 33.36239762,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/tis-manas-sou",
-          "prices": {
-            "porkchop": 13.9
-          },
-          "items": {
-            "porkchop": {
-              "name": "Χοιρινή Μπριζόλα Tomahawk 600γρ.",
-              "cat": "σχαρας",
-              "desc": "Ζουμερή χοιρινή μπριζόλα με συνοδευτικό της επιλογής σας",
-              "price": 13.9
-            }
-          },
-          "open": false
-        },
-        {
           "name": "Zahoulis",
           "slug": "zahoulis",
           "address": "Themistokli Dervi 24α",
@@ -3780,102 +3699,21 @@
           "open": false
         },
         {
-          "name": "Souvlakia Christakis",
-          "slug": "souvlakia-christakis",
-          "address": "Leoforos Kostaki Pantelidi 28",
-          "lat": 35.17105224,
-          "lng": 33.35895317,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-christakis",
+          "name": "Ta Souvlakia Tou Kosta",
+          "slug": "ta-souvlakia-tou-kosta",
+          "address": "Plateia Paliggenesias 13",
+          "lat": 35.13376375,
+          "lng": 33.36539241,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/ta-souvlakia-tou-kosta",
           "prices": {
-            "porkchop": 10
+            "porkchop": 13.5
           },
           "items": {
             "porkchop": {
-              "name": "Μπριζόλα Μερίδα",
-              "cat": "ειδη σχαρας",
-              "desc": "Σερβίρετε με πατάτες στο πλάι",
-              "price": 10
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Tsolias ",
-          "slug": "tsolias-nicosia",
-          "address": "Νικοκλέους 4",
-          "lat": 35.17363596,
-          "lng": 33.36172644,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/tsolias-nicosia",
-          "prices": {
-            "mix": 7.7
-          },
-          "items": {
-            "mix": {
-              "name": "Μιξ Χοιρινό & Σιεφταλιά Κυπριακή Πίτα",
-              "cat": "σαντουιτς",
-              "desc": "Λάχανο, κρεμμύδι, ντομάτα, αγγούρι, λεμόνι",
-              "price": 7.7,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Mega Gyros",
-          "slug": "mega-gyros",
-          "address": "Ilia Papakyriakou 17 Egkomi",
-          "lat": 35.15737497,
-          "lng": 33.31338786,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/mega-gyros",
-          "prices": {
-            "porkchop": 13.8
-          },
-          "items": {
-            "porkchop": {
-              "name": "Pork Chop",
-              "cat": "other dishes",
-              "desc": "",
-              "price": 13.8
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Amyth of Nicosia",
-          "slug": "amyth-of-nicosia",
-          "address": "29 Patriarchou Gregoriou Street, Nicosia, Cyprus",
-          "lat": 35.172032,
-          "lng": 33.3673711,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/amyth-of-nicosia",
-          "prices": {
-            "porkchop": 80
-          },
-          "items": {
-            "porkchop": {
-              "name": "Iberico Pork Chop",
-              "cat": "amyth signature premium cuts",
-              "desc": "Ragot tomatoes, burnt onion puree and asparagus",
-              "price": 80
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Esobga Terrace",
-          "slug": "esobga",
-          "address": "Steliou Mavrommati",
-          "lat": 35.15506986,
-          "lng": 33.35276508,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/esobga",
-          "prices": {
-            "porkchop": 16
-          },
-          "items": {
-            "porkchop": {
-              "name": "Pork Chop 700gr",
-              "cat": "grill",
-              "desc": "With tomato, cucumber, fries and cypriot pita",
-              "price": 16
+              "name": "Χοιρινή Μπριζόλα \"Twin Turbo\"",
+              "cat": "μεριδες",
+              "desc": "Μεγάλη μερίδα (900γρ-1κιλό) που περιλαμβάνει πατάτες, σαλάτα και πίτα.",
+              "price": 13.5
             }
           },
           "open": false
@@ -3901,6 +3739,74 @@
           "open": false
         },
         {
+          "name": "Tis Manas Sou",
+          "slug": "tis-manas-sou",
+          "address": "Fanairomenis 61",
+          "lat": 35.17320491,
+          "lng": 33.36239762,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/tis-manas-sou",
+          "prices": {
+            "porkchop": 13.9
+          },
+          "items": {
+            "porkchop": {
+              "name": "Χοιρινή Μπριζόλα Tomahawk 600γρ.",
+              "cat": "σχαρας",
+              "desc": "Ζουμερή χοιρινή μπριζόλα με συνοδευτικό της επιλογής σας",
+              "price": 13.9
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Mega Gyros",
+          "slug": "mega-gyros",
+          "address": "Ilia Papakyriakou 17 Egkomi",
+          "lat": 35.15737497,
+          "lng": 33.31338786,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/mega-gyros",
+          "prices": {
+            "porkchop": 13.8
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop",
+              "cat": "other dishes",
+              "desc": "",
+              "price": 13.8
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Tsolias ",
+          "slug": "tsolias-nicosia",
+          "address": "Νικοκλέους 4",
+          "lat": 35.17363596,
+          "lng": 33.36172644,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/tsolias-nicosia",
+          "prices": {
+            "porkchop": 12.5,
+            "mix": 7.7
+          },
+          "items": {
+            "porkchop": {
+              "name": "73. Χοιρινή Μπριζόλα XL",
+              "cat": "ειδη σχαρας",
+              "desc": "",
+              "price": 12.5
+            },
+            "mix": {
+              "name": "Μιξ Χοιρινό & Σιεφταλιά Κυπριακή Πίτα",
+              "cat": "σαντουιτς",
+              "desc": "Λάχανο, κρεμμύδι, ντομάτα, αγγούρι, λεμόνι",
+              "price": 7.7,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
           "name": "Kitchen Bar",
           "slug": "kitchen-bar",
           "address": "91 Larnakos Avenue, Aglantzia",
@@ -3913,9 +3819,49 @@
           "items": {
             "porkchop": {
               "name": "Jumbo Μπριζόλα 700γρ",
-              "cat": "στα καρβουνα",
+              "cat": "κυριως πιατα",
               "desc": "Χοιρινή μπριζόλα. Συνοδεύεται με τζατζίκι, τηγανητές πατάτες και σαλάτα",
               "price": 16.5
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Souvlakia Christakis",
+          "slug": "souvlakia-christakis",
+          "address": "Leoforos Kostaki Pantelidi 28",
+          "lat": 35.17105224,
+          "lng": 33.35895317,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/souvlakia-christakis",
+          "prices": {
+            "porkchop": 10
+          },
+          "items": {
+            "porkchop": {
+              "name": "Μπριζόλα Μερίδα",
+              "cat": "ειδη σχαρας",
+              "desc": "Σερβίρετε με πατάτες στο πλάι",
+              "price": 10
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Esobga Terrace",
+          "slug": "esobga",
+          "address": "Steliou Mavrommati",
+          "lat": 35.15506986,
+          "lng": 33.35276508,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/esobga",
+          "prices": {
+            "porkchop": 16
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop 700gr",
+              "cat": "grill",
+              "desc": "With tomato, cucumber, fries and cypriot pita",
+              "price": 16
             }
           },
           "open": false
@@ -3941,6 +3887,46 @@
           "open": false
         },
         {
+          "name": "O Tatas",
+          "slug": "o-tatas",
+          "address": "Ilia Venezi 3, Strovolos ",
+          "lat": 35.14124562196021,
+          "lng": 33.33879262915238,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/o-tatas",
+          "prices": {
+            "porkchop": 14.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop",
+              "cat": "grill",
+              "desc": "Locally raised 600g pork chop . Choose potatoes or grilled vegetables",
+              "price": 14.5
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Amyth of Nicosia",
+          "slug": "amyth-of-nicosia",
+          "address": "29 Patriarchou Gregoriou Street, Nicosia, Cyprus",
+          "lat": 35.172032,
+          "lng": 33.3673711,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/amyth-of-nicosia",
+          "prices": {
+            "porkchop": 80
+          },
+          "items": {
+            "porkchop": {
+              "name": "Iberico Pork Chop",
+              "cat": "amyth signature premium cuts",
+              "desc": "Ragot tomatoes, burnt onion puree and asparagus",
+              "price": 80
+            }
+          },
+          "open": false
+        },
+        {
           "name": "Rookies Bar & Grill",
           "slug": "rookies-bar-grill",
           "address": "Stasandrou 10",
@@ -3961,20 +3947,41 @@
           "open": false
         },
         {
-          "name": "Ta Souvlakia Tou Kosta",
-          "slug": "ta-souvlakia-tou-kosta",
-          "address": "Plateia Paliggenesias 13",
-          "lat": 35.13376375,
-          "lng": 33.36539241,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/ta-souvlakia-tou-kosta",
+          "name": "Tavernaki Mall of Cyprus",
+          "slug": "tavernaki-mall-of-cyprus",
+          "address": "3 Verginas str, Mall of Cyprus ",
+          "lat": 35.13064431,
+          "lng": 33.37116193,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/tavernaki-mall-of-cyprus",
+          "prices": {
+            "mix": 9.6
+          },
+          "items": {
+            "mix": {
+              "name": "Mix Chicken Cypriot Pita",
+              "cat": "cyprus pita",
+              "desc": "Cyprus pita with 2 chicken souvlaki skewers, 3 sheftalies and the ingredients of your choice",
+              "price": 9.6,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "To Lazouroui",
+          "slug": "to-lazouroui",
+          "address": "Leoforos Archiepiskopou Makariou G 6B,latsia",
+          "lat": 35.11602646,
+          "lng": 33.37896883,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-lazouroui",
           "prices": {
             "porkchop": 13.5
           },
           "items": {
             "porkchop": {
-              "name": "Χοιρινή Μπριζόλα \"Twin Turbo\"",
+              "name": "Χοιρινή Μπριζόλα Jumbo του Λαζούρα 800γρ",
               "cat": "μεριδες",
-              "desc": "Μεγάλη μερίδα (900γρ-1κιλό) που περιλαμβάνει πατάτες, σαλάτα και πίτα.",
+              "desc": "",
               "price": 13.5
             }
           },
@@ -4009,26 +4016,6 @@
           "open": false
         },
         {
-          "name": "To Lazouroui",
-          "slug": "to-lazouroui",
-          "address": "Leoforos Archiepiskopou Makariou G 6B,latsia",
-          "lat": 35.11602646,
-          "lng": 33.37896883,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/to-lazouroui",
-          "prices": {
-            "porkchop": 13.5
-          },
-          "items": {
-            "porkchop": {
-              "name": "Χοιρινή Μπριζόλα Jumbo του Λαζούρα 800γρ",
-              "cat": "μεριδες",
-              "desc": "",
-              "price": 13.5
-            }
-          },
-          "open": false
-        },
-        {
           "name": "Alexandra's Cuisine & Coffee",
           "slug": "alexandras-cuisine-coffee",
           "address": "Dimostheni Severi 22",
@@ -4049,27 +4036,6 @@
           "open": false
         },
         {
-          "name": "Tavernaki Mall of Cyprus",
-          "slug": "tavernaki-mall-of-cyprus",
-          "address": "3 Verginas str, Mall of Cyprus ",
-          "lat": 35.13064431,
-          "lng": 33.37116193,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/tavernaki-mall-of-cyprus",
-          "prices": {
-            "mix": 9.6
-          },
-          "items": {
-            "mix": {
-              "name": "Mix Chicken Cypriot Pita",
-              "cat": "cyprus pita",
-              "desc": "Cyprus pita with 2 chicken souvlaki skewers, 3 sheftalies and the ingredients of your choice",
-              "price": 9.6,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
           "name": "Taverna Zorpas",
           "slug": "taverna-zorpas",
           "address": " Ayiou Pavlou 142, Agios Dometios",
@@ -4085,6 +4051,66 @@
               "cat": "μεριδες",
               "desc": "700 γρ",
               "price": 12.5
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Hadjigiannis Pizza & Grill",
+          "slug": "hadjigiannis-pizza-grill",
+          "address": "Archiepiskopou Makariou III",
+          "lat": 35.10989079,
+          "lng": 33.38366688,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/hadjigiannis-pizza-grill",
+          "prices": {
+            "porkchop": 13.9
+          },
+          "items": {
+            "porkchop": {
+              "name": "Jumbo Pork Chop 700 gr",
+              "cat": "grill",
+              "desc": "With a small salad, fries, bbq sauce and bread with halloumi in wooden oven",
+              "price": 13.9
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Food Park City Nicosia",
+          "slug": "food-park-city-nicosia",
+          "address": "Tseriou Avenue 180, Strovolos",
+          "lat": 35.1236189,
+          "lng": 33.3357043,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/food-park-city-nicosia",
+          "prices": {
+            "porkchop": 17
+          },
+          "items": {
+            "porkchop": {
+              "name": "Χοιρινή Μπριζόλα 550gr.",
+              "cat": "κρεατικα & πουλερικα",
+              "desc": "Ζουμερή χοιρινή μπριζόλα 550 γρ. με μεσογειακά καρυκεύματα, τηγανιτές πατάτας, κόλσλοου πίτα, σάλτσα BBQ",
+              "price": 17
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Zingaro Grill",
+          "slug": "zingaro-grill",
+          "address": "Lykavitou 28 Egkomi",
+          "lat": 35.14090377,
+          "lng": 33.31107198,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/zingaro-grill",
+          "prices": {
+            "porkchop": 13
+          },
+          "items": {
+            "porkchop": {
+              "name": "Χοιρινή Μπριζόλα  Μερίδα",
+              "cat": "μεριδες",
+              "desc": "",
+              "price": 13
             }
           },
           "open": false
@@ -4119,66 +4145,6 @@
           "open": false
         },
         {
-          "name": "Hadjigiannis Pizza & Grill",
-          "slug": "hadjigiannis-pizza-grill",
-          "address": "Archiepiskopou Makariou III",
-          "lat": 35.10989079,
-          "lng": 33.38366688,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/hadjigiannis-pizza-grill",
-          "prices": {
-            "porkchop": 13.9
-          },
-          "items": {
-            "porkchop": {
-              "name": "Jumbo Pork Chop 700 gr",
-              "cat": "grill",
-              "desc": "With a small salad, fries, bbq sauce and bread with halloumi in wooden oven",
-              "price": 13.9
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Zingaro Grill",
-          "slug": "zingaro-grill",
-          "address": "Lykavitou 28 Egkomi",
-          "lat": 35.14090377,
-          "lng": 33.31107198,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/zingaro-grill",
-          "prices": {
-            "porkchop": 13
-          },
-          "items": {
-            "porkchop": {
-              "name": "Χοιρινή Μπριζόλα  Μερίδα",
-              "cat": "μεριδες",
-              "desc": "",
-              "price": 13
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Food Park City Nicosia",
-          "slug": "food-park-city-nicosia",
-          "address": "Tseriou Avenue 180, Strovolos",
-          "lat": 35.1236189,
-          "lng": 33.3357043,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/food-park-city-nicosia",
-          "prices": {
-            "porkchop": 17
-          },
-          "items": {
-            "porkchop": {
-              "name": "Χοιρινή Μπριζόλα 550gr.",
-              "cat": "κρεατικα & πουλερικα",
-              "desc": "Ζουμερή χοιρινή μπριζόλα 550 γρ. με μεσογειακά καρυκεύματα, τηγανιτές πατάτας, κόλσλοου πίτα, σάλτσα BBQ",
-              "price": 17
-            }
-          },
-          "open": false
-        },
-        {
           "name": "Frangkolina Tavern",
           "slug": "fragkolina-tavern",
           "address": "6 Irakleiou",
@@ -4194,66 +4160,6 @@
               "cat": "μεριδες",
               "desc": "",
               "price": 12
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Paradosiako Egkomi",
-          "slug": "paradosiako",
-          "address": "28th October 11Δ, Egkomi ",
-          "lat": 35.16237454,
-          "lng": 33.31750079,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/paradosiako",
-          "prices": {
-            "porkchop": 11.5
-          },
-          "items": {
-            "porkchop": {
-              "name": "PORK CHOP",
-              "cat": "food",
-              "desc": "BIG JUICY PORK CHOP GRILLED TO PERFECTION,SERVED WITH GREEK PITTA BREAD,TOMATO,CUCUMBER AND FRIES",
-              "price": 11.5
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Gia Souvlaki Opos Palia",
-          "slug": "gia-souvlaki-opos-palia",
-          "address": "Μαχαιρα 1, Strovolos",
-          "lat": 35.13392879,
-          "lng": 33.33023764,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/gia-souvlaki-opos-palia",
-          "prices": {
-            "porkchop": 14.25
-          },
-          "items": {
-            "porkchop": {
-              "name": "Χοιρινή Μπριζόλα Μερίδα",
-              "cat": "μεριδες",
-              "desc": "Σερβίρεται με πατάτες τηγανιτές",
-              "price": 14.25
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "I Foukou Tou Yiakoumi",
-          "slug": "i-foukou-tou-yiakoumi",
-          "address": "Lykavitou 52, Egkomi",
-          "lat": 35.14372881,
-          "lng": 33.31085037,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/i-foukou-tou-yiakoumi",
-          "prices": {
-            "porkchop": 13.5
-          },
-          "items": {
-            "porkchop": {
-              "name": "Μπριζόλα Χοιρινή Γίγας Μερίδα",
-              "cat": "μεριδες",
-              "desc": "Ρόκα, μαρούλι, ντομάτα, αγγούρι, μαϊντανός, λεμόνι, πατάτες, πίττα",
-              "price": 13.5
             }
           },
           "open": false
@@ -4295,26 +4201,6 @@
           "open": false
         },
         {
-          "name": "Cookshop",
-          "slug": "cookshop1",
-          "address": "Pindarou 6",
-          "lat": 35.16866251,
-          "lng": 33.36922832,
-          "url": "https://wolt.com/en/cyp/nicosia/restaurant/cookshop1",
-          "prices": {
-            "porkchop": 17
-          },
-          "items": {
-            "porkchop": {
-              "name": "Χοιρινή Μπριζόλα 500γρ",
-              "cat": "κυριως πιατα",
-              "desc": "Αρωματική μπριζόλα  με βότανα, παραδοσιακές ψητές πατάτες",
-              "price": 17
-            }
-          },
-          "open": false
-        },
-        {
           "name": "Xasapotaverna Fae Pkie",
           "slug": "xasapotaverna-fae-pkie",
           "address": "Leoforos Geriou 44, Geri",
@@ -4340,7 +4226,7 @@
               "tier": "cypriot"
             }
           },
-          "open": true
+          "open": false
         },
         {
           "name": "Stou Oresti PAOK Kythreas",
@@ -4358,6 +4244,46 @@
               "cat": "grill portions",
               "desc": "",
               "price": 15
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Cookshop",
+          "slug": "cookshop1",
+          "address": "Pindarou 6",
+          "lat": 35.16866251,
+          "lng": 33.36922832,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/cookshop1",
+          "prices": {
+            "porkchop": 17
+          },
+          "items": {
+            "porkchop": {
+              "name": "Χοιρινή Μπριζόλα 500γρ",
+              "cat": "κυριως πιατα",
+              "desc": "Αρωματική μπριζόλα  με βότανα, παραδοσιακές ψητές πατάτες",
+              "price": 17
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Gia Souvlaki Opos Palia",
+          "slug": "gia-souvlaki-opos-palia",
+          "address": "Μαχαιρα 1, Strovolos",
+          "lat": 35.13392879,
+          "lng": 33.33023764,
+          "url": "https://wolt.com/en/cyp/nicosia/restaurant/gia-souvlaki-opos-palia",
+          "prices": {
+            "porkchop": 14.25
+          },
+          "items": {
+            "porkchop": {
+              "name": "Χοιρινή Μπριζόλα Μερίδα",
+              "cat": "μεριδες",
+              "desc": "Σερβίρεται με πατάτες τηγανιτές",
+              "price": 14.25
             }
           },
           "open": false
@@ -7082,69 +7008,69 @@
           "open": false
         },
         {
-          "name": "Souvlakia Yiannis",
-          "slug": "souvlakia-yiannis",
-          "address": "Kotza Tepe 32",
-          "lat": 34.90686956271338,
-          "lng": 33.63193623861946,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/souvlakia-yiannis",
+          "name": "To Parko Souvlaki & Grill",
+          "slug": "to-parko-souvlaki-grill",
+          "address": "70 Archbishop Makariou, Livadia",
+          "lat": 34.95636511,
+          "lng": 33.62635374,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/to-parko-souvlaki-grill",
           "prices": {
-            "porkchop": 16,
+            "porkchop": 14,
+            "chicken": 7.5,
+            "chickenLarge": 8.5,
             "souvlaki": 7.5,
-            "souvlakiLarge": 9,
-            "chicken": 8,
-            "chickenLarge": 9,
-            "mix": 7.5,
+            "souvlakiLarge": 8.5,
+            "mix": 8,
             "mixLarge": 9
           },
           "items": {
             "porkchop": {
-              "name": "Χοιρινή Μπριζόλα Jumbo Μερίδα",
-              "cat": "μεριδα",
-              "desc": "600γρ",
-              "price": 16
-            },
-            "souvlaki": {
-              "name": "Σουβλάκι Χοιρινό Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "",
-              "price": 7.5,
-              "tier": "cypriot"
-            },
-            "souvlakiLarge": {
-              "name": "Σουβλάκι Χοιρινό Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "",
-              "price": 9,
-              "tier": "cypriot"
+              "name": "Μπριζόλα Μερίδα  600γρ.",
+              "cat": "μεριδες",
+              "desc": "Με πατάτες φρέσκες καί σαλάτα",
+              "price": 14
             },
             "chicken": {
-              "name": "Σουβλάκι Κοτόπουλο Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "chickenLarge": {
-              "name": "Σουβλάκι Κοτόπουλο Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "",
-              "price": 9,
-              "tier": "cypriot"
-            },
-            "mix": {
-              "name": "Μιξ Χοιρινό Πίτα",
-              "cat": "κυπριακη πιτα",
+              "name": "Κοτόπουλο Σουβλάκι στην Πίτα",
+              "cat": "στην πιτα",
               "desc": "",
               "price": 7.5,
-              "tier": "cypriot"
+              "tier": "generic"
+            },
+            "chickenLarge": {
+              "name": "Κοτόπουλο Σουβλάκι στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "",
+              "price": 8.5,
+              "tier": "generic"
+            },
+            "souvlaki": {
+              "name": "Χοιρινό Σουβλάκι στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "",
+              "price": 7.5,
+              "tier": "generic"
+            },
+            "souvlakiLarge": {
+              "name": "Χοιρινό Σουβλάκι στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "",
+              "price": 8.5,
+              "tier": "generic"
+            },
+            "mix": {
+              "name": "Χοιρινό Σουβλάκι & Σεφταλιά στην Πίτα",
+              "cat": "στην πιτα",
+              "desc": "",
+              "price": 8,
+              "tier": "generic"
             },
             "mixLarge": {
-              "name": "Μιξ Χοιρινό Πίτα",
-              "cat": "κυπριακη πιτα",
+              "name": "Χοιρινό Σουβλάκι & Σεφταλιά στην Πίτα",
+              "cat": "στην πιτα",
               "desc": "",
               "price": 9,
-              "tier": "cypriot"
+              "tier": "generic"
             }
           },
           "open": false
@@ -7215,75 +7141,75 @@
               "tier": "generic"
             }
           },
-          "open": true
+          "open": false
         },
         {
-          "name": "To Parko Souvlaki & Grill",
-          "slug": "to-parko-souvlaki-grill",
-          "address": "70 Archbishop Makariou, Livadia",
-          "lat": 34.95636511,
-          "lng": 33.62635374,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/to-parko-souvlaki-grill",
+          "name": "Souvlakia Yiannis",
+          "slug": "souvlakia-yiannis",
+          "address": "Kotza Tepe 32",
+          "lat": 34.90686956271338,
+          "lng": 33.63193623861946,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/souvlakia-yiannis",
           "prices": {
-            "porkchop": 14,
-            "chicken": 7.5,
-            "chickenLarge": 8.5,
+            "porkchop": 16,
             "souvlaki": 7.5,
-            "souvlakiLarge": 8.5,
-            "mix": 8,
+            "souvlakiLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9,
+            "mix": 7.5,
             "mixLarge": 9
           },
           "items": {
             "porkchop": {
-              "name": "Μπριζόλα Μερίδα  600γρ.",
-              "cat": "μεριδες",
-              "desc": "Με πατάτες φρέσκες καί σαλάτα",
-              "price": 14
-            },
-            "chicken": {
-              "name": "Κοτόπουλο Σουβλάκι στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "",
-              "price": 7.5,
-              "tier": "generic"
-            },
-            "chickenLarge": {
-              "name": "Κοτόπουλο Σουβλάκι στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "",
-              "price": 8.5,
-              "tier": "generic"
+              "name": "Χοιρινή Μπριζόλα Jumbo Μερίδα",
+              "cat": "μεριδα",
+              "desc": "600γρ",
+              "price": 16
             },
             "souvlaki": {
-              "name": "Χοιρινό Σουβλάκι στην Πίτα",
-              "cat": "στην πιτα",
+              "name": "Σουβλάκι Χοιρινό Πίτα",
+              "cat": "κυπριακη πιτα",
               "desc": "",
               "price": 7.5,
-              "tier": "generic"
+              "tier": "cypriot"
             },
             "souvlakiLarge": {
-              "name": "Χοιρινό Σουβλάκι στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "",
-              "price": 8.5,
-              "tier": "generic"
-            },
-            "mix": {
-              "name": "Χοιρινό Σουβλάκι & Σεφταλιά στην Πίτα",
-              "cat": "στην πιτα",
-              "desc": "",
-              "price": 8,
-              "tier": "generic"
-            },
-            "mixLarge": {
-              "name": "Χοιρινό Σουβλάκι & Σεφταλιά στην Πίτα",
-              "cat": "στην πιτα",
+              "name": "Σουβλάκι Χοιρινό Πίτα",
+              "cat": "κυπριακη πιτα",
               "desc": "",
               "price": 9,
-              "tier": "generic"
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Σουβλάκι Κοτόπουλο Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Σουβλάκι Κοτόπουλο Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Μιξ Χοιρινό Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Μιξ Χοιρινό Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "",
+              "price": 9,
+              "tier": "cypriot"
             }
           },
-          "open": true
+          "open": false
         },
         {
           "name": "Valtou Rigani Larnaca",
@@ -7459,42 +7385,6 @@
           "open": false
         },
         {
-          "name": "Tatsia Mezedotexneio",
-          "slug": "tatsia-mezedotexneio",
-          "address": "33 Christodoulou Iakovidi",
-          "lat": 34.91880348,
-          "lng": 33.62057738,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/tatsia-mezedotexneio",
-          "prices": {
-            "porkchop": 14,
-            "chicken": 8,
-            "souvlaki": 8
-          },
-          "items": {
-            "porkchop": {
-              "name": "Χοιρινή Μπριζόλα Μερίδα",
-              "cat": "μεριδα",
-              "desc": "",
-              "price": 14
-            },
-            "chicken": {
-              "name": "Κοτόπουλο Σουβλάκι",
-              "cat": "κυπριακη πιτα",
-              "desc": "",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "souvlaki": {
-              "name": "Χοιρινό Σουβλάκι",
-              "cat": "κυπριακη πιτα",
-              "desc": "",
-              "price": 8,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
           "name": "Main Street",
           "slug": "main-street",
           "address": "Ektoros 1, Aradippou",
@@ -7604,7 +7494,43 @@
               "tier": "cypriot"
             }
           },
-          "open": true
+          "open": false
+        },
+        {
+          "name": "Tatsia Mezedotexneio",
+          "slug": "tatsia-mezedotexneio",
+          "address": "33 Christodoulou Iakovidi",
+          "lat": 34.91880348,
+          "lng": 33.62057738,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/tatsia-mezedotexneio",
+          "prices": {
+            "porkchop": 14,
+            "chicken": 8,
+            "souvlaki": 8
+          },
+          "items": {
+            "porkchop": {
+              "name": "Χοιρινή Μπριζόλα Μερίδα",
+              "cat": "μεριδα",
+              "desc": "",
+              "price": 14
+            },
+            "chicken": {
+              "name": "Κοτόπουλο Σουβλάκι",
+              "cat": "κυπριακη πιτα",
+              "desc": "",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Χοιρινό Σουβλάκι",
+              "cat": "κυπριακη πιτα",
+              "desc": "",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
         },
         {
           "name": "To Xoiropiasto",
@@ -7669,172 +7595,6 @@
               "cat": "κυπριακη πιτα",
               "desc": "Κυπριακή πιτα με σουβλάκι κοτόπουλο και υλικά της επιλογής σας",
               "price": 10,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Madame Foukou | Tennis Club Larnaca",
-          "slug": "madame-foukou-tennis-club-larnaca",
-          "address": "Adonidos 21",
-          "lat": 34.912802526860744,
-          "lng": 33.631013419177975,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/madame-foukou-tennis-club-larnaca",
-          "prices": {
-            "chicken": 8.5,
-            "mix": 8.5,
-            "souvlaki": 8.5
-          },
-          "items": {
-            "chicken": {
-              "name": "Σουβλάκι Κοτόπουλου Σε Πίτα",
-              "cat": "σε πιτα",
-              "desc": "Ντομάτα, αγγούρι, μαϊντανός, κρεμμύδι",
-              "price": 8.5,
-              "tier": "generic"
-            },
-            "mix": {
-              "name": "Mix Σουβλάκι & Σεφταλιές Σε Πίτα",
-              "cat": "σε πιτα",
-              "desc": "Ντομάτα, αγγούρι, μαϊντανός, κρεμμύδι",
-              "price": 8.5,
-              "tier": "generic"
-            },
-            "souvlaki": {
-              "name": "Σουβλάκι Χοιρινό Σε Πίτα",
-              "cat": "σε πιτα",
-              "desc": "Ντομάτα, αγγούρι, μαϊντανός, κρεμμύδι",
-              "price": 8.5,
-              "tier": "generic"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "The Souvlaki Code",
-          "slug": "the-souvlaki-code",
-          "address": "This is a virtual venue",
-          "lat": 34.9388564,
-          "lng": 33.6159689,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/the-souvlaki-code",
-          "prices": {
-            "porkchop": 14.5,
-            "mix": 8.5,
-            "mixLarge": 11,
-            "chicken": 9,
-            "chickenLarge": 12,
-            "souvlaki": 8.5,
-            "souvlakiLarge": 11
-          },
-          "items": {
-            "porkchop": {
-              "name": "Χοιρινή Μπριζόλα Jumbo",
-              "cat": "μεριδες",
-              "desc": "600 γρ. Σερβίρεται με πατάτες τηγανητές",
-              "price": 14.5
-            },
-            "mix": {
-              "name": "Μιξ  Κυπριακή Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "Περιέχει ντομάτα, αγγούρι, κρεμμύδι, μαϊντανό",
-              "price": 8.5,
-              "tier": "cypriot"
-            },
-            "mixLarge": {
-              "name": "Μιξ Κυπριακή Πίτα Ενισχυμένη",
-              "cat": "κυπριακη πιτα",
-              "desc": "Περιέχει ντομάτα, αγγούρι, κρεμμύδι, μαϊντανό",
-              "price": 11,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Κοτόπουλο Σουβλάκι Κυπριακή Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "Περιέχει ντομάτα, αγγούρι, κρεμμύδι, μαϊντανό",
-              "price": 9,
-              "tier": "cypriot"
-            },
-            "chickenLarge": {
-              "name": "Σουβλάκι Κοτόπουλο Κυπριακή Πίτα Ενισχυμένη",
-              "cat": "κυπριακη πιτα",
-              "desc": "Περιέχει ντομάτα, αγγούρι, κρεμμύδι, μαϊντανό",
-              "price": 12,
-              "tier": "cypriot"
-            },
-            "souvlaki": {
-              "name": "Χοιρινό Σουβλάκι Κυπριακή Πίτα",
-              "cat": "κυπριακη πιτα",
-              "desc": "Περιέχει ντομάτα, αγγούρι, κρεμμύδι, μαϊντανό",
-              "price": 8.5,
-              "tier": "cypriot"
-            },
-            "souvlakiLarge": {
-              "name": "Χοιρινό Σουβλάκι Κυπριακή Πίτα Ενισχυμένη",
-              "cat": "κυπριακη πιτα",
-              "desc": "Περιέχει ντομάτα, αγγούρι, κρεμμύδι, μαϊντανό",
-              "price": 11,
-              "tier": "cypriot"
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Green Corner Kebab House",
-          "slug": "geen-corner-kebab-house",
-          "address": "Faneromenis 212",
-          "lat": 34.91213702,
-          "lng": 33.60767102,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/geen-corner-kebab-house",
-          "prices": {
-            "mix": 8.5,
-            "mixLarge": 10.5,
-            "souvlaki": 8.5,
-            "souvlakiLarge": 10.5,
-            "chicken": 9,
-            "chickenLarge": 11
-          },
-          "items": {
-            "mix": {
-              "name": "Μιξ Χοιρινό Κυπριακή",
-              "cat": "κυπριακη πιτα",
-              "desc": "",
-              "price": 8.5,
-              "tier": "cypriot"
-            },
-            "mixLarge": {
-              "name": "Μιξ Χοιρινό Κυπριακή",
-              "cat": "κυπριακη πιτα",
-              "desc": "",
-              "price": 10.5,
-              "tier": "cypriot"
-            },
-            "souvlaki": {
-              "name": "Σουβλάκι Χοιρινό Κυπριακή",
-              "cat": "κυπριακη πιτα",
-              "desc": "",
-              "price": 8.5,
-              "tier": "cypriot"
-            },
-            "souvlakiLarge": {
-              "name": "Σουβλάκι Χοιρινό Κυπριακή",
-              "cat": "κυπριακη πιτα",
-              "desc": "",
-              "price": 10.5,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Σουβλάκι Κοτόπουλο Κυπριακή",
-              "cat": "κυπριακη πιτα",
-              "desc": "",
-              "price": 9,
-              "tier": "cypriot"
-            },
-            "chickenLarge": {
-              "name": "Σουβλάκι Κοτόπουλο Κυπριακή",
-              "cat": "κυπριακη πιτα",
-              "desc": "",
-              "price": 11,
               "tier": "cypriot"
             }
           },
@@ -7909,45 +7669,38 @@
           "open": false
         },
         {
-          "name": "Tavernaki Kettiros",
-          "slug": "tavernaki-kettirosnic",
-          "address": "Petraki Kyprianou 9",
-          "lat": 34.92466463,
-          "lng": 33.6262145,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/tavernaki-kettirosnic",
+          "name": "Madame Foukou | Tennis Club Larnaca",
+          "slug": "madame-foukou-tennis-club-larnaca",
+          "address": "Adonidos 21",
+          "lat": 34.912802526860744,
+          "lng": 33.631013419177975,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/madame-foukou-tennis-club-larnaca",
           "prices": {
-            "porkchop": 18.5,
+            "chicken": 8.5,
             "mix": 8.5,
-            "chicken": 9.5,
             "souvlaki": 8.5
           },
           "items": {
-            "porkchop": {
-              "name": "Μπριζόλα Jumbo Μερίδα",
-              "cat": "μεριδες 🍱",
-              "desc": "Μπριζόλα με Πατάτες και Σαλάτα \n(ντομάτα, αγγουράκι, μαϊντανό, κρεμμύδι)",
-              "price": 18.5
+            "chicken": {
+              "name": "Σουβλάκι Κοτόπουλου Σε Πίτα",
+              "cat": "σε πιτα",
+              "desc": "Ντομάτα, αγγούρι, μαϊντανός, κρεμμύδι",
+              "price": 8.5,
+              "tier": "generic"
             },
             "mix": {
-              "name": "Μίξ Χοιρινό σε Κυπριακή Πίτα",
-              "cat": "κυπριακη πιτα 🌮",
-              "desc": "Χοιρινό Σουβλάκι Μπέικον, Σεφταλιές στην Πίτα  Σαλάτα \n(ντομάτα, αγγουράκι , μαϊντανό, κρεμμύδι)",
+              "name": "Mix Σουβλάκι & Σεφταλιές Σε Πίτα",
+              "cat": "σε πιτα",
+              "desc": "Ντομάτα, αγγούρι, μαϊντανός, κρεμμύδι",
               "price": 8.5,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Κοτόπουλο Σουβλάκι σε Κυπριακή Πίτα",
-              "cat": "κυπριακη πιτα 🌮",
-              "desc": "Στήθος Κοτόπουλο σουβλάκι στην Πίτα με  Σαλάτα \n(ντομάτα, αγγουράκι, μαϊντανό,  κρεμμύδι)",
-              "price": 9.5,
-              "tier": "cypriot"
+              "tier": "generic"
             },
             "souvlaki": {
-              "name": "Χοιρινό Σουβλάκι σε Κυπριακή Πίτα",
-              "cat": "κυπριακη πιτα 🌮",
-              "desc": "Χοιρινό Σουβλάκι Μπέικον στην Πίτα με Σαλάτα  \n(ντομάτα, αγγουράκι,  μαϊντανό, κρεμμύδι)",
+              "name": "Σουβλάκι Χοιρινό Σε Πίτα",
+              "cat": "σε πιτα",
+              "desc": "Ντομάτα, αγγούρι, μαϊντανός, κρεμμύδι",
               "price": 8.5,
-              "tier": "cypriot"
+              "tier": "generic"
             }
           },
           "open": false
@@ -8021,69 +7774,130 @@
           "open": false
         },
         {
-          "name": "I Xrisi Smila",
-          "slug": "i-xrisi-smila",
-          "address": "120A Efxeinou Pontou ",
-          "lat": 34.94506652123863,
-          "lng": 33.62834563438895,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/i-xrisi-smila",
+          "name": "Green Corner Kebab House",
+          "slug": "geen-corner-kebab-house",
+          "address": "Faneromenis 212",
+          "lat": 34.91213702,
+          "lng": 33.60767102,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/geen-corner-kebab-house",
           "prices": {
-            "porkchop": 15,
             "mix": 8.5,
-            "souvlakiLarge": 9.5,
+            "mixLarge": 10.5,
             "souvlaki": 8.5,
-            "mixLarge": 9.5,
-            "chickenLarge": 10,
-            "chicken": 9
+            "souvlakiLarge": 10.5,
+            "chicken": 9,
+            "chickenLarge": 11
+          },
+          "items": {
+            "mix": {
+              "name": "Μιξ Χοιρινό Κυπριακή",
+              "cat": "κυπριακη πιτα",
+              "desc": "",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Μιξ Χοιρινό Κυπριακή",
+              "cat": "κυπριακη πιτα",
+              "desc": "",
+              "price": 10.5,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Σουβλάκι Χοιρινό Κυπριακή",
+              "cat": "κυπριακη πιτα",
+              "desc": "",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Σουβλάκι Χοιρινό Κυπριακή",
+              "cat": "κυπριακη πιτα",
+              "desc": "",
+              "price": 10.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Σουβλάκι Κοτόπουλο Κυπριακή",
+              "cat": "κυπριακη πιτα",
+              "desc": "",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Σουβλάκι Κοτόπουλο Κυπριακή",
+              "cat": "κυπριακη πιτα",
+              "desc": "",
+              "price": 11,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "The Souvlaki Code",
+          "slug": "the-souvlaki-code",
+          "address": "This is a virtual venue",
+          "lat": 34.9388564,
+          "lng": 33.6159689,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/the-souvlaki-code",
+          "prices": {
+            "porkchop": 14.5,
+            "mix": 8.5,
+            "mixLarge": 11,
+            "chicken": 9,
+            "chickenLarge": 12,
+            "souvlaki": 8.5,
+            "souvlakiLarge": 11
           },
           "items": {
             "porkchop": {
-              "name": "Pork Chop",
+              "name": "Χοιρινή Μπριζόλα Jumbo",
               "cat": "μεριδες",
-              "desc": "",
-              "price": 15
+              "desc": "600 γρ. Σερβίρεται με πατάτες τηγανητές",
+              "price": 14.5
             },
             "mix": {
-              "name": "MIxed Souvlaki and Sheftalia",
-              "cat": "στην πιτα",
-              "desc": "",
+              "name": "Μιξ  Κυπριακή Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "Περιέχει ντομάτα, αγγούρι, κρεμμύδι, μαϊντανό",
               "price": 8.5,
-              "tier": "generic"
-            },
-            "souvlakiLarge": {
-              "name": "Large Pork Souvlaki (Psaxno)",
-              "cat": "στην πιτα",
-              "desc": "",
-              "price": 9.5,
-              "tier": "generic"
-            },
-            "souvlaki": {
-              "name": "Pork Souvlaki (Psaxno)",
-              "cat": "στην πιτα",
-              "desc": "",
-              "price": 8.5,
-              "tier": "generic"
+              "tier": "cypriot"
             },
             "mixLarge": {
-              "name": "Large mixed Souvlaki and Sheftalia",
-              "cat": "στην πιτα",
-              "desc": "",
-              "price": 9.5,
-              "tier": "generic"
-            },
-            "chickenLarge": {
-              "name": "Large Chicken Souvlaki",
-              "cat": "στην πιτα",
-              "desc": "",
-              "price": 10,
-              "tier": "generic"
+              "name": "Μιξ Κυπριακή Πίτα Ενισχυμένη",
+              "cat": "κυπριακη πιτα",
+              "desc": "Περιέχει ντομάτα, αγγούρι, κρεμμύδι, μαϊντανό",
+              "price": 11,
+              "tier": "cypriot"
             },
             "chicken": {
-              "name": "Chicken Souvlaki",
-              "cat": "στην πιτα",
-              "desc": "",
+              "name": "Κοτόπουλο Σουβλάκι Κυπριακή Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "Περιέχει ντομάτα, αγγούρι, κρεμμύδι, μαϊντανό",
               "price": 9,
-              "tier": "generic"
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Σουβλάκι Κοτόπουλο Κυπριακή Πίτα Ενισχυμένη",
+              "cat": "κυπριακη πιτα",
+              "desc": "Περιέχει ντομάτα, αγγούρι, κρεμμύδι, μαϊντανό",
+              "price": 12,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Χοιρινό Σουβλάκι Κυπριακή Πίτα",
+              "cat": "κυπριακη πιτα",
+              "desc": "Περιέχει ντομάτα, αγγούρι, κρεμμύδι, μαϊντανό",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Χοιρινό Σουβλάκι Κυπριακή Πίτα Ενισχυμένη",
+              "cat": "κυπριακη πιτα",
+              "desc": "Περιέχει ντομάτα, αγγούρι, κρεμμύδι, μαϊντανό",
+              "price": 11,
+              "tier": "cypriot"
             }
           },
           "open": false
@@ -8151,6 +7965,111 @@
               "cat": "κυπρικη πιττα",
               "desc": "Περιλαμβάνει 3 σουβλάκια",
               "price": 9.5,
+              "tier": "cypriot"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "I Xrisi Smila",
+          "slug": "i-xrisi-smila",
+          "address": "120A Efxeinou Pontou ",
+          "lat": 34.94506652123863,
+          "lng": 33.62834563438895,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/i-xrisi-smila",
+          "prices": {
+            "mix": 8.5,
+            "souvlakiLarge": 9.5,
+            "souvlaki": 8.5,
+            "mixLarge": 9.5,
+            "chickenLarge": 10,
+            "chicken": 9
+          },
+          "items": {
+            "mix": {
+              "name": "MIxed Souvlaki and Sheftalia",
+              "cat": "στην πιτα",
+              "desc": "",
+              "price": 8.5,
+              "tier": "generic"
+            },
+            "souvlakiLarge": {
+              "name": "Large Pork Souvlaki (Psaxno)",
+              "cat": "στην πιτα",
+              "desc": "",
+              "price": 9.5,
+              "tier": "generic"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki (Psaxno)",
+              "cat": "στην πιτα",
+              "desc": "",
+              "price": 8.5,
+              "tier": "generic"
+            },
+            "mixLarge": {
+              "name": "Large mixed Souvlaki and Sheftalia",
+              "cat": "στην πιτα",
+              "desc": "",
+              "price": 9.5,
+              "tier": "generic"
+            },
+            "chickenLarge": {
+              "name": "Large Chicken Souvlaki",
+              "cat": "στην πιτα",
+              "desc": "",
+              "price": 10,
+              "tier": "generic"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki",
+              "cat": "στην πιτα",
+              "desc": "",
+              "price": 9,
+              "tier": "generic"
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Tavernaki Kettiros",
+          "slug": "tavernaki-kettirosnic",
+          "address": "Petraki Kyprianou 9",
+          "lat": 34.92466463,
+          "lng": 33.6262145,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/tavernaki-kettirosnic",
+          "prices": {
+            "porkchop": 18.5,
+            "mix": 8.5,
+            "chicken": 9.5,
+            "souvlaki": 8.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Μπριζόλα Jumbo Μερίδα",
+              "cat": "μεριδες 🍱",
+              "desc": "Μπριζόλα με Πατάτες και Σαλάτα \n(ντομάτα, αγγουράκι, μαϊντανό, κρεμμύδι)",
+              "price": 18.5
+            },
+            "mix": {
+              "name": "Μίξ Χοιρινό σε Κυπριακή Πίτα",
+              "cat": "κυπριακη πιτα 🌮",
+              "desc": "Χοιρινό Σουβλάκι Μπέικον, Σεφταλιές στην Πίτα  Σαλάτα \n(ντομάτα, αγγουράκι , μαϊντανό, κρεμμύδι)",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Κοτόπουλο Σουβλάκι σε Κυπριακή Πίτα",
+              "cat": "κυπριακη πιτα 🌮",
+              "desc": "Στήθος Κοτόπουλο σουβλάκι στην Πίτα με  Σαλάτα \n(ντομάτα, αγγουράκι, μαϊντανό,  κρεμμύδι)",
+              "price": 9.5,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Χοιρινό Σουβλάκι σε Κυπριακή Πίτα",
+              "cat": "κυπριακη πιτα 🌮",
+              "desc": "Χοιρινό Σουβλάκι Μπέικον στην Πίτα με Σαλάτα  \n(ντομάτα, αγγουράκι,  μαϊντανό, κρεμμύδι)",
+              "price": 8.5,
               "tier": "cypriot"
             }
           },
@@ -8318,7 +8237,7 @@
               "tier": "cypriot"
             }
           },
-          "open": true
+          "open": false
         },
         {
           "name": "Efthimis Souvlakia",
@@ -8379,7 +8298,7 @@
               "tier": "cypriot"
             }
           },
-          "open": true
+          "open": false
         },
         {
           "name": "Argyro Kebab",
@@ -8595,7 +8514,7 @@
               "price": 15
             }
           },
-          "open": false
+          "open": true
         },
         {
           "name": "Grill Chef",
@@ -8613,62 +8532,6 @@
               "cat": "grill chef dishes",
               "desc": "750gr. Served with salad, pita and side dish.",
               "price": 16
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Delicious Kebab",
-          "slug": "delicious-kebab",
-          "address": "1is Apriliou 25b",
-          "lat": 34.91651039,
-          "lng": 33.61816743,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/delicious-kebab",
-          "prices": {
-            "porkchop": 12
-          },
-          "items": {
-            "porkchop": {
-              "name": "Μπριζόλα",
-              "cat": "στη σχαρα",
-              "desc": "650γρ",
-              "price": 12
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "To Xitroulo",
-          "slug": "to-xitroulo",
-          "address": "Odysseos 5",
-          "lat": 34.9161644,
-          "lng": 33.62204342,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/to-xitroulo",
-          "prices": {
-            "porkchop": 17,
-            "mix": 9.5,
-            "mixLarge": 11.5
-          },
-          "items": {
-            "porkchop": {
-              "name": "Μπριζόλα στα Κάρβουνα 800γρ",
-              "cat": "σπεσιαλιτε",
-              "desc": "Σερβίρεται με πίτα παφίτικη, φρέσκες τηγανητές πατάτες, ντομάτα, αγγουράκι, κρεμμύδι, μαϊντανό και λεμόνι",
-              "price": 17
-            },
-            "mix": {
-              "name": "Πίτα Χοιρινό με Σιεφταλιές",
-              "cat": "πιτες",
-              "desc": "",
-              "price": 9.5,
-              "tier": "generic"
-            },
-            "mixLarge": {
-              "name": "Πίτα Χοιρινό με Σιεφταλιές",
-              "cat": "πιτες",
-              "desc": "",
-              "price": 11.5,
-              "tier": "generic"
             }
           },
           "open": false
@@ -8714,41 +8577,37 @@
           "open": false
         },
         {
-          "name": "Panos Steakhouse",
-          "slug": "panos-steakhouse",
-          "address": "7 Agkyras, Seafront Phinikoudes",
-          "lat": 34.91096928,
-          "lng": 33.63771181,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/panos-steakhouse",
+          "name": "To Xitroulo",
+          "slug": "to-xitroulo",
+          "address": "Odysseos 5",
+          "lat": 34.9161644,
+          "lng": 33.62204342,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/to-xitroulo",
           "prices": {
-            "porkchop": 15.95
+            "porkchop": 17,
+            "mix": 9.5,
+            "mixLarge": 11.5
           },
           "items": {
             "porkchop": {
-              "name": "Grilled Pork Chop (600gr)",
-              "cat": "main courses",
-              "desc": "Topped with grilled pineapple",
-              "price": 15.95
-            }
-          },
-          "open": false
-        },
-        {
-          "name": "Anergoi Ptixiouxoi Fastfood",
-          "slug": "anergoi-ptixiouxi-fastfood",
-          "address": "Grigori Afxentiou 15, Livadia",
-          "lat": 34.94909791,
-          "lng": 33.62295328,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/anergoi-ptixiouxi-fastfood",
-          "prices": {
-            "porkchop": 13.5
-          },
-          "items": {
-            "porkchop": {
-              "name": "Jumbo Pork Chop",
-              "cat": "on the grill",
-              "desc": "Served with a side of your choice",
-              "price": 13.5
+              "name": "Μπριζόλα στα Κάρβουνα 800γρ",
+              "cat": "σπεσιαλιτε",
+              "desc": "Σερβίρεται με πίτα παφίτικη, φρέσκες τηγανητές πατάτες, ντομάτα, αγγουράκι, κρεμμύδι, μαϊντανό και λεμόνι",
+              "price": 17
+            },
+            "mix": {
+              "name": "Πίτα Χοιρινό με Σιεφταλιές",
+              "cat": "πιτες",
+              "desc": "",
+              "price": 9.5,
+              "tier": "generic"
+            },
+            "mixLarge": {
+              "name": "Πίτα Χοιρινό με Σιεφταλιές",
+              "cat": "πιτες",
+              "desc": "",
+              "price": 11.5,
+              "tier": "generic"
             }
           },
           "open": false
@@ -8769,6 +8628,86 @@
               "cat": "grilled meat & traditional food",
               "desc": "Served with fries and salad",
               "price": 14
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "I Gonia Mas",
+          "slug": "herculess-grill",
+          "address": "Ioanni Marsellou 2 ",
+          "lat": 34.92670101,
+          "lng": 33.6360946,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/herculess-grill",
+          "prices": {
+            "porkchop": 17
+          },
+          "items": {
+            "porkchop": {
+              "name": "Χοιρινή Μπριζόλα Jumbo",
+              "cat": "μεριδες",
+              "desc": "600 γρ",
+              "price": 17
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Panos Steakhouse",
+          "slug": "panos-steakhouse",
+          "address": "7 Agkyras, Seafront Phinikoudes",
+          "lat": 34.91096928,
+          "lng": 33.63771181,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/panos-steakhouse",
+          "prices": {
+            "porkchop": 15.95
+          },
+          "items": {
+            "porkchop": {
+              "name": "Grilled Pork Chop (600gr)",
+              "cat": "main courses",
+              "desc": "Topped with grilled pineapple",
+              "price": 15.95
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Delicious Kebab",
+          "slug": "delicious-kebab",
+          "address": "1is Apriliou 25b",
+          "lat": 34.91651039,
+          "lng": 33.61816743,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/delicious-kebab",
+          "prices": {
+            "porkchop": 12
+          },
+          "items": {
+            "porkchop": {
+              "name": "Μπριζόλα",
+              "cat": "στη σχαρα",
+              "desc": "650γρ",
+              "price": 12
+            }
+          },
+          "open": false
+        },
+        {
+          "name": "Anergoi Ptixiouxoi Fastfood",
+          "slug": "anergoi-ptixiouxi-fastfood",
+          "address": "Grigori Afxentiou 15, Livadia",
+          "lat": 34.94909791,
+          "lng": 33.62295328,
+          "url": "https://wolt.com/en/cyp/larnaca/restaurant/anergoi-ptixiouxi-fastfood",
+          "prices": {
+            "porkchop": 13.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Jumbo Pork Chop",
+              "cat": "on the grill",
+              "desc": "Served with a side of your choice",
+              "price": 13.5
             }
           },
           "open": false
@@ -8812,26 +8751,6 @@
             }
           },
           "open": false
-        },
-        {
-          "name": "I Gonia Mas",
-          "slug": "herculess-grill",
-          "address": "Ioanni Marsellou 2 ",
-          "lat": 34.92670101,
-          "lng": 33.6360946,
-          "url": "https://wolt.com/en/cyp/larnaca/restaurant/herculess-grill",
-          "prices": {
-            "porkchop": 17
-          },
-          "items": {
-            "porkchop": {
-              "name": "Χοιρινή Μπριζόλα Jumbo",
-              "cat": "μεριδες",
-              "desc": "600 γρ",
-              "price": 17
-            }
-          },
-          "open": true
         },
         {
           "name": "Theatrale",
