@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T04:03:41.846Z",
+  "updatedAt": "2026-11-22T02:39:06.618Z",
   "cities": [
     {
       "key": "nicosia",
@@ -675,7 +675,7 @@
             }
           },
           "source": "bolt",
-          "open": false
+          "open": true
         },
         {
           "name": "Zerah's Grill Romanian Cuisine",
@@ -1072,7 +1072,7 @@
             }
           },
           "source": "bolt",
-          "open": false
+          "open": true
         },
         {
           "name": "Taverna Orfeas Nicosia",
@@ -2037,6 +2037,28 @@
           "open": false
         },
         {
+          "name": "Souvlakia Kostas Nicosia",
+          "slug": "187108-souvlakia-kostas-nicosia",
+          "provider_id": 187108,
+          "address": "Plateia paliggenesias 15, 2034 Nicosia",
+          "lat": 35.133769,
+          "lng": 33.365245,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/187108-souvlakia-kostas-nicosia",
+          "prices": {
+            "porkchop": 13.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop (TWIN TURBO 900g – 1kg)",
+              "cat": "Portions",
+              "desc": "The serving includes potatoes, salad, pita bread, and one complimentary dip (Tahini or Tzatziki).",
+              "price": 13.5
+            }
+          },
+          "source": "bolt",
+          "open": true
+        },
+        {
           "name": "Karvounostimies",
           "slug": "4642548-karvounostimies",
           "provider_id": 4642548,
@@ -2141,6 +2163,28 @@
               "cat": "Portions",
               "desc": "Grilled pork steak served with sides.",
               "price": 14
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Kitchen Bar Aglantzia",
+          "slug": "173604-kitchen-bar-aglantzia",
+          "provider_id": 173604,
+          "address": "Larnakos 91, 2102 Nicosia Cyprus",
+          "lat": 35.1567,
+          "lng": 33.39589,
+          "url": "https://food.bolt.eu/en/261-nicosia/p/173604-kitchen-bar-aglantzia",
+          "prices": {
+            "porkchop": 16.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Jumbo Μπριζόλα 700γρ",
+              "cat": "Κυρίως Πιάτα",
+              "desc": "Χοιρινή μπριζόλα. Συνοδεύεται με τζατζίκι, τηγανητές πατάτες και σαλάτα",
+              "price": 16.5
             }
           },
           "source": "bolt",
@@ -2301,28 +2345,6 @@
           "open": false
         },
         {
-          "name": "O TATAS",
-          "slug": "183479-o-tatas",
-          "provider_id": 183479,
-          "address": "ilia venezi 136 2042 Nicosia Cyprus",
-          "lat": 35.14116,
-          "lng": 33.33876,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/183479-o-tatas",
-          "prices": {
-            "porkchop": 14.5
-          },
-          "items": {
-            "porkchop": {
-              "name": "Pork Chop",
-              "cat": "Grill",
-              "desc": "Locally raised 600g pork chop . Choose potatoes or grilled vegetables",
-              "price": 14.5
-            }
-          },
-          "source": "bolt",
-          "open": false
-        },
-        {
           "name": "Cozy Grill",
           "slug": "442657-cozy-grill",
           "provider_id": 442657,
@@ -2368,28 +2390,6 @@
           },
           "source": "bolt",
           "open": false
-        },
-        {
-          "name": "Souvlakia Kostas Nicosia",
-          "slug": "187108-souvlakia-kostas-nicosia",
-          "provider_id": 187108,
-          "address": "Plateia paliggenesias 15, 2034 Nicosia",
-          "lat": 35.133769,
-          "lng": 33.365245,
-          "url": "https://food.bolt.eu/en/261-nicosia/p/187108-souvlakia-kostas-nicosia",
-          "prices": {
-            "porkchop": 13.5
-          },
-          "items": {
-            "porkchop": {
-              "name": "Pork Chop (TWIN TURBO 900g – 1kg)",
-              "cat": "Portions",
-              "desc": "The serving includes potatoes, salad, pita bread, and one complimentary dip (Tahini or Tzatziki).",
-              "price": 13.5
-            }
-          },
-          "source": "bolt",
-          "open": false
         }
       ]
     },
@@ -2401,6 +2401,146 @@
         "ru": "Лимасол"
       },
       "venues": [
+        {
+          "name": "Oreos Trellos",
+          "slug": "10776-oreos-trellos",
+          "provider_id": 10776,
+          "address": "Kallikratous 43 & Frinis 1",
+          "lat": 34.69085,
+          "lng": 33.03053,
+          "url": "https://food.bolt.eu/en/442-limassol/p/10776-oreos-trellos",
+          "prices": {
+            "porkchop": 16.5,
+            "souvlaki": 8,
+            "souvlakiLarge": 10,
+            "mix": 8,
+            "mixLarge": 10,
+            "chicken": 8.5,
+            "chickenLarge": 10.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Portions - Mixed Grill",
+              "desc": "Served with salad and french fries",
+              "price": 16.5
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Tomato, cucumber, parsley, cabbage",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Tomato, cucumber, parsley, cabbage",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mix Pork Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Tomato, cucumber, parsley, cabbage",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Mix Pork Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Tomato, cucumber, parsley, cabbage",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Tomato, cucumber, parsley, cabbage",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Tomato, cucumber, parsley, cabbage",
+              "price": 10.5,
+              "tier": "cypriot"
+            }
+          },
+          "source": "bolt",
+          "open": true
+        },
+        {
+          "name": "Gyradiko o Gigantas",
+          "slug": "26102-gyradiko-o-gigantas",
+          "provider_id": 26102,
+          "address": "3 Apostolou Varnava, 3065 Limassol",
+          "lat": 34.680221,
+          "lng": 33.025713,
+          "url": "https://food.bolt.eu/en/442-limassol/p/26102-gyradiko-o-gigantas",
+          "prices": {
+            "porkchop": 15,
+            "mix": 7.5,
+            "mixLarge": 8.5,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 8.5,
+            "chicken": 7.5,
+            "chickenLarge": 8.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Giant Pork Chop 700g Portion",
+              "cat": "Grilled Items",
+              "desc": "Served with Greek pita, French fries, and salad. Allergens: sulfites",
+              "price": 15
+            },
+            "mix": {
+              "name": "Cypriot Mixed Pork",
+              "cat": "Cypriot Pita",
+              "desc": "Pork Souvlaki with Seftalies, cooked on the grill. Served in Cypriot pitta.  All Cypriot pittas are served with cabbage, parsley, tomato, cu",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Cypriot Mixed Pork",
+              "cat": "Cypriot Pita",
+              "desc": "Pork Souvlaki with Seftalies, cooked on the grill. Served in Cypriot pitta.  All Cypriot pittas are served with cabbage, parsley, tomato, cu",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Cypriot Pork Souvlaki",
+              "cat": "Cypriot Pita",
+              "desc": "Pork souvlaki in Cypriot pita. All Cypriot pittas are served with cabbage, parsley, tomato, cucumber, and onion. Allergens: sulfites",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Cypriot Pork Souvlaki",
+              "cat": "Cypriot Pita",
+              "desc": "Pork souvlaki in Cypriot pita. All Cypriot pittas are served with cabbage, parsley, tomato, cucumber, and onion. Allergens: sulfites",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Cypriot Chicken Souvlaki",
+              "cat": "Cypriot Pita",
+              "desc": "Chicken souvlaki cooked on a skewer on the grill. Served in Cyrpiot pitta. All Cypriot pittas are served with cabbage, parsley, tomato, cucu",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Cypriot Chicken Souvlaki",
+              "cat": "Cypriot Pita",
+              "desc": "Chicken souvlaki cooked on a skewer on the grill. Served in Cyrpiot pitta. All Cypriot pittas are served with cabbage, parsley, tomato, cucu",
+              "price": 8.5,
+              "tier": "cypriot"
+            }
+          },
+          "source": "bolt",
+          "open": true
+        },
         {
           "name": "Romios Kebab",
           "slug": "21460-romios-kebab",
@@ -2689,76 +2829,6 @@
               "cat": "Grilled Dishes",
               "desc": "",
               "price": 15
-            }
-          },
-          "source": "bolt",
-          "open": false
-        },
-        {
-          "name": "Oreos Trellos",
-          "slug": "10776-oreos-trellos",
-          "provider_id": 10776,
-          "address": "Kallikratous 43 & Frinis 1",
-          "lat": 34.69085,
-          "lng": 33.03053,
-          "url": "https://food.bolt.eu/en/442-limassol/p/10776-oreos-trellos",
-          "prices": {
-            "porkchop": 16.5,
-            "souvlaki": 8,
-            "souvlakiLarge": 10,
-            "mix": 8,
-            "mixLarge": 10,
-            "chicken": 8.5,
-            "chickenLarge": 10.5
-          },
-          "items": {
-            "porkchop": {
-              "name": "Pork Chop Portion",
-              "cat": "Portions - Mixed Grill",
-              "desc": "Served with salad and french fries",
-              "price": 16.5
-            },
-            "souvlaki": {
-              "name": "Pork Souvlaki Cypriot Pita",
-              "cat": "Cypriot Pita",
-              "desc": "Tomato, cucumber, parsley, cabbage",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "souvlakiLarge": {
-              "name": "Pork Souvlaki Cypriot Pita",
-              "cat": "Cypriot Pita",
-              "desc": "Tomato, cucumber, parsley, cabbage",
-              "price": 10,
-              "tier": "cypriot"
-            },
-            "mix": {
-              "name": "Mix Pork Cypriot Pita",
-              "cat": "Cypriot Pita",
-              "desc": "Tomato, cucumber, parsley, cabbage",
-              "price": 8,
-              "tier": "cypriot"
-            },
-            "mixLarge": {
-              "name": "Mix Pork Cypriot Pita",
-              "cat": "Cypriot Pita",
-              "desc": "Tomato, cucumber, parsley, cabbage",
-              "price": 10,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Chicken Souvlaki Cypriot Pita",
-              "cat": "Cypriot Pita",
-              "desc": "Tomato, cucumber, parsley, cabbage",
-              "price": 8.5,
-              "tier": "cypriot"
-            },
-            "chickenLarge": {
-              "name": "Chicken Souvlaki Cypriot Pita",
-              "cat": "Cypriot Pita",
-              "desc": "Tomato, cucumber, parsley, cabbage",
-              "price": 10.5,
-              "tier": "cypriot"
             }
           },
           "source": "bolt",
@@ -3193,6 +3263,28 @@
           "open": false
         },
         {
+          "name": "Psistaria Nostimies",
+          "slug": "92283-psistaria-nostimies",
+          "provider_id": 92283,
+          "address": "Archiepiskopou Makariou III, 4001 Limassol",
+          "lat": 34.69457,
+          "lng": 33.045,
+          "url": "https://food.bolt.eu/en/442-limassol/p/92283-psistaria-nostimies",
+          "prices": {
+            "porkchop": 7.8
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop On The Grill",
+              "cat": "Daily Dishes",
+              "desc": "With side dish",
+              "price": 7.8
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
           "name": "To Tsigkeli",
           "slug": "117173-to-tsigkeli",
           "provider_id": 117173,
@@ -3209,28 +3301,6 @@
               "cat": "PORTIONS",
               "desc": "800 g",
               "price": 17
-            }
-          },
-          "source": "bolt",
-          "open": false
-        },
-        {
-          "name": "To Ladolemono",
-          "slug": "176153-to-ladolemono",
-          "provider_id": 176153,
-          "address": "Agias Sofias 76, 3065, Limassol Cyprus",
-          "lat": 34.684506,
-          "lng": 33.016924,
-          "url": "https://food.bolt.eu/en/442-limassol/p/176153-to-ladolemono",
-          "prices": {
-            "porkchop": 15
-          },
-          "items": {
-            "porkchop": {
-              "name": "Giant Pork Chop 700gr",
-              "cat": "Portions",
-              "desc": "Served with Salad, French Fries or Jacket and Pitta",
-              "price": 15
             }
           },
           "source": "bolt",
@@ -3301,6 +3371,28 @@
               "desc": "Chicken souvlaki cooked on a skewer on the grill. Served in Cyrpiot pitta",
               "price": 9.5,
               "tier": "cypriot"
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "To Ladolemono",
+          "slug": "176153-to-ladolemono",
+          "provider_id": 176153,
+          "address": "Agias Sofias 76, 3065, Limassol Cyprus",
+          "lat": 34.684506,
+          "lng": 33.016924,
+          "url": "https://food.bolt.eu/en/442-limassol/p/176153-to-ladolemono",
+          "prices": {
+            "porkchop": 15
+          },
+          "items": {
+            "porkchop": {
+              "name": "Giant Pork Chop 700gr",
+              "cat": "Portions",
+              "desc": "Served with Salad, French Fries or Jacket and Pitta",
+              "price": 15
             }
           },
           "source": "bolt",
@@ -3482,76 +3574,6 @@
               "cat": "Cypriot Pita",
               "desc": "Allergens:\nGluten, Lactose",
               "price": 9.58,
-              "tier": "cypriot"
-            }
-          },
-          "source": "bolt",
-          "open": false
-        },
-        {
-          "name": "Gyradiko o Gigantas",
-          "slug": "26102-gyradiko-o-gigantas",
-          "provider_id": 26102,
-          "address": "3 Apostolou Varnava, 3065 Limassol",
-          "lat": 34.680221,
-          "lng": 33.025713,
-          "url": "https://food.bolt.eu/en/442-limassol/p/26102-gyradiko-o-gigantas",
-          "prices": {
-            "porkchop": 15,
-            "mix": 7.5,
-            "mixLarge": 8.5,
-            "souvlaki": 7.5,
-            "souvlakiLarge": 8.5,
-            "chicken": 7.5,
-            "chickenLarge": 8.5
-          },
-          "items": {
-            "porkchop": {
-              "name": "Giant Pork Chop 700g Portion",
-              "cat": "Grilled Items",
-              "desc": "Served with Greek pita, French fries, and salad. Allergens: sulfites",
-              "price": 15
-            },
-            "mix": {
-              "name": "Cypriot Mixed Pork",
-              "cat": "Cypriot Pita",
-              "desc": "Pork Souvlaki with Seftalies, cooked on the grill. Served in Cypriot pitta.  All Cypriot pittas are served with cabbage, parsley, tomato, cu",
-              "price": 7.5,
-              "tier": "cypriot"
-            },
-            "mixLarge": {
-              "name": "Cypriot Mixed Pork",
-              "cat": "Cypriot Pita",
-              "desc": "Pork Souvlaki with Seftalies, cooked on the grill. Served in Cypriot pitta.  All Cypriot pittas are served with cabbage, parsley, tomato, cu",
-              "price": 8.5,
-              "tier": "cypriot"
-            },
-            "souvlaki": {
-              "name": "Cypriot Pork Souvlaki",
-              "cat": "Cypriot Pita",
-              "desc": "Pork souvlaki in Cypriot pita. All Cypriot pittas are served with cabbage, parsley, tomato, cucumber, and onion. Allergens: sulfites",
-              "price": 7.5,
-              "tier": "cypriot"
-            },
-            "souvlakiLarge": {
-              "name": "Cypriot Pork Souvlaki",
-              "cat": "Cypriot Pita",
-              "desc": "Pork souvlaki in Cypriot pita. All Cypriot pittas are served with cabbage, parsley, tomato, cucumber, and onion. Allergens: sulfites",
-              "price": 8.5,
-              "tier": "cypriot"
-            },
-            "chicken": {
-              "name": "Cypriot Chicken Souvlaki",
-              "cat": "Cypriot Pita",
-              "desc": "Chicken souvlaki cooked on a skewer on the grill. Served in Cyrpiot pitta. All Cypriot pittas are served with cabbage, parsley, tomato, cucu",
-              "price": 7.5,
-              "tier": "cypriot"
-            },
-            "chickenLarge": {
-              "name": "Cypriot Chicken Souvlaki",
-              "cat": "Cypriot Pita",
-              "desc": "Chicken souvlaki cooked on a skewer on the grill. Served in Cyrpiot pitta. All Cypriot pittas are served with cabbage, parsley, tomato, cucu",
-              "price": 8.5,
               "tier": "cypriot"
             }
           },
@@ -3818,22 +3840,587 @@
           "open": false
         },
         {
-          "name": "Rastoni",
-          "slug": "143228-rastoni",
-          "provider_id": 143228,
-          "address": "Georgiou Gennadiou 2 3041 Limassol Cyprus",
-          "lat": 34.676156,
-          "lng": 33.043993,
-          "url": "https://food.bolt.eu/en/442-limassol/p/143228-rastoni",
+          "name": "Souvlakia Othellos",
+          "slug": "68258-souvlakia-othellos",
+          "provider_id": 68258,
+          "address": "Misiaouli kai Kavazoglou 33a, Limassol 3016",
+          "lat": 34.674193,
+          "lng": 33.028096,
+          "url": "https://food.bolt.eu/en/442-limassol/p/68258-souvlakia-othellos",
           "prices": {
-            "porkchop": 18
+            "porkchop": 16,
+            "souvlaki": 7.5,
+            "souvlakiLarge": 9,
+            "chicken": 8,
+            "chickenLarge": 9.5,
+            "mix": 7.5,
+            "mixLarge": 9
           },
           "items": {
             "porkchop": {
-              "name": "Jumbo Pork Chop with Potatoes and Salad",
-              "cat": "Grilled-Cooked-Fried",
-              "desc": "A hearty and satisfying dish featuring a succulent, generously-sized cut of meat, perfectly grilled to achieve a crispy exterior and tender,",
-              "price": 18
+              "name": "Pork Chop Portion",
+              "cat": "Portions",
+              "desc": "750gr\n\nAllergens\ngluten",
+              "price": 16
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Regular pita includes 2 skewers and large includes 3 skewers\n\nAllergens\nγλουτένη",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Regular pita includes 2 skewers and large includes 3 skewers\n\nAllergens\nγλουτένη",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Regular pita includes 2 skewers and large includes 3 skewers\n\nAllergens\nγλουτένη",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Regular pita includes 2 skewers and large includes 3 skewers\n\nAllergens\nγλουτένη",
+              "price": 9.5,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Souvlaki & Sheftalia Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Regular pita includes 1 skewer and 2 sheftalia, large includes 2 skewers and 2 sheftalia\n\nAllergens\nγλουτένη",
+              "price": 7.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki & Sheftalia Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Regular pita includes 1 skewer and 2 sheftalia, large includes 2 skewers and 2 sheftalia\n\nAllergens\nγλουτένη",
+              "price": 9,
+              "tier": "cypriot"
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Souvlakia Andreas",
+          "slug": "4612658-souvlakia-andreas",
+          "provider_id": 4612658,
+          "address": "Leoforos Omonoias , Limassol, 16",
+          "lat": 34.67354,
+          "lng": 33.01118,
+          "url": "https://food.bolt.eu/en/442-limassol/p/4612658-souvlakia-andreas",
+          "prices": {
+            "porkchop": 16,
+            "souvlaki": 8,
+            "souvlakiLarge": 10,
+            "chicken": 8,
+            "chickenLarge": 10,
+            "mix": 8
+          },
+          "items": {
+            "porkchop": {
+              "name": "PORK CHOP PORTION",
+              "cat": "Portions",
+              "desc": "Include 3 small porks",
+              "price": 16
+            },
+            "souvlaki": {
+              "name": "PORK SOUVLAKI CYPRIOT PITA",
+              "cat": "Cypriot Pitas",
+              "desc": "2 pork souvlaki skewers",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "PORK SOUVLAKI CYPRIOT PITA LARGE",
+              "cat": "Cypriot Pitas",
+              "desc": "3 pork souvlaki skewers",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "CHICKEN SOUVLAKI CYPRIOT PITA",
+              "cat": "Cypriot Pitas",
+              "desc": "2 chicken souvlaki skewers",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "CHICKEN SOUVLAKI CYPRIOT PITA LARGE",
+              "cat": "Cypriot Pitas",
+              "desc": "3 chicken souvlaki skewers",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "PORK MIX SOUVLAKI CYPRIOT PITA",
+              "cat": "Cypriot Pitas",
+              "desc": "Cypriot pita includes 1 pork souvlaki skewer and 3 sheftalies",
+              "price": 8,
+              "tier": "cypriot"
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Souvlakia Theodosis",
+          "slug": "12066-souvlakia-theodosis",
+          "provider_id": 12066,
+          "address": "Dikaiosinis 10A 3051 Limassol",
+          "lat": 34.67332,
+          "lng": 33.01057,
+          "url": "https://food.bolt.eu/en/442-limassol/p/12066-souvlakia-theodosis",
+          "prices": {
+            "porkchop": 17.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop",
+              "cat": "Grill",
+              "desc": "Served with french fries and salad",
+              "price": 17.5
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "O Gyros Tis Kritis",
+          "slug": "56799-o-gyros-tis-kritis",
+          "provider_id": 56799,
+          "address": "Melinas Merkouri 60, 4150 Limassol",
+          "lat": 34.68138,
+          "lng": 32.99642,
+          "url": "https://food.bolt.eu/en/442-limassol/p/56799-o-gyros-tis-kritis",
+          "prices": {
+            "porkchop": 13.9,
+            "souvlaki": 8,
+            "souvlakiLarge": 8.8,
+            "chicken": 8,
+            "chickenLarge": 8.8,
+            "mix": 8,
+            "mixLarge": 8.8
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Platter 600g",
+              "cat": "Portion",
+              "desc": "Two juicy pork chops (600g), char-grilled until golden and filling the whole neighbourhood with their aroma. Served with fresh salad, fries ",
+              "price": 13.9
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki inside Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Pork souvlaki char-grilled, crispy outside and juicy inside. Served in warm, puffy Cypriot pita with juicy tomato, fresh onion, crisp cucumb",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki inside Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Pork souvlaki char-grilled, crispy outside and juicy inside. Served in warm, puffy Cypriot pita with juicy tomato, fresh onion, crisp cucumb",
+              "price": 8.8,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki inside Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Tender chicken souvlaki, marinated and char-grilled. Served in warm, puffy Cypriot pita with juicy tomato, fresh onion, crisp cucumber and c",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki inside Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Tender chicken souvlaki, marinated and char-grilled. Served in warm, puffy Cypriot pita with juicy tomato, fresh onion, crisp cucumber and c",
+              "price": 8.8,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Mixed Pork & Sheftalia inside Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Pork souvlaki and sheftalia together, char-grilled for a full, bold flavour. Served in warm, puffy Cypriot pita with juicy tomato, fresh oni",
+              "price": 8,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Mixed Pork & Sheftalia inside Pita",
+              "cat": "Cypriot Pita",
+              "desc": "Pork souvlaki and sheftalia together, char-grilled for a full, bold flavour. Served in warm, puffy Cypriot pita with juicy tomato, fresh oni",
+              "price": 8.8,
+              "tier": "cypriot"
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Lefteris Meet & Eat",
+          "slug": "5213-lefteris-meet-eat",
+          "provider_id": 5213,
+          "address": "Pafou 13",
+          "lat": 34.6741,
+          "lng": 33.01574,
+          "url": "https://food.bolt.eu/en/442-limassol/p/5213-lefteris-meet-eat",
+          "prices": {
+            "porkchop": 17,
+            "mix": 8.5,
+            "souvlaki": 8.5,
+            "chicken": 9
+          },
+          "items": {
+            "porkchop": {
+              "name": "Giant Pork Chop",
+              "cat": "Portions",
+              "desc": "800gr. Served with salad\n\nAllergens:\nGluten, Sesame, Eggs, Lactose",
+              "price": 17
+            },
+            "mix": {
+              "name": "Pork Souvlaki Mix Normal",
+              "cat": "Normal Cyprus Pita",
+              "desc": "Pork Souvlaki with Seftalies, cooked on the grill. Served in Cypriot pitta",
+              "price": 8.5,
+              "tier": "generic"
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Normal",
+              "cat": "Normal Cyprus Pita",
+              "desc": "Pork Souvlaki cooked on a skewer on the grill. Served in Cyrpiot pitta",
+              "price": 8.5,
+              "tier": "generic"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Normal",
+              "cat": "Normal Cyprus Pita",
+              "desc": "Chicken souvlaki cooked on a skewer on the grill. Served in Cyrpiot pitta",
+              "price": 9,
+              "tier": "generic"
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Sub X Grill & Burger House",
+          "slug": "18723-sub-x-grill-burger-house",
+          "provider_id": 18723,
+          "address": "37 Omonoias, 3052 Limassol",
+          "lat": 34.67157,
+          "lng": 33.01198,
+          "url": "https://food.bolt.eu/en/442-limassol/p/18723-sub-x-grill-burger-house",
+          "prices": {
+            "porkchop": 19
+          },
+          "items": {
+            "porkchop": {
+              "name": "XL Charcoal Grilled Pork Chop 900-1100g",
+              "cat": "On The Grill - Portions",
+              "desc": "Fresh Cypriot pork chop, 900 -1100 g (raw weight) charcoal grilled and served with fries,rice,fresh salad,lemon and cypriot pita bread\n\nAlle",
+              "price": 19
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Draught Microbrewery",
+          "slug": "4493-draught-microbrewery",
+          "provider_id": 4493,
+          "address": "Draught Microbrewery, Βασιλίσσης, Λεμεσός, 3042",
+          "lat": 34.671746,
+          "lng": 33.041922,
+          "url": "https://food.bolt.eu/en/442-limassol/p/4493-draught-microbrewery",
+          "prices": {
+            "porkchop": 23.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop 800gr",
+              "cat": "GRILL CORNER",
+              "desc": "Dipper Fries, coleslaw salad, olive oil and lemon dressing, BBQ sauce\r\n\r\n*Allergens: Egg, Mustard, Sulphite",
+              "price": 23.5
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Toronto Burgers and Grill",
+          "slug": "10221-toronto-burgers-and-grill",
+          "provider_id": 10221,
+          "address": "Omonoias 66, Limassol  3052 Limassol",
+          "lat": 34.668396,
+          "lng": 33.01305,
+          "url": "https://food.bolt.eu/en/442-limassol/p/10221-toronto-burgers-and-grill",
+          "prices": {
+            "porkchop": 15
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop",
+              "cat": "Healthy Grill",
+              "desc": "Savor a 700g grilled pork chop, cooked to perfection for a healthy, protein-rich meal.",
+              "price": 15
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Gyrosphera",
+          "slug": "15976-gyrosphera",
+          "provider_id": 15976,
+          "address": "makariou 238,  (kanika enaerios)",
+          "lat": 34.685217,
+          "lng": 33.059501,
+          "url": "https://food.bolt.eu/en/442-limassol/p/15976-gyrosphera",
+          "prices": {
+            "porkchop": 15
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Grilled Dishes",
+              "desc": "Served with fries, pita, and salad on the side. Salad with tomato, cucumber, onion, cabbage, and lettuce\n\nAllergens\neggs, mustard, celery, m",
+              "price": 15
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Gyros Stavros O Salonikios Enaerios",
+          "slug": "71191-gyros-stavros-o-salonikios-enaerios",
+          "provider_id": 71191,
+          "address": "Leoforos Makariou III 235H, Kanika Enaerios, Limassol",
+          "lat": 34.68568,
+          "lng": 33.05923,
+          "url": "https://food.bolt.eu/en/442-limassol/p/71191-gyros-stavros-o-salonikios-enaerios",
+          "prices": {
+            "chickenLarge": 11,
+            "chicken": 9,
+            "souvlakiLarge": 9.9,
+            "souvlaki": 8.3
+          },
+          "items": {
+            "chickenLarge": {
+              "name": "Chicken souvlaki large in Cypriot pita",
+              "cat": "Cypriot Pitas",
+              "desc": "4 chicken souvlaki in Cypriot pita with tomato, onions, fries and tzatziki.",
+              "price": 11,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken souvlaki in Cypriot pita",
+              "cat": "Cypriot Pitas",
+              "desc": "3 chicken souvlaki in Cypriot pita with tomato, onions, fries and tzatziki.",
+              "price": 9,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork souvlaki Large in Cypriot pita",
+              "cat": "Cypriot Pitas",
+              "desc": "4 pork souvlaki in Cypriot pita with tomato, onions, fries and tzatziki.",
+              "price": 9.9,
+              "tier": "cypriot"
+            },
+            "souvlaki": {
+              "name": "Pork souvlaki in Cypriot pita",
+              "cat": "Cypriot Pitas",
+              "desc": "3 pork souvlaki in Cypriot pita with tomato, onions, fries and tzatziki.",
+              "price": 8.3,
+              "tier": "cypriot"
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Kilikia",
+          "slug": "188395-kilikia",
+          "provider_id": 188395,
+          "address": "Arch. Makarios III 233C, 3106, Limassol Cyprus",
+          "lat": 34.686032,
+          "lng": 33.058685,
+          "url": "https://food.bolt.eu/en/442-limassol/p/188395-kilikia",
+          "prices": {
+            "porkchop": 18.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Shashlik",
+              "cat": "Main Dishes",
+              "desc": "Grilled on coals, served with vegetables, potatoes and sauce",
+              "price": 18.5
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Katsarola Mageireio",
+          "slug": "170356-katsarola-mageireio",
+          "provider_id": 170356,
+          "address": "Franklin Roosevelt 106",
+          "lat": 34.66569,
+          "lng": 33.02211,
+          "url": "https://food.bolt.eu/en/442-limassol/p/170356-katsarola-mageireio",
+          "prices": {
+            "porkchop": 10
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chops With Mustard, Honey And Mushrooms With Side Dish",
+              "cat": "Meat",
+              "desc": "2 Thin sliced Pork chops cooked in the oven, topped with a mustard, honey, and mushroom sauce, served with a side dish. \nAllergens:\nMustard ",
+              "price": 10
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Jimmy's Kebab",
+          "slug": "1192550-jimmys-kebab",
+          "provider_id": 1192550,
+          "address": "Christaki Kranou 65, 4042, Limassol, Cyprus",
+          "lat": 34.70499,
+          "lng": 33.08632,
+          "url": "https://food.bolt.eu/en/442-limassol/p/1192550-jimmys-kebab",
+          "prices": {
+            "porkchop": 16,
+            "souvlaki": 8.2,
+            "mix": 8.2,
+            "chicken": 8.4
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Portions",
+              "desc": "With pita, potatoes and salad",
+              "price": 16
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "With parsley, onions, cucumber, tomatoes and cabbage",
+              "price": 8.2,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Souvlaki Mix Pork Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "With parsley, onions, cucumber, tomatoes and cabbage Allergens: gluten",
+              "price": 8.2,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "With parsley, onions, cucumber, tomatoes and cabbage Allergens: gluten",
+              "price": 8.4,
+              "tier": "cypriot"
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Megusta Cafe Restaurant",
+          "slug": "125056-megusta-cafe-restaurant",
+          "provider_id": 125056,
+          "address": "Omonoias 123 3010 Limassol Cyprus",
+          "lat": 34.662665,
+          "lng": 33.017511,
+          "url": "https://food.bolt.eu/en/442-limassol/p/125056-megusta-cafe-restaurant",
+          "prices": {
+            "porkchop": 17.5
+          },
+          "items": {
+            "porkchop": {
+              "name": "Grilled Pork Chop",
+              "cat": "On the Grill",
+              "desc": "700g, with lightly spiced wedges or jacket potato, fresh salad and BBQ sauce",
+              "price": 17.5
+            }
+          },
+          "source": "bolt",
+          "open": false
+        },
+        {
+          "name": "Mpampis Souvlakia",
+          "slug": "47974-mpampis-souvlakia",
+          "provider_id": 47974,
+          "address": "Agias Paraskevis 44, Germasogeia, 4043",
+          "lat": 34.715541,
+          "lng": 33.086172,
+          "url": "https://food.bolt.eu/en/442-limassol/p/47974-mpampis-souvlakia",
+          "prices": {
+            "porkchop": 17,
+            "souvlaki": 8.5,
+            "souvlakiLarge": 10,
+            "chicken": 8.5,
+            "chickenLarge": 10,
+            "mix": 8.5,
+            "mixLarge": 10
+          },
+          "items": {
+            "porkchop": {
+              "name": "Pork Chop Portion",
+              "cat": "Portion",
+              "desc": "850gr.",
+              "price": 17
+            },
+            "souvlaki": {
+              "name": "Pork Souvlaki Skewer Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "souvlakiLarge": {
+              "name": "Pork Souvlaki Skewer Cypriot Pita Large",
+              "cat": "Cypriot Pita",
+              "desc": "A large flatbread pocket packed with tender, grilled pork skewers, crisp onions, fresh tomatoes, and parsley.",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "chicken": {
+              "name": "Chicken Souvlaki Skewer Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "chickenLarge": {
+              "name": "Chicken Souvlaki Skewer Cypriot Pita Large",
+              "cat": "Cypriot Pita",
+              "desc": "A large flatbread generously stuffed with lean, char-grilled chicken skewers, crisp salad, and fresh herbs.",
+              "price": 10,
+              "tier": "cypriot"
+            },
+            "mix": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita",
+              "cat": "Cypriot Pita",
+              "desc": "A pocket flatbread stuffed with grilled pork skewers, spiced sausage crepinettes, fresh parsley, onions, and juicy tomatoes.",
+              "price": 8.5,
+              "tier": "cypriot"
+            },
+            "mixLarge": {
+              "name": "Pork Souvlaki and Sheftalia Cypriot Pita Large",
+              "cat": "Cypriot Pita",
+              "desc": "A large pita bread generously stuffed with grilled pork skewers, spiced meat crepinettes, fresh vegetables, and herbs.",
+              "price": 10,
+              "tier": "cypriot"
             }
           },
           "source": "bolt",
