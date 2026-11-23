@@ -6,6 +6,12 @@ import JsonLd from "@/components/JsonLd";
 import { FAQ, FAQ_TITLE } from "@/lib/faq";
 import { SITE, SITE_NAME } from "@/lib/seo";
 
+const DATASET_NOTE: Record<Lang, string> = {
+  en: "Prices are collected regularly from public sources and delivery apps and published free by Mouxti.",
+  el: "Οι τιμές συλλέγονται τακτικά από δημόσιες πηγές και εφαρμογές παράδοσης και δημοσιεύονται δωρεάν από το Mouxti.",
+  ru: "Цены регулярно собираются из открытых источников и приложений доставки и бесплатно публикуются Mouxti.",
+};
+
 type Source = { label: string; href?: string };
 
 // One template for the five trackers in all three languages:
@@ -51,7 +57,8 @@ export default function ToolPage({
       "@context": "https://schema.org",
       "@type": "Dataset",
       name: title,
-      description: s.toolSummary[tool],
+      // Google needs 50+ characters here; the one-line summary alone can be shorter.
+      description: `${s.toolSummary[tool]} ${DATASET_NOTE[lang]}`,
       url: pageUrl,
       inLanguage: lang,
       spatialCoverage: "Cyprus",
