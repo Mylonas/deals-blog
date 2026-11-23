@@ -1,15 +1,8 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
+import { PAGES } from "@/lib/seoMeta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Learn about Mouxti — a free website that compares fuel, coffee and souvlaki prices across Cyprus to help you save money.",
-  alternates: {
-    canonical: "/about/",
-    languages: { en: "/about/", el: "/el/about/", ru: "/ru/about/", "x-default": "/about/" },
-  },
-};
+export const metadata = pageMeta({ lang: "en", path: "about", ...PAGES.about.en });
 
 export default function AboutEn() {
   return (

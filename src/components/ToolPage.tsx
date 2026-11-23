@@ -2,6 +2,9 @@ import { STR, TOOLS, formatDate, homeHref, toolHref, type Lang, type Tool } from
 import { topThree } from "@/lib/summary";
 import FreshDate, { STALE_HOURS } from "@/components/FreshDate";
 import { ACCENT, ToolIcon } from "@/lib/toolTheme";
+import JsonLd from "@/components/JsonLd";
+import { FAQ, FAQ_TITLE } from "@/lib/faq";
+import { SITE, SITE_NAME } from "@/lib/seo";
 
 type Source = { label: string; href?: string };
 
@@ -31,8 +34,44 @@ export default function ToolPage({
   const date = formatDate(updatedAt, lang);
   const ac = ACCENT[tool];
   const top = topThree(tool, lang);
+  const faq = FAQ[tool]?.[lang] ?? [];
+  const pageUrl = `${SITE}${toolHref(lang, tool)}`;
+  const homeUrl = `${SITE}${homeHref(lang)}`;
+  const publisher = { "@type": "Organization", name: SITE_NAME, url: `${SITE}/` };
+  const ld: object[] = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: s.home, item: homeUrl },
+        { "@type": "ListItem", position: 2, name: s.tools[tool], item: pageUrl },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      name: title,
+      description: s.toolSummary[tool],
+      url: pageUrl,
+      inLanguage: lang,
+      spatialCoverage: "Cyprus",
+      ...(updatedAt && !isNaN(new Date(updatedAt).getTime()) ? { dateModified: new Date(updatedAt).toISOString() } : {}),
+      ...(source?.href ? { isBasedOn: source.href } : {}),
+      creator: publisher,
+      publisher,
+    },
+  ];
+  if (faq.length) {
+    ld.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      inLanguage: lang,
+      mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    });
+  }
   return (
     <div className={wide ? "max-w-3xl" : "max-w-2xl"}>
+      <JsonLd data={ld} />
       <nav aria-label={s.breadcrumb} className="mb-4 text-sm">
         <ol className="flex flex-wrap items-center gap-x-2 text-gray-700 dark:text-gray-300">
           <li>
@@ -100,6 +139,22 @@ export default function ToolPage({
           {details}
         </div>
       </details>
+
+      {faq.length > 0 && (
+        <section aria-labelledby="faq" className="mt-10 text-sm text-gray-700 dark:text-gray-300">
+          <h2 id="faq" className="text-lg font-semibold mb-3 text-gray-900 dark:text-gray-100">
+            {FAQ_TITLE[lang]}
+          </h2>
+          <dl className="space-y-4">
+            {faq.map((f) => (
+              <div key={f.q}>
+                <dt className="font-medium text-gray-900 dark:text-gray-100">{f.q}</dt>
+                <dd className="mt-1">{f.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
 
       <nav aria-labelledby="other-trackers" className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800">
         <h2 id="other-trackers" className="text-lg font-semibold mb-3">

@@ -1,6 +1,10 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts, type Lang } from "@/lib/posts";
-import { BF_PATH, cyprusToday, isSectionLive } from "@/lib/blackFriday";
+import { BF_OFFERS, BF_PATH, cyprusToday, isSectionLive } from "@/lib/blackFriday";
+import fuel from "@/data/fuel-prices.json";
+import coffee from "@/data/coffee-prices.json";
+import souvlaki from "@/data/souvlaki-prices.json";
+import deals from "@/data/supermarket-deals.json";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mouxti.com";
 const LANGS: Lang[] = ["en", "el", "ru"];
@@ -23,6 +27,28 @@ function alternates(langs: Lang[], path: string) {
   if (langs.includes("en")) languages["x-default"] = pageUrl("en", path);
   return { languages };
 }
+
+// lastmod comes from the real data date of each tracker (never the build time); pages with no
+// dated data (about, contact, privacy, terms) get no lastmod rather than a fake one.
+const dated = (v: unknown): Date | undefined => {
+  const d = typeof v === "string" ? new Date(v) : undefined;
+  return d && !isNaN(d.getTime()) ? d : undefined;
+};
+const latest = (...ds: (Date | undefined)[]) =>
+  ds.filter((d): d is Date => !!d).sort((a, b) => b.getTime() - a.getTime())[0];
+const LASTMOD: Record<string, Date | undefined> = {
+  "fuel-prices-cyprus": dated((fuel as any).updatedAt),
+  "posts/cheapest-coffee-nicosia": dated((coffee as any).updatedAt),
+  "posts/cheapest-souvlaki-cyprus": dated((souvlaki as any).updatedAt),
+  "posts/cheapest-supermarket-products": dated((deals as any).updatedAt),
+  [BF_PATH]: latest(...BF_OFFERS.map((o) => dated(o.checked))),
+};
+LASTMOD[""] = latest(
+  LASTMOD["fuel-prices-cyprus"],
+  LASTMOD["posts/cheapest-coffee-nicosia"],
+  LASTMOD["posts/cheapest-souvlaki-cyprus"],
+  LASTMOD["posts/cheapest-supermarket-products"],
+);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -48,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const lang of langs) {
       entries.push({
         url: pageUrl(lang, path),
-        lastModified: now,
+        ...(LASTMOD[path] ? { lastModified: LASTMOD[path] } : {}),
         changeFrequency: path === "" || path === "jobs" || path === "fuel-prices-cyprus" ? "daily" : "monthly",
         priority,
         alternates: alternates(langs, path),
@@ -72,7 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const lang of langs) {
       entries.push({
         url: pageUrl(lang, `posts/${slug}`),
-        lastModified: lastMod ? new Date(lastMod) : now,
+        lastModified: LASTMOD[`posts/${slug}`] ?? (lastMod ? new Date(lastMod) : now),
         changeFrequency: "weekly",
         priority: 0.7,
         alternates: alternates(langs, `posts/${slug}`),

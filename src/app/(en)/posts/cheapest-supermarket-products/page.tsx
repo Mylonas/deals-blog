@@ -1,13 +1,10 @@
+import { pageMeta } from "@/lib/seo";
+import { PAGES } from "@/lib/seoMeta";
 import ToolPage from "@/components/ToolPage";
 import SupermarketDealsTable from "@/components/SupermarketDealsTable";
 import data from "@/data/supermarket-deals.json";
 
-export const metadata = {
-  title: "Top 20 Biggest Supermarket Savings in Cyprus",
-  description:
-    "The 20 products with the biggest price cuts currently across all major Cyprus supermarkets, sourced from the government's e-Kalathi price observatory. Refreshed daily.",
-  alternates: {"canonical":"/posts/cheapest-supermarket-products/","languages":{"en":"/posts/cheapest-supermarket-products/","el":"/el/posts/cheapest-supermarket-products/","ru":"/ru/posts/cheapest-supermarket-products/","x-default":"/posts/cheapest-supermarket-products/"}},
-};
+export const metadata = pageMeta({ lang: "en", path: "posts/cheapest-supermarket-products", ...PAGES.supermarket.en });
 
 export default function CheapestSupermarketProductsEN() {
   return (

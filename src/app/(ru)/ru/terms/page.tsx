@@ -1,15 +1,8 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
+import { PAGES } from "@/lib/seoMeta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Условия использования",
-  description:
-    "Условия использования Mouxti — бесплатного информационного сайта для сравнения цен на топливо, кофе и сувлаки на Кипре.",
-  alternates: {
-    canonical: "/ru/terms/",
-    languages: { en: "/terms/", el: "/el/terms/", ru: "/ru/terms/", "x-default": "/terms/" },
-  },
-};
+export const metadata = pageMeta({ lang: "ru", path: "terms", ...PAGES.terms.ru });
 
 export default function TermsRu() {
   return (

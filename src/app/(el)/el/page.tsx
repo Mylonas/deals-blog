@@ -1,15 +1,9 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
+import { PAGES } from "@/lib/seoMeta";
 import HomeHub from "@/components/HomeHub";
 import { STR } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: { absolute: "Mouxti — Τιμές στην Κύπρο: καύσιμα, σούπερ μάρκετ, καφές, σουβλάκι" },
-  description: STR.el.homeDescription,
-  alternates: {
-    canonical: "/el/",
-    languages: { en: "/", el: "/el/", ru: "/ru/", "x-default": "/" },
-  },
-};
+export const metadata = pageMeta({ lang: "el", path: "", ...PAGES.home.el });
 
 export default function Home() {
   return <HomeHub lang="el" />;

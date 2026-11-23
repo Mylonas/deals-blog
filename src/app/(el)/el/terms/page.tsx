@@ -1,15 +1,8 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
+import { PAGES } from "@/lib/seoMeta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Όροι Χρήσης",
-  description:
-    "Όροι που διέπουν τη χρήση του Mouxti — δωρεάν ενημερωτικός ιστότοπος σύγκρισης τιμών καυσίμων, καφέ και σουβλακιού στην Κύπρο.",
-  alternates: {
-    canonical: "/el/terms/",
-    languages: { en: "/terms/", el: "/el/terms/", ru: "/ru/terms/", "x-default": "/terms/" },
-  },
-};
+export const metadata = pageMeta({ lang: "el", path: "terms", ...PAGES.terms.el });
 
 export default function TermsEl() {
   return (

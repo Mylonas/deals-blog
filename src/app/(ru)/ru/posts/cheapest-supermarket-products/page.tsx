@@ -1,13 +1,10 @@
+import { pageMeta } from "@/lib/seo";
+import { PAGES } from "@/lib/seoMeta";
 import ToolPage from "@/components/ToolPage";
 import SupermarketDealsTable from "@/components/SupermarketDealsTable";
 import data from "@/data/supermarket-deals.json";
 
-export const metadata = {
-  title: "Топ-20 лучших скидок в супермаркетах Кипра",
-  description:
-    "20 товаров с наибольшим снижением цены во всех крупных супермаркетах Кипра, по данным государственного ценового мониторинга e-Kalathi. Обновляется ежедневно.",
-  alternates: {"canonical":"/ru/posts/cheapest-supermarket-products/","languages":{"en":"/posts/cheapest-supermarket-products/","el":"/el/posts/cheapest-supermarket-products/","ru":"/ru/posts/cheapest-supermarket-products/","x-default":"/posts/cheapest-supermarket-products/"}},
-};
+export const metadata = pageMeta({ lang: "ru", path: "posts/cheapest-supermarket-products", ...PAGES.supermarket.ru });
 
 export default function CheapestSupermarketProductsRU() {
   return (

@@ -1,15 +1,8 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
+import { PAGES } from "@/lib/seoMeta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Контакты",
-  description:
-    "Свяжитесь с командой Mouxti. Сообщите об ошибках, предложите улучшения или задайте вопросы.",
-  alternates: {
-    canonical: "/ru/contact/",
-    languages: { en: "/contact/", el: "/el/contact/", ru: "/ru/contact/", "x-default": "/contact/" },
-  },
-};
+export const metadata = pageMeta({ lang: "ru", path: "contact", ...PAGES.contact.ru });
 
 export default function ContactRu() {
   return (

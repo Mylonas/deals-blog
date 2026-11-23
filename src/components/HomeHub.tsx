@@ -4,6 +4,8 @@ import { answer } from "@/lib/summary";
 import { ACCENT, ToolIcon } from "@/lib/toolTheme";
 import BlackFridayStrip from "@/components/BlackFridayStrip";
 import { cyprusToday } from "@/lib/blackFriday";
+import JsonLd from "@/components/JsonLd";
+import { SITE, SITE_NAME, absUrl } from "@/lib/seo";
 
 // Home (/, /el/, /ru/): the answer first. Four cards, each ONE link: icon + label, the big
 // number, the place, a change indicator (only where real history exists), the data date and a
@@ -13,6 +15,27 @@ export default function HomeHub({ lang }: { lang: Lang }) {
   const cards = TOOLS.map((t) => ({ t, a: answer(t, lang) }));
   return (
     <div>
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": `${SITE}/#website`,
+            name: SITE_NAME,
+            url: absUrl(lang, ""),
+            description: s.homeDescription,
+            inLanguage: lang,
+            publisher: { "@id": `${SITE}/#organization` },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": `${SITE}/#organization`,
+            name: SITE_NAME,
+            url: `${SITE}/`,
+          },
+        ]}
+      />
       <header className="mb-4 sm:mb-6">
         <h1 className="text-2xl sm:text-3xl font-bold leading-tight">{s.todayTitle}</h1>
       </header>

@@ -1,3 +1,5 @@
+import { pageMeta } from "@/lib/seo";
+import { PAGES } from "@/lib/seoMeta";
 import ToolPage from "@/components/ToolPage";
 import FuelTable from "@/components/FuelTable";
 import FuelChart from "@/components/FuelChart";
@@ -6,19 +8,14 @@ import { SHOW_FUEL_COMPARE } from "@/lib/features";
 import data from "@/data/fuel-prices.json";
 import history from "@/data/fuel-price-history.json";
 
-export const metadata = {
-  title: "Τιμές Καυσίμων Κύπρος Σήμερα — Φθηνότερα Πρατήρια Βενζίνης",
-  description:
-    "Τιμές καυσίμων σε κάθε πρατήριο της Κύπρου. Συγκρίνετε Αμόλυβδη 95, 98 και Πετρέλαιο κατά επαρχία για να βρείτε το φθηνότερο πρατήριο κοντά σας. Τακτική ενημέρωση από το Παρατηρητήριο Τιμών Καυσίμων.",
-  alternates: {"canonical":"/el/fuel-prices-cyprus/","languages":{"en":"/fuel-prices-cyprus/","el":"/el/fuel-prices-cyprus/","ru":"/ru/fuel-prices-cyprus/","x-default":"/fuel-prices-cyprus/"}},
-};
+export const metadata = pageMeta({ lang: "el", path: "fuel-prices-cyprus", ...PAGES.fuel.el });
 
 export default function FuelPricesPageEL() {
   return (
     <ToolPage
       lang="el"
       tool="fuel"
-      title="Τιμές Καυσίμων Κύπρος Σήμερα"
+      title="Τιμές Βενζίνης Κύπρος Σήμερα"
       updatedAt={(data as any).updatedAt ?? (data as any).fetchedAt}
       source={{ label: "Παρατηρητήριο Τιμών Πετρελαιοειδών", href: "https://petroleumprices.meci.gov.cy/" }}
       details={<>

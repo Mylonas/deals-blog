@@ -1,3 +1,5 @@
+import { pageMeta } from "@/lib/seo";
+import { PAGES } from "@/lib/seoMeta";
 import ToolPage from "@/components/ToolPage";
 import FuelTable from "@/components/FuelTable";
 import FuelChart from "@/components/FuelChart";
@@ -6,19 +8,14 @@ import { SHOW_FUEL_COMPARE } from "@/lib/features";
 import data from "@/data/fuel-prices.json";
 import history from "@/data/fuel-price-history.json";
 
-export const metadata = {
-  title: "Цены на Топливо Кипр Сегодня — Дешевейшие АЗС",
-  description:
-    "Цены на топливо на каждой АЗС Кипра. Сравните АИ-95, АИ-98 и Дизель по округам, чтобы найти ближайшую дешёвую заправку. Регулярное обновление из правительственного портала цен.",
-  alternates: {"canonical":"/ru/fuel-prices-cyprus/","languages":{"en":"/fuel-prices-cyprus/","el":"/el/fuel-prices-cyprus/","ru":"/ru/fuel-prices-cyprus/","x-default":"/fuel-prices-cyprus/"}},
-};
+export const metadata = pageMeta({ lang: "ru", path: "fuel-prices-cyprus", ...PAGES.fuel.ru });
 
 export default function FuelPricesPageRU() {
   return (
     <ToolPage
       lang="ru"
       tool="fuel"
-      title="Цены на Топливо Кипр Сегодня"
+      title="Цены на бензин на Кипре сегодня"
       updatedAt={(data as any).updatedAt ?? (data as any).fetchedAt}
       source={{ label: "Портал цен на нефтепродукты правительства Кипра", href: "https://petroleumprices.meci.gov.cy/" }}
       details={<>

@@ -1,15 +1,8 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
+import { PAGES } from "@/lib/seoMeta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Terms of Service",
-  description:
-    "Terms governing the use of Mouxti — a free informational website comparing fuel, coffee and souvlaki prices in Cyprus.",
-  alternates: {
-    canonical: "/terms/",
-    languages: { en: "/terms/", el: "/el/terms/", ru: "/ru/terms/", "x-default": "/terms/" },
-  },
-};
+export const metadata = pageMeta({ lang: "en", path: "terms", ...PAGES.terms.en });
 
 export default function TermsEn() {
   return (

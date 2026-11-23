@@ -17,8 +17,8 @@ export function baseMetadata(lang: Lang): Metadata {
     title: { default: siteName, template: `%s | ${siteName}` },
     description: STR[lang].homeDescription,
     metadataBase: new URL(siteUrl),
-    openGraph: { siteName, type: "website" },
-    twitter: { card: "summary_large_image" },
+    openGraph: { siteName, type: "website", images: [{ url: "/og-default.png", width: 1200, height: 630 }] },
+    twitter: { card: "summary_large_image", images: ["/og-default.png"] },
     other: { "google-adsense-account": "ca-pub-4547647290394610" },
   };
 }
@@ -32,18 +32,6 @@ export default function RootShell({ lang, children }: { lang: Lang; children: Re
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(s===null&&d))document.documentElement.classList.add('dark')})()`,
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: siteName,
-              url: siteUrl,
-              inLanguage: ["en", "el", "ru"],
-            }),
           }}
         />
       </head>

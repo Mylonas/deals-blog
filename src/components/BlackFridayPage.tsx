@@ -1,11 +1,23 @@
 import { STR, homeHref, type Lang } from "@/lib/i18n";
-import { BF_STR, cyprusToday } from "@/lib/blackFriday";
+import JsonLd from "@/components/JsonLd";
+import { SITE, absUrl } from "@/lib/seo";
+import { BF_PATH, BF_STR, cyprusToday } from "@/lib/blackFriday";
 import BlackFridayList from "@/components/BlackFridayList";
 
 export default function BlackFridayPage({ lang }: { lang: Lang }) {
   const s = BF_STR[lang];
   return (
     <div className="max-w-2xl">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: STR[lang].home, item: `${SITE}${homeHref(lang)}` },
+            { "@type": "ListItem", position: 2, name: s.homeLabel, item: absUrl(lang, BF_PATH) },
+          ],
+        }}
+      />
       <nav aria-label={STR[lang].breadcrumb} className="mb-4 text-sm">
         <ol className="flex flex-wrap items-center gap-x-2 text-gray-700 dark:text-gray-300">
           <li>

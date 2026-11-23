@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo";
 import type { Metadata } from "next";
 import { getPost, getAllPosts } from "@/lib/posts";
 import Link from "next/link";
@@ -9,15 +10,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   try {
     const post = await getPost(slug, "el");
-    return {
-      title: post.title,
+    return pageMeta({
+      lang: "el",
+      path: `posts/${slug}`,
+      title: `${post.title} | Mouxti`,
       description: post.summary,
-      openGraph: { title: post.title, description: post.summary, type: "article", publishedTime: post.date, ...(post.updated ? { modifiedTime: post.updated } : {}) },
-      alternates: {
-        canonical: `/el/posts/${slug}/`,
-        languages: { en: `/posts/${slug}/`, el: `/el/posts/${slug}/`, ru: `/ru/posts/${slug}/`, "x-default": `/posts/${slug}/` },
-      },
-    };
+      type: "article",
+      og: { publishedTime: post.date, ...(post.updated ? { modifiedTime: post.updated } : {}) },
+    });
   } catch {
     return {};
   }

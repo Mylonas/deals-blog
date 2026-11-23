@@ -1,15 +1,8 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
+import { PAGES } from "@/lib/seoMeta";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Политика конфиденциальности",
-  description:
-    "Как Mouxti обращается с данными, cookie и рекламой. Мы не собираем персональные данные; политика также охватывает сторонние рекламные cookie.",
-  alternates: {
-    canonical: "/ru/privacy/",
-    languages: { en: "/privacy/", el: "/el/privacy/", ru: "/ru/privacy/", "x-default": "/privacy/" },
-  },
-};
+export const metadata = pageMeta({ lang: "ru", path: "privacy", ...PAGES.privacy.ru });
 
 export default function PrivacyRu() {
   return (
