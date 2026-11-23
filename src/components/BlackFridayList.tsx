@@ -16,7 +16,8 @@ export default function BlackFridayList({ lang, buildDay }: { lang: Lang; buildD
   }
   const groups = [
     { title: s.productsTitle, items: offers.filter((o) => o.kind === "product") },
-    { title: s.storewideTitle, items: offers.filter((o) => o.kind !== "product") },
+    { title: s.singleTitle, items: offers.filter((o) => o.kind === "single") },
+    { title: s.storewideTitle, items: offers.filter((o) => o.kind === "storewide") },
   ].filter((g) => g.items.length);
   return (
     <div className="space-y-6">
@@ -30,13 +31,16 @@ export default function BlackFridayList({ lang, buildDay }: { lang: Lang; buildD
                   <span className="text-base font-bold text-gray-900 dark:text-gray-100">{o.store}</span>
                   <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{s.channel[o.channel]}</span>
                 </p>
-                {o.kind === "product" ? (
+                {o.kind !== "storewide" ? (
                   <>
                     <p className="mt-1 text-sm text-gray-900 dark:text-gray-100">{o.product}</p>
                     <p className="mt-0.5 text-gray-900 dark:text-gray-100">
                       <span className="text-2xl font-extrabold">€{o.price}</span>{" "}
                       <span className="text-sm text-gray-700 dark:text-gray-300">{s.was} €{o.was}</span>
                     </p>
+                    {o.kind === "single" && o.note && (
+                      <p className="mt-1 text-xs text-gray-800 dark:text-gray-200">{o.note[lang]}</p>
+                    )}
                     {o.compare && (
                       <p className="mt-1 text-xs text-gray-800 dark:text-gray-200">
                         {s.lowest}{" "}

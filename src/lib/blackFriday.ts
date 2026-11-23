@@ -10,7 +10,8 @@ export type BfOffer = {
   checked: string;
   url: string;
   deal: Record<Lang, string>;
-  kind: "product" | "storewide";
+  kind: "product" | "single" | "storewide";
+  note?: Record<Lang, string>;
   product?: string;
   price?: number;
   was?: number;
@@ -61,6 +62,7 @@ export const BF_STR: Record<
     count: (n: number) => string;
     productsTitle: string;
     storewideTitle: string;
+    singleTitle: string;
     was: string;
     lowest: string;
     compared: string;
@@ -83,6 +85,7 @@ export const BF_STR: Record<
     count: (n) => `${n} checked offers`,
     productsTitle: "Products 50% off or more, at their lowest price",
     storewideTitle: "Store-wide offers",
+    singleTitle: "Single store, not price-compared",
     was: "was",
     lowest: "Lowest of the stores we compared; also at",
     compared: "compared",
@@ -104,6 +107,7 @@ export const BF_STR: Record<
     count: (n) => `${n} ελεγμένες προσφορές`,
     productsTitle: "Προϊόντα με έκπτωση 50% ή περισσότερο, στη χαμηλότερη τιμή",
     storewideTitle: "Προσφορές καταστημάτων",
+    singleTitle: "Ένα κατάστημα, χωρίς σύγκριση τιμών",
     was: "από",
     lowest: "Η χαμηλότερη από τα καταστήματα που συγκρίναμε· επίσης στο",
     compared: "σύγκριση",
@@ -125,6 +129,7 @@ export const BF_STR: Record<
     count: (n) => `${n} проверенных предложений`,
     productsTitle: "Товары со скидкой 50% и более, по самой низкой цене",
     storewideTitle: "Предложения магазинов",
+    singleTitle: "Один магазин, цены не сравнивались",
     was: "было",
     lowest: "Самая низкая среди сравнённых магазинов; также в",
     compared: "сравнение",
