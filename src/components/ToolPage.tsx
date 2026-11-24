@@ -64,6 +64,7 @@ export default function ToolPage({
       spatialCoverage: "Cyprus",
       ...(updatedAt && !isNaN(new Date(updatedAt).getTime()) ? { dateModified: new Date(updatedAt).toISOString() } : {}),
       ...(source?.href ? { isBasedOn: source.href } : {}),
+      license: "https://creativecommons.org/licenses/by/4.0/",
       creator: publisher,
       publisher,
     },
