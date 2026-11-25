@@ -2,7 +2,7 @@
 hidden: true
 title: "Мониторинг цен в супермаркетах — 10 основных продуктов"
 date: "2026-06-28"
-updated: "2026-11-24"
+updated: "2026-11-25"
 category: "Еда и напитки"
 summary: "Актуальные цены на 10 базовых товаров во всех крупных супермаркетах Кипра. Обновляется 4 раза в день с официального портала e-kalathi.gov.cy."
 pinned: false
@@ -12,7 +12,7 @@ pinned: false
 
 <!-- PRICES_START -->
 
-> Обновлено 24 November 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
+> Обновлено 25 November 2026 | Source: [e-kalathi.gov.cy](https://www.e-kalathi.gov.cy)
 
 | Продукт | Мин. цена | Бренд |
 |---------|---------|--------|
