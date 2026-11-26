@@ -21,8 +21,8 @@ Live prices for the 10 most-bought household staples in Cyprus, sourced from the
 | Halloumi 200g | **[€2.09](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
 | Spaghetti 500g | **[€0.99](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Olive Oil 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
-| Water 1.5L ×6 | **[€2.00](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
-| Yogurt 450g | **[€1.99](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
+| Water 1.5L ×6 | **[€1.99](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
+| Yogurt 450g | **[€1.49](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
 | Rice 1kg | **[€1.95](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
 | Orange Juice 1L | **[€1.75](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
 | Coca-Cola 1L ×2 | **[€2.35](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
