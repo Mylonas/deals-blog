@@ -19,10 +19,10 @@ pinned: false
 | Φρέσκο Γάλα 1L | **[€1.37](https://www.e-kalathi.gov.cy/product-information/30)** | Charalambides |
 | Αβγά | **[€3.59](https://www.e-kalathi.gov.cy/product-information/413)** | Nikiforou |
 | Χαλλούμι 200g | **[€2.09](https://www.e-kalathi.gov.cy/product-information/254)** | Charalambides Christis |
-| Σπαγγέτι 500g | **[€0.99](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
+| Σπαγγέτι 500g | **[€0.95](https://www.e-kalathi.gov.cy/product-information/1069)** | Mitsides |
 | Ελαιόλαδο 1L | **[€3.99](https://www.e-kalathi.gov.cy/product-information/904)** | Despina |
 | Νερό 1.5L ×6 | **[€1.99](https://www.e-kalathi.gov.cy/product-information/2077)** | Kykkos |
-| Γιαούρτι 450g | **[€1.49](https://www.e-kalathi.gov.cy/product-information/303)** | Charalambides Christis |
+| Γιαούρτι 450g | **[€3.85](https://www.e-kalathi.gov.cy/product-information/301)** | Charalambides Christis |
 | Ρύζι 1kg | **[€1.95](https://www.e-kalathi.gov.cy/product-information/1120)** | 3A |
 | Χυμός Πορτοκάλι 1L | **[€1.75](https://www.e-kalathi.gov.cy/product-information/2137)** | Kean |
 | Coca-Cola 1L ×2 | **[€2.35](https://www.e-kalathi.gov.cy/product-information/2199)** | Coca Cola |
